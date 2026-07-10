@@ -1,1 +1,1 @@
-# rise-grid-screening-research
+# rise-project-research
