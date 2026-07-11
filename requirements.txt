@@ -1,0 +1,9 @@
+pandapower==3.5.4
+numpy==2.3.5
+pandas==2.3.3
+scikit-learn==1.7.2
+pyarrow==21.0.0
+numba==0.66.0
+matplotlib==3.11.1
+python-igraph==1.0.0
+pillow==12.3.0
