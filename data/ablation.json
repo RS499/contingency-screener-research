@@ -1,0 +1,81 @@
+{
+  "full": {
+    "distinct_buses": 63,
+    "top2_pct": 55.855494229804314,
+    "n_viol": 9965,
+    "nonconv_pct": 5.552584670231729,
+    "minvm_min": 0.4648735650838178,
+    "minvm_max": 0.9434468315324889,
+    "minvm_width": 0.4785732664486711
+  },
+  "ablations": {
+    "load": {
+      "distinct_buses": 52,
+      "top2_pct": 53.21261045052908,
+      "n_viol": 9167,
+      "nonconv_pct": 1.6221033868092691,
+      "minvm_min": 0.5294798753513331,
+      "minvm_max": 0.95007010837005,
+      "minvm_width": 0.4205902330187169,
+      "d_distinct": -11,
+      "d_top2": -2.6428837792752375,
+      "d_width": -0.0579830334299542
+    },
+    "reactive": {
+      "distinct_buses": 55,
+      "top2_pct": 61.606048222313035,
+      "n_viol": 9788,
+      "nonconv_pct": 4.028520499108734,
+      "minvm_min": 0.5517346551240307,
+      "minvm_max": 0.9478931103761676,
+      "minvm_width": 0.3961584552521369,
+      "d_distinct": -8,
+      "d_top2": 5.750553992508721,
+      "d_width": -0.08241481119653421
+    },
+    "setpoint": {
+      "distinct_buses": 38,
+      "top2_pct": 73.20901687713915,
+      "n_viol": 8473,
+      "nonconv_pct": 0.40998217468805703,
+      "minvm_min": 0.6015071201560579,
+      "minvm_max": 0.9430000000000005,
+      "minvm_width": 0.3414928798439426,
+      "d_distinct": -25,
+      "d_top2": 17.353522647334835,
+      "d_width": -0.1370803866047285
+    },
+    "qlim": {
+      "distinct_buses": 59,
+      "top2_pct": 55.6834957189253,
+      "n_viol": 10161,
+      "nonconv_pct": 4.010695187165775,
+      "minvm_min": 0.6042175360772684,
+      "minvm_max": 0.9434466521010944,
+      "minvm_width": 0.339229116023826,
+      "d_distinct": -4,
+      "d_top2": -0.17199851087901408,
+      "d_width": -0.1393441504248451
+    },
+    "genout": {
+      "distinct_buses": 59,
+      "top2_pct": 55.31808147702188,
+      "n_viol": 9966,
+      "nonconv_pct": 5.54367201426025,
+      "minvm_min": 0.4648735650838178,
+      "minvm_max": 0.9434468315324889,
+      "minvm_width": 0.4785732664486711,
+      "d_distinct": -4,
+      "d_top2": -0.537412752782437,
+      "d_width": 0.0
+    }
+  },
+  "least_impactful": "qlim",
+  "impact_ranking": [
+    "qlim",
+    "genout",
+    "load",
+    "reactive",
+    "setpoint"
+  ]
+}

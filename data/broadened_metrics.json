@@ -1,0 +1,105 @@
+{
+  "config": {
+    "mult_hi": 1.12,
+    "pf": [
+      0.9,
+      1.15
+    ],
+    "dvm": 0.025,
+    "stress": "fixed",
+    "enforce_q_lims": true,
+    "gate_n0": true,
+    "seed": 100
+  },
+  "n_scen": 1500,
+  "n_rows": 280500,
+  "n_cols": 634,
+  "n0_gate": {
+    "accepted": 1500,
+    "rejected": 3207,
+    "pass_rate_pct": 31.87
+  },
+  "nonconv_pct": 0.014,
+  "n_conv": 280460,
+  "n1_total": 278960,
+  "n1_viol": 79658,
+  "n1_viol_pct": 28.56,
+  "n1_straddle": 193031,
+  "n1_straddle_pct": 69.2,
+  "n1_deep_collapse": 23,
+  "minvm": {
+    "dtype": "float64",
+    "min": 0.7319,
+    "max": 0.9629,
+    "p1": 0.8822,
+    "p5": 0.9154,
+    "p25": 0.94,
+    "p50": 0.94,
+    "p75": 0.9432,
+    "p95": 0.9482,
+    "p99": 0.9518,
+    "width": 0.2309
+  },
+  "near_boundary_pct": 71.73,
+  "distinct_buses": 72,
+  "top1_bus": 75,
+  "top1_pct": 29.4,
+  "top2_bus": [
+    75,
+    106
+  ],
+  "top2_pct": 43.8,
+  "top5_pct": 62.9,
+  "top10_pct": 78.1,
+  "concentration_persists": false,
+  "top12": [
+    [
+      75,
+      29.4
+    ],
+    [
+      106,
+      14.4
+    ],
+    [
+      0,
+      8.1
+    ],
+    [
+      37,
+      6.6
+    ],
+    [
+      117,
+      4.5
+    ],
+    [
+      20,
+      4.0
+    ],
+    [
+      52,
+      2.9
+    ],
+    [
+      51,
+      2.9
+    ],
+    [
+      12,
+      2.9
+    ],
+    [
+      19,
+      2.6
+    ],
+    [
+      42,
+      2.3
+    ],
+    [
+      73,
+      2.1
+    ]
+  ]
+}
