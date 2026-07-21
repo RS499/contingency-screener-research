@@ -1,0 +1,252 @@
+{
+  "question": "standardize bus numbering on IEEE names across the paper and notes",
+  "convention": {
+    "source": "pandapower 0-based positional index (argmin_bus) in freeze_poster_numbers.py:116",
+    "target": "IEEE 1-based bus name (net.bus.name)",
+    "case118_index_equals_ieee_minus_1": "verified for all referenced buses (name = index + 1)"
+  },
+  "index_to_ieee_referenced": {
+    "9": 10,
+    "24": 25,
+    "52": 53,
+    "63": 64,
+    "65": 66,
+    "75": 76,
+    "106": 107
+  },
+  "pocket_analysis": {
+    "severity_bus": {
+      "index": 53,
+      "ieee": 54
+    },
+    "pocket_definition": {
+      "indices": [
+        53,
+        57,
+        58
+      ],
+      "ieee": [
+        54,
+        58,
+        59
+      ],
+      "label": "the 54-58-59 reactive pocket"
+    },
+    "distance_metric": "topological hops on the case118 graph (lines+trafos), not impedance",
+    "frequency_buses": [
+      {
+        "index": 75,
+        "ieee": 76,
+        "share_pct": 27.1,
+        "hops_to_ieee54": 4,
+        "min_hops_to_pocket": 4,
+        "in_54_58_59_pocket": false,
+        "directly_connected_to_ieee54": false,
+        "shares_reactive_pocket": false
+      },
+      {
+        "index": 52,
+        "ieee": 53,
+        "share_pct": 16.81,
+        "hops_to_ieee54": 1,
+        "min_hops_to_pocket": 1,
+        "in_54_58_59_pocket": false,
+        "directly_connected_to_ieee54": true,
+        "shares_reactive_pocket": true
+      },
+      {
+        "index": 106,
+        "ieee": 107,
+        "share_pct": 9.31,
+        "hops_to_ieee54": 8,
+        "min_hops_to_pocket": 8,
+        "in_54_58_59_pocket": false,
+        "directly_connected_to_ieee54": false,
+        "shares_reactive_pocket": false
+      }
+    ]
+  },
+  "conversion_table": {
+    "convert": {
+      "paper_current.tex": [
+        {
+          "line": 152,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 152,
+          "index": 52,
+          "ieee": 53
+        },
+        {
+          "line": 152,
+          "index": 106,
+          "ieee": 107
+        }
+      ],
+      "notes/state-of-project.md": [
+        {
+          "line": 13,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 54,
+          "index": 9,
+          "ieee": 10
+        },
+        {
+          "line": 54,
+          "index": 24,
+          "ieee": 25
+        },
+        {
+          "line": 54,
+          "index": 65,
+          "ieee": 66
+        },
+        {
+          "line": 56,
+          "index": 52,
+          "ieee": 53
+        },
+        {
+          "line": 56,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 56,
+          "index": 52,
+          "ieee": 53
+        },
+        {
+          "line": 56,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 74,
+          "index": 52,
+          "ieee": 53
+        },
+        {
+          "line": 74,
+          "index": 75,
+          "ieee": 76
+        }
+      ],
+      "notes/science-review.md": [
+        {
+          "line": 42,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 43,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 43,
+          "index": 52,
+          "ieee": 53
+        },
+        {
+          "line": 67,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 108,
+          "index": 63,
+          "ieee": 64
+        },
+        {
+          "line": 137,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 248,
+          "index": 52,
+          "ieee": 53
+        },
+        {
+          "line": 250,
+          "index": 52,
+          "ieee": 53
+        },
+        {
+          "line": 250,
+          "index": 75,
+          "ieee": 76
+        }
+      ],
+      "notes/artifact-clip-0.94.md": [
+        {
+          "line": 28,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 28,
+          "index": 106,
+          "ieee": 107
+        },
+        {
+          "line": 29,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 31,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 42,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 42,
+          "index": 106,
+          "ieee": 107
+        },
+        {
+          "line": 59,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 59,
+          "index": 106,
+          "ieee": 107
+        },
+        {
+          "line": 64,
+          "index": 75,
+          "ieee": 76
+        },
+        {
+          "line": 64,
+          "index": 106,
+          "ieee": 107
+        },
+        {
+          "line": 84,
+          "index": 75,
+          "ieee": 76
+        }
+      ]
+    },
+    "do_not_convert": {
+      "notes/ai-prompt-log.md": "append-only AI-disclosure log; mixes historical index-convention quotes (bus 75/52/106) with newer IEEE-name mechanism notes (bus 54). Do NOT rewrite the log.",
+      "notes/1_research_draft_ORIGINAL*.txt": "AI-disclosure EVIDENCE (.txt, hook-protected); never edit.",
+      "notes/lit/**/*.md": "22 literature notes for OTHER papers/networks; bus numbers are in each source's own convention, not case118 indices. Do NOT convert."
+    }
+  },
+  "paper_note": "paper_current.tex references buses ONLY at line 152 (IV-C); '118-bus' is the network name, not a bus id"
+}
