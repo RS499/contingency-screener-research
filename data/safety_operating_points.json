@@ -1,0 +1,113 @@
+{
+  "source": "data/tradeoff_curve.json",
+  "coverage_levels": [
+    0.9,
+    0.94,
+    0.95,
+    0.96,
+    0.97,
+    0.98
+  ],
+  "models": [
+    "ridge",
+    "histgb"
+  ],
+  "rows": [
+    {
+      "model": "ridge",
+      "coverage_target": 0.9,
+      "coverage_emp": 0.8904140789209167,
+      "escalation": 0.48245556854560245,
+      "missed_viol": 0.032310366179547856,
+      "net_speedup": 2.0816136628659074
+    },
+    {
+      "model": "ridge",
+      "coverage_target": 0.94,
+      "coverage_emp": 0.9351210504009115,
+      "escalation": 0.6237531625025048,
+      "missed_viol": 0.011057798129764044,
+      "net_speedup": 1.607641246584547
+    },
+    {
+      "model": "ridge",
+      "coverage_target": 0.95,
+      "coverage_emp": 0.9488258873316996,
+      "escalation": 0.6768484841927249,
+      "missed_viol": 0.00585508930177581,
+      "net_speedup": 1.4796877370410382
+    },
+    {
+      "model": "ridge",
+      "coverage_target": 0.96,
+      "coverage_emp": 0.9579529504216693,
+      "escalation": 0.7169668628284838,
+      "missed_viol": 0.002211158042363436,
+      "net_speedup": 1.3951509249548675
+    },
+    {
+      "model": "ridge",
+      "coverage_target": 0.97,
+      "coverage_emp": 0.9688868587058067,
+      "escalation": 0.7436134782589153,
+      "missed_viol": 0.00026791049153974315,
+      "net_speedup": 1.3447280860062532
+    },
+    {
+      "model": "ridge",
+      "coverage_target": 0.98,
+      "coverage_emp": 0.9790607292421789,
+      "escalation": 0.7510198745119616,
+      "missed_viol": 0.0,
+      "net_speedup": 1.331407894502098
+    },
+    {
+      "model": "histgb",
+      "coverage_target": 0.9,
+      "coverage_emp": 0.8993762136886108,
+      "escalation": 0.3298655847900574,
+      "missed_viol": 0.06906486059604541,
+      "net_speedup": 3.0382738158655025
+    },
+    {
+      "model": "histgb",
+      "coverage_target": 0.94,
+      "coverage_emp": 0.9396092137579821,
+      "escalation": 0.5750205883463,
+      "missed_viol": 0.02360021012238494,
+      "net_speedup": 1.738770808238335
+    },
+    {
+      "model": "histgb",
+      "coverage_target": 0.95,
+      "coverage_emp": 0.9496540278152246,
+      "escalation": 0.644305171495979,
+      "missed_viol": 0.015806276905396485,
+      "net_speedup": 1.5534716848984846
+    },
+    {
+      "model": "histgb",
+      "coverage_target": 0.96,
+      "coverage_emp": 0.9594264038207585,
+      "escalation": 0.7126578730859265,
+      "missed_viol": 0.008363319094880415,
+      "net_speedup": 1.4033881468358618
+    },
+    {
+      "model": "histgb",
+      "coverage_target": 0.97,
+      "coverage_emp": 0.9694281870136624,
+      "escalation": 0.7594980587008877,
+      "missed_viol": 0.004542140244714555,
+      "net_speedup": 1.3164243167011398
+    },
+    {
+      "model": "histgb",
+      "coverage_target": 0.98,
+      "coverage_emp": 0.9796020463682049,
+      "escalation": 0.8051979562661942,
+      "missed_viol": 0.0008460917807258967,
+      "net_speedup": 1.2417136265680562
+    }
+  ]
+}
