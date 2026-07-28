@@ -1,0 +1,71 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "a4df350e49f1834306b89d001a8381b40a2e6c8c",
+    "short": "a4df350"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "b38ba183005119ce1740d6bbc2d96e8db2672639a961d6213ca9f432d51349eb",
+  "run_settings": {
+    "task": "classical baseline: sensitivity screen prediction pass",
+    "dataset": "data/dataset.parquet",
+    "n_scenarios_screened": 1500,
+    "limit": null,
+    "nproc": 1,
+    "seed": "n/a (no RNG; deterministic reconstruction)",
+    "sampling_flags": "n/a (reads the committed dataset; no scenario sampling)",
+    "solver": {
+      "enforce_q_lims": true,
+      "init": "dc",
+      "numba": true,
+      "algorithm": "nr"
+    },
+    "pi_exponent_2n": 2,
+    "comp_sign": 1.0,
+    "vm0_guard_tol": 1e-05,
+    "output_parquet": "data/classical_predictions.parquet"
+  }
+}
