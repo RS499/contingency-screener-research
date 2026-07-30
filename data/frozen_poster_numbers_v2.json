@@ -1,0 +1,197 @@
+{
+  "provenance": "v2 = PROMOTED M2 (gate-aware) tuned surrogates. Supersedes the committed frozen_poster_numbers.json for the paper's primary results; the committed file is retained unchanged as the record of the hand-set models. Selection metric M2 fixed a priori for both families.",
+  "four_metrics_at_90pct_coverage": {
+    "source": "data/tuned_metrics.json",
+    "ridge": {
+      "escalation": 0.4906972404572077,
+      "coverage": 0.8933896003705112,
+      "missed_viol": 0.029631523339489742,
+      "net_speedup": 2.043111763549933
+    },
+    "histgb": {
+      "escalation": 0.3062513593744674,
+      "coverage": 0.8981751371681603,
+      "missed_viol": 0.04716684182384393,
+      "net_speedup": 3.287148493538382
+    }
+  },
+  "safety_operating_points": {
+    "source": "data/tuned_metrics.json",
+    "ridge": [
+      {
+        "coverage_target": 0.9,
+        "coverage_emp": 0.8933896003705112,
+        "escalation": 0.4906972404572077,
+        "missed_viol": 0.029631523339489742,
+        "net_speedup": 2.043111763549933
+      },
+      {
+        "coverage_target": 0.94,
+        "coverage_emp": 0.9395160047762194,
+        "escalation": 0.6434123029630445,
+        "missed_viol": 0.007935374720689281,
+        "net_speedup": 1.5568467287955494
+      },
+      {
+        "coverage_target": 0.95,
+        "coverage_emp": 0.950073386622433,
+        "escalation": 0.6785333530184323,
+        "missed_viol": 0.004465748768113205,
+        "net_speedup": 1.4760765384058954
+      },
+      {
+        "coverage_target": 0.96,
+        "coverage_emp": 0.9590140758949378,
+        "escalation": 0.7143464325496895,
+        "missed_viol": 0.0014238160828900482,
+        "net_speedup": 1.400182183933087
+      },
+      {
+        "coverage_target": 0.97,
+        "coverage_emp": 0.9693994775811421,
+        "escalation": 0.739111061073142,
+        "missed_viol": 0.00026876000115233273,
+        "net_speedup": 1.3530032680550534
+      },
+      {
+        "coverage_target": 0.98,
+        "coverage_emp": 0.980068058375462,
+        "escalation": 0.7480445906267049,
+        "missed_viol": 0.0,
+        "net_speedup": 1.3367526153943303
+      }
+    ],
+    "histgb": [
+      {
+        "coverage_target": 0.9,
+        "coverage_emp": 0.8981751371681603,
+        "escalation": 0.3062513593744674,
+        "missed_viol": 0.04716684182384393,
+        "net_speedup": 3.287148493538382
+      },
+      {
+        "coverage_target": 0.94,
+        "coverage_emp": 0.9368416103792327,
+        "escalation": 0.4668395523921854,
+        "missed_viol": 0.02475625141522387,
+        "net_speedup": 2.148323871023602
+      },
+      {
+        "coverage_target": 0.95,
+        "coverage_emp": 0.9465673556769574,
+        "escalation": 0.5118296511092764,
+        "missed_viol": 0.019439853129385738,
+        "net_speedup": 1.9612404812404147
+      },
+      {
+        "coverage_target": 0.96,
+        "coverage_emp": 0.9570495196664248,
+        "escalation": 0.5695530868202232,
+        "missed_viol": 0.013568242668213118,
+        "net_speedup": 1.7641408732452728
+      },
+      {
+        "coverage_target": 0.97,
+        "coverage_emp": 0.9695643697981928,
+        "escalation": 0.6367945178499592,
+        "missed_viol": 0.008322140418251116,
+        "net_speedup": 1.5790875368552881
+      },
+      {
+        "coverage_target": 0.98,
+        "coverage_emp": 0.9797167809675805,
+        "escalation": 0.7199530796400196,
+        "missed_viol": 0.003045373954491564,
+        "net_speedup": 1.3918953803495817
+      }
+    ]
+  },
+  "crossings_first_below_1pct_missed": {
+    "source": "data/tuned_metrics.json",
+    "ridge": {
+      "first_coverage_below_1pct_missed": 0.94,
+      "missed_at_that_coverage": 0.007935374720689281
+    },
+    "histgb": {
+      "first_coverage_below_1pct_missed": 0.97,
+      "missed_at_that_coverage": 0.008322140418251116
+    }
+  },
+  "ceilings": {
+    "source": "data/tuned_metrics.json",
+    "perfect_model_floor_saturation": 0.826352382506341,
+    "true_violation_rate": 0.1748,
+    "escalation_at_max_band_width_approaches_P_pred_ge_0.94": {
+      "ridge": 0.7488763012003711,
+      "histgb": 0.827947666607297,
+      "persistence": 1.0
+    }
+  },
+  "dataset_facts": {
+    "source": "data/dataset.parquet",
+    "rows": 280500,
+    "scenarios": 1500,
+    "converged_n1_rows": 278955,
+    "violation_rate_pct": 17.48,
+    "boundary_0p94_to_0p945_pct": 56.86,
+    "clip_atom_share_pct": 0.0,
+    "min_vm_min": 0.7179,
+    "min_vm_max": 0.9603,
+    "critical_bus_top5": [
+      {
+        "bus": 75,
+        "share_pct": 27.1
+      },
+      {
+        "bus": 52,
+        "share_pct": 16.81
+      },
+      {
+        "bus": 106,
+        "share_pct": 9.31
+      },
+      {
+        "bus": 0,
+        "share_pct": 8.45
+      },
+      {
+        "bus": 20,
+        "share_pct": 4.12
+      }
+    ]
+  },
+  "two_by_two_v2": {
+    "source": "data/experiment_2x2.json",
+    "cells": {
+      "old_old": 15,
+      "old_new": 22,
+      "new_old": 38,
+      "new_new": 50
+    },
+    "sampling_effect_distinct_buses": [
+      23,
+      28
+    ],
+    "oracle_effect_distinct_buses": [
+      7,
+      12
+    ],
+    "ratio_sampling_over_oracle": [
+      3.29,
+      2.33
+    ],
+    "n_scen": 100,
+    "seed": 7
+  },
+  "ms_solver": {
+    "source": "data/solve_time.json",
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "std_ms": 0.256
+  },
+  "n0_gate_pass_rate_pct": {
+    "source": "generate_dataset.py run log 2026-07-21 (NOT a committed file): accepted=1500, rejected=1287",
+    "value": 53.82
+  },
+  "copied_unchanged_note": "dataset_facts, two_by_two_v2, ms_solver, and n0_gate_pass_rate_pct are model-independent and copied verbatim from frozen_poster_numbers.json"
+}

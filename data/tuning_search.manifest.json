@@ -1,0 +1,58 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "a4df350e49f1834306b89d001a8381b40a2e6c8c",
+    "short": "a4df350"
+  },
+  "artifact": {
+    "n_records": 205,
+    "n_fields": 10
+  },
+  "content_sha256": "18070913171ef589c300afbddcd3e728cced3f8dc4e1201d5930f7d624e2ec0e",
+  "run_settings": {
+    "task": "hyperparameter tuning: inner search",
+    "ms_solver": 9.14,
+    "split_purity": "tuning confined to the 60% train split; cal and test untouched",
+    "committed_note": "surrogate.py is NOT at sklearn defaults: alpha=10.0, max_iter=300, learning_rate=0.08, max_depth=8. The committed config is carried as pinned candidate 'committed' and sklearn's real defaults as 'sklearn_default'."
+  }
+}
