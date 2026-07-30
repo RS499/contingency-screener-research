@@ -1,0 +1,58 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "a4df350e49f1834306b89d001a8381b40a2e6c8c",
+    "short": "a4df350"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "5c9eefa9a112eb2bb4689a8dc59c09c1a18fe5d419739ed0faa4a8fcf929f4f6",
+  "run_settings": {
+    "task": "hyperparameter tuning: matched-missed-rate frontier table",
+    "committed_source": "data/tradeoff_curve.json",
+    "tuned_source": "data/tuned_metrics.json",
+    "recomputed_any_committed_number": false
+  }
+}
