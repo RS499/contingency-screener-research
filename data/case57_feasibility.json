@@ -1,0 +1,192 @@
+{
+  "network": "case57",
+  "purpose": "go/no-go second-network feasibility probe (NOT a training dataset; no frozen artifact)",
+  "verdict_case57": "NO-GO under pinned config: nominal base is 0.72 pu (39/57 buses under 0.94); upward-only stress + N-0 gate accept 0/3000. The acceptance rule, not the network, is decisive.",
+  "config": {
+    "mirrors_committed_case118": true,
+    "solver": {
+      "enforce_q_lims": true,
+      "init": "dc",
+      "numba": true,
+      "algorithm": "nr"
+    },
+    "sampling_knobs": {
+      "mult_lo": 1.0,
+      "mult_hi": 1.12,
+      "reg_lo": 1.0,
+      "reg_hi": 1.12,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025
+    },
+    "stress": "fixed",
+    "mode": "mixed",
+    "seed": 100,
+    "n0_gate": "accept iff N-0 converges and n0_min_vm >= 0.94",
+    "target_accepted": 200,
+    "max_attempts_guard": 3000
+  },
+  "network_facts": {
+    "n_bus": 57,
+    "n_load": 42,
+    "n_gen": 6,
+    "n_line": 63,
+    "n_trafo": 17,
+    "n_branch_n1": 80
+  },
+  "step1_n0": {
+    "attempts": 3000,
+    "accepted": 0,
+    "accept_rate_pct": 0.0,
+    "accept_rate_wilson95_pct": [
+      0.0,
+      0.12788487253259628
+    ],
+    "case118_accept_rate_pct": 53.82,
+    "n0_nonconverged": 235,
+    "n0_nonconv_rate_pct": 7.833333333333333,
+    "n0_min_vm_over_converged_attempts": {
+      "min": 0.4186021004663473,
+      "median": 0.6898568980230451,
+      "max": 0.7746764070597956,
+      "share_ge_0p94_pct": 0.0
+    },
+    "wall_clock_s": 30.26
+  },
+  "step2_n1": {
+    "solves_attempted": 0,
+    "converged": 0,
+    "nonconverged": 0,
+    "min_vm_distribution": {
+      "min": null,
+      "median": null,
+      "max": null,
+      "violation_rate_pct": null
+    }
+  },
+  "step3_boundary_mass": {
+    "definition": "share of converged N-1 rows with min_vm in [0.94, 0.945)",
+    "case57_boundary_pct": null,
+    "case118_boundary_pct": 56.86,
+    "n_converged_n1_denominator": 0
+  },
+  "solve_time_case57": {
+    "ms_min": 7.266,
+    "ms_mean": 8.332,
+    "ms_std": 2.052,
+    "basis": "min over 200 timed solves"
+  },
+  "step4_network_transfer_scan": [
+    {
+      "network": "case30",
+      "n_bus": 30,
+      "n_branch_n1": 41,
+      "n_shunt": 2,
+      "gen_qlims_present": true,
+      "base_min_vm": 0.9606,
+      "base_argmin_bus": 7,
+      "buses_below_0p94": 0,
+      "base_clears_0p94": true,
+      "pinned_oracle_converges": true,
+      "ms_per_solve_min": 4.848
+    },
+    {
+      "network": "case57",
+      "n_bus": 57,
+      "n_branch_n1": 80,
+      "n_shunt": 3,
+      "gen_qlims_present": true,
+      "base_min_vm": 0.7199,
+      "base_argmin_bus": 30,
+      "buses_below_0p94": 39,
+      "base_clears_0p94": false,
+      "pinned_oracle_converges": true,
+      "ms_per_solve_min": 5.941
+    },
+    {
+      "network": "case118",
+      "n_bus": 118,
+      "n_branch_n1": 186,
+      "n_shunt": 14,
+      "gen_qlims_present": true,
+      "base_min_vm": 0.943,
+      "base_argmin_bus": 75,
+      "buses_below_0p94": 0,
+      "base_clears_0p94": true,
+      "pinned_oracle_converges": true,
+      "ms_per_solve_min": 7.817
+    },
+    {
+      "network": "case300",
+      "n_bus": 300,
+      "n_branch_n1": 411,
+      "n_shunt": 29,
+      "gen_qlims_present": true,
+      "pinned_oracle_converges": false,
+      "base_clears_0p94": null,
+      "ms_per_solve_min": null,
+      "noenforce_base_min_vm": 0.889
+    },
+    {
+      "network": "case89pegase",
+      "n_bus": 89,
+      "n_branch_n1": 210,
+      "n_shunt": 44,
+      "gen_qlims_present": true,
+      "base_min_vm": 0.9684,
+      "base_argmin_bus": 61,
+      "buses_below_0p94": 0,
+      "base_clears_0p94": true,
+      "pinned_oracle_converges": true,
+      "ms_per_solve_min": 6.694
+    }
+  ],
+  "step4_wall_clock_extrapolation": [
+    {
+      "network": "case30",
+      "runnable_as_is": true,
+      "ms_per_solve": 4.848,
+      "n_branch": 41,
+      "wall_s_at_accept_50pct_1proc": 41.7,
+      "wall_s_at_accept_50pct_5proc": 8.3,
+      "wall_s_at_accept_25pct_1proc": 43.6,
+      "wall_s_at_accept_25pct_5proc": 8.7
+    },
+    {
+      "network": "case57",
+      "runnable_as_is": false,
+      "reason_not_runnable": "nominal base min_vm=0.7199 < 0.94 (39 buses under floor); upward-only stress cannot lift it, N-0 accept ~0%"
+    },
+    {
+      "network": "case118",
+      "runnable_as_is": true,
+      "ms_per_solve": 7.817,
+      "n_branch": 186,
+      "wall_s_at_accept_50pct_1proc": 293.9,
+      "wall_s_at_accept_50pct_5proc": 58.8,
+      "wall_s_at_accept_25pct_1proc": 297.0,
+      "wall_s_at_accept_25pct_5proc": 59.4
+    },
+    {
+      "network": "case300",
+      "runnable_as_is": false,
+      "reason_not_runnable": "pinned oracle (enforce_q_lims=True) does not converge at nominal base"
+    },
+    {
+      "network": "case89pegase",
+      "runnable_as_is": true,
+      "ms_per_solve": 6.694,
+      "n_branch": 210,
+      "wall_s_at_accept_50pct_1proc": 283.8,
+      "wall_s_at_accept_50pct_5proc": 56.8,
+      "wall_s_at_accept_25pct_1proc": 286.5,
+      "wall_s_at_accept_25pct_5proc": 57.3
+    }
+  ],
+  "step4_notes": [
+    "The nominal-base check (base_clears_0p94) is the real gate: the pinned config stresses upward only, so a network is screenable as-is only if its shipped base already clears 0.94.",
+    "case300: pinned oracle (enforce_q_lims=True) does NOT converge at nominal under init dc/flat/auto; with enforcement off the base is 0.889 pu (26 buses under floor). Double transfer failure.",
+    "case89pegase: PEGASE per-unit conventions and native voltage band differ from the IEEE cases; base clears 0.94 but the 0.94 floor itself may not match PEGASE operating limits -- verify before use.",
+    "Extrapolation assumes accept rate 50% (case118-like) and 25% (conservative); actual rate is network-specific and must be probed, as case57 (0%) shows."
+  ]
+}

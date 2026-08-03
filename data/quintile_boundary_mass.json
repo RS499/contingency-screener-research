@@ -1,0 +1,104 @@
+{
+  "what": "case118 bases split into equal-count quintiles by n0_min_vm; boundary mass and violation rate recomputed over each quintile's own converged N-1 rows.",
+  "purpose": "isolate the FILTER effect (base tightness against 0.94) from the NETWORK effect, within a single network (case118).",
+  "boundary_definition_source": "feasibility/freeze_poster_numbers.py:dataset_facts (line 121); mirrored feasibility/case57_gonogo.py:152",
+  "boundary_strip": [
+    0.94,
+    0.945
+  ],
+  "n_bases_total": 1500,
+  "quintiles_low_to_high": [
+    {
+      "quintile": 0,
+      "n_bases": 300,
+      "base_vm_min": 0.94,
+      "base_vm_max": 0.94119,
+      "base_vm_mean": 0.94063,
+      "n1_rows": 55790,
+      "boundary_mass_pct": 78.39,
+      "violation_pct": 21.54
+    },
+    {
+      "quintile": 1,
+      "n_bases": 300,
+      "base_vm_min": 0.94119,
+      "base_vm_max": 0.94256,
+      "base_vm_mean": 0.94183,
+      "n1_rows": 55785,
+      "boundary_mass_pct": 81.28,
+      "violation_pct": 18.55
+    },
+    {
+      "quintile": 2,
+      "n_bases": 300,
+      "base_vm_min": 0.94256,
+      "base_vm_max": 0.94427,
+      "base_vm_mean": 0.94337,
+      "n1_rows": 55792,
+      "boundary_mass_pct": 82.36,
+      "violation_pct": 17.19
+    },
+    {
+      "quintile": 3,
+      "n_bases": 300,
+      "base_vm_min": 0.94428,
+      "base_vm_max": 0.94652,
+      "base_vm_mean": 0.94528,
+      "n1_rows": 55793,
+      "boundary_mass_pct": 37.31,
+      "violation_pct": 15.88
+    },
+    {
+      "quintile": 4,
+      "n_bases": 300,
+      "base_vm_min": 0.94652,
+      "base_vm_max": 0.95898,
+      "base_vm_mean": 0.94905,
+      "n1_rows": 55795,
+      "boundary_mass_pct": 4.98,
+      "violation_pct": 14.21
+    }
+  ],
+  "step2_base_vm_mean_vs_boundary_mass": {
+    "base_vm_mean": [
+      0.94063,
+      0.94183,
+      0.94337,
+      0.94528,
+      0.94905
+    ],
+    "boundary_mass_pct": [
+      78.39,
+      81.28,
+      82.36,
+      37.31,
+      4.98
+    ],
+    "spearman_rank_corr": -0.6
+  },
+  "step3_top_quintile_boundary_mass": {
+    "top_quintile_base_range": [
+      0.94652,
+      0.95898
+    ],
+    "top_quintile_boundary_mass_pct": 4.98,
+    "case118_frozen_boundary_mass_pct": 56.86
+  },
+  "step4_violation_rate_by_quintile": {
+    "base_vm_mean": [
+      0.94063,
+      0.94183,
+      0.94337,
+      0.94528,
+      0.94905
+    ],
+    "violation_pct": [
+      21.54,
+      18.55,
+      17.19,
+      15.88,
+      14.21
+    ],
+    "spearman_rank_corr": -1.0
+  }
+}

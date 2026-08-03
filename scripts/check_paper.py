@@ -65,6 +65,19 @@ LEFTOVER_TAGS = ["TODO", "GRAPHIC_TOOL", "SEVENTEEN", "AI_DISCLOSURE", "FIXME"]
 HARD_FAIL_FILE = "quintile_boundary_mass.json"
 HARD_FAIL_PATH = "step3_top_quintile_vs_case57.case57_boundary_mass_pct"
 
+# Network tokens, longest/most-specific first so "case30" does not swallow "case300".
+NETWORK_TOKENS = ["case118", "case89pegase", "case300", "case57", "case30"]
+# The networks the paper actually makes claims about; only a match spanning >1 of these is a real
+# cross-network dispute. A number that merely also appears in a probe network (case300, case89pegase)
+# is not a dispute.
+DISPUTE_NETWORKS = ["case118", "case30", "case57"]
+
+# A literal is "specific" -- worth flagging cross-network and worth listing every source for -- only
+# if it is distinctive in precision AND matches few artifact leaves. A distinctive value that matches
+# hundreds of leaves (0.94 -> 233, 0.00 -> 5611) is a generic magnitude that coincides across
+# networks by chance, not a transplanted result; those record only a match count.
+MAX_SPECIFIC_SOURCES = 25
+
 
 def strip_line_comment(line):
     """Return the line up to the first unescaped LaTeX comment percent sign."""
@@ -122,35 +135,76 @@ def decimals_in(literal):
     return 0
 
 
+def sig_figs(literal):
+    """Significant-figure count of a printed literal. Trailing zeros count only after a decimal
+    point (so 20.0 -> 3 but 1500 -> 2), matching how the paper conveys precision."""
+    digits = literal.replace(".", "").lstrip("0")
+    if "." not in literal:
+        digits = digits.rstrip("0")
+    return len(digits)
+
+
+def is_distinctive(literal):
+    """A literal is distinctive -- worth tracing and worth flagging cross-network -- if it carries
+    real precision: two or more decimal places, or four or more significant figures. Round targets
+    and small counts (0.0, 0.90, 90, 1500) are not distinctive and only ever coincide."""
+    return decimals_in(literal) >= 2 or sig_figs(literal) >= 4
+
+
 def extract_literals(tex_text):
-    """Return a dict: literal_string -> {'value': float, 'lines': [ints], 'decimals': int}.
-    Aggregated across occurrences so a value that appears many times is reported once."""
+    """Return a dict: literal_string -> {'value': float, 'lines': [ints], 'decimals': int,
+    'distinctive': bool}. Aggregated across occurrences so a repeated value is reported once."""
     lits = {}
     for n, line in get_body_lines(tex_text):
         clean = normalize_thousands(line)
         for m in re.finditer(r"(?<![\w.])(\d+(?:\.\d+)?)(?![\w])", clean):
             s = m.group(1)
             if s not in lits:
-                lits[s] = {"value": float(s), "lines": [], "decimals": decimals_in(s)}
+                lits[s] = {"value": float(s), "lines": [], "decimals": decimals_in(s),
+                           "distinctive": is_distinctive(s)}
             if n not in lits[s]["lines"]:
                 lits[s]["lines"].append(n)
     return lits
 
 
-def walk_json(obj, path, out):
-    """Append (numeric_value, jsonpath) for every number leaf; bools are not treated as numbers."""
+def walk_json(obj, path, ctx, out):
+    """Append (numeric_value, jsonpath, network_context) for every number leaf. network_context is
+    inherited from the nearest ancestor object that carries a "network": "caseNN" field, so that
+    probe files which tag a network as a sibling value (case57_feasibility.json's per-network
+    array) attribute their numbers correctly. Bools are not treated as numbers."""
     if isinstance(obj, bool):
         return
     if isinstance(obj, (int, float)):
-        out.append((float(obj), path))
+        out.append((float(obj), path, ctx))
         return
     if isinstance(obj, dict):
+        here = ctx
+        net = obj.get("network")
+        if isinstance(net, str) and net.lower().startswith("case"):
+            here = net.lower()
         for k, v in obj.items():
-            walk_json(v, f"{path}.{k}" if path else str(k), out)
+            walk_json(v, f"{path}.{k}" if path else str(k), here, out)
         return
     if isinstance(obj, list):
         for i, v in enumerate(obj):
-            walk_json(v, f"{path}[{i}]", out)
+            walk_json(v, f"{path}[{i}]", ctx, out)
+
+
+def classify_network(fname, jsonpath, ctx):
+    """Map a (file, jsonpath, context) source to its network. Order of authority: an explicit
+    network token in the jsonpath (so a case118_comparators block reads case118 wherever it lives),
+    then the inherited sibling-"network" context, then a token in the filename, then case118."""
+    p = jsonpath.lower()
+    for tok in NETWORK_TOKENS:
+        if tok in p:
+            return tok
+    if ctx:
+        return ctx
+    f = fname.lower()
+    for tok in NETWORK_TOKENS:
+        if tok in f:
+            return tok
+    return "case118"
 
 
 def load_artifacts(data_dir):
@@ -168,34 +222,15 @@ def load_artifacts(data_dir):
             sys.stderr.write(f"warning: could not parse {fname}: {e}\n")
             continue
         leaves = []
-        walk_json(obj, "", leaves)
-        for value, jsonpath in leaves:
+        walk_json(obj, "", None, leaves)
+        for value, jsonpath, ctx in leaves:
             records.append({
                 "value": value,
                 "file": fname,
                 "jsonpath": jsonpath,
-                "network": classify_network(fname, jsonpath),
+                "network": classify_network(fname, jsonpath, ctx),
             })
     return records
-
-
-def classify_network(fname, jsonpath):
-    """Map a (file, jsonpath) source to its network. A jsonpath naming a network overrides the
-    filename (so a case118_comparators block inside case30_frozen.json reads as case118, and a
-    case57 field inside a case118 file reads as case57)."""
-    p = jsonpath.lower()
-    if "case57" in p:
-        return "case57"
-    if "case30" in p:
-        return "case30"
-    if "case118" in p:
-        return "case118"
-    f = fname.lower()
-    if "case57" in f:
-        return "case57"
-    if "case30" in f:
-        return "case30"
-    return "case118"
 
 
 def value_matches(literal_value, decimals, json_value):
@@ -216,7 +251,9 @@ def value_matches(literal_value, decimals, json_value):
 
 
 def match_literals(literals, records):
-    """For each literal, find every artifact record it matches and assign a status."""
+    """For each literal, find every artifact record it matches and assign a status. AMBIGUOUS is
+    reserved for distinctive literals that span more than one claim network; a round number that
+    merely coincides across networks downgrades to MATCHED (its network set is still recorded)."""
     results = []
     for s in sorted(literals, key=lambda x: literals[x]["value"]):
         info = literals[s]
@@ -239,11 +276,13 @@ def match_literals(literals, records):
         other_sources = [src for src in sources if src not in on_killed_field]
         hard = bool(on_killed_field) and not other_sources
         networks = sorted(set(src["network"] for src in sources))
+        dispute = sorted(n for n in networks if n in DISPUTE_NETWORKS)
+        specific = info["distinctive"] and len(sources) <= MAX_SPECIFIC_SOURCES
         if hard:
             status = "HARD_FAIL"
         elif not sources:
             status = "ORPHAN"
-        elif len(networks) > 1:
+        elif specific and len(dispute) > 1:
             status = "AMBIGUOUS"
         else:
             status = "MATCHED"
@@ -251,6 +290,8 @@ def match_literals(literals, records):
             "literal": s,
             "value": info["value"],
             "lines": info["lines"],
+            "distinctive": info["distinctive"],
+            "specific": specific,
             "status": status,
             "networks": networks,
             "sources": sources,
@@ -369,21 +410,44 @@ def build_report(tex_path):
     }
 
 
+def provenance_entry(r):
+    """One literal's provenance record. Specific literals (distinctive precision AND few matches)
+    carry the full source list, worth tracing; everything else carries only a match count and the
+    network set, so round numbers and coincidence-magnets with hundreds of matches do not bloat
+    the file."""
+    entry = {
+        "literal": r["literal"],
+        "value": r["value"],
+        "lines": r["lines"],
+        "status": r["status"],
+        "distinctive": r["distinctive"],
+        "specific": r["specific"],
+        "networks": r["networks"],
+    }
+    if r["specific"]:
+        entry["sources"] = r["sources"]
+    else:
+        entry["match_count"] = len(r["sources"])
+    return entry
+
+
 def write_provenance(report, data_dir):
-    """Write the full literal->sources map and a manifest beside it. Called only for
-    --update-provenance."""
+    """Write the literal->sources map and a manifest beside it. Called only for --update-provenance."""
     out_path = os.path.join(data_dir, "paper_provenance.json")
     payload = {
         "generated_from": os.path.basename(report["tex"]),
         "n_artifacts_scanned": report["n_artifacts"],
         "n_numeric_leaves": report["n_records"],
+        "policy": "specific literals (distinctive precision -- >=2 decimals or >=4 sig figs -- AND "
+                  f"<= {MAX_SPECIFIC_SOURCES} matches) list all sources; everything else records "
+                  "only a match count and network set",
         "status_counts": {
             "matched": len(report["matched"]),
             "orphan": len(report["orphans"]),
             "ambiguous": len(report["ambiguous"]),
             "hard_fail": len(report["hard_fail"]),
         },
-        "literals": report["literals"],
+        "literals": [provenance_entry(r) for r in report["literals"]],
     }
     with open(out_path, "w") as fh:
         json.dump(payload, fh, indent=2)
@@ -435,7 +499,7 @@ def print_report(report):
             print(f"  {p}")
 
     if report["ambiguous"]:
-        print("\n== AMBIGUOUS (matches >1 network; warning, does not fail) ==")
+        print("\n== AMBIGUOUS (distinctive literal in >1 claim network; warning, does not fail) ==")
         print("   (full per-source detail is in data/paper_provenance.json)")
         for r in report["ambiguous"]:
             nets = ",".join(r["networks"])

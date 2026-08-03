@@ -1,0 +1,43 @@
+{
+  "question": "is the deepest-miss collapse Q-limit-enforcement dependent?",
+  "scenario_id": 101000025,
+  "outaged_line": 78,
+  "bus_numbering": {
+    "convention_in_paper": "pandapower 0-based positional bus INDEX (argmin_bus)",
+    "source": "freeze_poster_numbers.py:116 (bus=int(argmin_bus)); domain_figure.py:57 comment",
+    "index_to_ieee_name": {
+      "75": 76,
+      "52": 53,
+      "106": 107,
+      "53": 54
+    },
+    "note": "critical_bus_top5 stores the INDEX; IEEE 1-based names differ (see mapping)"
+  },
+  "gen21_reactive_state": {
+    "gen": 21,
+    "bus": "53 (IEEE 54)",
+    "q_mvar_n0": -10.0014512776402,
+    "q_mvar_post_outage": -194.7146759033203,
+    "min_q_mvar_scenario": -194.7146759033203,
+    "max_q_mvar_scenario": 194.7146759033203
+  },
+  "gen21_note": "no contradiction: -10.0 is the N-0 (pre-outage) reactive output; -194.7 is the post-outage output, pinned at gen 21's scenario min_q_mvar (absorbing limit)",
+  "qlims_check": {
+    "enforce_q_lims_true": {
+      "converged": true,
+      "min_vm": 0.8485430618229496,
+      "argmin_bus": 53,
+      "argmin_ieee": 54
+    },
+    "enforce_q_lims_false": {
+      "converged": true,
+      "min_vm": 0.9390094419026994,
+      "argmin_bus": 19,
+      "argmin_ieee": 20
+    },
+    "delta_off_minus_on": 0.09046638007974983,
+    "interpretation": "under enforce_q_lims=False PV gens hold setpoint regardless of reactive output, so no Q-limit binds and the limit-induced collapse cannot occur; the deep miss exists only under the pinned enforce_q_lims=True oracle"
+  },
+  "pinned_config_untouched": "generate_dataset.solve keeps enforce_q_lims=True; this is a one-off local solve",
+  "solves_run": 2
+}

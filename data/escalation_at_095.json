@@ -1,0 +1,67 @@
+{
+  "purpose": "Discussion placeholder: escalation rate at a 0.95 pu screening limit, M2 models",
+  "operating_point": "coverage target 0.9 (the headline escalation)",
+  "note": "q_hat is limit-independent (residual quantile); only the gate boundaries move from 0.94 to 0.95. Refit of the five per-seed M2 models per family; cal and test untouched. The 0.94 column is a consistency check against the v2 curve headline.",
+  "std_convention": "population std (ddof=0) over five held-out splits",
+  "coverage_target": 0.9,
+  "limits": [
+    0.94,
+    0.95
+  ],
+  "per_seed": {
+    "ridge": {
+      "0.94": [
+        0.5394791087848859,
+        0.4879552624032119,
+        0.4644271963002133,
+        0.46925131293577815,
+        0.49237332186194904
+      ],
+      "0.95": [
+        0.013443510369427664,
+        0.016507743045597933,
+        0.015326151253876352,
+        0.007689412270796365,
+        0.016275026437955944
+      ]
+    },
+    "histgb": {
+      "0.94": [
+        0.31979422466794527,
+        0.3211930025810152,
+        0.25738971444960296,
+        0.3078274273628363,
+        0.32505242781093724
+      ],
+      "0.95": [
+        0.008012332180178888,
+        0.010144823630628047,
+        0.0357789449154821,
+        0.022351275295298526,
+        0.002616909537380581
+      ]
+    }
+  },
+  "summary": {
+    "ridge": {
+      "escalation_at_0.94": {
+        "mean": 0.4906972404572077,
+        "std": 0.02660842497152996
+      },
+      "escalation_at_0.95": {
+        "mean": 0.01384836867553085,
+        "std": 0.0032631713264372076
+      }
+    },
+    "histgb": {
+      "escalation_at_0.94": {
+        "mean": 0.3062513593744674,
+        "std": 0.02510014506527553
+      },
+      "escalation_at_0.95": {
+        "mean": 0.01578085711179363,
+        "std": 0.011903766459957115
+      }
+    }
+  }
+}

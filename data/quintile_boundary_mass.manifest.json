@@ -1,0 +1,17 @@
+{
+  "python": "3.13",
+  "generated_by": "feasibility/quintile_boundary_mass.py",
+  "inputs": {
+    "dataset": "data/dataset.parquet"
+  },
+  "boundary_definition_source": "feasibility/freeze_poster_numbers.py:dataset_facts (line 121); mirrored feasibility/case57_gonogo.py:152",
+  "boundary_strip": [
+    0.94,
+    0.945
+  ],
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "note": "Zero new solves; read-only over data/dataset.parquet. No model, no solver."
+}

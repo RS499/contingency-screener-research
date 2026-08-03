@@ -1,0 +1,97 @@
+{
+  "network": "case30",
+  "source_dataset": "data/case30_dataset.parquet",
+  "violation_rate_pct": 28.8081,
+  "saturation_point_pct": 71.1919,
+  "boundary_mass_pct": 20.0146,
+  "case118_comparators": {
+    "violation_rate_pct": 17.48,
+    "saturation_point_pct": 82.52,
+    "boundary_mass_pct": 56.86,
+    "source": "data/frozen_poster_numbers_v2.json"
+  },
+  "four_metrics_at_90pct_coverage": {
+    "ridge": {
+      "escalation_mean": 0.2787479674796748,
+      "escalation_std": 0.039865017802473965,
+      "coverage_emp_mean": 0.8986991869918699,
+      "coverage_emp_std": 0.008007201464874878,
+      "missed_viol_mean": 0.014931446336352586,
+      "missed_viol_std": 0.005266917347155904,
+      "net_speedup_mean": 3.656172918726378,
+      "net_speedup_std": 0.4819096294668373,
+      "n_missed_per_seed": [
+        34,
+        29,
+        59,
+        71,
+        75
+      ],
+      "n_true_viol_per_seed": [
+        3511,
+        3680,
+        3607,
+        3554,
+        3613
+      ],
+      "n_test_per_seed": [
+        12300,
+        12300,
+        12300,
+        12300,
+        12300
+      ],
+      "predicted_esc_mean": 0.279252025344496,
+      "predicted_esc_std": 0.034089672025609995,
+      "predicted_vs_measured_pct_error": -0.18050285014026013
+    },
+    "histgb": {
+      "escalation_mean": 0.06982113821138211,
+      "escalation_std": 0.008738593218304216,
+      "coverage_emp_mean": 0.9017235772357723,
+      "coverage_emp_std": 0.008076801024302383,
+      "missed_viol_mean": 0.014664013437545673,
+      "missed_viol_std": 0.0019516327459219356,
+      "net_speedup_mean": 14.521830759934906,
+      "net_speedup_std": 1.5993600086777708,
+      "n_missed_per_seed": [
+        64,
+        51,
+        47,
+        54,
+        47
+      ],
+      "n_true_viol_per_seed": [
+        3511,
+        3680,
+        3607,
+        3554,
+        3613
+      ],
+      "n_test_per_seed": [
+        12300,
+        12300,
+        12300,
+        12300,
+        12300
+      ],
+      "predicted_esc_mean": 0.07851975275712815,
+      "predicted_esc_std": 0.011227766963246351,
+      "predicted_vs_measured_pct_error": -11.078250045758537
+    }
+  },
+  "crossings_first_below_1pct_missed": {
+    "ridge": {
+      "coverage_target": 0.92,
+      "missed_viol": 0.008529558690475118,
+      "escalation": 0.3448292682926829,
+      "net_speedup": 2.9849746109526554
+    },
+    "histgb": {
+      "coverage_target": 0.93,
+      "missed_viol": 0.009811169467608008,
+      "escalation": 0.08959349593495934,
+      "net_speedup": 11.265301491886408
+    }
+  }
+}
