@@ -1,0 +1,114 @@
+{
+  "network": "case30",
+  "limit": 0.94,
+  "boundary_strip": [
+    0.94,
+    0.945
+  ],
+  "strip_width": 0.005,
+  "coverage_target_for_prediction": 0.9,
+  "definition": "rho_cal = (share of CALIBRATION rows with true min_vm in [0.94,0.945)) / 0.005; predicted_esc = rho_cal * q_hat_90. Computed from calibration TRUE OUTCOMES only (y_cal), never from predictions and never from test.",
+  "written_before_test_access": true,
+  "records": [
+    {
+      "family": "ridge",
+      "seed": 0,
+      "m2_tag": "alpha1e+04",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2179,
+      "rho_cal": 35.43089430894309,
+      "q_hat_90": 0.007456652630047467,
+      "predicted_esc": 0.2641958712337143
+    },
+    {
+      "family": "ridge",
+      "seed": 1,
+      "m2_tag": "alpha1e+04",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2456,
+      "rho_cal": 39.9349593495935,
+      "q_hat_90": 0.008240028465165472,
+      "predicted_esc": 0.32906520179587645
+    },
+    {
+      "family": "ridge",
+      "seed": 2,
+      "m2_tag": "alpha0.001",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2699,
+      "rho_cal": 43.886178861788615,
+      "q_hat_90": 0.007056303186465995,
+      "predicted_esc": 0.3096741837442556
+    },
+    {
+      "family": "ridge",
+      "seed": 3,
+      "m2_tag": "alpha0.03162",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2384,
+      "rho_cal": 38.764227642276424,
+      "q_hat_90": 0.0064957155499951735,
+      "predicted_esc": 0.2518013962794877
+    },
+    {
+      "family": "ridge",
+      "seed": 4,
+      "m2_tag": "alpha10",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2225,
+      "rho_cal": 36.17886178861789,
+      "q_hat_90": 0.006675817362090997,
+      "predicted_esc": 0.2415234736691458
+    },
+    {
+      "family": "histgb",
+      "seed": 0,
+      "m2_tag": "rand15",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2179,
+      "rho_cal": 35.43089430894309,
+      "q_hat_90": 0.0018880837773327386,
+      "predicted_esc": 0.0668964967611063
+    },
+    {
+      "family": "histgb",
+      "seed": 1,
+      "m2_tag": "rand00",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2456,
+      "rho_cal": 39.9349593495935,
+      "q_hat_90": 0.0023592385397874782,
+      "predicted_esc": 0.09421609518240727
+    },
+    {
+      "family": "histgb",
+      "seed": 2,
+      "m2_tag": "rand15",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2699,
+      "rho_cal": 43.886178861788615,
+      "q_hat_90": 0.002046615518474404,
+      "predicted_esc": 0.08981813470507993
+    },
+    {
+      "family": "histgb",
+      "seed": 3,
+      "m2_tag": "rand15",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2384,
+      "rho_cal": 38.764227642276424,
+      "q_hat_90": 0.0018591296070343821,
+      "predicted_esc": 0.0720677233035767
+    },
+    {
+      "family": "histgb",
+      "seed": 4,
+      "m2_tag": "rand13",
+      "n_cal": 12300,
+      "cal_boundary_rows": 2225,
+      "rho_cal": 36.17886178861789,
+      "q_hat_90": 0.0019237839553970515,
+      "predicted_esc": 0.06960031383347057
+    }
+  ]
+}

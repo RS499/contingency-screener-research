@@ -1,0 +1,314 @@
+{
+  "scenario_id": 101000025,
+  "outaged_line": 78,
+  "weak_bus_index": 53,
+  "weak_bus_ieee_name": 54,
+  "note_index_vs_name": "pandapower bus INDEX != IEEE bus NAME; both are reported everywhere",
+  "part1_mechanism": {
+    "line78_endpoints": {
+      "from_bus": "50 (IEEE 51)",
+      "to_bus": "57 (IEEE 58)"
+    },
+    "adjacency": {
+      "50": {
+        "label": "50 (IEEE 51)",
+        "neighbors": [
+          {
+            "kind": "line",
+            "idx": 66,
+            "other": "48 (IEEE 49)"
+          },
+          {
+            "kind": "line",
+            "idx": 67,
+            "other": "51 (IEEE 52)"
+          },
+          {
+            "kind": "line",
+            "idx": 78,
+            "other": "57 (IEEE 58)"
+          }
+        ]
+      },
+      "53": {
+        "label": "53 (IEEE 54)",
+        "neighbors": [
+          {
+            "kind": "line",
+            "idx": 69,
+            "other": "52 (IEEE 53)"
+          },
+          {
+            "kind": "line",
+            "idx": 70,
+            "other": "48 (IEEE 49)"
+          },
+          {
+            "kind": "line",
+            "idx": 71,
+            "other": "48 (IEEE 49)"
+          },
+          {
+            "kind": "line",
+            "idx": 72,
+            "other": "54 (IEEE 55)"
+          },
+          {
+            "kind": "line",
+            "idx": 73,
+            "other": "55 (IEEE 56)"
+          },
+          {
+            "kind": "line",
+            "idx": 79,
+            "other": "58 (IEEE 59)"
+          }
+        ]
+      },
+      "54": {
+        "label": "54 (IEEE 55)",
+        "neighbors": [
+          {
+            "kind": "line",
+            "idx": 72,
+            "other": "53 (IEEE 54)"
+          },
+          {
+            "kind": "line",
+            "idx": 74,
+            "other": "55 (IEEE 56)"
+          },
+          {
+            "kind": "line",
+            "idx": 82,
+            "other": "58 (IEEE 59)"
+          }
+        ]
+      },
+      "57": {
+        "label": "57 (IEEE 58)",
+        "neighbors": [
+          {
+            "kind": "line",
+            "idx": 77,
+            "other": "55 (IEEE 56)"
+          },
+          {
+            "kind": "line",
+            "idx": 78,
+            "other": "50 (IEEE 51)"
+          }
+        ]
+      }
+    },
+    "weak_bus_type": "PV (has generator)",
+    "paths_to_generation": {
+      "weak_bus_degree_intact": 7,
+      "indep_paths_to_gen_intact": "src_is_generator",
+      "weak_bus_degree_line78_out": 7,
+      "indep_paths_to_gen_line78_out": "src_is_generator",
+      "endpoint_degree_after_outage": {
+        "50": 2,
+        "57": 1,
+        "53": 6
+      },
+      "radial_after_outage": true
+    },
+    "reactive_support_near_weak_bus": {
+      "generators_within_2_hops": [
+        {
+          "gen": 18,
+          "bus": "41 (IEEE 42)",
+          "hops": 2,
+          "qmin_scn": -385.9031677246094,
+          "qmax_scn": 385.9031677246094,
+          "on": 1
+        },
+        {
+          "gen": 20,
+          "bus": "48 (IEEE 49)",
+          "hops": 1,
+          "qmin_scn": -103.48799133300781,
+          "qmax_scn": 255.67620849609375,
+          "on": 1
+        },
+        {
+          "gen": 21,
+          "bus": "53 (IEEE 54)",
+          "hops": 0,
+          "qmin_scn": -194.7146759033203,
+          "qmax_scn": 194.7146759033203,
+          "on": 1
+        },
+        {
+          "gen": 22,
+          "bus": "54 (IEEE 55)",
+          "hops": 1,
+          "qmin_scn": -7.549462795257568,
+          "qmax_scn": 21.70470428466797,
+          "on": 1
+        },
+        {
+          "gen": 23,
+          "bus": "55 (IEEE 56)",
+          "hops": 1,
+          "qmin_scn": -7.684764385223389,
+          "qmax_scn": 14.40893268585205,
+          "on": 1
+        },
+        {
+          "gen": 24,
+          "bus": "58 (IEEE 59)",
+          "hops": 1,
+          "qmin_scn": -75.73368835449219,
+          "qmax_scn": 227.20106506347656,
+          "on": 1
+        },
+        {
+          "gen": 25,
+          "bus": "60 (IEEE 61)",
+          "hops": 2,
+          "qmin_scn": -134.20574951171875,
+          "qmax_scn": 402.6172790527344,
+          "on": 1
+        },
+        {
+          "gen": 28,
+          "bus": "65 (IEEE 66)",
+          "hops": 2,
+          "qmin_scn": -59.51121520996094,
+          "qmax_scn": 177.64541625976562,
+          "on": 1
+        }
+      ],
+      "shunts_within_2_hops": [
+        {
+          "shunt": 4,
+          "bus": "44 (IEEE 45)",
+          "q_mvar": -10.0
+        },
+        {
+          "shunt": 6,
+          "bus": "47 (IEEE 48)",
+          "q_mvar": -15.0
+        }
+      ]
+    },
+    "reconstruction": {
+      "reproduced": true,
+      "recorded_min_vm": 0.8485430748588177,
+      "solved_n1_min_vm": 0.8485430618229496,
+      "solved_n1_argmin": 53,
+      "solved_n0_min_vm": 0.9450730085372923,
+      "solved_n0_argmin": 26,
+      "dataset_n0_min_vm": 0.9450729906334574
+    },
+    "key_bus_voltages_n0_vs_n1": {
+      "50": {
+        "label": "50 (IEEE 51)",
+        "vm_n0": 0.9721133929845029,
+        "vm_n1": 0.9401760964081494
+      },
+      "53": {
+        "label": "53 (IEEE 54)",
+        "vm_n0": 0.9548661708831788,
+        "vm_n1": 0.8485430618229496
+      },
+      "57": {
+        "label": "57 (IEEE 58)",
+        "vm_n0": 0.9621957651653131,
+        "vm_n1": 0.8491946516202186
+      }
+    },
+    "saturated_gens_near_weak_bus_post_outage": [
+      {
+        "gen": 20,
+        "bus": "48 (IEEE 49)",
+        "q_n1": 255.67620849609375,
+        "qmax": 255.67620849609375,
+        "qmin": -103.48799133300781,
+        "q_n0": 237.75332189325366,
+        "at_max": true,
+        "at_min": false,
+        "hops": 1
+      },
+      {
+        "gen": 21,
+        "bus": "53 (IEEE 54)",
+        "q_n1": -194.7146759033203,
+        "qmax": 194.7146759033203,
+        "qmin": -194.7146759033203,
+        "q_n0": -10.0014512776402,
+        "at_max": false,
+        "at_min": true,
+        "hops": 0
+      },
+      {
+        "gen": 22,
+        "bus": "54 (IEEE 55)",
+        "q_n1": -7.549462795257568,
+        "qmax": 21.70470428466797,
+        "qmin": -7.549462795257568,
+        "q_n0": -7.549462795257568,
+        "at_max": false,
+        "at_min": true,
+        "hops": 1
+      },
+      {
+        "gen": 23,
+        "bus": "55 (IEEE 56)",
+        "q_n1": 14.40893268585205,
+        "qmax": 14.40893268585205,
+        "qmin": -7.684764385223389,
+        "q_n0": 14.40893268585205,
+        "at_max": true,
+        "at_min": false,
+        "hops": 1
+      },
+      {
+        "gen": 24,
+        "bus": "58 (IEEE 59)",
+        "q_n1": 227.20106506347656,
+        "qmax": 227.20106506347656,
+        "qmin": -75.73368835449219,
+        "q_n0": 124.04954910235716,
+        "at_max": true,
+        "at_min": false,
+        "hops": 1
+      }
+    ]
+  },
+  "part2_split_independence": {
+    "scenario_test_seeds": [
+      1,
+      2,
+      3
+    ],
+    "scenario_test_count": 3,
+    "n_scenarios": 1500,
+    "test_frac_per_seed": 0.2,
+    "seeds": 5,
+    "observed_membership_counts": {
+      "0": 482,
+      "1": 623,
+      "2": 316,
+      "3": 71,
+      "4": 8,
+      "5": 0
+    },
+    "expected_binomial_5_0p2": {
+      "0": 491.5200000000001,
+      "1": 614.4000000000001,
+      "2": 307.20000000000016,
+      "3": 76.80000000000004,
+      "4": 9.600000000000001,
+      "5": 0.4800000000000001
+    },
+    "mean_membership_count": 1.0,
+    "chi_square": 1.7415364583333315,
+    "independent_ok": true,
+    "interpretation": "mean ~1.0 and observed ~ expected Binomial(5,0.2) => per-seed test sets are independent draws; a large chi-square or mean far from 1.0 would flag correlated splits"
+  },
+  "solver": "enforce_q_lims=True, init=dc, numba=True (pinned)",
+  "solves_run": 2
+}

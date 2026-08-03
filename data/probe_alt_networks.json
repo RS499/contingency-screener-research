@@ -1,0 +1,106 @@
+{
+  "purpose": "cheap go/no-go probe: is a same-rule out-of-sample comparison available on another network? NOT a training dataset; no frozen artifact.",
+  "config_source": "IMPORTED from case57_gonogo.COMMITTED_CFG + generate_dataset.py module globals + generate_dataset.solve; NOT retyped. Documented committed build: feasibility/broadened-diversity.md line 62.",
+  "committed_cfg_used": {
+    "mult_lo": 1.0,
+    "mult_hi": 1.12,
+    "reg_lo": 1.0,
+    "reg_hi": 1.12,
+    "pf_lo": 0.9,
+    "pf_hi": 1.15,
+    "dvm": 0.025
+  },
+  "stress": "fixed",
+  "seed": 100,
+  "solver": {
+    "enforce_q_lims": true,
+    "init": "dc",
+    "numba": true,
+    "algorithm": "nr"
+  },
+  "n0_gate": "accept iff N-0 converges and n0_min_vm >= 0.94",
+  "vmin_limit": 0.94,
+  "step2a_nominal_n0_scan": [
+    {
+      "network": "case30",
+      "built": true,
+      "pinned_oracle_converges": true,
+      "n_bus": 30,
+      "base_min_vm": 0.9606,
+      "buses_below_0p94": 0,
+      "clears_0p94": true,
+      "margin_above_0p94": 0.0206
+    },
+    {
+      "network": "case89pegase",
+      "built": true,
+      "pinned_oracle_converges": true,
+      "n_bus": 89,
+      "base_min_vm": 0.9684,
+      "buses_below_0p94": 0,
+      "clears_0p94": true,
+      "margin_above_0p94": 0.0284
+    },
+    {
+      "network": "case300",
+      "built": true,
+      "pinned_oracle_converges": false,
+      "base_min_vm": null,
+      "clears_0p94": null,
+      "n_bus": 300
+    }
+  ],
+  "step2b_best_margin_network": "case89pegase",
+  "step2b_draw": {
+    "network": "case89pegase",
+    "n_draw": 50,
+    "seed": 100,
+    "n0_nonconverged": 18,
+    "accepted": 19,
+    "accept_rate_pct": 38.0,
+    "accepted_base_min_vm_range": [
+      0.9409,
+      0.9648
+    ],
+    "all_converged_n0_min_vm_range": [
+      0.8852,
+      0.9648
+    ]
+  },
+  "step2b_draws_all_clearing": [
+    {
+      "network": "case30",
+      "n_draw": 50,
+      "seed": 100,
+      "n0_nonconverged": 0,
+      "accepted": 40,
+      "accept_rate_pct": 80.0,
+      "accepted_base_min_vm_range": [
+        0.9417,
+        0.9674
+      ],
+      "all_converged_n0_min_vm_range": [
+        0.8973,
+        0.9674
+      ]
+    },
+    {
+      "network": "case89pegase",
+      "n_draw": 50,
+      "seed": 100,
+      "n0_nonconverged": 18,
+      "accepted": 19,
+      "accept_rate_pct": 38.0,
+      "accepted_base_min_vm_range": [
+        0.9409,
+        0.9648
+      ],
+      "all_converged_n0_min_vm_range": [
+        0.8852,
+        0.9648
+      ]
+    }
+  ],
+  "case57_reference": "NO-GO: nominal 0.7199 pu, 0/3000 accepted (data/case57_feasibility.json)",
+  "pegase_caveat": "case89pegase uses PEGASE per-unit conventions; its native voltage band may differ from the IEEE 0.94 floor. 'clears 0.94' can be physically inapplicable \u2014 verify the operating limit before any same-rule claim."
+}

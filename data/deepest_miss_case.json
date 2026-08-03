@@ -1,0 +1,143 @@
+{
+  "question": "recheck deepest-miss/q_hat ratio and identify the recurring deepest-miss contingency",
+  "part1_max_depth_vs_qhat90": {
+    "ridge": {
+      "max_depth": 0.0914569251411822,
+      "q_hat90_per_seed": [
+        0.00552461357270162,
+        0.0051332624013122885,
+        0.004943555243710485,
+        0.0049365181872691455,
+        0.00545320578083186
+      ],
+      "q_hat90_mean": 0.005198231037165079,
+      "ratio_to_q_hat90_mean": 17.593855387978174,
+      "deepest_miss_seed": 2,
+      "deepest_miss_q_hat": 0.004943555243710485,
+      "ratio_to_that_seed_q_hat": 18.500233259765775
+    },
+    "histgb": {
+      "max_depth": 0.0914569251411822,
+      "q_hat90_per_seed": [
+        0.002335618678972362,
+        0.002353357097683695,
+        0.0020534393537054996,
+        0.002262051382869279,
+        0.002449047318323294
+      ],
+      "q_hat90_mean": 0.002290702766310826,
+      "ratio_to_q_hat90_mean": 39.925269435315464,
+      "deepest_miss_seed": 1,
+      "deepest_miss_q_hat": 0.002353357097683695,
+      "ratio_to_that_seed_q_hat": 38.862323627467845
+    }
+  },
+  "part1_note": "ratio_to_q_hat90_mean is max_depth divided by the family's mean band at coverage 0.90 over 5 seeds; ratio_to_that_seed_q_hat uses the exact band that certified the deepest miss. The earlier '~40x ridge' phrasing was wrong; ridge is ~18x.",
+  "part2_case": {
+    "scenario_id": 101000025,
+    "outaged_type": "line",
+    "outaged_idx": 78,
+    "outaged_topology": {
+      "element": "line 78",
+      "from_bus": 50,
+      "to_bus": 57,
+      "vn_kv": 138.0,
+      "weak_bus_index": 53,
+      "weak_bus_vn_kv": 138.0,
+      "weak_bus_name": "54"
+    },
+    "weak_bus_index": 53,
+    "weak_bus_is_one_of_75_52_106": false,
+    "n0_base_min_vm": 0.9450729906334574,
+    "min_vm_n1": 0.8485430748588177,
+    "depth_below_floor": 0.0914569251411822,
+    "rows_in_this_scenario": 186,
+    "rows_at_this_exact_min_vm": 1,
+    "base_range": {
+      "n_scenarios": 1500,
+      "min": 0.940000035663552,
+      "p1": 0.9400747480116898,
+      "p5": 0.9403548638009962,
+      "median": 0.9433575252264039,
+      "max": 0.9589759294393103,
+      "this_scenario_n0_min_vm": 0.9450729906334574,
+      "percentile_of_this_base": 68.46666666666667
+    },
+    "model_predictions_by_seed": [
+      {
+        "seed": 0,
+        "in_test": false
+      },
+      {
+        "seed": 1,
+        "in_test": true,
+        "true_min_vm": 0.8485430748588177,
+        "ridge": {
+          "pred": 0.9447238445281982,
+          "error_pred_minus_true": 0.0961807696693805,
+          "q_hat90": 0.0051332624013122885,
+          "lower_band": 0.939590582126886,
+          "certified_safe": false,
+          "depth_below_floor": 0.0914569251411822
+        },
+        "histgb": {
+          "pred": 0.9445677101420181,
+          "error_pred_minus_true": 0.09602463528320038,
+          "q_hat90": 0.002353357097683695,
+          "lower_band": 0.9422143530443344,
+          "certified_safe": true,
+          "depth_below_floor": 0.0914569251411822
+        }
+      },
+      {
+        "seed": 2,
+        "in_test": true,
+        "true_min_vm": 0.8485430748588177,
+        "ridge": {
+          "pred": 0.9461526870727539,
+          "error_pred_minus_true": 0.09760961221393616,
+          "q_hat90": 0.004943555243710485,
+          "lower_band": 0.9412091318290434,
+          "certified_safe": true,
+          "depth_below_floor": 0.0914569251411822
+        },
+        "histgb": {
+          "pred": 0.9455979339244389,
+          "error_pred_minus_true": 0.09705485906562117,
+          "q_hat90": 0.0020534393537054996,
+          "lower_band": 0.9435444945707334,
+          "certified_safe": true,
+          "depth_below_floor": 0.0914569251411822
+        }
+      },
+      {
+        "seed": 3,
+        "in_test": true,
+        "true_min_vm": 0.8485430748588177,
+        "ridge": {
+          "pred": 0.9449155926704407,
+          "error_pred_minus_true": 0.09637251781162293,
+          "q_hat90": 0.0049365181872691455,
+          "lower_band": 0.9399790744831715,
+          "certified_safe": false,
+          "depth_below_floor": 0.0914569251411822
+        },
+        "histgb": {
+          "pred": 0.9461337865110989,
+          "error_pred_minus_true": 0.09759071165228117,
+          "q_hat90": 0.002262051382869279,
+          "lower_band": 0.9438717351282296,
+          "certified_safe": true,
+          "depth_below_floor": 0.0914569251411822
+        }
+      },
+      {
+        "seed": 4,
+        "in_test": false
+      }
+    ]
+  },
+  "matched_row_pos": 74468,
+  "target_min_vm": 0.8485430748588177,
+  "no_new_solves": "surrogates refit deterministically; no AC power-flow solve rerun"
+}

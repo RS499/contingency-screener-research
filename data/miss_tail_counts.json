@@ -1,0 +1,134 @@
+{
+  "coverage_target": 0.9,
+  "thresholds_pu": [
+    0.01,
+    0.02,
+    0.05
+  ],
+  "shortfall_def": "E[depth | certified miss] = mean(0.94 - Y over certified true violations)",
+  "std_convention": "population std ddof=0 across 5 seeds",
+  "families": {
+    "ridge": {
+      "per_seed": [
+        {
+          "seed": 0,
+          "n_miss": 257,
+          "shortfall_mean_depth": 0.004519274220971389,
+          "n_gt_0.01": 27,
+          "n_gt_0.02": 3,
+          "n_gt_0.05": 0
+        },
+        {
+          "seed": 1,
+          "n_miss": 335,
+          "shortfall_mean_depth": 0.0034145758475471054,
+          "n_gt_0.01": 21,
+          "n_gt_0.02": 4,
+          "n_gt_0.05": 0
+        },
+        {
+          "seed": 2,
+          "n_miss": 341,
+          "shortfall_mean_depth": 0.005735142812645226,
+          "n_gt_0.01": 35,
+          "n_gt_0.02": 10,
+          "n_gt_0.05": 6
+        },
+        {
+          "seed": 3,
+          "n_miss": 272,
+          "shortfall_mean_depth": 0.003794652988960623,
+          "n_gt_0.01": 22,
+          "n_gt_0.02": 3,
+          "n_gt_0.05": 0
+        },
+        {
+          "seed": 4,
+          "n_miss": 231,
+          "shortfall_mean_depth": 0.004809477182412714,
+          "n_gt_0.01": 26,
+          "n_gt_0.02": 9,
+          "n_gt_0.05": 1
+        }
+      ],
+      "n_miss_seedmean": 287.2,
+      "n_miss_seedstd": 43.544919336244035,
+      "shortfall_mean_depth_seedmean": 0.004454624610507411,
+      "shortfall_mean_depth_seedstd": 0.000810813265371204,
+      "n_gt_0.01_seedmean": 26.2,
+      "n_gt_0.01_seedstd": 4.955804677345546,
+      "n_gt_0.02_seedmean": 5.8,
+      "n_gt_0.02_seedstd": 3.059411708155671,
+      "n_gt_0.05_seedmean": 1.4,
+      "n_gt_0.05_seedstd": 2.33238075793812,
+      "pooled": {
+        "n_miss": 1436,
+        "shortfall_mean_depth": 0.004459717914320735,
+        "n_gt_0.01": 131,
+        "n_gt_0.02": 29,
+        "n_gt_0.05": 7
+      }
+    },
+    "histgb": {
+      "per_seed": [
+        {
+          "seed": 0,
+          "n_miss": 447,
+          "shortfall_mean_depth": 0.0034690011919635225,
+          "n_gt_0.01": 32,
+          "n_gt_0.02": 5,
+          "n_gt_0.05": 1
+        },
+        {
+          "seed": 1,
+          "n_miss": 421,
+          "shortfall_mean_depth": 0.005101132221494403,
+          "n_gt_0.01": 47,
+          "n_gt_0.02": 14,
+          "n_gt_0.05": 6
+        },
+        {
+          "seed": 2,
+          "n_miss": 498,
+          "shortfall_mean_depth": 0.004297587694303198,
+          "n_gt_0.01": 34,
+          "n_gt_0.02": 11,
+          "n_gt_0.05": 6
+        },
+        {
+          "seed": 3,
+          "n_miss": 317,
+          "shortfall_mean_depth": 0.0045827615462393275,
+          "n_gt_0.01": 22,
+          "n_gt_0.02": 8,
+          "n_gt_0.05": 6
+        },
+        {
+          "seed": 4,
+          "n_miss": 601,
+          "shortfall_mean_depth": 0.0038928777051804465,
+          "n_gt_0.01": 41,
+          "n_gt_0.02": 12,
+          "n_gt_0.05": 2
+        }
+      ],
+      "n_miss_seedmean": 456.8,
+      "n_miss_seedstd": 93.18025541926788,
+      "shortfall_mean_depth_seedmean": 0.004268672071836179,
+      "shortfall_mean_depth_seedstd": 0.000560923013264563,
+      "n_gt_0.01_seedmean": 35.2,
+      "n_gt_0.01_seedstd": 8.471127433818948,
+      "n_gt_0.02_seedmean": 10.0,
+      "n_gt_0.02_seedstd": 3.1622776601683795,
+      "n_gt_0.05_seedmean": 4.2,
+      "n_gt_0.05_seedstd": 2.2271057451320084,
+      "pooled": {
+        "n_miss": 2284,
+        "shortfall_mean_depth": 0.004216625998595072,
+        "n_gt_0.01": 176,
+        "n_gt_0.02": 50,
+        "n_gt_0.05": 21
+      }
+    }
+  }
+}
