@@ -1,0 +1,73 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "a4df350e49f1834306b89d001a8381b40a2e6c8c",
+    "short": "a4df350"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "16845afc84d09de3fe1be9ba97731f386ffdbbd60f5bf005af0d43a063c91cd5",
+  "run_settings": {
+    "task": "recompute Section V orphan: bases clearing 0.95 pu",
+    "source_canonical": "data/dataset.parquet",
+    "source_clip": "data/archive_clip/dataset.parquet"
+  },
+  "model_hyperparameters": null,
+  "producer_script": null,
+  "producer_script_note": "No producer script exists. This artifact was computed ad hoc; nothing in feasibility/, scripts/, or tools/ regenerates it.",
+  "inputs_untracked": [
+    {
+      "path": "data/archive_clip/dataset.parquet",
+      "feeds": "clip_era",
+      "gitignored_by": ".gitignore:data/archive_clip/"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "feeds": "canonical_v2",
+      "gitignored_by": ".gitignore:data/*.parquet"
+    }
+  ],
+  "inputs_untracked_note": "Both inputs are gitignored and therefore absent from any clone. Combined with producer_script=null, this artifact is TERMINAL: it cannot be regenerated from the repository alone, and is lost for good if this file and the local parquets are lost."
+}

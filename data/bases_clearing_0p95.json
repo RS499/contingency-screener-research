@@ -1,0 +1,28 @@
+{
+  "question": "how many N-0 feasible base cases exceed 0.95 pu pre-contingency",
+  "base_row_definition": "rows with outaged_type=='none'; base min_vm equals n0_min_vm exactly (the N-0 pre-contingency minimum). One base row per scenario, all converged.",
+  "exceed_ambiguity": "'>= 0.95' and '> 0.95' reported separately since 'exceed' is ambiguous",
+  "canonical_v2": {
+    "path": "data/dataset.parquet",
+    "n_base": 1500,
+    "n_scenarios": 1500,
+    "ge_0p95": 86,
+    "ge_0p95_pct": 5.7333,
+    "gt_0p95": 86,
+    "gt_0p95_pct": 5.7333,
+    "min_base": 0.940000035663552,
+    "max_base": 0.9589759294393103
+  },
+  "clip_era": {
+    "path": "data/archive_clip/dataset.parquet",
+    "n_base": 1500,
+    "n_scenarios": 1500,
+    "ge_0p95": 44,
+    "ge_0p95_pct": 2.9333,
+    "gt_0p95": 44,
+    "gt_0p95_pct": 2.9333,
+    "min_base": 0.94,
+    "max_base": 0.9604735119826017
+  },
+  "note": "frozen files untouched; this is a NEW artifact recomputing the Section V orphan (paper says 86)."
+}
