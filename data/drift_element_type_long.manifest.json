@@ -1,0 +1,59 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "69eeb80a34c9815194d6ead556ab26e86bfc249d",
+    "short": "69eeb80"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "58bd35de57f96c58df0fdcf8edae28daf4da20a73c60a502d90dcbe83335f75d",
+  "run_settings": {
+    "task": "Stage 2D: element-type drift (case118)",
+    "source": "data/dataset.parquet",
+    "design": "calibrate on one element population, evaluate on the other; controls included",
+    "note": "the event space changes between strata, so no likelihood ratio exists and weighted conformal does not apply -- structurally the N-1 to N-2 failure"
+  },
+  "model_hyperparameters": null
+}
