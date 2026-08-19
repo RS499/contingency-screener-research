@@ -1,0 +1,57 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "9cba13e723ad3c034f54b5cf34b1fc97c3b5cc60",
+    "short": "9cba13e"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "2ef84483e67518dab73e5ea5864e7c1e944f929b7b07d996358c65f5b0c9687f",
+  "run_settings": {
+    "task": "flag confusion sweep",
+    "source": "data/dataset.parquet"
+  },
+  "model_hyperparameters": null
+}

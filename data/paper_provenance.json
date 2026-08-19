@@ -1,0 +1,4338 @@
+{
+  "generated_from": "paper_current.tex",
+  "n_artifacts_scanned": 36,
+  "n_numeric_leaves": 20148,
+  "policy": "specific literals (distinctive precision -- >=2 decimals or >=4 sig figs -- AND <= 25 matches) list all sources; everything else records only a match count and network set",
+  "status_counts": {
+    "matched": 138,
+    "orphan": 2,
+    "ambiguous": 8,
+    "hard_fail": 0
+  },
+  "literals": [
+    {
+      "literal": "0.00",
+      "value": 0.0,
+      "lines": [
+        104,
+        133,
+        134,
+        136
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57",
+        "case89pegase"
+      ],
+      "match_count": 5611
+    },
+    {
+      "literal": "0.0",
+      "value": 0.0,
+      "lines": [
+        134
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57",
+        "case89pegase"
+      ],
+      "match_count": 8397
+    },
+    {
+      "literal": "0.001",
+      "value": 0.001,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 1195
+    },
+    {
+      "literal": "0.0016",
+      "value": 0.0016,
+      "lines": [
+        82
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 94
+    },
+    {
+      "literal": "0.0023",
+      "value": 0.0023,
+      "lines": [
+        60
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 123
+    },
+    {
+      "literal": "0.0038",
+      "value": 0.0038,
+      "lines": [
+        82
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 55
+    },
+    {
+      "literal": "0.005",
+      "value": 0.005,
+      "lines": [
+        147,
+        153
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 497
+    },
+    {
+      "literal": "0.0052",
+      "value": 0.0052,
+      "lines": [
+        60
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 33
+    },
+    {
+      "literal": "0.01",
+      "value": 0.01,
+      "lines": [
+        104,
+        135
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 1981
+    },
+    {
+      "literal": "0.02",
+      "value": 0.02,
+      "lines": [
+        103
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 621
+    },
+    {
+      "literal": "0.03",
+      "value": 0.03,
+      "lines": [
+        102,
+        103
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57",
+        "case89pegase"
+      ],
+      "match_count": 521
+    },
+    {
+      "literal": "0.06",
+      "value": 0.06,
+      "lines": [
+        101,
+        133
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 269
+    },
+    {
+      "literal": "0.07",
+      "value": 0.07,
+      "lines": [
+        100,
+        102,
+        110
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 270
+    },
+    {
+      "literal": "0.08",
+      "value": 0.08,
+      "lines": [
+        133
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 256
+    },
+    {
+      "literal": "0.091",
+      "value": 0.091,
+      "lines": [
+        142,
+        170,
+        181
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 71
+    },
+    {
+      "literal": "0.1",
+      "value": 0.1,
+      "lines": [
+        133,
+        135,
+        136
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 2365
+    },
+    {
+      "literal": "0.11",
+      "value": 0.11,
+      "lines": [
+        99,
+        135
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 201
+    },
+    {
+      "literal": "0.12",
+      "value": 0.12,
+      "lines": [
+        101,
+        108,
+        109
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 170
+    },
+    {
+      "literal": "0.13",
+      "value": 0.13,
+      "lines": [
+        106,
+        107,
+        110
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 154
+    },
+    {
+      "literal": "0.14",
+      "value": 0.14,
+      "lines": [
+        102,
+        142
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 130
+    },
+    {
+      "literal": "0.2",
+      "value": 0.2,
+      "lines": [
+        103,
+        104,
+        109,
+        110,
+        133,
+        134
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 1593
+    },
+    {
+      "literal": "0.20",
+      "value": 0.2,
+      "lines": [
+        108
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 183
+    },
+    {
+      "literal": "0.21",
+      "value": 0.21,
+      "lines": [
+        100,
+        107
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 136
+    },
+    {
+      "literal": "0.24",
+      "value": 0.24,
+      "lines": [
+        109
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 112
+    },
+    {
+      "literal": "0.30",
+      "value": 0.3,
+      "lines": [
+        105,
+        110,
+        136
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 107
+    },
+    {
+      "literal": "0.31",
+      "value": 0.31,
+      "lines": [
+        133
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 107
+    },
+    {
+      "literal": "0.38",
+      "value": 0.38,
+      "lines": [
+        106
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 85
+    },
+    {
+      "literal": "0.4",
+      "value": 0.4,
+      "lines": [
+        102,
+        106,
+        107,
+        108
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 837
+    },
+    {
+      "literal": "0.44",
+      "value": 0.44,
+      "lines": [
+        99,
+        135
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 67
+    },
+    {
+      "literal": "0.45",
+      "value": 0.45,
+      "lines": [
+        101
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 79
+    },
+    {
+      "literal": "0.6",
+      "value": 0.6,
+      "lines": [
+        101
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 468
+    },
+    {
+      "literal": "0.7",
+      "value": 0.7,
+      "lines": [
+        100
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 753
+    },
+    {
+      "literal": "0.7179",
+      "value": 0.7179,
+      "lines": [
+        50
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "dataset_facts.min_vm_min",
+          "network": "case118",
+          "artifact_value": 0.7179,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "dataset_facts.min_vm_min",
+          "network": "case118",
+          "artifact_value": 0.7179,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "0.77",
+      "value": 0.77,
+      "lines": [
+        82,
+        135
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 111
+    },
+    {
+      "literal": "0.79",
+      "value": 0.79,
+      "lines": [
+        100,
+        116
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 105
+    },
+    {
+      "literal": "0.8",
+      "value": 0.8,
+      "lines": [
+        104
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 1041
+    },
+    {
+      "literal": "0.83",
+      "value": 0.83,
+      "lines": [
+        109,
+        116
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 96
+    },
+    {
+      "literal": "0.849",
+      "value": 0.849,
+      "lines": [
+        142,
+        170
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "deepest_miss_case.json",
+          "jsonpath": "part2_case.min_vm_n1",
+          "network": "case118",
+          "artifact_value": 0.8485430748588177,
+          "scale": 1.0
+        },
+        {
+          "file": "deepest_miss_case.json",
+          "jsonpath": "part2_case.model_predictions_by_seed[1].true_min_vm",
+          "network": "case118",
+          "artifact_value": 0.8485430748588177,
+          "scale": 1.0
+        },
+        {
+          "file": "deepest_miss_case.json",
+          "jsonpath": "part2_case.model_predictions_by_seed[2].true_min_vm",
+          "network": "case118",
+          "artifact_value": 0.8485430748588177,
+          "scale": 1.0
+        },
+        {
+          "file": "deepest_miss_case.json",
+          "jsonpath": "part2_case.model_predictions_by_seed[3].true_min_vm",
+          "network": "case118",
+          "artifact_value": 0.8485430748588177,
+          "scale": 1.0
+        },
+        {
+          "file": "deepest_miss_case.json",
+          "jsonpath": "target_min_vm",
+          "network": "case118",
+          "artifact_value": 0.8485430748588177,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[212]",
+          "network": "case118",
+          "artifact_value": 0.008488558614094033,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[667]",
+          "network": "case118",
+          "artifact_value": 0.008488558614094033,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_mechanism.json",
+          "jsonpath": "part1_mechanism.reconstruction.recorded_min_vm",
+          "network": "case118",
+          "artifact_value": 0.8485430748588177,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_mechanism.json",
+          "jsonpath": "part1_mechanism.reconstruction.solved_n1_min_vm",
+          "network": "case118",
+          "artifact_value": 0.8485430618229496,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_mechanism.json",
+          "jsonpath": "part1_mechanism.key_bus_voltages_n0_vs_n1.53.vm_n1",
+          "network": "case118",
+          "artifact_value": 0.8485430618229496,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_mechanism.json",
+          "jsonpath": "part1_mechanism.key_bus_voltages_n0_vs_n1.57.vm_n1",
+          "network": "case118",
+          "artifact_value": 0.8491946516202186,
+          "scale": 1.0
+        },
+        {
+          "file": "missed_depth.json",
+          "jsonpath": "families.ridge.pooled.0.94.share_below_qhat",
+          "network": "case118",
+          "artifact_value": 0.8489583333333334,
+          "scale": 1.0
+        },
+        {
+          "file": "missed_depth.json",
+          "jsonpath": "families.ridge.deepest_missed.y_true",
+          "network": "case118",
+          "artifact_value": 0.8485430748588177,
+          "scale": 1.0
+        },
+        {
+          "file": "missed_depth.json",
+          "jsonpath": "families.histgb.deepest_missed.y_true",
+          "network": "case118",
+          "artifact_value": 0.8485430748588177,
+          "scale": 1.0
+        },
+        {
+          "file": "qlims_off_check.json",
+          "jsonpath": "qlims_check.enforce_q_lims_true.min_vm",
+          "network": "case118",
+          "artifact_value": 0.8485430618229496,
+          "scale": 1.0
+        },
+        {
+          "file": "tail_metric_config.json",
+          "jsonpath": "focus_case.truth_min_vm",
+          "network": "case118",
+          "artifact_value": 0.84854,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[49].coverage_emp",
+          "network": "case118",
+          "artifact_value": 0.8487687011621942,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[2].sweep[15].coverage_emp",
+          "network": "case118",
+          "artifact_value": 0.849271361737977,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[16].sweep[16].coverage_emp",
+          "network": "case118",
+          "artifact_value": 0.8485956516283989,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "0.90",
+      "value": 0.9,
+      "lines": [
+        99,
+        105,
+        116,
+        142,
+        149
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 184
+    },
+    {
+      "literal": "0.917",
+      "value": 0.917,
+      "lines": [
+        179
+      ],
+      "status": "AMBIGUOUS",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "sources": [
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "records[48].coverage_emp",
+          "network": "case30",
+          "artifact_value": 0.9169918699186992,
+          "scale": 1.0
+        },
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "records[64].coverage_emp",
+          "network": "case30",
+          "artifact_value": 0.9167479674796748,
+          "scale": 1.0
+        },
+        {
+          "file": "screener_metrics.json",
+          "jsonpath": "records[2].coverage",
+          "network": "case118",
+          "artifact_value": 0.917295524207281,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[6].sweep[22].coverage_emp",
+          "network": "case118",
+          "artifact_value": 0.9171745053054201,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[12].sweep[23].coverage_emp",
+          "network": "case118",
+          "artifact_value": 0.9169937803588393,
+          "scale": 1.0
+        },
+        {
+          "file": "tuning_search.json",
+          "jsonpath": "records[69].inner_r2",
+          "network": "case118",
+          "artifact_value": 0.9174795238575475,
+          "scale": 1.0
+        },
+        {
+          "file": "tuning_search.json",
+          "jsonpath": "records[72].inner_r2",
+          "network": "case118",
+          "artifact_value": 0.9169513761237896,
+          "scale": 1.0
+        },
+        {
+          "file": "tuning_search.json",
+          "jsonpath": "records[76].inner_r2",
+          "network": "case118",
+          "artifact_value": 0.9174795238575475,
+          "scale": 1.0
+        },
+        {
+          "file": "tuning_search.json",
+          "jsonpath": "records[115].inner_r2",
+          "network": "case118",
+          "artifact_value": 0.9168555877453756,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "0.92",
+      "value": 0.92,
+      "lines": [
+        82,
+        136
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 184
+    },
+    {
+      "literal": "0.94",
+      "value": 0.94,
+      "lines": [
+        27,
+        42,
+        50,
+        63,
+        77,
+        100,
+        106,
+        116,
+        145,
+        149,
+        159,
+        170,
+        179
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case89pegase"
+      ],
+      "match_count": 233
+    },
+    {
+      "literal": "0.945",
+      "value": 0.945,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 37
+    },
+    {
+      "literal": "0.95",
+      "value": 0.95,
+      "lines": [
+        101,
+        107,
+        179
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 220
+    },
+    {
+      "literal": "0.96",
+      "value": 0.96,
+      "lines": [
+        102,
+        108,
+        142
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case89pegase"
+      ],
+      "match_count": 237
+    },
+    {
+      "literal": "0.9603",
+      "value": 0.9603,
+      "lines": [
+        50
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "dataset_facts.min_vm_max",
+          "network": "case118",
+          "artifact_value": 0.9603,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "dataset_facts.min_vm_max",
+          "network": "case118",
+          "artifact_value": 0.9603,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "0.97",
+      "value": 0.97,
+      "lines": [
+        27,
+        103,
+        109,
+        116,
+        149,
+        159
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case89pegase"
+      ],
+      "match_count": 205
+    },
+    {
+      "literal": "0.98",
+      "value": 0.98,
+      "lines": [
+        104,
+        105,
+        110,
+        116,
+        136
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 153
+    },
+    {
+      "literal": "1",
+      "value": 1.0,
+      "lines": [
+        27,
+        116,
+        149,
+        159,
+        179,
+        184
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 184
+    },
+    {
+      "literal": "1.0",
+      "value": 1.0,
+      "lines": [
+        42,
+        103,
+        105
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57",
+        "case89pegase"
+      ],
+      "match_count": 1022
+    },
+    {
+      "literal": "1.00",
+      "value": 1.0,
+      "lines": [
+        133
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 221
+    },
+    {
+      "literal": "1.3",
+      "value": 1.3,
+      "lines": [
+        99
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 166
+    },
+    {
+      "literal": "1.34",
+      "value": 1.34,
+      "lines": [
+        104
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 35
+    },
+    {
+      "literal": "1.35",
+      "value": 1.35,
+      "lines": [
+        103
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_ridge.points[7].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3530032680550534,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.ridge[4].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3530032680550534,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[36]",
+          "network": "case118",
+          "artifact_value": 0.013451694428145311,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[1245]",
+          "network": "case118",
+          "artifact_value": 0.013451694428145311,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[56]",
+          "network": "case118",
+          "artifact_value": 0.013451694428145311,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[1742]",
+          "network": "case118",
+          "artifact_value": 0.013451694428145311,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[4].missed_viol_std",
+          "network": "case118",
+          "artifact_value": 0.013463513448380869,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[16].missed_viol_std",
+          "network": "case118",
+          "artifact_value": 0.01346666511752919,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[27].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3530032680550534,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.ridge.m2.<= 0.1%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3530032680550534,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[4].sweep[25].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3485493850293213,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[5].sweep[27].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3493089984854045,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[9].sweep[27].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3522578335222082,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[12].sweep[26].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.35021109845495,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "1.36",
+      "value": 1.36,
+      "lines": [
+        108,
+        142
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "bus_layout.json",
+          "jsonpath": "coords.48[0]",
+          "network": "case118",
+          "artifact_value": 1.3632782,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[6].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.013568242668213118,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[3].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.013568242668213118,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[311]",
+          "network": "case118",
+          "artifact_value": 0.01359014579805573,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[56].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.013568242668213118,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[2].sweep[28].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3613186823703762,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[10].sweep[26].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.013625103220478944,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[13].sweep[27].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.355052636749672,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[17].sweep[28].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3588739804499124,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[17].sweep[29].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3588739804499124,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[19].sweep[27].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3631718855178219,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "1.39",
+      "value": 1.39,
+      "lines": [
+        110
+      ],
+      "status": "AMBIGUOUS",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "sources": [
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "records[19].missed_viol",
+          "network": "case30",
+          "artifact_value": 0.01386193512614361,
+          "scale": 100.0
+        },
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "records[54].missed_viol",
+          "network": "case30",
+          "artifact_value": 0.013858695652173913,
+          "scale": 100.0
+        },
+        {
+          "file": "classical_screen_metrics.json",
+          "jsonpath": "conformalized[1].q_hat",
+          "network": "case118",
+          "artifact_value": 0.013911243704913945,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "curves.classical_conformal.points[1].q_hat",
+          "network": "case118",
+          "artifact_value": 0.013911243704913945,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[8].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3918953803495817,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.classical_conformal.points[1].q_hat",
+          "network": "case118",
+          "artifact_value": 0.013911243704913945,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[5].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3918953803495817,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[77]",
+          "network": "case118",
+          "artifact_value": 0.013883531929452242,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[1068]",
+          "network": "case118",
+          "artifact_value": 0.0138682998841273,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[159]",
+          "network": "case118",
+          "artifact_value": 0.013922160284337126,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[268]",
+          "network": "case118",
+          "artifact_value": 0.0138682998841273,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[1554]",
+          "network": "case118",
+          "artifact_value": 0.0138682998841273,
+          "scale": 100.0
+        },
+        {
+          "file": "missed_depth.json",
+          "jsonpath": "families.ridge.per_seed.1.0.96.p90",
+          "network": "case118",
+          "artifact_value": 0.013920446206579062,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[80].floor_std",
+          "network": "case118",
+          "artifact_value": 0.013896007693064674,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[58].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3918953803495817,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.histgb.m1.<= 0.5%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.386828779449549,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.histgb.m2.<= 0.5%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3918953803495817,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[0].sweep[24].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3863752287290223,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[12].sweep[25].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.391532539304436,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[16].sweep[25].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3854050648889669,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[16].sweep[28].q_hat",
+          "network": "case118",
+          "artifact_value": 0.013933001362466224,
+          "scale": 100.0
+        }
+      ]
+    },
+    {
+      "literal": "1.4",
+      "value": 1.4,
+      "lines": [
+        102
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 130
+    },
+    {
+      "literal": "1.40",
+      "value": 1.4,
+      "lines": [
+        102
+      ],
+      "status": "AMBIGUOUS",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "sources": [
+        {
+          "file": "broadened_metrics.json",
+          "jsonpath": "nonconv_pct",
+          "network": "case118",
+          "artifact_value": 0.014,
+          "scale": 100.0
+        },
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "records[5].q_hat",
+          "network": "case30",
+          "artifact_value": 0.014048730732590275,
+          "scale": 100.0
+        },
+        {
+          "file": "classical_screen_metrics.json",
+          "jsonpath": "delta_sweep[14].delta",
+          "network": "case118",
+          "artifact_value": 0.014,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "curves.conformal_ridge.points[6].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.395148708728654,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "curves.conformal_histgb.points[6].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.403317588228657,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "curves.classical_delta.points[14].delta",
+          "network": "case118",
+          "artifact_value": 0.014,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_ridge.points[6].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.400182183933087,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.classical_delta.points[14].delta",
+          "network": "case118",
+          "artifact_value": 0.014,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "safety_operating_points.ridge[3].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.395148708728654,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "safety_operating_points.histgb[3].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.403317588228657,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.ridge[3].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.400182183933087,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[912]",
+          "network": "case118",
+          "artifact_value": 0.014005986326761977,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[1028]",
+          "network": "case118",
+          "artifact_value": 0.01395666978787613,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[1506]",
+          "network": "case118",
+          "artifact_value": 0.01395666978787613,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[1987]",
+          "network": "case118",
+          "artifact_value": 0.01395666978787613,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_tail_counts.json",
+          "jsonpath": "families.ridge.n_gt_0.05_seedmean",
+          "network": "case118",
+          "artifact_value": 1.4,
+          "scale": 1.0
+        },
+        {
+          "file": "safety_operating_points.json",
+          "jsonpath": "rows[3].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.3951509249548675,
+          "scale": 1.0
+        },
+        {
+          "file": "safety_operating_points.json",
+          "jsonpath": "rows[9].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4033881468358618,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[79].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.395148708728654,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[80].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.403317588228657,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[26].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.400182183933087,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.ridge.committed.<= 0.5%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.395148708728654,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.histgb.committed.<= 1%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.403317588228657,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[1].sweep[25].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.401668451269355,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[6].sweep[28].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4049436163615727,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "1.48",
+      "value": 1.48,
+      "lines": [
+        101
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "classical_screen_metrics.json",
+          "jsonpath": "delta_sweep[5].escalation_std",
+          "network": "case118",
+          "artifact_value": 0.014782630428551335,
+          "scale": 100.0
+        },
+        {
+          "file": "classical_screen_metrics.json",
+          "jsonpath": "delta_sweep[5].avoided_std",
+          "network": "case118",
+          "artifact_value": 0.014782630428551335,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "curves.conformal_ridge.points[5].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4796851406671707,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "curves.classical_delta.points[5].avoided_std",
+          "network": "case118",
+          "artifact_value": 0.014782630428551335,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_ridge.points[5].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4760765384058954,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.classical_delta.points[5].avoided_std",
+          "network": "case118",
+          "artifact_value": 0.014782630428551335,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "safety_operating_points.ridge[2].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4796851406671707,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.ridge[2].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4760765384058954,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[2044]",
+          "network": "case118",
+          "artifact_value": 0.014819368662118637,
+          "scale": 100.0
+        },
+        {
+          "file": "safety_operating_points.json",
+          "jsonpath": "rows[2].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4796877370410382,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[29].escalation_std",
+          "network": "case118",
+          "artifact_value": 0.014825948043094929,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[76].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4796851406671707,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[25].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4760765384058954,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.ridge.committed.<= 1%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4796851406671707,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.ridge.m1.<= 1%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.482648645907652,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.ridge.m2.<= 0.5%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4760765384058954,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[1].sweep[24].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4826123386638943,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[5].sweep[24].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.4845968896270745,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[17].sweep[25].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.484245808091097,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "1.5",
+      "value": 1.5,
+      "lines": [
+        179
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 97
+    },
+    {
+      "literal": "1.56",
+      "value": 1.56,
+      "lines": [
+        100,
+        116
+      ],
+      "status": "AMBIGUOUS",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "sources": [
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "records[16].net_speedup",
+          "network": "case30",
+          "artifact_value": 1.557553235905932,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "curves.conformal_histgb.points[8].net_speedup_std",
+          "network": "case118",
+          "artifact_value": 0.015632361412836745,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_ridge.points[4].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5568467287955494,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.ridge[1].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5568467287955494,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[169]",
+          "network": "case118",
+          "artifact_value": 0.015576100778278756,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[249]",
+          "network": "case118",
+          "artifact_value": 0.015576100778278756,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[977]",
+          "network": "case118",
+          "artifact_value": 0.01555617394939246,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[2077]",
+          "network": "case118",
+          "artifact_value": 0.015576100778278756,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[61].coverage_emp_std",
+          "network": "case118",
+          "artifact_value": 0.015638589448829298,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[86].net_speedup_std",
+          "network": "case118",
+          "artifact_value": 0.015632361412836745,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[24].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5568467287955494,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.ridge.m2.<= 1%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5568467287955494,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.histgb.committed.<= 0.1%.net_speedup_std",
+          "network": "case118",
+          "artifact_value": 0.015632361412836745,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[0].sweep[22].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5625022135008206,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[14].sweep[27].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.561451586731417,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[15].sweep[25].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.01564781973711663,
+          "scale": 100.0
+        }
+      ]
+    },
+    {
+      "literal": "1.58",
+      "value": 1.58,
+      "lines": [
+        109,
+        116
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "bus_layout.json",
+          "jsonpath": "coords.45[0]",
+          "network": "case118",
+          "artifact_value": 1.58311485,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "curves.conformal_histgb.points[5].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.015806276905396485,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[7].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5790875368552881,
+          "scale": 1.0
+        },
+        {
+          "file": "escalation_at_095.json",
+          "jsonpath": "summary.histgb.escalation_at_0.95.mean",
+          "network": "case118",
+          "artifact_value": 0.01578085711179363,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "safety_operating_points.histgb[2].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.015806276905396485,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[4].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5790875368552881,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[1655]",
+          "network": "case118",
+          "artifact_value": 0.01575410456652615,
+          "scale": 100.0
+        },
+        {
+          "file": "safety_operating_points.json",
+          "jsonpath": "rows[8].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.015806276905396485,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[71].floor_std",
+          "network": "case118",
+          "artifact_value": 0.01575949739395202,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[77].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.015806276905396485,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[57].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5790875368552881,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.histgb.m1.<= 1%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5837489769005282,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.histgb.m2.<= 1%.net_speedup",
+          "network": "case118",
+          "artifact_value": 1.5790875368552881,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[16].sweep[22].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.01575542570951586,
+          "scale": 100.0
+        }
+      ]
+    },
+    {
+      "literal": "1.6",
+      "value": 1.6,
+      "lines": [
+        27,
+        136,
+        149
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 113
+    },
+    {
+      "literal": "1.76",
+      "value": 1.76,
+      "lines": [
+        108
+      ],
+      "status": "AMBIGUOUS",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "sources": [
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "records[15].q_hat",
+          "network": "case30",
+          "artifact_value": 0.01758202587361668,
+          "scale": 100.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[6].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.7641408732452728,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[3].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.7641408732452728,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[162]",
+          "network": "case118",
+          "artifact_value": 0.017646473348151948,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[1366]",
+          "network": "case118",
+          "artifact_value": 0.017646473348151948,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[243]",
+          "network": "case118",
+          "artifact_value": 0.017646473348151948,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[1035]",
+          "network": "case118",
+          "artifact_value": 0.01758734376633231,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[2070]",
+          "network": "case118",
+          "artifact_value": 0.017646473348151948,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[29].floor_std",
+          "network": "case118",
+          "artifact_value": 0.017616699419613472,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[56].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.7641408732452728,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[3].sweep[26].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.7598345342016444,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[9].sweep[23].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.7624717192725665,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[9].sweep[29].q_hat",
+          "network": "case118",
+          "artifact_value": 0.01755330115037268,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[12].sweep[21].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.017629876903818068,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[14].sweep[25].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.017629876903818068,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[17].sweep[22].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.759203322202389,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[17].sweep[29].q_hat",
+          "network": "case118",
+          "artifact_value": 0.017624881631864153,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[19].sweep[25].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.7587289908510713,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "1.94",
+      "value": 1.94,
+      "lines": [
+        107
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "bus_layout.json",
+          "jsonpath": "coords.36[1]",
+          "network": "case118",
+          "artifact_value": 1.94426001,
+          "scale": 1.0
+        },
+        {
+          "file": "bus_layout.json",
+          "jsonpath": "coords.44[0]",
+          "network": "case118",
+          "artifact_value": 1.94099185,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_ridge.points[1].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9398541739847162,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[5].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.019439853129385738,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[2].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.019439853129385738,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[29].coverage_emp_std",
+          "network": "case118",
+          "artifact_value": 0.01935380711852582,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[35].floor_std",
+          "network": "case118",
+          "artifact_value": 0.019387585790514993,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[21].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9398541739847162,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[55].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.019439853129385738,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[6].sweep[25].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9428076471882247,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "1.96",
+      "value": 1.96,
+      "lines": [
+        107
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[5].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9612404812404147,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[2].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9612404812404147,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[30].floor_std",
+          "network": "case118",
+          "artifact_value": 0.01955902395260182,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[6].escalation_std",
+          "network": "case118",
+          "artifact_value": 0.019588238244915162,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[55].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9612404812404147,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[5].sweep[21].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9632923037498304,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[8].sweep[22].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9638224872582506,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[13].sweep[22].net_speedup",
+          "network": "case118",
+          "artifact_value": 1.9580894014005523,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "2",
+      "value": 2.0,
+      "lines": [
+        82,
+        131,
+        149
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 105
+    },
+    {
+      "literal": "2.04",
+      "value": 2.04,
+      "lines": [
+        82,
+        99,
+        116,
+        135,
+        142
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_ridge.points[0].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.043111763549933,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "four_metrics_at_90pct_coverage.ridge.net_speedup",
+          "network": "case118",
+          "artifact_value": 2.043111763549933,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.ridge[0].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.043111763549933,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[83].floor_std",
+          "network": "case118",
+          "artifact_value": 0.020424409832666236,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[20].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.043111763549933,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "2.1",
+      "value": 2.1,
+      "lines": [
+        134
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 51
+    },
+    {
+      "literal": "2.15",
+      "value": 2.15,
+      "lines": [
+        106,
+        116
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "bus_layout.json",
+          "jsonpath": "coords.40[0]",
+          "network": "case118",
+          "artifact_value": 2.14671325,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[4].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.148323871023602,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[1].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.148323871023602,
+          "scale": 1.0
+        },
+        {
+          "file": "screener_metrics.json",
+          "jsonpath": "records[14].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.1517976029147943,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[54].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.148323871023602,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[9].sweep[20].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.152632808006871,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[12].sweep[19].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.15199837432778,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "2.48",
+      "value": 2.48,
+      "lines": [
+        106,
+        116
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[4].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.02475625141522387,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[1].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.02475625141522387,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[648]",
+          "network": "case118",
+          "artifact_value": 0.024806799985874872,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[11].net_speedup_std",
+          "network": "case118",
+          "artifact_value": 2.482994349813656,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[52].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.4832989746310536,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[34].coverage_emp_std",
+          "network": "case118",
+          "artifact_value": 0.024755343799391167,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[54].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.02475625141522387,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.ridge.committed.<= 5%.net_speedup",
+          "network": "case118",
+          "artifact_value": 2.4832989746310536,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[1].sweep[13].net_speedup",
+          "network": "case118",
+          "artifact_value": 2.4842751977866118,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[6].sweep[24].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.024764633647155136,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[7].sweep[0].escalation",
+          "network": "case118",
+          "artifact_value": 0.024842271293375396,
+          "scale": 100.0
+        }
+      ]
+    },
+    {
+      "literal": "2.5",
+      "value": 2.5,
+      "lines": [
+        105,
+        136
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 58
+    },
+    {
+      "literal": "2.7",
+      "value": 2.7,
+      "lines": [
+        99,
+        135
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 43
+    },
+    {
+      "literal": "2.8",
+      "value": 2.8,
+      "lines": [
+        100,
+        101,
+        106
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case89pegase"
+      ],
+      "match_count": 46
+    },
+    {
+      "literal": "2.96",
+      "value": 2.96,
+      "lines": [
+        82,
+        99,
+        116,
+        135
+      ],
+      "status": "AMBIGUOUS",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "sources": [
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "records[1].net_speedup",
+          "network": "case30",
+          "artifact_value": 2.961000485142949,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_ridge.points[0].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.029631523339489742,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "four_metrics_at_90pct_coverage.ridge.missed_viol",
+          "network": "case118",
+          "artifact_value": 0.029631523339489742,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.ridge[0].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.029631523339489742,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[20].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.029631523339489742,
+          "scale": 100.0
+        }
+      ]
+    },
+    {
+      "literal": "3",
+      "value": 3.0,
+      "lines": [
+        131,
+        149
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 145
+    },
+    {
+      "literal": "3.29",
+      "value": 3.29,
+      "lines": [
+        27,
+        82,
+        105,
+        116,
+        136,
+        142
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "bus_layout.json",
+          "jsonpath": "coords.16[1]",
+          "network": "case118",
+          "artifact_value": 3.29043129,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[0].net_speedup",
+          "network": "case118",
+          "artifact_value": 3.287148493538382,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "two_by_two_v2.ratio_sampling_over_oracle[0]",
+          "network": "case118",
+          "artifact_value": 3.29,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "four_metrics_at_90pct_coverage.histgb.net_speedup",
+          "network": "case118",
+          "artifact_value": 3.287148493538382,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[0].net_speedup",
+          "network": "case118",
+          "artifact_value": 3.287148493538382,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "two_by_two_v2.ratio_sampling_over_oracle[0]",
+          "network": "case118",
+          "artifact_value": 3.29,
+          "scale": 1.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.ridge.depths[433]",
+          "network": "case118",
+          "artifact_value": 0.03285121223832621,
+          "scale": 100.0
+        },
+        {
+          "file": "miss_depth_pool.json",
+          "jsonpath": "families.histgb.depths[748]",
+          "network": "case118",
+          "artifact_value": 0.03285121223832621,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[26].gap",
+          "network": "case118",
+          "artifact_value": 0.032855169823053566,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[37].net_speedup",
+          "network": "case118",
+          "artifact_value": 3.292286933600836,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[50].net_speedup",
+          "network": "case118",
+          "artifact_value": 3.287148493538382,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.histgb.m2.<= 5%.net_speedup",
+          "network": "case118",
+          "artifact_value": 3.287148493538382,
+          "scale": 1.0
+        },
+        {
+          "file": "tuning_search.json",
+          "jsonpath": "records[91].fit_s",
+          "network": "case118",
+          "artifact_value": 3.29,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "3.4",
+      "value": 3.4,
+      "lines": [
+        107
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 47
+    },
+    {
+      "literal": "3.7",
+      "value": 3.7,
+      "lines": [
+        110
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 35
+    },
+    {
+      "literal": "3.8",
+      "value": 3.8,
+      "lines": [
+        135
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 40
+    },
+    {
+      "literal": "4.2",
+      "value": 4.2,
+      "lines": [
+        133
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 23
+    },
+    {
+      "literal": "4.3",
+      "value": 4.3,
+      "lines": [
+        108
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 30
+    },
+    {
+      "literal": "4.72",
+      "value": 4.72,
+      "lines": [
+        27,
+        82,
+        105,
+        116,
+        136
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "curves.conformal_histgb.points[0].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.04716684182384393,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "four_metrics_at_90pct_coverage.histgb.missed_viol",
+          "network": "case118",
+          "artifact_value": 0.04716684182384393,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "safety_operating_points.histgb[0].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.04716684182384393,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[50].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.04716684182384393,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_frontier.json",
+          "jsonpath": "frontier.histgb.m2.<= 5%.missed",
+          "network": "case118",
+          "artifact_value": 0.04716684182384393,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[7].sweep[2].escalation",
+          "network": "case118",
+          "artifact_value": 0.047193145970748494,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[19].sweep[12].net_speedup",
+          "network": "case118",
+          "artifact_value": 4.718318092945946,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "5.1",
+      "value": 5.1,
+      "lines": [
+        109
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 12
+    },
+    {
+      "literal": "6",
+      "value": 6.0,
+      "lines": [
+        42
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 15
+    },
+    {
+      "literal": "6.7",
+      "value": 6.7,
+      "lines": [
+        134
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case89pegase"
+      ],
+      "match_count": 25
+    },
+    {
+      "literal": "7",
+      "value": 7.0,
+      "lines": [
+        134
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 12
+    },
+    {
+      "literal": "8.96",
+      "value": 8.96,
+      "lines": [
+        27,
+        179
+      ],
+      "status": "AMBIGUOUS",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "sources": [
+        {
+          "file": "case30_frozen.json",
+          "jsonpath": "crossings_first_below_1pct_missed.histgb.escalation",
+          "network": "case30",
+          "artifact_value": 0.08959349593495934,
+          "scale": 100.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "records[22].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.08957706595321106,
+          "scale": 100.0
+        }
+      ]
+    },
+    {
+      "literal": "9.14",
+      "value": 9.14,
+      "lines": [
+        73
+      ],
+      "status": "AMBIGUOUS",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "sources": [
+        {
+          "file": "case30_tradeoff_curve.json",
+          "jsonpath": "ms_solver",
+          "network": "case30",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "classical_screen_metrics.json",
+          "jsonpath": "ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve.json",
+          "jsonpath": "ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "comparison_curve_v2.json",
+          "jsonpath": "ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "ms_solver.ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "ms_solver.ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "screener_metrics.json",
+          "jsonpath": "ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "solve_time.json",
+          "jsonpath": "ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "solve_time.json",
+          "jsonpath": "min_ms",
+          "network": "case118",
+          "artifact_value": 9.138,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve.json",
+          "jsonpath": "ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "ms_solver",
+          "network": "case118",
+          "artifact_value": 9.14,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[6].sweep[11].missed_viol",
+          "network": "case118",
+          "artifact_value": 0.09138354482194024,
+          "scale": 100.0
+        }
+      ]
+    },
+    {
+      "literal": "9.31",
+      "value": 9.31,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "bus_convention_map.json",
+          "jsonpath": "pocket_analysis.frequency_buses[2].share_pct",
+          "network": "case118",
+          "artifact_value": 9.31,
+          "scale": 1.0
+        },
+        {
+          "file": "classical_screen_metrics.json",
+          "jsonpath": "qlimit_analysis.per_bus.106.share_of_all",
+          "network": "case118",
+          "artifact_value": 0.09307952895628327,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "dataset_facts.critical_bus_top5[2].share_pct",
+          "network": "case118",
+          "artifact_value": 9.31,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "dataset_facts.critical_bus_top5[2].share_pct",
+          "network": "case118",
+          "artifact_value": 9.31,
+          "scale": 1.0
+        },
+        {
+          "file": "tradeoff_curve_v2.json",
+          "jsonpath": "records[37].escalation",
+          "network": "case118",
+          "artifact_value": 0.09310919155203108,
+          "scale": 100.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[10].sweep[12].net_speedup",
+          "network": "case118",
+          "artifact_value": 9.309166988301753,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[18].sweep[9].net_speedup",
+          "network": "case118",
+          "artifact_value": 9.306631248798746,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "10",
+      "value": 10.0,
+      "lines": [
+        131,
+        134
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 140
+    },
+    {
+      "literal": "11.3",
+      "value": 11.3,
+      "lines": [
+        27,
+        179
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 9
+    },
+    {
+      "literal": "13",
+      "value": 13.0,
+      "lines": [
+        46
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 4
+    },
+    {
+      "literal": "14",
+      "value": 14.0,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 3
+    },
+    {
+      "literal": "16.81",
+      "value": 16.81,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "bus_convention_map.json",
+          "jsonpath": "pocket_analysis.frequency_buses[1].share_pct",
+          "network": "case118",
+          "artifact_value": 16.81,
+          "scale": 1.0
+        },
+        {
+          "file": "classical_screen_metrics.json",
+          "jsonpath": "qlimit_analysis.per_bus.52.share_of_all",
+          "network": "case118",
+          "artifact_value": 0.16808445806671327,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "dataset_facts.critical_bus_top5[1].share_pct",
+          "network": "case118",
+          "artifact_value": 16.81,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "dataset_facts.critical_bus_top5[1].share_pct",
+          "network": "case118",
+          "artifact_value": 16.81,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[18].sweep[5].net_speedup",
+          "network": "case118",
+          "artifact_value": 16.810808094684983,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "17.48",
+      "value": 17.48,
+      "lines": [
+        50,
+        145,
+        147
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "case30_frozen.json",
+          "jsonpath": "case118_comparators.violation_rate_pct",
+          "network": "case118",
+          "artifact_value": 17.48,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "dataset_facts.violation_rate_pct",
+          "network": "case118",
+          "artifact_value": 17.48,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "ceilings.true_violation_rate",
+          "network": "case118",
+          "artifact_value": 0.1748,
+          "scale": 100.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "dataset_facts.violation_rate_pct",
+          "network": "case118",
+          "artifact_value": 17.48,
+          "scale": 1.0
+        },
+        {
+          "file": "tuned_metrics.json",
+          "jsonpath": "records[6].p_pred_below_limit",
+          "network": "case118",
+          "artifact_value": 0.1748279323200459,
+          "scale": 100.0
+        }
+      ]
+    },
+    {
+      "literal": "20.0",
+      "value": 20.0,
+      "lines": [
+        27,
+        179
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 114
+    },
+    {
+      "literal": "20",
+      "value": 20.0,
+      "lines": [
+        53
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 109
+    },
+    {
+      "literal": "27.1",
+      "value": 27.1,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 5
+    },
+    {
+      "literal": "28.8",
+      "value": 28.8,
+      "lines": [
+        27
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 3
+    },
+    {
+      "literal": "30",
+      "value": 30.0,
+      "lines": [
+        27,
+        50,
+        179
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 12
+    },
+    {
+      "literal": "30.6",
+      "value": 30.6,
+      "lines": [
+        82,
+        105,
+        116,
+        136
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 14
+    },
+    {
+      "literal": "41",
+      "value": 41.0,
+      "lines": [
+        50
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 5
+    },
+    {
+      "literal": "46.7",
+      "value": 46.7,
+      "lines": [
+        106,
+        116
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 9
+    },
+    {
+      "literal": "49.1",
+      "value": 49.1,
+      "lines": [
+        82,
+        99,
+        116,
+        135
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 4
+    },
+    {
+      "literal": "51.2",
+      "value": 51.2,
+      "lines": [
+        107
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 2
+    },
+    {
+      "literal": "53",
+      "value": 53.0,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 20
+    },
+    {
+      "literal": "53.82",
+      "value": 53.82,
+      "lines": [
+        50
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "case57_feasibility.json",
+          "jsonpath": "step1_n0.case118_accept_rate_pct",
+          "network": "case118",
+          "artifact_value": 53.82,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "n0_gate_pass_rate_pct.value",
+          "network": "case118",
+          "artifact_value": 53.82,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "n0_gate_pass_rate_pct.value",
+          "network": "case118",
+          "artifact_value": 53.82,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "55",
+      "value": 55.0,
+      "lines": [
+        142
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 5
+    },
+    {
+      "literal": "56.86",
+      "value": 56.86,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "case30_frozen.json",
+          "jsonpath": "case118_comparators.boundary_mass_pct",
+          "network": "case118",
+          "artifact_value": 56.86,
+          "scale": 1.0
+        },
+        {
+          "file": "case57_feasibility.json",
+          "jsonpath": "step3_boundary_mass.case118_boundary_pct",
+          "network": "case118",
+          "artifact_value": 56.86,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "dataset_facts.boundary_0p94_to_0p945_pct",
+          "network": "case118",
+          "artifact_value": 56.86,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "dataset_facts.boundary_0p94_to_0p945_pct",
+          "network": "case118",
+          "artifact_value": 56.86,
+          "scale": 1.0
+        },
+        {
+          "file": "quintile_boundary_mass.json",
+          "jsonpath": "step3_top_quintile_boundary_mass.case118_frozen_boundary_mass_pct",
+          "network": "case118",
+          "artifact_value": 56.86,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "57.0",
+      "value": 57.0,
+      "lines": [
+        108
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case57"
+      ],
+      "match_count": 15
+    },
+    {
+      "literal": "60",
+      "value": 60.0,
+      "lines": [
+        53
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 13
+    },
+    {
+      "literal": "63.7",
+      "value": 63.7,
+      "lines": [
+        109,
+        116
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 5
+    },
+    {
+      "literal": "64",
+      "value": 64.0,
+      "lines": [
+        27
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 8
+    },
+    {
+      "literal": "64.3",
+      "value": 64.3,
+      "lines": [
+        100,
+        116
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 2
+    },
+    {
+      "literal": "67.9",
+      "value": 67.9,
+      "lines": [
+        101
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 3
+    },
+    {
+      "literal": "71.4",
+      "value": 71.4,
+      "lines": [
+        102
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 9
+    },
+    {
+      "literal": "72.0",
+      "value": 72.0,
+      "lines": [
+        110
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case57"
+      ],
+      "match_count": 40
+    },
+    {
+      "literal": "73.9",
+      "value": 73.9,
+      "lines": [
+        103
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 10
+    },
+    {
+      "literal": "74",
+      "value": 74.0,
+      "lines": [
+        142
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 36
+    },
+    {
+      "literal": "74.8",
+      "value": 74.8,
+      "lines": [
+        104
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 3
+    },
+    {
+      "literal": "74.9",
+      "value": 74.9,
+      "lines": [
+        147
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 12
+    },
+    {
+      "literal": "76",
+      "value": 76.0,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 51
+    },
+    {
+      "literal": "82.52",
+      "value": 82.52,
+      "lines": [
+        147
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "case30_frozen.json",
+          "jsonpath": "case118_comparators.saturation_point_pct",
+          "network": "case118",
+          "artifact_value": 82.52,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "82.8",
+      "value": 82.8,
+      "lines": [
+        147
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 2
+    },
+    {
+      "literal": "86",
+      "value": 86.0,
+      "lines": [
+        179
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 35
+    },
+    {
+      "literal": "89.3",
+      "value": 89.3,
+      "lines": [
+        82,
+        99
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 10
+    },
+    {
+      "literal": "89.8",
+      "value": 89.8,
+      "lines": [
+        82,
+        105
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 9
+    },
+    {
+      "literal": "90",
+      "value": 90.0,
+      "lines": [
+        27,
+        60,
+        82,
+        124,
+        170,
+        184
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30",
+        "case57"
+      ],
+      "match_count": 81
+    },
+    {
+      "literal": "93.7",
+      "value": 93.7,
+      "lines": [
+        106
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 4
+    },
+    {
+      "literal": "94.0",
+      "value": 94.0,
+      "lines": [
+        100
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 111
+    },
+    {
+      "literal": "94.7",
+      "value": 94.7,
+      "lines": [
+        107
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 8
+    },
+    {
+      "literal": "95.0",
+      "value": 95.0,
+      "lines": [
+        101
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 116
+    },
+    {
+      "literal": "95.7",
+      "value": 95.7,
+      "lines": [
+        108
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 12
+    },
+    {
+      "literal": "95.9",
+      "value": 95.9,
+      "lines": [
+        102
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 14
+    },
+    {
+      "literal": "96.9",
+      "value": 96.9,
+      "lines": [
+        103
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 16
+    },
+    {
+      "literal": "97.0",
+      "value": 97.0,
+      "lines": [
+        109
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 113
+    },
+    {
+      "literal": "98.0",
+      "value": 98.0,
+      "lines": [
+        104,
+        110
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 101
+    },
+    {
+      "literal": "99.5",
+      "value": 99.5,
+      "lines": [
+        133,
+        149
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 8
+    },
+    {
+      "literal": "107",
+      "value": 107.0,
+      "lines": [
+        145
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 8
+    },
+    {
+      "literal": "118",
+      "value": 118.0,
+      "lines": [
+        27,
+        46,
+        90,
+        184
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 3
+    },
+    {
+      "literal": "173",
+      "value": 173.0,
+      "lines": [
+        46
+      ],
+      "status": "ORPHAN",
+      "distinctive": false,
+      "specific": false,
+      "networks": [],
+      "match_count": 0
+    },
+    {
+      "literal": "186",
+      "value": 186.0,
+      "lines": [
+        46,
+        50
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118"
+      ],
+      "match_count": 6
+    },
+    {
+      "literal": "400",
+      "value": 400.0,
+      "lines": [
+        73
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 85
+    },
+    {
+      "literal": "1500",
+      "value": 1500.0,
+      "lines": [
+        50,
+        179
+      ],
+      "status": "MATCHED",
+      "distinctive": false,
+      "specific": false,
+      "networks": [
+        "case118",
+        "case30"
+      ],
+      "match_count": 27
+    },
+    {
+      "literal": "61500",
+      "value": 61500.0,
+      "lines": [
+        50
+      ],
+      "status": "ORPHAN",
+      "distinctive": false,
+      "specific": false,
+      "networks": [],
+      "match_count": 0
+    },
+    {
+      "literal": "278955",
+      "value": 278955.0,
+      "lines": [
+        50
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "dataset_facts.converged_n1_rows",
+          "network": "case118",
+          "artifact_value": 278955.0,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "dataset_facts.converged_n1_rows",
+          "network": "case118",
+          "artifact_value": 278955.0,
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "literal": "280500",
+      "value": 280500.0,
+      "lines": [
+        50
+      ],
+      "status": "MATCHED",
+      "distinctive": true,
+      "specific": true,
+      "networks": [
+        "case118"
+      ],
+      "sources": [
+        {
+          "file": "broadened_metrics.json",
+          "jsonpath": "n_rows",
+          "network": "case118",
+          "artifact_value": 280500.0,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers.json",
+          "jsonpath": "dataset_facts.rows",
+          "network": "case118",
+          "artifact_value": 280500.0,
+          "scale": 1.0
+        },
+        {
+          "file": "frozen_poster_numbers_v2.json",
+          "jsonpath": "dataset_facts.rows",
+          "network": "case118",
+          "artifact_value": 280500.0,
+          "scale": 1.0
+        }
+      ]
+    }
+  ]
+}

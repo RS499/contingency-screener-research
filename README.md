@@ -1,11 +1,7 @@
 # Conformal-gated N-1 contingency screener
 
 This repository contains the code, data, and figures for a conformal-gated N-1 contingency
-screener for power grids. For each single-branch outage, an exact AC power-flow solve is the
-ground truth; a fast surrogate predicts the post-outage minimum bus voltage, a one-sided
-split-conformal band wraps the prediction, and a three-way gate (certify / flag / escalate)
-decides which cases still need the exact solver. The primary network is IEEE 118-bus
-(`pandapower.networks.case118`); an out-of-sample check is run on IEEE 30-bus (`case30`).
+screener for power grids. For each single-element outage, an exact AC power-flow solve is typically used by operators to calculate the new voltages across a grid. In this study, I use a fast surrogate to predict the post-outage minimum bus voltage and wrapping it with a one-sided split-conformal band. A three-way gate (certify / flag / escalate) is used by the models to determine if the contingency is safe, unsafe, or its unsure and it defaults to the exact solveer. The primary network is IEEE 118-bus (`pandapower.networks.case118`), with another run on IEEE 30-bus network (`case30`).
 
 ![The three-way gate](data/gate_schematic_v2.png)
 

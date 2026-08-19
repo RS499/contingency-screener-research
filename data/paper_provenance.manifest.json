@@ -1,0 +1,8 @@
+{
+  "artifact": "data/paper_provenance.json",
+  "generator": "scripts/check_paper.py",
+  "source_tex": "paper_current.tex",
+  "written": "2026-08-03T20:11:54",
+  "n_artifacts_scanned": 36,
+  "note": "Numeric provenance map for the paper; regenerate with --update-provenance. Derived artifact, not a frozen result."
+}
