@@ -156,8 +156,22 @@ def thermal_sweep(builder, dataset_path, name, max_scenarios=None):
         rows = n1[n1.scenario_id == si]
         for _, r in rows.iterrows():
             net = builder()
-            net.load["p_mw"] = row[load_p].to_numpy(dtype=float)[:len(net.load)]
-            net.load["q_mvar"] = row[load_q].to_numpy(dtype=float)[:len(net.load)]
+            # pload_i / qload_i are PER-BUS aggregates: generate_dataset.py:158-166 sums
+            # p_new into pbus[net["_load_bus"]], indexed 0..n_bus-1. net.load rows are NOT
+            # indexed by bus -- on case30, net.load.bus is
+            # [1,2,3,6,7,9,11,13,14,15,16,17,18,19,20,22,23,25,28,29].
+            #
+            # The previous code took the first len(net.load) bus columns positionally, which
+            # gave every load a different bus's demand and dropped the remainder (case30:
+            # 154.48 MW assigned against 203.95 MW correct; case118 would be 118 columns
+            # against 99 load rows, latent because that sweep is skipped as PLACEHOLDER).
+            #
+            # Index by bus instead, the idiom used at scripts/classical_screen.py:18-29.
+            # ACCEPTANCE TEST: bus-mapped reproduces the dataset's stored min_vm to <=1e-7;
+            # positional does not. See --self-test.
+            load_bus = net.load.bus.to_numpy()
+            net.load["p_mw"] = row[load_p].to_numpy(dtype=float)[load_bus]
+            net.load["q_mvar"] = row[load_q].to_numpy(dtype=float)[load_bus]
             net.gen["vm_pu"] = row[gen_vm].to_numpy(dtype=float)[:len(net.gen)]
             net.gen["min_q_mvar"] = row[gen_qmin].to_numpy(dtype=float)[:len(net.gen)]
             net.gen["max_q_mvar"] = row[gen_qmax].to_numpy(dtype=float)[:len(net.gen)]
