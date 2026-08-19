@@ -1,0 +1,65 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "60822046633e729db4bdcce0bb539163fe7fb4a4",
+    "short": "6082204"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "5dd818561c7533aab049517b29a1e8d4abf80961bb07366f2b3c83db9271766a",
+  "run_settings": {
+    "task": "Stage 2H H3 build: thermal-feasible case30",
+    "network": "case30",
+    "range": [
+      0.87,
+      0.99
+    ],
+    "n_scenarios": 1500,
+    "seed": 100,
+    "n0_predicate": "n0_conv AND n0_min_vm >= 0.94 AND max loading_percent <= 100.0",
+    "imported_from": "feasibility/generate_dataset.py"
+  },
+  "model_hyperparameters": null
+}

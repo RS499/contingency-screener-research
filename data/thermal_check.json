@@ -1,0 +1,137 @@
+{
+  "question": "Stage 2A: are thermal ratings present and meaningful, and what is the over-voltage picture? Reported separately per constraint.",
+  "limit_under_voltage": 0.94,
+  "over_voltage_threshold": 1.05,
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "placeholder_rule": "a rating is judged PLACEHOLDER if base-case max loading is below 25.0% AND the rating takes at most 3 distinct values (lines), or is a single value at or above 1000 MVA (transformers)",
+  "networks": {
+    "case118": {
+      "rating_audit": {
+        "n_lines": 173,
+        "n_trafos": 13,
+        "line_max_i_ka": {
+          "n_nan": 0,
+          "n_distinct": 2,
+          "min": 16.56744250718057,
+          "max": 41.41860626795142,
+          "implied_mva_min": 9900.0,
+          "implied_mva_max": 9900.000000000002
+        },
+        "trafo_sn_mva": {
+          "n_nan": 0,
+          "n_distinct": 1,
+          "min": 9900.0,
+          "max": 9900.0
+        },
+        "base_case_loading_pct": {
+          "line_max": 4.475087324056162,
+          "line_median": 0.34796764260032675,
+          "trafo_max": 3.5892305584092106
+        },
+        "line_verdict": "UNDEFINED (rating populated but PLACEHOLDER)",
+        "trafo_verdict": "UNDEFINED (rating populated but PLACEHOLDER)"
+      },
+      "overvoltage": {
+        "status": "OK",
+        "dataset": "data/dataset.parquet",
+        "n0_base": {
+          "n": 1500,
+          "share_above_1p05": 0.734,
+          "share_above_1p06": 0.058,
+          "share_above_1p10": 0.0013333333333333333,
+          "max_vm_max": 1.1222032642156976,
+          "max_vm_median": 1.0543519864279756,
+          "max_vm_min": 1.035
+        },
+        "n1": {
+          "n": 278955,
+          "share_above_1p05": 0.7313581043537488,
+          "share_above_1p06": 0.057367675790001973,
+          "share_above_1p10": 0.0015737305300138015,
+          "max_vm_max": 1.1529085250441442,
+          "max_vm_median": 1.0542520783507079,
+          "max_vm_min": 1.035
+        }
+      },
+      "thermal_sweep": {
+        "skipped": true,
+        "reason": "line_verdict='UNDEFINED (rating populated but PLACEHOLDER)'; a loading sweep against a placeholder or absent rating measures nothing and would report a misleading zero"
+      }
+    },
+    "case30": {
+      "rating_audit": {
+        "n_lines": 41,
+        "n_trafos": 0,
+        "line_max_i_ka": {
+          "n_nan": 0,
+          "n_distinct": 6,
+          "min": 0.06842669857062,
+          "max": 0.55596692588631,
+          "implied_mva_min": 15.999999999999458,
+          "implied_mva_max": 130.00000000000085
+        },
+        "trafo_sn_mva": {
+          "n_nan": 0,
+          "n_distinct": 0,
+          "min": null,
+          "max": null
+        },
+        "base_case_loading_pct": {
+          "line_max": 111.83140586617333,
+          "line_median": 26.92413803795224,
+          "trafo_max": null
+        },
+        "line_verdict": "RATED (rating appears meaningful)",
+        "trafo_verdict": "N/A (network has no transformers)"
+      },
+      "overvoltage": {
+        "status": "OK",
+        "dataset": "data/case30_dataset.parquet",
+        "n0_base": {
+          "n": 1500,
+          "share_above_1p05": 0.0,
+          "share_above_1p06": 0.0,
+          "share_above_1p10": 0.0,
+          "max_vm_max": 1.0249843220727344,
+          "max_vm_median": 1.0165071567189714,
+          "max_vm_min": 1.0
+        },
+        "n1": {
+          "n": 61500,
+          "share_above_1p05": 0.0,
+          "share_above_1p06": 0.0,
+          "share_above_1p10": 0.0,
+          "max_vm_max": 1.0263452079242976,
+          "max_vm_median": 1.0165154060357846,
+          "max_vm_min": 1.0
+        }
+      },
+      "thermal_sweep": {
+        "coverage": "SAMPLE - NOT a full sweep",
+        "n_base_scenarios_in_dataset": 1500,
+        "sample_note": "first 120 of 1500 base scenarios in dataset order, not a random sample; shares below are estimates over that prefix",
+        "n_scenarios_swept": 120,
+        "n_contingencies_solved": 4920,
+        "n_solver_failures": 0,
+        "elapsed_s": 416.6,
+        "line_loading": {
+          "n": 4920,
+          "share_above_100": 1.0,
+          "share_above_95": 1.0,
+          "max": 490.44656024383517,
+          "median": 154.72382022635077,
+          "p90": 192.48176405289811
+        },
+        "trafo_loading": {
+          "n": 0,
+          "note": "no transformers or no trafo results"
+        }
+      }
+    }
+  }
+}

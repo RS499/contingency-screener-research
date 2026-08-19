@@ -1,0 +1,103 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "60822046633e729db4bdcce0bb539163fe7fb4a4",
+    "short": "6082204"
+  },
+  "artifact": {
+    "n_rows": 280500,
+    "n_columns": 634
+  },
+  "content_sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e",
+  "run_settings": {
+    "task": "N-1 contingency dataset, IEEE 118-bus",
+    "invocation": "feasibility/generate_dataset.py --n 1500 --mult-lo 1.0 --mult-hi 1.12 --reg-lo 1.0 --reg-hi 1.12 --pf-lo 0.9 --pf-hi 1.15 --dvm 0.025",
+    "config_source": "README.md:94-95 (committed invocation). NOT taken from feasibility/case57_gonogo.py:COMMITTED_CFG, which describes a different network's go/no-go and may mirror the build without being it.",
+    "producer_script": "feasibility/generate_dataset.py",
+    "producer_writes_manifest": false
+  },
+  "model_hyperparameters": null,
+  "provenance_class": {
+    "retroactive": true,
+    "emitted_by": "scripts/dataset_manifest.py",
+    "why": "feasibility/generate_dataset.py writes the parquet and no manifest. This manifest was emitted after the fact and does NOT witness the build environment.",
+    "field_provenance": {
+      "python": "observed_now",
+      "packages": "observed_now",
+      "hardware": "observed_now",
+      "numba": "observed_now",
+      "measurement": "observed_now (read from data/solve_time.json; a separate measurement, unrelated to dataset generation)",
+      "solver": "recovered_from_docs (feasibility/manifest.py SOLVER constant; the pinned config this project uses throughout)",
+      "tuned_generator_settings": "recovered_from_docs (feasibility/manifest.py TUNED)",
+      "git_commit": "observed_now - this is HEAD at emit time, NOT the commit the dataset was built at",
+      "content_sha256": "derived_from_artifact",
+      "artifact": "derived_from_artifact",
+      "run_settings": "recovered_from_docs (README.md:94-95)",
+      "derived_verification": "derived_from_artifact"
+    },
+    "unknown": [
+      "interpreter and package versions at generation time",
+      "hardware at generation time",
+      "wall-clock generation date",
+      "the RNG seed used for the case118 build (the invocation in README.md:94-95 passes no --seed; case30's recorded invocation passes --seed 100)",
+      "the git commit at which the dataset was generated"
+    ]
+  },
+  "derived_verification": {
+    "n_base_scenarios": 1500,
+    "n_n1_rows": 279000,
+    "n_n1_converged": 278955,
+    "n_nonconverged": 45,
+    "agg_loading_min": 1.0142253637313843,
+    "agg_loading_max": 1.1238573789596558,
+    "gen_out_share_of_bases": 0.24933333333333332,
+    "max_abs_gen_vm_deviation": 0.02499490022659301,
+    "n_scenarios_declared_by_invocation": 1500,
+    "checks": {
+      "n_matches_invocation": true,
+      "dvm_consistent_with_0p025": true,
+      "agg_loading_within_mult_range": true
+    },
+    "note_agg_loading": "agg_loading max exceeds 1.12 slightly (regional mode applies a block multiplier plus +/-10% per-load jitter, so the aggregate can land just above the stated hi). Recorded, not corrected."
+  }
+}
