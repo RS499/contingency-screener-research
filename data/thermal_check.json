@@ -112,20 +112,20 @@
         }
       },
       "thermal_sweep": {
-        "coverage": "SAMPLE - NOT a full sweep",
+        "coverage": "FULL SWEEP",
         "n_base_scenarios_in_dataset": 1500,
-        "sample_note": "first 120 of 1500 base scenarios in dataset order, not a random sample; shares below are estimates over that prefix",
-        "n_scenarios_swept": 120,
-        "n_contingencies_solved": 4920,
+        "sample_note": "every base scenario in the dataset",
+        "n_scenarios_swept": 1500,
+        "n_contingencies_solved": 61500,
         "n_solver_failures": 0,
-        "elapsed_s": 416.6,
+        "elapsed_s": 5464.9,
         "line_loading": {
-          "n": 4920,
-          "share_above_100": 1.0,
-          "share_above_95": 1.0,
-          "max": 490.44656024383517,
-          "median": 154.72382022635077,
-          "p90": 192.48176405289811
+          "n": 61500,
+          "share_above_100": 0.9989105691056911,
+          "share_above_95": 0.9999837398373984,
+          "max": 217.54822673764184,
+          "median": 122.56098152254225,
+          "p90": 136.44159869188255
         },
         "trafo_loading": {
           "n": 0,

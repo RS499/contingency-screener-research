@@ -1,0 +1,84 @@
+{
+  "question": "Does the barrier inequality hold within each model, and does ridge's overshoot tail outgrow its own q_hat on case30-thermal in a way that explains the model-ordering reversal?",
+  "definitions": {
+    "overshoot": "pred - Y, signed; positive means the model predicted above the truth",
+    "depth": "0.94 - Y, positive on violations",
+    "inequality": "a miss requires overshoot >= q_hat + depth",
+    "S_mean": "E[overshoot | Y < L] / q_hat",
+    "S_p99": "p99(overshoot | Y < L) / q_hat"
+  },
+  "coverage_targets": [
+    0.9,
+    0.91,
+    0.92,
+    0.93,
+    0.94,
+    0.95,
+    0.96,
+    0.97,
+    0.98
+  ],
+  "seeds": 5,
+  "limit": 0.94,
+  "identity_checks": {
+    "max_identity_gap": 5.551115123125783e-17,
+    "min_share_missed_overshoot_gt_qhat": 1.0,
+    "min_share_missed_overshoot_ge_qhat_plus_depth": 1.0,
+    "n_rows_with_any_miss": 173,
+    "n_rows": 180
+  },
+  "summary_at_090": {
+    "case118": {
+      "ridge": {
+        "q_hat_at_090_mean": 0.005198231037165079,
+        "q_hat_at_090_std": 0.00024864109822318324,
+        "missed_at_090_mean": 0.029631523339489742,
+        "missed_at_090_std": 0.004393889029106623,
+        "mean_overshoot_given_viol_at_090": 0.0031264254726942158,
+        "S_mean_over_qhat_at_090_mean": 0.6037845811435492,
+        "S_mean_over_qhat_at_090_std": 0.07568533879876284,
+        "S_p99_over_qhat_at_090_mean": 6.548388859231787,
+        "S_p99_over_qhat_at_090_std": 0.5724351732365826,
+        "p_overshoot_gt_qhat_given_viol_at_090_mean": 0.3883743548430666
+      },
+      "histgb": {
+        "q_hat_at_090_mean": 0.002290702766310826,
+        "q_hat_at_090_std": 0.0001327635720642294,
+        "missed_at_090_mean": 0.04716684182384393,
+        "missed_at_090_std": 0.009772209302677339,
+        "mean_overshoot_given_viol_at_090": 0.0018121731448192044,
+        "S_mean_over_qhat_at_090_mean": 0.7919301552833694,
+        "S_mean_over_qhat_at_090_std": 0.07432884539735458,
+        "S_p99_over_qhat_at_090_mean": 9.774697124191146,
+        "S_p99_over_qhat_at_090_std": 0.5740733048592552,
+        "p_overshoot_gt_qhat_given_viol_at_090_mean": 0.41149974601117245
+      }
+    },
+    "case30_thermal": {
+      "ridge": {
+        "q_hat_at_090_mean": 0.006973905879127207,
+        "q_hat_at_090_std": 0.00041241771592434367,
+        "missed_at_090_mean": 0.060873023867972956,
+        "missed_at_090_std": 0.004230980760261226,
+        "mean_overshoot_given_viol_at_090": 0.0050036637052698115,
+        "S_mean_over_qhat_at_090_mean": 0.7213426623754614,
+        "S_mean_over_qhat_at_090_std": 0.0656438240627924,
+        "S_p99_over_qhat_at_090_mean": 4.390677117862201,
+        "S_p99_over_qhat_at_090_std": 0.33852635481112553,
+        "p_overshoot_gt_qhat_given_viol_at_090_mean": 0.3959550200901302
+      },
+      "histgb": {
+        "q_hat_at_090_mean": 0.002355131614161632,
+        "q_hat_at_090_std": 0.000309952457868838,
+        "missed_at_090_mean": 0.022255143446972075,
+        "missed_at_090_std": 0.0034860525509527274,
+        "mean_overshoot_given_viol_at_090": 0.0008090696919737645,
+        "S_mean_over_qhat_at_090_mean": 0.343934685282686,
+        "S_mean_over_qhat_at_090_std": 0.06175223629218416,
+        "S_p99_over_qhat_at_090_mean": 5.213064887952486,
+        "S_p99_over_qhat_at_090_std": 0.6493375914589473,
+        "p_overshoot_gt_qhat_given_viol_at_090_mean": 0.22980966146564227
+      }
+    }
+  }
+}

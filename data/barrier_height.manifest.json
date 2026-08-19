@@ -48,19 +48,13 @@
     "n_records": null,
     "n_fields": null
   },
-  "content_sha256": "cbeadaa2d61d90549523a2cde27b7ee468598e719031dd892f80df76dcb4c000",
+  "content_sha256": "468e30b2c9d7614bf72f878c648306d892ee0685c4de4618418430414107daa0",
   "run_settings": {
-    "task": "Stage 2A thermal and over-voltage check",
+    "task": "barrier-height resolution",
     "sources": [
       "data/dataset.parquet",
-      "data/case30_dataset.parquet"
+      "data/case30_thermal/dataset.parquet"
     ]
   },
-  "model_hyperparameters": null,
-  "run_meta": {
-    "artifact": "thermal rating audit, thermal loading sweep, and over-voltage shares for case118 and case30",
-    "over_voltage_threshold": 1.05,
-    "caveat": "Thermal verdicts are per constraint and per network. A populated rating is NOT evidence of a meaningful rating; see placeholder_rule.",
-    "model_hyperparameters": null
-  }
+  "model_hyperparameters": null
 }
