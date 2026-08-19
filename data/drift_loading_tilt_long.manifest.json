@@ -1,0 +1,59 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "69eeb80a34c9815194d6ead556ab26e86bfc249d",
+    "short": "69eeb80"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "3c744f658e5a3973d8b073aeacf15381edb75f8735be96f07458625861f5404b",
+  "run_settings": {
+    "task": "Stage 2E: loading soft-tilt drift (case118)",
+    "source": "data/dataset.parquet",
+    "design": "soft exponential tilt on agg_loading; supports identical, ratio finite; NO median split",
+    "tilt_lambda": 3.0
+  },
+  "model_hyperparameters": null
+}

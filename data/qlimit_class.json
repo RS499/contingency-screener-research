@@ -1,0 +1,378 @@
+{
+  "question": "Stage 2F: do deep misses at the recommended operating points form an identifiable class with a PRE-OUTAGE signature?",
+  "operating_points": {
+    "ridge": 0.94,
+    "histgb": 0.97
+  },
+  "limit": 0.94,
+  "deep_definition": "missed violation whose depth (0.94 - y) exceeds one band width q_hat",
+  "offsetpoint_definition": "generator g counts as off-setpoint pre-outage when |vm0_[bus(g)] - genvm_g| > 0.0001 and genon_g is 1. A generator holding its setpoint is regulating; one that has departed from it has hit a reactive limit.",
+  "baseline_all_n1_rows": {
+    "n_rows": 278955,
+    "offsetpoint_gens_mean": 20.799293792905665,
+    "offsetpoint_gens_share_with_any": 1.0,
+    "violation_rate": 0.174755784983241
+  },
+  "per_operating_point": {
+    "ridge": {
+      "target": 0.94,
+      "per_seed_depth": [
+        {
+          "seed": 0,
+          "q_hat": 0.0074367979219531755,
+          "n_missed": 59,
+          "n_deep": 6,
+          "max_depth": 0.024135209910541633,
+          "median_depth": 0.0023336351505914843
+        },
+        {
+          "seed": 1,
+          "q_hat": 0.007442509647866191,
+          "n_missed": 61,
+          "n_deep": 12,
+          "max_depth": 0.015862163372903915,
+          "median_depth": 0.0028378321868701706
+        },
+        {
+          "seed": 2,
+          "q_hat": 0.006657457124686683,
+          "n_missed": 111,
+          "n_deep": 23,
+          "max_depth": 0.012919168044457696,
+          "median_depth": 0.003496901201088698
+        },
+        {
+          "seed": 3,
+          "q_hat": 0.006473333863994513,
+          "n_missed": 88,
+          "n_deep": 8,
+          "max_depth": 0.022712215880924647,
+          "median_depth": 0.0021644802483588577
+        },
+        {
+          "seed": 4,
+          "q_hat": 0.007389140097740388,
+          "n_missed": 65,
+          "n_deep": 9,
+          "max_depth": 0.032425998381073184,
+          "median_depth": 0.002333217059319548
+        }
+      ],
+      "n_deep_total": 58,
+      "deep_elements": [
+        {
+          "element": "line_51",
+          "count": 5,
+          "share": 0.08620689655172414
+        },
+        {
+          "element": "line_147",
+          "count": 5,
+          "share": 0.08620689655172414
+        },
+        {
+          "element": "line_167",
+          "count": 4,
+          "share": 0.06896551724137931
+        },
+        {
+          "element": "line_31",
+          "count": 4,
+          "share": 0.06896551724137931
+        },
+        {
+          "element": "line_155",
+          "count": 3,
+          "share": 0.05172413793103448
+        },
+        {
+          "element": "line_124",
+          "count": 2,
+          "share": 0.034482758620689655
+        },
+        {
+          "element": "line_30",
+          "count": 2,
+          "share": 0.034482758620689655
+        },
+        {
+          "element": "line_151",
+          "count": 2,
+          "share": 0.034482758620689655
+        },
+        {
+          "element": "trafo_4",
+          "count": 2,
+          "share": 0.034482758620689655
+        },
+        {
+          "element": "line_154",
+          "count": 2,
+          "share": 0.034482758620689655
+        }
+      ],
+      "n_distinct_elements": 32,
+      "top_element_share": 0.08620689655172414,
+      "deep_argmin_buses_ieee": [
+        {
+          "bus": 106,
+          "count": 6,
+          "share": 0.10344827586206896
+        },
+        {
+          "bus": 41,
+          "count": 5,
+          "share": 0.08620689655172414
+        },
+        {
+          "bus": 101,
+          "count": 5,
+          "share": 0.08620689655172414
+        },
+        {
+          "bus": 28,
+          "count": 5,
+          "share": 0.08620689655172414
+        },
+        {
+          "bus": 104,
+          "count": 4,
+          "share": 0.06896551724137931
+        },
+        {
+          "bus": 114,
+          "count": 4,
+          "share": 0.06896551724137931
+        },
+        {
+          "bus": 76,
+          "count": 3,
+          "share": 0.05172413793103448
+        },
+        {
+          "bus": 59,
+          "count": 2,
+          "share": 0.034482758620689655
+        },
+        {
+          "bus": 27,
+          "count": 2,
+          "share": 0.034482758620689655
+        },
+        {
+          "bus": 95,
+          "count": 2,
+          "share": 0.034482758620689655
+        }
+      ],
+      "n_distinct_argmin_buses": 25,
+      "top_bus_share": 0.10344827586206896,
+      "offsetpoint_gens": {
+        "mean": 21.32758620689655,
+        "median": 21.0,
+        "min": 17,
+        "max": 27,
+        "share_with_any": 1.0
+      },
+      "min_hops": {
+        "mean": 1.5517241379310345,
+        "median": 1.0,
+        "share_within_2": 0.8103448275862069
+      },
+      "max_depth": 0.032425998381073184,
+      "deepest": {
+        "seed": 4,
+        "row": 19394,
+        "scenario_id": 100000104,
+        "outaged_type": "line",
+        "outaged_idx": 51,
+        "argmin_bus_idx": 40,
+        "argmin_bus_ieee": 41,
+        "depth": 0.032425998381073184,
+        "q_hat": 0.007389140097740388,
+        "n_offsetpoint_gens": 24,
+        "min_hops_to_offsetpoint_gen": 3
+      }
+    },
+    "histgb": {
+      "target": 0.97,
+      "per_seed_depth": [
+        {
+          "seed": 0,
+          "q_hat": 0.005720216760455421,
+          "n_missed": 114,
+          "n_deep": 32,
+          "max_depth": 0.035869194466890186,
+          "median_depth": 0.0027602523326612505
+        },
+        {
+          "seed": 1,
+          "q_hat": 0.005728406974601752,
+          "n_missed": 78,
+          "n_deep": 26,
+          "max_depth": 0.045982601089145314,
+          "median_depth": 0.0025796435964495767
+        },
+        {
+          "seed": 2,
+          "q_hat": 0.005352561828672053,
+          "n_missed": 100,
+          "n_deep": 17,
+          "max_depth": 0.0914569251411822,
+          "median_depth": 0.0019163286144640024
+        },
+        {
+          "seed": 3,
+          "q_hat": 0.005327379026154766,
+          "n_missed": 67,
+          "n_deep": 18,
+          "max_depth": 0.0914569251411822,
+          "median_depth": 0.003305310902243397
+        },
+        {
+          "seed": 4,
+          "q_hat": 0.006594729621320128,
+          "n_missed": 45,
+          "n_deep": 13,
+          "max_depth": 0.06701563873171257,
+          "median_depth": 0.0027139182816193763
+        }
+      ],
+      "n_deep_total": 106,
+      "deep_elements": [
+        {
+          "element": "trafo_4",
+          "count": 5,
+          "share": 0.04716981132075472
+        },
+        {
+          "element": "line_155",
+          "count": 5,
+          "share": 0.04716981132075472
+        },
+        {
+          "element": "line_159",
+          "count": 5,
+          "share": 0.04716981132075472
+        },
+        {
+          "element": "line_4",
+          "count": 5,
+          "share": 0.04716981132075472
+        },
+        {
+          "element": "line_19",
+          "count": 5,
+          "share": 0.04716981132075472
+        },
+        {
+          "element": "line_162",
+          "count": 4,
+          "share": 0.03773584905660377
+        },
+        {
+          "element": "line_10",
+          "count": 4,
+          "share": 0.03773584905660377
+        },
+        {
+          "element": "line_90",
+          "count": 4,
+          "share": 0.03773584905660377
+        },
+        {
+          "element": "trafo_8",
+          "count": 3,
+          "share": 0.02830188679245283
+        },
+        {
+          "element": "line_2",
+          "count": 3,
+          "share": 0.02830188679245283
+        }
+      ],
+      "n_distinct_elements": 54,
+      "top_element_share": 0.04716981132075472,
+      "deep_argmin_buses_ieee": [
+        {
+          "bus": 104,
+          "count": 16,
+          "share": 0.1509433962264151
+        },
+        {
+          "bus": 117,
+          "count": 14,
+          "share": 0.1320754716981132
+        },
+        {
+          "bus": 54,
+          "count": 8,
+          "share": 0.07547169811320754
+        },
+        {
+          "bus": 107,
+          "count": 7,
+          "share": 0.0660377358490566
+        },
+        {
+          "bus": 106,
+          "count": 5,
+          "share": 0.04716981132075472
+        },
+        {
+          "bus": 63,
+          "count": 5,
+          "share": 0.04716981132075472
+        },
+        {
+          "bus": 59,
+          "count": 5,
+          "share": 0.04716981132075472
+        },
+        {
+          "bus": 109,
+          "count": 4,
+          "share": 0.03773584905660377
+        },
+        {
+          "bus": 76,
+          "count": 4,
+          "share": 0.03773584905660377
+        },
+        {
+          "bus": 1,
+          "count": 4,
+          "share": 0.03773584905660377
+        }
+      ],
+      "n_distinct_argmin_buses": 31,
+      "top_bus_share": 0.1509433962264151,
+      "offsetpoint_gens": {
+        "mean": 21.452830188679247,
+        "median": 22.0,
+        "min": 17,
+        "max": 27,
+        "share_with_any": 1.0
+      },
+      "min_hops": {
+        "mean": 0.9811320754716981,
+        "median": 1.0,
+        "share_within_2": 0.8962264150943396
+      },
+      "max_depth": 0.0914569251411822,
+      "deepest": {
+        "seed": 2,
+        "row": 74468,
+        "scenario_id": 101000025,
+        "outaged_type": "line",
+        "outaged_idx": 78,
+        "argmin_bus_idx": 53,
+        "argmin_bus_ieee": 54,
+        "depth": 0.0914569251411822,
+        "q_hat": 0.005352561828672053,
+        "n_offsetpoint_gens": 20,
+        "min_hops_to_offsetpoint_gen": 1
+      }
+    }
+  }
+}
