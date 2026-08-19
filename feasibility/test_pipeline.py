@@ -43,21 +43,18 @@ def test_T1_no_scenario_overlap(ctx):
     s_te = set(g[ctx["splits"]["test"]])
     ov = (s_tr & s_ca) | (s_tr & s_te) | (s_ca & s_te)
     assert len(ov) == 0, f"T1 FAIL: {len(ov)} scenario_ids appear in more than one split"
-    return "T1 PASS: train/cal/test share zero scenario_ids"
 
 
 def test_T2_calibration_size(ctx):
     n_cal = len(set(ctx["groups"][ctx["splits"]["cal"]]))
     assert n_cal >= MIN_CAL_SCENARIOS, \
         f"T2 FAIL: calibration set has {n_cal} scenarios, need >= {MIN_CAL_SCENARIOS}"
-    return f"T2 PASS: calibration set has {n_cal} scenarios (>= {MIN_CAL_SCENARIOS})"
 
 
 def test_T3_coverage_in_band(ctx):
     c = ctx["coverage"]
     assert 0.87 <= c <= 0.93, \
         f"T3 FAIL: empirical coverage {c*100:.1f}% outside [87, 93]% (target 90%)"
-    return f"T3 PASS: empirical coverage {c*100:.1f}% within [87, 93]%"
 
 
 def test_T4_band_one_sided(ctx):
@@ -66,7 +63,6 @@ def test_T4_band_one_sided(ctx):
     gate = ge.run_gate(np.array([2.0]), q, LIMIT)
     assert bool(gate["certify"][0]) and not bool(gate["flag"][0]), \
         "T4 FAIL: a prediction far above the limit was not certified (band is not one-sided)"
-    return f"T4 PASS: q_hat={q:.5f} > 0 and band is one-sided [pred - q_hat, inf)"
 
 
 def test_T5_no_row_leakage(ctx):
@@ -74,7 +70,6 @@ def test_T5_no_row_leakage(ctx):
     n_unique = len(set(idx_all.tolist()))
     assert n_unique == len(idx_all), \
         f"T5 FAIL: {len(idx_all) - n_unique} row indices appear in more than one split"
-    return f"T5 PASS: all {len(idx_all)} split rows are positionally disjoint"
 
 
 def test_T6_reproducible(ctx):
@@ -88,7 +83,6 @@ def test_T6_reproducible(ctx):
     q2 = ge.calibrate_qhat(sg.predict(fitted, Xk.iloc[splits2["cal"]].to_numpy(np.float32)),
                            ctx["y"][splits2["cal"]], COVERAGE)
     assert abs(q2 - ctx["q_hat"]) < 1e-9, f"T6 FAIL: q_hat not reproduced ({q2} vs {ctx['q_hat']})"
-    return "T6 PASS: same seed reproduces split scenario ids and q_hat"
 
 
 TESTS = [test_T1_no_scenario_overlap, test_T2_calibration_size, test_T3_coverage_in_band,
@@ -101,7 +95,8 @@ def run_all(path):
     n_fail = 0
     for t in TESTS:
         try:
-            print("  " + t(ctx))
+            t(ctx)
+            print(f"  {t.__name__} PASS")
         except AssertionError as e:
             print("  " + str(e))
             n_fail += 1
