@@ -20,7 +20,6 @@ def test_T1_manifest_exists(data_dir):
         if os.path.exists(results_path) and not os.path.exists(manifest_for(results_path)):
             missing.append(name)
     assert len(missing) == 0, f"T1 FAIL: results files written without a matching manifest: {missing}"
-    return "T1 PASS: every results file has a matching manifest"
 
 
 def test_T2_manifest_fields(data_dir):
@@ -37,7 +36,6 @@ def test_T2_manifest_fields(data_dir):
             assert pkg in m["packages"], f"T2 FAIL: {name} manifest missing version for {pkg}"
         for hk in REQUIRED_HARDWARE_KEYS:
             assert hk in m["hardware"], f"T2 FAIL: {name} manifest missing hardware key '{hk}'"
-    return "T2 PASS: manifests pin the solver config, package versions, and hardware"
 
 
 def test_T3_ms_solver_single_source(data_dir):
@@ -49,7 +47,6 @@ def test_T3_ms_solver_single_source(data_dir):
     used = json.load(open(screener_path))["ms_solver"]
     assert used == measured, \
         f"T3 FAIL: screener_metrics ms_solver {used} != measured {measured} - stale, re-run run_all.py"
-    return f"T3 PASS: screener ms_solver matches the measured {measured} ms/case"
 
 
 TESTS = [test_T1_manifest_exists, test_T2_manifest_fields, test_T3_ms_solver_single_source]
@@ -59,7 +56,8 @@ def run_all(data_dir):
     fails = 0
     for t in TESTS:
         try:
-            print(t(data_dir))
+            t(data_dir)
+            print(f"{t.__name__} PASS")
         except AssertionError as e:
             print(e)
             fails += 1

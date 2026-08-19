@@ -1,0 +1,124 @@
+{
+  "purpose": "Canonical-form registry. One entry per quantity that has more than one valid representation in this project. The numbers gate refuses any manuscript value not traceable to a declared canonical form.",
+  "why_this_exists": "Four separate instances of one-concept-two-representations have appeared here (bus identifiers, boundary-mass definition, M1 vs M2 curve, seed-mean vs count-pooled aggregation). That is a systemic property of the repo, not four coincidences. Twice, a careful reader reasoned from a planning document rather than an artifact and reached the wrong conclusion.",
+  "schema": {
+    "network": "REQUIRED on every entry. A network-free entry is invalid. The +1 bus offset is a property of case118's ordering, not a general fact.",
+    "representations": "every form the quantity appears in",
+    "authoritative": "which representation is canonical",
+    "conversion_site": "file:line where conversion happens, or null if none is needed",
+    "verified": "how the mapping was checked"
+  },
+  "entries": [
+    {
+      "id": "bus_identifier.case118",
+      "network": "case118",
+      "quantity": "bus identifier",
+      "representations": [
+        {
+          "name": "pandapower_positional_index",
+          "description": "0-based positional index into net.bus; what np.nanargmin returns and what argmin_bus stores",
+          "used_in": ["data/dataset.parquet:argmin_bus", "feasibility/freeze_poster_numbers.py"]
+        },
+        {
+          "name": "ieee_bus_name",
+          "description": "1-based IEEE bus name from net.bus.name",
+          "used_in": ["report/paper_current_STS.tex", "notes/*.md"]
+        }
+      ],
+      "authoritative": "ieee_bus_name",
+      "relation": "ieee_bus_name = pandapower_positional_index + 1",
+      "relation_scope": "case118 ONLY. Verified for every referenced bus. Do not assume it holds on any other network.",
+      "conversion_site": "feasibility/freeze_poster_numbers.py:116",
+      "verified": "data/bus_convention_map.json convention.case118_index_equals_ieee_minus_1; two independent reviewers previously concluded the paper was wrong by reasoning from planning-doc phrasing, and the committed artifact proved them wrong",
+      "examples": {"75": 76, "52": 53, "106": 107, "9": 10, "24": 25, "63": 64, "65": 66}
+    },
+    {
+      "id": "bus_identifier.case30",
+      "network": "case30",
+      "quantity": "bus identifier",
+      "representations": [
+        {"name": "pandapower_positional_index", "description": "0-based index into net.bus", "used_in": ["data/case30_dataset.parquet:argmin_bus"]},
+        {"name": "ieee_bus_name", "description": "IEEE bus name from net.bus.name", "used_in": ["prose"]}
+      ],
+      "authoritative": "ieee_bus_name",
+      "relation": "NOT VERIFIED",
+      "relation_scope": "The +1 offset is a case118 property. Whether it holds on case30 has NOT been checked in this repository. Any case30 bus number in prose must be traced before use.",
+      "conversion_site": null,
+      "verified": "NOT VERIFIED - this entry exists to block the assumption, not to record a mapping"
+    },
+    {
+      "id": "boundary_mass",
+      "network": "case118",
+      "quantity": "boundary mass",
+      "representations": [
+        {
+          "name": "strip_share_0940_0945",
+          "description": "share of converged N-1 rows with min_vm in [0.940, 0.945)",
+          "used_in": ["data/frozen_poster_numbers.json"]
+        },
+        {
+          "name": "escalation_ceiling_complement",
+          "description": "complement of the violation rate; the saturation point escalation approaches as q_hat grows",
+          "used_in": ["report/paper_current_STS.tex Results IV-C"]
+        }
+      ],
+      "authoritative": "strip_share_0940_0945",
+      "relation": "DISTINCT QUANTITIES, NOT TWO VIEWS OF ONE. CLAUDE.md section 5 states they must never be conflated.",
+      "relation_scope": "Both are read from data/frozen_poster_numbers.json under different keys. Read both; never substitute one for the other.",
+      "conversion_site": null,
+      "verified": "CLAUDE.md section 5 standing rule"
+    },
+    {
+      "id": "tradeoff_curve_version",
+      "network": "case118",
+      "quantity": "coverage-sweep curve",
+      "representations": [
+        {
+          "name": "M1",
+          "description": "MAE-selected surrogates",
+          "used_in": ["data/tradeoff_curve.json", "data/frozen_poster_numbers.json"],
+          "carries": ["n_cal", "floor", "gap", "persistence baseline"]
+        },
+        {
+          "name": "M2",
+          "description": "gate-aware selected surrogates; the PROMOTED selection",
+          "used_in": ["data/tradeoff_curve_v2.json", "data/frozen_poster_numbers_v2.json"],
+          "carries": ["no n_cal", "no floor/gap", "no persistence baseline"]
+        }
+      ],
+      "authoritative": "M2",
+      "relation": "M2 is the promoted selection. CLAUDE.md section 8: never quote an M1 number as the result.",
+      "relation_scope": "The v2 provenance string claims 'same schema minus the perfect-model floor column'. That is INCOMPLETE: v2 also drops n_cal and the persistence rows. Both omissions caused silent test defects (T3 KeyError, T2 vacuous pass).",
+      "conversion_site": "scripts/build_v2_frozen.py",
+      "verified": "schemas compared directly 2026-08-19; n_cal recovered from data/splits.json n_rows.cal = 55791, matching M1 n_cal"
+    },
+    {
+      "id": "aggregation_convention",
+      "network": "case118",
+      "quantity": "multi-seed aggregation",
+      "representations": [
+        {"name": "seed_mean", "description": "mean of five per-seed values; std over seeds", "used_in": ["data/tradeoff_curve_v2.json", "manuscript Tables I and II"]},
+        {"name": "count_pooled", "description": "sum of numerators over sum of denominators across seeds", "used_in": ["ad-hoc analysis of data/flag_confusion_long.parquet"]}
+      ],
+      "authoritative": "seed_mean",
+      "relation": "Different estimators. They agree to ~3 decimals here only because per-seed test sizes are near-identical (55789-55792).",
+      "relation_scope": "The manuscript's existing tables use seed_mean with population std (ddof=0). Any pooled figure must be labelled as such.",
+      "conversion_site": null,
+      "verified": "data/tradeoff_curve_v2.json std_convention field: 'population std (ddof=0) over five held-out splits'"
+    },
+    {
+      "id": "solver_time",
+      "network": "case118",
+      "quantity": "per-case solver time",
+      "representations": [
+        {"name": "min_over_timed_solves", "description": "minimum over 400 timed solves, warmup dropped", "used_in": ["data/solve_time.json", "Eq. 2"]},
+        {"name": "mean_ms", "description": "arithmetic mean over the same solves", "used_in": ["manifests only"]}
+      ],
+      "authoritative": "min_over_timed_solves",
+      "relation": "ms_solver is the MINIMUM, not the mean. CLAUDE.md section 5.",
+      "relation_scope": "Manifest measurement block records min_ms 9.138, mean_ms 9.561, median_ms 9.512, std_ms 0.256. The value used everywhere is 9.14.",
+      "conversion_site": "feasibility/measure_solve.py",
+      "verified": "data/flag_confusion_long.manifest.json measurement.basis = 'minimum over N timed solves'"
+    }
+  ]
+}
