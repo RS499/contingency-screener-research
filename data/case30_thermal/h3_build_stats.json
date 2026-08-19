@@ -1,0 +1,54 @@
+{
+  "n_accepted": 1500,
+  "n_draws": 8050,
+  "acceptance_rate": 0.18633540372670807,
+  "rejected_by": {
+    "nonconvergence": 0,
+    "voltage": 840,
+    "thermal": 5710
+  },
+  "max_base_loading_pct": 99.99929123481061,
+  "median_base_loading_pct": 96.93849162006879,
+  "elapsed_s": 1269.8,
+  "equivalence_checks": [
+    {
+      "match": true,
+      "n_rows": 42,
+      "diffs": []
+    },
+    {
+      "match": true,
+      "n_rows": 42,
+      "diffs": []
+    },
+    {
+      "match": true,
+      "n_rows": 42,
+      "diffs": []
+    },
+    {
+      "match": true,
+      "n_rows": 42,
+      "diffs": []
+    },
+    {
+      "match": true,
+      "n_rows": 42,
+      "diffs": []
+    }
+  ],
+  "equivalence_all_match": true,
+  "n1_loading": {
+    "n": 61500,
+    "share_above_100": 0.21484552845528454,
+    "median": 97.65510698522175,
+    "p90": 106.68668745699547,
+    "max": 145.79724799181238
+  },
+  "range": {
+    "lo": 0.87,
+    "hi": 0.99
+  },
+  "dataset_rows": 63000,
+  "leakage_guard": "per-contingency loading is written to n1_loading.parquet, NOT to dataset.parquet: make_splits.load_dataset treats any numeric column outside EXCLUDE_COLS as a feature, and loading is a post-outage outcome"
+}
