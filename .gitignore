@@ -18,3 +18,7 @@ test.json
 *.synctex.gz
 paper_current.pdf
 data/archive_clip/
+
+# Private — never commit to the public fork
+notes/
+CLAUDE.md

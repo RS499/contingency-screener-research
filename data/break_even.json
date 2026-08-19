@@ -1,0 +1,2539 @@
+{
+  "generation": {
+    "rows_in_dataset": 280500,
+    "base_solves_accepted": 1500,
+    "n1_solves": 279000,
+    "solves_recorded_in_dataset": 280500,
+    "rejected_scenarios": 1287,
+    "rejected_base_solves": 1287,
+    "total_solves_including_rejected": 281787,
+    "rejected_provenance": "GEN_REJECTED is a hardcoded constant in feasibility/freeze_poster_numbers.py whose stated source is a generate_dataset.py run log that is NOT a committed file. The rejected-scenario count is therefore unverifiable from the repo.",
+    "branches": 186,
+    "per_scenario_solves": 187,
+    "t_generation_s_recorded": 2563.77,
+    "t_generation_s_including_rejected": 2575.5331800000004
+  },
+  "timing": {
+    "ms_solver": 9.14,
+    "ms_solver_basis": "minimum over N timed solves",
+    "fit_s_mean": {
+      "ridge": 6.9559023000532765,
+      "histgb": 22.710659941611812
+    },
+    "fit_s_by_seed": {
+      "ridge": [
+        7.083709750091657,
+        6.6724374170880765,
+        6.885089125018567,
+        6.870235250098631,
+        7.2680399579694495
+      ],
+      "histgb": [
+        13.27850437501911,
+        27.64547291607596,
+        27.822527625015937,
+        28.692612375016324,
+        16.114182416931726
+      ]
+    },
+    "cal_s_mean": {
+      "ridge": 0.0021620583720505238,
+      "histgb": 0.0014462166000157595
+    },
+    "ms_infer_measured_now": {
+      "ridge": 0.0011462506690430407,
+      "histgb": 0.003456486737891653
+    },
+    "ms_infer_committed": {
+      "ridge": 0.001162780914543728,
+      "histgb": 0.002411061204009792
+    },
+    "m2_search_total_fit_s": 2299.95,
+    "m2_search_n_configs": 205
+  },
+  "comparator": {
+    "source": "notes/lit/notes/Graph Neural Networks for Fast Contingency Analysis of Power Systems.md",
+    "quote": "Break-even point (total-time accounting, Fig. 10, p.9): \"approximately 500k scenarios\" where NN total cost crosses ACPF total cost; annotated as 503k scenarios for 57-bus and 498k for the 118-bus (p.9)",
+    "value_118bus_scenarios": 498000,
+    "value_57bus_scenarios": 503000,
+    "value_headline_scenarios": 500000,
+    "read_from_notes": true,
+    "unit_caveat": "the GNN figure is in SCENARIOS; this project's break-even is computed in screened CONTINGENCIES. One scenario = 186 contingencies on case118, so the two are not directly comparable without converting."
+  },
+  "break_even_at_operating_points": {
+    "ridge": {
+      "gen_only": {
+        "target": 0.94,
+        "escalation": 0.6434123029630445,
+        "saving_ms_per_case": 3.2580487700032297,
+        "one_time_cost_s": 2563.77,
+        "break_even_cases": 786903.5060507883,
+        "break_even_scenarios": 4230.664011025744
+      },
+      "gen_plus_training": {
+        "target": 0.94,
+        "escalation": 0.6434123029630445,
+        "saving_ms_per_case": 3.2580487700032297,
+        "one_time_cost_s": 2570.7280643584254,
+        "break_even_cases": 789039.1598882901,
+        "break_even_scenarios": 4242.1460209047855
+      },
+      "gen_plus_training_plus_search": {
+        "target": 0.94,
+        "escalation": 0.6434123029630445,
+        "saving_ms_per_case": 3.2580487700032297,
+        "one_time_cost_s": 4870.678064358425,
+        "break_even_cases": 1494967.819144585,
+        "break_even_scenarios": 8037.461393250456
+      },
+      "gen_incl_rejected_plus_training_plus_search": {
+        "target": 0.94,
+        "escalation": 0.6434123029630445,
+        "saving_ms_per_case": 3.2580487700032297,
+        "one_time_cost_s": 4882.441244358426,
+        "break_even_cases": 1498578.3175841123,
+        "break_even_scenarios": 8056.872675183399
+      }
+    },
+    "histgb": {
+      "gen_only": {
+        "target": 0.97,
+        "escalation": 0.6367945178499592,
+        "saving_ms_per_case": 3.317287045647363,
+        "one_time_cost_s": 2563.77,
+        "break_even_cases": 772851.4188616694,
+        "break_even_scenarios": 4155.115155170265
+      },
+      "gen_plus_training": {
+        "target": 0.97,
+        "escalation": 0.6367945178499592,
+        "saving_ms_per_case": 3.317287045647363,
+        "one_time_cost_s": 2586.482106158212,
+        "break_even_cases": 779698.0094176517,
+        "break_even_scenarios": 4191.924781815332
+      },
+      "gen_plus_training_plus_search": {
+        "target": 0.97,
+        "escalation": 0.6367945178499592,
+        "saving_ms_per_case": 3.317287045647363,
+        "one_time_cost_s": 4886.432106158212,
+        "break_even_cases": 1473020.5854720157,
+        "break_even_scenarios": 7919.465513290407
+      },
+      "gen_incl_rejected_plus_training_plus_search": {
+        "target": 0.97,
+        "escalation": 0.6367945178499592,
+        "saving_ms_per_case": 3.317287045647363,
+        "one_time_cost_s": 4898.195286158212,
+        "break_even_cases": 1476566.6096291458,
+        "break_even_scenarios": 7938.530159296483
+      }
+    }
+  },
+  "break_even_table": [
+    {
+      "model": "ridge",
+      "target": 0.7,
+      "accounting": "gen_only",
+      "escalation": 0.14637358227032846,
+      "saving_ms_per_case": 7.800982677134654,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 328647.0571860938,
+      "break_even_full_sweeps": 1766.919662290827
+    },
+    {
+      "model": "ridge",
+      "target": 0.7,
+      "accounting": "gen_plus_training",
+      "escalation": 0.14637358227032846,
+      "saving_ms_per_case": 7.800982677134654,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 329539.0043479328,
+      "break_even_full_sweeps": 1771.7150771394238
+    },
+    {
+      "model": "ridge",
+      "target": 0.7,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.14637358227032846,
+      "saving_ms_per_case": 7.800982677134654,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 624367.2452490887,
+      "break_even_full_sweeps": 3356.813146500477
+    },
+    {
+      "model": "ridge",
+      "target": 0.7,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.14637358227032846,
+      "saving_ms_per_case": 7.800982677134654,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 625875.1552761779,
+      "break_even_full_sweeps": 3364.9201896568707
+    },
+    {
+      "model": "ridge",
+      "target": 0.71,
+      "accounting": "gen_only",
+      "escalation": 0.15805314010381064,
+      "saving_ms_per_case": 7.694231518536627,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 333206.76585094567,
+      "break_even_full_sweeps": 1791.4342250050843
+    },
+    {
+      "model": "ridge",
+      "target": 0.71,
+      "accounting": "gen_plus_training",
+      "escalation": 0.15805314010381064,
+      "saving_ms_per_case": 7.694231518536627,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 334111.08804890164,
+      "break_even_full_sweeps": 1796.2961723059227
+    },
+    {
+      "model": "ridge",
+      "target": 0.71,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.15805314010381064,
+      "saving_ms_per_case": 7.694231518536627,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 633029.8292459991,
+      "break_even_full_sweeps": 3403.3861787419305
+    },
+    {
+      "model": "ridge",
+      "target": 0.71,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.15805314010381064,
+      "saving_ms_per_case": 7.694231518536627,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 634558.6602893153,
+      "break_even_full_sweeps": 3411.6057004801896
+    },
+    {
+      "model": "ridge",
+      "target": 0.72,
+      "accounting": "gen_only",
+      "escalation": 0.16948533689810366,
+      "saving_ms_per_case": 7.58974123983679,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 337794.12485676934,
+      "break_even_full_sweeps": 1816.0974454665018
+    },
+    {
+      "model": "ridge",
+      "target": 0.72,
+      "accounting": "gen_plus_training",
+      "escalation": 0.16948533689810366,
+      "saving_ms_per_case": 7.58974123983679,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 338710.89713378774,
+      "break_even_full_sweeps": 1821.0263286762781
+    },
+    {
+      "model": "ridge",
+      "target": 0.72,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.16948533689810366,
+      "saving_ms_per_case": 7.58974123983679,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 641744.9436607097,
+      "break_even_full_sweeps": 3450.2416325844606
+    },
+    {
+      "model": "ridge",
+      "target": 0.72,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.16948533689810366,
+      "saving_ms_per_case": 7.58974123983679,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 643294.8225865231,
+      "break_even_full_sweeps": 3458.574314981307
+    },
+    {
+      "model": "ridge",
+      "target": 0.73,
+      "accounting": "gen_only",
+      "escalation": 0.18106804150534445,
+      "saving_ms_per_case": 7.483875319726608,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 342572.51630611834,
+      "break_even_full_sweeps": 1841.787722075905
+    },
+    {
+      "model": "ridge",
+      "target": 0.73,
+      "accounting": "gen_plus_training",
+      "escalation": 0.18106804150534445,
+      "saving_ms_per_case": 7.483875319726608,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 343502.2571236978,
+      "break_even_full_sweeps": 1846.786328622031
+    },
+    {
+      "model": "ridge",
+      "target": 0.73,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.18106804150534445,
+      "saving_ms_per_case": 7.483875319726608,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 650822.98358444,
+      "break_even_full_sweeps": 3499.048298841075
+    },
+    {
+      "model": "ridge",
+      "target": 0.73,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.18106804150534445,
+      "saving_ms_per_case": 7.483875319726608,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 652394.7868945504,
+      "break_even_full_sweeps": 3507.4988542717765
+    },
+    {
+      "model": "ridge",
+      "target": 0.74,
+      "accounting": "gen_only",
+      "escalation": 0.19304872414207674,
+      "saving_ms_per_case": 7.374371880426875,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 347659.4402303987,
+      "break_even_full_sweeps": 1869.136775432251
+    },
+    {
+      "model": "ridge",
+      "target": 0.74,
+      "accounting": "gen_plus_training",
+      "escalation": 0.19304872414207674,
+      "saving_ms_per_case": 7.374371880426875,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 348602.9869447831,
+      "break_even_full_sweeps": 1874.2096072300164
+    },
+    {
+      "model": "ridge",
+      "target": 0.74,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.19304872414207674,
+      "saving_ms_per_case": 7.374371880426875,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 660487.1768517972,
+      "break_even_full_sweeps": 3551.0063271602
+    },
+    {
+      "model": "ridge",
+      "target": 0.74,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.19304872414207674,
+      "saving_ms_per_case": 7.374371880426875,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 662082.3201657955,
+      "break_even_full_sweeps": 3559.5823664827717
+    },
+    {
+      "model": "ridge",
+      "target": 0.75,
+      "accounting": "gen_only",
+      "escalation": 0.20572129661961763,
+      "saving_ms_per_case": 7.2585445679821525,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 353207.17204230354,
+      "break_even_full_sweeps": 1898.963290550019
+    },
+    {
+      "model": "ridge",
+      "target": 0.75,
+      "accounting": "gen_plus_training",
+      "escalation": 0.20572129661961763,
+      "saving_ms_per_case": 7.2585445679821525,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 354165.7752847659,
+      "break_even_full_sweeps": 1904.1170714234727
+    },
+    {
+      "model": "ridge",
+      "target": 0.75,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.20572129661961763,
+      "saving_ms_per_case": 7.2585445679821525,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 671026.8179440902,
+      "break_even_full_sweeps": 3607.671064215539
+    },
+    {
+      "model": "ridge",
+      "target": 0.75,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.20572129661961763,
+      "saving_ms_per_case": 7.2585445679821525,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 672647.4155569903,
+      "break_even_full_sweeps": 3616.3839546074746
+    },
+    {
+      "model": "ridge",
+      "target": 0.76,
+      "accounting": "gen_only",
+      "escalation": 0.21959126911367025,
+      "saving_ms_per_case": 7.131773019386511,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 359485.64165332064,
+      "break_even_full_sweeps": 1932.7185035124764
+    },
+    {
+      "model": "ridge",
+      "target": 0.76,
+      "accounting": "gen_plus_training",
+      "escalation": 0.21959126911367025,
+      "saving_ms_per_case": 7.131773019386511,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 360461.2846441325,
+      "break_even_full_sweeps": 1937.9638959361962
+    },
+    {
+      "model": "ridge",
+      "target": 0.76,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.21959126911367025,
+      "saving_ms_per_case": 7.131773019386511,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 682954.7226360565,
+      "break_even_full_sweeps": 3671.79958406482
+    },
+    {
+      "model": "ridge",
+      "target": 0.76,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.21959126911367025,
+      "saving_ms_per_case": 7.131773019386511,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 684604.1273448188,
+      "break_even_full_sweeps": 3680.66735131623
+    },
+    {
+      "model": "ridge",
+      "target": 0.77,
+      "accounting": "gen_only",
+      "escalation": 0.234163825467281,
+      "saving_ms_per_case": 6.998579854314508,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 366327.1768513834,
+      "break_even_full_sweeps": 1969.5009508138894
+    },
+    {
+      "model": "ridge",
+      "target": 0.77,
+      "accounting": "gen_plus_training",
+      "escalation": 0.234163825467281,
+      "saving_ms_per_case": 6.998579854314508,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 367321.387748918,
+      "break_even_full_sweeps": 1974.8461706931073
+    },
+    {
+      "model": "ridge",
+      "target": 0.77,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.234163825467281,
+      "saving_ms_per_case": 6.998579854314508,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 695952.3454398728,
+      "break_even_full_sweeps": 3741.679276558456
+    },
+    {
+      "model": "ridge",
+      "target": 0.77,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.234163825467281,
+      "saving_ms_per_case": 6.998579854314508,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 697633.1407218969,
+      "break_even_full_sweeps": 3750.715810332779
+    },
+    {
+      "model": "ridge",
+      "target": 0.78,
+      "accounting": "gen_only",
+      "escalation": 0.24759637368123086,
+      "saving_ms_per_case": 6.875806363639007,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 372868.26655821205,
+      "break_even_full_sweeps": 2004.6680997753335
+    },
+    {
+      "model": "ridge",
+      "target": 0.78,
+      "accounting": "gen_plus_training",
+      "escalation": 0.24759637368123086,
+      "saving_ms_per_case": 6.875806363639007,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 373880.2299542759,
+      "break_even_full_sweeps": 2010.1087631950315
+    },
+    {
+      "model": "ridge",
+      "target": 0.78,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.24759637368123086,
+      "saving_ms_per_case": 6.875806363639007,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 708379.1786394387,
+      "break_even_full_sweeps": 3808.490207738918
+    },
+    {
+      "model": "ridge",
+      "target": 0.78,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.24759637368123086,
+      "saving_ms_per_case": 6.875806363639007,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 710089.9859801177,
+      "break_even_full_sweeps": 3817.6880966672993
+    },
+    {
+      "model": "ridge",
+      "target": 0.79,
+      "accounting": "gen_only",
+      "escalation": 0.26359929672645255,
+      "saving_ms_per_case": 6.729539647005681,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 380972.56788445456,
+      "break_even_full_sweeps": 2048.2396122820137
+    },
+    {
+      "model": "ridge",
+      "target": 0.79,
+      "accounting": "gen_plus_training",
+      "escalation": 0.26359929672645255,
+      "saving_ms_per_case": 6.729539647005681,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 382006.52633085754,
+      "break_even_full_sweeps": 2053.7985286605244
+    },
+    {
+      "model": "ridge",
+      "target": 0.79,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.26359929672645255,
+      "saving_ms_per_case": 6.729539647005681,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 723775.8182352995,
+      "break_even_full_sweeps": 3891.2678399747288
+    },
+    {
+      "model": "ridge",
+      "target": 0.79,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.26359929672645255,
+      "saving_ms_per_case": 6.729539647005681,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 725523.8100173577,
+      "break_even_full_sweeps": 3900.6656452546113
+    },
+    {
+      "model": "ridge",
+      "target": 0.8,
+      "accounting": "gen_only",
+      "escalation": 0.27973486754790866,
+      "saving_ms_per_case": 6.582060529697571,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 389508.72427145526,
+      "break_even_full_sweeps": 2094.13292619062
+    },
+    {
+      "model": "ridge",
+      "target": 0.8,
+      "accounting": "gen_plus_training",
+      "escalation": 0.27973486754790866,
+      "saving_ms_per_case": 6.582060529697571,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 390565.8498215822,
+      "break_even_full_sweeps": 2099.8163968902268
+    },
+    {
+      "model": "ridge",
+      "target": 0.8,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.27973486754790866,
+      "saving_ms_per_case": 6.582060529697571,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 739992.9007614611,
+      "break_even_full_sweeps": 3978.45645570678
+    },
+    {
+      "model": "ridge",
+      "target": 0.8,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.27973486754790866,
+      "saving_ms_per_case": 6.582060529697571,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 741780.0584375303,
+      "break_even_full_sweeps": 3988.0648303093026
+    },
+    {
+      "model": "ridge",
+      "target": 0.81,
+      "accounting": "gen_only",
+      "escalation": 0.29884947014844665,
+      "saving_ms_per_case": 6.407353061928655,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 400129.3475200333,
+      "break_even_full_sweeps": 2151.2330511829746
+    },
+    {
+      "model": "ridge",
+      "target": 0.81,
+      "accounting": "gen_plus_training",
+      "escalation": 0.29884947014844665,
+      "saving_ms_per_case": 6.407353061928655,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 401215.2974109124,
+      "break_even_full_sweeps": 2157.0714914565183
+    },
+    {
+      "model": "ridge",
+      "target": 0.81,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.29884947014844665,
+      "saving_ms_per_case": 6.407353061928655,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 760170.0760488949,
+      "break_even_full_sweeps": 4086.935892735994
+    },
+    {
+      "model": "ridge",
+      "target": 0.81,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.29884947014844665,
+      "saving_ms_per_case": 6.407353061928655,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 762005.9636433987,
+      "break_even_full_sweeps": 4096.806256147305
+    },
+    {
+      "model": "ridge",
+      "target": 0.82,
+      "accounting": "gen_only",
+      "escalation": 0.31555852247152993,
+      "saving_ms_per_case": 6.254632323695673,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 409899.3941317954,
+      "break_even_full_sweeps": 2203.7601835042765
+    },
+    {
+      "model": "ridge",
+      "target": 0.82,
+      "accounting": "gen_plus_training",
+      "escalation": 0.31555852247152993,
+      "saving_ms_per_case": 6.254632323695673,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 411011.8599008966,
+      "break_even_full_sweeps": 2209.741182262885
+    },
+    {
+      "model": "ridge",
+      "target": 0.82,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.31555852247152993,
+      "saving_ms_per_case": 6.254632323695673,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 778731.316612467,
+      "break_even_full_sweeps": 4186.727508669178
+    },
+    {
+      "model": "ridge",
+      "target": 0.82,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.31555852247152993,
+      "saving_ms_per_case": 6.254632323695673,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 780612.0314796601,
+      "break_even_full_sweeps": 4196.838878922904
+    },
+    {
+      "model": "ridge",
+      "target": 0.83,
+      "accounting": "gen_only",
+      "escalation": 0.3360352778050974,
+      "saving_ms_per_case": 6.067474779946866,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 422543.1654818434,
+      "break_even_full_sweeps": 2271.7374488271153
+    },
+    {
+      "model": "ridge",
+      "target": 0.83,
+      "accounting": "gen_plus_training",
+      "escalation": 0.3360352778050974,
+      "saving_ms_per_case": 6.067474779946866,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 423689.9464097876,
+      "break_even_full_sweeps": 2277.90293768703
+    },
+    {
+      "model": "ridge",
+      "target": 0.83,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.3360352778050974,
+      "saving_ms_per_case": 6.067474779946866,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 802752.0906153776,
+      "break_even_full_sweeps": 4315.8714549213855
+    },
+    {
+      "model": "ridge",
+      "target": 0.83,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.3360352778050974,
+      "saving_ms_per_case": 6.067474779946866,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 804690.8180805298,
+      "break_even_full_sweeps": 4326.294720863063
+    },
+    {
+      "model": "ridge",
+      "target": 0.84,
+      "accounting": "gen_only",
+      "escalation": 0.3548199702251258,
+      "saving_ms_per_case": 5.895782691227807,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 434848.11674191646,
+      "break_even_full_sweeps": 2337.8931007629917
+    },
+    {
+      "model": "ridge",
+      "target": 0.84,
+      "accounting": "gen_plus_training",
+      "escalation": 0.3548199702251258,
+      "saving_ms_per_case": 5.895782691227807,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 436028.2932719602,
+      "break_even_full_sweeps": 2344.238135870754
+    },
+    {
+      "model": "ridge",
+      "target": 0.84,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.3548199702251258,
+      "saving_ms_per_case": 5.895782691227807,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 826129.1705349638,
+      "break_even_full_sweeps": 4441.554680295504
+    },
+    {
+      "model": "ridge",
+      "target": 0.84,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.3548199702251258,
+      "saving_ms_per_case": 5.895782691227807,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 828124.3560117799,
+      "break_even_full_sweeps": 4452.2814839343
+    },
+    {
+      "model": "ridge",
+      "target": 0.85,
+      "accounting": "gen_only",
+      "escalation": 0.3753969446048101,
+      "saving_ms_per_case": 5.707709145397493,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 449176.7072727136,
+      "break_even_full_sweeps": 2414.928533724267
+    },
+    {
+      "model": "ridge",
+      "target": 0.85,
+      "accounting": "gen_plus_training",
+      "escalation": 0.3753969446048101,
+      "saving_ms_per_case": 5.707709145397493,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 450395.77155597974,
+      "break_even_full_sweeps": 2421.4826427740845
+    },
+    {
+      "model": "ridge",
+      "target": 0.85,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.3753969446048101,
+      "saving_ms_per_case": 5.707709145397493,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 853350.7822987053,
+      "break_even_full_sweeps": 4587.907431713469
+    },
+    {
+      "model": "ridge",
+      "target": 0.85,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.3753969446048101,
+      "saving_ms_per_case": 5.707709145397493,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 855411.7107203096,
+      "break_even_full_sweeps": 4598.987692044676
+    },
+    {
+      "model": "ridge",
+      "target": 0.86,
+      "accounting": "gen_only",
+      "escalation": 0.39897819156573083,
+      "saving_ms_per_case": 5.492176548174676,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 466804.003387704,
+      "break_even_full_sweeps": 2509.6989429446453
+    },
+    {
+      "model": "ridge",
+      "target": 0.86,
+      "accounting": "gen_plus_training",
+      "escalation": 0.39897819156573083,
+      "saving_ms_per_case": 5.492176548174676,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 468070.90810159885,
+      "break_even_full_sweeps": 2516.5102586107464
+    },
+    {
+      "model": "ridge",
+      "target": 0.86,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.39897819156573083,
+      "saving_ms_per_case": 5.492176548174676,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 886839.3107241235,
+      "break_even_full_sweeps": 4767.95328346303
+    },
+    {
+      "model": "ridge",
+      "target": 0.86,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.39897819156573083,
+      "saving_ms_per_case": 5.492176548174676,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 888981.1173279025,
+      "break_even_full_sweeps": 4779.468372730658
+    },
+    {
+      "model": "ridge",
+      "target": 0.87,
+      "accounting": "gen_only",
+      "escalation": 0.41979559987686743,
+      "saving_ms_per_case": 5.301905436210888,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 483556.3423085586,
+      "break_even_full_sweeps": 2599.7652812288097
+    },
+    {
+      "model": "ridge",
+      "target": 0.87,
+      "accounting": "gen_plus_training",
+      "escalation": 0.41979559987686743,
+      "saving_ms_per_case": 5.301905436210888,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 484868.71282179013,
+      "break_even_full_sweeps": 2606.821036676291
+    },
+    {
+      "model": "ridge",
+      "target": 0.87,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.41979559987686743,
+      "saving_ms_per_case": 5.301905436210888,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 918665.5859783406,
+      "break_even_full_sweeps": 4939.062290206132
+    },
+    {
+      "model": "ridge",
+      "target": 0.87,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.41979559987686743,
+      "saving_ms_per_case": 5.301905436210888,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 920884.2562548153,
+      "break_even_full_sweeps": 4950.990625025888
+    },
+    {
+      "model": "ridge",
+      "target": 0.88,
+      "accounting": "gen_only",
+      "escalation": 0.44230150248950134,
+      "saving_ms_per_case": 5.096201486331414,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 503074.69335274905,
+      "break_even_full_sweeps": 2704.7026524341345
+    },
+    {
+      "model": "ridge",
+      "target": 0.88,
+      "accounting": "gen_plus_training",
+      "escalation": 0.44230150248950134,
+      "saving_ms_per_case": 5.096201486331414,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 504440.036614213,
+      "break_even_full_sweeps": 2712.0432076032957
+    },
+    {
+      "model": "ridge",
+      "target": 0.88,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.44230150248950134,
+      "saving_ms_per_case": 5.096201486331414,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 955746.7610772714,
+      "break_even_full_sweeps": 5138.4234466519965
+    },
+    {
+      "model": "ridge",
+      "target": 0.88,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.44230150248950134,
+      "saving_ms_per_case": 5.096201486331414,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 958054.98614089,
+      "break_even_full_sweeps": 5150.833258821989
+    },
+    {
+      "model": "ridge",
+      "target": 0.89,
+      "accounting": "gen_only",
+      "escalation": 0.46553864120662014,
+      "saving_ms_per_case": 4.883814038456949,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 524952.4203444135,
+      "break_even_full_sweeps": 2822.3248405613626
+    },
+    {
+      "model": "ridge",
+      "target": 0.89,
+      "accounting": "gen_plus_training",
+      "escalation": 0.46553864120662014,
+      "saving_ms_per_case": 4.883814038456949,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 526377.1396936015,
+      "break_even_full_sweeps": 2829.98462200861
+    },
+    {
+      "model": "ridge",
+      "target": 0.89,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.46553864120662014,
+      "saving_ms_per_case": 4.883814038456949,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 997310.3042017804,
+      "break_even_full_sweeps": 5361.88335592355
+    },
+    {
+      "model": "ridge",
+      "target": 0.89,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.46553864120662014,
+      "saving_ms_per_case": 4.883814038456949,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 999718.9094245372,
+      "break_even_full_sweeps": 5374.832846368479
+    },
+    {
+      "model": "ridge",
+      "target": 0.9,
+      "accounting": "gen_only",
+      "escalation": 0.4906972404572077,
+      "saving_ms_per_case": 4.653864441306579,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 550890.5625279059,
+      "break_even_full_sweeps": 2961.777217891967
+    },
+    {
+      "model": "ridge",
+      "target": 0.9,
+      "accounting": "gen_plus_training",
+      "escalation": 0.4906972404572077,
+      "saving_ms_per_case": 4.653864441306579,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 552385.6779198943,
+      "break_even_full_sweeps": 2969.815472687604
+    },
+    {
+      "model": "ridge",
+      "target": 0.9,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.4906972404572077,
+      "saving_ms_per_case": 4.653864441306579,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 1046587.8681655315,
+      "break_even_full_sweeps": 5626.816495513611
+    },
+    {
+      "model": "ridge",
+      "target": 0.9,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.4906972404572077,
+      "saving_ms_per_case": 4.653864441306579,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 1049115.4836877186,
+      "break_even_full_sweeps": 5640.405826278057
+    },
+    {
+      "model": "ridge",
+      "target": 0.91,
+      "accounting": "gen_only",
+      "escalation": 0.5169493637699788,
+      "saving_ms_per_case": 4.413920034227851,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 580837.4370444374,
+      "break_even_full_sweeps": 3122.7819195937495
+    },
+    {
+      "model": "ridge",
+      "target": 0.91,
+      "accounting": "gen_plus_training",
+      "escalation": 0.5169493637699788,
+      "saving_ms_per_case": 4.413920034227851,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 582413.8281671738,
+      "break_even_full_sweeps": 3131.25714068373
+    },
+    {
+      "model": "ridge",
+      "target": 0.91,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.5169493637699788,
+      "saving_ms_per_case": 4.413920034227851,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 1103481.2653126095,
+      "break_even_full_sweeps": 5932.694974798976
+    },
+    {
+      "model": "ridge",
+      "target": 0.91,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.5169493637699788,
+      "saving_ms_per_case": 4.413920034227851,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 1106146.2841414018,
+      "break_even_full_sweeps": 5947.023033018289
+    },
+    {
+      "model": "ridge",
+      "target": 0.92,
+      "accounting": "gen_only",
+      "escalation": 0.5552070396283366,
+      "saving_ms_per_case": 4.06424487688246,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 630810.907724285,
+      "break_even_full_sweeps": 3391.4564931413174
+    },
+    {
+      "model": "ridge",
+      "target": 0.92,
+      "accounting": "gen_plus_training",
+      "escalation": 0.5552070396283366,
+      "saving_ms_per_case": 4.06424487688246,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 632522.9267017839,
+      "break_even_full_sweeps": 3400.66089624615
+    },
+    {
+      "model": "ridge",
+      "target": 0.92,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.5552070396283366,
+      "saving_ms_per_case": 4.06424487688246,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 1198421.4071506811,
+      "break_even_full_sweeps": 6443.125844896135
+    },
+    {
+      "model": "ridge",
+      "target": 0.92,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.5552070396283366,
+      "saving_ms_per_case": 4.06424487688246,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 1201315.7160214162,
+      "break_even_full_sweeps": 6458.686645276432
+    },
+    {
+      "model": "ridge",
+      "target": 0.93,
+      "accounting": "gen_only",
+      "escalation": 0.6001467589214695,
+      "saving_ms_per_case": 3.6534958425432253,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 701730.6466168964,
+      "break_even_full_sweeps": 3772.745411918798
+    },
+    {
+      "model": "ridge",
+      "target": 0.93,
+      "accounting": "gen_plus_training",
+      "escalation": 0.6001467589214695,
+      "saving_ms_per_case": 3.6534958425432253,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 703635.1415604521,
+      "break_even_full_sweeps": 3782.9846320454412
+    },
+    {
+      "model": "ridge",
+      "target": 0.93,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.6001467589214695,
+      "saving_ms_per_case": 3.6534958425432253,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 1333155.49661825,
+      "break_even_full_sweeps": 7167.502669990591
+    },
+    {
+      "model": "ridge",
+      "target": 0.93,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.6001467589214695,
+      "saving_ms_per_case": 3.6534958425432253,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 1336375.201938022,
+      "break_even_full_sweeps": 7184.812913645279
+    },
+    {
+      "model": "ridge",
+      "target": 0.94,
+      "accounting": "gen_only",
+      "escalation": 0.6434123029630445,
+      "saving_ms_per_case": 3.2580487700032297,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 786903.5060507883,
+      "break_even_full_sweeps": 4230.664011025744
+    },
+    {
+      "model": "ridge",
+      "target": 0.94,
+      "accounting": "gen_plus_training",
+      "escalation": 0.6434123029630445,
+      "saving_ms_per_case": 3.2580487700032297,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 789039.1598882901,
+      "break_even_full_sweeps": 4242.1460209047855
+    },
+    {
+      "model": "ridge",
+      "target": 0.94,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.6434123029630445,
+      "saving_ms_per_case": 3.2580487700032297,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 1494967.819144585,
+      "break_even_full_sweeps": 8037.461393250456
+    },
+    {
+      "model": "ridge",
+      "target": 0.94,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.6434123029630445,
+      "saving_ms_per_case": 3.2580487700032297,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 1498578.3175841123,
+      "break_even_full_sweeps": 8056.872675183399
+    },
+    {
+      "model": "ridge",
+      "target": 0.95,
+      "accounting": "gen_only",
+      "escalation": 0.6785333530184323,
+      "saving_ms_per_case": 2.937042372496985,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 872908.7547417165,
+      "break_even_full_sweeps": 4693.057821192025
+    },
+    {
+      "model": "ridge",
+      "target": 0.95,
+      "accounting": "gen_plus_training",
+      "escalation": 0.6785333530184323,
+      "saving_ms_per_case": 2.937042372496985,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 875277.8265751983,
+      "break_even_full_sweeps": 4705.794766533324
+    },
+    {
+      "model": "ridge",
+      "target": 0.95,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.6785333530184323,
+      "saving_ms_per_case": 2.937042372496985,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 1658361.5238133324,
+      "break_even_full_sweeps": 8915.922171039421
+    },
+    {
+      "model": "ridge",
+      "target": 0.95,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.6785333530184323,
+      "saving_ms_per_case": 2.937042372496985,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 1662366.6345703828,
+      "break_even_full_sweeps": 8937.455024571951
+    },
+    {
+      "model": "ridge",
+      "target": 0.96,
+      "accounting": "gen_only",
+      "escalation": 0.7143464325496895,
+      "saving_ms_per_case": 2.609710825581294,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 982396.2007089191,
+      "break_even_full_sweeps": 5281.700003811393
+    },
+    {
+      "model": "ridge",
+      "target": 0.96,
+      "accounting": "gen_plus_training",
+      "escalation": 0.7143464325496895,
+      "saving_ms_per_case": 2.609710825581294,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 985062.4211538128,
+      "break_even_full_sweeps": 5296.034522332327
+    },
+    {
+      "model": "ridge",
+      "target": 0.96,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.7143464325496895,
+      "saving_ms_per_case": 2.609710825581294,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 1866366.9616627034,
+      "break_even_full_sweeps": 10034.230976681201
+    },
+    {
+      "model": "ridge",
+      "target": 0.96,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.7143464325496895,
+      "saving_ms_per_case": 2.609710825581294,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 1870874.4265836035,
+      "break_even_full_sweeps": 10058.464659051631
+    },
+    {
+      "model": "ridge",
+      "target": 0.97,
+      "accounting": "gen_only",
+      "escalation": 0.739111061073142,
+      "saving_ms_per_case": 2.383362120876939,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 1075694.6993252882,
+      "break_even_full_sweeps": 5783.304835082195
+    },
+    {
+      "model": "ridge",
+      "target": 0.97,
+      "accounting": "gen_plus_training",
+      "escalation": 0.739111061073142,
+      "saving_ms_per_case": 2.383362120876939,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 1078614.131625347,
+      "break_even_full_sweeps": 5799.000707663156
+    },
+    {
+      "model": "ridge",
+      "target": 0.97,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.739111061073142,
+      "saving_ms_per_case": 2.383362120876939,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 2043616.4616757012,
+      "break_even_full_sweeps": 10987.185277826351
+    },
+    {
+      "model": "ridge",
+      "target": 0.97,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.739111061073142,
+      "saving_ms_per_case": 2.383362120876939,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 2048552.002060841,
+      "break_even_full_sweeps": 11013.720441187317
+    },
+    {
+      "model": "ridge",
+      "target": 0.98,
+      "accounting": "gen_only",
+      "escalation": 0.7480445906267049,
+      "saving_ms_per_case": 2.3017096607573735,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 1113854.646270371,
+      "break_even_full_sweeps": 5988.465840163285
+    },
+    {
+      "model": "ridge",
+      "target": 0.98,
+      "accounting": "gen_plus_training",
+      "escalation": 0.7480445906267049,
+      "saving_ms_per_case": 2.3017096607573735,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 1116877.644555974,
+      "break_even_full_sweeps": 6004.71851911814
+    },
+    {
+      "model": "ridge",
+      "target": 0.98,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.7480445906267049,
+      "saving_ms_per_case": 2.3017096607573735,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 2116113.142939035,
+      "break_even_full_sweeps": 11376.95238139266
+    },
+    {
+      "model": "ridge",
+      "target": 0.98,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.7480445906267049,
+      "saving_ms_per_case": 2.3017096607573735,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 2121223.77013957,
+      "break_even_full_sweeps": 11404.428871718117
+    },
+    {
+      "model": "ridge",
+      "target": 0.99,
+      "accounting": "gen_only",
+      "escalation": 0.7488763012003712,
+      "saving_ms_per_case": 2.2941078261140637,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 1117545.5533590636,
+      "break_even_full_sweeps": 6008.309426661632
+    },
+    {
+      "model": "ridge",
+      "target": 0.99,
+      "accounting": "gen_plus_training",
+      "escalation": 0.7488763012003712,
+      "saving_ms_per_case": 2.2941078261140637,
+      "one_time_cost_s": 2570.7280643584254,
+      "break_even_cases": 1120578.5687558209,
+      "break_even_full_sweeps": 6024.6159610528
+    },
+    {
+      "model": "ridge",
+      "target": 0.99,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.7488763012003712,
+      "saving_ms_per_case": 2.2941078261140637,
+      "one_time_cost_s": 4870.678064358425,
+      "break_even_cases": 2123125.1682745684,
+      "break_even_full_sweeps": 11414.65144233639
+    },
+    {
+      "model": "ridge",
+      "target": 0.99,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.7488763012003712,
+      "saving_ms_per_case": 2.2941078261140637,
+      "one_time_cost_s": 4882.441244358426,
+      "break_even_cases": 2128252.730225275,
+      "break_even_full_sweeps": 11442.218979705778
+    },
+    {
+      "model": "histgb",
+      "target": 0.7,
+      "accounting": "gen_only",
+      "escalation": 0.03351842309810731,
+      "saving_ms_per_case": 8.83123055167929,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 290307.2210602055,
+      "break_even_full_sweeps": 1560.7915110763736
+    },
+    {
+      "model": "histgb",
+      "target": 0.7,
+      "accounting": "gen_plus_training",
+      "escalation": 0.03351842309810731,
+      "saving_ms_per_case": 8.83123055167929,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 292879.0151069471,
+      "break_even_full_sweeps": 1574.6183607900382
+    },
+    {
+      "model": "histgb",
+      "target": 0.7,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.03351842309810731,
+      "saving_ms_per_case": 8.83123055167929,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 553312.7096573239,
+      "break_even_full_sweeps": 2974.7995142866876
+    },
+    {
+      "model": "histgb",
+      "target": 0.7,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.03351842309810731,
+      "saving_ms_per_case": 8.83123055167929,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 554644.7074951297,
+      "break_even_full_sweeps": 2981.960792984568
+    },
+    {
+      "model": "histgb",
+      "target": 0.71,
+      "accounting": "gen_only",
+      "escalation": 0.03808194278869696,
+      "saving_ms_per_case": 8.7895199817073,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 291684.87077061133,
+      "break_even_full_sweeps": 1568.1982299495232
+    },
+    {
+      "model": "histgb",
+      "target": 0.71,
+      "accounting": "gen_plus_training",
+      "escalation": 0.03808194278869696,
+      "saving_ms_per_case": 8.7895199817073,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 294268.8692375902,
+      "break_even_full_sweeps": 1582.0906948257536
+    },
+    {
+      "model": "histgb",
+      "target": 0.71,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.03808194278869696,
+      "saving_ms_per_case": 8.7895199817073,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 555938.4490083448,
+      "break_even_full_sweeps": 2988.916392517983
+    },
+    {
+      "model": "histgb",
+      "target": 0.71,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.03808194278869696,
+      "saving_ms_per_case": 8.7895199817073,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 557276.7678271747,
+      "break_even_full_sweeps": 2996.1116549848102
+    },
+    {
+      "model": "histgb",
+      "target": 0.72,
+      "accounting": "gen_only",
+      "escalation": 0.04659585663090631,
+      "saving_ms_per_case": 8.711702809189507,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 294290.3421011581,
+      "break_even_full_sweeps": 1582.2061403288071
+    },
+    {
+      "model": "histgb",
+      "target": 0.72,
+      "accounting": "gen_plus_training",
+      "escalation": 0.04659585663090631,
+      "saving_ms_per_case": 8.711702809189507,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 296897.42210097786,
+      "break_even_full_sweeps": 1596.222699467623
+    },
+    {
+      "model": "histgb",
+      "target": 0.72,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.04659585663090631,
+      "saving_ms_per_case": 8.711702809189507,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 560904.3620041511,
+      "break_even_full_sweeps": 3015.6148494846834
+    },
+    {
+      "model": "histgb",
+      "target": 0.72,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.04659585663090631,
+      "saving_ms_per_case": 8.711702809189507,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 562254.6353384977,
+      "break_even_full_sweeps": 3022.87438354031
+    },
+    {
+      "model": "histgb",
+      "target": 0.73,
+      "accounting": "gen_only",
+      "escalation": 0.05526048133907078,
+      "saving_ms_per_case": 8.632508139356885,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 296990.16306876007,
+      "break_even_full_sweeps": 1596.7213068212907
+    },
+    {
+      "model": "histgb",
+      "target": 0.73,
+      "accounting": "gen_plus_training",
+      "escalation": 0.05526048133907078,
+      "saving_ms_per_case": 8.632508139356885,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 299621.1604326275,
+      "break_even_full_sweeps": 1610.8664539388574
+    },
+    {
+      "model": "histgb",
+      "target": 0.73,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.05526048133907078,
+      "saving_ms_per_case": 8.632508139356885,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 566050.101230747,
+      "break_even_full_sweeps": 3043.280114143801
+    },
+    {
+      "model": "histgb",
+      "target": 0.73,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.05526048133907078,
+      "saving_ms_per_case": 8.632508139356885,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 567412.7619789449,
+      "break_even_full_sweeps": 3050.6062471986284
+    },
+    {
+      "model": "histgb",
+      "target": 0.74,
+      "accounting": "gen_only",
+      "escalation": 0.06351989858126879,
+      "saving_ms_per_case": 8.557017065763194,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 299610.2473907289,
+      "break_even_full_sweeps": 1610.8077816705854
+    },
+    {
+      "model": "histgb",
+      "target": 0.74,
+      "accounting": "gen_plus_training",
+      "escalation": 0.06351989858126879,
+      "saving_ms_per_case": 8.557017065763194,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 302264.45574203436,
+      "break_even_full_sweeps": 1625.0777190431954
+    },
+    {
+      "model": "histgb",
+      "target": 0.74,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.06351989858126879,
+      "saving_ms_per_case": 8.557017065763194,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 571043.8659411969,
+      "break_even_full_sweeps": 3070.1283115118113
+    },
+    {
+      "model": "histgb",
+      "target": 0.74,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.06351989858126879,
+      "saving_ms_per_case": 8.557017065763194,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 572418.5482527545,
+      "break_even_full_sweeps": 3077.5190766277124
+    },
+    {
+      "model": "histgb",
+      "target": 0.75,
+      "accounting": "gen_only",
+      "escalation": 0.07322403787735292,
+      "saving_ms_per_case": 8.468321232596987,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 302748.3168837901,
+      "break_even_full_sweeps": 1627.6791230311294
+    },
+    {
+      "model": "histgb",
+      "target": 0.75,
+      "accounting": "gen_plus_training",
+      "escalation": 0.07322403787735292,
+      "saving_ms_per_case": 8.468321232596987,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 305430.3249860319,
+      "break_even_full_sweeps": 1642.098521430279
+    },
+    {
+      "model": "histgb",
+      "target": 0.75,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.07322403787735292,
+      "saving_ms_per_case": 8.468321232596987,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 577024.8874533643,
+      "break_even_full_sweeps": 3102.28434114712
+    },
+    {
+      "model": "histgb",
+      "target": 0.75,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.07322403787735292,
+      "saving_ms_per_case": 8.468321232596987,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 578413.9679661253,
+      "break_even_full_sweeps": 3109.7525159469105
+    },
+    {
+      "model": "histgb",
+      "target": 0.76,
+      "accounting": "gen_only",
+      "escalation": 0.08150151647506065,
+      "saving_ms_per_case": 8.392665078213938,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 305477.4587222777,
+      "break_even_full_sweeps": 1642.3519286143962
+    },
+    {
+      "model": "histgb",
+      "target": 0.76,
+      "accounting": "gen_plus_training",
+      "escalation": 0.08150151647506065,
+      "saving_ms_per_case": 8.392665078213938,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 308183.6439383623,
+      "break_even_full_sweeps": 1656.9013114965715
+    },
+    {
+      "model": "histgb",
+      "target": 0.76,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.08150151647506065,
+      "saving_ms_per_case": 8.392665078213938,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 582226.5109616533,
+      "break_even_full_sweeps": 3130.25005893362
+    },
+    {
+      "model": "histgb",
+      "target": 0.76,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.08150151647506065,
+      "saving_ms_per_case": 8.392665078213938,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 583628.1134193203,
+      "break_even_full_sweeps": 3137.7855560178514
+    },
+    {
+      "model": "histgb",
+      "target": 0.77,
+      "accounting": "gen_only",
+      "escalation": 0.09310919155203108,
+      "saving_ms_per_case": 8.286570928010427,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 309388.5302223016,
+      "break_even_full_sweeps": 1663.379194743557
+    },
+    {
+      "model": "histgb",
+      "target": 0.77,
+      "accounting": "gen_plus_training",
+      "escalation": 0.09310919155203108,
+      "saving_ms_per_case": 8.286570928010427,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 312129.36311391904,
+      "break_even_full_sweeps": 1678.1148554511776
+    },
+    {
+      "model": "histgb",
+      "target": 0.77,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.09310919155203108,
+      "saving_ms_per_case": 8.286570928010427,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 589680.8400735459,
+      "break_even_full_sweeps": 3170.327097169602
+    },
+    {
+      "model": "histgb",
+      "target": 0.77,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.09310919155203108,
+      "saving_ms_per_case": 8.286570928010427,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 591100.3874475071,
+      "break_even_full_sweeps": 3177.9590722984253
+    },
+    {
+      "model": "histgb",
+      "target": 0.78,
+      "accounting": "gen_only",
+      "escalation": 0.10206059951835292,
+      "saving_ms_per_case": 8.204755059198245,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 312473.67916557007,
+      "break_even_full_sweeps": 1679.966017019194
+    },
+    {
+      "model": "histgb",
+      "target": 0.78,
+      "accounting": "gen_plus_training",
+      "escalation": 0.10206059951835292,
+      "saving_ms_per_case": 8.204755059198245,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 315241.84299183195,
+      "break_even_full_sweeps": 1694.8486182356555
+    },
+    {
+      "model": "histgb",
+      "target": 0.78,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.10206059951835292,
+      "saving_ms_per_case": 8.204755059198245,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 595560.9973609262,
+      "break_even_full_sweeps": 3201.9408460264854
+    },
+    {
+      "model": "histgb",
+      "target": 0.78,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.10206059951835292,
+      "saving_ms_per_case": 8.204755059198245,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 596994.7001241565,
+      "break_even_full_sweeps": 3209.648925398691
+    },
+    {
+      "model": "histgb",
+      "target": 0.79,
+      "accounting": "gen_only",
+      "escalation": 0.11524218845560799,
+      "saving_ms_per_case": 8.084275336311734,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 317130.4654214884,
+      "break_even_full_sweeps": 1705.0025022660666
+    },
+    {
+      "model": "histgb",
+      "target": 0.79,
+      "accounting": "gen_plus_training",
+      "escalation": 0.11524218845560799,
+      "saving_ms_per_case": 8.084275336311734,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 319939.8831136589,
+      "break_even_full_sweeps": 1720.106898460532
+    },
+    {
+      "model": "histgb",
+      "target": 0.79,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.11524218845560799,
+      "saving_ms_per_case": 8.084275336311734,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 604436.6257801822,
+      "break_even_full_sweeps": 3249.6592783880765
+    },
+    {
+      "model": "histgb",
+      "target": 0.79,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.11524218845560799,
+      "saving_ms_per_case": 8.084275336311734,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 605891.694974469,
+      "break_even_full_sweeps": 3257.4822310455324
+    },
+    {
+      "model": "histgb",
+      "target": 0.8,
+      "accounting": "gen_only",
+      "escalation": 0.12795759754763988,
+      "saving_ms_per_case": 7.968056497210562,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 321756.00171729684,
+      "break_even_full_sweeps": 1729.8709769747143
+    },
+    {
+      "model": "histgb",
+      "target": 0.8,
+      "accounting": "gen_plus_training",
+      "escalation": 0.12795759754763988,
+      "saving_ms_per_case": 7.968056497210562,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 324606.3964360294,
+      "break_even_full_sweeps": 1745.195679763599
+    },
+    {
+      "model": "histgb",
+      "target": 0.8,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.12795759754763988,
+      "saving_ms_per_case": 7.968056497210562,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 613252.6931590962,
+      "break_even_full_sweeps": 3297.0574901026675
+    },
+    {
+      "model": "histgb",
+      "target": 0.8,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.12795759754763988,
+      "saving_ms_per_case": 7.968056497210562,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 614728.9854022698,
+      "break_even_full_sweeps": 3304.9945451734934
+    },
+    {
+      "model": "histgb",
+      "target": 0.81,
+      "accounting": "gen_only",
+      "escalation": 0.14028253236483934,
+      "saving_ms_per_case": 7.8554065929813595,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 326370.12096747156,
+      "break_even_full_sweeps": 1754.678069717589
+    },
+    {
+      "model": "histgb",
+      "target": 0.81,
+      "accounting": "gen_plus_training",
+      "escalation": 0.14028253236483934,
+      "saving_ms_per_case": 7.8554065929813595,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 329261.39157063863,
+      "break_even_full_sweeps": 1770.2225353260142
+    },
+    {
+      "model": "histgb",
+      "target": 0.81,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.14028253236483934,
+      "saving_ms_per_case": 7.8554065929813595,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 622047.000154535,
+      "break_even_full_sweeps": 3344.338710508253
+    },
+    {
+      "model": "histgb",
+      "target": 0.81,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.14028253236483934,
+      "saving_ms_per_case": 7.8554065929813595,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 623544.4630625036,
+      "break_even_full_sweeps": 3352.3895863575462
+    },
+    {
+      "model": "histgb",
+      "target": 0.82,
+      "accounting": "gen_only",
+      "escalation": 0.15222364184362003,
+      "saving_ms_per_case": 7.746264852345304,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 330968.5440491721,
+      "break_even_full_sweeps": 1779.4007744579144
+    },
+    {
+      "model": "histgb",
+      "target": 0.82,
+      "accounting": "gen_plus_training",
+      "escalation": 0.15222364184362003,
+      "saving_ms_per_case": 7.746264852345304,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 333900.5514864514,
+      "break_even_full_sweeps": 1795.1642553035022
+    },
+    {
+      "model": "histgb",
+      "target": 0.82,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.15222364184362003,
+      "saving_ms_per_case": 7.746264852345304,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 630811.390947828,
+      "break_even_full_sweeps": 3391.4590911173545
+    },
+    {
+      "model": "histgb",
+      "target": 0.82,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.15222364184362003,
+      "saving_ms_per_case": 7.746264852345304,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 632329.9525028771,
+      "break_even_full_sweeps": 3399.623400553103
+    },
+    {
+      "model": "histgb",
+      "target": 0.83,
+      "accounting": "gen_only",
+      "escalation": 0.16397484011773694,
+      "saving_ms_per_case": 7.638858900119875,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 335622.11758614465,
+      "break_even_full_sweeps": 1804.419987022283
+    },
+    {
+      "model": "histgb",
+      "target": 0.83,
+      "accounting": "gen_plus_training",
+      "escalation": 0.16397484011773694,
+      "saving_ms_per_case": 7.638858900119875,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 338595.3504282718,
+      "break_even_full_sweeps": 1820.4051098294183
+    },
+    {
+      "model": "histgb",
+      "target": 0.83,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.16397484011773694,
+      "saving_ms_per_case": 7.638858900119875,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 639680.8960670199,
+      "break_even_full_sweeps": 3439.14460251086
+    },
+    {
+      "model": "histgb",
+      "target": 0.83,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.16397484011773694,
+      "saving_ms_per_case": 7.638858900119875,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 641220.8093124153,
+      "break_even_full_sweeps": 3447.4237059807274
+    },
+    {
+      "model": "histgb",
+      "target": 0.84,
+      "accounting": "gen_only",
+      "escalation": 0.18288139395057246,
+      "saving_ms_per_case": 7.466052998087759,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 343390.2760476848,
+      "break_even_full_sweeps": 1846.1842798262621
+    },
+    {
+      "model": "histgb",
+      "target": 0.84,
+      "accounting": "gen_plus_training",
+      "escalation": 0.18288139395057246,
+      "saving_ms_per_case": 7.466052998087759,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 346432.3259988476,
+      "break_even_full_sweeps": 1862.5393870905784
+    },
+    {
+      "model": "histgb",
+      "target": 0.84,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.18288139395057246,
+      "saving_ms_per_case": 7.466052998087759,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 654486.6621506368,
+      "break_even_full_sweeps": 3518.7454954335312
+    },
+    {
+      "model": "histgb",
+      "target": 0.84,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.18288139395057246,
+      "saving_ms_per_case": 7.466052998087759,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 656062.2175348557,
+      "break_even_full_sweeps": 3527.216223305676
+    },
+    {
+      "model": "histgb",
+      "target": 0.85,
+      "accounting": "gen_only",
+      "escalation": 0.1995404991681912,
+      "saving_ms_per_case": 7.313788776398724,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 350539.24557859445,
+      "break_even_full_sweeps": 1884.6195998849164
+    },
+    {
+      "model": "histgb",
+      "target": 0.85,
+      "accounting": "gen_plus_training",
+      "escalation": 0.1995404991681912,
+      "saving_ms_per_case": 7.313788776398724,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 353644.62732430507,
+      "break_even_full_sweeps": 1901.3152006683067
+    },
+    {
+      "model": "histgb",
+      "target": 0.85,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.1995404991681912,
+      "saving_ms_per_case": 7.313788776398724,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 668112.2815477683,
+      "break_even_full_sweeps": 3592.001513697679
+    },
+    {
+      "model": "histgb",
+      "target": 0.85,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.1995404991681912,
+      "saving_ms_per_case": 7.313788776398724,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 669720.6380863055,
+      "break_even_full_sweeps": 3600.6485918618573
+    },
+    {
+      "model": "histgb",
+      "target": 0.86,
+      "accounting": "gen_only",
+      "escalation": 0.21870156804566046,
+      "saving_ms_per_case": 7.138656606858655,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 359139.0006821157,
+      "break_even_full_sweeps": 1930.854842376966
+    },
+    {
+      "model": "histgb",
+      "target": 0.86,
+      "accounting": "gen_plus_training",
+      "escalation": 0.21870156804566046,
+      "saving_ms_per_case": 7.138656606858655,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 362320.566543736,
+      "break_even_full_sweeps": 1947.9600351813763
+    },
+    {
+      "model": "histgb",
+      "target": 0.86,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.21870156804566046,
+      "saving_ms_per_case": 7.138656606858655,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 684503.0340111109,
+      "break_even_full_sweeps": 3680.1238387694134
+    },
+    {
+      "model": "histgb",
+      "target": 0.86,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.21870156804566046,
+      "saving_ms_per_case": 7.138656606858655,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 686150.8482495348,
+      "break_even_full_sweeps": 3688.983055105026
+    },
+    {
+      "model": "histgb",
+      "target": 0.87,
+      "accounting": "gen_only",
+      "escalation": 0.2382964860955763,
+      "saving_ms_per_case": 6.959559055882424,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 368381.0970514039,
+      "break_even_full_sweeps": 1980.5435325344295
+    },
+    {
+      "model": "histgb",
+      "target": 0.87,
+      "accounting": "gen_plus_training",
+      "escalation": 0.2382964860955763,
+      "saving_ms_per_case": 6.959559055882424,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 371644.53744695813,
+      "break_even_full_sweeps": 1998.0889110051512
+    },
+    {
+      "model": "histgb",
+      "target": 0.87,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.2382964860955763,
+      "saving_ms_per_case": 6.959559055882424,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 702118.0604866132,
+      "break_even_full_sweeps": 3774.8282821860926
+    },
+    {
+      "model": "histgb",
+      "target": 0.87,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.2382964860955763,
+      "saving_ms_per_case": 6.959559055882424,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 703808.2796377903,
+      "break_even_full_sweeps": 3783.9154819236037
+    },
+    {
+      "model": "histgb",
+      "target": 0.88,
+      "accounting": "gen_only",
+      "escalation": 0.25463632829608485,
+      "saving_ms_per_case": 6.810212898169776,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 376459.59654051426,
+      "break_even_full_sweeps": 2023.976325486636
+    },
+    {
+      "model": "histgb",
+      "target": 0.88,
+      "accounting": "gen_plus_training",
+      "escalation": 0.25463632829608485,
+      "saving_ms_per_case": 6.810212898169776,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 379794.6033160463,
+      "break_even_full_sweeps": 2041.906469441109
+    },
+    {
+      "model": "histgb",
+      "target": 0.88,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.25463632829608485,
+      "saving_ms_per_case": 6.810212898169776,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 717515.3228280757,
+      "break_even_full_sweeps": 3857.609262516536
+    },
+    {
+      "model": "histgb",
+      "target": 0.88,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.25463632829608485,
+      "saving_ms_per_case": 6.810212898169776,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 719242.6080357323,
+      "break_even_full_sweeps": 3866.895742127593
+    },
+    {
+      "model": "histgb",
+      "target": 0.89,
+      "accounting": "gen_only",
+      "escalation": 0.27774082559856506,
+      "saving_ms_per_case": 6.599037792825106,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 388506.63998128544,
+      "break_even_full_sweeps": 2088.74537624347
+    },
+    {
+      "model": "histgb",
+      "target": 0.89,
+      "accounting": "gen_plus_training",
+      "escalation": 0.27774082559856506,
+      "saving_ms_per_case": 6.599037792825106,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 391948.3699533286,
+      "break_even_full_sweeps": 2107.2493008243473
+    },
+    {
+      "model": "histgb",
+      "target": 0.89,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.27774082559856506,
+      "saving_ms_per_case": 6.599037792825106,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 740476.4542295927,
+      "break_even_full_sweeps": 3981.0562055354444
+    },
+    {
+      "model": "histgb",
+      "target": 0.89,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.27774082559856506,
+      "saving_ms_per_case": 6.599037792825106,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 742259.014107154,
+      "break_even_full_sweeps": 3990.6398607911506
+    },
+    {
+      "model": "histgb",
+      "target": 0.9,
+      "accounting": "gen_only",
+      "escalation": 0.3062513593744674,
+      "saving_ms_per_case": 6.338451514113359,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 404478.9163869825,
+      "break_even_full_sweeps": 2174.6178300375404
+    },
+    {
+      "model": "histgb",
+      "target": 0.9,
+      "accounting": "gen_plus_training",
+      "escalation": 0.3062513593744674,
+      "saving_ms_per_case": 6.338451514113359,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 408062.1426856519,
+      "break_even_full_sweeps": 2193.882487557268
+    },
+    {
+      "model": "histgb",
+      "target": 0.9,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.3062513593744674,
+      "saving_ms_per_case": 6.338451514113359,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 770918.9058680905,
+      "break_even_full_sweeps": 4144.725300366078
+    },
+    {
+      "model": "histgb",
+      "target": 0.9,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.3062513593744674,
+      "saving_ms_per_case": 6.338451514113359,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 772774.7503079837,
+      "break_even_full_sweeps": 4154.7029586450735
+    },
+    {
+      "model": "histgb",
+      "target": 0.91,
+      "accounting": "gen_only",
+      "escalation": 0.33417061272372506,
+      "saving_ms_per_case": 6.083269538501144,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 421446.06346535275,
+      "break_even_full_sweeps": 2265.8390508889934
+    },
+    {
+      "model": "histgb",
+      "target": 0.91,
+      "accounting": "gen_plus_training",
+      "escalation": 0.33417061272372506,
+      "saving_ms_per_case": 6.083269538501144,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 425179.59952099953,
+      "break_even_full_sweeps": 2285.911825381718
+    },
+    {
+      "model": "histgb",
+      "target": 0.91,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.33417061272372506,
+      "saving_ms_per_case": 6.083269538501144,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 803257.5369596691,
+      "break_even_full_sweeps": 4318.588908385318
+    },
+    {
+      "model": "histgb",
+      "target": 0.91,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.33417061272372506,
+      "saving_ms_per_case": 6.083269538501144,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 805191.230662628,
+      "break_even_full_sweeps": 4328.985111089398
+    },
+    {
+      "model": "histgb",
+      "target": 0.92,
+      "accounting": "gen_only",
+      "escalation": 0.3774148705119974,
+      "saving_ms_per_case": 5.688017022316335,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 450731.7734706698,
+      "break_even_full_sweeps": 2423.2891046810205
+    },
+    {
+      "model": "histgb",
+      "target": 0.92,
+      "accounting": "gen_plus_training",
+      "escalation": 0.3774148705119974,
+      "saving_ms_per_case": 5.688017022316335,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 454724.7478357435,
+      "break_even_full_sweeps": 2444.75670879432
+    },
+    {
+      "model": "histgb",
+      "target": 0.92,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.3774148705119974,
+      "saving_ms_per_case": 5.688017022316335,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 859074.8035715806,
+      "break_even_full_sweeps": 4618.681739632154
+    },
+    {
+      "model": "histgb",
+      "target": 0.92,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.3774148705119974,
+      "saving_ms_per_case": 5.688017022316335,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 861142.8670027991,
+      "break_even_full_sweeps": 4629.800360230102
+    },
+    {
+      "model": "histgb",
+      "target": 0.93,
+      "accounting": "gen_only",
+      "escalation": 0.4197342816699555,
+      "saving_ms_per_case": 5.301217604332598,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 483619.0836430999,
+      "break_even_full_sweeps": 2600.10260023172
+    },
+    {
+      "model": "histgb",
+      "target": 0.93,
+      "accounting": "gen_plus_training",
+      "escalation": 0.4197342816699555,
+      "saving_ms_per_case": 5.301217604332598,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 487903.40242670337,
+      "break_even_full_sweeps": 2623.1365721865773
+    },
+    {
+      "model": "histgb",
+      "target": 0.93,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.4197342816699555,
+      "saving_ms_per_case": 5.301217604332598,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 921756.5606370529,
+      "break_even_full_sweeps": 4955.680433532542
+    },
+    {
+      "model": "histgb",
+      "target": 0.93,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.4197342816699555,
+      "saving_ms_per_case": 5.301217604332598,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 923975.518785533,
+      "break_even_full_sweeps": 4967.610316051253
+    },
+    {
+      "model": "histgb",
+      "target": 0.94,
+      "accounting": "gen_only",
+      "escalation": 0.4668395523921854,
+      "saving_ms_per_case": 4.870675429931417,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 526368.4753545773,
+      "break_even_full_sweeps": 2829.9380395407384
+    },
+    {
+      "model": "histgb",
+      "target": 0.94,
+      "accounting": "gen_plus_training",
+      "escalation": 0.4668395523921854,
+      "saving_ms_per_case": 4.870675429931417,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 531031.5054589116,
+      "break_even_full_sweeps": 2855.0080938651163
+    },
+    {
+      "model": "histgb",
+      "target": 0.94,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.4668395523921854,
+      "saving_ms_per_case": 4.870675429931417,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 1003235.0084610373,
+      "break_even_full_sweeps": 5393.736604629233
+    },
+    {
+      "model": "histgb",
+      "target": 0.94,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.4668395523921854,
+      "saving_ms_per_case": 4.870675429931417,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 1005650.1108773702,
+      "break_even_full_sweeps": 5406.721026222421
+    },
+    {
+      "model": "histgb",
+      "target": 0.95,
+      "accounting": "gen_only",
+      "escalation": 0.5118296511092764,
+      "saving_ms_per_case": 4.459465927657205,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 574905.1661320541,
+      "break_even_full_sweeps": 3090.88798995728
+    },
+    {
+      "model": "histgb",
+      "target": 0.95,
+      "accounting": "gen_plus_training",
+      "escalation": 0.5118296511092764,
+      "saving_ms_per_case": 4.459465927657205,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 579998.1764894947,
+      "break_even_full_sweeps": 3118.2697660725526
+    },
+    {
+      "model": "histgb",
+      "target": 0.95,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.5118296511092764,
+      "saving_ms_per_case": 4.459465927657205,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 1095743.7920655478,
+      "break_even_full_sweeps": 5891.095656266386
+    },
+    {
+      "model": "histgb",
+      "target": 0.95,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.5118296511092764,
+      "saving_ms_per_case": 4.459465927657205,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 1098381.5922395657,
+      "break_even_full_sweeps": 5905.277377632074
+    },
+    {
+      "model": "histgb",
+      "target": 0.96,
+      "accounting": "gen_only",
+      "escalation": 0.5695530868202232,
+      "saving_ms_per_case": 3.9318737252591505,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 652047.8985705528,
+      "break_even_full_sweeps": 3505.633863282542
+    },
+    {
+      "model": "histgb",
+      "target": 0.96,
+      "accounting": "gen_plus_training",
+      "escalation": 0.5695530868202232,
+      "saving_ms_per_case": 3.9318737252591505,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 657824.3063967514,
+      "break_even_full_sweeps": 3536.689819337373
+    },
+    {
+      "model": "histgb",
+      "target": 0.96,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.5695530868202232,
+      "saving_ms_per_case": 3.9318737252591505,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 1242774.4245108345,
+      "break_even_full_sweeps": 6681.582927477605
+    },
+    {
+      "model": "histgb",
+      "target": 0.96,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.5695530868202232,
+      "saving_ms_per_case": 3.9318737252591505,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 1245766.1736925114,
+      "break_even_full_sweeps": 6697.667600497373
+    },
+    {
+      "model": "histgb",
+      "target": 0.97,
+      "accounting": "gen_only",
+      "escalation": 0.6367945178499592,
+      "saving_ms_per_case": 3.317287045647363,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 772851.4188616694,
+      "break_even_full_sweeps": 4155.115155170265
+    },
+    {
+      "model": "histgb",
+      "target": 0.97,
+      "accounting": "gen_plus_training",
+      "escalation": 0.6367945178499592,
+      "saving_ms_per_case": 3.317287045647363,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 779698.0094176517,
+      "break_even_full_sweeps": 4191.924781815332
+    },
+    {
+      "model": "histgb",
+      "target": 0.97,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.6367945178499592,
+      "saving_ms_per_case": 3.317287045647363,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 1473020.5854720157,
+      "break_even_full_sweeps": 7919.465513290407
+    },
+    {
+      "model": "histgb",
+      "target": 0.97,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.6367945178499592,
+      "saving_ms_per_case": 3.317287045647363,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 1476566.6096291458,
+      "break_even_full_sweeps": 7938.530159296483
+    },
+    {
+      "model": "histgb",
+      "target": 0.98,
+      "accounting": "gen_only",
+      "escalation": 0.7199530796400196,
+      "saving_ms_per_case": 2.557217790886211,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 1002562.2413300662,
+      "break_even_full_sweeps": 5390.119577043367
+    },
+    {
+      "model": "histgb",
+      "target": 0.98,
+      "accounting": "gen_plus_training",
+      "escalation": 0.7199530796400196,
+      "saving_ms_per_case": 2.557217790886211,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 1011443.8102911287,
+      "break_even_full_sweeps": 5437.869947801767
+    },
+    {
+      "model": "histgb",
+      "target": 0.98,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.7199530796400196,
+      "saving_ms_per_case": 2.557217790886211,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 1910839.2423880352,
+      "break_even_full_sweeps": 10273.329260150727
+    },
+    {
+      "model": "histgb",
+      "target": 0.98,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.7199530796400196,
+      "saving_ms_per_case": 2.557217790886211,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 1915439.2338482556,
+      "break_even_full_sweeps": 10298.060397033632
+    },
+    {
+      "model": "histgb",
+      "target": 0.99,
+      "accounting": "gen_only",
+      "escalation": 0.7965042762847028,
+      "saving_ms_per_case": 1.857539853553807,
+      "one_time_cost_s": 2563.77,
+      "break_even_cases": 1380196.4975852594,
+      "break_even_full_sweeps": 7420.411277340104
+    },
+    {
+      "model": "histgb",
+      "target": 0.99,
+      "accounting": "gen_plus_training",
+      "escalation": 0.7965042762847028,
+      "saving_ms_per_case": 1.857539853553807,
+      "one_time_cost_s": 2586.482106158212,
+      "break_even_cases": 1392423.479480027,
+      "break_even_full_sweeps": 7486.14773913993
+    },
+    {
+      "model": "histgb",
+      "target": 0.99,
+      "accounting": "gen_plus_training_plus_search",
+      "escalation": 0.7965042762847028,
+      "saving_ms_per_case": 1.857539853553807,
+      "one_time_cost_s": 4886.432106158212,
+      "break_even_cases": 2630593.41462289,
+      "break_even_full_sweeps": 14142.97534743489
+    },
+    {
+      "model": "histgb",
+      "target": 0.99,
+      "accounting": "gen_incl_rejected_plus_training_plus_search",
+      "escalation": 0.7965042762847028,
+      "saving_ms_per_case": 1.857539853553807,
+      "one_time_cost_s": 4898.195286158212,
+      "break_even_cases": 2636926.0809059283,
+      "break_even_full_sweeps": 14177.021940354452
+    }
+  ],
+  "operating_points": {
+    "ridge": 0.94,
+    "histgb": 0.97
+  }
+}

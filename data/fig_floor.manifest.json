@@ -1,0 +1,104 @@
+{
+  "figure": "fig_floor.png",
+  "generating_script": "scripts/sweep_figures.py",
+  "script_git_blob_sha": "45bfbfaf9161387c53831e0dfabdbefa3d3f567f",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9cba13e723ad3c034f54b5cf34b1fc97c3b5cc60",
+  "input_file": "data/sweep_results_long.parquet",
+  "input_sha256": "3783d41c1b6e14d5f0a9bb5ec85da9e60f0a71292ea92c9b278a1a69b5f57712",
+  "interpreter": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+  "interpreter_short": "3.13.9",
+  "generated_utc": "2026-08-12T19:31:10Z",
+  "plotting_library": "matplotlib 3.11.1",
+  "apa_citation": "Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95. https://doi.org/10.1109/MCSE.2007.55",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "rendered_numbers": {
+    "nondegenerate_definition": "L <= 0.94",
+    "n_nondegenerate": 12300,
+    "n_degenerate": 4500,
+    "nondegenerate": {
+      "esc_pred_cdf": {
+        "r2": 0.9980572201604234,
+        "mae": 0.0020630393087653414,
+        "n": 12300
+      },
+      "esc_pred_rho_local": {
+        "r2": 0.4939568658336714,
+        "mae": 0.02476267130505206,
+        "n": 12300
+      },
+      "esc_pred_rho_outcome": {
+        "r2": 0.40426969204803176,
+        "mae": 0.026841878590593088,
+        "n": 12300
+      }
+    },
+    "full_range": {
+      "esc_pred_cdf": {
+        "r2": 0.9959198423216042,
+        "mae": 0.003958067936696465,
+        "n": 16800
+      },
+      "esc_pred_rho_local": {
+        "r2": 0.21637901478679766,
+        "mae": 0.03856362940241186,
+        "n": 16800
+      },
+      "esc_pred_rho_outcome": {
+        "r2": 0.18448062453624858,
+        "mae": 0.03938360611069658,
+        "n": 16800
+      }
+    },
+    "degenerate": {
+      "esc_pred_cdf": {
+        "r2": 0.9909125351358407,
+        "mae": 0.009137812853041537,
+        "n": 4500
+      },
+      "esc_pred_rho_local": {
+        "r2": -0.4653642457935052,
+        "mae": 0.07628624820186199,
+        "n": 4500
+      },
+      "esc_pred_rho_outcome": {
+        "r2": -0.3795072445459584,
+        "mae": 0.07366432799897948,
+        "n": 4500
+      }
+    },
+    "min_escalation_nondegenerate": {
+      "esc_observed": 0.00023302920035133635,
+      "boundary_mass": 0.00021510387724738738,
+      "L": 0.901,
+      "model": "histgb",
+      "target": 0.7,
+      "seed": 2
+    },
+    "at_L094": {
+      "ridge": {
+        "esc_observed": 0.4906972404572077,
+        "boundary_mass": 0.5999928267460349,
+        "target": 0.9,
+        "note": "mean over 5 seeds at coverage target 0.90"
+      },
+      "histgb": {
+        "esc_observed": 0.3062513593744674,
+        "boundary_mass": 0.3125822439458429,
+        "target": 0.9,
+        "note": "mean over 5 seeds at coverage target 0.90"
+      }
+    },
+    "nondegenerate_fit": {
+      "slope": 0.9365785572726094,
+      "intercept": 0.0018339551311064638,
+      "pearson_r": 0.9906516481128724
+    },
+    "requested_6p6pct_floor": {
+      "found": false,
+      "note": "The request asked to mark a 6.6% minimum. No such minimum exists in this parquet: the minimum escalation on L <= 0.940 is 0.0233%. The figure marks the actual minimum instead."
+    }
+  },
+  "content_sha256": "2c1f97b18ffc337fd69df3c6edb1742796d0b8dca8ce14d3fd4630056c85b4d7"
+}

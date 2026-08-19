@@ -1,0 +1,2474 @@
+{
+  "hardware_recorded": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "hardware_gap": "the manifest hardware block records machine/processor/system/release/cpu but NOT core count, thread count, or whether the solve was single-threaded. Core count below is measured on the machine running this benchmark and is NOT evidence about the machine that produced ms_solver=9.14.",
+  "solver_config": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "cores_measured_now": 10,
+  "constraint_note": "item 2 required MEASURING parallel solve time, which runs the AC solver and so conflicts with the 'zero new solves' header. Treated as a hardware benchmark: 930 contingency solves per configuration, no dataset row, no result artifact regenerated.",
+  "benchmark_basis": "mean over 930 solves per configuration with the JIT warm-up scenario discarded; the committed ms_solver=9.14 is a MINIMUM over 400 solves, a different basis, so the P=1 figure here is not directly comparable",
+  "scaling": {
+    "1": {
+      "n_workers": 1,
+      "per_core_ms": 10.081987812869771,
+      "effective_ms_per_case": 10.081987812869771,
+      "speedup_vs_serial": 1.0,
+      "parallel_efficiency": 1.0
+    },
+    "2": {
+      "n_workers": 2,
+      "per_core_ms": 10.905130421717761,
+      "effective_ms_per_case": 5.4525652108588805,
+      "speedup_vs_serial": 1.8490357149312608,
+      "parallel_efficiency": 0.9245178574656304
+    },
+    "4": {
+      "n_workers": 4,
+      "per_core_ms": 14.026764334900484,
+      "effective_ms_per_case": 3.506691083725121,
+      "speedup_vs_serial": 2.875071562380049,
+      "parallel_efficiency": 0.7187678905950122
+    },
+    "8": {
+      "n_workers": 8,
+      "per_core_ms": 18.990031986932962,
+      "effective_ms_per_case": 2.3737539983666203,
+      "speedup_vs_serial": 4.247275758063887,
+      "parallel_efficiency": 0.5309094697579859
+    },
+    "10": {
+      "n_workers": 10,
+      "per_core_ms": 18.675689245524104,
+      "effective_ms_per_case": 1.8675689245524105,
+      "speedup_vs_serial": 5.3984555430992,
+      "parallel_efficiency": 0.53984555430992
+    }
+  },
+  "best_parallel": {
+    "n_workers": 10,
+    "effective_ms_per_case": 1.8675689245524105,
+    "speedup": 5.3984555430992,
+    "efficiency": 0.53984555430992
+  },
+  "ms_inference": {
+    "ridge": 0.001162780914543728,
+    "histgb": 0.002411061204009792
+  },
+  "speedup_table": [
+    {
+      "model": "ridge",
+      "target": 0.7,
+      "escalation": 0.14637358227032846,
+      "published_net_speedup": 6.989181546220598,
+      "serial_recomputed": 6.825901236618383,
+      "parallel_both_sides": 6.8289291242595,
+      "parallel_baseline_serial_gate": 1.3947309662551817,
+      "parallel_with_escalation_saturation": 6.8289291242595,
+      "delta_both_vs_published": -0.1602524219610979,
+      "escalated_solves_per_sweep": 27.225486302281094,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.71,
+      "escalation": 0.15805314010381064,
+      "published_net_speedup": 6.465618818313564,
+      "serial_recomputed": 6.321897397257343,
+      "parallel_both_sides": 6.324494567490935,
+      "parallel_baseline_serial_gate": 1.2917482629460153,
+      "parallel_with_escalation_saturation": 6.324494567490935,
+      "delta_both_vs_published": -0.14112425082262892,
+      "escalated_solves_per_sweep": 29.39788405930878,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.72,
+      "escalation": 0.16948533689810366,
+      "published_net_speedup": 6.00792335233818,
+      "serial_recomputed": 5.895789938344061,
+      "parallel_both_sides": 5.898048736935847,
+      "parallel_baseline_serial_gate": 1.2046820650481553,
+      "parallel_with_escalation_saturation": 5.898048736935847,
+      "delta_both_vs_published": -0.10987461540233312,
+      "escalated_solves_per_sweep": 31.52427266304728,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.73,
+      "escalation": 0.18106804150534445,
+      "published_net_speedup": 5.623058761512017,
+      "serial_recomputed": 5.518908152791476,
+      "parallel_both_sides": 5.5208873506029725,
+      "parallel_baseline_serial_gate": 1.1276741098044099,
+      "parallel_with_escalation_saturation": 5.5208873506029725,
+      "delta_both_vs_published": -0.1021714109090448,
+      "escalated_solves_per_sweep": 33.67865571999407,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.74,
+      "escalation": 0.19304872414207674,
+      "published_net_speedup": 5.25486662934445,
+      "serial_recomputed": 5.176628021879132,
+      "parallel_both_sides": 5.1783692959284595,
+      "parallel_baseline_serial_gate": 1.0577362831103592,
+      "parallel_with_escalation_saturation": 5.1783692959284595,
+      "delta_both_vs_published": -0.07649733341599063,
+      "escalated_solves_per_sweep": 35.90706269042627,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.75,
+      "escalation": 0.20572129661961763,
+      "published_net_speedup": 4.91399385513592,
+      "serial_recomputed": 4.857941274855183,
+      "parallel_both_sides": 4.859474721740291,
+      "parallel_baseline_serial_gate": 0.992619273765871,
+      "parallel_with_escalation_saturation": 4.859474721740291,
+      "delta_both_vs_published": -0.05451913339562875,
+      "escalated_solves_per_sweep": 38.26416117124888,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.76,
+      "escalation": 0.21959126911367025,
+      "published_net_speedup": 4.585265724252649,
+      "serial_recomputed": 4.551278360580455,
+      "parallel_both_sides": 4.552624290226501,
+      "parallel_baseline_serial_gate": 0.9299590845960501,
+      "parallel_with_escalation_saturation": 4.552624290226501,
+      "delta_both_vs_published": -0.03264143402614739,
+      "escalated_solves_per_sweep": 40.84397605514267,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.77,
+      "escalation": 0.234163825467281,
+      "published_net_speedup": 4.291701865550721,
+      "serial_recomputed": 4.268195579655475,
+      "parallel_both_sides": 4.269379264802266,
+      "parallel_baseline_serial_gate": 0.8721170053037776,
+      "parallel_with_escalation_saturation": 4.269379264802266,
+      "delta_both_vs_published": -0.02232260074845449,
+      "escalated_solves_per_sweep": 43.55447153691427,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.78,
+      "escalation": 0.24759637368123086,
+      "published_net_speedup": 4.059046996017351,
+      "serial_recomputed": 4.036757215999328,
+      "parallel_both_sides": 4.037815997402068,
+      "parallel_baseline_serial_gate": 0.8248273886830468,
+      "parallel_with_escalation_saturation": 4.037815997402068,
+      "delta_both_vs_published": -0.021230998615282992,
+      "escalated_solves_per_sweep": 46.05292550470894,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.79,
+      "escalation": 0.26359929672645255,
+      "published_net_speedup": 3.815928805281735,
+      "serial_recomputed": 3.791806817584084,
+      "parallel_both_sides": 3.7927409889217256,
+      "parallel_baseline_serial_gate": 0.7747768687555805,
+      "parallel_with_escalation_saturation": 3.7927409889217256,
+      "delta_both_vs_published": -0.02318781636000944,
+      "escalated_solves_per_sweep": 49.02946919112017,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.8,
+      "escalation": 0.27973486754790866,
+      "published_net_speedup": 3.599937414245057,
+      "serial_recomputed": 3.5731885394924396,
+      "parallel_both_sides": 3.5740180842591167,
+      "parallel_baseline_serial_gate": 0.7301067700134457,
+      "parallel_with_escalation_saturation": 3.5740180842591167,
+      "delta_both_vs_published": -0.025919329985940376,
+      "escalated_solves_per_sweep": 52.03068536391101,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.81,
+      "escalation": 0.29884947014844665,
+      "published_net_speedup": 3.3756280231642224,
+      "serial_recomputed": 3.344742371457196,
+      "parallel_both_sides": 3.345469224915028,
+      "parallel_baseline_serial_gate": 0.6834285463421438,
+      "parallel_with_escalation_saturation": 3.345469224915028,
+      "delta_both_vs_published": -0.03015879824919443,
+      "escalated_solves_per_sweep": 55.586001447611075,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.82,
+      "escalation": 0.31555852247152993,
+      "published_net_speedup": 3.1992752741051347,
+      "serial_recomputed": 3.167707212866129,
+      "parallel_both_sides": 3.1683591513057907,
+      "parallel_baseline_serial_gate": 0.6472550933073644,
+      "parallel_with_escalation_saturation": 3.1683591513057907,
+      "delta_both_vs_published": -0.03091612279934397,
+      "escalated_solves_per_sweep": 58.693885179704566,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.83,
+      "escalation": 0.3360352778050974,
+      "published_net_speedup": 3.0018195226058144,
+      "serial_recomputed": 2.9747518231410774,
+      "parallel_both_sides": 2.975326749944261,
+      "parallel_baseline_serial_gate": 0.6078286721174949,
+      "parallel_with_escalation_saturation": 2.975326749944261,
+      "delta_both_vs_published": -0.026492772661553587,
+      "escalated_solves_per_sweep": 62.50256167174812,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.84,
+      "escalation": 0.3548199702251258,
+      "published_net_speedup": 2.8366454060624706,
+      "serial_recomputed": 2.8173205214354535,
+      "parallel_both_sides": 2.817836200087079,
+      "parallel_baseline_serial_gate": 0.5756608595554318,
+      "parallel_with_escalation_saturation": 2.817836200087079,
+      "delta_both_vs_published": -0.018809205975391485,
+      "escalated_solves_per_sweep": 65.9965144618734,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.85,
+      "escalation": 0.3753969446048101,
+      "published_net_speedup": 2.680537942238046,
+      "serial_recomputed": 2.6629444843649477,
+      "parallel_both_sides": 2.6634051931615588,
+      "parallel_baseline_serial_gate": 0.5441173267842689,
+      "parallel_with_escalation_saturation": 2.6634051931615588,
+      "delta_both_vs_published": -0.017132749076487208,
+      "escalated_solves_per_sweep": 69.82383169649468,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.86,
+      "escalation": 0.39897819156573083,
+      "published_net_speedup": 2.5247895960327065,
+      "serial_recomputed": 2.5056037170402155,
+      "parallel_both_sides": 2.5060115878351152,
+      "parallel_baseline_serial_gate": 0.5119680130401879,
+      "parallel_with_escalation_saturation": 2.5060115878351152,
+      "delta_both_vs_published": -0.018778008197591234,
+      "escalated_solves_per_sweep": 74.20994363122594,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.87,
+      "escalation": 0.41979559987686743,
+      "published_net_speedup": 2.396225541836432,
+      "serial_recomputed": 2.381389996544704,
+      "parallel_both_sides": 2.381758426883312,
+      "parallel_baseline_serial_gate": 0.48658752240556463,
+      "parallel_with_escalation_saturation": 2.381758426883312,
+      "delta_both_vs_published": -0.014467114953120142,
+      "escalated_solves_per_sweep": 78.08198157709734,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.88,
+      "escalation": 0.44230150248950134,
+      "published_net_speedup": 2.2728920181430263,
+      "serial_recomputed": 2.260251090430338,
+      "parallel_both_sides": 2.2605829881681183,
+      "parallel_baseline_serial_gate": 0.46183530614588614,
+      "parallel_with_escalation_saturation": 2.2605829881681183,
+      "delta_both_vs_published": -0.012309029974908015,
+      "escalated_solves_per_sweep": 82.26807946304724,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.89,
+      "escalation": 0.46553864120662014,
+      "published_net_speedup": 2.156643749070874,
+      "serial_recomputed": 2.147462559809383,
+      "parallel_both_sides": 2.1477621578279225,
+      "parallel_baseline_serial_gate": 0.43878931546387034,
+      "parallel_with_escalation_saturation": 2.1477621578279225,
+      "delta_both_vs_published": -0.008881591242951625,
+      "escalated_solves_per_sweep": 86.59018726443135,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.9,
+      "escalation": 0.4906972404572077,
+      "published_net_speedup": 2.043111763549933,
+      "serial_recomputed": 2.037388277821459,
+      "parallel_both_sides": 2.0376579475733876,
+      "parallel_baseline_serial_gate": 0.4162979250444978,
+      "parallel_with_escalation_saturation": 2.0376579475733876,
+      "delta_both_vs_published": -0.005453815976545595,
+      "escalated_solves_per_sweep": 91.26968672504063,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.91,
+      "escalation": 0.5169493637699788,
+      "published_net_speedup": 1.9398541739847162,
+      "serial_recomputed": 1.9339495028004043,
+      "parallel_both_sides": 1.9341924836079616,
+      "parallel_baseline_serial_gate": 0.3951623624817965,
+      "parallel_with_escalation_saturation": 1.9341924836079616,
+      "delta_both_vs_published": -0.005661690376754569,
+      "escalated_solves_per_sweep": 96.15258166121606,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.92,
+      "escalation": 0.5552070396283366,
+      "published_net_speedup": 1.8079731279207194,
+      "serial_recomputed": 1.8007172880290947,
+      "parallel_both_sides": 1.8009279416944273,
+      "parallel_baseline_serial_gate": 0.36793913009052837,
+      "parallel_with_escalation_saturation": 1.8009279416944273,
+      "delta_both_vs_published": -0.007045186226292133,
+      "escalated_solves_per_sweep": 103.26850937087062,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.93,
+      "escalation": 0.6001467589214695,
+      "published_net_speedup": 1.6709939865634262,
+      "serial_recomputed": 1.6659059644706025,
+      "parallel_both_sides": 1.6660862559135854,
+      "parallel_baseline_serial_gate": 0.3403932396577472,
+      "parallel_with_escalation_saturation": 1.6660862559135854,
+      "delta_both_vs_published": -0.004907730649840847,
+      "escalated_solves_per_sweep": 111.62729715939334,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.94,
+      "escalation": 0.6434123029630445,
+      "published_net_speedup": 1.5568467287955494,
+      "serial_recomputed": 1.5539061176481428,
+      "parallel_both_sides": 1.554062980657135,
+      "parallel_baseline_serial_gate": 0.3175084001084851,
+      "parallel_with_escalation_saturation": 1.554062980657135,
+      "delta_both_vs_published": -0.0027837481384143103,
+      "escalated_solves_per_sweep": 119.67468835112628,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.95,
+      "escalation": 0.6785333530184323,
+      "published_net_speedup": 1.4760765384058954,
+      "serial_recomputed": 1.4734906392838418,
+      "parallel_both_sides": 1.4736316861633056,
+      "parallel_baseline_serial_gate": 0.301077169425095,
+      "parallel_with_escalation_saturation": 1.4736316861633056,
+      "delta_both_vs_published": -0.0024448522425897234,
+      "escalated_solves_per_sweep": 126.20720366142841,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.96,
+      "escalation": 0.7143464325496895,
+      "published_net_speedup": 1.400182183933087,
+      "serial_recomputed": 1.399631740016107,
+      "parallel_both_sides": 1.3997590006848704,
+      "parallel_baseline_serial_gate": 0.28598563932946386,
+      "parallel_with_escalation_saturation": 1.3997590006848704,
+      "delta_both_vs_published": -0.0004231832482166631,
+      "escalated_solves_per_sweep": 132.86843645424224,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.97,
+      "escalation": 0.739111061073142,
+      "published_net_speedup": 1.3530032680550534,
+      "serial_recomputed": 1.3527438000253278,
+      "parallel_both_sides": 1.3528626766368412,
+      "parallel_baseline_serial_gate": 0.2764050638739871,
+      "parallel_with_escalation_saturation": 1.3528626766368412,
+      "delta_both_vs_published": -0.00014059141821221033,
+      "escalated_solves_per_sweep": 137.4746573596044,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.98,
+      "escalation": 0.7480445906267049,
+      "published_net_speedup": 1.3367526153943303,
+      "serial_recomputed": 1.3365913914986387,
+      "parallel_both_sides": 1.3367074460499173,
+      "parallel_baseline_serial_gate": 0.27310465509705933,
+      "parallel_with_escalation_saturation": 1.3367074460499173,
+      "delta_both_vs_published": -4.516934441300968e-05,
+      "escalated_solves_per_sweep": 139.1362938565671,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "ridge",
+      "target": 0.99,
+      "escalation": 0.7488763012003712,
+      "published_net_speedup": 1.3352720656347912,
+      "serial_recomputed": 1.3351072099652803,
+      "parallel_both_sides": 1.3352230069092583,
+      "parallel_baseline_serial_gate": 0.27280139346575794,
+      "parallel_with_escalation_saturation": 1.3352230069092583,
+      "delta_both_vs_published": -4.9058725532846736e-05,
+      "escalated_solves_per_sweep": 139.29099202326904,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.7,
+      "escalation": 0.03351842309810731,
+      "published_net_speedup": 32.18657264793755,
+      "serial_recomputed": 29.60137426066365,
+      "parallel_both_sides": 29.719868228784883,
+      "parallel_baseline_serial_gate": 6.048425239962913,
+      "parallel_with_escalation_saturation": 18.555443007646105,
+      "delta_both_vs_published": -2.46670441915267,
+      "escalated_solves_per_sweep": 6.23442669624796,
+      "effective_cores_for_escalated": 6.23442669624796
+    },
+    {
+      "model": "histgb",
+      "target": 0.71,
+      "escalation": 0.03808194278869696,
+      "published_net_speedup": 27.604619276247643,
+      "serial_recomputed": 26.078519524519134,
+      "parallel_both_sides": 26.17044407501669,
+      "parallel_baseline_serial_gate": 5.328603135921798,
+      "parallel_with_escalation_saturation": 18.555443007646108,
+      "delta_both_vs_published": -1.4341752012309534,
+      "escalated_solves_per_sweep": 7.083241358697635,
+      "effective_cores_for_escalated": 7.083241358697635
+    },
+    {
+      "model": "histgb",
+      "target": 0.72,
+      "escalation": 0.04659585663090631,
+      "published_net_speedup": 23.130535937173203,
+      "serial_recomputed": 21.340322085007863,
+      "parallel_both_sides": 21.401838290363685,
+      "parallel_baseline_serial_gate": 4.360451024715556,
+      "parallel_with_escalation_saturation": 18.555443007646105,
+      "delta_both_vs_published": -1.7286976468095183,
+      "escalated_solves_per_sweep": 8.666829333348574,
+      "effective_cores_for_escalated": 8.666829333348574
+    },
+    {
+      "model": "histgb",
+      "target": 0.73,
+      "escalation": 0.05526048133907078,
+      "published_net_speedup": 19.702358264068412,
+      "serial_recomputed": 18.010141065942175,
+      "parallel_both_sides": 18.05393626547828,
+      "parallel_baseline_serial_gate": 3.679997787916721,
+      "parallel_with_escalation_saturation": 18.05393626547828,
+      "delta_both_vs_published": -1.6484219985901305,
+      "escalated_solves_per_sweep": 10.278449529067165,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.74,
+      "escalation": 0.06351989858126879,
+      "published_net_speedup": 17.327257377213552,
+      "serial_recomputed": 15.677988948279143,
+      "parallel_both_sides": 15.711165882976262,
+      "parallel_baseline_serial_gate": 3.203471002109656,
+      "parallel_with_escalation_saturation": 15.711165882976262,
+      "delta_both_vs_published": -1.6160914942372901,
+      "escalated_solves_per_sweep": 11.814701136115994,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.75,
+      "escalation": 0.07322403787735292,
+      "published_net_speedup": 15.008024395855765,
+      "serial_recomputed": 13.607695290620805,
+      "parallel_both_sides": 13.632681671717396,
+      "parallel_baseline_serial_gate": 2.7804495469957984,
+      "parallel_with_escalation_saturation": 13.632681671717396,
+      "delta_both_vs_published": -1.3753427241383687,
+      "escalated_solves_per_sweep": 13.619671045187642,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.76,
+      "escalation": 0.08150151647506065,
+      "published_net_speedup": 13.31606408953436,
+      "serial_recomputed": 12.230125655250006,
+      "parallel_both_sides": 12.250305383999136,
+      "parallel_baseline_serial_gate": 2.498971839947057,
+      "parallel_with_escalation_saturation": 12.250305383999136,
+      "delta_both_vs_published": -1.0657587055352238,
+      "escalated_solves_per_sweep": 15.159282064361282,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.77,
+      "escalation": 0.09310919155203108,
+      "published_net_speedup": 12.013379085198988,
+      "serial_recomputed": 10.709735934694828,
+      "parallel_both_sides": 10.725207061229325,
+      "parallel_baseline_serial_gate": 2.1883118185774975,
+      "parallel_with_escalation_saturation": 10.725207061229325,
+      "delta_both_vs_published": -1.288172023969663,
+      "escalated_solves_per_sweep": 17.31830962867778,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.78,
+      "escalation": 0.10206059951835292,
+      "published_net_speedup": 10.862610132163775,
+      "serial_recomputed": 9.772840890392382,
+      "parallel_both_sides": 9.785721938113724,
+      "parallel_baseline_serial_gate": 1.9968767999444117,
+      "parallel_with_escalation_saturation": 9.785721938113724,
+      "delta_both_vs_published": -1.076888194050051,
+      "escalated_solves_per_sweep": 18.983271510413644,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.79,
+      "escalation": 0.11524218845560799,
+      "published_net_speedup": 9.413571801881595,
+      "serial_recomputed": 8.657560360547613,
+      "parallel_both_sides": 8.667667663173905,
+      "parallel_baseline_serial_gate": 1.768992417045458,
+      "parallel_with_escalation_saturation": 8.667667663173905,
+      "delta_both_vs_published": -0.7459041387076901,
+      "escalated_solves_per_sweep": 21.435047052743087,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.8,
+      "escalation": 0.12795759754763988,
+      "published_net_speedup": 8.439239317616737,
+      "serial_recomputed": 7.799010769926315,
+      "parallel_both_sides": 7.80721188633086,
+      "parallel_baseline_serial_gate": 1.593565662599995,
+      "parallel_with_escalation_saturation": 7.80721188633086,
+      "delta_both_vs_published": -0.6320274312858771,
+      "escalated_solves_per_sweep": 23.80011314386102,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.81,
+      "escalation": 0.14028253236483934,
+      "published_net_speedup": 7.498442297531783,
+      "serial_recomputed": 7.115091787067971,
+      "parallel_both_sides": 7.121916979549768,
+      "parallel_baseline_serial_gate": 1.453821041232628,
+      "parallel_with_escalation_saturation": 7.121916979549768,
+      "delta_both_vs_published": -0.37652531798201494,
+      "escalated_solves_per_sweep": 26.092551019860117,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.82,
+      "escalation": 0.15222364184362003,
+      "published_net_speedup": 6.869968944935403,
+      "serial_recomputed": 6.557917417366065,
+      "parallel_both_sides": 6.563715082858584,
+      "parallel_baseline_serial_gate": 1.3399740457826983,
+      "parallel_with_escalation_saturation": 6.563715082858584,
+      "delta_both_vs_published": -0.3062538620768187,
+      "escalated_solves_per_sweep": 28.313597382913326,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.83,
+      "escalation": 0.16397484011773694,
+      "published_net_speedup": 6.3380230119602174,
+      "serial_recomputed": 6.08870145566588,
+      "parallel_both_sides": 6.093698844673733,
+      "parallel_baseline_serial_gate": 1.2440995218247946,
+      "parallel_with_escalation_saturation": 6.093698844673733,
+      "delta_both_vs_published": -0.24432416728648487,
+      "escalated_solves_per_sweep": 30.499320261899072,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.84,
+      "escalation": 0.18288139395057246,
+      "published_net_speedup": 5.653622838921926,
+      "serial_recomputed": 5.4601489710002005,
+      "parallel_both_sides": 5.464167489618613,
+      "parallel_baseline_serial_gate": 1.1156678929613562,
+      "parallel_with_escalation_saturation": 5.464167489618613,
+      "delta_both_vs_published": -0.1894553493033131,
+      "escalated_solves_per_sweep": 34.01593927480648,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.85,
+      "escalation": 0.1995404991681912,
+      "published_net_speedup": 5.095883544269107,
+      "serial_recomputed": 5.004897506859024,
+      "parallel_both_sides": 5.008273649044443,
+      "parallel_baseline_serial_gate": 1.022646723673933,
+      "parallel_with_escalation_saturation": 5.008273649044443,
+      "delta_both_vs_published": -0.08760989522466378,
+      "escalated_solves_per_sweep": 37.11453284528356,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.86,
+      "escalation": 0.21870156804566046,
+      "published_net_speedup": 4.640133013962618,
+      "serial_recomputed": 4.566932407163612,
+      "parallel_both_sides": 4.569743362107654,
+      "parallel_baseline_serial_gate": 0.9331576634737525,
+      "parallel_with_escalation_saturation": 4.569743362107654,
+      "delta_both_vs_published": -0.07038965185496426,
+      "escalated_solves_per_sweep": 40.678491656492845,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.87,
+      "escalation": 0.2382964860955763,
+      "published_net_speedup": 4.2460482794406005,
+      "serial_recomputed": 4.19181268112673,
+      "parallel_both_sides": 4.194180707284013,
+      "parallel_baseline_serial_gate": 0.8565097484482498,
+      "parallel_with_escalation_saturation": 4.194180707284013,
+      "delta_both_vs_published": -0.05186757215658755,
+      "escalated_solves_per_sweep": 44.323146413777195,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.88,
+      "escalation": 0.25463632829608485,
+      "published_net_speedup": 3.9637470191298845,
+      "serial_recomputed": 3.9231052454620565,
+      "parallel_both_sides": 3.9251793323813144,
+      "parallel_baseline_serial_gate": 0.801604972010229,
+      "parallel_with_escalation_saturation": 3.9251793323813144,
+      "delta_both_vs_published": -0.03856768674857003,
+      "escalated_solves_per_sweep": 47.362357063071784,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.89,
+      "escalation": 0.27774082559856506,
+      "published_net_speedup": 3.6248130666526537,
+      "serial_recomputed": 3.597062551419087,
+      "parallel_both_sides": 3.5988061396654216,
+      "parallel_baseline_serial_gate": 0.7349849278666842,
+      "parallel_with_escalation_saturation": 3.5988061396654216,
+      "delta_both_vs_published": -0.02600692698723206,
+      "escalated_solves_per_sweep": 51.6597935613331,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.9,
+      "escalation": 0.3062513593744674,
+      "published_net_speedup": 3.287148493538382,
+      "serial_recomputed": 3.262481461964542,
+      "parallel_both_sides": 3.2639157107054237,
+      "parallel_baseline_serial_gate": 0.6666202401852621,
+      "parallel_with_escalation_saturation": 3.2639157107054237,
+      "delta_both_vs_published": -0.023232782832958154,
+      "escalated_solves_per_sweep": 56.96275284365094,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.91,
+      "escalation": 0.33417061272372506,
+      "published_net_speedup": 3.0056511247542668,
+      "serial_recomputed": 2.990122981114349,
+      "parallel_both_sides": 2.9913277133615797,
+      "parallel_baseline_serial_gate": 0.610969448590719,
+      "parallel_with_escalation_saturation": 2.9913277133615797,
+      "delta_both_vs_published": -0.014323411392687113,
+      "escalated_solves_per_sweep": 62.155733966612864,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.92,
+      "escalation": 0.3774148705119974,
+      "published_net_speedup": 2.663062172917644,
+      "serial_recomputed": 2.6477534967837766,
+      "parallel_both_sides": 2.648698095823019,
+      "parallel_baseline_serial_gate": 0.5410133643838471,
+      "parallel_with_escalation_saturation": 2.648698095823019,
+      "delta_both_vs_published": -0.01436407709462495,
+      "escalated_solves_per_sweep": 70.19916591523152,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.93,
+      "escalation": 0.4197342816699555,
+      "published_net_speedup": 2.395148203190588,
+      "serial_recomputed": 2.3809632997993724,
+      "parallel_both_sides": 2.381727104259715,
+      "parallel_baseline_serial_gate": 0.486500335799242,
+      "parallel_with_escalation_saturation": 2.381727104259715,
+      "delta_both_vs_published": -0.013421098930873399,
+      "escalated_solves_per_sweep": 78.07057639061173,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.94,
+      "escalation": 0.4668395523921854,
+      "published_net_speedup": 2.148323871023602,
+      "serial_recomputed": 2.1408538634140837,
+      "parallel_both_sides": 2.141471363161201,
+      "parallel_baseline_serial_gate": 0.43743896578994673,
+      "parallel_with_escalation_saturation": 2.141471363161201,
+      "delta_both_vs_published": -0.006852507862401325,
+      "escalated_solves_per_sweep": 86.83215674494649,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.95,
+      "escalation": 0.5118296511092764,
+      "published_net_speedup": 1.9612404812404147,
+      "serial_recomputed": 1.9527686069006784,
+      "parallel_both_sides": 1.9532823586365418,
+      "parallel_baseline_serial_gate": 0.399007655042583,
+      "parallel_with_escalation_saturation": 1.9532823586365418,
+      "delta_both_vs_published": -0.007958122603872964,
+      "escalated_solves_per_sweep": 95.2003151063254,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.96,
+      "escalation": 0.5695530868202232,
+      "published_net_speedup": 1.7641408732452728,
+      "serial_recomputed": 1.7549497684663562,
+      "parallel_both_sides": 1.7553646934056337,
+      "parallel_baseline_serial_gate": 0.3585874892492576,
+      "parallel_with_escalation_saturation": 1.7553646934056337,
+      "delta_both_vs_published": -0.008776179839639076,
+      "escalated_solves_per_sweep": 105.93687414856151,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.97,
+      "escalation": 0.6367945178499592,
+      "published_net_speedup": 1.5790875368552881,
+      "serial_recomputed": 1.5697150231607417,
+      "parallel_both_sides": 1.570046971844019,
+      "parallel_baseline_serial_gate": 0.3207386211879725,
+      "parallel_with_escalation_saturation": 1.570046971844019,
+      "delta_both_vs_published": -0.009040565011269042,
+      "escalated_solves_per_sweep": 118.44378032009242,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.98,
+      "escalation": 0.7199530796400196,
+      "published_net_speedup": 1.3918953803495817,
+      "serial_recomputed": 1.3884706663006063,
+      "parallel_both_sides": 1.3887303783711844,
+      "parallel_baseline_serial_gate": 0.2837051060213996,
+      "parallel_with_escalation_saturation": 1.3887303783711844,
+      "delta_both_vs_published": -0.0031650019783973082,
+      "escalated_solves_per_sweep": 133.91127281304367,
+      "effective_cores_for_escalated": 10
+    },
+    {
+      "model": "histgb",
+      "target": 0.99,
+      "escalation": 0.7965042762847028,
+      "published_net_speedup": 1.2564195419127557,
+      "serial_recomputed": 1.2550703767957148,
+      "parallel_both_sides": 1.2552825776217937,
+      "parallel_baseline_serial_gate": 0.2564475310536063,
+      "parallel_with_escalation_saturation": 1.2552825776217937,
+      "delta_both_vs_published": -0.0011369642909619948,
+      "escalated_solves_per_sweep": 148.14979538895471,
+      "effective_cores_for_escalated": 10
+    }
+  ],
+  "break_even_table": [
+    {
+      "model": "ridge",
+      "target": 0.7,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 7.800982677134654,
+      "break_even_cases": 624367.2452490887,
+      "break_even_scenarios": 3356.813146500477
+    },
+    {
+      "model": "ridge",
+      "target": 0.7,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.5940898928374752,
+      "break_even_cases": 1775785.1426161607,
+      "break_even_scenarios": 9547.23194954925
+    },
+    {
+      "model": "ridge",
+      "target": 0.7,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.5940898928374752,
+      "break_even_cases": 3055460.100614924,
+      "break_even_scenarios": 16427.20484201572
+    },
+    {
+      "model": "ridge",
+      "target": 0.71,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 7.694231518536627,
+      "break_even_cases": 633029.8292459991,
+      "break_even_scenarios": 3403.3861787419305
+    },
+    {
+      "model": "ridge",
+      "target": 0.71,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.572277513575151,
+      "break_even_cases": 1800420.8056493793,
+      "break_even_scenarios": 9679.681750803114
+    },
+    {
+      "model": "ridge",
+      "target": 0.71,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.572277513575151,
+      "break_even_cases": 3097848.835402567,
+      "break_even_scenarios": 16655.101265605197
+    },
+    {
+      "model": "ridge",
+      "target": 0.72,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 7.58974123983679,
+      "break_even_cases": 641744.9436607097,
+      "break_even_scenarios": 3450.2416325844606
+    },
+    {
+      "model": "ridge",
+      "target": 0.72,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.5509270981027619,
+      "break_even_cases": 1825205.808292489,
+      "break_even_scenarios": 9812.934453185426
+    },
+    {
+      "model": "ridge",
+      "target": 0.72,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.5509270981027619,
+      "break_even_cases": 3140494.5276387855,
+      "break_even_scenarios": 16884.379180853684
+    },
+    {
+      "model": "ridge",
+      "target": 0.73,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 7.483875319726608,
+      "break_even_cases": 650822.98358444,
+      "break_even_scenarios": 3499.048298841075
+    },
+    {
+      "model": "ridge",
+      "target": 0.73,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.5292955989160089,
+      "break_even_cases": 1851022.8824969276,
+      "break_even_scenarios": 9951.735927402837
+    },
+    {
+      "model": "ridge",
+      "target": 0.73,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.5292955989160089,
+      "break_even_cases": 3184916.0278829327,
+      "break_even_scenarios": 17123.20445098351
+    },
+    {
+      "model": "ridge",
+      "target": 0.74,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 7.374371880426875,
+      "break_even_cases": 660487.1768517972,
+      "break_even_scenarios": 3551.0063271602
+    },
+    {
+      "model": "ridge",
+      "target": 0.74,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.506920848328723,
+      "break_even_cases": 1878506.857765543,
+      "break_even_scenarios": 10099.49923529862
+    },
+    {
+      "model": "ridge",
+      "target": 0.74,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.506920848328723,
+      "break_even_cases": 3232205.6395731308,
+      "break_even_scenarios": 17377.44967512436
+    },
+    {
+      "model": "ridge",
+      "target": 0.75,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 7.2585445679821525,
+      "break_even_cases": 671026.8179440902,
+      "break_even_scenarios": 3607.671064215539
+    },
+    {
+      "model": "ridge",
+      "target": 0.75,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.4832539457755296,
+      "break_even_cases": 1908480.4431214866,
+      "break_even_scenarios": 10260.647543663907
+    },
+    {
+      "model": "ridge",
+      "target": 0.75,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.4832539457755296,
+      "break_even_cases": 3283778.9363248637,
+      "break_even_scenarios": 17654.72546411217
+    },
+    {
+      "model": "ridge",
+      "target": 0.76,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 7.131773019386511,
+      "break_even_cases": 682954.7226360565,
+      "break_even_scenarios": 3671.79958406482
+    },
+    {
+      "model": "ridge",
+      "target": 0.76,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.45735081616124,
+      "break_even_cases": 1942402.005271312,
+      "break_even_scenarios": 10443.021533716732
+    },
+    {
+      "model": "ridge",
+      "target": 0.76,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.45735081616124,
+      "break_even_cases": 3342145.2201798046,
+      "break_even_scenarios": 17968.522689138736
+    },
+    {
+      "model": "ridge",
+      "target": 0.77,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 6.998579854314508,
+      "break_even_cases": 695952.3454398728,
+      "break_even_scenarios": 3741.679276558456
+    },
+    {
+      "model": "ridge",
+      "target": 0.77,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.4301355627639478,
+      "break_even_cases": 1979365.607987898,
+      "break_even_scenarios": 10641.750580580096
+    },
+    {
+      "model": "ridge",
+      "target": 0.77,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.4301355627639478,
+      "break_even_cases": 3405745.7147244993,
+      "break_even_scenarios": 18310.460831852146
+    },
+    {
+      "model": "ridge",
+      "target": 0.78,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 6.875806363639007,
+      "break_even_cases": 708379.1786394387,
+      "break_even_scenarios": 3808.490207738918
+    },
+    {
+      "model": "ridge",
+      "target": 0.78,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.4050493531420232,
+      "break_even_cases": 2014705.847424593,
+      "break_even_scenarios": 10831.751867874156
+    },
+    {
+      "model": "ridge",
+      "target": 0.78,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.4050493531420232,
+      "break_even_cases": 3466553.010018072,
+      "break_even_scenarios": 18637.38177429071
+    },
+    {
+      "model": "ridge",
+      "target": 0.79,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 6.729539647005681,
+      "break_even_cases": 723775.8182352995,
+      "break_even_scenarios": 3891.2678399747288
+    },
+    {
+      "model": "ridge",
+      "target": 0.79,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.3751627913607636,
+      "break_even_cases": 2058491.6676623104,
+      "break_even_scenarios": 11067.159503560808
+    },
+    {
+      "model": "ridge",
+      "target": 0.79,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.3751627913607636,
+      "break_even_cases": 3541891.981776752,
+      "break_even_scenarios": 19042.43000955243
+    },
+    {
+      "model": "ridge",
+      "target": 0.8,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 6.582060529697571,
+      "break_even_cases": 739992.9007614611,
+      "break_even_scenarios": 3978.45645570678
+    },
+    {
+      "model": "ridge",
+      "target": 0.8,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.3450285007146974,
+      "break_even_cases": 2104610.531443175,
+      "break_even_scenarios": 11315.11038410309
+    },
+    {
+      "model": "ridge",
+      "target": 0.8,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.3450285007146974,
+      "break_even_cases": 3621245.246305436,
+      "break_even_scenarios": 19469.060464007718
+    },
+    {
+      "model": "ridge",
+      "target": 0.81,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 6.407353061928655,
+      "break_even_cases": 760170.0760488949,
+      "break_even_scenarios": 4086.935892735994
+    },
+    {
+      "model": "ridge",
+      "target": 0.81,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.309330662892764,
+      "break_even_cases": 2161991.029402188,
+      "break_even_scenarios": 11623.607684958
+    },
+    {
+      "model": "ridge",
+      "target": 0.81,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.309330662892764,
+      "break_even_cases": 3719975.558807593,
+      "break_even_scenarios": 19999.868595739747
+    },
+    {
+      "model": "ridge",
+      "target": 0.82,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 6.254632323695673,
+      "break_even_cases": 778731.316612467,
+      "break_even_scenarios": 4186.727508669178
+    },
+    {
+      "model": "ridge",
+      "target": 0.82,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.2781253560154533,
+      "break_even_cases": 2214775.8311596713,
+      "break_even_scenarios": 11907.396941718664
+    },
+    {
+      "model": "ridge",
+      "target": 0.82,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.2781253560154533,
+      "break_even_cases": 3810798.4020775002,
+      "break_even_scenarios": 20488.16345202957
+    },
+    {
+      "model": "ridge",
+      "target": 0.83,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 6.067474779946866,
+      "break_even_cases": 802752.0906153776,
+      "break_even_scenarios": 4315.8714549213855
+    },
+    {
+      "model": "ridge",
+      "target": 0.83,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.23988360407882,
+      "break_even_cases": 2283086.20130396,
+      "break_even_scenarios": 12274.656996257849
+    },
+    {
+      "model": "ridge",
+      "target": 0.83,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.23988360407882,
+      "break_even_cases": 3928334.924613451,
+      "break_even_scenarios": 21120.080239857263
+    },
+    {
+      "model": "ridge",
+      "target": 0.84,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 5.895782691227807,
+      "break_even_cases": 826129.1705349638,
+      "break_even_scenarios": 4441.554680295504
+    },
+    {
+      "model": "ridge",
+      "target": 0.84,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.2048018962578997,
+      "break_even_cases": 2349565.6476701163,
+      "break_even_scenarios": 12632.073374570518
+    },
+    {
+      "model": "ridge",
+      "target": 0.84,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.2048018962578997,
+      "break_even_cases": 4042721.1141405846,
+      "break_even_scenarios": 21735.059753444002
+    },
+    {
+      "model": "ridge",
+      "target": 0.85,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 5.707709145397493,
+      "break_even_cases": 853350.7822987053,
+      "break_even_scenarios": 4587.907431713469
+    },
+    {
+      "model": "ridge",
+      "target": 0.85,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.1663729783450902,
+      "break_even_cases": 2426977.6480177077,
+      "break_even_scenarios": 13048.266924826386
+    },
+    {
+      "model": "ridge",
+      "target": 0.85,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.1663729783450902,
+      "break_even_cases": 4175918.1280667125,
+      "break_even_scenarios": 22451.172731541465
+    },
+    {
+      "model": "ridge",
+      "target": 0.86,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 5.492176548174676,
+      "break_even_cases": 886839.3107241235,
+      "break_even_scenarios": 4767.95328346303
+    },
+    {
+      "model": "ridge",
+      "target": 0.86,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.1223333743186785,
+      "break_even_cases": 2522210.6127012507,
+      "break_even_scenarios": 13560.272111297047
+    },
+    {
+      "model": "ridge",
+      "target": 0.86,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.1223333743186785,
+      "break_even_cases": 4339778.336641918,
+      "break_even_scenarios": 23332.14159484902
+    },
+    {
+      "model": "ridge",
+      "target": 0.87,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 5.301905436210888,
+      "break_even_cases": 918665.5859783406,
+      "break_even_scenarios": 4939.062290206132
+    },
+    {
+      "model": "ridge",
+      "target": 0.87,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.0834554294670808,
+      "break_even_cases": 2612715.8263332923,
+      "break_even_scenarios": 14046.859281361787
+    },
+    {
+      "model": "ridge",
+      "target": 0.87,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.0834554294670808,
+      "break_even_cases": 4495503.859124289,
+      "break_even_scenarios": 24169.375586689726
+    },
+    {
+      "model": "ridge",
+      "target": 0.88,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 5.096201486331414,
+      "break_even_cases": 955746.7610772714,
+      "break_even_scenarios": 5138.4234466519965
+    },
+    {
+      "model": "ridge",
+      "target": 0.88,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 1.0414241051287227,
+      "break_even_cases": 2718163.650864877,
+      "break_even_scenarios": 14613.783069166004
+    },
+    {
+      "model": "ridge",
+      "target": 0.88,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 1.0414241051287227,
+      "break_even_cases": 4676940.009715252,
+      "break_even_scenarios": 25144.838761909956
+    },
+    {
+      "model": "ridge",
+      "target": 0.89,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 4.883814038456949,
+      "break_even_cases": 997310.3042017804,
+      "break_even_scenarios": 5361.88335592355
+    },
+    {
+      "model": "ridge",
+      "target": 0.89,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.9980271469651181,
+      "break_even_cases": 2836356.862940436,
+      "break_even_scenarios": 15249.230445916324
+    },
+    {
+      "model": "ridge",
+      "target": 0.89,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.9980271469651181,
+      "break_even_cases": 4880306.191238964,
+      "break_even_scenarios": 26238.20532924174
+    },
+    {
+      "model": "ridge",
+      "target": 0.9,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 4.653864441306579,
+      "break_even_cases": 1046587.8681655315,
+      "break_even_scenarios": 5626.816495513611
+    },
+    {
+      "model": "ridge",
+      "target": 0.9,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.9510417288194533,
+      "break_even_cases": 2976484.6924322187,
+      "break_even_scenarios": 16002.605873291499
+    },
+    {
+      "model": "ridge",
+      "target": 0.9,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.9510417288194533,
+      "break_even_cases": 5121413.621255603,
+      "break_even_scenarios": 27534.48183470754
+    },
+    {
+      "model": "ridge",
+      "target": 0.91,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 4.413920034227851,
+      "break_even_cases": 1103481.2653126095,
+      "break_even_scenarios": 5932.694974798976
+    },
+    {
+      "model": "ridge",
+      "target": 0.91,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.9020140791170039,
+      "break_even_cases": 3138267.1437528487,
+      "break_even_scenarios": 16872.40399867123
+    },
+    {
+      "model": "ridge",
+      "target": 0.91,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.9020140791170039,
+      "break_even_cases": 5399780.532390814,
+      "break_even_scenarios": 29031.07813113341
+    },
+    {
+      "model": "ridge",
+      "target": 0.92,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 4.06424487688246,
+      "break_even_cases": 1198421.4071506811,
+      "break_even_scenarios": 6443.125844896135
+    },
+    {
+      "model": "ridge",
+      "target": 0.92,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.8305652325583359,
+      "break_even_cases": 3408234.581377753,
+      "break_even_scenarios": 18323.841835364263
+    },
+    {
+      "model": "ridge",
+      "target": 0.92,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.8305652325583359,
+      "break_even_cases": 5864293.222767817,
+      "break_even_scenarios": 31528.458186923748
+    },
+    {
+      "model": "ridge",
+      "target": 0.93,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 3.6534958425432253,
+      "break_even_cases": 1333155.49661825,
+      "break_even_scenarios": 7167.502669990591
+    },
+    {
+      "model": "ridge",
+      "target": 0.93,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.7466372093283725,
+      "break_even_cases": 3791347.5411194004,
+      "break_even_scenarios": 20383.588930749465
+    },
+    {
+      "model": "ridge",
+      "target": 0.93,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.7466372093283725,
+      "break_even_cases": 6523486.913731206,
+      "break_even_scenarios": 35072.510288877456
+    },
+    {
+      "model": "ridge",
+      "target": 0.94,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 3.2580487700032297,
+      "break_even_cases": 1494967.819144585,
+      "break_even_scenarios": 8037.461393250456
+    },
+    {
+      "model": "ridge",
+      "target": 0.94,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.6658358237724733,
+      "break_even_cases": 4251440.139788412,
+      "break_even_scenarios": 22857.205052625868
+    },
+    {
+      "model": "ridge",
+      "target": 0.94,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.6658358237724733,
+      "break_even_cases": 7315133.68680327,
+      "break_even_scenarios": 39328.67573550145
+    },
+    {
+      "model": "ridge",
+      "target": 0.95,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 2.937042372496985,
+      "break_even_cases": 1658361.5238133324,
+      "break_even_scenarios": 8915.922171039421
+    },
+    {
+      "model": "ridge",
+      "target": 0.95,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.6002448420913813,
+      "break_even_cases": 4716010.782920515,
+      "break_even_scenarios": 25354.896682368362
+    },
+    {
+      "model": "ridge",
+      "target": 0.95,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.6002448420913813,
+      "break_even_cases": 8114485.494599074,
+      "break_even_scenarios": 43626.266099995024
+    },
+    {
+      "model": "ridge",
+      "target": 0.96,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 2.609710825581294,
+      "break_even_cases": 1866366.9616627034,
+      "break_even_scenarios": 10034.230976681201
+    },
+    {
+      "model": "ridge",
+      "target": 0.96,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.5333614476662814,
+      "break_even_cases": 5307397.375797123,
+      "break_even_scenarios": 28534.394493532916
+    },
+    {
+      "model": "ridge",
+      "target": 0.96,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.5333614476662814,
+      "break_even_cases": 9132039.980898578,
+      "break_even_scenarios": 49096.98914461601
+    },
+    {
+      "model": "ridge",
+      "target": 0.97,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 2.383362120876939,
+      "break_even_cases": 2043616.4616757012,
+      "break_even_scenarios": 10987.185277826351
+    },
+    {
+      "model": "ridge",
+      "target": 0.97,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.48711179700779744,
+      "break_even_cases": 5811317.165964804,
+      "break_even_scenarios": 31243.640677230127
+    },
+    {
+      "model": "ridge",
+      "target": 0.97,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.48711179700779744,
+      "break_even_cases": 9999096.910150295,
+      "break_even_scenarios": 53758.58553844245
+    },
+    {
+      "model": "ridge",
+      "target": 0.98,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 2.3017096607573735,
+      "break_even_cases": 2116113.142939035,
+      "break_even_scenarios": 11376.95238139266
+    },
+    {
+      "model": "ridge",
+      "target": 0.98,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.47042781482699264,
+      "break_even_cases": 6017418.7377428645,
+      "break_even_scenarios": 32351.713643778843
+    },
+    {
+      "model": "ridge",
+      "target": 0.98,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.47042781482699264,
+      "break_even_cases": 10353720.402671546,
+      "break_even_scenarios": 55665.163455223366
+    },
+    {
+      "model": "ridge",
+      "target": 0.99,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 2.2941078261140637,
+      "break_even_cases": 2123125.1682745684,
+      "break_even_scenarios": 11414.65144233639
+    },
+    {
+      "model": "ridge",
+      "target": 0.99,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2830.761147695376,
+      "saving_ms_per_case": 0.46887453800539186,
+      "break_even_cases": 6037353.10460135,
+      "break_even_scenarios": 32458.88765914704
+    },
+    {
+      "model": "ridge",
+      "target": 0.99,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4870.678064358425,
+      "saving_ms_per_case": 0.46887453800539186,
+      "break_even_cases": 10388019.970285557,
+      "break_even_scenarios": 55849.569732718046
+    },
+    {
+      "model": "histgb",
+      "target": 0.7,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.83123055167929,
+      "break_even_cases": 553312.7096573239,
+      "break_even_scenarios": 2974.7995142866876
+    },
+    {
+      "model": "histgb",
+      "target": 0.7,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.8047298530539846,
+      "break_even_cases": 1577252.7864368493,
+      "break_even_scenarios": 8479.853690520695
+    },
+    {
+      "model": "histgb",
+      "target": 0.7,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.8047298530539846,
+      "break_even_cases": 2707569.832620287,
+      "break_even_scenarios": 14556.827057098317
+    },
+    {
+      "model": "histgb",
+      "target": 0.71,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.7895199817073,
+      "break_even_cases": 555938.4490083448,
+      "break_even_scenarios": 2988.916392517983
+    },
+    {
+      "model": "histgb",
+      "target": 0.71,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.7962071654932563,
+      "break_even_cases": 1584736.5739204593,
+      "break_even_scenarios": 8520.089107099244
+    },
+    {
+      "model": "histgb",
+      "target": 0.71,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.7962071654932563,
+      "break_even_cases": 2720416.7759882803,
+      "break_even_scenarios": 14625.89664509828
+    },
+    {
+      "model": "histgb",
+      "target": 0.72,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.711702809189507,
+      "break_even_cases": 560904.3620041511,
+      "break_even_scenarios": 3015.6148494846834
+    },
+    {
+      "model": "histgb",
+      "target": 0.72,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.7803068445752295,
+      "break_even_cases": 1598890.2127567364,
+      "break_even_scenarios": 8596.183939552346
+    },
+    {
+      "model": "histgb",
+      "target": 0.72,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.7803068445752295,
+      "break_even_cases": 2744713.430186292,
+      "break_even_scenarios": 14756.523818205871
+    },
+    {
+      "model": "histgb",
+      "target": 0.73,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.632508139356885,
+      "break_even_cases": 566050.101230747,
+      "break_even_scenarios": 3043.280114143801
+    },
+    {
+      "model": "histgb",
+      "target": 0.73,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.7641250607273524,
+      "break_even_cases": 1613556.3474856701,
+      "break_even_scenarios": 8675.034126267044
+    },
+    {
+      "model": "histgb",
+      "target": 0.73,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.7641250607273524,
+      "break_even_cases": 2769889.85358188,
+      "break_even_scenarios": 14891.880933235916
+    },
+    {
+      "model": "histgb",
+      "target": 0.74,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.557017065763194,
+      "break_even_cases": 571043.8659411969,
+      "break_even_scenarios": 3070.1283115118113
+    },
+    {
+      "model": "histgb",
+      "target": 0.74,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.748700029750911,
+      "break_even_cases": 1627789.2955149242,
+      "break_even_scenarios": 8751.555352230775
+    },
+    {
+      "model": "histgb",
+      "target": 0.74,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.748700029750911,
+      "break_even_cases": 2794322.6528418637,
+      "break_even_scenarios": 15023.240069042278
+    },
+    {
+      "model": "histgb",
+      "target": 0.75,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.468321232596987,
+      "break_even_cases": 577024.8874533643,
+      "break_even_scenarios": 3102.28434114712
+    },
+    {
+      "model": "histgb",
+      "target": 0.75,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.7305768807620165,
+      "break_even_cases": 1644836.0203689826,
+      "break_even_scenarios": 8843.204410585928
+    },
+    {
+      "model": "histgb",
+      "target": 0.75,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.7305768807620165,
+      "break_even_cases": 2823585.6843335344,
+      "break_even_scenarios": 15180.568195341582
+    },
+    {
+      "model": "histgb",
+      "target": 0.76,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.392665078213938,
+      "break_even_cases": 582226.5109616533,
+      "break_even_scenarios": 3130.25005893362
+    },
+    {
+      "model": "histgb",
+      "target": 0.76,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.71511811895929,
+      "break_even_cases": 1659661.3131359075,
+      "break_even_scenarios": 8922.910285676922
+    },
+    {
+      "model": "histgb",
+      "target": 0.76,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.71511811895929,
+      "break_even_cases": 2849035.3242394943,
+      "break_even_scenarios": 15317.394216341367
+    },
+    {
+      "model": "histgb",
+      "target": 0.77,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.286570928010427,
+      "break_even_cases": 589680.8400735459,
+      "break_even_scenarios": 3170.327097169602
+    },
+    {
+      "model": "histgb",
+      "target": 0.77,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.6934399856992384,
+      "break_even_cases": 1680907.037470128,
+      "break_even_scenarios": 9037.13461005445
+    },
+    {
+      "model": "histgb",
+      "target": 0.77,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.6934399856992384,
+      "break_even_cases": 2885506.5118475724,
+      "break_even_scenarios": 15513.475870148239
+    },
+    {
+      "model": "histgb",
+      "target": 0.78,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.204755059198245,
+      "break_even_cases": 595560.9973609262,
+      "break_even_scenarios": 3201.9408460264854
+    },
+    {
+      "model": "histgb",
+      "target": 0.78,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.6767226143503449,
+      "break_even_cases": 1697666.1286327674,
+      "break_even_scenarios": 9127.237250713802
+    },
+    {
+      "model": "histgb",
+      "target": 0.78,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.6767226143503449,
+      "break_even_cases": 2914275.7808222715,
+      "break_even_scenarios": 15668.149359259523
+    },
+    {
+      "model": "histgb",
+      "target": 0.79,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 8.084275336311734,
+      "break_even_cases": 604436.6257801822,
+      "break_even_scenarios": 3249.6592783880765
+    },
+    {
+      "model": "histgb",
+      "target": 0.79,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.6521050884749036,
+      "break_even_cases": 1722962.545998116,
+      "break_even_scenarios": 9263.239494613526
+    },
+    {
+      "model": "histgb",
+      "target": 0.79,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.6521050884749036,
+      "break_even_cases": 2957700.536270965,
+      "break_even_scenarios": 15901.615786403037
+    },
+    {
+      "model": "histgb",
+      "target": 0.8,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 7.968056497210562,
+      "break_even_cases": 613252.6931590962,
+      "break_even_scenarios": 3297.0574901026675
+    },
+    {
+      "model": "histgb",
+      "target": 0.8,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.6283581855916534,
+      "break_even_cases": 1748089.0965404517,
+      "break_even_scenarios": 9398.328476023935
+    },
+    {
+      "model": "histgb",
+      "target": 0.8,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.6283581855916534,
+      "break_even_cases": 3000833.6921171667,
+      "break_even_scenarios": 16133.514473748208
+    },
+    {
+      "model": "histgb",
+      "target": 0.81,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 7.8554065929813595,
+      "break_even_cases": 622047.000154535,
+      "break_even_scenarios": 3344.338710508253
+    },
+    {
+      "model": "histgb",
+      "target": 0.81,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.6053405203299178,
+      "break_even_cases": 1773153.516931204,
+      "break_even_scenarios": 9533.083424361312
+    },
+    {
+      "model": "histgb",
+      "target": 0.81,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.6053405203299178,
+      "break_even_cases": 3043860.193072301,
+      "break_even_scenarios": 16364.839747700542
+    },
+    {
+      "model": "histgb",
+      "target": 0.82,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 7.746264852345304,
+      "break_even_cases": 630811.390947828,
+      "break_even_scenarios": 3391.4590911173545
+    },
+    {
+      "model": "histgb",
+      "target": 0.82,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.5830396753426688,
+      "break_even_cases": 1798132.56346781,
+      "break_even_scenarios": 9667.379373482849
+    },
+    {
+      "model": "histgb",
+      "target": 0.82,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.5830396753426688,
+      "break_even_cases": 3086740.138146242,
+      "break_even_scenarios": 16595.37708680775
+    },
+    {
+      "model": "histgb",
+      "target": 0.83,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 7.638858900119875,
+      "break_even_cases": 639680.8960670199,
+      "break_even_scenarios": 3439.14460251086
+    },
+    {
+      "model": "histgb",
+      "target": 0.83,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.561093502619674,
+      "break_even_cases": 1823411.0799375053,
+      "break_even_scenarios": 9803.285376008092
+    },
+    {
+      "model": "histgb",
+      "target": 0.83,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.561093502619674,
+      "break_even_cases": 3130134.1642626026,
+      "break_even_scenarios": 16828.67830248711
+    },
+    {
+      "model": "histgb",
+      "target": 0.84,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 7.466052998087759,
+      "break_even_cases": 654486.6621506368,
+      "break_even_scenarios": 3518.7454954335312
+    },
+    {
+      "model": "histgb",
+      "target": 0.84,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.5257842102110932,
+      "break_even_cases": 1865607.9742110749,
+      "break_even_scenarios": 10030.150398984273
+    },
+    {
+      "model": "histgb",
+      "target": 0.84,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.5257842102110932,
+      "break_even_cases": 3202570.8966290657,
+      "break_even_scenarios": 17218.123100156266
+    },
+    {
+      "model": "histgb",
+      "target": 0.85,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 7.313788776398724,
+      "break_even_cases": 668112.2815477683,
+      "break_even_scenarios": 3592.001513697679
+    },
+    {
+      "model": "histgb",
+      "target": 0.85,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.4946721829958196,
+      "break_even_cases": 1904441.1355738223,
+      "break_even_scenarios": 10238.9308364184
+    },
+    {
+      "model": "histgb",
+      "target": 0.85,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.4946721829958196,
+      "break_even_cases": 3269233.3220279636,
+      "break_even_scenarios": 17576.523236709483
+    },
+    {
+      "model": "histgb",
+      "target": 0.86,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 7.138656606858655,
+      "break_even_cases": 684503.0340111109,
+      "break_even_scenarios": 3680.1238387694134
+    },
+    {
+      "model": "histgb",
+      "target": 0.86,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.4588875661990495,
+      "break_even_cases": 1951154.6026205465,
+      "break_even_scenarios": 10490.078508712615
+    },
+    {
+      "model": "histgb",
+      "target": 0.86,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.4588875661990495,
+      "break_even_cases": 3349423.3684431245,
+      "break_even_scenarios": 18007.652518511422
+    },
+    {
+      "model": "histgb",
+      "target": 0.87,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 6.959559055882424,
+      "break_even_cases": 702118.0604866132,
+      "break_even_scenarios": 3774.8282821860926
+    },
+    {
+      "model": "histgb",
+      "target": 0.87,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.4222927061698756,
+      "break_even_cases": 2001356.8073203498,
+      "break_even_scenarios": 10759.982835055644
+    },
+    {
+      "model": "histgb",
+      "target": 0.87,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.4222927061698756,
+      "break_even_cases": 3435602.3095393605,
+      "break_even_scenarios": 18470.980158813767
+    },
+    {
+      "model": "histgb",
+      "target": 0.88,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 6.810212898169776,
+      "break_even_cases": 717515.3228280757,
+      "break_even_scenarios": 3857.609262516536
+    },
+    {
+      "model": "histgb",
+      "target": 0.88,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.3917769246441158,
+      "break_even_cases": 2045238.0974939864,
+      "break_even_scenarios": 10995.903749967669
+    },
+    {
+      "model": "histgb",
+      "target": 0.88,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.3917769246441158,
+      "break_even_cases": 3510930.5375268357,
+      "break_even_scenarios": 18875.970631864708
+    },
+    {
+      "model": "histgb",
+      "target": 0.89,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 6.599037792825106,
+      "break_even_cases": 740476.4542295927,
+      "break_even_scenarios": 3981.0562055354444
+    },
+    {
+      "model": "histgb",
+      "target": 0.89,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.3486276834645987,
+      "break_even_cases": 2110675.3364149546,
+      "break_even_scenarios": 11347.716862445992
+    },
+    {
+      "model": "histgb",
+      "target": 0.89,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.3486276834645987,
+      "break_even_cases": 3623262.495698636,
+      "break_even_scenarios": 19479.905890852882
+    },
+    {
+      "model": "histgb",
+      "target": 0.9,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 6.338451514113359,
+      "break_even_cases": 770918.9058680905,
+      "break_even_scenarios": 4144.725300366078
+    },
+    {
+      "model": "histgb",
+      "target": 0.9,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.2953822965623216,
+      "break_even_cases": 2197432.524011814,
+      "break_even_scenarios": 11814.153354902226
+    },
+    {
+      "model": "histgb",
+      "target": 0.9,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.2953822965623216,
+      "break_even_cases": 3772193.0576987183,
+      "break_even_scenarios": 20280.607837089883
+    },
+    {
+      "model": "histgb",
+      "target": 0.91,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 6.083269538501144,
+      "break_even_cases": 803257.5369596691,
+      "break_even_scenarios": 4318.588908385318
+    },
+    {
+      "model": "histgb",
+      "target": 0.91,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.243241166610542,
+      "break_even_cases": 2289592.128979801,
+      "break_even_scenarios": 12309.635102041942
+    },
+    {
+      "model": "histgb",
+      "target": 0.91,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.243241166610542,
+      "break_even_cases": 3930397.606990548,
+      "break_even_scenarios": 21131.16993005671
+    },
+    {
+      "model": "histgb",
+      "target": 0.92,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 5.688017022316335,
+      "break_even_cases": 859074.8035715806,
+      "break_even_scenarios": 4618.681739632154
+    },
+    {
+      "model": "histgb",
+      "target": 0.92,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.162479534599831,
+      "break_even_cases": 2448658.3245313126,
+      "break_even_scenarios": 13164.829701781251
+    },
+    {
+      "model": "histgb",
+      "target": 0.92,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.162479534599831,
+      "break_even_cases": 4203456.457270281,
+      "break_even_scenarios": 22599.228264893987
+    },
+    {
+      "model": "histgb",
+      "target": 0.93,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 5.301217604332598,
+      "break_even_cases": 921756.5606370529,
+      "break_even_scenarios": 4955.680433532542
+    },
+    {
+      "model": "histgb",
+      "target": 0.93,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 1.0834451174158721,
+      "break_even_cases": 2627281.385774661,
+      "break_even_scenarios": 14125.168740723982
+    },
+    {
+      "model": "histgb",
+      "target": 0.93,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.0834451174158721,
+      "break_even_cases": 4510087.338630363,
+      "break_even_scenarios": 24247.781390485823
+    },
+    {
+      "model": "histgb",
+      "target": 0.94,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 4.870675429931417,
+      "break_even_cases": 1003235.0084610373,
+      "break_even_scenarios": 5393.736604629233
+    },
+    {
+      "model": "histgb",
+      "target": 0.94,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 0.9954727776324073,
+      "break_even_cases": 2859460.6034985716,
+      "break_even_scenarios": 15373.44410483103
+    },
+    {
+      "model": "histgb",
+      "target": 0.94,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 0.9954727776324073,
+      "break_even_cases": 4908654.677408565,
+      "break_even_scenarios": 26390.616545207336
+    },
+    {
+      "model": "histgb",
+      "target": 0.95,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 4.459465927657205,
+      "break_even_cases": 1095743.7920655478,
+      "break_even_scenarios": 5891.095656266386
+    },
+    {
+      "model": "histgb",
+      "target": 0.95,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 0.9114506673558228,
+      "break_even_cases": 3123060.0749386544,
+      "break_even_scenarios": 16790.645564186314
+    },
+    {
+      "model": "histgb",
+      "target": 0.95,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 0.9114506673558228,
+      "break_even_cases": 5361159.173138867,
+      "break_even_scenarios": 28823.436414725093
+    },
+    {
+      "model": "histgb",
+      "target": 0.96,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 3.9318737252591505,
+      "break_even_cases": 1242774.4245108345,
+      "break_even_scenarios": 6681.582927477605
+    },
+    {
+      "model": "histgb",
+      "target": 0.96,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 0.8036481726036596,
+      "break_even_cases": 3541991.740332118,
+      "break_even_scenarios": 19042.966345871602
+    },
+    {
+      "model": "histgb",
+      "target": 0.96,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 0.8036481726036596,
+      "break_even_cases": 6080312.59540745,
+      "break_even_scenarios": 32689.852663480913
+    },
+    {
+      "model": "histgb",
+      "target": 0.97,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 3.317287045647363,
+      "break_even_cases": 1473020.5854720157,
+      "break_even_scenarios": 7919.465513290407
+    },
+    {
+      "model": "histgb",
+      "target": 0.97,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 0.6780701655700905,
+      "break_even_cases": 4197965.541076331,
+      "break_even_scenarios": 22569.707210087803
+    },
+    {
+      "model": "histgb",
+      "target": 0.97,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 0.6780701655700905,
+      "break_even_cases": 7206381.218748833,
+      "break_even_scenarios": 38743.98504703674
+    },
+    {
+      "model": "histgb",
+      "target": 0.98,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 2.557217790886211,
+      "break_even_cases": 1910839.2423880352,
+      "break_even_scenarios": 10273.329260150727
+    },
+    {
+      "model": "histgb",
+      "target": 0.98,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 0.5227658197605021,
+      "break_even_cases": 5445105.785223782,
+      "break_even_scenarios": 29274.762286149366
+    },
+    {
+      "model": "histgb",
+      "target": 0.98,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 0.5227658197605021,
+      "break_even_cases": 9347267.785022484,
+      "break_even_scenarios": 50254.12787646497
+    },
+    {
+      "model": "histgb",
+      "target": 0.99,
+      "accounting": "serial_generation_serial_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 1.857539853553807,
+      "break_even_cases": 2630593.41462289,
+      "break_even_scenarios": 14142.97534743489
+    },
+    {
+      "model": "histgb",
+      "target": 0.99,
+      "accounting": "parallel_generation_parallel_deployment",
+      "one_time_cost_s": 2846.5151894951628,
+      "saving_ms_per_case": 0.37980118376959116,
+      "break_even_cases": 7494750.704152674,
+      "break_even_scenarios": 40294.35862447674
+    },
+    {
+      "model": "histgb",
+      "target": 0.99,
+      "accounting": "serial_generation_parallel_deployment",
+      "one_time_cost_s": 4886.432106158212,
+      "saving_ms_per_case": 0.37980118376959116,
+      "break_even_cases": 12865763.233435832,
+      "break_even_scenarios": 69170.77007223565
+    }
+  ],
+  "operating_points": {
+    "ridge": 0.94,
+    "histgb": 0.97
+  }
+}
