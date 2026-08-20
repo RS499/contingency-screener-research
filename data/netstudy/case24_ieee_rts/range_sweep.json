@@ -1,0 +1,421 @@
+{
+ "network": "case24_ieee_rts",
+ "phase": "1a range sweep",
+ "thermal_status": {
+  "thermal_defined": true,
+  "ratings": {
+   "n_lines": 33,
+   "n_trafos": 5,
+   "line_rating_distinct": 2,
+   "base_case_max_loading_pct": 92.09744578265602
+  },
+  "guard_message": null,
+  "feasibility": "voltage AND thermal"
+ },
+ "window_width": 0.12,
+ "step": 0.01,
+ "lo_floor": 0.3,
+ "n_draws_per_candidate": 200,
+ "seed": 100,
+ "selection_rule": "highest lo with acceptance >= 0.2 AND max base loading_percent <= 100.0",
+ "method_note": "selection rule is unchanged from scripts/case30_thermal.choose_range. Only the sweep EXTENT is widened, from case30's lo_floor 0.70 to 0.3, because case57's nominal min_vm is far below 0.94. Widening the extent downward cannot change which range is selected for a network whose window lies above the old floor, since selection takes the highest qualifying lo.",
+ "sweep": [
+  {
+   "lo": 1.0,
+   "hi": 1.12,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 32,
+    "voltage": 168,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.99,
+   "hi": 1.11,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 30,
+    "voltage": 170,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.98,
+   "hi": 1.1,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 27,
+    "voltage": 173,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.97,
+   "hi": 1.09,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 24,
+    "voltage": 176,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.96,
+   "hi": 1.08,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 25,
+    "voltage": 175,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.95,
+   "hi": 1.07,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 23,
+    "voltage": 177,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.94,
+   "hi": 1.06,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 21,
+    "voltage": 179,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.93,
+   "hi": 1.05,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 22,
+    "voltage": 178,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.92,
+   "hi": 1.04,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 22,
+    "voltage": 178,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.91,
+   "hi": 1.03,
+   "n_draws": 200,
+   "n_accepted": 1,
+   "acceptance_rate": 0.005,
+   "rejected_by": {
+    "nonconvergence": 16,
+    "voltage": 183,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 91.77593157802706,
+   "median_base_loading_pct": 91.77593157802706,
+   "min_base_vm_pu": 0.942307788599699,
+   "n1_probe": {
+    "n_bases": 1,
+    "n_contingencies": 37,
+    "violation_rate": 0.7837837837837838,
+    "boundary_mass": 0.21621621621621623,
+    "min_vm_min": 0.8130903256038069,
+    "min_vm_median": 0.9285832286187027
+   }
+  },
+  {
+   "lo": 0.9,
+   "hi": 1.02,
+   "n_draws": 200,
+   "n_accepted": 1,
+   "acceptance_rate": 0.005,
+   "rejected_by": {
+    "nonconvergence": 13,
+    "voltage": 186,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 91.02720168734317,
+   "median_base_loading_pct": 91.02720168734317,
+   "min_base_vm_pu": 0.9450678854353655,
+   "n1_probe": {
+    "n_bases": 1,
+    "n_contingencies": 37,
+    "violation_rate": 0.7297297297297297,
+    "boundary_mass": 0.2702702702702703,
+    "min_vm_min": 0.8208383839401345,
+    "min_vm_median": 0.9310895863994353
+   }
+  },
+  {
+   "lo": 0.89,
+   "hi": 1.01,
+   "n_draws": 200,
+   "n_accepted": 4,
+   "acceptance_rate": 0.02,
+   "rejected_by": {
+    "nonconvergence": 21,
+    "voltage": 175,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 91.0871579758687,
+   "median_base_loading_pct": 89.77875997183135,
+   "min_base_vm_pu": 0.9409139132462505,
+   "n1_probe": {
+    "n_bases": 4,
+    "n_contingencies": 148,
+    "violation_rate": 0.6891891891891891,
+    "boundary_mass": 0.19594594594594594,
+    "min_vm_min": 0.8282089993051852,
+    "min_vm_median": 0.9344409243513561
+   }
+  },
+  {
+   "lo": 0.88,
+   "hi": 1.0,
+   "n_draws": 200,
+   "n_accepted": 8,
+   "acceptance_rate": 0.04,
+   "rejected_by": {
+    "nonconvergence": 16,
+    "voltage": 176,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 90.77835363222778,
+   "median_base_loading_pct": 88.7744503909712,
+   "min_base_vm_pu": 0.9412453985984557,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 220,
+    "violation_rate": 0.740909090909091,
+    "boundary_mass": 0.19090909090909092,
+    "min_vm_min": 0.8088449147263408,
+    "min_vm_median": 0.9334384193782768
+   }
+  },
+  {
+   "lo": 0.87,
+   "hi": 0.99,
+   "n_draws": 200,
+   "n_accepted": 8,
+   "acceptance_rate": 0.04,
+   "rejected_by": {
+    "nonconvergence": 14,
+    "voltage": 178,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 89.96116801680311,
+   "median_base_loading_pct": 88.0973817814201,
+   "min_base_vm_pu": 0.9433030611023057,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 220,
+    "violation_rate": 0.6136363636363636,
+    "boundary_mass": 0.2636363636363636,
+    "min_vm_min": 0.8169449117415386,
+    "min_vm_median": 0.936641504292674
+   }
+  },
+  {
+   "lo": 0.86,
+   "hi": 0.98,
+   "n_draws": 200,
+   "n_accepted": 8,
+   "acceptance_rate": 0.04,
+   "rejected_by": {
+    "nonconvergence": 16,
+    "voltage": 176,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 92.28029352820187,
+   "median_base_loading_pct": 87.58140008287728,
+   "min_base_vm_pu": 0.9418420431178802,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 219,
+    "violation_rate": 0.6438356164383562,
+    "boundary_mass": 0.2100456621004566,
+    "min_vm_min": 0.7885058825286222,
+    "min_vm_median": 0.9368652431306442
+   }
+  },
+  {
+   "lo": 0.85,
+   "hi": 0.97,
+   "n_draws": 200,
+   "n_accepted": 17,
+   "acceptance_rate": 0.085,
+   "rejected_by": {
+    "nonconvergence": 16,
+    "voltage": 167,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 91.44128115815346,
+   "median_base_loading_pct": 86.45129335329374,
+   "min_base_vm_pu": 0.9401425277545442,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 219,
+    "violation_rate": 0.4977168949771689,
+    "boundary_mass": 0.1963470319634703,
+    "min_vm_min": 0.8018879204869414,
+    "min_vm_median": 0.9401643872849134
+   }
+  },
+  {
+   "lo": 0.84,
+   "hi": 0.96,
+   "n_draws": 200,
+   "n_accepted": 14,
+   "acceptance_rate": 0.07,
+   "rejected_by": {
+    "nonconvergence": 12,
+    "voltage": 174,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 90.62671455396742,
+   "median_base_loading_pct": 85.88554286192843,
+   "min_base_vm_pu": 0.9404810415005379,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 219,
+    "violation_rate": 0.4155251141552511,
+    "boundary_mass": 0.1415525114155251,
+    "min_vm_min": 0.8140511848062187,
+    "min_vm_median": 0.942848352426785
+   }
+  },
+  {
+   "lo": 0.83,
+   "hi": 0.95,
+   "n_draws": 200,
+   "n_accepted": 22,
+   "acceptance_rate": 0.11,
+   "rejected_by": {
+    "nonconvergence": 27,
+    "voltage": 151,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 91.04306232937861,
+   "median_base_loading_pct": 85.98637921428264,
+   "min_base_vm_pu": 0.9404515832638941,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 221,
+    "violation_rate": 0.5746606334841629,
+    "boundary_mass": 0.16289592760180996,
+    "min_vm_min": 0.8076192840471643,
+    "min_vm_median": 0.9376101579325467
+   }
+  },
+  {
+   "lo": 0.82,
+   "hi": 0.94,
+   "n_draws": 200,
+   "n_accepted": 43,
+   "acceptance_rate": 0.215,
+   "rejected_by": {
+    "nonconvergence": 15,
+    "voltage": 142,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 89.30988277501459,
+   "median_base_loading_pct": 84.80844562058728,
+   "min_base_vm_pu": 0.9402307304072844,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 221,
+    "violation_rate": 0.7058823529411765,
+    "boundary_mass": 0.23076923076923078,
+    "min_vm_min": 0.8491503675131212,
+    "min_vm_median": 0.9354402272114509
+   }
+  }
+ ],
+ "chosen": {
+  "lo": 0.82,
+  "hi": 0.94,
+  "n_draws": 200,
+  "n_accepted": 43,
+  "acceptance_rate": 0.215,
+  "rejected_by": {
+   "nonconvergence": 15,
+   "voltage": 142,
+   "thermal": 0
+  },
+  "max_base_loading_pct": 89.30988277501459,
+  "median_base_loading_pct": 84.80844562058728,
+  "min_base_vm_pu": 0.9402307304072844,
+  "n1_probe": {
+   "n_bases": 6,
+   "n_contingencies": 221,
+   "violation_rate": 0.7058823529411765,
+   "boundary_mass": 0.23076923076923078,
+   "min_vm_min": 0.8491503675131212,
+   "min_vm_median": 0.9354402272114509
+  }
+ }
+}

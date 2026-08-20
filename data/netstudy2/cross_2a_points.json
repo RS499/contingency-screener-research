@@ -1,0 +1,1335 @@
+{
+ "phase": "2a record (nothing fitted)",
+ "strip_width": 0.005,
+ "density_definition": "rho = boundary_mass / strip_width, strip = [0.94, 0.945)",
+ "n_points": 132,
+ "networks": [
+  "case118",
+  "case24_ieee_rts",
+  "case30_thermal",
+  "case39",
+  "case_illinois200"
+ ],
+ "points": [
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.7,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0019296417394504273,
+   "escalation": 0.14637358227032846,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.2194388586103026
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.71,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.002039834399887619,
+   "escalation": 0.15805314010381064,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.23196996795522004
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.72,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0021469962302994583,
+   "escalation": 0.16948533689810366,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.2441564113096544
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.73,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0022612671173368295,
+   "escalation": 0.18106804150534445,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.25715129658354424
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.74,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0023806299605683146,
+   "escalation": 0.19304872414207674,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.27072523911582874
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.75,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.00250758559863109,
+   "escalation": 0.20572129661961763,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.28516263427632754
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.76,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0026454491650768075,
+   "escalation": 0.21959126911367025,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.3008404790525345
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.77,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.002790327897630851,
+   "escalation": 0.234163825467281,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.3173160885185804
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.78,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.002922184091584934,
+   "escalation": 0.24759637368123086,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.3323107748950387
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.79,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0030638497915625564,
+   "escalation": 0.26359929672645255,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.3484209982964939
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.8,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.003206808493805391,
+   "escalation": 0.27973486754790866,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.36467826191554903
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.81,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.003376369119798439,
+   "escalation": 0.29884947014844665,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.3839606963034785
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.82,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0035305864834983326,
+   "escalation": 0.31555852247152993,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.40149829490343036
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.83,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.003703181734887595,
+   "escalation": 0.3360352778050974,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.4211258268914173
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.84,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.003865812140618963,
+   "escalation": 0.3548199702251258,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.4396201566311884
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.85,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.004044777126780352,
+   "escalation": 0.3753969446048101,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.4599720548574616
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.86,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.004231810535300795,
+   "escalation": 0.39897819156573083,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.4812414940744064
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.87,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0044267106551641126,
+   "escalation": 0.41979559987686743,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.5034055357052629
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.88,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.004654375718800052,
+   "escalation": 0.44230150248950134,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.5292956067419419
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.89,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0048955682656400155,
+   "escalation": 0.46553864120662014,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.5567240231685826
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.005198231037165079,
+   "escalation": 0.4906972404572077,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.5911428335464128
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.00549709230721569,
+   "escalation": 0.5169493637699788,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.6251293371765683
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0059158122637197105,
+   "escalation": 0.5552070396283366,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.6727461706302055
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.00646865134303074,
+   "escalation": 0.6001467589214695,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.7356150307294558
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.00707984773124819,
+   "escalation": 0.6434123029630445,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.8051202839975441
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.007945325297129324,
+   "escalation": 0.6785333530184323,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.9035423927895467
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.009000024767554727,
+   "escalation": 0.7143464325496895,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 1.0234828165663235
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.010700442002900856,
+   "escalation": 0.739111061073142,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 1.2168542645698852
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.013374433579846778,
+   "escalation": 0.7480445906267049,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 1.5209405867001755
+  },
+  {
+   "network": "case118",
+   "family": "ridge",
+   "coverage_target": 0.99,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.017918098974509643,
+   "escalation": 0.7488763012003712,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 2.0376462153812365
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.7,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0003974190288199786,
+   "escalation": 0.03351842309810731,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.04519449195740797
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.71,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.00043571802208777213,
+   "escalation": 0.03808194278869696,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.04954985347182145
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.72,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0004742329994593897,
+   "escalation": 0.04659585663090631,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.053929776698521795
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.73,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0005145513696480419,
+   "escalation": 0.05526048133907078,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.058514781756375325
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.74,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0005654878249668815,
+   "escalation": 0.06351989858126879,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.06430727545523376
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.75,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0006340457989848058,
+   "escalation": 0.07322403787735292,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.07210368826055212
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.76,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.000680459049841664,
+   "escalation": 0.08150151647506065,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.07738180314799403
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.77,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0007484742207060302,
+   "escalation": 0.09310919155203108,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.08511648837868975
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.78,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0008091797432149495,
+   "escalation": 0.10206059951835292,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.09201992039840405
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.79,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0008876258514478597,
+   "escalation": 0.11524218845560799,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.1009408118266506
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.8,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0009755092170440794,
+   "escalation": 0.12795759754763988,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.11093490816225271
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.81,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0010451257476575826,
+   "escalation": 0.14028253236483934,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.11885170002362029
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.82,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0011323019579300819,
+   "escalation": 0.15222364184362003,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.12876537865580892
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.83,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0012202879682432055,
+   "escalation": 0.16397484011773694,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.13877114774861732
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.84,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0013365448731619933,
+   "escalation": 0.18288139395057246,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.15199188297598187
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.85,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0014511089488404405,
+   "escalation": 0.1995404991681912,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.1650201096621349
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.86,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0015823463473668919,
+   "escalation": 0.21870156804566046,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.17994442662256294
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.87,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.001731698079333932,
+   "escalation": 0.2382964860955763,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.19692870558185474
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.88,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0018851682039734419,
+   "escalation": 0.25463632829608485,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.2143813281558598
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.89,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0020921105037685185,
+   "escalation": 0.27774082559856506,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.23791480648855592
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.002290702766310826,
+   "escalation": 0.3062513593744674,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.2604987185848671
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.00253782929828652,
+   "escalation": 0.33417061272372506,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.28860194780114307
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.002844205204331751,
+   "escalation": 0.3774148705119974,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.32344301583660673
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.003183630189356279,
+   "escalation": 0.4197342816699555,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.3620424251335961
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.0036096228583954114,
+   "escalation": 0.4668395523921854,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.4104863114567262
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.004136973488790763,
+   "escalation": 0.5118296511092764,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.4704566251452855
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.004821026578745724,
+   "escalation": 0.5695530868202232,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.5482471425349638
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.005744658842240824,
+   "escalation": 0.6367945178499592,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.6532826035396264
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.007099133842162475,
+   "escalation": 0.7199530796400196,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 0.8073135005307166
+  },
+  {
+   "network": "case118",
+   "family": "histgb",
+   "coverage_target": 0.99,
+   "boundary_mass": 0.5686,
+   "q_hat": 0.009632491473832893,
+   "escalation": 0.7965042762847028,
+   "source": "data/tradeoff_curve_v2.json + data/frozen_poster_numbers.json",
+   "rho_times_qhat": 1.0954069304042766
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.006973905879127207,
+   "escalation": 0.1191869918699187,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.0988369836813424
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.0074711599344120085,
+   "escalation": 0.13110569105691056,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.10588426705446073
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.008045277117668092,
+   "escalation": 0.1454959349593496,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.11402088542243925
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.00866880937078911,
+   "escalation": 0.16143089430894308,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.12285783392657157
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.009408101249383072,
+   "escalation": 0.18151219512195121,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.1333353741467566
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.010321083794866048,
+   "escalation": 0.20915447154471542,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.14627452797435955
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.011496770868579208,
+   "escalation": 0.24536585365853658,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.16293683545785195
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.013126299982308853,
+   "escalation": 0.29704065040650407,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.18603117386927395
+  },
+  {
+   "network": "case30_thermal",
+   "family": "ridge",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.015509311733918252,
+   "escalation": 0.37834146341463415,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.219804169617783
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.002355131614161632,
+   "escalation": 0.02653658536585366,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.03337786728854431
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.002521208366287464,
+   "escalation": 0.02887804878048781,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.03573157345037245
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.0026804670775004923,
+   "escalation": 0.030959349593495934,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.03798865160916797
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.002883032822971909,
+   "escalation": 0.03401626016260163,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.040859494380287076
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.0031086683063508815,
+   "escalation": 0.03734959349593496,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.04405729070492723
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.003401738108385155,
+   "escalation": 0.04186991869918699,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.04821079316727776
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.0038117494371947337,
+   "escalation": 0.048617886178861786,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.05402163772369863
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.004367426020864995,
+   "escalation": 0.05835772357723577,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.06189690853810705
+  },
+  {
+   "network": "case30_thermal",
+   "family": "histgb",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.070862,
+   "q_hat": 0.005211248163519522,
+   "escalation": 0.07510569105691058,
+   "source": "data/case30_thermal/case30_thermal_frozen.json",
+   "rho_times_qhat": 0.07385589347266405
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.01044101956444914,
+   "escalation": 0.11863282126540878,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.09252831538014827
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.011190847421180771,
+   "escalation": 0.12937169437794868,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.09917328984650399
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.01210491074583755,
+   "escalation": 0.1432001767163917,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.10727371902961237
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.013126746561821645,
+   "escalation": 0.15978697264205763,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.11632922803086342
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.014478966970266894,
+   "escalation": 0.18322078064230435,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.12831260529050523
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.01617486867073372,
+   "escalation": 0.2140838392715386,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.14334168616004223
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.018561355859829008,
+   "escalation": 0.2598943629527235,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.16449073562980468
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.02274276749506756,
+   "escalation": 0.35320911620389517,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.20154640554128872
+  },
+  {
+   "network": "case39",
+   "family": "ridge",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.02884127210580383,
+   "escalation": 0.5021553434498642,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.2555913534016335
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.004652711344543791,
+   "escalation": 0.03720536251257963,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.04123232793534708
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.005098653502183459,
+   "escalation": 0.04127820793130346,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.04518426733634981
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.005632761397361796,
+   "escalation": 0.04676782660911785,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.04991753150342024
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.006267806808102061,
+   "escalation": 0.053509226603545804,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.055545303933400465
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.007125447360061177,
+   "escalation": 0.06245767903623789,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.06314571450486216
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.008440686597004476,
+   "escalation": 0.07765471180002811,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.07480136462265367
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.010099130282581447,
+   "escalation": 0.09911959149137262,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.08949849256423678
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.012511651102237065,
+   "escalation": 0.13466071456157064,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.11087825206802487
+  },
+  {
+   "network": "case39",
+   "family": "histgb",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.04431,
+   "q_hat": 0.016986892372790764,
+   "escalation": 0.20944774792406995,
+   "source": "data/netstudy2/case39/frozen.json",
+   "rho_times_qhat": 0.15053784020767175
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.010893188485187322,
+   "escalation": 0.21676827619795377,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.4510607915192426
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.012143701642678084,
+   "escalation": 0.22477983005131558,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.5028415401393571
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.013599968353752523,
+   "escalation": 0.2329565295587786,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.5631420496048429
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.015335061632850588,
+   "escalation": 0.23933992148795555,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.634988098068424
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.017297275502918708,
+   "escalation": 0.24407542291269052,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.7162386651146567
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.0195761242059155,
+   "escalation": 0.24895819040738848,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.8106003206688667
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.021830054696950273,
+   "escalation": 0.2517947937673713,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.9039301728694382
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.02495392614529022,
+   "escalation": 0.2545022873168369,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 1.0332821922537192
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "ridge",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.02967739247495882,
+   "escalation": 0.25753826777223676,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 1.228869596646105
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.0041793227325127354,
+   "escalation": 0.17193505165728895,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.17305572397879435
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.004627784949587687,
+   "escalation": 0.18737257486581518,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.19162546807854713
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.005120066869291828,
+   "escalation": 0.20378019164416505,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.21200968089688832
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.005779315986125156,
+   "escalation": 0.2218867641527144,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.239307604627076
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.006498501703615012,
+   "escalation": 0.24072969616727313,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.269087359142609
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.007568570008216225,
+   "escalation": 0.2651837215180653,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.3133963194722142
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.0088415631345943,
+   "escalation": 0.2897804248129302,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.36610790965202694
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.01076094707961115,
+   "escalation": 0.3203771738454167,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.4455849922937066
+  },
+  {
+   "network": "case24_ieee_rts",
+   "family": "histgb",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.207038,
+   "q_hat": 0.013919509860877666,
+   "escalation": 0.35034490555171816,
+   "source": "data/netstudy2/case24_ieee_rts/frozen.json",
+   "rho_times_qhat": 0.576373496515278
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.003588212297662352,
+   "escalation": 0.137365123783414,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.13871095807565262
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.003934438658753025,
+   "escalation": 0.15052442101432822,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.15209516900687922
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.00439692772591529,
+   "escalation": 0.16871187468341162,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.16997379387179773
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.004941935604872882,
+   "escalation": 0.19010526693179838,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.191042381451813
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.005648084632478234,
+   "escalation": 0.21635397318547925,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.2183402668715641
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.006573905519861767,
+   "escalation": 0.24769731784374774,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.2541300952435043
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.007793529251414233,
+   "escalation": 0.2861675918758923,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.30127757768362057
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.009655335963334299,
+   "escalation": 0.3379826456001636,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.3732501844689993
+  },
+  {
+   "network": "case_illinois200",
+   "family": "ridge",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.012752520835381009,
+   "escalation": 0.41301004519787166,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.4929792989416579
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.002292805313473778,
+   "escalation": 0.0784400273329586,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.08863389212508123
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.0025316968782142625,
+   "escalation": 0.08837123741779944,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.09786881889988004
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.002816665211172631,
+   "escalation": 0.10037668922150209,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.10888495373438487
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.003157465509003776,
+   "escalation": 0.1147506937555514,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.12205940716776258
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.0035638252492396607,
+   "escalation": 0.1305386759769002,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.13776821818995727
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.004081451939774694,
+   "escalation": 0.151482453024592,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.15777832021664626
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.0047501955154831245,
+   "escalation": 0.17898781394771116,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.18363020812023734
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.005700849667210695,
+   "escalation": 0.21768365317724886,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.22038002592523073
+  },
+  {
+   "network": "case_illinois200",
+   "family": "histgb",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.19328700000000001,
+   "q_hat": 0.00711604426178365,
+   "escalation": 0.26812057676240425,
+   "source": "data/netstudy2/case_illinois200/frozen.json",
+   "rho_times_qhat": 0.27508776944547525
+  }
+ ]
+}

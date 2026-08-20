@@ -1,0 +1,8 @@
+{
+ "network": "case39",
+ "sealed_utc": "2026-08-20T04:19:48Z",
+ "git_head": "bca6f88a28bec1f24522c2b15c40d130a6b27da8",
+ "preregistration_file": "notes/preregistration.md",
+ "preregistration_sha256_at_1c": "08a53393d147afff254ddefde2d46e50db7e43df018890b54806c0e1708f786a",
+ "gate_run_before_seal": false
+}

@@ -1,0 +1,138 @@
+{
+ "network": "case57",
+ "question": "case57 rejected 200/200 draws on the VOLTAGE clause at every one of the 71 sweep candidates from lo=1.00 to lo=0.30. Is the under-voltage driven by load level, which the sweep can move, or structural, which it cannot?",
+ "method": "uniform scaling of every load's p_mw and q_mvar; pinned solver; no sampling",
+ "zero_load_included": true,
+ "scaling": [
+  {
+   "multiplier": 1.12,
+   "converged": true,
+   "min_vm_pu": 0.6726485848792433,
+   "argmin_bus_0based": 30,
+   "argmin_bus_ieee": 31,
+   "n_bus_below_094": 40,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 1.0,
+   "converged": true,
+   "min_vm_pu": 0.7199136792083631,
+   "argmin_bus_0based": 30,
+   "argmin_bus_ieee": 31,
+   "n_bus_below_094": 39,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 0.9,
+   "converged": true,
+   "min_vm_pu": 0.7519476633224154,
+   "argmin_bus_0based": 30,
+   "argmin_bus_ieee": 31,
+   "n_bus_below_094": 39,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 0.8,
+   "converged": true,
+   "min_vm_pu": 0.7826083554293615,
+   "argmin_bus_0based": 30,
+   "argmin_bus_ieee": 31,
+   "n_bus_below_094": 38,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 0.7,
+   "converged": true,
+   "min_vm_pu": 0.8103589133668783,
+   "argmin_bus_0based": 30,
+   "argmin_bus_ieee": 31,
+   "n_bus_below_094": 37,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 0.5,
+   "converged": true,
+   "min_vm_pu": 0.8514843624594609,
+   "argmin_bus_0based": 32,
+   "argmin_bus_ieee": 33,
+   "n_bus_below_094": 31,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 0.3,
+   "converged": true,
+   "min_vm_pu": 0.8837085506602004,
+   "argmin_bus_0based": 32,
+   "argmin_bus_ieee": 33,
+   "n_bus_below_094": 27,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 0.1,
+   "converged": true,
+   "min_vm_pu": 0.9030304294112464,
+   "argmin_bus_0based": 45,
+   "argmin_bus_ieee": 46,
+   "n_bus_below_094": 25,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 0.01,
+   "converged": true,
+   "min_vm_pu": 0.9014412248304855,
+   "argmin_bus_0based": 45,
+   "argmin_bus_ieee": 46,
+   "n_bus_below_094": 24,
+   "max_vm_pu": 1.04
+  },
+  {
+   "multiplier": 0.0,
+   "converged": true,
+   "min_vm_pu": 0.901210232938954,
+   "argmin_bus_0based": 45,
+   "argmin_bus_ieee": 46,
+   "n_bus_below_094": 24,
+   "max_vm_pu": 1.04
+  }
+ ],
+ "nominal_worst_buses": [
+  {
+   "bus_0based": 30,
+   "bus_ieee": 31,
+   "vm_pu": 0.7199136792083631
+  },
+  {
+   "bus_0based": 32,
+   "bus_ieee": 33,
+   "vm_pu": 0.7315923055080197
+  },
+  {
+   "bus_0based": 31,
+   "bus_ieee": 32,
+   "vm_pu": 0.7345638530701294
+  },
+  {
+   "bus_0based": 29,
+   "bus_ieee": 30,
+   "vm_pu": 0.7570421607631106
+  },
+  {
+   "bus_0based": 24,
+   "bus_ieee": 25,
+   "vm_pu": 0.7836461772243938
+  },
+  {
+   "bus_0based": 56,
+   "bus_ieee": 57,
+   "vm_pu": 0.7929608255994712
+  }
+ ],
+ "nominal_n_bus_below_094": 39,
+ "gen_vm_setpoints": {
+  "min": 0.98,
+  "max": 1.015,
+  "n_gen": 6
+ },
+ "ext_grid_vm": 1.04,
+ "verdict": "STRUCTURAL: min_vm stays below the 0.94 floor even at zero load, so no load-multiplier window can satisfy the voltage clause"
+}

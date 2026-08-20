@@ -1,0 +1,10 @@
+{
+ "network": "case39",
+ "sealed_utc": "2026-08-20T12:28:02Z",
+ "git_head": "bca6f88a28bec1f24522c2b15c40d130a6b27da8",
+ "preregistration_file": "notes/preregistration.md",
+ "preregistration_sha256_at_1c": "70d5e0a73572501aaf8d2741984e0cdf1ea255fc9e724004e0406e437d701593",
+ "sealed_prefix_lines": 430,
+ "seal_recovery_recipe": "head -n <sealed_prefix_lines> notes/preregistration.md | shasum -a 256",
+ "gate_run_before_seal": false
+}

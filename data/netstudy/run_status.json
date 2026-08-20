@@ -1,0 +1,60 @@
+{
+ "networks": [
+  "case39",
+  "case24_ieee_rts",
+  "case57"
+ ],
+ "total_elapsed_s": 3083.6310410499573,
+ "results": {
+  "case39": {
+   "status": "COMPLETE",
+   "phases": [
+    "1a",
+    "1b",
+    "1c",
+    "1d",
+    "1e"
+   ],
+   "elapsed_s": 1578.0022699832916,
+   "seal_1c": "08a53393d147afff254ddefde2d46e50db7e43df018890b54806c0e1708f786a",
+   "seal_1e": "08a53393d147afff254ddefde2d46e50db7e43df018890b54806c0e1708f786a",
+   "seal_verdict": "SEAL INTACT",
+   "hits": "18/18",
+   "mean_abs_error": 8.866364432770347e-18,
+   "max_abs_error": 5.551115123125783e-17,
+   "abandon": false,
+   "abandon_reason": null,
+   "artifacts": "data/netstudy/case39/"
+  },
+  "case24_ieee_rts": {
+   "status": "COMPLETE",
+   "phases": [
+    "1a",
+    "1b",
+    "1c",
+    "1d",
+    "1e"
+   ],
+   "elapsed_s": 1374.9562759399414,
+   "seal_1c": "c8e4d70e7e4241b48b407c1e092f5d5a5af8be63aacd433660e6123d393e23a5",
+   "seal_1e": "c8e4d70e7e4241b48b407c1e092f5d5a5af8be63aacd433660e6123d393e23a5",
+   "seal_verdict": "SEAL INTACT",
+   "hits": "18/18",
+   "mean_abs_error": 1.5419764230904953e-17,
+   "max_abs_error": 5.551115123125783e-17,
+   "abandon": false,
+   "abandon_reason": null,
+   "artifacts": "data/netstudy/case24_ieee_rts/"
+  },
+  "case57": {
+   "status": "ABANDONED (no feasible range)",
+   "phases": [
+    "1a"
+   ],
+   "elapsed_s": 130.66950130462646,
+   "abandon": true,
+   "abandon_reason": "NO FEASIBLE RANGE",
+   "artifacts": "data/netstudy/case57/range_sweep.json"
+  }
+ }
+}
