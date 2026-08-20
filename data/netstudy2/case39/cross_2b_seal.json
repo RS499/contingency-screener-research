@@ -1,0 +1,243 @@
+{
+ "network": "case39",
+ "phase": "2b sealed cross-network prediction",
+ "sealed_utc": "2026-08-20T12:28:02Z",
+ "git_head": "bca6f88a28bec1f24522c2b15c40d130a6b27da8",
+ "preregistration_sha256": "b3b67c9afbdb650cc96160df764c26bb213eb0fe8d3af514eba585566ab38ab3",
+ "sealed_prefix_lines": 464,
+ "prior_fit": {
+  "slope_through_origin": 0.6796629042800791,
+  "n_points": 78,
+  "residual_std": 0.10568355999258626,
+  "residual_mean_abs": 0.07722326076691595,
+  "fitted_on": [
+   "case118",
+   "case30_thermal"
+  ]
+ },
+ "prior_networks": [
+  "case118",
+  "case30_thermal"
+ ],
+ "boundary_mass": 0.04431021625652498,
+ "rho": 8.862043251304996,
+ "predictions": [
+  {
+   "family": "ridge",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.01044101956444914,
+   "rho_times_qhat": 0.09252876696786992,
+   "pred_A_density": 0.09252876696786992,
+   "pred_B_prior_slope": 0.06288837048683713,
+   "pred_B_interval_lo": -0.042795189505749134,
+   "pred_B_interval_hi": 0.16857193047942337
+  },
+  {
+   "family": "ridge",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.011190847421180771,
+   "rho_times_qhat": 0.09917377386525897,
+   "pred_A_density": 0.09917377386525897,
+   "pred_B_prior_slope": 0.06740473517367772,
+   "pred_B_interval_lo": -0.03827882481890854,
+   "pred_B_interval_hi": 0.17308829516626398
+  },
+  {
+   "family": "ridge",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.01210491074583755,
+   "rho_times_qhat": 0.10727424258279898,
+   "pred_A_density": 0.10727424258279898,
+   "pred_B_prior_slope": 0.07291032326827089,
+   "pred_B_interval_lo": -0.03277323672431537,
+   "pred_B_interval_hi": 0.17859388326085715
+  },
+  {
+   "family": "ridge",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.013126746561821645,
+   "rho_times_qhat": 0.11632979577978257,
+   "pred_A_density": 0.11632979577978257,
+   "pred_B_prior_slope": 0.07906504685399551,
+   "pred_B_interval_lo": -0.026618513138590746,
+   "pred_B_interval_hi": 0.1847486068465818
+  },
+  {
+   "family": "ridge",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.014478966970266894,
+   "rho_times_qhat": 0.12831323152472168,
+   "pred_A_density": 0.12831323152472168,
+   "pred_B_prior_slope": 0.08720974359565455,
+   "pred_B_interval_lo": -0.018473816396931714,
+   "pred_B_interval_hi": 0.1928933035882408
+  },
+  {
+   "family": "ridge",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.01617486867073372,
+   "rho_times_qhat": 0.1433423857442204,
+   "pred_A_density": 0.1433423857442204,
+   "pred_B_prior_slope": 0.09742450220135225,
+   "pred_B_interval_lo": -0.008259057791234009,
+   "pred_B_interval_hi": 0.2031080621939385
+  },
+  {
+   "family": "ridge",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.018561355859829008,
+   "rho_times_qhat": 0.16449153843266812,
+   "pred_A_density": 0.16449153843266812,
+   "pred_B_prior_slope": 0.11179879674064547,
+   "pred_B_interval_lo": 0.006115236748059208,
+   "pred_B_interval_hi": 0.21748235673323174
+  },
+  {
+   "family": "ridge",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.02274276749506756,
+   "rho_times_qhat": 0.20154738919566212,
+   "pred_A_density": 0.20154738919566212,
+   "pred_B_prior_slope": 0.13698428389079115,
+   "pred_B_interval_lo": 0.03130072389820489,
+   "pred_B_interval_hi": 0.24266784388337742
+  },
+  {
+   "family": "ridge",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.02884127210580383,
+   "rho_times_qhat": 0.25559260082428986,
+   "pred_A_density": 0.25559260082428986,
+   "pred_B_prior_slope": 0.1737168093887358,
+   "pred_B_interval_lo": 0.06803324939614953,
+   "pred_B_interval_hi": 0.27940036938132207
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.9,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.004652711344543791,
+   "rho_times_qhat": 0.0412325291711845,
+   "pred_A_density": 0.0412325291711845,
+   "pred_B_prior_slope": 0.02802422052730034,
+   "pred_B_interval_lo": -0.07765933946528591,
+   "pred_B_interval_hi": 0.1337077805198866
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.91,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.005098653502183459,
+   "rho_times_qhat": 0.0451844878597675,
+   "pred_A_density": 0.0451844878597675,
+   "pred_B_prior_slope": 0.03071022024717756,
+   "pred_B_interval_lo": -0.0749733397454087,
+   "pred_B_interval_hi": 0.1363937802397638
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.92,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.005632761397361796,
+   "rho_times_qhat": 0.04991777512770141,
+   "pred_A_density": 0.04991777512770141,
+   "pred_B_prior_slope": 0.03392726001849344,
+   "pred_B_interval_lo": -0.07175629997409283,
+   "pred_B_interval_hi": 0.1396108200110797
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.93,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.006267806808102061,
+   "rho_times_qhat": 0.05554557502422438,
+   "pred_A_density": 0.05554557502422438,
+   "pred_B_prior_slope": 0.03775226684087137,
+   "pred_B_interval_lo": -0.0679312931517149,
+   "pred_B_interval_hi": 0.14343582683345762
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.94,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.007125447360061177,
+   "rho_times_qhat": 0.06314602268975916,
+   "pred_A_density": 0.06314602268975916,
+   "pred_B_prior_slope": 0.04291800917505749,
+   "pred_B_interval_lo": -0.06276555081752877,
+   "pred_B_interval_hi": 0.14860156916764375
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.95,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.008440686597004476,
+   "rho_times_qhat": 0.07480172969336406,
+   "pred_A_density": 0.07480172969336406,
+   "pred_B_prior_slope": 0.05083996084856525,
+   "pred_B_interval_lo": -0.05484359914402101,
+   "pred_B_interval_hi": 0.1565235208411515
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.96,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.010099130282581447,
+   "rho_times_qhat": 0.08949892936480083,
+   "pred_A_density": 0.08949892936480083,
+   "pred_B_prior_slope": 0.06082910226203819,
+   "pred_B_interval_lo": -0.04485445773054807,
+   "pred_B_interval_hi": 0.16651266225462447
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.97,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.012511651102237065,
+   "rho_times_qhat": 0.1108787932132627,
+   "pred_A_density": 0.1108787932132627,
+   "pred_B_prior_slope": 0.07536020261839646,
+   "pred_B_interval_lo": -0.0303233573741898,
+   "pred_B_interval_hi": 0.1810437626109827
+  },
+  {
+   "family": "histgb",
+   "coverage_target": 0.98,
+   "boundary_mass": 0.04431021625652498,
+   "rho": 8.862043251304996,
+   "mean_q_hat": 0.016986892372790764,
+   "rho_times_qhat": 0.1505385749129347,
+   "pred_A_density": 0.1505385749129347,
+   "pred_B_prior_slope": 0.10231548503150946,
+   "pred_B_interval_lo": -0.0033680749610768,
+   "pred_B_interval_hi": 0.20799904502409572
+  }
+ ],
+ "gate_run_before_seal": false
+}

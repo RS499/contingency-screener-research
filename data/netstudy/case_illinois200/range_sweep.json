@@ -1,0 +1,306 @@
+{
+ "network": "case_illinois200",
+ "phase": "1a range sweep",
+ "thermal_status": {
+  "thermal_defined": true,
+  "ratings": {
+   "n_lines": 179,
+   "n_trafos": 66,
+   "line_rating_distinct": 3,
+   "base_case_max_loading_pct": 105.52486650363153
+  },
+  "guard_message": null,
+  "feasibility": "voltage AND thermal"
+ },
+ "window_width": 0.12,
+ "step": 0.01,
+ "lo_floor": 0.3,
+ "n_draws_per_candidate": 200,
+ "seed": 100,
+ "selection_rule": "highest lo with acceptance >= 0.2 AND max base loading_percent <= 100.0",
+ "method_note": "selection rule is unchanged from scripts/case30_thermal.choose_range. Only the sweep EXTENT is widened, from case30's lo_floor 0.70 to 0.3, because case57's nominal min_vm is far below 0.94. Widening the extent downward cannot change which range is selected for a network whose window lies above the old floor, since selection takes the highest qualifying lo.",
+ "sweep": [
+  {
+   "lo": 1.0,
+   "hi": 1.12,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 197,
+    "voltage": 3,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.99,
+   "hi": 1.11,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 193,
+    "voltage": 7,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.98,
+   "hi": 1.1,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 184,
+    "voltage": 16,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.97,
+   "hi": 1.09,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 165,
+    "voltage": 35,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.96,
+   "hi": 1.08,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 137,
+    "voltage": 63,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.95,
+   "hi": 1.07,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 104,
+    "voltage": 96,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.94,
+   "hi": 1.06,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 65,
+    "voltage": 135,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.93,
+   "hi": 1.05,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 44,
+    "voltage": 156,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.92,
+   "hi": 1.04,
+   "n_draws": 200,
+   "n_accepted": 0,
+   "acceptance_rate": 0.0,
+   "rejected_by": {
+    "nonconvergence": 24,
+    "voltage": 176,
+    "thermal": 0
+   },
+   "max_base_loading_pct": null,
+   "median_base_loading_pct": null,
+   "min_base_vm_pu": null,
+   "n1_probe": null
+  },
+  {
+   "lo": 0.91,
+   "hi": 1.03,
+   "n_draws": 200,
+   "n_accepted": 2,
+   "acceptance_rate": 0.01,
+   "rejected_by": {
+    "nonconvergence": 14,
+    "voltage": 184,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 96.55667961886698,
+   "median_base_loading_pct": 92.18304251497676,
+   "min_base_vm_pu": 0.9435634720953983,
+   "n1_probe": {
+    "n_bases": 2,
+    "n_contingencies": 479,
+    "violation_rate": 0.3862212943632568,
+    "boundary_mass": 0.3068893528183716,
+    "min_vm_min": 0.7950897868243787,
+    "min_vm_median": 0.9425937826178842
+   }
+  },
+  {
+   "lo": 0.9,
+   "hi": 1.02,
+   "n_draws": 200,
+   "n_accepted": 6,
+   "acceptance_rate": 0.03,
+   "rejected_by": {
+    "nonconvergence": 6,
+    "voltage": 188,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 96.17985081576897,
+   "median_base_loading_pct": 92.90040652238284,
+   "min_base_vm_pu": 0.9404973821374961,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 1439,
+    "violation_rate": 0.43780403057678946,
+    "boundary_mass": 0.28005559416261294,
+    "min_vm_min": 0.7415692001062257,
+    "min_vm_median": 0.9407993011307387
+   }
+  },
+  {
+   "lo": 0.89,
+   "hi": 1.01,
+   "n_draws": 200,
+   "n_accepted": 6,
+   "acceptance_rate": 0.03,
+   "rejected_by": {
+    "nonconvergence": 5,
+    "voltage": 189,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 98.74415111314644,
+   "median_base_loading_pct": 90.27712582039331,
+   "min_base_vm_pu": 0.9418284086495065,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 1439,
+    "violation_rate": 0.3391243919388464,
+    "boundary_mass": 0.22446143154968728,
+    "min_vm_min": 0.7230036162666426,
+    "min_vm_median": 0.9429084534249732
+   }
+  },
+  {
+   "lo": 0.88,
+   "hi": 1.0,
+   "n_draws": 200,
+   "n_accepted": 31,
+   "acceptance_rate": 0.155,
+   "rejected_by": {
+    "nonconvergence": 1,
+    "voltage": 168,
+    "thermal": 0
+   },
+   "max_base_loading_pct": 93.7597341901347,
+   "median_base_loading_pct": 87.48232685614796,
+   "min_base_vm_pu": 0.9400729180341512,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 1437,
+    "violation_rate": 0.38552540013917885,
+    "boundary_mass": 0.21572720946416143,
+    "min_vm_min": 0.7664390381319595,
+    "min_vm_median": 0.9424518226083719
+   }
+  },
+  {
+   "lo": 0.87,
+   "hi": 0.99,
+   "n_draws": 200,
+   "n_accepted": 40,
+   "acceptance_rate": 0.2,
+   "rejected_by": {
+    "nonconvergence": 0,
+    "voltage": 159,
+    "thermal": 1
+   },
+   "max_base_loading_pct": 98.99467849369583,
+   "median_base_loading_pct": 86.48716939484389,
+   "min_base_vm_pu": 0.9401603480116011,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 1442,
+    "violation_rate": 0.22052704576976423,
+    "boundary_mass": 0.12829403606102635,
+    "min_vm_min": 0.708895717254754,
+    "min_vm_median": 0.9483881587143547
+   }
+  }
+ ],
+ "chosen": {
+  "lo": 0.87,
+  "hi": 0.99,
+  "n_draws": 200,
+  "n_accepted": 40,
+  "acceptance_rate": 0.2,
+  "rejected_by": {
+   "nonconvergence": 0,
+   "voltage": 159,
+   "thermal": 1
+  },
+  "max_base_loading_pct": 98.99467849369583,
+  "median_base_loading_pct": 86.48716939484389,
+  "min_base_vm_pu": 0.9401603480116011,
+  "n1_probe": {
+   "n_bases": 6,
+   "n_contingencies": 1442,
+   "violation_rate": 0.22052704576976423,
+   "boundary_mass": 0.12829403606102635,
+   "min_vm_min": 0.708895717254754,
+   "min_vm_median": 0.9483881587143547
+  }
+ }
+}

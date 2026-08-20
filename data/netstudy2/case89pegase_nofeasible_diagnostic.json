@@ -1,0 +1,118 @@
+{
+ "network": "case89pegase",
+ "question": "case89pegase accepted 0 of 200 draws at all 71 sweep candidates. Which clause binds, and can load scaling reach feasibility?",
+ "sweep_rejections_pooled": {
+  "nonconvergence": 2479,
+  "voltage": 1763,
+  "thermal": 9958
+ },
+ "n_candidates": 71,
+ "method": "uniform load scaling; pinned solver; no sampling",
+ "scaling": [
+  {
+   "multiplier": 1.12,
+   "converged": true,
+   "min_vm_pu": 0.9518437627603841,
+   "max_line_loading_pct": 102.40600186574653,
+   "max_trafo_loading_pct": 433.81219855446534,
+   "max_loading_pct": 433.81219855446534,
+   "meets_voltage": true,
+   "meets_thermal": false
+  },
+  {
+   "multiplier": 1.0,
+   "converged": true,
+   "min_vm_pu": 0.9683821878621461,
+   "max_line_loading_pct": 96.40700621889332,
+   "max_trafo_loading_pct": 392.21369912529985,
+   "max_loading_pct": 392.21369912529985,
+   "meets_voltage": true,
+   "meets_thermal": false
+  },
+  {
+   "multiplier": 0.8,
+   "converged": true,
+   "min_vm_pu": 0.9892057826965654,
+   "max_line_loading_pct": 96.41231678279163,
+   "max_trafo_loading_pct": 325.9679061824045,
+   "max_loading_pct": 325.9679061824045,
+   "meets_voltage": true,
+   "meets_thermal": false
+  },
+  {
+   "multiplier": 0.6,
+   "converged": true,
+   "min_vm_pu": 1.006077843612865,
+   "max_line_loading_pct": 96.41848669980459,
+   "max_trafo_loading_pct": 273.2582336788454,
+   "max_loading_pct": 273.2582336788454,
+   "meets_voltage": true,
+   "meets_thermal": false
+  },
+  {
+   "multiplier": 0.4,
+   "converged": true,
+   "min_vm_pu": 1.0050321740755055,
+   "max_line_loading_pct": 106.43946564118482,
+   "max_trafo_loading_pct": 244.84359743507582,
+   "max_loading_pct": 244.84359743507582,
+   "meets_voltage": true,
+   "meets_thermal": false
+  },
+  {
+   "multiplier": 0.2,
+   "converged": true,
+   "min_vm_pu": 1.0017123552253822,
+   "max_line_loading_pct": 152.7080351251741,
+   "max_trafo_loading_pct": 217.3284795935742,
+   "max_loading_pct": 217.3284795935742,
+   "meets_voltage": true,
+   "meets_thermal": false
+  },
+  {
+   "multiplier": 0.1,
+   "converged": true,
+   "min_vm_pu": 0.9993461901668794,
+   "max_line_loading_pct": 175.99511122936735,
+   "max_trafo_loading_pct": 203.7648127950512,
+   "max_loading_pct": 203.7648127950512,
+   "meets_voltage": true,
+   "meets_thermal": false
+  },
+  {
+   "multiplier": 0.0,
+   "converged": true,
+   "min_vm_pu": 0.996808668657954,
+   "max_line_loading_pct": 199.3691033077705,
+   "max_trafo_loading_pct": 190.12418911487404,
+   "max_loading_pct": 199.3691033077705,
+   "meets_voltage": true,
+   "meets_thermal": false
+  }
+ ],
+ "worst_trafos_at_nominal": [
+  {
+   "trafo_idx": 5,
+   "loading_pct": 392.21369912529985
+  },
+  {
+   "trafo_idx": 28,
+   "loading_pct": 364.60673584404753
+  },
+  {
+   "trafo_idx": 33,
+   "loading_pct": 363.71529268750817
+  },
+  {
+   "trafo_idx": 14,
+   "loading_pct": 334.3859479571974
+  },
+  {
+   "trafo_idx": 11,
+   "loading_pct": 301.291931970205
+  }
+ ],
+ "n_trafo_over_100_at_nominal": 16,
+ "n_trafo": 50,
+ "verdict": "STRUCTURAL, THERMAL CLAUSE: max loading stays above 100% even at zero load, so no load-multiplier window can satisfy the thermal clause"
+}

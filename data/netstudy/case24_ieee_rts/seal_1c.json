@@ -1,0 +1,8 @@
+{
+ "network": "case24_ieee_rts",
+ "sealed_utc": "2026-08-20T04:44:53Z",
+ "git_head": "bca6f88a28bec1f24522c2b15c40d130a6b27da8",
+ "preregistration_file": "notes/preregistration.md",
+ "preregistration_sha256_at_1c": "c8e4d70e7e4241b48b407c1e092f5d5a5af8be63aacd433660e6123d393e23a5",
+ "gate_run_before_seal": false
+}

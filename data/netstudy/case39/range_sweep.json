@@ -1,0 +1,70 @@
+{
+ "network": "case39",
+ "phase": "1a range sweep",
+ "thermal_status": {
+  "thermal_defined": true,
+  "ratings": {
+   "n_lines": 35,
+   "n_trafos": 11,
+   "line_rating_distinct": 6,
+   "base_case_max_loading_pct": 73.36614894011497
+  },
+  "guard_message": null,
+  "feasibility": "voltage AND thermal"
+ },
+ "window_width": 0.12,
+ "step": 0.01,
+ "lo_floor": 0.3,
+ "n_draws_per_candidate": 200,
+ "seed": 100,
+ "selection_rule": "highest lo with acceptance >= 0.2 AND max base loading_percent <= 100.0",
+ "method_note": "selection rule is unchanged from scripts/case30_thermal.choose_range. Only the sweep EXTENT is widened, from case30's lo_floor 0.70 to 0.3, because case57's nominal min_vm is far below 0.94. Widening the extent downward cannot change which range is selected for a network whose window lies above the old floor, since selection takes the highest qualifying lo.",
+ "sweep": [
+  {
+   "lo": 1.0,
+   "hi": 1.12,
+   "n_draws": 200,
+   "n_accepted": 142,
+   "acceptance_rate": 0.71,
+   "rejected_by": {
+    "nonconvergence": 17,
+    "voltage": 33,
+    "thermal": 8
+   },
+   "max_base_loading_pct": 88.87688983916078,
+   "median_base_loading_pct": 79.40770456218445,
+   "min_base_vm_pu": 0.9420637080907245,
+   "n1_probe": {
+    "n_bases": 6,
+    "n_contingencies": 262,
+    "violation_rate": 0.15267175572519084,
+    "boundary_mass": 0.030534351145038167,
+    "min_vm_min": 0.799317551148757,
+    "min_vm_median": 0.9660084748212251
+   }
+  }
+ ],
+ "chosen": {
+  "lo": 1.0,
+  "hi": 1.12,
+  "n_draws": 200,
+  "n_accepted": 142,
+  "acceptance_rate": 0.71,
+  "rejected_by": {
+   "nonconvergence": 17,
+   "voltage": 33,
+   "thermal": 8
+  },
+  "max_base_loading_pct": 88.87688983916078,
+  "median_base_loading_pct": 79.40770456218445,
+  "min_base_vm_pu": 0.9420637080907245,
+  "n1_probe": {
+   "n_bases": 6,
+   "n_contingencies": 262,
+   "violation_rate": 0.15267175572519084,
+   "boundary_mass": 0.030534351145038167,
+   "min_vm_min": 0.799317551148757,
+   "min_vm_median": 0.9660084748212251
+  }
+ }
+}

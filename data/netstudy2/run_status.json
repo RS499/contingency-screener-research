@@ -1,0 +1,96 @@
+{
+ "networks": [
+  "case39",
+  "case24_ieee_rts",
+  "case89pegase",
+  "case_illinois200"
+ ],
+ "results": {
+  "case39": {
+   "status": "COMPLETE",
+   "phases": [
+    "1a",
+    "1b",
+    "1c",
+    "2b-seal",
+    "1d",
+    "1e",
+    "2b-compare"
+   ],
+   "elapsed_s": 1190.8634207248688,
+   "seal_1c": "70d5e0a73572501aaf8d2741984e0cdf1ea255fc9e724004e0406e437d701593",
+   "disjoint": true,
+   "prior_networks": "case118,case30_thermal",
+   "seal_verdict": "SEAL INTACT",
+   "hits": "17/18",
+   "mean_abs_error": 0.004755417491194148,
+   "max_abs_error": 0.012930423724816287,
+   "epsilon_alarm": false,
+   "A_mean_abs_err": 0.047996344909855077,
+   "B_mean_abs_err": 0.08186537982347714,
+   "B_hits": "13/18",
+   "abandon": false,
+   "abandon_reason": null
+  },
+  "case24_ieee_rts": {
+   "status": "COMPLETE",
+   "phases": [
+    "1a",
+    "1b",
+    "1c",
+    "2b-seal",
+    "1d",
+    "1e",
+    "2b-compare"
+   ],
+   "elapsed_s": 1469.255851984024,
+   "seal_1c": "bd7876c954d6792d0d5959cb51d54c455c3fae94d90906d24a9446d7e3dbaafc",
+   "disjoint": true,
+   "prior_networks": "case118,case30_thermal,case39",
+   "seal_verdict": "SEAL INTACT",
+   "hits": "9/18",
+   "mean_abs_error": 0.010505098220086629,
+   "max_abs_error": 0.01975568464187824,
+   "epsilon_alarm": false,
+   "A_mean_abs_err": 0.28941053971826936,
+   "B_mean_abs_err": 0.1659392107297836,
+   "B_hits": "10/18",
+   "abandon": false,
+   "abandon_reason": null
+  },
+  "case89pegase": {
+   "status": "ABANDONED (no feasible range)",
+   "phases": [],
+   "elapsed_s": 167.66781187057495,
+   "abandon": true,
+   "abandon_reason": "NO FEASIBLE RANGE in 1a"
+  },
+  "case_illinois200": {
+   "status": "COMPLETE",
+   "phases": [
+    "1a",
+    "1b",
+    "1c",
+    "2b-seal",
+    "1d",
+    "1e",
+    "2b-compare"
+   ],
+   "elapsed_s": 17311.977297782898,
+   "seal_1c": "bc88ed393644a33b70248c9bc511329855de725636e53b75e5f068c44bbde427",
+   "disjoint": true,
+   "prior_networks": "case118,case24_ieee_rts,case30_thermal,case39",
+   "seal_verdict": "SEAL INTACT",
+   "hits": "17/18",
+   "mean_abs_error": 0.003108051639171215,
+   "max_abs_error": 0.015609070269174075,
+   "epsilon_alarm": false,
+   "A_mean_abs_err": 0.011511804577285388,
+   "B_mean_abs_err": 0.06903164785111085,
+   "B_hits": "18/18",
+   "abandon": false,
+   "abandon_reason": null
+  }
+ },
+ "total_elapsed_s": 20139.769481897354
+}

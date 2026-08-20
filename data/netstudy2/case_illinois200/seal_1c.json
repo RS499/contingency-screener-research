@@ -1,0 +1,10 @@
+{
+ "network": "case_illinois200",
+ "sealed_utc": "2026-08-20T16:21:10Z",
+ "git_head": "bca6f88a28bec1f24522c2b15c40d130a6b27da8",
+ "preregistration_file": "notes/preregistration.md",
+ "preregistration_sha256_at_1c": "bc88ed393644a33b70248c9bc511329855de725636e53b75e5f068c44bbde427",
+ "sealed_prefix_lines": 590,
+ "seal_recovery_recipe": "head -n <sealed_prefix_lines> notes/preregistration.md | shasum -a 256",
+ "gate_run_before_seal": false
+}

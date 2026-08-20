@@ -1,0 +1,41 @@
+{
+ "network": "case_illinois200",
+ "phase": "1a build",
+ "range": {
+  "lo": 0.87,
+  "hi": 0.99
+ },
+ "thermal_status": {
+  "thermal_defined": true,
+  "ratings": {
+   "n_lines": 179,
+   "n_trafos": 66,
+   "line_rating_distinct": 3,
+   "base_case_max_loading_pct": 105.52486650363153
+  },
+  "guard_message": null,
+  "feasibility": "voltage AND thermal"
+ },
+ "n_accepted": 1500,
+ "n_draws": 7880,
+ "acceptance_rate": 0.19035532994923857,
+ "rejected_by": {
+  "nonconvergence": 9,
+  "voltage": 6359,
+  "thermal": 12
+ },
+ "max_base_loading_pct": 99.93931064687965,
+ "median_base_loading_pct": 86.5673177390665,
+ "min_base_vm_pu": 0.9400017513503951,
+ "median_base_vm_pu": 0.9498256345462721,
+ "n_rows": 369000,
+ "n_base_rows": 1500,
+ "n_n1_rows": 367500,
+ "n_n1_converged": 360589,
+ "n_n1_nonconverged": 6911,
+ "n_branches": 245,
+ "violation_rate": 0.29279872652798616,
+ "boundary_mass": 0.19328653952283625,
+ "elapsed_s": 5980.5,
+ "seed": 100
+}

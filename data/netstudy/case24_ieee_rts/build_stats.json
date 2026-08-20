@@ -1,0 +1,41 @@
+{
+ "network": "case24_ieee_rts",
+ "phase": "1a build",
+ "range": {
+  "lo": 0.82,
+  "hi": 0.94
+ },
+ "thermal_status": {
+  "thermal_defined": true,
+  "ratings": {
+   "n_lines": 33,
+   "n_trafos": 5,
+   "line_rating_distinct": 2,
+   "base_case_max_loading_pct": 92.09744578265602
+  },
+  "guard_message": null,
+  "feasibility": "voltage AND thermal"
+ },
+ "n_accepted": 1500,
+ "n_draws": 8348,
+ "acceptance_rate": 0.1796837565884044,
+ "rejected_by": {
+  "nonconvergence": 540,
+  "voltage": 6308,
+  "thermal": 0
+ },
+ "max_base_loading_pct": 92.77524771392413,
+ "median_base_loading_pct": 84.82811124179061,
+ "min_base_vm_pu": 0.940001580868329,
+ "median_base_vm_pu": 0.9450209480598655,
+ "n_rows": 58500,
+ "n_base_rows": 1500,
+ "n_n1_rows": 57000,
+ "n_n1_converged": 54676,
+ "n_n1_nonconverged": 2324,
+ "n_branches": 38,
+ "violation_rate": 0.5806203818860195,
+ "boundary_mass": 0.20703782281073962,
+ "elapsed_s": 559.0,
+ "seed": 100
+}

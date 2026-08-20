@@ -1,0 +1,120 @@
+{
+ "artifact": "baselines.json",
+ "generating_script": "scripts/baselines.py",
+ "argv": [
+  "scripts/baselines.py"
+ ],
+ "seed": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "seed_note": "five outer GroupShuffleSplit seeds (feasibility/make_splits.make_splits); random comparators drawn from numpy default_rng(10000 + seed)",
+ "nproc": 10,
+ "omp_num_threads": "4",
+ "script_git_blob_sha": "a435b3f961806033278845d266cbade4796cacc3",
+ "script_tracked_in_git": false,
+ "repo_head_commit": "bca6f88a28bec1f24522c2b15c40d130a6b27da8",
+ "input_file": [
+  "data/dataset.parquet",
+  "data/classical_predictions.parquet",
+  "data/tuned_metrics.json",
+  "data/solve_time.json"
+ ],
+ "input_sha256": {
+  "data/dataset.parquet": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e",
+  "data/classical_predictions.parquet": "1dab2705c5137abc1f3f1367484ca3158228882e4ffe42b39580caaef9de8bc0",
+  "data/tuned_metrics.json": "360a9ec768152afe634ef1f92dd44c72b64a185f89e4f480a09dcd777e4cbf83",
+  "data/solve_time.json": "94d8e8059d2b35260da090e33e3ce058c0437ef7b578556a134bbdc258a0d4ec"
+ },
+ "interpreter": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+ "interpreter_short": "3.13.9",
+ "generated_utc": "2026-08-20T17:07:53Z",
+ "numpy": "2.3.5",
+ "pandas": "2.3.3",
+ "model_hyperparameters": {
+  "note": "M2 promoted configs, read verbatim from data/tuned_metrics.json selections",
+  "per_seed": {
+   "0": {
+    "ridge": {
+     "tag": "alpha1",
+     "alpha": 1.0
+    },
+    "histgb": {
+     "tag": "rand00",
+     "learning_rate": 0.2,
+     "max_iter": 1000,
+     "max_depth": null,
+     "max_leaf_nodes": 63,
+     "min_samples_leaf": 20,
+     "l2_regularization": 10.0
+    }
+   },
+   "1": {
+    "ridge": {
+     "tag": "alpha0.001",
+     "alpha": 0.001
+    },
+    "histgb": {
+     "tag": "rand13",
+     "learning_rate": 0.08,
+     "max_iter": 600,
+     "max_depth": null,
+     "max_leaf_nodes": 255,
+     "min_samples_leaf": 20,
+     "l2_regularization": 0.1
+    }
+   },
+   "2": {
+    "ridge": {
+     "tag": "alpha0.001",
+     "alpha": 0.001
+    },
+    "histgb": {
+     "tag": "rand20",
+     "learning_rate": 0.08,
+     "max_iter": 1000,
+     "max_depth": null,
+     "max_leaf_nodes": 255,
+     "min_samples_leaf": 50,
+     "l2_regularization": 0.1
+    }
+   },
+   "3": {
+    "ridge": {
+     "tag": "alpha0.001",
+     "alpha": 0.001
+    },
+    "histgb": {
+     "tag": "rand01",
+     "learning_rate": 0.1,
+     "max_iter": 1000,
+     "max_depth": null,
+     "max_leaf_nodes": 255,
+     "min_samples_leaf": 50,
+     "l2_regularization": 10.0
+    }
+   },
+   "4": {
+    "ridge": {
+     "tag": "alpha0.01",
+     "alpha": 0.01
+    },
+    "histgb": {
+     "tag": "rand16",
+     "learning_rate": 0.1,
+     "max_iter": 300,
+     "max_depth": null,
+     "max_leaf_nodes": 31,
+     "min_samples_leaf": 50,
+     "l2_regularization": 1.0
+    }
+   }
+  }
+ },
+ "apa_citation": "Ejebe, G. C., & Wollenberg, B. F. (1979). Automatic contingency selection. IEEE Transactions on Power Apparatus and Systems, PAS-98(1), 97-109. https://doi.org/10.1109/TPAS.1979.319518",
+ "apa_citation_note": "Ejebe & Wollenberg 1979 is the PIvq comparator's source, pinned at notes/prior-art.md section 3. It specifies neither exponent nor weights in those notes - see comparator_definitions.pivq.",
+ "content_sha256": "2a6f005cec8914fe0f7c847ce0e53fcc7eebb858aa0eb7579d18087c418e22b6"
+}
