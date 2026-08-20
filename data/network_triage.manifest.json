@@ -1,0 +1,23 @@
+{
+ "artifact": "network_triage.json",
+ "generating_script": "scripts/triage_networks.py",
+ "argv": [
+  "scripts/triage_networks.py"
+ ],
+ "seed": null,
+ "seed_note": "no random draw is made in Phase 0",
+ "nproc": 10,
+ "script_git_blob_sha": "ba613e804e728c990202bab6461081e4ad202a81",
+ "script_tracked_in_git": false,
+ "repo_head_commit": "03e1136e27142ad2a746fe31919bdea5b53606ac",
+ "input_file": "pandapower.networks (library constructors; no repo input file)",
+ "input_sha256": null,
+ "input_sha256_note": "NO SOURCE: inputs are library constructors, not a repo file. pandapower version is pinned below instead.",
+ "interpreter": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+ "interpreter_short": "3.13.9",
+ "generated_utc": "2026-08-20T03:51:32Z",
+ "pandapower": "3.5.4",
+ "numpy": "2.3.5",
+ "apa_citation": "Thurner, L., Scheidler, A., Schafer, F., Menke, J., Dollichon, J., Meier, F., Meinecke, S., & Braun, M. (2018). pandapower - an open-source Python tool for convenient modeling, analysis, and optimization of electric power systems. IEEE Transactions on Power Systems, 33(6), 6510-6521. https://doi.org/10.1109/TPWRS.2018.2829021",
+ "content_sha256": "61b34d19b1909b4c5b13884685b0b9d52eff47073e3de750f4ec5dbda398cfbc"
+}
