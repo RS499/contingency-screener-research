@@ -1,0 +1,25 @@
+{
+ "artifact": "physics_conclusion.json",
+ "generating_script": "scripts/netstudy.py",
+ "argv": [
+  "-"
+ ],
+ "seed": null,
+ "nproc": 10,
+ "repo_head_commit": "ab970c19bd9210a2a2c00b1ff21fe9e8d8488051",
+ "script_git_blob_sha": "12019044c5aab97fcfc698c9ea45b07c0bd284b1",
+ "script_tracked_in_git": true,
+ "input_file": "data/physics_ablation.json",
+ "input_sha256": "ebe57a48ecbfd74b96dbcd029c5a9199fb0eee7361b8e48845a82ce204f4aae6",
+ "interpreter": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+ "interpreter_short": "3.13.9",
+ "generated_utc": "2026-08-20T22:57:17Z",
+ "pandapower": "3.5.4",
+ "numpy": "2.3.5",
+ "pandas": "2.3.3",
+ "apa_citation": "Thurner, L., Scheidler, A., Schafer, F., Menke, J., Dollichon, J., Meier, F., Meinecke, S., & Braun, M. (2018). pandapower - an open-source Python tool for convenient modeling, analysis, and optimization of electric power systems. IEEE Transactions on Power Systems, 33(6), 6510-6521. https://doi.org/10.1109/TPWRS.2018.2829021",
+ "content_sha256": "d6e21ce26bedf4b03e981c44ce2e04557ccede59ef8567fe0f75e17286bc5268",
+ "run_settings": {
+  "part": "C conclusion"
+ }
+}
