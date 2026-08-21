@@ -1,0 +1,84 @@
+{
+ "question": "does F1 contain post-outage information?",
+ "check_2_base_solve_integrity": {
+  "n_scenarios_checked": 25,
+  "all_186_branches_in_service_before_and_after_solve": true,
+  "fresh_net_per_scenario": true,
+  "max_abs_reproduction_error": {
+   "pre_p_mw": 0.0,
+   "pre_q_mvar": 0.0,
+   "pre_loading_percent": 0.0,
+   "pre_i_ka": 0.0
+  },
+  "verdict": "F1 reproduces from a FRESH net with every branch in service; the stored values cannot depend on any prior row's outage"
+ },
+ "check_3_variation": {
+  "n_rows_base_flows": 279000,
+  "duplicate_keys": 0,
+  "distinct_F1_values_per_scenario_element_pair": {
+   "min": 1,
+   "max": 1,
+   "note": "exactly one row per (scenario, element) by construction, so the value is constant within a scenario for its element. Within one scenario an element is referenced by exactly ONE dataset row - the row where it is outaged - so 'constant across the rows that reference it' is satisfied trivially, and the meaningful check is the merge cardinality above."
+  },
+  "merge_rows_in": 278955,
+  "merge_rows_out": 278955,
+  "merge_missing": 0,
+  "variance_across_scenarios_for_fixed_element": {
+   "pre_p_mw": {
+    "min_std": 0.08941006749146753,
+    "median_std": 2.767354322681726,
+    "max_std": 45.7213234992918,
+    "n_elements_with_zero_variance": 0,
+    "min_cv": 0.00020084141593914836,
+    "median_cv": 0.07263094331060092
+   },
+   "pre_q_mvar": {
+    "min_std": 0.8314478967216716,
+    "median_std": 7.5334575618376505,
+    "max_std": 110.28692401059992,
+    "n_elements_with_zero_variance": 0,
+    "min_cv": 0.08998768451015542,
+    "median_cv": 0.8893071115936251
+   },
+   "pre_loading_percent": {
+    "min_std": 0.013129656345487208,
+    "median_std": 0.03814522138325467,
+    "max_std": 0.7933635978567678,
+    "n_elements_with_zero_variance": 0,
+    "min_cv": 0.013361381901801918,
+    "median_cv": 0.10143574493995416
+   },
+   "pre_i_ka": {
+    "min_std": 0.0053280246742336895,
+    "median_std": 0.01507691869276372,
+    "max_std": 0.14888765487875247,
+    "n_elements_with_zero_variance": 0,
+    "min_cv": 0.0095571074385141,
+    "median_cv": 0.10026863421519196
+   }
+  }
+ },
+ "check_4_permutation": {
+  "baseline": {
+   "mae": 0.0015637634048802542,
+   "r2": 0.9263341003707094,
+   "n_features": 701,
+   "fit_s": 19.6
+  },
+  "F1_real": {
+   "mae": 0.0015538985417833714,
+   "r2": 0.9265841387307037,
+   "n_features": 705,
+   "fit_s": 19.9
+  },
+  "F1_shuffled": {
+   "mae": 0.0015300136559860003,
+   "r2": 0.9261287434252089,
+   "n_features": 705,
+   "fit_s": 21.8
+  },
+  "tag": "rand00",
+  "seed": 0,
+  "interpretation": "If F1_real beats F1_shuffled, the gain comes from the scenario-specific operating point. If F1_shuffled matches F1_real, the gain is only the per-element level, which the 186-way branch one-hot already encodes."
+ }
+}

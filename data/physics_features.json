@@ -1,0 +1,263 @@
+{
+ "part": "B (feature construction). PART C ablation NOT run.",
+ "network": "case118",
+ "dataset": "data/dataset.parquet",
+ "prereg_sha256_at_partA": "51f1544675b9a237e7078672086c2266e7f11da2e16c7bee98795e46ed6478fc",
+ "column_audit": {
+  "n_columns_total": 634,
+  "n_feature_columns": 619,
+  "feature_families": {
+   "pload_": 118,
+   "qload_": 118,
+   "genvm_": 53,
+   "genp_": 53,
+   "genqmin_": 53,
+   "genqmax_": 53,
+   "genon_": 53,
+   "vm0_": 118
+  },
+  "loading_like_names_anywhere": [
+   "agg_loading"
+  ],
+  "loading_like_among_features": [],
+  "agg_loading_in_EXCLUDE_COLS": true,
+  "agg_loading_is_a_feature": false,
+  "branch_flow_columns_present": false,
+  "correction_to_the_premise": "The brief says 'the only loading feature is the scenario scalar agg_loading'. That is not right: agg_loading is listed in make_splits.EXCLUDE_COLS and is therefore NOT a feature. The committed design matrix carries NO loading information of any kind. It does carry vm0_* (118 pre-outage bus voltages), so part of the base AC solution is already exposed - the voltages, not the flows."
+ },
+ "resolve": {
+  "n_base_cases": 1500,
+  "n_contingency_solves": 0,
+  "elapsed_s": 15.2,
+  "solver": {
+   "enforce_q_lims": true,
+   "numba": true,
+   "init": "dc",
+   "algorithm": "nr"
+  },
+  "builder": "feasibility/generate_dataset.build_net + reconstruct()",
+  "acceptance": {
+   "n_base": 1500,
+   "n_nonconverged": 0,
+   "max_abs_vm_error": 7.422861947325998e-08,
+   "median_abs_vm_error": 5.6322178143553003e-08,
+   "max_abs_n0_min_vm_error": 5.238082512182274e-08,
+   "tolerance_note": "reconstruction is accepted only if max|vm error| < 1e-6",
+   "passed": true
+  }
+ },
+ "F1": {
+  "status": "AVAILABLE",
+  "n_cols": 4,
+  "cols": [
+   "pre_p_mw",
+   "pre_q_mvar",
+   "pre_loading_percent",
+   "pre_i_ka"
+  ],
+  "side": "from-side for lines, HV-side for transformers",
+  "artifact": "data/physics/base_flows.parquet",
+  "join_key": [
+   "scenario_id",
+   "outaged_type",
+   "outaged_idx"
+  ],
+  "CAVEAT_placeholder_ratings": {
+   "max_pre_loading_percent": 6.032004700398199,
+   "line_max_i_ka_distinct": 2,
+   "trafo_sn_mva_distinct": 1,
+   "trafo_sn_mva": 9900.0,
+   "note": "case118 ratings are the uniform 9,900 MVA PLACEHOLDERS already recorded in data/thermal_check.json as 'UNDEFINED (rating populated but PLACEHOLDER)'. pre_loading_percent therefore peaks at 6.03% and is NOT utilisation; it is the current magnitude divided by an arbitrary constant. The FLOW columns (pre_p_mw, pre_q_mvar, pre_i_ka) are physically real; loading_percent adds little beyond pre_i_ka on this network.",
+   "corr_loading_vs_i_ka_line_rows": 0.8417086189,
+   "corr_with_target": {
+    "pre_p_mw": 0.0361,
+    "pre_q_mvar": -0.0377,
+    "pre_loading_percent": -0.2749,
+    "pre_i_ka": -0.187
+   }
+  }
+ },
+ "F2": {
+  "status": "AVAILABLE",
+  "n_cols": 186,
+  "note": "pivot of the same artifact: pre_loading_percent for all 186 branches, identical across the 186 rows of a scenario",
+  "artifact": "data/physics/base_flows.parquet"
+ },
+ "F3": {
+  "status": "AVAILABLE",
+  "n_cols": 186,
+  "source": "pandapower.pypower.makeLODF on the base-case ppc branch array",
+  "definition": "exact DC line outage distribution factors: dF_l / F_k for the outage of branch k, from the linearized DC network. LODF is by construction a DC quantity; this is NOT an approximation of an AC quantity, it is the exact value of the DC quantity.",
+  "ppc_branch_lookup": {
+   "line": [
+    0,
+    173
+   ],
+   "trafo": [
+    173,
+    186
+   ]
+  },
+  "constant_across_scenarios": true,
+  "constant_reason": "depends only on branch series admittance and topology, neither of which varies across scenarios: generator outages change in_service on gens, not on branches",
+  "elapsed_s": 0.16,
+  "DEFECT_nan_cells": {
+   "n_nan_cells": 663,
+   "n_cells": 34596,
+   "share": 0.01916406520985085,
+   "structure": "column-structured: 7 of 186 columns carry every NaN",
+   "nan_column_indices": [
+    6,
+    7,
+    103,
+    163,
+    164,
+    170,
+    184
+   ],
+   "cause": "LODF is undefined for an outage that ISLANDS the network: the denominator 1 - PTDF_kk is zero. case118 has 9 branches that are graph bridges; all 9 have a NaN self-term and 7 columns propagate NaN into other rows.",
+   "policy_required_before_partC": "NOT DECIDED HERE. A fill (0 with a validity-indicator column) or a column drop must be chosen and stated. Silently filling NaN with 0 would assert that outaging a bridge redistributes nothing, which is false."
+  },
+  "collinearity_check": {
+   "rows": 186,
+   "unique_branch_keys": 186,
+   "verdict": "one row per branch: a deterministic function of the branch one-hot"
+  },
+  "CORRECTED": {
+   "artifact": "data/physics/lodf.parquet",
+   "orientation_fix": {
+    "defect": "PART B used lodf[b, :] (monitored-branch row); correct is lodf[:, b]",
+    "pypower_convention": "LODF[l, k] = H[l,k] / (1 - h[k]); k = OUTAGED, l = MONITORED",
+    "evidence": "makeLODF builds den = ones*h.T*-1 + 1, constant DOWN each column"
+   },
+   "nonfinite": {
+    "n_nan": 663,
+    "n_posinf": 298,
+    "n_neginf": 341,
+    "n_total": 1302,
+    "n_cells": 34596,
+    "partB_undercount": "PART B reported 663 (NaN only); +/-inf was missed",
+    "rows_fully_nonfinite": 7
+   },
+   "fill_policy": {
+    "rule": "row zero-filled when |1 - h[k]| < 1e-9 OR any cell non-finite",
+    "den_tolerance": 1e-09,
+    "indicator_column": "lodf_valid",
+    "indicator_semantics": "1 = LODF row defined; 0 = outage islands the network and every entry was filled",
+    "n_valid": 177,
+    "n_invalid": 9
+   },
+   "undefined_branches": {
+    "rows": [
+     6,
+     7,
+     103,
+     121,
+     163,
+     164,
+     170,
+     184,
+     185
+    ],
+    "keys": [
+     [
+      "line",
+      6
+     ],
+     [
+      "line",
+      7
+     ],
+     [
+      "line",
+      103
+     ],
+     [
+      "line",
+      121
+     ],
+     [
+      "line",
+      163
+     ],
+     [
+      "line",
+      164
+     ],
+     [
+      "line",
+      170
+     ],
+     [
+      "trafo",
+      11
+     ],
+     [
+      "trafo",
+      12
+     ]
+    ],
+    "den_1_minus_h": [
+     0.0,
+     0.0,
+     0.0,
+     1.1102230246251565e-16,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.1102230246251565e-16
+    ]
+   },
+   "reconciliation_9_vs_7": {
+    "instruction_said": "zero-fill the 9 bridge columns",
+    "simple_graph_bridges": [
+     6,
+     7,
+     103,
+     121,
+     163,
+     164,
+     170,
+     184,
+     185
+    ],
+    "n_simple_graph_bridges": 9,
+    "dc_undefined_rows": [
+     6,
+     7,
+     103,
+     121,
+     163,
+     164,
+     170,
+     184,
+     185
+    ],
+    "n_dc_undefined": 9,
+    "in_bridges_not_undefined": [],
+    "den_for_those": [],
+    "verdict": "the count is 9 and the instruction was right. An earlier pass of this script tested only for non-finite cells, found 7, and wrongly concluded the other 2 held real values. They do not: den = 1.11e-16 for both, i.e. h[k] = 1 to machine precision, the islanding signature. Their entries are 0/0 that resolved to finite, plausible-looking numbers (max |LODF| 1.75 and 1.00) which are numerically arbitrary. All 9 are now zero-filled and flagged.",
+    "corrected_from": "an earlier verdict in this same file that said 7, not 9"
+   }
+  },
+  "extra_cols": [
+   "lodf_valid"
+  ]
+ },
+ "F4": {
+  "status": "AVAILABLE",
+  "n_cols": 118,
+  "definition": "weighted shortest path over branch impedance magnitude |z|=sqrt(r_pu^2+x_pu^2); transformers weighted by vk_percent/100. Distance from an outaged branch to bus b is the MINIMUM over the branch's two terminal buses. Unreachable = -1.",
+  "constant_across_scenarios": true,
+  "n_unreachable": 0,
+  "elapsed_s": 0.02,
+  "collinearity_check": {
+   "rows": 186,
+   "unique_branch_keys": 186,
+   "verdict": "one row per branch: a deterministic function of the branch one-hot"
+  }
+ },
+ "total_elapsed_s": 16.4,
+ "part_c_status": "NOT RUN"
+}

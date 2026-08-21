@@ -1,0 +1,32 @@
+{
+ "part": "C conclusion",
+ "headline": "NO feature family improved either surrogate by more than its seed-to-seed std. The only effect that exceeds the std rule is HARM: F2 costs ridge +10.8% MAE.",
+ "best_config_by_mae": {
+  "ridge": {
+   "best_config": "+F1+F3",
+   "best_mae": 0.003707247952052467,
+   "baseline_mae": 0.003754331383041597,
+   "delta_pct": -1.2541096186076446,
+   "exceeds_seed_std": false
+  },
+  "histgb": {
+   "best_config": "+F1+F2+F3+F4",
+   "best_mae": 0.001526431521937137,
+   "baseline_mae": 0.0015627340080947231,
+   "delta_pct": -2.3230112078923773,
+   "exceeds_seed_std": false
+  }
+ },
+ "k5_tie": {
+  "claim": "static_severity is at the oracle ceiling at k=5",
+  "static_severity_mean": 0.154848069914131,
+  "oracle_mean": 0.154848069914131,
+  "headroom": 0.0,
+  "confirmed": true
+ },
+ "baselines_rerun": {
+  "status": "NOT RUN",
+  "reason": "scripts/baselines.py builds its design matrix at :330-331 from data/dataset.parquet with no hook for extra feature blocks. Re-running it against a physics configuration requires editing a committed analysis script that produced a committed artifact. Not done without authorisation.",
+  "materiality": "no configuration changed either surrogate significantly, so the re-run would re-test the tie with a statistically unchanged ranker"
+ }
+}
