@@ -1,0 +1,45 @@
+{
+ "schema": "B",
+ "figure": "tradeoff_hero_col_v2.png",
+ "generating_script": "feasibility/paper_hero.py",
+ "regeneration_argv": [
+  "feasibility/paper_hero.py",
+  "--curve",
+  "data/tradeoff_curve_v2.json",
+  "--out",
+  "data/tradeoff_hero_col_v2.png"
+ ],
+ "script_git_blob_sha": "d6041e54d34edeea4f84a1bd60c8ffff24d120d3",
+ "script_tracked_in_git": true,
+ "repo_head_commit": "6e1be69ee3a473c383f36e48244a37ca77387b92",
+ "input_file": "data/tradeoff_curve_v2.json",
+ "input_sha256": "a40a079733ecdfcd70191b749571d73cb1a7c870595da635c848b2c68fad8dbd",
+ "output_sha256": "31d10eb62ec4c63e3836d6ca96b3ab7ef8d273d7c97aaa51790c875bb4cf703e",
+ "output_md5": "47e37f207595e04f04233fe367cb43f2",
+ "output_bytes": 123516,
+ "byte_reproducible": true,
+ "byte_reproducible_evidence": "Regenerated 2026-08-27 into a scratch path with the argv above and compared; md5 and byte length identical to the committed file. The committed file was NOT overwritten.",
+ "interpreter": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+ "interpreter_short": "3.13.9",
+ "generated_utc": "2026-08-27T18:55:13Z",
+ "plotting_library": "matplotlib 3.11.1",
+ "apa_citation": "Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95. https://doi.org/10.1109/MCSE.2007.55",
+ "numpy": "2.3.5",
+ "pandas": "2.3.3",
+ "appendix3_elements": {
+  "_rule": "RULES2027 Appendix 3 p.33, fetched 2026-08-27. Three obligatory elements for a graphic created by the student researcher.",
+  "student_attribution": {
+   "value": "created by the student researcher",
+   "source": "report/paper_current_STS.tex:56 is a sole-author block (Rajan Saha); the generating script is repository code."
+  },
+  "creating_program": {
+   "value": "matplotlib 3.11.1",
+   "source": "feasibility/paper_hero.py imports matplotlib; version read from the live interpreter, and pinned matplotlib==3.11.1 at requirements.txt:7."
+  },
+  "year_created": {
+   "value": "2026",
+   "source": "git blob date of data/tradeoff_hero_col_v2.png"
+  }
+ },
+ "caption_line_status": "NOT WRITTEN HERE. The three elements above are sourced and sufficient to compose the Appendix 3 line, which must sit under or next to the graphic and never in a reference list. The sentence itself is the author's to write."
+}
