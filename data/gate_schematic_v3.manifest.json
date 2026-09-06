@@ -1,49 +1,52 @@
 {
- "schema": "B",
- "figure": "gate_schematic_v3.png",
- "generating_script": "feasibility/gate_schematic.py",
- "regeneration_argv": [
-  "feasibility/gate_schematic.py",
-  "--font-bump",
-  "2",
-  "--curve",
-  "data/tradeoff_curve_v2.json",
-  "--out",
-  "data/gate_schematic_v3.png"
- ],
- "script_git_blob_sha": "d1cbab1a144a7b1f032a062ba0fabb674bc0631e",
- "script_tracked_in_git": true,
- "repo_head_commit": "6e1be69ee3a473c383f36e48244a37ca77387b92",
- "input_file": "data/tradeoff_curve_v2.json",
- "input_sha256": "a40a079733ecdfcd70191b749571d73cb1a7c870595da635c848b2c68fad8dbd",
- "output_sha256": "dbe14eee8df09b0adada1700b6a57fed84e06657eb263fc7d31501eaafa39701",
- "output_md5": "5ceefccf43d5441191e9e41835924af2",
- "output_bytes": 157375,
- "byte_reproducible": true,
- "byte_reproducible_evidence": "Regenerated 2026-08-27 into a scratch path with the argv above and compared; md5 and byte length identical to the committed file. The committed file was NOT overwritten.",
- "interpreter": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
- "interpreter_short": "3.13.9",
- "generated_utc": "2026-08-27T18:55:13Z",
- "plotting_library": "matplotlib 3.11.1",
- "apa_citation": "Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95. https://doi.org/10.1109/MCSE.2007.55",
- "numpy": "2.3.5",
- "pandas": "2.3.3",
- "appendix3_elements": {
-  "_rule": "RULES2027 Appendix 3 p.33, fetched 2026-08-27. Three obligatory elements for a graphic created by the student researcher.",
-  "student_attribution": {
-   "value": "created by the student researcher",
-   "source": "report/paper_current_STS.tex:56 is a sole-author block (Rajan Saha); the generating script is repository code."
+  "schema": "B",
+  "figure": "gate_schematic_v3.png",
+  "generating_script": "feasibility/gate_schematic.py",
+  "regeneration_argv": [
+    "feasibility/gate_schematic.py",
+    "--font-bump",
+    "2",
+    "--curve",
+    "data/tradeoff_curve_v2.json",
+    "--out",
+    "data/gate_schematic_v3.png"
+  ],
+  "script_git_blob_sha": "b2256df4f3a287190b560818e7de4b1a70ced540",
+  "script_tracked_in_git": true,
+  "repo_head_commit": "f692dbb16c453ae2db44d483e70ff18a9e1c68b7",
+  "input_file": "data/tradeoff_curve_v2.json",
+  "input_sha256": "a40a079733ecdfcd70191b749571d73cb1a7c870595da635c848b2c68fad8dbd",
+  "output_sha256": "c4c3edfbd855ecc5618cf70c713fed1e4e419139edae9e79be232fb323d9ee50",
+  "output_md5": "9ca3ffddc54825b7eee86f3dec1d2c66",
+  "output_bytes": 160569,
+  "byte_reproducible": true,
+  "byte_reproducible_evidence": "Regenerated 2026-09-05 into a scratch path with the argv above and compared; md5 9ca3ffddc54825b7eee86f3dec1d2c66 identical to the committed file.",
+  "interpreter": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+  "interpreter_short": "3.13.9",
+  "generated_utc": "2026-09-05T01:35:52Z",
+  "plotting_library": "matplotlib 3.11.1",
+  "apa_citation": "Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95. https://doi.org/10.1109/MCSE.2007.55",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "appendix3_elements": {
+    "_rule": "RULES2027 Appendix 3 p.33, fetched 2026-08-27. Three obligatory elements for a graphic created by the student researcher.",
+    "student_attribution": {
+      "value": "created by the student researcher",
+      "source": "report/paper_current_STS.tex:56 is a sole-author block (Rajan Saha); the generating script is repository code."
+    },
+    "creating_program": {
+      "value": "matplotlib 3.11.1",
+      "source": "feasibility/gate_schematic.py imports matplotlib; version read from the live interpreter, and pinned matplotlib==3.11.1 at requirements.txt:7."
+    },
+    "year_created": {
+      "value": "2026",
+      "source": "Figure regenerated 2026-09-05 from repository code; original git blob date of data/gate_schematic_v3.png = 2026-08-18. Both fall in 2026."
+    }
   },
-  "creating_program": {
-   "value": "matplotlib 3.11.1",
-   "source": "feasibility/gate_schematic.py imports matplotlib; version read from the live interpreter, and pinned matplotlib==3.11.1 at requirements.txt:7."
-  },
-  "year_created": {
-   "value": "2026",
-   "source": "git blob date of data/gate_schematic_v3.png = 2026-08-18 (file is tracked). Corroborated by file mtime 2026-08-04. Both fall in 2026."
-  }
- },
- "caption_line_status": "NOT WRITTEN HERE. The three elements above are sourced and sufficient to compose the Appendix 3 line, which must sit under or next to the graphic and never in a reference list. The sentence itself is the author's to write.",
- "band_width_q_hat_pu": 0.002290702766310826,
- "band_width_provenance": "Printed by the script during the verified regeneration: 'strip sized from q_hat=0.002290702766310826 pu read from data/tradeoff_curve_v2.json (histgb, coverage_target 0.90)'. This is the M2 band width."
+  "caption_line_status": "NOT WRITTEN HERE. The three elements above are sourced and sufficient to compose the Appendix 3 line, which must sit under or next to the graphic and never in a reference list. The sentence itself is the author's to write.",
+  "band_width_q_hat_pu": 0.002290702766310826,
+  "band_width_provenance": "Printed by the script during the verified regeneration: 'strip sized from q_hat=0.002290702766310826 pu read from data/tradeoff_curve_v2.json (histgb, coverage_target 0.90)'. This is the M2 band width.",
+  "script_blob_note": "Blob sha is of the WORKING-TREE script (git hash-object), which is modified and not yet committed. It becomes the committed blob sha once the owner commits feasibility/gate_schematic.py.",
+  "revision_note": "2026-09-05 layout fix. DEFECT: the full-width axhline at 0.94 pu struck through the second line of the 'escalation strip, one band width' label, which was anchored va='center' inside a strip only 0.0023 pu tall; and 'under-voltage limit (0.94 pu)' overflowed the axes right edge by 0.76 data units. FIX: the strip and the limit line now stop at RULE_END = 4.2 instead of spanning the axes, xlim widened 4.9 -> 6.4 and figsize 7.16 -> 8.6 in so both right-hand labels sit in clean space inside the axes. Verified after the fix: 0 text artists crossed by the limit line, 0 texts overflowing the axes. No data, no q_hat, and no numeric content changed; the strip is still sized from the same q_hat read from the same input file.",
+  "previous_output_sha256": "dbe14eee8df09b0adada1700b6a57fed84e06657eb263fc7d31501eaafa39701"
 }

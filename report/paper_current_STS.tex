@@ -49,9 +49,7 @@
 
 \renewcommand{\thesection}{\Roman{section}}
 
-\title{\vspace{-0.5in}\textbf{Conformal-Gated Surrogate Screening for N-1
-Under-Voltage Contingencies: Safety and Throughput Limits on a Marginally
-Secure Network}}
+\title{\vspace{-0.5in}\textbf{Conformal‑Gated Surrogate Screening for N‑1 Under‑Voltage Contingencies: Safety and Throughput Limits Set by Boundary Mass}}
 
 \author{Rajan Saha\\
 \small Conestoga High School, Berwyn, PA, USA\\
@@ -136,6 +134,8 @@ Here $n$ is the total number of contingencies, $t_{\text{solve}}$ is the solver 
 \centering
 \includegraphics[width=0.8\textwidth]{data/gate_schematic_v3.png}
 \caption{The surrogate predicts post-outage voltage and attaches a band extending only downward. A case is certified if the whole band clears 0.94 pu, flagged if the prediction falls below it, and escalated if the band straddles it.}
+\vspace{2pt}
+{\footnotesize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 \label{fig:gate}
 \end{figure}
 
@@ -197,6 +197,13 @@ histgb      & 1.6$\pm$0.1 & 0.92$\pm$0.00 & 30.6$\pm$2.5 & 4.72$\pm$0.98 & 3.29$
 \bottomrule
 \end{tabular}
 \end{table}
+\vspace{2pt}
+{\footnotesize Table created by Rajan Saha using Python and LaTeX, 2026}
+
+\subsection{Safety comes at high escalation}
+
+In Table~\ref{tab:ops}, I adjusted the target from 0.90 to 0.98 and recorded the missed and escalation rates. As the target gets larger, the missed rate decreases, but the escalation rate goes up because the band size has to be bigger to account for model overshoot. For the gradient-boosted model, increasing the target from 0.90 to 0.94 decreases the missed rate from 4.72\% to 2.48\%, increases the escalation from 30.6\% to 46.7\%, and decreases the speed-up from 3.29 to 2.15 times. The ridge model shows a similar pattern as well, with the average of missed cases falling below 1\% at 0.94 for the ridge model (0.79\% missed, 64.3\% escalation, 1.56 times faster) and 0.97 for the gradient-boosted model (0.83\% missed, 63.7\% escalation, 1.58 times faster), although the error bars still reach up to about 1.0--1.07\%, as Fig.~\ref{fig:tradeoff} shows.
+
 
 % ---------------------------------------------------------------------
 % TABLE II (tab:ops) -- v2 PROMOTED (M2 gate-aware tuned) bodies, from
@@ -228,6 +235,9 @@ histgb & 0.98 & 72.0$\pm$3.7 & 98.0$\pm$0.2 & 0.30$\pm$0.13 & 1.39$\pm$0.07 \\
 \bottomrule
 \end{tabular}
 \end{table}
+\vspace{2pt}
+{\footnotesize Table created by Rajan Saha using Python and LaTeX, 2026}
+
 
 % ---------------------------------------------------------------------
 % FIGURE 2 (fig:tradeoff) -- coverage sweep,
@@ -235,14 +245,16 @@ histgb & 0.98 & 72.0$\pm$3.7 & 98.0$\pm$0.2 & 0.30$\pm$0.13 & 1.39$\pm$0.07 \\
 % ---------------------------------------------------------------------
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.65\textwidth]{data/tradeoff_hero_col_v2.png}
+\includegraphics[width=0.6\textwidth]{data/tradeoff_hero_col_v2.png}
 \caption{Escalation (solid, left axis) and missed violations (dotted, right axis) are plotted against the safety target and averaged over five splits. The mean missed rate first falls just under 1\% at 0.94 coverage for ridge and 0.97 for the gradient-boosted model, with high escalation at both and the error bars still reaching slightly above 1\%.}
+\vspace{2pt}
+{\footnotesize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 \label{fig:tradeoff}
 \end{figure}
 
-\subsection{Safety comes at high escalation}
+\subsection{The faster model is not the safer one}
 
-In Table~\ref{tab:ops}, I adjusted the target from 0.90 to 0.98 and recorded the missed and escalation rates. As the target gets larger, the missed rate decreases, but the escalation rate goes up because the band size has to be bigger to account for model overshoot. For the gradient-boosted model, increasing the target from 0.90 to 0.94 decreases the missed rate from 4.72\% to 2.48\%, increases the escalation from 30.6\% to 46.7\%, and decreases the speed-up from 3.29 to 2.15 times. The ridge model shows a similar pattern as well, with the average of missed cases falling below 1\% at 0.94 for the ridge model (0.79\% missed, 64.3\% escalation, 1.56 times faster) and 0.97 for the gradient-boosted model (0.83\% missed, 63.7\% escalation, 1.58 times faster), although the error bars still reach up to about 1.0--1.07\%, as Fig.~\ref{fig:tradeoff} shows.
+On the IEEE 118-bus system, the more accurate model is not safer at any point in the coverage axis, and Table~\ref{tab:models} shows that accuracy cannot settle this decision by itself. It can be said that the gradient-boosted model is much more accurate than the linear model, and has a 3.29 times speedup compared to 2.04 times. However, taking into account safety, it is clear that at a coverage of 0.96, the linear model misses 0.14\% of the violations while the gradient-boosted model misses 1.36\%. The linear model also shows the low missed rate of all targets during the sweep in the IEEE 118-bus system. At 0.90 coverage, 74\% of misses fall within one band width of the limit for the linear model and 55\% for the gradient-boosted model (Fig.~\ref{fig:missdepth}), with 26.7\% of ridge misses and 21.4\% of histgb misses falling more than 0.005 pu below the limit. The worst miss was a case at 0.0915 per unit under the limit, which was a bus that fell to 0.8485.
 
 % ---------------------------------------------------------------------
 % FIGURE 3 (fig:missdepth) -- miss-depth histogram, from
@@ -253,16 +265,14 @@ In Table~\ref{tab:ops}, I adjusted the target from 0.90 to 0.98 and recorded the
 \centering
 \includegraphics[width=0.5\textwidth]{data/miss_depth_v2.png}
 \caption{The histogram measures how far missed violations fall below 0.94 pu at 90\% coverage on a logarithmic count scale. Dashed lines mark each model's band width. Most misses stay within one band, but a thin tail reaches 0.0915 pu, where one certified bus had fallen to 0.8485.}
+\vspace{2pt}
+{\footnotesize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 \label{fig:missdepth}
 \end{figure}
 
-\subsection{The faster model is not the safer one}
-
-On the IEEE 118-bus system, the more accurate model is not safer at any point in the coverage axis, and Table~\ref{tab:models} shows that accuracy cannot settle this decision by itself. It can be said that the gradient-boosted model is much more accurate than the linear model, and has a 3.29 times speedup compared to 2.04 times. However, taking into account safety, it is clear that at a coverage of 0.96, the linear model misses 0.14\% of the violations while the gradient-boosted model misses 1.36\%. The linear model also shows the low missed rate of all targets during the sweep in the IEEE 118-bus system. At 0.90 coverage, 74\% of misses fall within one band width of the limit for the linear model and 55\% for the gradient-boosted model (Fig.~\ref{fig:missdepth}), with 26.7\% of ridge misses and 21.4\% of histgb misses falling more than 0.005 pu below the limit. The worst miss was a case at 0.0915 per unit under the limit, which was a bus that fell to 0.8485.
-
 \subsection{The boundary layer sets a floor on escalation}
 
-Most of the contingencies are at a distance of less than 0.005 per unit from the boundary, thus causing a significant number of escalations. The distribution of voltages after contingencies is shown in Fig.~\ref{fig:boundary}. Out of all the converged cases, 56.86\% are in a narrow range of [0.94, 0.945), slightly higher than the threshold, and 17.48\% lie below the limit as violations. Importantly, there is not a single 0.001-wide unit bin that accounts for more than about 14\% of the whole dataset. Certain buses account for extreme events, with bus 76 being the weakest one, holding the minimum voltage in 27.1\% of contingencies, whereas bus 53 is second with 16.81\%, followed by bus 107 with 9.31\%.
+Most of the contingencies are at a distance of less than 0.005 per unit from the boundary, thus causing a significant number of escalations. The distribution of voltages after contingencies is shown in Fig.~\ref{fig:boundary}. Out of all the converged cases, 56.86\% are in a narrow range of [0.94, 0.945), slightly higher than the threshold, and 17.48\% lie below the limit as violations. Importantly, there is not a single 0.001-wide unit bin that accounts for more than about 14\% of the whole dataset. Certain buses account for extreme events, with bus 76 being the weakest one, holding the minimum voltage in 27.1\% of contingencies, whereas bus 53 is second with 16.81\%, followed by bus 107 with 9.31\%, as shown in Fig.~\ref{fig:busmap}.
 
 % ---------------------------------------------------------------------
 % FIGURE 4 (fig:boundary) -- boundary-mass histogram, from
@@ -272,8 +282,26 @@ Most of the contingencies are at a distance of less than 0.005 per unit from the
 \centering
 \includegraphics[width=0.8\textwidth]{data/boundary_mass_hist.png}
 \caption{Lowest voltage across all failure cases; anything left under the line is a violation. Over half are within 0.005 pu above the limit, while the tail below the limit drops much lower.}
+\vspace{2pt}
+{\footnotesize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 \label{fig:boundary}
 \end{figure}
+
+% ---------------------------------------------------------------------
+% FIGURE 5 (fig:critical) -- critical bus map, from
+% data/critical_bus_map.png. Cited in IV-C.
+% ---------------------------------------------------------------------
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{data/critical_bus_map.png}
+\caption{Buses that most frequently hold the minimum post-contingency voltage across all converged N-1 cases. The three dominant buses are 76, 53, and 107 (see main text for their shares: 27.1\%, 16.81\%, and 9.31\%). The layout shown is topological rather than geographic; node positions do not correspond to physical locations.}
+\label{fig:busmap}
+\vspace{2pt}
+{\footnotesize Figure created by Rajan Saha using Matplotlib 3.11.1, 2026.}
+\end{figure}
+
+
 
 A case is escalated when the prediction lies within one band-width above the 0.94 pu limit, since the band straddles the threshold. The gradient-boosted model's band is only 0.0023 pu wide, but so much of the distribution sits just above 0.94 that this narrow window still captures 30.6\% of all contingencies. As the band becomes larger, escalation moves closer to every case predicted at or above the limit, the remaining 82.52\% of cases, or the saturation point. Linear prediction overpredicts cases below the limit compared to gradient-boosted prediction, and thus has a lower escalation ceiling of 74.89\% versus 82.79\%. The gradient-boosted model flags violations about as often as they occur, so its ceiling essentially lands on the saturation point. A model that does not frequently predict below the threshold has a higher ceiling and misses more violations.
 
@@ -281,8 +309,7 @@ Persistence is the baseline model where the voltage before the outage of one ele
 
 \subsection{Cross-network prediction}\label{subsec:crossnet}
 
-I used non-overlapping calibration and testing data to ensure minimal bias. Across the resulting 54 predictions, the mean relative error was $0.4726$ for predictor A and $0.4933$ for predictor B. Both of these predictors use the same inputs (boundary mass and the calibration band width) but differ in what algorithms were used. Predictor A used the parameter-free form $\rho\cdot\hat{q}$ (the predictive density at the limit), while predictor B calculates a trend line across different networks using the same inputs. When predictor A outperformed predictor B under this locked test, it indicates that adding a complex, custom calculation does not guarantee any model improvement in comparison to the parameter-free version.  
-
+I used non-overlapping calibration and testing data to ensure minimal bias. Across the resulting 54 predictions, the mean relative error was $0.4726$ for predictor A and $0.4933$ for predictor B. Both of these predictors use the same inputs (boundary mass and the calibration band width) but differ in what algorithms were used. Predictor A used the parameter-free form $\rho\cdot\hat{q}$ (the density of the observed post-contingency voltages at the limit), while predictor B calculates a trend line across different networks using the same inputs. When predictor A outperformed predictor B under this locked test, it indicates that adding a complex, custom calculation does not guarantee any model improvement in comparison to the parameter-free version.  
 I also dropped two networks, case57 and case89pegase, early due to major issues. In case57, the voltage was too low across the whole network, meaning it was not possible to bring any bus above the 0.94 pu threshold under realistic conditions, as at load multiplier 0.0 the minimum pre-outage voltage remained 0.9012 pu with 24 buses below the 0.94 pu threshold. In case89pegase, the transformers, at nominal load, were at 392\% of rated load (16 of 50 transformers over 100\%). At load multiplier 0.0, the maximum loading across all the elements in the grid was 199.37\%, meaning that no load-multiplier window falls within a safe thermal loading threshold, so the case was left out.  
 
 I tested five networks in total, with three of them completing the full cross-network prediction protocol. I locked and hashed the predictions before each target network's gate ran, and confirmed that all three hashes were intact afterward. The three networks that completed the full protocol were case39, case24\_ieee\_rts, and case\_illinois200. There were no claims made about the accuracy of all 54 predictions, and the reported mean relative errors are only the final results from this cross-network comparison test. This is shown only to suggest that fitting a slope on prior networks does not reliably improve predictions on new networks.
