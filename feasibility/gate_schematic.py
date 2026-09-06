@@ -9,6 +9,7 @@ import classical_manifest as cm
 import figtools as ft
 
 LIMIT = 0.94
+RULE_END = 4.2
 CURVE = "data/tradeoff_curve.json"
 OUT = "data/gate_schematic.png"
 POSTER_OUT = "data/poster/gate_schematic.png"
@@ -59,15 +60,18 @@ def main():
     out_path = (POSTER_OUT if args.poster and args.out == OUT else args.out)
     if args.poster:
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    figsize = (7.16, 2.8)
+    figsize = (8.6, 2.8)
     bbox = "tight"
 
     fig, ax = plt.subplots(figsize=figsize)
     ax.set_ylim(0.930, 0.950)
-    ax.set_xlim(0.3, 4.9)
+    ax.set_xlim(0.3, 6.4)
 
-    ax.axhspan(LIMIT, LIMIT + qhat, color=C_ESCALATE, alpha=0.14, zorder=0)
-    ax.axhline(LIMIT, color="black", lw=1.5, zorder=2)
+    # the strip and the limit line stop at RULE_END so that the right-hand
+    # labels sit in clean space; a full-width axhline would strike through them
+    ax.fill_between([0.35, RULE_END], LIMIT, LIMIT + qhat, color=C_ESCALATE, alpha=0.14,
+                    zorder=0)
+    ax.plot([0.35, RULE_END], [LIMIT, LIMIT], color="black", lw=1.5, zorder=2)
 
     draw_case(ax, 1, LIMIT + qhat + 0.0045, qhat, C_CERTIFY, "Certify",
               "certify safe,\nskip the solver")
@@ -76,10 +80,10 @@ def main():
     draw_case(ax, 3, LIMIT + qhat * 0.45, qhat, C_ESCALATE, "Escalate",
               "band straddles the limit,\ncall the exact solver")
 
-    ax.text(3.7, LIMIT - 0.0004, "under-voltage limit (0.94 pu)", ha="left", va="top",
-            fontsize=FS_ANNOT)
-    ax.text(3.7, LIMIT + qhat / 2, "escalation strip,\none band width", ha="left",
-            va="center", fontsize=FS_ANNOT, color="#7a5c00")
+    ax.text(RULE_END + 0.15, LIMIT - 0.0004, "under-voltage limit (0.94 pu)", ha="left",
+            va="top", fontsize=FS_ANNOT)
+    ax.text(RULE_END + 0.15, LIMIT + 0.0002, "escalation strip,\none band width", ha="left",
+            va="bottom", fontsize=FS_ANNOT, color="#7a5c00")
 
     ax.annotate("band extends downward only, because the\nrisk is the true voltage sitting below the prediction",
                 xy=(1.1, LIMIT + qhat + 0.0045 - qhat / 2), xytext=(1.35, 0.9482),
