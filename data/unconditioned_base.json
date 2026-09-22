@@ -1,0 +1,116 @@
+{
+  "definition_source": "feasibility/freeze_poster_numbers.py:dataset_facts (imported, not reimplemented)",
+  "limit": 0.94,
+  "strip_hi": 0.945,
+  "committed_gated": {
+    "source": "data/dataset.parquet",
+    "rows": 280500,
+    "scenarios": 1500,
+    "converged_n1_rows": 278955,
+    "violation_rate_pct": 17.48,
+    "boundary_0p94_to_0p945_pct": 56.86,
+    "clip_atom_share_pct": 0.0,
+    "min_vm_min": 0.7179,
+    "min_vm_max": 0.9603,
+    "critical_bus_top5": [
+      {
+        "bus": 75,
+        "share_pct": 27.1
+      },
+      {
+        "bus": 52,
+        "share_pct": 16.81
+      },
+      {
+        "bus": 106,
+        "share_pct": 9.31
+      },
+      {
+        "bus": 0,
+        "share_pct": 8.45
+      },
+      {
+        "bus": 20,
+        "share_pct": 4.12
+      }
+    ],
+    "conditional_boundary_pct": 68.9045,
+    "n_scenarios": 1500,
+    "n0_converged": 1500,
+    "n0_nonconverged": 0,
+    "n0_min_vm_min": 0.94,
+    "n0_min_vm_median": 0.943358,
+    "n0_min_vm_max": 0.958976,
+    "n0_share_below_0p94_pct": 0.0,
+    "n0_nonfinite": 0,
+    "largest_bin_lo": 0.94,
+    "largest_bin_hi": 0.941,
+    "largest_bin_share_pct": 14.0628,
+    "n1_rows": 278955,
+    "input_sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+  },
+  "unconditioned": {
+    "source": "data/unconditioned_base.parquet",
+    "rows": 280500,
+    "scenarios": 1500,
+    "converged_n1_rows": 277628,
+    "violation_rate_pct": 56.04,
+    "boundary_0p94_to_0p945_pct": 28.83,
+    "clip_atom_share_pct": 0.0,
+    "min_vm_min": 0.5028,
+    "min_vm_max": 0.9604,
+    "critical_bus_top5": [
+      {
+        "bus": 75,
+        "share_pct": 26.69
+      },
+      {
+        "bus": 52,
+        "share_pct": 25.61
+      },
+      {
+        "bus": 0,
+        "share_pct": 7.26
+      },
+      {
+        "bus": 106,
+        "share_pct": 5.77
+      },
+      {
+        "bus": 53,
+        "share_pct": 5.08
+      }
+    ],
+    "conditional_boundary_pct": 65.5823,
+    "n_scenarios": 1500,
+    "n0_converged": 1495,
+    "n0_nonconverged": 5,
+    "n0_min_vm_min": 0.595509,
+    "n0_min_vm_median": 0.940376,
+    "n0_min_vm_max": 0.957207,
+    "n0_share_below_0p94_pct": 47.4916,
+    "n0_nonfinite": 5,
+    "largest_bin_lo": 0.94,
+    "largest_bin_hi": 0.941,
+    "largest_bin_share_pct": 6.7335,
+    "n1_rows": 277628,
+    "input_sha256": "ed68c9b19f6bd000996a18449343f62c00eceb4a1fc2b02433aaf4f35fc21312"
+  },
+  "two_key_check": {
+    "frozen_boundary_pct": 56.86,
+    "recomputed_boundary_pct": 56.86,
+    "boundary_matches": true,
+    "frozen_violation_pct": 17.48,
+    "recomputed_violation_pct": 17.48,
+    "violation_matches": true
+  },
+  "case30_reference": {
+    "case30_thermal_boundary_pct": 7.0862,
+    "case30_voltage_boundary_pct": 20.0146,
+    "source": "data/case30_thermal/case30_thermal_frozen.json, data/case30_frozen.json"
+  },
+  "committed_n0_gate_pass_rate_pct": {
+    "source": "generate_dataset.py run log 2026-07-21 (NOT a committed file): accepted=1500, rejected=1287",
+    "value": 53.82
+  }
+}

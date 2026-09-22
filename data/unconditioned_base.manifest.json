@@ -1,0 +1,95 @@
+{
+  "schema": "B",
+  "artifact": "data/unconditioned_base.json",
+  "purpose": "Test whether the case118 boundary mass in [0.94,0.945) is a property of the network or an artifact of the N-0 acceptance gate (n0_min_vm >= 0.94, generate_dataset.py:256).",
+  "generating_script": "scripts/uncond_analysis.py",
+  "regeneration_argv": [
+    "scripts/uncond_analysis.py"
+  ],
+  "script_git_blob_sha": "e5e70239921ecca3cf4c579ac9df332c65e3738e",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "14bf5ecf7e5680bf174a1523269b46bd1ab4134c",
+  "dataset_build": {
+    "builder": "feasibility/generate_dataset.py",
+    "builder_git_blob_sha": "64bb815999943d516a724336e42e31145d9aa313",
+    "builder_unmodified": true,
+    "regeneration_argv": [
+      "feasibility/generate_dataset.py",
+      "--n",
+      "1500",
+      "--mult-lo",
+      "1.0",
+      "--mult-hi",
+      "1.12",
+      "--reg-lo",
+      "1.0",
+      "--reg-hi",
+      "1.12",
+      "--pf-lo",
+      "0.9",
+      "--pf-hi",
+      "1.15",
+      "--dvm",
+      "0.025",
+      "--no-gate",
+      "--out",
+      "data/unconditioned_base.parquet"
+    ],
+    "committed_argv_reference": "README.md:94-95",
+    "argv_delta_vs_committed": [
+      "--no-gate (the experimental variable)",
+      "--out data/unconditioned_base.parquet (so data/dataset.parquet is not overwritten)"
+    ],
+    "implicit_defaults_shared": {
+      "network": "case118",
+      "mode": "mixed",
+      "stress": "fixed",
+      "nproc": 1,
+      "seed": 1,
+      "P_GEN_OUT": 0.3
+    },
+    "elapsed_s": 3021.3,
+    "builder_stdout": "time_s=3021.3 scenarios_accepted=1500 rows=280500 cols=634 | N0_gate: accepted=1500 rejected=0 pass_rate=100.00% | nonconverged=1377 (0.49%) | N1 violations=155593 (56.0% of conv N-1) straddle=113467 deep_collapse=7448 | min_vm range=[0.503,0.960]"
+  },
+  "input_file": "data/unconditioned_base.parquet",
+  "input_sha256": "ed68c9b19f6bd000996a18449343f62c00eceb4a1fc2b02433aaf4f35fc21312",
+  "input_bytes": 9915861,
+  "additional_inputs": [
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e",
+      "role": "committed gated comparison set"
+    },
+    {
+      "path": "data/frozen_poster_numbers.json",
+      "sha256": "a4205c3eaf7096e27d652e4502eb2906483b797dfdc1a905fb4568709c641eb7",
+      "role": "two-key reference"
+    },
+    {
+      "path": "notes/preregistration.md",
+      "sha256": "b979236913302b7f5756a0c614795491899a51ca438e71d69e33414d3c880c3c",
+      "role": "pre-registered predictions"
+    }
+  ],
+  "definition_provenance": "feasibility/freeze_poster_numbers.py:dataset_facts imported and applied verbatim to both datasets; not reimplemented.",
+  "two_key_result": {
+    "recomputed_committed_boundary_pct": 56.86,
+    "frozen_boundary_pct": 56.86,
+    "recomputed_committed_violation_pct": 17.48,
+    "frozen_violation_pct": 17.48,
+    "both_match": true
+  },
+  "output_sha256": "7025e6e2aa5b2b8fc93916469aa41b2762402a6a9843a0b704805efb18723e83",
+  "output_md5": "c55411161d8a722b03665076f9cd1d6d",
+  "output_bytes": 3008,
+  "byte_reproducible": false,
+  "byte_reproducible_evidence": "Not asserted. The parquet is a fresh 50-minute stochastic build; only the analysis JSON is deterministic given that parquet (input_sha256 pins it).",
+  "interpreter": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+  "interpreter_short": "3.13.9",
+  "generated_utc": "2026-09-21T20:32:37Z",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "non_convergence_handling": "Nothing was filtered. 5 of 1500 base cases failed N-0 convergence (gated: 0, because the gate rejects them). 1372 of 279000 N-1 solves (0.49%) failed to converge. Both are excluded by the COMMITTED definition (converged==True), not by any filter added here. 7448 converged N-1 rows sit below 0.80 pu (deep_collapse, 2.68%); these are retained, exactly as the committed pipeline retains them.",
+  "manuscript_role": "Not yet used in the manuscript. Confound test only.",
+  "revision_note": "2026-09-21: re-run after two script fixes. (1) unconditioned.source now records the file actually read; dataset_facts hardcodes data/dataset.parquet, so the previous JSON mislabeled the ungated block (its input_sha256 was already correct). (2) sha256_of rewritten without a lambda and an unused empty dict removed. Only the source string changed; every number is identical (diffed against the 2026-09-10 output)."
+}
