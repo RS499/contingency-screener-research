@@ -1,0 +1,40 @@
+{
+  "schema": "B",
+  "artifact": "data/clip_artifact.json",
+  "purpose": "Put the clip-artifact numbers the STS report cites (Method, Dataset: 35.17% atom; 55.5% -> 56.86% boundary mass) in a tracked file. Previously they lived only in notes/artifact-clip-0.94.md, which is gitignored.",
+  "generating_script": "scripts/clip_artifact.py",
+  "regeneration_argv": [
+    "scripts/clip_artifact.py"
+  ],
+  "script_git_blob_sha": "884edb682c50304b22ebc04fe918fc144527f8a1",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "14bf5ecf7e5680bf174a1523269b46bd1ab4134c",
+  "inputs": [
+    {
+      "path": "data/archive_clip/dataset.parquet",
+      "sha256": "7efabd3f1a162d4ec1848ea9e5d96c92c6fd60fcc33e9429e2a87775883eb54c",
+      "role": "clip-era (first) dataset build, archived 2026-07-21",
+      "tracked_in_git": false,
+      "note": "data/archive_clip/ is gitignored; the sha256 pins the file that was read"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e",
+      "role": "committed fixed (resampled) v2 build"
+    }
+  ],
+  "definition_provenance": "feasibility/freeze_poster_numbers.py:dataset_facts imported and applied verbatim to both parquets; not reimplemented. atom_detail() adds the exact-0.94 count and the argmin-bus split of the atom.",
+  "recomputed_not_copied": "All values recomputed from the parquets on the date below. They agree with notes/artifact-clip-0.94.md (35.17% atom, 55.5% boundary) and, for the fixed build, with data/frozen_poster_numbers.json (56.86% boundary, 17.48% violations).",
+  "bus_convention": "atom_top_buses gives both the pandapower 0-based bus_index and the IEEE 1-based ieee_bus (= index + 1).",
+  "output_sha256": "291d320f81a76feb7c9766ccb833f657c7f61d129681e9439526a3c8a37e9f43",
+  "output_md5": "994211aa57b8124e603000521e3d070f",
+  "output_bytes": 2530,
+  "byte_reproducible": true,
+  "byte_reproducible_evidence": "Ran twice on 2026-09-21 with the argv above; md5 identical.",
+  "interpreter_short": "3.13.9",
+  "generated_utc": "2026-09-21T20:33:47Z",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; statistics over existing parquets only.",
+  "manuscript_role": "Backs report/paper_current_STS.tex, Method > Dataset, second paragraph."
+}

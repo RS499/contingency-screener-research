@@ -42,14 +42,25 @@
   citecolor=black,
   linkcolor=black
 }
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot[R]{\thepage} % Place the page number on the Right footer
+\renewcommand{\headrulewidth}{0pt} % Remove the top header line
+\renewcommand{\footrulewidth}{0pt} % Remove the bottom footer line
+
 
 \captionsetup{font=small,labelfont=bf,justification=justified}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
 \setlength{\parskip}{0pt}
 \setlength{\parindent}{0.3in}
 
 \renewcommand{\thesection}{\Roman{section}}
 
-\title{\vspace{-0.5in}\textbf{Conformal‑Gated Surrogate Screening for N‑1 Under‑Voltage Contingencies: Safety and Throughput Limits Set by Boundary Mass}}
+\title{\textbf{Conformal‑Gated Surrogate Screening for N‑1 Under‑Voltage Contingencies: Safety and Throughput Limits Set by Boundary Mass}}
 
 \author{Rajan Saha\\
 \small Conestoga High School, Berwyn, PA, USA\\
@@ -58,10 +69,10 @@
 \date{}
 
 \begin{document}
-
 \maketitle
+\thispagestyle{empty}\newpage
 
-\onehalfspacing
+\setstretch{1.5}
 
 % =====================================================================
 \section*{Abstract}
@@ -74,6 +85,12 @@ The power system grid should remain resilient following the loss of any individu
 power-flow surrogate, selective prediction, power system security
 
 % =====================================================================
+
+\thispagestyle{empty}\newpage
+
+\setcounter{page}{1}
+
+
 \section{Introduction}
 \label{sec:intro}
 
@@ -87,7 +104,7 @@ There have been several approaches when it comes to employing surrogate models f
 \section{Background}
 \label{sec:background}
 
-A per-unit (pu) voltage normalizes power grid values into simple decimals (where 1.0 is nominal), where 0.94 per unit indicates a 6\% under-voltage. Utilities must keep voltage within a band around nominal, and this study flags any part of the grid that fails the test against an under-voltage floor of 0.94 per unit. The N-0 condition represents the current state of the grid without any equipment outages, in which all voltages are above a minimum limit. I refer to this pre-outage state of the grid as a base case. However, if a single piece of equipment fails, the rest of the network must absorb the extra load, which could cause the voltage at one or more buses to go under the safe 0.94 pu floor. N-1 screening simulates these failures and detects any violations of the under-voltage floor before they happen. In this study, I do not check for overvoltage, although 73.1\% of converged N-1 rows are over 1.05 pu, or the upper bound of the acceptable voltage band. Also, the gate only bounds one predicted scalar, so adding more factors would require their own respective target and bands. I cannot check for thermal loading because case118 assigns every line the same 9,900 MVA rating, which is a placeholder value that is not realistic, so the test would pass every case regardless of conditions.
+A per-unit (pu) voltage normalizes power grid values into simple decimals (where 1.0 is nominal), where 0.94 per unit indicates a 6\% under-voltage. Utilities must keep voltage within a band around nominal, and this study flags any part of the grid that fails the test against an under-voltage floor of 0.94 per unit. The N-0 condition represents the current state of the grid without any equipment outages, in which all voltages are above a minimum limit. I refer to this pre-outage state of the grid as a base case. However, if a single piece of equipment fails, the rest of the network must absorb the extra load, which could cause the voltage at one or more buses to go under the safe 0.94 pu floor. N-1 screening simulates these failures and detects any violations of the under-voltage floor before they happen. In this study, I do not check for overvoltage, although 73.1\% of converged N-1 rows are over 1.05 pu, or the upper bound of the acceptable voltage band. Also, the gate only bounds one predicted scalar, so adding more factors would require their own respective target and bands. I cannot check for thermal loading because case118 assigns every line the same 9,900 MVA rating, which is a placeholder value that is not realistic, so the test would pass every case regardless of conditions \cite{case118}.
 
 An AC power flow solver is used to get the final voltages across a network after a single-element failure. Due to the math being complex and non-linear, it takes up to several milliseconds for one scenario, and the time multiplies across the whole grid. By contrast, a prediction from a machine learning model can take a fraction of a millisecond for predicting the single minimum voltage out of the whole grid. Classical fast screens rank power system contingencies without running a full solver \cite{ejebe1979}. While this indicates which equipment is subject to the most danger when there's an equipment failure, it fails to provide a numerical minimum voltage.
 
@@ -100,13 +117,15 @@ I study the IEEE 118-bus system \cite{case118}, a standard electrical power test
 \subsection{Dataset}
 
 I determined the load levels by multiplying the initial network load by multipliers. For Independent mode (750 bases), I multiplied the load by multipliers ranging from 1.0 to 1.12. For Regional mode (750 bases), I did the same but from 0.9009 to 1.2310 (43.91\% outside the target range), while reactive power scales across all 1,500 bases range from 0.8156 to 1.4083 (56.83\% outside the target range). The base cases were kept if the minimum pre-outage voltage exceeded 0.94 per unit. Each accepted base case was put through a simulation of 186 contingencies representing single-element failures, followed by an alternating-current power flow calculation to determine the minimum bus voltage after each contingency. The total sample contained 1{,}500 base cases and 280{,}500 rows, including the base cases. Out of those rows, 1{,}500 were N-0 base rows that were excluded because they aren't contingencies, while the other 279{,}000 rows are N-1 contingencies. Out of those 279{,}000, 45 were removed due to failing to converge, resulting in 278{,}955 converged rows. Minimum post-contingency bus voltages ranged from 0.7179 to 0.9603 per unit, and 17.48\% of the observations violated the voltage limit. I also tested the published IEEE 30-bus system, where the published base case is at 111.83\% line loading, which is discussed in Section~\ref{sec:discussion}. Since there are 41 rather than 186 branches, the 1{,}500 bases produce 61{,}500 contingency scenarios, all of which were solved successfully.
+
+The previous implementation of the dataset generator used a lower bound of 0.94 per unit for voltage set points and truncated any set points that fell below that lower bound value at the threshold. That resulted in a cluster of samples near $0.940000 \pm 1\times10^{-9}$ per unit, which accounted for 35.17\% of the converged rows, due mainly to bus 76, which was a generator bus and had a base voltage set point of 0.943 per unit. I discovered the problem after inverting the escalation versus band width relation, which returned unattainable accuracy requirements. After modifying the code and resampling the data, the clustering effect remained, moving from 55.5\% to 56.86\%. This implies that clustering is an inherent characteristic of the network and the sampling process, not due to any clipping.
 \subsection{Surrogates}
 
 The surrogate predicts the minimum voltage following an outage based on the per-bus loads, how generators are set up, baseline voltages, and the failed equipment. The two algorithms used in this study are a ridge linear regression model using standardized inputs and a histogram-based gradient-boosted tree ensemble \cite{sklearn}. The data is split into 60\%, 20\%, and 20\% sets using different base scenarios for training, calibration, and test sets, respectively. To tune the specific variables for each model, I split the training set again into three smaller parts: one to fit the model, one to calculate the band width $\hat{q}$, and one to test the gate on, never looking at the real calibration or test sets when choosing variable values. Instead, I keep whichever variable values skip the most solves while still missing 1\% or fewer of the violations, and I repeat the whole process with five different random splits. I test my models against two baselines: persistence, which predicts the pre-outage minimum voltage, and the training mean.
 
 \subsection{One-sided conformal band}
 
-The split-conformal prediction approach converts the residuals from the calibration dataset into a coverage guarantee (the number of cases the band is guaranteed to contain)\cite{lei2018,vovk2005}. Since the primary source of the danger is the voltage being less than the predicted one, I compute only the lower band. It is specified via $\hat{q}$ as the quantile for the coverage of the model overshoot (the difference between the prediction and the true value) based on the finite-sample rank approach proposed by Lei et al.\ \cite{lei2018}, and forms the one-sided band
+The split-conformal prediction approach converts the residuals from the calibration dataset into a coverage guarantee (the number of cases the band is guaranteed to contain)\cite{lei2018,vovk2005,angelopoulos2023}. Since the primary source of the danger is the voltage being less than the predicted one, I compute only the lower band. It is specified via $\hat{q}$ as the quantile for the coverage of the model overshoot (the difference between the prediction and the true value) based on the finite-sample rank approach proposed by Lei et al.\ \cite{lei2018}, and forms the one-sided band
 \begin{equation}
 \text{lower} = \hat{p} - \hat{q},
 \end{equation}
@@ -132,10 +151,13 @@ Here $n$ is the total number of contingencies, $t_{\text{solve}}$ is the solver 
 % ---------------------------------------------------------------------
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{data/gate_schematic_v3.png}
-\caption{The surrogate predicts post-outage voltage and attaches a band extending only downward. A case is certified if the whole band clears 0.94 pu, flagged if the prediction falls below it, and escalated if the band straddles it.}
-\vspace{2pt}
-{\footnotesize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+\includegraphics[width=0.8\textwidth]{data/gate_schematic_v4.png}
+\caption{The three-way gate mechanism is shown above. The band extends only downward, since the main risk I am screening for is the true voltage sitting below the prediction. A case is certified and the solver skipped when the whole band clears 0.94 pu; flagged and the solver skipped when the point prediction falls below it; and escalated to the exact solver when the band straddles the limit.}
+
+\vspace*{1ex}
+{\scriptsize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+
+
 \label{fig:gate}
 \end{figure}
 
@@ -196,13 +218,17 @@ ridge       & 3.8$\pm$0.1 & 0.77$\pm$0.01 & 49.1$\pm$2.7 & 2.96$\pm$0.44 & 2.04$
 histgb      & 1.6$\pm$0.1 & 0.92$\pm$0.00 & 30.6$\pm$2.5 & 4.72$\pm$0.98 & 3.29$\pm$0.30 \\
 \bottomrule
 \end{tabular}
+
+\vspace*{1ex}
+{\scriptsize Table created by Rajan Saha using Python and \LaTeX, 2026}
+
+
 \end{table}
-\vspace{2pt}
-{\footnotesize Table created by Rajan Saha using Python and LaTeX, 2026}
+
 
 \subsection{Safety comes at high escalation}
 
-In Table~\ref{tab:ops}, I adjusted the target from 0.90 to 0.98 and recorded the missed and escalation rates. As the target gets larger, the missed rate decreases, but the escalation rate goes up because the band size has to be bigger to account for model overshoot. For the gradient-boosted model, increasing the target from 0.90 to 0.94 decreases the missed rate from 4.72\% to 2.48\%, increases the escalation from 30.6\% to 46.7\%, and decreases the speed-up from 3.29 to 2.15 times. The ridge model shows a similar pattern as well, with the average of missed cases falling below 1\% at 0.94 for the ridge model (0.79\% missed, 64.3\% escalation, 1.56 times faster) and 0.97 for the gradient-boosted model (0.83\% missed, 63.7\% escalation, 1.58 times faster), although the error bars still reach up to about 1.0--1.07\%, as Fig.~\ref{fig:tradeoff} shows.
+In Table~\ref{tab:ops}, I adjusted the target from 0.90 to 0.98 and recorded the missed and escalation rates. Graphing the rate of misses versus the percentage of cases for which the gate solves the problem without the help of the solver provides the risk--coverage curve for selective prediction \cite{geifman2017,elyaniv2010} (where coverage is the acceptance rate). As the target gets larger, the missed rate decreases, but the escalation rate goes up because the band size has to be bigger to account for model overshoot. For the gradient-boosted model, increasing the target from 0.90 to 0.94 decreases the missed rate from 4.72\% to 2.48\%, increases the escalation from 30.6\% to 46.7\%, and decreases the speed-up from 3.29 to 2.15 times. The ridge model shows a similar pattern as well, with the average of missed cases falling below 1\% at 0.94 for the ridge model (0.79\% missed, 64.3\% escalation, 1.56 times faster) and 0.97 for the gradient-boosted model (0.83\% missed, 63.7\% escalation, 1.58 times faster), although the error bars still reach up to about 1.0--1.07\%, as Fig.~\ref{fig:tradeoff} shows.
 
 
 % ---------------------------------------------------------------------
@@ -234,9 +260,15 @@ histgb & 0.97 & 63.7$\pm$5.1 & 97.0$\pm$0.2 & 0.83$\pm$0.24 & 1.58$\pm$0.12 \\
 histgb & 0.98 & 72.0$\pm$3.7 & 98.0$\pm$0.2 & 0.30$\pm$0.13 & 1.39$\pm$0.07 \\
 \bottomrule
 \end{tabular}
+
+\vspace*{1ex}
+{\scriptsize Table created by Rajan Saha using Python and \LaTeX, 2026}
+
+
 \end{table}
-\vspace{2pt}
-{\footnotesize Table created by Rajan Saha using Python and LaTeX, 2026}
+
+
+
 
 
 % ---------------------------------------------------------------------
@@ -247,14 +279,18 @@ histgb & 0.98 & 72.0$\pm$3.7 & 98.0$\pm$0.2 & 0.30$\pm$0.13 & 1.39$\pm$0.07 \\
 \centering
 \includegraphics[width=0.6\textwidth]{data/tradeoff_hero_col_v2.png}
 \caption{Escalation (solid, left axis) and missed violations (dotted, right axis) are plotted against the safety target and averaged over five splits. The mean missed rate first falls just under 1\% at 0.94 coverage for ridge and 0.97 for the gradient-boosted model, with high escalation at both and the error bars still reaching slightly above 1\%.}
-\vspace{2pt}
-{\footnotesize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+
+\vspace*{1ex}
+{\scriptsize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+
 \label{fig:tradeoff}
 \end{figure}
+
 
 \subsection{The faster model is not the safer one}
 
 On the IEEE 118-bus system, the more accurate model is not safer at any point in the coverage axis, and Table~\ref{tab:models} shows that accuracy cannot settle this decision by itself. It can be said that the gradient-boosted model is much more accurate than the linear model, and has a 3.29 times speedup compared to 2.04 times. However, taking into account safety, it is clear that at a coverage of 0.96, the linear model misses 0.14\% of the violations while the gradient-boosted model misses 1.36\%. The linear model also shows the low missed rate of all targets during the sweep in the IEEE 118-bus system. At 0.90 coverage, 74\% of misses fall within one band width of the limit for the linear model and 55\% for the gradient-boosted model (Fig.~\ref{fig:missdepth}), with 26.7\% of ridge misses and 21.4\% of histgb misses falling more than 0.005 pu below the limit. The worst miss was a case at 0.0915 per unit under the limit, which was a bus that fell to 0.8485.
+
 
 % ---------------------------------------------------------------------
 % FIGURE 3 (fig:missdepth) -- miss-depth histogram, from
@@ -263,16 +299,19 @@ On the IEEE 118-bus system, the more accurate model is not safer at any point in
 % ---------------------------------------------------------------------
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{data/miss_depth_v2.png}
-\caption{The histogram measures how far missed violations fall below 0.94 pu at 90\% coverage on a logarithmic count scale. Dashed lines mark each model's band width. Most misses stay within one band, but a thin tail reaches 0.0915 pu, where one certified bus had fallen to 0.8485.}
-\vspace{2pt}
-{\footnotesize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+\includegraphics[width=0.6\textwidth]{data/miss_depth_v3.png}
+\caption{The histogram above measures how far missed violations fall below the 0.94 pu floor at 90\% coverage on a logarithmic count scale. The dashed lines mark each model's band width. 74\% of ridge misses and 55\% of histgb misses fall within one band width each. The deepest miss falls 0.0915 pu below the limit, where one certified bus had fallen to 0.8485 pu, well below the safe threshold.}
+
+\vspace*{1ex}
+{\scriptsize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+
 \label{fig:missdepth}
 \end{figure}
 
+
 \subsection{The boundary layer sets a floor on escalation}
 
-Most of the contingencies are at a distance of less than 0.005 per unit from the boundary, thus causing a significant number of escalations. The distribution of voltages after contingencies is shown in Fig.~\ref{fig:boundary}. Out of all the converged cases, 56.86\% are in a narrow range of [0.94, 0.945), slightly higher than the threshold, and 17.48\% lie below the limit as violations. Importantly, there is not a single 0.001-wide unit bin that accounts for more than about 14\% of the whole dataset. Certain buses account for extreme events, with bus 76 being the weakest one, holding the minimum voltage in 27.1\% of contingencies, whereas bus 53 is second with 16.81\%, followed by bus 107 with 9.31\%, as shown in Fig.~\ref{fig:busmap}.
+Most of the contingencies are at a distance of less than 0.005 per unit from the boundary, thus causing a significant number of escalations. This is an analogy to classical reject-option results rather than a direct application of it. Chow \cite{chow1970} studied a Bayes-optimal classifier that rejects whenever the maximum posterior probability is smaller than a set threshold, and he proved that the rejection threshold is the local slope of the error--reject curve; margin conditions \cite{tsybakov2004,mammen1999} give the rate of decay of the probability mass in a shrinking band around the class boundary. Both have the posterior confidence of being close to a class boundary as their common feature, while my escalation region is one band width wide above a fixed voltage limit, so what carries over is the mechanism instead of the theorem. The distribution of voltages after contingencies is shown in Fig.~\ref{fig:boundary}. Out of all the converged cases, 56.86\% are in a narrow range of [0.94, 0.945), slightly higher than the threshold, and 17.48\% lie below the limit as violations. Importantly, there is not a single 0.001-wide unit bin that accounts for more than about 14\% of the whole dataset. Certain buses account for extreme events, with bus 76 being the weakest one, holding the minimum voltage in 27.1\% of contingencies, whereas bus 53 is second with 16.81\%, followed by bus 107 with 9.31\%, as shown in Fig.~\ref{fig:busmap}.
 
 % ---------------------------------------------------------------------
 % FIGURE 4 (fig:boundary) -- boundary-mass histogram, from
@@ -280,10 +319,12 @@ Most of the contingencies are at a distance of less than 0.005 per unit from the
 % ---------------------------------------------------------------------
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{data/boundary_mass_hist.png}
-\caption{Lowest voltage across all failure cases; anything left under the line is a violation. Over half are within 0.005 pu above the limit, while the tail below the limit drops much lower.}
-\vspace{2pt}
-{\footnotesize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+\includegraphics[width=0.6\textwidth]{data/boundary_mass_hist_v2.png}
+\caption{Minimum bus voltage after a contingency across 278,955 converged N-1 cases; anything left of the limit line is a violation. The shaded strip spans [0.94, 0.945) and holds 56.9\% of all cases, yet the tallest 0.001 pu bin within it holds only 14.1\%. The x-axis is truncated at 0.87 pu, below which 0.5\% of cases fall.}
+
+
+\vspace*{1ex}
+{\scriptsize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 \label{fig:boundary}
 \end{figure}
 
@@ -294,11 +335,11 @@ Most of the contingencies are at a distance of less than 0.005 per unit from the
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{data/critical_bus_map.png}
+\includegraphics[width=0.55\textwidth]{data/critical_bus_map.png}
 \caption{Buses that most frequently hold the minimum post-contingency voltage across all converged N-1 cases. The three dominant buses are 76, 53, and 107 (see main text for their shares: 27.1\%, 16.81\%, and 9.31\%). The layout shown is topological rather than geographic; node positions do not correspond to physical locations.}
 \label{fig:busmap}
-\vspace{2pt}
-{\footnotesize Figure created by Rajan Saha using Matplotlib 3.11.1, 2026.}
+\vspace*{1ex}
+{\scriptsize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 \end{figure}
 
 
@@ -318,13 +359,13 @@ I tested five networks in total, with three of them completing the full cross-ne
 \section{Discussion and limitations}
 \label{sec:discussion}
 
-Calibrated uncertainty, as well as making the decision of either outsourcing the problem or not to a more complex model \cite{desalvo2015} and providing the model with multiple choices \cite{angelopoulos2024,cortes2016,chow1970}, are proven methods. In this study, two things differ from that literature. First, I fall back to an exact solver instead of a more complex model, so the escalated case can be resolved, and second, I also explain why the speedup is capped, which is because most of the data is very close to the limit.
+Calibrated uncertainty, as well as making the decision of either outsourcing the problem or not to a more complex model \cite{desalvo2015} and providing the model with multiple choices \cite{angelopoulos2024,cortes2016,chow1970,elyaniv2010}, are proven methods. In this study, two things differ from that literature. First, I fall back to an exact solver instead of a more complex model, so the escalated case can be resolved, and second, I also explain why the speedup is capped, which is because most of the data is very close to the limit.
 
 My approach differs from Manoharan's audited population control \cite{manoharan2026}, which is itself a form of distribution-free risk control \cite{bates2021}. His method uses a bound for the proportion of skipped cases that are unsafe, while the gate uses a margin of error that is subtracted from each prediction. This establishes the lower bound because, in split conformal prediction, I can be correct on average but not necessarily inside the band. If one demands perfect correctness with a limited amount of calibration data, then the prediction intervals become extremely wide, to the point where it becomes useless \cite{barber2021}. Every base case generates 186 related contingencies, and therefore, the coverage rates are measured averages and not an assurance for a single contingency.
 
 The key findings obtained during the experiments relate to a network with a realistic topology and synthetic loads and generation. This escalation floor is set by how the distribution of the data occurs in relation to the 0.94 pu limit. For instance, in a thermally realistic regeneration of the IEEE 30-bus network, 7.09\% of contingencies fall just above the 0.94 pu limit, while another 15.40\% fall below it. For case118, 56.86\% fall just above the limit, and 17.48\% fall below it. The original 30-bus system is thermally unrealistic, since it has 111.83\% line loading in its base case. The gradient-boosted model with a coverage target of 0.97 gives 5.84$\pm$1.25\% escalations. The target for which the miss rate becomes less than 1\% remains unresolved after five split-ups: for 0.96 it is 0.91$\pm$0.22\%, with only two of five being under this limit. I use 0.94 pu as a conservative choice. Only 86 of the 1,500 base cases are above 0.95 pu, and increasing the threshold to 0.95 pu leads to a ridge escalation of 1.38$\pm$0.33\%. In other words, it finds everything hazardous.
 
-All metrics reported use the sampled N-1 population, which includes approximately one-quarter of cases involving both a branch outage and a single-generator outage. Moreover, mathematical proof is not capable of guaranteeing the safety of N-2 outages because the use of conformal prediction assumes that the data is exchangeable with the calibration set \cite{vovk2005}. Also, I only checked if the final voltage was too low, not for thermal overheating, over-voltage, or whether or not the grid crashed in the first place, which is called dynamic stability. The band only counts instances where the model is wrong and not how badly it fails. In addition, the worst case, at 0.0915 per unit, represents a case of sudden collapse where the generator at that particular worst-case scenario's weakest bus reaches the limit of reactive power and can no longer control the voltage. The model cannot foresee this event just from the pre-outage data. Lastly, all of the testing data were obtained by making slight modifications to the same pre-contingency grid setup. Therefore, there is some uncertainty as to how often the models should be recalibrated due to changes in the seasons and changes in demand.
+All metrics reported use the sampled N-1 population, which includes approximately one-quarter of cases involving both a branch outage and a single-generator outage. Moreover, mathematical proof is not capable of guaranteeing the safety of N-2 outages because the use of conformal prediction assumes that the data is exchangeable with the calibration set \cite{vovk2005}. Weighted conformal prediction relaxes exchangeability in an instance where there is a shift in the covariate distribution and the likelihood ratio between the two distributions is either known or can be estimated \cite{tibshirani2019}. However, this ratio is only present in the case where the shifted distribution is absolutely continuous relative to the calibration distribution, which is not the case for the N-2 instance I have. Also, I only checked if the final voltage was too low, not for thermal overheating, over-voltage, or whether or not the grid crashed in the first place, which is called dynamic stability. The band only counts instances where the model is wrong and not how badly it fails. In addition, the worst case, at 0.0915 per unit, represents a case of sudden collapse where the generator at that particular worst-case scenario's weakest bus reaches the limit of reactive power and can no longer control the voltage. The model cannot foresee this event just from the pre-outage data. Lastly, all of the testing data were obtained by making slight modifications to the same pre-contingency grid setup. Therefore, there is some uncertainty as to how often the models should be recalibrated due to changes in the seasons and changes in demand.
 
 \subsection{Physics-feature ablation}\label{subsec:ablation}
 
@@ -362,45 +403,60 @@ This paper has been written as part of the Boston University RISE data science p
 % text, proceedings.mlr.press/v283/christianson25a.html, and the NEMA official
 % excerpt respectively). No field is filled from memory.
 % NERC (nerc) confirmed against nerc.com as TPL-001-5.1, effective
-% 2023-07-01 -- ADD THE VERIFICATION DATE HERE, every other entry has one.
+% 2023-07-01; verified 2026-09-15 (nerc.com PDF and standard page, notes/prior-art.md section 9.10).
 % =====================================================================
+\newpage
+\thispagestyle{empty}
 \singlespacing
-\begin{thebibliography}{17}
+\begin{thebibliography}{23}
 
 \bibitem{nerc} \textit{Transmission System Planning Performance Requirements}, NERC Reliability Standard TPL-001-5.1, North American Electric Reliability Corporation, Atlanta, GA, USA, eff. Jul. 1, 2023.
 
-\bibitem{bates2021} S. Bates, A. Angelopoulos, L. Lei, J. Malik, and M. Jordan, ``Distribution-free, risk-controlling prediction sets,'' \textit{J. ACM}, vol. 68, no. 6, art. 43, 2021.
+\bibitem{bates2021} S. Bates, A. Angelopoulos, L. Lei, J. Malik, and M. I. Jordan, ``Distribution-free, risk-controlling prediction sets,'' \textit{J. ACM}, vol. 68, no. 6, art. no. 43, pp. 1--34, Sep. 2021, doi: 10.1145/3478535.
 
-\bibitem{manoharan2026} J. Manoharan, ``Audited selective verification for risk-controlled N-1 thermal contingency screening under deployment shift,'' arXiv:2607.13221, 2026.
+\bibitem{manoharan2026} J. Manoharan, ``Audited selective verification for risk-controlled N-1 thermal contingency screening under deployment shift,'' arXiv:2607.13221, Jul. 2026.
 
-\bibitem{alcantara2026} A. Alc\'antara and S. Chatzivasileiadis, ``Trustworthiness layer for foundation models in power systems: Application to N-k contingency screening,'' arXiv:2602.07995v2, 2026.
+\bibitem{alcantara2026} A. Alc\'antara and S. Chatzivasileiadis, ``Trustworthiness layer for foundation models in power systems: Application to N-k contingency screening,'' arXiv:2602.07995v2, Apr. 2026.
 
 \bibitem{christianson2025} N. Christianson, W. Cui, S. Low, W. Yang, and B. Zhang, ``Fast and reliable N-k contingency screening with input-convex neural networks,'' in \textit{Proc. 7th Annu. Learn. Dynamics Control Conf. (L4DC)}, ser. PMLR, vol. 283, 2025, pp. 527--539.
 
-\bibitem{ejebe1979} G. C. Ejebe and B. F. Wollenberg, ``Automatic contingency selection,'' \textit{IEEE Trans. Power App. Syst.}, vol. PAS-98, no. 1, pp. 97--109, 1979.
+\bibitem{ejebe1979} G. C. Ejebe and B. F. Wollenberg, ``Automatic contingency selection,'' \textit{IEEE Trans. Power App. Syst.}, vol. PAS-98, no. 1, pp. 97--109, Jan. 1979, doi: 10.1109/TPAS.1979.319518.
 
-\bibitem{case118} R. Christie, ``Power systems test case archive: IEEE 118-bus system,'' Univ. of Washington, 1993. [Online]. Available: https://labs.ece.uw.edu/pstca/
+\bibitem{case118} R. Christie, ``118 bus power flow test case,'' Power Systems Test Case Archive, Univ. of Washington, Seattle, WA, USA, 1993. [Online]. Available: \url{https://labs.ece.uw.edu/pstca/pf118/pg_tca118bus.htm}
 
-\bibitem{pandapower} L. Thurner, A. Scheidler, F. Sch\"afer, \textit{et al.}, ``pandapower---an open-source Python tool for convenient modeling, analysis, and optimization of electric power systems,'' \textit{IEEE Trans. Power Syst.}, vol. 33, no. 6, pp. 6510--6521, Nov. 2018.
+\bibitem{pandapower} L. Thurner, A. Scheidler, F. Sch\"afer, \textit{et al.}, ``pandapower---an open-source Python tool for convenient modeling, analysis, and optimization of electric power systems,'' \textit{IEEE Trans. Power Syst.}, vol. 33, no. 6, pp. 6510--6521, Nov. 2018, doi: 10.1109/TPWRS.2018.2829021.
 
 \bibitem{sklearn} F. Pedregosa \textit{et al.}, ``Scikit-learn: Machine learning in Python,'' \textit{J. Mach. Learn. Res.}, vol. 12, pp. 2825--2830, 2011.
 
-\bibitem{lei2018} J. Lei, M. G'Sell, A. Rinaldo, R. J. Tibshirani, and L. Wasserman, ``Distribution-free predictive inference for regression,'' \textit{J. Amer. Statist. Assoc.}, vol. 113, no. 523, pp. 1094--1111, 2018.
+\bibitem{lei2018} J. Lei, M. G'Sell, A. Rinaldo, R. J. Tibshirani, and L. Wasserman, ``Distribution-free predictive inference for regression,'' \textit{J. Amer. Statist. Assoc.}, vol. 113, no. 523, pp. 1094--1111, 2018, doi: 10.1080/01621459.2017.1307116.
 
-\bibitem{vovk2005} V. Vovk, A. Gammerman, and G. Shafer, \textit{Algorithmic Learning in a Random World}. New York, NY, USA: Springer, 2005.
+\bibitem{vovk2005} V. Vovk, A. Gammerman, and G. Shafer, \textit{Algorithmic Learning in a Random World}. New York, NY, USA: Springer, 2005, doi: 10.1007/b106715.
+  
+\bibitem{angelopoulos2023} A. N. Angelopoulos and S. Bates, ``Conformal prediction: A gentle introduction,'' \textit{Found. Trends Mach. Learn.}, vol. 16, no. 4, pp. 494--591, 2023, doi: 10.1561/2200000101.
 
 \bibitem{romano2019} Y. Romano, E. Patterson, and E. J. Cand\`es, ``Conformalized quantile regression,'' in \textit{Adv. Neural Inf. Process. Syst. (NeurIPS)}, vol. 32, 2019, pp. 3538--3548.
 
+\bibitem{geifman2017} Y. Geifman and R. El-Yaniv, ``Selective classification for deep neural networks,'' in \textit{Adv. Neural Inf. Process. Syst. (NeurIPS)}, vol. 30, 2017, pp. 4878--4887.
+
+\bibitem{chow1970} C. Chow, ``On optimum recognition error and reject tradeoff,'' \textit{IEEE Trans. Inf. Theory}, vol. 16, no. 1, pp. 41--46, Jan. 1970, doi: 10.1109/TIT.1970.1054406.
+  
+\bibitem{tsybakov2004} A. B. Tsybakov, ``Optimal aggregation of classifiers in statistical learning,'' \textit{Ann. Statist.}, vol. 32, no. 1, pp. 135--166, Feb. 2004, doi: 10.1214/aos/1079120131.
+  
+\bibitem{mammen1999} E. Mammen and A. B. Tsybakov, ``Smooth discrimination analysis,'' \textit{Ann. Statist.}, vol. 27, no. 6, pp. 1808--1829, Dec. 1999, doi: 10.1214/aos/1017939240.
+
 \bibitem{barber2021} R. F. Barber, E. J. Cand\`es, A. Ramdas, and R. J. Tibshirani, ``The limits of distribution-free conditional predictive inference,'' \textit{Inf. Inference: J. IMA}, vol. 10, no. 2, pp. 455--482, 2021.
 
-\bibitem{desalvo2015} G. DeSalvo, M. Mohri, and U. Syed, ``Learning with deep cascades,'' in \textit{Algorithmic Learning Theory (ALT)}, ser. Lecture Notes in Comput. Sci., vol. 9355. Springer, 2015, pp. 254--269.
+\bibitem{tibshirani2019} R. J. Tibshirani, R. Foygel Barber, E. J. Cand\`es, and A. Ramdas, ``Conformal prediction under covariate shift,'' in \textit{Adv. Neural Inf. Process. Syst. (NeurIPS)}, vol. 32, 2019.
 
-\bibitem{angelopoulos2024} A. N. Angelopoulos \textit{et al.}, ``Conformal triage for medical imaging AI deployment,'' medRxiv, 2024, doi: 10.1101/2024.02.09.24302543.
+\bibitem{desalvo2015} G. DeSalvo, M. Mohri, and U. Syed, ``Learning with deep cascades,'' in \textit{Algorithmic Learning Theory (ALT)}, ser. Lecture Notes in Comput. Sci., vol. 9355. Cham, Switzerland: Springer, 2015, pp. 254--269, doi: 10.1007/978-3-319-24486-0\_17.
 
-\bibitem{cortes2016} C. Cortes, G. DeSalvo, and M. Mohri, ``Learning with rejection,'' in \textit{Algorithmic Learning Theory (ALT)}, ser. Lecture Notes in Comput. Sci., vol. 9925. Springer, 2016, pp. 67--82.
+\bibitem{angelopoulos2024} A. N. Angelopoulos \textit{et al.}, ``Conformal triage for medical imaging AI deployment,'' medRxiv preprint, 2024, doi: 10.1101/2024.02.09.24302543.
 
-\bibitem{chow1970} C. K. Chow, ``On optimum recognition error and reject tradeoff,'' \textit{IEEE Trans. Inf. Theory}, vol. 16, no. 1, pp. 41--46, 1970.
+\bibitem{cortes2016} C. Cortes, G. DeSalvo, and M. Mohri, ``Learning with rejection,'' in \textit{Algorithmic Learning Theory (ALT)}, ser. Lecture Notes in Artif. Intell., vol. 9925. Cham, Switzerland: Springer, 2016, pp. 67--82, doi: 10.1007/978-3-319-46379-7\_5.
+
+\bibitem{elyaniv2010} R. El-Yaniv and Y. Wiener, ``On the foundations of noise-free selective classification,'' \textit{J. Mach. Learn. Res.}, vol. 11, pp. 1605--1641, 2010.
 
 \end{thebibliography}
+\thispagestyle{empty}
 
 \end{document}

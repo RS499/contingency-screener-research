@@ -1,0 +1,102 @@
+{
+  "definition_source": "feasibility/freeze_poster_numbers.py:dataset_facts (imported, not reimplemented)",
+  "atom_definition": "share of converged N-1 rows whose min_vm, rounded to 9 decimals, equals 0.94 (merges the solver-rounding bit patterns around 0.94); dataset_facts.clip_atom_share_pct",
+  "boundary_definition": "share of converged N-1 rows with 0.94 <= min_vm < 0.945; dataset_facts.boundary_0p94_to_0p945_pct",
+  "clip_era": {
+    "source": "data/archive_clip/dataset.parquet",
+    "rows": 280500,
+    "scenarios": 1500,
+    "converged_n1_rows": 278960,
+    "violation_rate_pct": 28.56,
+    "boundary_0p94_to_0p945_pct": 55.51,
+    "clip_atom_share_pct": 35.17,
+    "min_vm_min": 0.7319,
+    "min_vm_max": 0.9629,
+    "critical_bus_top5": [
+      {
+        "bus": 75,
+        "share_pct": 37.33
+      },
+      {
+        "bus": 106,
+        "share_pct": 17.48
+      },
+      {
+        "bus": 0,
+        "share_pct": 9.36
+      },
+      {
+        "bus": 52,
+        "share_pct": 8.53
+      },
+      {
+        "bus": 37,
+        "share_pct": 2.32
+      }
+    ],
+    "atom_rows": 98111,
+    "exact_0p94_rows": 28908,
+    "exact_0p94_pct": 10.36,
+    "atom_top_buses": [
+      {
+        "bus_index": 75,
+        "ieee_bus": 76,
+        "share_of_atom_pct": 56.73
+      },
+      {
+        "bus_index": 106,
+        "ieee_bus": 107,
+        "share_of_atom_pct": 34.73
+      },
+      {
+        "bus_index": 0,
+        "ieee_bus": 1,
+        "share_of_atom_pct": 8.33
+      }
+    ],
+    "input_sha256": "7efabd3f1a162d4ec1848ea9e5d96c92c6fd60fcc33e9429e2a87775883eb54c"
+  },
+  "fixed_v2": {
+    "source": "data/dataset.parquet",
+    "rows": 280500,
+    "scenarios": 1500,
+    "converged_n1_rows": 278955,
+    "violation_rate_pct": 17.48,
+    "boundary_0p94_to_0p945_pct": 56.86,
+    "clip_atom_share_pct": 0.0,
+    "min_vm_min": 0.7179,
+    "min_vm_max": 0.9603,
+    "critical_bus_top5": [
+      {
+        "bus": 75,
+        "share_pct": 27.1
+      },
+      {
+        "bus": 52,
+        "share_pct": 16.81
+      },
+      {
+        "bus": 106,
+        "share_pct": 9.31
+      },
+      {
+        "bus": 0,
+        "share_pct": 8.45
+      },
+      {
+        "bus": 20,
+        "share_pct": 4.12
+      }
+    ],
+    "atom_rows": 0,
+    "exact_0p94_rows": 0,
+    "exact_0p94_pct": 0.0,
+    "atom_top_buses": [],
+    "input_sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+  },
+  "cited_in_sts": {
+    "clip_atom_pct": 35.17,
+    "boundary_before_fix_pct": 55.51,
+    "boundary_after_fix_pct": 56.86
+  }
+}
