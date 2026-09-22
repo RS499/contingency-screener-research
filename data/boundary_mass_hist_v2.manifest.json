@@ -1,0 +1,43 @@
+{
+  "schema": "B",
+  "figure": "boundary_mass_hist_v2.png",
+  "generating_script": "feasibility/boundary_mass_hist.py",
+  "regeneration_argv": [
+    "feasibility/boundary_mass_hist.py",
+    "--no-prose",
+    "--out",
+    "data/boundary_mass_hist_v2.png"
+  ],
+  "script_git_blob_sha": "025df3810b44b3932525a1a19aa57d7ddec3a29a",
+  "script_tracked_in_git": true,
+  "script_blob_note": "Blob sha is of the WORKING-TREE script (git hash-object), modified 2026-09-15 to add the prose-free option and not yet committed.",
+  "repo_head_commit": "14bf5ecf7e5680bf174a1523269b46bd1ab4134c",
+  "inputs": [
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/frozen_poster_numbers.json",
+      "sha256": "a4205c3eaf7096e27d652e4502eb2906483b797dfdc1a905fb4568709c641eb7"
+    }
+  ],
+  "output_sha256": "d702bc0bc6e3876090443d5184d4156d25593ea31e28eac9d33a0486edcb776c",
+  "output_md5": "705ca55f4e6cf3061d1a9d58919bc1f9",
+  "output_bytes": 52322,
+  "byte_reproducible": true,
+  "byte_reproducible_evidence": "Regenerated 2026-09-15 a second time into a scratch path with the argv above; md5 identical.",
+  "default_mode_regression": "With the new option omitted, the edited script reproduced data/boundary_mass_hist.png byte-identically (md5 match, 2026-09-15).",
+  "interpreter_short": "3.13.9",
+  "generated_utc": "2026-09-15T22:36:24Z",
+  "plotting_library": "matplotlib 3.11.1",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "supersedes_for_sts": "data/boundary_mass_hist.png",
+  "revision_note": "2026-09-15: explanatory prose removed from inside the image and moved to the STS caption. No data, band width, bin, or numeric annotation changed. The previous file is kept because paper_current_URTC_20260808.tex (or the prior STS revision) references it.",
+  "removed_strings": [
+    "56.9% of cases fall in this 0.005 pu strip, yet the tallest 0.001 pu bin holds just 14.1% (with arrow)",
+    "0.5% of cases fall below 0.870 pu (not shown)"
+  ],
+  "no_new_solves": "No AC solve, dataset build, or model fit was run. boundary_mass_hist_v2 is re-plotted from data/dataset.parquet and data/frozen_poster_numbers.json."
+}

@@ -95,7 +95,7 @@ def panel_common(ax, fam):
     ax.set_xlim(0, XHI)
 
 
-def make_hist(depths, printed, out_path):
+def make_hist(depths, printed, out_path, prose):
     fig, axes = plt.subplots(2, 1, figsize=(3.5, 4.3), sharex=True)
     edges = np.arange(0, XHI + 0.001, 0.001)
     for ax, fam in zip(axes, ("ridge", "histgb")):
@@ -107,11 +107,17 @@ def make_hist(depths, printed, out_path):
         qm = printed[fam]["regen"]["qhat90_mean"]
         share = printed[fam]["regen"]["share_below_qhat"] * 100
         ax.axvline(qm, color="black", lw=1.2, ls="--", zorder=4)
-        ax.text(qm + 0.002, 0.90, f"q̂@0.90 = {qm:.4f}\n{share:.0f}% of misses within band",
+        label = f"q̂@0.90 = {qm:.4f}"
+        if prose:
+            label = label + f"\n{share:.0f}% of misses within band"
+        ax.text(qm + 0.002, 0.90, label,
                 transform=trans, fontsize=FS_ANNOT - 1, color="black", va="top", ha="left")
         ax.plot([DEEPEST], [1], marker="v", color=C_DEEP, ms=6, clip_on=False, zorder=5)
         ax.set_ylabel(f"{fam}\nmiss count (log)", fontsize=FS_LABEL)
-    axes[0].annotate(f"deepest miss {DEEPEST:.4f} pu\n(scen 101000025, line 78 out)",
+    deepest = f"deepest miss {DEEPEST:.4f} pu"
+    if prose:
+        deepest = deepest + "\n(scen 101000025, line 78 out)"
+    axes[0].annotate(deepest,
                      xy=(DEEPEST, 0.06), xycoords=axes[0].get_xaxis_transform(),
                      xytext=(0.42, 0.55), textcoords="axes fraction",
                      fontsize=FS_ANNOT - 1, color=C_DEEP, ha="center", va="center",
@@ -152,7 +158,23 @@ def make_cdf(depths, printed, out_path):
     plt.close(fig)
 
 
+def plot_from_pool(out_path):
+    # re-plot the histogram WITHOUT refitting: read the depths and per-family stats that
+    # main() saved to data/miss_depth_pool.json, and omit the "% within band" prose
+    pool = json.load(open("data/miss_depth_pool.json"))
+    depths = {}
+    printed = {}
+    for fam in ("ridge", "histgb"):
+        depths[fam] = np.asarray(pool["families"][fam]["depths"], dtype=np.float64)
+        printed[fam] = dict(regen=pool["families"][fam]["stats"])
+    make_hist(depths, printed, out_path, False)
+    print(f"wrote {out_path} from data/miss_depth_pool.json (no refit, no prose)")
+
+
 def main():
+    if len(sys.argv) == 3 and sys.argv[1] == "--from-pool":
+        plot_from_pool(sys.argv[2])
+        return
     cfg = m2_configs()
     depths, qrows, qhat90 = collect_depths(cfg)
     printed = verify(depths, qrows, qhat90)
@@ -161,7 +183,7 @@ def main():
         stats=printed[fam]["regen"]) for fam in ("ridge", "histgb")})
     with open("data/miss_depth_pool.json", "w") as f:
         json.dump(pool, f)
-    make_hist(depths, printed, "data/miss_depth_v2.png")
+    make_hist(depths, printed, "data/miss_depth_v2.png", True)
     make_cdf(depths, printed, "data/miss_depth_v2_cdf.png")
 
     meta = dict(figure="miss-depth distribution of v2 M2 missed violations, coverage target 0.90",

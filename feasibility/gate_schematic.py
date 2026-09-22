@@ -39,7 +39,8 @@ def draw_case(ax, x, pred, band, color, role, note):
             markeredgewidth=0.8, zorder=4)
     ax.text(x, pred + 0.0012, role, ha="center", va="bottom", fontsize=FS_ANNOT + 1,
             color=color, fontweight="bold")
-    ax.text(x, low - 0.0008, note, ha="center", va="top", fontsize=FS_ANNOT, color="black")
+    if note:
+        ax.text(x, low - 0.0008, note, ha="center", va="top", fontsize=FS_ANNOT, color="black")
 
 
 def main():
@@ -50,6 +51,10 @@ def main():
                     help="add this many points to every font size (v3 uses 2)")
     ap.add_argument("--poster", action="store_true",
                     help="poster panel: identical rendering, writes data/poster/gate_schematic.png")
+    ap.add_argument("--no-prose", action="store_true",
+                    help="omit the explanatory sentences; the caption carries them (v4 uses this)")
+    ap.add_argument("--no-title", action="store_true",
+                    help="omit the axes title; the caption names the figure (v4 uses this)")
     args = ap.parse_args()
     qhat = read_qhat(args.curve)
 
@@ -73,22 +78,24 @@ def main():
                     zorder=0)
     ax.plot([0.35, RULE_END], [LIMIT, LIMIT], color="black", lw=1.5, zorder=2)
 
-    draw_case(ax, 1, LIMIT + qhat + 0.0045, qhat, C_CERTIFY, "Certify",
-              "certify safe,\nskip the solver")
-    draw_case(ax, 2, LIMIT - 0.0028, qhat, C_FLAG, "Flag",
-              "flag violation,\nskip the solver")
-    draw_case(ax, 3, LIMIT + qhat * 0.45, qhat, C_ESCALATE, "Escalate",
-              "band straddles the limit,\ncall the exact solver")
+    notes = ["certify safe,\nskip the solver", "flag violation,\nskip the solver",
+             "band straddles the limit,\ncall the exact solver"]
+    if args.no_prose:
+        notes = ["", "", ""]
+    draw_case(ax, 1, LIMIT + qhat + 0.0045, qhat, C_CERTIFY, "Certify", notes[0])
+    draw_case(ax, 2, LIMIT - 0.0028, qhat, C_FLAG, "Flag", notes[1])
+    draw_case(ax, 3, LIMIT + qhat * 0.45, qhat, C_ESCALATE, "Escalate", notes[2])
 
     ax.text(RULE_END + 0.15, LIMIT - 0.0004, "under-voltage limit (0.94 pu)", ha="left",
             va="top", fontsize=FS_ANNOT)
     ax.text(RULE_END + 0.15, LIMIT + 0.0002, "escalation strip,\none band width", ha="left",
             va="bottom", fontsize=FS_ANNOT, color="#7a5c00")
 
-    ax.annotate("band extends downward only, because the\nrisk is the true voltage sitting below the prediction",
-                xy=(1.1, LIMIT + qhat + 0.0045 - qhat / 2), xytext=(1.35, 0.9482),
-                fontsize=FS_ANNOT, va="top", ha="left",
-                arrowprops=dict(arrowstyle="->", color="0.4", lw=0.8))
+    if not args.no_prose:
+        ax.annotate("band extends downward only, because the\nrisk is the true voltage sitting below the prediction",
+                    xy=(1.1, LIMIT + qhat + 0.0045 - qhat / 2), xytext=(1.35, 0.9482),
+                    fontsize=FS_ANNOT, va="top", ha="left",
+                    arrowprops=dict(arrowstyle="->", color="0.4", lw=0.8))
 
     ax.set_ylabel("minimum bus voltage after a\ncontingency (per unit)", fontsize=FS_LABEL)
     ax.set_yticks([0.93, 0.935, 0.94, 0.945, 0.95])
@@ -97,8 +104,8 @@ def main():
     for side in ("top", "right", "bottom"):
         ax.spines[side].set_visible(False)
 
-    ax.set_title("The three-way gate",
-                 fontsize=FS_TITLE)
+    if not args.no_title:
+        ax.set_title("The three-way gate", fontsize=FS_TITLE)
     ft.add_credit(fig)
     fig.tight_layout()
     fig.savefig(out_path, dpi=300, bbox_inches=bbox)

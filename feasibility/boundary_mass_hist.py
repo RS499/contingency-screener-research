@@ -44,6 +44,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--poster", action="store_true",
                     help="poster panel: 7.80x7.0in, poster fonts, writes data/poster/boundary_mass_hist.png")
+    ap.add_argument("--out", default=OUT, help="output PNG path (non-poster)")
+    ap.add_argument("--no-prose", action="store_true",
+                    help="omit the two findings stated in prose; the caption carries them (v2 uses this)")
     args = ap.parse_args()
 
     global FS_LABEL, FS_ANNOT
@@ -54,7 +57,7 @@ def main():
         figsize = POSTER_FIGSIZE
         bbox = "tight"
     else:
-        out_path = OUT
+        out_path = args.out
         figsize = (3.5, 2.6)
         bbox = "tight"
 
@@ -75,19 +78,21 @@ def main():
 
     ax.axvspan(LIMIT, STRIP_HI, color=C_STRIP, alpha=0.20, zorder=0)
     ymax = tallest
-    ax.annotate(f"{boundary_pct:.1f}% of cases fall in this\n0.005 pu strip, yet the tallest\n"
-                f"0.001 pu bin holds just {tallest:.1f}%",
-                xy=((LIMIT + STRIP_HI) / 2, ymax * 0.5),
-                xytext=(0.902, ymax * 0.72), ha="center", va="center", fontsize=FS_ANNOT,
-                color="#7a5c00",
-                arrowprops=dict(arrowstyle="->", color="#7a5c00", lw=0.8))
+    if not args.no_prose:
+        ax.annotate(f"{boundary_pct:.1f}% of cases fall in this\n0.005 pu strip, yet the tallest\n"
+                    f"0.001 pu bin holds just {tallest:.1f}%",
+                    xy=((LIMIT + STRIP_HI) / 2, ymax * 0.5),
+                    xytext=(0.902, ymax * 0.72), ha="center", va="center", fontsize=FS_ANNOT,
+                    color="#7a5c00",
+                    arrowprops=dict(arrowstyle="->", color="#7a5c00", lw=0.8))
 
     ax.axvline(LIMIT, color="black", lw=1.5, zorder=3)
     ax.text(LIMIT - 0.0015, ymax * 0.99, "under-voltage limit (0.94 pu)", ha="right", va="top",
             fontsize=FS_ANNOT, color="black")
 
-    ax.text(VIEW_LO + 0.001, ymax * 0.13, f"{below:.1f}% of cases fall\nbelow 0.870 pu (not shown)",
-            ha="left", va="bottom", fontsize=FS_ANNOT - 1, color="#555555")
+    if not args.no_prose:
+        ax.text(VIEW_LO + 0.001, ymax * 0.13, f"{below:.1f}% of cases fall\nbelow 0.870 pu (not shown)",
+                ha="left", va="bottom", fontsize=FS_ANNOT - 1, color="#555555")
 
     ax.set_xlabel("minimum bus voltage after a contingency (per unit)", fontsize=FS_LABEL)
     ax.set_ylabel("share of contingency cases (%)", fontsize=FS_LABEL)

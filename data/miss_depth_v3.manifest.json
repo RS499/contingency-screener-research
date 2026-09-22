@@ -1,0 +1,40 @@
+{
+  "schema": "B",
+  "figure": "miss_depth_v3.png",
+  "generating_script": "scripts/miss_depth_fig.py",
+  "regeneration_argv": [
+    "scripts/miss_depth_fig.py",
+    "--from-pool",
+    "data/miss_depth_v3.png"
+  ],
+  "script_git_blob_sha": "c39241a0a6f8f4d9926c2653a3e18d526a756c22",
+  "script_tracked_in_git": true,
+  "script_blob_note": "Blob sha is of the WORKING-TREE script (git hash-object), modified 2026-09-15 to add the prose-free option and not yet committed.",
+  "repo_head_commit": "14bf5ecf7e5680bf174a1523269b46bd1ab4134c",
+  "inputs": [
+    {
+      "path": "data/miss_depth_pool.json",
+      "sha256": "89447fce47d991dd041fbe440736d82b0b44df39af02e20fa573f8612cc9385a"
+    }
+  ],
+  "output_sha256": "cb65f0f51a66396051cbe0a9d78ff71de009b441dcd7d0fe386f3d9edc3432ec",
+  "output_md5": "aa8574c5930426900c08d860d67b13c9",
+  "output_bytes": 82490,
+  "byte_reproducible": true,
+  "byte_reproducible_evidence": "Regenerated 2026-09-15 a second time into a scratch path with the argv above; md5 identical.",
+  "default_mode_regression": "With the new option omitted, the edited script reproduced data/miss_depth_v2.png byte-identically (md5 match, 2026-09-15, re-checked after the annotation change).",
+  "interpreter_short": "3.13.9",
+  "generated_utc": "2026-09-16T00:01:02Z",
+  "plotting_library": "matplotlib 3.11.1",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "supersedes_for_sts": "data/miss_depth_v2.png",
+  "revision_note": "2026-09-15: explanatory prose removed from inside the image and moved to the STS caption; the deepest-miss annotation keeps its value and arrow but no longer names the scenario or outaged line. No data, band width, bin, or numeric annotation changed. data/miss_depth_v2.png is kept because paper_current_URTC_20260808.tex references it.",
+  "removed_strings": [
+    "74% of misses within band (ridge panel)",
+    "55% of misses within band (histgb panel)",
+    "(scen 101000025, line 78 out) -- second line of the deepest-miss annotation"
+  ],
+  "no_new_solves": "No AC solve, dataset build, or model fit was run. miss_depth_v3 is re-plotted from data/miss_depth_pool.json, whose pooled stats match data/missed_depth.json exactly.",
+  "case_identifier_location": "scenario 101000025, line 78 (pandapower 0-based line index; IEEE buses 51-58) is no longer printed in the figure. It remains in data/miss_mechanism.json and in this manifest."
+}

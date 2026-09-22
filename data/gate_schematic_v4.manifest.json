@@ -1,0 +1,47 @@
+{
+  "schema": "B",
+  "figure": "gate_schematic_v4.png",
+  "generating_script": "feasibility/gate_schematic.py",
+  "regeneration_argv": [
+    "feasibility/gate_schematic.py",
+    "--font-bump",
+    "2",
+    "--curve",
+    "data/tradeoff_curve_v2.json",
+    "--no-prose",
+    "--no-title",
+    "--out",
+    "data/gate_schematic_v4.png"
+  ],
+  "script_git_blob_sha": "2d15f7f5950b3ec9916bf80026acd43ec58406ce",
+  "script_tracked_in_git": true,
+  "script_blob_note": "Blob sha is of the WORKING-TREE script (git hash-object), modified 2026-09-15 to add the prose-free option and not yet committed.",
+  "repo_head_commit": "14bf5ecf7e5680bf174a1523269b46bd1ab4134c",
+  "inputs": [
+    {
+      "path": "data/tradeoff_curve_v2.json",
+      "sha256": "a40a079733ecdfcd70191b749571d73cb1a7c870595da635c848b2c68fad8dbd"
+    }
+  ],
+  "output_sha256": "68fdc3a4036fce7d854634b133511761e199d193988d55d2df8f2051423e3f70",
+  "output_md5": "06cfd5b4c52500b8f1816a360091cfa4",
+  "output_bytes": 93167,
+  "byte_reproducible": true,
+  "byte_reproducible_evidence": "Regenerated 2026-09-15 a second time into a scratch path with the argv above; md5 identical.",
+  "default_mode_regression": "With both new options omitted, the edited script reproduced data/gate_schematic_v3.png byte-identically (md5 match, 2026-09-15, re-checked after the title change).",
+  "interpreter_short": "3.13.9",
+  "generated_utc": "2026-09-16T00:02:26Z",
+  "plotting_library": "matplotlib 3.11.1",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "supersedes_for_sts": "data/gate_schematic_v3.png",
+  "revision_note": "2026-09-15: explanatory prose and the axes title removed from inside the image; the STS caption carries both. Kept: y-axis label and ticks, the three markers and their Certify/Flag/Escalate labels, the 0.94 pu line, the escalation strip, and the two right-hand element labels. No data and no q_hat changed; the strip is still sized from q_hat = 0.002290702766310826 pu read from data/tradeoff_curve_v2.json. data/gate_schematic_v3.png is kept as the prior STS revision.",
+  "removed_strings": [
+    "band extends downward only, because the risk is the true voltage sitting below the prediction",
+    "certify safe, skip the solver",
+    "flag violation, skip the solver",
+    "band straddles the limit, call the exact solver",
+    "The three-way gate -- axes title"
+  ],
+  "no_new_solves": "No AC solve, dataset build, or model fit was run. gate_schematic_v4 is re-drawn from q_hat read out of data/tradeoff_curve_v2.json."
+}
