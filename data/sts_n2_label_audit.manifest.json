@@ -1,0 +1,148 @@
+{
+  "schema": "sts-new-analysis",
+  "artifacts": [
+    "data/sts_n2_label_audit.json",
+    "data/sts_n2_label_audit.parquet"
+  ],
+  "generating_scripts": [
+    "scripts/sts_n2_label_audit.py",
+    "scripts/sts_n2_summary.py"
+  ],
+  "regeneration_argv": [
+    [
+      ".venv/bin/python",
+      "scripts/sts_n2_label_audit.py"
+    ],
+    [
+      ".venv/bin/python",
+      "scripts/sts_n1_class_conditional.py"
+    ],
+    [
+      ".venv/bin/python",
+      "scripts/sts_n2_summary.py"
+    ]
+  ],
+  "script_sha256": {
+    "scripts/sts_n2_label_audit.py": "e4a54e78dddbcfe81ed9666ade44d9cffde95ddf36839506447b8d9c54fc6a45",
+    "scripts/sts_n2_summary.py": "fe272bdd39fac916489514292b615c02eb00cc156d34afedbe6b35f74fbb53ce"
+  },
+  "repo_head_commit": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "inputs": [
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    },
+    {
+      "path": "data/sts_n1_predictions_long.parquet",
+      "sha256": "a56cec89b0e2a9611b8984cfd25ddb9ce9bbae0b0f5aef011a18d71f6c2a9cc2"
+    }
+  ],
+  "output_sha256": {
+    "data/sts_n2_label_audit.json": "d46472f4873c545ececde0767c2002f2ea5136215d880d0163de2691b21b9afe",
+    "data/sts_n2_label_audit.parquet": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+  },
+  "model_hyperparameters": "missed-case mapping uses the M2 refit predictions; configs in data/sts_n1_class_conditional.manifest.json",
+  "generator_replay": {
+    "flags": {
+      "mult_lo": 1.0,
+      "mult_hi": 1.12,
+      "reg_lo": 1.0,
+      "reg_hi": 1.12,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025
+    },
+    "stress": "fixed",
+    "mode": "mixed",
+    "shard_seeds": [
+      100,
+      101,
+      102,
+      103
+    ],
+    "per_shard": 375
+  },
+  "solver": {
+    "pinned": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    },
+    "correction": "pinned runpp inside a PV/PQ switch-back outer loop, cap 30",
+    "tolerances": {
+      "q_mvar": 0.001,
+      "v_pu": 0.001
+    }
+  },
+  "audit_run": {
+    "script": "scripts/sts_n2_label_audit.py",
+    "argv": [
+      "scripts/sts_n2_label_audit.py"
+    ],
+    "wall_time_s": 1359.2693140506744,
+    "replay_wall_s": 12.251224994659424,
+    "replay_n0_max_abs_diff": 0.0,
+    "replay_n0_n_exact": 1500,
+    "replay_n_scenarios": 1500,
+    "rejects_per_shard": {
+      "100": 370,
+      "101": 313,
+      "102": 287,
+      "103": 317
+    },
+    "max_scen": 0
+  },
+  "environment": {
+    "python": "3.13.9",
+    "packages": {
+      "pandapower": "3.5.4",
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2",
+      "pyarrow": "21.0.0",
+      "numba": "0.66.0"
+    },
+    "solver": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    },
+    "numba": {
+      "available": true,
+      "version": "0.66.0"
+    },
+    "tuned_generator_settings": {
+      "stress": "fixed",
+      "mult_lo": 1.0,
+      "mult_hi": 1.12
+    },
+    "hardware": {
+      "machine": "arm64",
+      "processor": "arm",
+      "system": "Darwin",
+      "release": "25.5.0",
+      "cpu": "Apple M5"
+    },
+    "measurement": {
+      "ms_solver": 9.14,
+      "basis": "minimum over N timed solves",
+      "n_timed": 400,
+      "warmup_dropped": 30,
+      "mean_ms": 9.561,
+      "median_ms": 9.512,
+      "std_ms": 0.256,
+      "min_ms": 9.138
+    }
+  },
+  "wall_time_s": {
+    "audit": 1359.2693140506744,
+    "summary": 1.5978021621704102
+  },
+  "generated_utc": "2026-09-27T22:30:04Z"
+}

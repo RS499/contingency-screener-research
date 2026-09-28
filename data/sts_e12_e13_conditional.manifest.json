@@ -1,0 +1,86 @@
+{
+  "schema": "sts-new-analysis",
+  "artifacts": [
+    "data/sts_e12_e13_conditional.json"
+  ],
+  "generating_script": "scripts/sts_e12_e13_conditional.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scripts/sts_e12_e13_conditional.py"
+  ],
+  "script_sha256": "c37d19edc9dbb326f9ee93a6258043ddad93bb3db27009c18723a0635d913481",
+  "repo_head_commit": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "inputs": [
+    {
+      "path": "data/sts_n1_predictions_long.parquet",
+      "sha256": "a56cec89b0e2a9611b8984cfd25ddb9ce9bbae0b0f5aef011a18d71f6c2a9cc2"
+    },
+    {
+      "path": "data/tuned_metrics.json",
+      "sha256": "360a9ec768152afe634ef1f92dd44c72b64a185f89e4f480a09dcd777e4cbf83"
+    }
+  ],
+  "output_sha256": "95dc771cd490d0ae824d83b734b53f9e3e86960d461adc07d59c387c85a90ead",
+  "model_hyperparameters": "M2 committed selections, see data/sts_n1_class_conditional.manifest.json model_hyperparameters (predictions produced there)",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "solver": {
+    "note": "no AC solves in this script",
+    "pinned": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    }
+  },
+  "environment": {
+    "python": "3.13.9",
+    "packages": {
+      "pandapower": "3.5.4",
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2",
+      "pyarrow": "21.0.0",
+      "numba": "0.66.0"
+    },
+    "solver": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    },
+    "numba": {
+      "available": true,
+      "version": "0.66.0"
+    },
+    "tuned_generator_settings": {
+      "stress": "fixed",
+      "mult_lo": 1.0,
+      "mult_hi": 1.12
+    },
+    "hardware": {
+      "machine": "arm64",
+      "processor": "arm",
+      "system": "Darwin",
+      "release": "25.5.0",
+      "cpu": "Apple M5"
+    },
+    "measurement": {
+      "ms_solver": 9.14,
+      "basis": "minimum over N timed solves",
+      "n_timed": 400,
+      "warmup_dropped": 30,
+      "mean_ms": 9.561,
+      "median_ms": 9.512,
+      "std_ms": 0.256,
+      "min_ms": 9.138
+    }
+  },
+  "wall_time_s": 0.9678661823272705,
+  "generated_utc": "2026-09-27T22:27:58Z"
+}

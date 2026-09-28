@@ -1,0 +1,89 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+    "short": "7fc39e4"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "a6f8cd758b4a421c1fec236383448a98cb2b7cf2f0c8f2d955eff94c31458b1a",
+  "run_settings": {
+    "task": "conditional strip-share recount from row counts",
+    "generating_script": "scripts/sts_dataset_facts_c.py",
+    "regeneration_argv": [
+      "scripts/sts_dataset_facts_c.py",
+      "data"
+    ],
+    "inputs": [
+      {
+        "path": "data/unconditioned_base.json",
+        "sha256": "7025e6e2aa5b2b8fc93916469aa41b2762402a6a9843a0b704805efb18723e83"
+      },
+      {
+        "path": "data/unconditioned_base.parquet",
+        "sha256": "ed68c9b19f6bd000996a18449343f62c00eceb4a1fc2b02433aaf4f35fc21312"
+      },
+      {
+        "path": "data/dataset.parquet",
+        "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "data/sts_dataset_facts_c.json",
+        "sha256": "a6f8cd758b4a421c1fec236383448a98cb2b7cf2f0c8f2d955eff94c31458b1a",
+        "repro": {
+          "compared_with": "/Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref5/sts_dataset_facts_c.json",
+          "same_sha256": true
+        }
+      }
+    ],
+    "limit": 0.94,
+    "strip_hi": 0.945,
+    "rounding_note": "data/unconditioned_base.json conditional_boundary_pct (ungated 65.5823, committed 68.9045) was computed by scripts/uncond_analysis.py conditional_boundary() as 100 * b / (100 - v) from the 2-dp-rounded percentages boundary_0p94_to_0p945_pct and violation_rate_pct. The values here are exact row-count ratios and supersede them for printing.",
+    "no_new_solves": "counted from the two parquet builds; no fit or AC solve"
+  },
+  "model_hyperparameters": null
+}

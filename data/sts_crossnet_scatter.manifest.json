@@ -1,0 +1,87 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_crossnet_scatter.json",
+    "sts_crossnet_scatter.png"
+  ],
+  "generating_script": "scripts/sts_crossnet_scatter.py",
+  "regeneration_argv": [
+    "scripts/sts_crossnet_scatter.py",
+    "data"
+  ],
+  "script_git_blob_sha": "e9ae0dc0eb9c8ded53a5f02f9734d4bc1bc1a351",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "inputs": [
+    {
+      "path": "data/netstudy2/cross_2a_points.json",
+      "sha256": "9610520f2f6054cb7a886164527b370267a8813c5dc988ce98c5c24b8ab4afd3"
+    },
+    {
+      "path": "data/netstudy2/cross_2a_points.manifest.json",
+      "sha256": "14891bc9140037eafa656431d63e1f97669e21016d2b4f40d8ece82f82a9d6f5"
+    },
+    {
+      "path": "data/netstudy2/summary.json",
+      "sha256": "19766d5040cec8db72a2e80626a50549c2f03d853e1a723d1488f7f6316c6038"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_crossnet_scatter.json",
+      "sha256": "59ac0c7e9d919a0be9dd9e72901174928850c3f2c66e2091a0d81c080855774a",
+      "md5": "437e0cb118b86bd1866ddbdeb43a312a",
+      "bytes": 7556,
+      "byte_reproducible": true,
+      "byte_reproducible_evidence": "md5 compared with an independent earlier run of the same script into /Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref/sts_crossnet_scatter.json: 437e0cb118b86bd1866ddbdeb43a312a vs 437e0cb118b86bd1866ddbdeb43a312a"
+    },
+    {
+      "path": "data/sts_crossnet_scatter.png",
+      "sha256": "1ef7d67210f4469f96587d252b6595400e901185a54d129a00a0a9f309170f96",
+      "md5": "3c662ee626fe06aed12089f583c45c28",
+      "bytes": 92395,
+      "byte_reproducible": true,
+      "byte_reproducible_evidence": "md5 compared with an independent earlier run of the same script into /Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref/sts_crossnet_scatter.png: 3c662ee626fe06aed12089f583c45c28 vs 3c662ee626fe06aed12089f583c45c28"
+    }
+  ],
+  "interpreter_short": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-27T22:06:49Z",
+  "parameters": {
+    "axes": "log-log, equal aspect, limits [0.8 * min, 1.25 * max] over both variables",
+    "identity_line": "y = x, dashed",
+    "network_colors": {
+      "case118": "#0072B2",
+      "case24_ieee_rts": "#D55E00",
+      "case30_thermal": "#009E73",
+      "case39": "#E69F00",
+      "case_illinois200": "#882255"
+    },
+    "model_markers": {
+      "ridge": "o",
+      "histgb": "^"
+    },
+    "marker_size_pt2": 20,
+    "figsize_in": [
+      3.5,
+      3.9
+    ],
+    "dpi": 300,
+    "font_sizes": {
+      "label": 9,
+      "tick": 8
+    },
+    "correlation": "numpy.corrcoef (Pearson) on raw values and on natural-log values",
+    "low_ratio_threshold": 0.5,
+    "in_image_text": "axis labels, tick labels and legend only; no title, no annotation",
+    "upstream": "points assembled by scripts/netstudy2_cross.py phase_2a() from each network's frozen results (inner-split M2 selection); q_hat and escalation are seed means; the point 'source' field names the file"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

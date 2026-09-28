@@ -1,0 +1,121 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+    "short": "7fc39e4"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "ef65ded38839cb6b4bb17b59035a8a1aa4e474d87903600c14387895e0db84b7",
+  "run_settings": {
+    "task": "Fig. 3 without the deepest-miss annotation (N2 shows that case is a solver artifact)",
+    "generating_script": "scripts/sts_miss_depth_noannot.py",
+    "regeneration_argv": [
+      "scripts/sts_miss_depth_noannot.py",
+      "data"
+    ],
+    "inputs": [
+      {
+        "path": "data/miss_depth_pool.json",
+        "sha256": "89447fce47d991dd041fbe440736d82b0b44df39af02e20fa573f8612cc9385a"
+      },
+      {
+        "path": "data/sts_n2_label_audit.json",
+        "sha256": "d46472f4873c545ececde0767c2002f2ea5136215d880d0163de2691b21b9afe"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "data/sts_miss_depth_noannot.png",
+        "sha256": "ef65ded38839cb6b4bb17b59035a8a1aa4e474d87903600c14387895e0db84b7",
+        "repro": {
+          "compared_with": "/Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref4/sts_miss_depth_noannot.png",
+          "same_sha256": true
+        }
+      }
+    ],
+    "plotting_library": "matplotlib 3.11.1",
+    "coverage_target": 0.9,
+    "look_source": "scripts/miss_depth_fig.py make_hist() with prose off (figsize, colours, log y, 0.001 pu bins to 0.095, grey 0.005 pu strip, dashed q_hat line and its value label) copied, not imported; that file is unchanged",
+    "figsize_in": [
+      3.5,
+      4.3
+    ],
+    "dpi": 300,
+    "bin_width": 0.001,
+    "x_max": 0.095,
+    "strip": 0.005,
+    "removed_vs_miss_depth_v3": [
+      "annotation 'deepest miss 0.0915 pu' with arrow (ridge panel)",
+      "red triangle marker at d = 0.09146 in both panels"
+    ],
+    "kept_in_image_text": "axis labels, tick labels, and the per-panel q_hat value label",
+    "labels_not_corrected": "the pooled depths are the stored pandapower labels; the bin that holds the artifact case is still drawn. A corrected-label version waits on the author's N2b decision.",
+    "per_model": {
+      "ridge": {
+        "n_misses": 1436,
+        "max_depth_pu": 0.0914569251411822,
+        "qhat90_mean": 0.005198231037165079,
+        "n_deeper_than_0p09": 1
+      },
+      "histgb": {
+        "n_misses": 2284,
+        "max_depth_pu": 0.0914569251411822,
+        "qhat90_mean": 0.002290702766310826,
+        "n_deeper_than_0p09": 3
+      }
+    },
+    "artifact_case_per_n2": {
+      "scenario_id": 101000025,
+      "outaged_type": "line",
+      "outaged_idx": 78,
+      "stored_min_vm": 0.8485430748588177,
+      "corrected_min_vm": 0.9450729906334574,
+      "flips_to_safe": true
+    },
+    "no_new_solves": "re-plotted from data/miss_depth_pool.json; no fit or AC solve"
+  },
+  "model_hyperparameters": null
+}

@@ -1,0 +1,130 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_critical_bus_map.png"
+  ],
+  "generating_script": "scripts/sts_critical_bus_map.py",
+  "regeneration_argv": [
+    "scripts/sts_critical_bus_map.py",
+    "data"
+  ],
+  "script_git_blob_sha": "4badcab182ddb9aab75347ab22bab2a3c1fae23a",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "inputs": [
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/bus_layout.json",
+      "sha256": "73393ea6d84d7b21520c4f395561d7f72209bc6cd6e8190767cb0987832b4cd5"
+    },
+    {
+      "path": "data/frozen_poster_numbers_v2.json",
+      "sha256": "ccb8096d9e382d40952d76233ea29b3ca49001932e441def6066575cd5e64434"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_critical_bus_map.png",
+      "sha256": "1a4f59023ede01e49963400a4d71f1e7f6fe3bd3b00ccf90d8c32d050812b2f1",
+      "md5": "cc225edaaaeebac4dbddf69febe2dd82",
+      "bytes": 222878,
+      "byte_reproducible": true,
+      "byte_reproducible_evidence": "md5 compared with an independent earlier run of the same script into /Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref/sts_critical_bus_map.png: cc225edaaaeebac4dbddf69febe2dd82 vs cc225edaaaeebac4dbddf69febe2dd82"
+    }
+  ],
+  "interpreter_short": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-27T22:06:50Z",
+  "parameters": {
+    "n_cases": 278955,
+    "population": "converged N-1 rows of data/dataset.parquet (outaged_type != 'none' and converged); share = percent of those rows whose argmin_bus is the bus",
+    "layout": "data/bus_layout.json (pandapower igraph, LAYOUT_SEED = 0); positions are topological, not geographic",
+    "colour_map": "YlOrRd",
+    "colour_norm": "PowerNorm(gamma=0.5), vmin 0, vmax = max share",
+    "node_size_pt2": 24,
+    "figsize_in": [
+      5.0,
+      4.2
+    ],
+    "dpi": 300,
+    "font_sizes": {
+      "label": 9,
+      "tick": 8
+    },
+    "branches": "lines solid, transformers dashed, grey #bbbbbb",
+    "labels": "top 3 buses by share, text 'bus <IEEE name>' (index + 1), no percentage",
+    "label_choice_reason": "The report caption names buses 76, 53 and 107, so only those are labelled. The original figure also labelled bus 1 and bus 21; bus 1 (rank 4) is close in share to bus 107 (rank 3), so it shows a similar colour without a label. Shares are left to the colour bar and the caption, which avoids the integer-rounded '17%' of the original disagreeing with the text's 16.81%.",
+    "removed_vs_data_critical_bus_map_png": [
+      "title: 'IEEE 118-bus: critical-bus frequency across 278,955 converged N-1 cases'",
+      "footer: 'Topological layout (pandapower igraph); bus positions are NOT geographic.'",
+      "labels 'bus 1 (8%)' and 'bus 21 (4%)'",
+      "percentages inside the remaining three labels"
+    ],
+    "top5_verified_against_frozen_v2": [
+      {
+        "rank": 1,
+        "pandapower_index": 75,
+        "ieee_name": 76,
+        "share_pct": 27.096126615403918,
+        "frozen_v2_bus_index": 75,
+        "frozen_v2_share_pct": 27.1,
+        "match": true,
+        "labelled": true
+      },
+      {
+        "rank": 2,
+        "pandapower_index": 52,
+        "ieee_name": 53,
+        "share_pct": 16.808445806671326,
+        "frozen_v2_bus_index": 52,
+        "frozen_v2_share_pct": 16.81,
+        "match": true,
+        "labelled": true
+      },
+      {
+        "rank": 3,
+        "pandapower_index": 106,
+        "ieee_name": 107,
+        "share_pct": 9.307952895628327,
+        "frozen_v2_bus_index": 106,
+        "frozen_v2_share_pct": 9.31,
+        "match": true,
+        "labelled": true
+      },
+      {
+        "rank": 4,
+        "pandapower_index": 0,
+        "ieee_name": 1,
+        "share_pct": 8.447957555878189,
+        "frozen_v2_bus_index": 0,
+        "frozen_v2_share_pct": 8.45,
+        "match": true,
+        "labelled": false
+      },
+      {
+        "rank": 5,
+        "pandapower_index": 20,
+        "ieee_name": 21,
+        "share_pct": 4.11786847340969,
+        "frozen_v2_bus_index": 20,
+        "frozen_v2_share_pct": 4.12,
+        "match": true,
+        "labelled": false
+      }
+    ],
+    "bus_numbering": "labels are IEEE 1-based names; argmin_bus and the pandapower_index fields are 0-based; IEEE name = index + 1 on case118",
+    "logic_source": "feasibility/domain_figure.py (critical_frequency, draw_branches, layout loading) copied, not imported; that file is unchanged",
+    "in_image_text": "colour-bar label and ticks and three bus labels only; no title, no footer"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

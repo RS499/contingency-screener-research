@@ -1,0 +1,72 @@
+{
+  "artifacts": [
+    "data/sts_n3_floor094.parquet",
+    "data/sts_n3_floor094.json"
+  ],
+  "generating_script": "scratch/n3_floor_rebuild.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n3_floor_rebuild.py",
+    "0.94",
+    "data/sts_n3_floor094.parquet"
+  ],
+  "script_sha256": "7f7ce84ff89a256a2811b6a867e53eb673e46ec372f5a070d5a79f0a23b00f90",
+  "producer_logic": "feasibility/generate_dataset.py (worker, sample_scenario, solve_n0, run_scenario)",
+  "producer_sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb",
+  "prediction_file": "scratch/n3_floor_prediction.md",
+  "prediction_sha256": "9975a07ec1c1a3004b524636239194a1584a8eadc5b6e3748766c4714446ba0f",
+  "run_settings": {
+    "gen_vm_lo": 0.94,
+    "config": {
+      "mult_lo": 1.0,
+      "mult_hi": 1.12,
+      "reg_lo": 1.0,
+      "reg_hi": 1.12,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025,
+      "network": "case118"
+    },
+    "n_total": 1500,
+    "shard_seeds": [
+      100,
+      101,
+      102,
+      103
+    ],
+    "scenarios_per_shard": 375,
+    "mode": "mixed",
+    "stress": "fixed",
+    "gate_n0": true,
+    "n0_gate_limit": 0.94,
+    "dvm": 0.025,
+    "qlim_scale": [
+      0.6,
+      1.4
+    ],
+    "p_gen_out": 0.3
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "python": "3.13.9",
+  "cpu": "Apple M5",
+  "repo_head": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "output_sha256": {
+    "data/sts_n3_floor094.parquet": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e",
+    "data/sts_n3_floor094.json": "c0fbde5aad267fa96f6a7cf11b2567106e1b6c744c9205345aa04be650d0f184"
+  },
+  "generated_utc": "2026-09-28T10:11:25Z",
+  "wall_s": 24846.346575021744
+}

@@ -1,0 +1,100 @@
+{
+  "question": "Do N2's flipped labels hold under an independent solver that lets a limited generator return to voltage control?",
+  "method": "own semismooth-Newton AC power flow with a per-PV-bus complementarity condition (see script header); shared with pandapower: internal network model and Ybus only",
+  "sample": {
+    "population_viol_to_safe": 4615,
+    "population_safe_to_viol": 2162,
+    "n_per_stratum": 100,
+    "sample_seed": 20260927
+  },
+  "validation": {
+    "pv_mode_max_abs_minvm_diff_vs_pandapower_nolimits": 1.5313008638884185e-09,
+    "rows_model_ok": 201,
+    "rows_indep_converged": 201
+  },
+  "summary": {
+    "viol_to_safe": {
+      "n_rows": 100,
+      "n_converged": 100,
+      "agree_with_original": 0,
+      "agree_with_original_share": 0.0,
+      "agree_with_original_ci95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "agree_with_n2": 100,
+      "agree_with_n2_share": 1.0,
+      "agree_with_n2_ci95": [
+        0.9637833073548235,
+        1.0
+      ],
+      "n_consistent_state": 100,
+      "median_abs_minvm_diff_vs_n2": 4.440892098500626e-16,
+      "max_abs_minvm_diff_vs_n2": 0.0005019958093642751
+    },
+    "safe_to_viol": {
+      "n_rows": 100,
+      "n_converged": 100,
+      "agree_with_original": 0,
+      "agree_with_original_share": 0.0,
+      "agree_with_original_ci95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "agree_with_n2": 100,
+      "agree_with_n2_share": 1.0,
+      "agree_with_n2_ci95": [
+        0.9637833073548235,
+        1.0
+      ],
+      "n_consistent_state": 100,
+      "median_abs_minvm_diff_vs_n2": 7.771561172376096e-16,
+      "max_abs_minvm_diff_vs_n2": 0.00014950506494793014
+    },
+    "pooled_200_unweighted": {
+      "n_rows": 200,
+      "n_converged": 200,
+      "agree_with_original": 0,
+      "agree_with_original_share": 0.0,
+      "agree_with_original_ci95": [
+        0.0,
+        0.01827534035513624
+      ],
+      "agree_with_n2": 200,
+      "agree_with_n2_share": 1.0,
+      "agree_with_n2_ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "n_consistent_state": 200,
+      "median_abs_minvm_diff_vs_n2": 6.106226635438361e-16,
+      "max_abs_minvm_diff_vs_n2": 0.0005019958093642751
+    },
+    "population_weighted_agree_with_n2_share": 1.0
+  },
+  "named_worst_case": [
+    {
+      "scenario_id": 101000025,
+      "outaged_type": "line",
+      "outaged_idx": 78,
+      "stratum": "named_worst_case",
+      "stored_min_vm": 0.8485430748588177,
+      "n2_min_vm": 0.9450729906334574,
+      "stored_violation": true,
+      "n2_violation": false,
+      "model_ok": true,
+      "pv_mode_converged": true,
+      "pv_mode_minvm_diff_vs_pandapower": 0.0,
+      "indep_converged": true,
+      "indep_iterations": 7,
+      "indep_residual": 3.574918139293004e-14,
+      "indep_min_vm": 0.9450729906334575,
+      "indep_violation": false,
+      "indep_consistent": true,
+      "indep_n_at_limit": 18,
+      "indep_minus_n2": 1.1102230246251565e-16
+    }
+  ],
+  "interval": "Clopper-Pearson exact 95%",
+  "wall_s": 86.4935851097107
+}

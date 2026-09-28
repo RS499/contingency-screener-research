@@ -1,0 +1,59 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_dataset_facts.json"
+  ],
+  "generating_script": "scripts/sts_dataset_facts.py",
+  "regeneration_argv": [
+    "scripts/sts_dataset_facts.py",
+    "data"
+  ],
+  "script_git_blob_sha": "9de2fc2fe26bce04ea5df9b4c3b6090dad9f2116",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "inputs": [
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/frozen_poster_numbers_v2.json",
+      "sha256": "ccb8096d9e382d40952d76233ea29b3ca49001932e441def6066575cd5e64434"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_dataset_facts.json",
+      "sha256": "31042c77246adbae2b7720c45932c1cfd6bef3c9f1554f6f2b2f037fe5f911a3",
+      "md5": "7cd4e36083c59b9d1b2445e9f2d16cc7",
+      "bytes": 2188,
+      "byte_reproducible": true,
+      "byte_reproducible_evidence": "md5 compared with an independent earlier run of the same script into /Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref/sts_dataset_facts.json: 7cd4e36083c59b9d1b2445e9f2d16cc7 vs 7cd4e36083c59b9d1b2445e9f2d16cc7"
+    }
+  ],
+  "interpreter_short": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-27T22:06:48Z",
+  "parameters": {
+    "limit": 0.94,
+    "strip_hi": 0.945,
+    "persistence_tolerance_pu": 0.001,
+    "multiplier_interval": [
+      1.0,
+      1.12
+    ],
+    "range_tolerance": 1e-09,
+    "deep_vm_threshold": 0.87,
+    "bus76_pandapower_index": 75,
+    "base_load_reference": "pandapower.networks.case118() load p_mw / q_mvar summed per bus",
+    "std_convention": "no std: every value is a single count or share over the full dataset"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

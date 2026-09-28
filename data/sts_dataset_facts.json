@@ -1,0 +1,61 @@
+{
+  "source": "data/dataset.parquet",
+  "population": "converged N-1 rows = outaged_type != 'none' and converged; base rows = outaged_type == 'none' (one per scenario)",
+  "n_base_cases": 1500,
+  "n_converged_n1_rows": 278955,
+  "base_cases_per_sampling_mode": {
+    "independent": 750,
+    "regional": 750
+  },
+  "n0_persistence": {
+    "definition": "converged N-1 rows; d = |min_vm - n0_min_vm|; within means d <= 0.001 pu",
+    "n_rows": 278955,
+    "n_within": 216605,
+    "share_within_pct": 77.64872470470148,
+    "n_within_strict_lt": 216605,
+    "median_abs_diff_pu": 3.313450363195969e-06,
+    "mean_abs_diff_pu": 0.0042628774478036405
+  },
+  "boundary_strip": {
+    "definition": "converged N-1 rows with 0.94 <= min_vm < 0.945",
+    "n_rows": 158622,
+    "share_of_converged_n1_pct": 56.862934881970205,
+    "n_base_n0_below_strip_hi": 152698,
+    "share_base_n0_below_strip_hi_pct": 96.26533519940487,
+    "n_same_weakest_bus_as_n0": 148111,
+    "share_same_weakest_bus_as_n0_pct": 93.37355474019998,
+    "n_at_bus_index_75": 50150,
+    "share_at_bus_index_75_pct": 31.616043171817275,
+    "bus_convention": "argmin_bus is the pandapower 0-based index; index 75 is IEEE bus 76"
+  },
+  "load_multipliers": {
+    "definition": "per-load multiplier = base-case load / pandapower case118 load at the same bus",
+    "n_loaded_buses_p": 99,
+    "n_loaded_buses_q": 90,
+    "regional_p_mult_min": 0.9008575439453125,
+    "regional_p_mult_max": 1.2309630393981934,
+    "regional_p_mult_n_values": 74250,
+    "regional_p_mult_share_outside_pct": 43.9057239057239,
+    "outside_interval": [
+      1.0,
+      1.12
+    ],
+    "outside_tolerance": 1e-09,
+    "independent_p_mult_min": 1.0000040054321289,
+    "independent_p_mult_max": 1.1199995796635467,
+    "q_mult_min_all_bases": 0.8156368891398112,
+    "q_mult_max_all_bases": 1.4083286632191052
+  },
+  "below_0p87": {
+    "definition": "converged N-1 rows with min_vm < 0.87",
+    "n_rows": 1510,
+    "share_pct": 0.5413059454033805
+  },
+  "crosscheck_frozen_v2": {
+    "converged_n1_rows_frozen": 278955,
+    "converged_n1_rows_here": 278955,
+    "boundary_pct_frozen": 56.86,
+    "boundary_pct_here": 56.86,
+    "agree": true
+  }
+}

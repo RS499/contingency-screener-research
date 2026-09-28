@@ -1,0 +1,61 @@
+{
+  "artifacts": [
+    "data/sts_label_crosscheck.json",
+    "data/sts_label_crosscheck_rows.parquet"
+  ],
+  "generating_script": "scratch/label_crosscheck.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/label_crosscheck.py"
+  ],
+  "script_sha256": "e1669ca59981cea570c2a32527fc74d514f05801bc4973ddb5dd37fb2302631e",
+  "inputs": {
+    "data/sts_n2_label_audit.parquet": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239",
+    "scripts/sts_n2_label_audit.py": "e4a54e78dddbcfe81ed9666ade44d9cffde95ddf36839506447b8d9c54fc6a45",
+    "feasibility/generate_dataset.py": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+  },
+  "parameters": {
+    "limit": 0.94,
+    "n_per_stratum": 100,
+    "sample_seed": 20260927,
+    "c_scale": 1.0,
+    "tol": 1e-10,
+    "max_it": 60,
+    "generator_config": {
+      "mult_lo": 1.0,
+      "mult_hi": 1.12,
+      "reg_lo": 1.0,
+      "reg_hi": 1.12,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025,
+      "network": "case118"
+    },
+    "shard_seeds": [
+      100,
+      101,
+      102,
+      103
+    ]
+  },
+  "network_model_solve": {
+    "enforce_q_lims": false,
+    "init": "dc",
+    "numba": true,
+    "purpose": "build internal model + start point only"
+  },
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "python": "3.13.9",
+  "output_sha256": {
+    "data/sts_label_crosscheck.json": "2f0f808b581d5ea3d7aa1a85084e1093059b2dffc08c5a38b04c713749a4e5d2",
+    "data/sts_label_crosscheck_rows.parquet": "60868f144cf60438d951da87af9b8ef4002e0c76cc7712f66852147477f8a1b8"
+  },
+  "generated_utc": "2026-09-28T03:22:31Z"
+}

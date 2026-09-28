@@ -1,0 +1,168 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+    "short": "7fc39e4"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "6a84b6d3d47f3d994499f2cd0039583a9955b10371e4a13adce530f5a2bbc84e",
+  "run_settings": {
+    "task": "STS Fig. 2 with +-1 std bands (ledger P-005)",
+    "generating_script": "scripts/sts_tradeoff_bands.py",
+    "regeneration_argv": [
+      "scripts/sts_tradeoff_bands.py",
+      "data"
+    ],
+    "inputs": [
+      {
+        "path": "data/tradeoff_curve_v2.json",
+        "sha256": "a40a079733ecdfcd70191b749571d73cb1a7c870595da635c848b2c68fad8dbd"
+      },
+      {
+        "path": "data/tuned_metrics.json",
+        "sha256": "360a9ec768152afe634ef1f92dd44c72b64a185f89e4f480a09dcd777e4cbf83"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "data/sts_tradeoff_bands.json",
+        "sha256": "6a84b6d3d47f3d994499f2cd0039583a9955b10371e4a13adce530f5a2bbc84e",
+        "repro": {
+          "compared_with": "/Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref3/sts_tradeoff_bands.json",
+          "same_sha256": true
+        }
+      },
+      {
+        "path": "data/sts_tradeoff_bands.png",
+        "sha256": "c1a371f095c6d4473199e7a170f286789f273b85ff86c7c5ec830650c5b6486f",
+        "repro": {
+          "compared_with": "/Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref3/sts_tradeoff_bands.png",
+          "same_sha256": true
+        }
+      }
+    ],
+    "plotting_library": "matplotlib 3.11.1",
+    "look_source": "feasibility/paper_hero.py (figsize, fonts, colours, dash-dot first-sub-1% markers, 1% guide line, legend) copied, not imported; that file is unchanged",
+    "figsize_in": [
+      3.5,
+      2.7
+    ],
+    "dpi": 300,
+    "band_alpha": {
+      "escalation": 0.2,
+      "missed": 0.12
+    },
+    "dual_axis_note": "kept the twin y axis of the original Fig. 2 on request (same content and look)",
+    "no_new_solves": "re-plotted from data/tradeoff_curve_v2.json; no fit or AC solve"
+  },
+  "model_hyperparameters": {
+    "ridge_seed0": {
+      "tag": "alpha1",
+      "alpha": 1.0
+    },
+    "histgb_seed0": {
+      "tag": "rand00",
+      "learning_rate": 0.2,
+      "max_iter": 1000,
+      "max_depth": null,
+      "max_leaf_nodes": 63,
+      "min_samples_leaf": 20,
+      "l2_regularization": 10.0
+    },
+    "ridge_seed1": {
+      "tag": "alpha0.001",
+      "alpha": 0.001
+    },
+    "histgb_seed1": {
+      "tag": "rand13",
+      "learning_rate": 0.08,
+      "max_iter": 600,
+      "max_depth": null,
+      "max_leaf_nodes": 255,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.1
+    },
+    "ridge_seed2": {
+      "tag": "alpha0.001",
+      "alpha": 0.001
+    },
+    "histgb_seed2": {
+      "tag": "rand20",
+      "learning_rate": 0.08,
+      "max_iter": 1000,
+      "max_depth": null,
+      "max_leaf_nodes": 255,
+      "min_samples_leaf": 50,
+      "l2_regularization": 0.1
+    },
+    "ridge_seed3": {
+      "tag": "alpha0.001",
+      "alpha": 0.001
+    },
+    "histgb_seed3": {
+      "tag": "rand01",
+      "learning_rate": 0.1,
+      "max_iter": 1000,
+      "max_depth": null,
+      "max_leaf_nodes": 255,
+      "min_samples_leaf": 50,
+      "l2_regularization": 10.0
+    },
+    "ridge_seed4": {
+      "tag": "alpha0.01",
+      "alpha": 0.01
+    },
+    "histgb_seed4": {
+      "tag": "rand16",
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_depth": null,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 50,
+      "l2_regularization": 1.0
+    }
+  }
+}

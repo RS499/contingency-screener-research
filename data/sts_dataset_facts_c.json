@@ -1,0 +1,51 @@
+{
+  "definition": "conditional strip share = P(0.94 <= min_vm < 0.945 | min_vm >= 0.94) = #strip rows / #rows with min_vm >= 0.94, from row counts",
+  "builds": {
+    "ungated": {
+      "source": "data/unconditioned_base.parquet",
+      "population": "converged N-1 rows (outaged_type != 'none' and converged)",
+      "n_rows": 277628,
+      "n_nonfinite_min_vm": 0,
+      "violation_rate": {
+        "numerator": 155593,
+        "denominator": 277628,
+        "pct": 56.04369876237267
+      },
+      "strip_share_unconditional": {
+        "numerator": 80048,
+        "denominator": 277628,
+        "pct": 28.832826660135144
+      },
+      "strip_share_conditional_on_safe": {
+        "numerator": 80048,
+        "denominator": 122035,
+        "pct": 65.59429671815462
+      }
+    },
+    "committed_gated": {
+      "source": "data/dataset.parquet",
+      "population": "converged N-1 rows (outaged_type != 'none' and converged)",
+      "n_rows": 278955,
+      "n_nonfinite_min_vm": 0,
+      "violation_rate": {
+        "numerator": 48749,
+        "denominator": 278955,
+        "pct": 17.4755784983241
+      },
+      "strip_share_unconditional": {
+        "numerator": 158622,
+        "denominator": 278955,
+        "pct": 56.86293488197021
+      },
+      "strip_share_conditional_on_safe": {
+        "numerator": 158622,
+        "denominator": 230206,
+        "pct": 68.9043726054056
+      }
+    }
+  },
+  "comparison_with_unconditioned_base_json": {
+    "ungated_conditional_boundary_pct_in_json": 65.5823,
+    "committed_conditional_boundary_pct_in_json": 68.9045
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_limit_sweep.json",
+    "sts_limit_sweep.png"
+  ],
+  "generating_script": "scripts/sts_limit_sweep.py",
+  "regeneration_argv": [
+    "scripts/sts_limit_sweep.py",
+    "data"
+  ],
+  "script_git_blob_sha": "721427ea99162843baeb42baffbcc16869b5d0da",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "inputs": [
+    {
+      "path": "data/sweep_results_long.parquet",
+      "sha256": "3783d41c1b6e14d5f0a9bb5ec85da9e60f0a71292ea92c9b278a1a69b5f57712"
+    },
+    {
+      "path": "data/sweep_results_long.manifest.json",
+      "sha256": "b1f8b14372c54a91b47d348deea647a862e4ffe280ec7dc18840c90fff1b4d4b"
+    },
+    {
+      "path": "data/tradeoff_curve_v2.json",
+      "sha256": "a40a079733ecdfcd70191b749571d73cb1a7c870595da635c848b2c68fad8dbd"
+    },
+    {
+      "path": "data/tuned_metrics.json",
+      "sha256": "360a9ec768152afe634ef1f92dd44c72b64a185f89e4f480a09dcd777e4cbf83"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_limit_sweep.json",
+      "sha256": "d3fb3a45b269c20214e403d4c08388251bfc9757312f89392413acf48799f663",
+      "md5": "565854939b29ec98c6add19ba1f6a112",
+      "bytes": 41579,
+      "byte_reproducible": true,
+      "byte_reproducible_evidence": "md5 compared with an independent earlier run of the same script into /Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref/sts_limit_sweep.json: 565854939b29ec98c6add19ba1f6a112 vs 565854939b29ec98c6add19ba1f6a112"
+    },
+    {
+      "path": "data/sts_limit_sweep.png",
+      "sha256": "dfc8be9a27cd0fc111b915db38c464e5868e5cec5844f099ba9e5406b8099417",
+      "md5": "6b5b664d75fdc31249820e2362288f84",
+      "bytes": 132506,
+      "byte_reproducible": true,
+      "byte_reproducible_evidence": "md5 compared with an independent earlier run of the same script into /Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref/sts_limit_sweep.png: 6b5b664d75fdc31249820e2362288f84 vs 6b5b664d75fdc31249820e2362288f84"
+    }
+  ],
+  "interpreter_short": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-27T22:06:49Z",
+  "parameters": {
+    "coverage_target": 0.9,
+    "study_limit_marked": 0.94,
+    "models": [
+      "ridge",
+      "histgb"
+    ],
+    "selection": "M2 (gate-aware) surrogates, as in the source sweep",
+    "limit_grid": "0.900 to 0.955 step 0.001 (56 limits), as stored in the source parquet",
+    "boundary_mass_choice": "[L, L + q_hat): the only boundary-mass column the parquet holds; [L, L + 0.005) is not stored there",
+    "band": "seed mean +- 1 population std (ddof=0), 5 seeds",
+    "colors": {
+      "ridge": "#b8860b",
+      "histgb": "#00798c"
+    },
+    "figsize_in": [
+      3.5,
+      4.3
+    ],
+    "dpi": 300,
+    "font_sizes": {
+      "label": 9,
+      "tick": 8
+    },
+    "band_alpha": 0.25,
+    "in_image_text": "axis labels, tick labels and legend only; no title, no annotation",
+    "upstream_model_hyperparameters_m2": {
+      "ridge_seed0": {
+        "tag": "alpha1",
+        "alpha": 1.0
+      },
+      "histgb_seed0": {
+        "tag": "rand00",
+        "learning_rate": 0.2,
+        "max_iter": 1000,
+        "max_depth": null,
+        "max_leaf_nodes": 63,
+        "min_samples_leaf": 20,
+        "l2_regularization": 10.0
+      },
+      "ridge_seed1": {
+        "tag": "alpha0.001",
+        "alpha": 0.001
+      },
+      "histgb_seed1": {
+        "tag": "rand13",
+        "learning_rate": 0.08,
+        "max_iter": 600,
+        "max_depth": null,
+        "max_leaf_nodes": 255,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.1
+      },
+      "ridge_seed2": {
+        "tag": "alpha0.001",
+        "alpha": 0.001
+      },
+      "histgb_seed2": {
+        "tag": "rand20",
+        "learning_rate": 0.08,
+        "max_iter": 1000,
+        "max_depth": null,
+        "max_leaf_nodes": 255,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.1
+      },
+      "ridge_seed3": {
+        "tag": "alpha0.001",
+        "alpha": 0.001
+      },
+      "histgb_seed3": {
+        "tag": "rand01",
+        "learning_rate": 0.1,
+        "max_iter": 1000,
+        "max_depth": null,
+        "max_leaf_nodes": 255,
+        "min_samples_leaf": 50,
+        "l2_regularization": 10.0
+      },
+      "ridge_seed4": {
+        "tag": "alpha0.01",
+        "alpha": 0.01
+      },
+      "histgb_seed4": {
+        "tag": "rand16",
+        "learning_rate": 0.1,
+        "max_iter": 300,
+        "max_depth": null,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 50,
+        "l2_regularization": 1.0
+      }
+    },
+    "upstream_generator": "scripts/limit_sweep.py (wrote the source parquet)"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

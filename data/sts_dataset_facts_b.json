@@ -1,0 +1,50 @@
+{
+  "source": "data/dataset.parquet",
+  "population": "converged N-1 rows (outaged_type != 'none' and converged)",
+  "n_rows": 278955,
+  "strip_0p94_to_0p945": {
+    "n_rows": 158622,
+    "share_pct": 56.862934881970205,
+    "definition": "0.94 <= min_vm < 0.945 (one-sided, above the limit)"
+  },
+  "strip_crosscheck_frozen_v2_pct": 56.86,
+  "within_0p005_of_limit": {
+    "above_only": {
+      "n_rows": 158622,
+      "share_pct": 56.862934881970205,
+      "definition": "0.94 <= min_vm < 0.945 (one-sided, above the limit)"
+    },
+    "two_sided_open": {
+      "n_rows": 171865,
+      "share_pct": 61.61029556738542,
+      "definition": "|min_vm - 0.94| < 0.005 (two-sided, open)"
+    },
+    "two_sided_closed": {
+      "n_rows": 171865,
+      "share_pct": 61.61029556738542,
+      "definition": "|min_vm - 0.94| <= 0.005 (two-sided, closed)"
+    },
+    "below_only": {
+      "n_rows": 13243,
+      "share_pct": 4.74736068541521,
+      "definition": "0.935 <= min_vm < 0.94 (one-sided, below the limit)"
+    }
+  },
+  "tallest_0p001_bin": {
+    "figure_binning": {
+      "edges": "np.arange(0.715, 0.965 + 0.001/2, 0.001) as in feasibility/boundary_mass_hist.py",
+      "bin_lo": 0.9400000000000002,
+      "bin_hi": 0.9410000000000002,
+      "n_rows": 39229,
+      "share_pct": 14.062841676972988,
+      "rows_outside_histogram_range": 0
+    },
+    "integer_binning_check": {
+      "rule": "bin k = floor((min_vm - 0.94) / 0.001); bin k covers [0.94 + k*0.001, 0.94 + (k+1)*0.001)",
+      "bin_lo": 0.94,
+      "bin_hi": 0.941,
+      "n_rows": 39229,
+      "share_pct": 14.062841676972988
+    }
+  }
+}

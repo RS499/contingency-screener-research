@@ -1,0 +1,95 @@
+{
+  "schema": "sts-new-analysis",
+  "artifacts": [
+    "data/sts_n6_warmstart_timing.json"
+  ],
+  "generating_script": "scripts/sts_n6_warmstart_timing.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scripts/sts_n6_warmstart_timing.py"
+  ],
+  "script_sha256": "39c8ee8b7aa43c558f2eb18b5552c022bbae9ad963fefc41496f0d8ae9349aaa",
+  "repo_head_commit": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "inputs": [
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    },
+    {
+      "path": "data/solve_time.json",
+      "sha256": "94d8e8059d2b35260da090e33e3ce058c0437ef7b578556a134bbdc258a0d4ec"
+    }
+  ],
+  "output_sha256": "78b74340ebee84fd6a195286bba2766e8c988448f1609a61d11418ca67bbebd9",
+  "model_hyperparameters": null,
+  "seeds": [
+    2026
+  ],
+  "solver": {
+    "cold": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr",
+      "note": "pinned (data/solve_time.json basis)"
+    },
+    "warm": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "results",
+      "algorithm": "nr",
+      "note": "net.res_bus reset to the N-0 solution before every warm solve (reset not timed in per-solve numbers)"
+    }
+  },
+  "cpu": "Apple M5",
+  "machine": "arm64",
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "environment": {
+    "python": "3.13.9",
+    "packages": {
+      "pandapower": "3.5.4",
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2",
+      "pyarrow": "21.0.0",
+      "numba": "0.66.0"
+    },
+    "solver": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    },
+    "numba": {
+      "available": true,
+      "version": "0.66.0"
+    },
+    "tuned_generator_settings": {
+      "stress": "fixed",
+      "mult_lo": 1.0,
+      "mult_hi": 1.12
+    },
+    "hardware": {
+      "machine": "arm64",
+      "processor": "arm",
+      "system": "Darwin",
+      "release": "25.5.0",
+      "cpu": "Apple M5"
+    },
+    "measurement": {
+      "ms_solver": 9.14,
+      "basis": "minimum over N timed solves",
+      "n_timed": 400,
+      "warmup_dropped": 30,
+      "mean_ms": 9.561,
+      "median_ms": 9.512,
+      "std_ms": 0.256,
+      "min_ms": 9.138
+    }
+  },
+  "wall_time_s": 78.2450602054596,
+  "generated_utc": "2026-09-27T22:40:08Z"
+}

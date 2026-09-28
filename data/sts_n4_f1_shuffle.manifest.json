@@ -1,0 +1,206 @@
+{
+  "schema": "sts-new-analysis",
+  "artifacts": [
+    "data/sts_n4_f1_shuffle.json"
+  ],
+  "generating_script": "scripts/sts_n4_f1_shuffle.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scripts/sts_n4_f1_shuffle.py"
+  ],
+  "script_sha256": "ee9cc037a1e1a85b294d57f897f81d9edb80b5c5701d6c541928f162e20be55d",
+  "repo_head_commit": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+  "inputs": [
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/tuned_metrics.json",
+      "sha256": "360a9ec768152afe634ef1f92dd44c72b64a185f89e4f480a09dcd777e4cbf83"
+    },
+    {
+      "path": "data/physics/base_flows.parquet",
+      "sha256": "1e402cb3a315c8ddce742cc03c83e80925653dc76e83278bb64cc53e4eee50d1"
+    },
+    {
+      "path": "data/sts_n1_predictions_long.parquet",
+      "sha256": "a56cec89b0e2a9611b8984cfd25ddb9ce9bbae0b0f5aef011a18d71f6c2a9cc2"
+    },
+    {
+      "path": "data/solve_time.json",
+      "sha256": "94d8e8059d2b35260da090e33e3ce058c0437ef7b578556a134bbdc258a0d4ec"
+    },
+    {
+      "path": "data/f1_leakage_audit.json",
+      "sha256": "86698fa6ddb16164b70440ab0878c47da20a05afab8ae78d9d270e02b91cc7bf"
+    }
+  ],
+  "output_sha256": "7d1d6187aa80dbdc789595f7b9122fdf53a96f6a482a1a9ed5ac3685bfbc869c",
+  "model_hyperparameters": {
+    "ridge_seed0": {
+      "tag": "alpha1",
+      "config": {
+        "tag": "alpha1",
+        "alpha": 1.0
+      }
+    },
+    "histgb_seed0": {
+      "tag": "rand00",
+      "config": {
+        "tag": "rand00",
+        "learning_rate": 0.2,
+        "max_iter": 1000,
+        "max_depth": null,
+        "max_leaf_nodes": 63,
+        "min_samples_leaf": 20,
+        "l2_regularization": 10.0
+      }
+    },
+    "ridge_seed1": {
+      "tag": "alpha0.001",
+      "config": {
+        "tag": "alpha0.001",
+        "alpha": 0.001
+      }
+    },
+    "histgb_seed1": {
+      "tag": "rand13",
+      "config": {
+        "tag": "rand13",
+        "learning_rate": 0.08,
+        "max_iter": 600,
+        "max_depth": null,
+        "max_leaf_nodes": 255,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.1
+      }
+    },
+    "ridge_seed2": {
+      "tag": "alpha0.001",
+      "config": {
+        "tag": "alpha0.001",
+        "alpha": 0.001
+      }
+    },
+    "histgb_seed2": {
+      "tag": "rand20",
+      "config": {
+        "tag": "rand20",
+        "learning_rate": 0.08,
+        "max_iter": 1000,
+        "max_depth": null,
+        "max_leaf_nodes": 255,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.1
+      }
+    },
+    "ridge_seed3": {
+      "tag": "alpha0.001",
+      "config": {
+        "tag": "alpha0.001",
+        "alpha": 0.001
+      }
+    },
+    "histgb_seed3": {
+      "tag": "rand01",
+      "config": {
+        "tag": "rand01",
+        "learning_rate": 0.1,
+        "max_iter": 1000,
+        "max_depth": null,
+        "max_leaf_nodes": 255,
+        "min_samples_leaf": 50,
+        "l2_regularization": 10.0
+      }
+    },
+    "ridge_seed4": {
+      "tag": "alpha0.01",
+      "config": {
+        "tag": "alpha0.01",
+        "alpha": 0.01
+      }
+    },
+    "histgb_seed4": {
+      "tag": "rand16",
+      "config": {
+        "tag": "rand16",
+        "learning_rate": 0.1,
+        "max_iter": 300,
+        "max_depth": null,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 50,
+        "l2_regularization": 1.0
+      }
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "permutation_seeds": [
+    12345,
+    12346,
+    12347,
+    12348,
+    12349
+  ],
+  "split_protocol": "make_splits(groups, seed): GroupShuffleSplit 60/20/20 on scenario_id",
+  "solver": {
+    "note": "no AC solves in this script",
+    "pinned": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    }
+  },
+  "environment": {
+    "python": "3.13.9",
+    "packages": {
+      "pandapower": "3.5.4",
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2",
+      "pyarrow": "21.0.0",
+      "numba": "0.66.0"
+    },
+    "solver": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    },
+    "numba": {
+      "available": true,
+      "version": "0.66.0"
+    },
+    "tuned_generator_settings": {
+      "stress": "fixed",
+      "mult_lo": 1.0,
+      "mult_hi": 1.12
+    },
+    "hardware": {
+      "machine": "arm64",
+      "processor": "arm",
+      "system": "Darwin",
+      "release": "25.5.0",
+      "cpu": "Apple M5"
+    },
+    "measurement": {
+      "ms_solver": 9.14,
+      "basis": "minimum over N timed solves",
+      "n_timed": 400,
+      "warmup_dropped": 30,
+      "mean_ms": 9.561,
+      "median_ms": 9.512,
+      "std_ms": 0.256,
+      "min_ms": 9.138
+    }
+  },
+  "wall_time_s": 525.532378911972,
+  "generated_utc": "2026-09-27T22:36:54Z"
+}

@@ -1,0 +1,87 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "solver": {
+    "enforce_q_lims": true,
+    "numba": true,
+    "init": "dc",
+    "algorithm": "nr"
+  },
+  "numba": {
+    "available": true,
+    "version": "0.66.0"
+  },
+  "tuned_generator_settings": {
+    "stress": "fixed",
+    "mult_lo": 1.0,
+    "mult_hi": 1.12
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.5.0",
+    "cpu": "Apple M5"
+  },
+  "measurement": {
+    "ms_solver": 9.14,
+    "basis": "minimum over N timed solves",
+    "n_timed": 400,
+    "warmup_dropped": 30,
+    "mean_ms": 9.561,
+    "median_ms": 9.512,
+    "std_ms": 0.256,
+    "min_ms": 9.138
+  },
+  "git_commit": {
+    "full": "7fc39e4ca1aca9f587e16325ad52b615924ebe64",
+    "short": "7fc39e4"
+  },
+  "artifact": {
+    "n_records": null,
+    "n_fields": null
+  },
+  "content_sha256": "e33543846b05498fb820972e99d0fbde3111d6a665b3594800e171a8880adcd4",
+  "run_settings": {
+    "task": "boundary-proximity facts without a JSON key (ledger P-008)",
+    "generating_script": "scripts/sts_dataset_facts_b.py",
+    "regeneration_argv": [
+      "scripts/sts_dataset_facts_b.py",
+      "data"
+    ],
+    "inputs": [
+      {
+        "path": "data/dataset.parquet",
+        "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+      },
+      {
+        "path": "data/frozen_poster_numbers_v2.json",
+        "sha256": "ccb8096d9e382d40952d76233ea29b3ca49001932e441def6066575cd5e64434"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "data/sts_dataset_facts_b.json",
+        "sha256": "e33543846b05498fb820972e99d0fbde3111d6a665b3594800e171a8880adcd4",
+        "repro": {
+          "compared_with": "/Users/rajansaha/.claude/jobs/484f4ac7/tmp/ref3/sts_dataset_facts_b.json",
+          "same_sha256": true
+        }
+      }
+    ],
+    "limit": 0.94,
+    "width_pu": 0.005,
+    "hist_lo": 0.715,
+    "hist_hi": 0.965,
+    "bin_width": 0.001,
+    "no_new_solves": "computed from data/dataset.parquet; no fit or AC solve"
+  },
+  "model_hyperparameters": null
+}

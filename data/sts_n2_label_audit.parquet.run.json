@@ -1,0 +1,18 @@
+{
+  "script": "scripts/sts_n2_label_audit.py",
+  "argv": [
+    "scripts/sts_n2_label_audit.py"
+  ],
+  "wall_time_s": 1359.2693140506744,
+  "replay_wall_s": 12.251224994659424,
+  "replay_n0_max_abs_diff": 0.0,
+  "replay_n0_n_exact": 1500,
+  "replay_n_scenarios": 1500,
+  "rejects_per_shard": {
+    "100": 370,
+    "101": 313,
+    "102": 287,
+    "103": 317
+  },
+  "max_scen": 0
+}

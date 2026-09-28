@@ -1,0 +1,1687 @@
+{
+  "question": "conditional coverage under the committed global q_hat: per outaged element and per base case",
+  "source_predictions": "data/sts_n1_predictions_long.parquet",
+  "target": 0.9,
+  "low_threshold": 0.85,
+  "operating_points": {
+    "ridge": 0.94,
+    "histgb": 0.97
+  },
+  "definitions": {
+    "covered": "y >= pred - q_hat (one-sided band), q_hat from ALL calibration rows (committed global rule)",
+    "E12_element": "coverage over the test rows of each outaged element (186 elements), per split",
+    "E13_base_coverage": "coverage over the 186 rows of each test base case, per split",
+    "share_below_085_expected_if_exact_target": "mean over groups of P(Binomial(n_g, 0.90) < 0.85 n_g): the share expected below 0.85 from sampling noise alone if every group had exactly 0.90 coverage",
+    "any_miss": "share of test base cases in which at least one violation is certified safe (certify & y < 0.94); also restricted to test base cases with at least one violation"
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "family": "ridge",
+      "q_hat_090": 0.00552461357270162,
+      "marginal_coverage_090": 0.9155926795604868,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 291,
+        "rows_per_group_median": 300.0,
+        "min": 0.5666666666666667,
+        "p5": 0.67,
+        "median": 0.9633333333333334,
+        "share_below_085": 0.1774193548387097,
+        "share_below_085_expected_if_exact_target": 0.0024295383173162546
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.11827956989247312,
+        "p5": 0.8225806451612904,
+        "median": 0.9354838709677419,
+        "share_below_085": 0.06,
+        "share_below_085_expected_if_exact_target": 0.018882360036966556
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.00552461357270162,
+          "share_of_test_bases_with_ge1_miss": 0.18,
+          "share_of_violating_test_bases_with_ge1_miss": 0.18,
+          "missed_viol_rows": 0.02620042817820369,
+          "max_misses_in_one_base": 26,
+          "mean_misses_per_base_given_ge1": 4.7592592592592595
+        },
+        "0.94": {
+          "q_hat": 0.0074367979219531755,
+          "share_of_test_bases_with_ge1_miss": 0.06333333333333334,
+          "share_of_violating_test_bases_with_ge1_miss": 0.06333333333333334,
+          "missed_viol_rows": 0.006014884289937812,
+          "max_misses_in_one_base": 9,
+          "mean_misses_per_base_given_ge1": 3.1052631578947367
+        },
+        "0.97": {
+          "q_hat": 0.010891360762284696,
+          "share_of_test_bases_with_ge1_miss": 0.0033333333333333335,
+          "share_of_violating_test_bases_with_ge1_miss": 0.0033333333333333335,
+          "missed_viol_rows": 0.00020389438270975634,
+          "max_misses_in_one_base": 2,
+          "mean_misses_per_base_given_ge1": 2.0
+        }
+      }
+    },
+    {
+      "seed": 0,
+      "family": "histgb",
+      "q_hat_090": 0.002335618678972362,
+      "marginal_coverage_090": 0.9047123985014968,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 291,
+        "rows_per_group_median": 300.0,
+        "min": 0.5866666666666667,
+        "p5": 0.65,
+        "median": 0.9583333333333333,
+        "share_below_085": 0.20967741935483872,
+        "share_below_085_expected_if_exact_target": 0.0024295383173162546
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.0967741935483871,
+        "p5": 0.8373437954083115,
+        "median": 0.9193548387096774,
+        "share_below_085": 0.08333333333333333,
+        "share_below_085_expected_if_exact_target": 0.018882360036966556
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.002335618678972362,
+          "share_of_test_bases_with_ge1_miss": 0.45666666666666667,
+          "share_of_violating_test_bases_with_ge1_miss": 0.45666666666666667,
+          "missed_viol_rows": 0.04557039453563054,
+          "max_misses_in_one_base": 26,
+          "mean_misses_per_base_given_ge1": 3.2627737226277373
+        },
+        "0.94": {
+          "q_hat": 0.003638562845533988,
+          "share_of_test_bases_with_ge1_miss": 0.27666666666666667,
+          "share_of_violating_test_bases_with_ge1_miss": 0.27666666666666667,
+          "missed_viol_rows": 0.025486797838719544,
+          "max_misses_in_one_base": 25,
+          "mean_misses_per_base_given_ge1": 3.0120481927710845
+        },
+        "0.97": {
+          "q_hat": 0.005720216760455421,
+          "share_of_test_bases_with_ge1_miss": 0.10666666666666667,
+          "share_of_violating_test_bases_with_ge1_miss": 0.10666666666666667,
+          "missed_viol_rows": 0.011621979814456111,
+          "max_misses_in_one_base": 25,
+          "mean_misses_per_base_given_ge1": 3.5625
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "family": "ridge",
+      "q_hat_090": 0.0051332624013122885,
+      "marginal_coverage_090": 0.8832807570977917,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 295,
+        "rows_per_group_median": 300.0,
+        "min": 0.57,
+        "p5": 0.6508333333333333,
+        "median": 0.925,
+        "share_below_085": 0.1881720430107527,
+        "share_below_085_expected_if_exact_target": 0.0024235913684626602
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.10215053763440861,
+        "p5": 0.33844086021505376,
+        "median": 0.9301075268817204,
+        "share_below_085": 0.1,
+        "share_below_085_expected_if_exact_target": 0.018894398099514785
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.0051332624013122885,
+          "share_of_test_bases_with_ge1_miss": 0.24,
+          "share_of_violating_test_bases_with_ge1_miss": 0.24,
+          "missed_viol_rows": 0.034281620957838724,
+          "max_misses_in_one_base": 46,
+          "mean_misses_per_base_given_ge1": 4.652777777777778
+        },
+        "0.94": {
+          "q_hat": 0.007442509647866191,
+          "share_of_test_bases_with_ge1_miss": 0.056666666666666664,
+          "share_of_violating_test_bases_with_ge1_miss": 0.056666666666666664,
+          "missed_viol_rows": 0.006242325010233319,
+          "max_misses_in_one_base": 13,
+          "mean_misses_per_base_given_ge1": 3.588235294117647
+        },
+        "0.97": {
+          "q_hat": 0.01146696964826932,
+          "share_of_test_bases_with_ge1_miss": 0.0,
+          "share_of_violating_test_bases_with_ge1_miss": 0.0,
+          "missed_viol_rows": 0.0,
+          "max_misses_in_one_base": 0,
+          "mean_misses_per_base_given_ge1": 0.0
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "family": "histgb",
+      "q_hat_090": 0.002353357097683695,
+      "marginal_coverage_090": 0.9041439632922282,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 295,
+        "rows_per_group_median": 300.0,
+        "min": 0.5366666666666666,
+        "p5": 0.6633333333333333,
+        "median": 0.9566666666666667,
+        "share_below_085": 0.21505376344086022,
+        "share_below_085_expected_if_exact_target": 0.0024235913684626602
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.14516129032258066,
+        "p5": 0.8440860215053764,
+        "median": 0.9193548387096774,
+        "share_below_085": 0.06666666666666667,
+        "share_below_085_expected_if_exact_target": 0.018894398099514785
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.002353357097683695,
+          "share_of_test_bases_with_ge1_miss": 0.43333333333333335,
+          "share_of_violating_test_bases_with_ge1_miss": 0.43333333333333335,
+          "missed_viol_rows": 0.04308227589029881,
+          "max_misses_in_one_base": 20,
+          "mean_misses_per_base_given_ge1": 3.2384615384615385
+        },
+        "0.94": {
+          "q_hat": 0.0037083242359710056,
+          "share_of_test_bases_with_ge1_miss": 0.27666666666666667,
+          "share_of_violating_test_bases_with_ge1_miss": 0.27666666666666667,
+          "missed_viol_rows": 0.023434302087597215,
+          "max_misses_in_one_base": 19,
+          "mean_misses_per_base_given_ge1": 2.7590361445783134
+        },
+        "0.97": {
+          "q_hat": 0.005728406974601752,
+          "share_of_test_bases_with_ge1_miss": 0.12,
+          "share_of_violating_test_bases_with_ge1_miss": 0.12,
+          "missed_viol_rows": 0.007981989357347523,
+          "max_misses_in_one_base": 8,
+          "mean_misses_per_base_given_ge1": 2.1666666666666665
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "family": "ridge",
+      "q_hat_090": 0.004943555243710485,
+      "marginal_coverage_090": 0.8870166884758097,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 290,
+        "rows_per_group_median": 300.0,
+        "min": 0.5766666666666667,
+        "p5": 0.67,
+        "median": 0.93,
+        "share_below_085": 0.1881720430107527,
+        "share_below_085_expected_if_exact_target": 0.0024357516114652785
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.0967741935483871,
+        "p5": 0.36487939552455684,
+        "median": 0.9301075268817204,
+        "share_below_085": 0.09333333333333334,
+        "share_below_085_expected_if_exact_target": 0.018874334661934403
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.004943555243710485,
+          "share_of_test_bases_with_ge1_miss": 0.2833333333333333,
+          "share_of_violating_test_bases_with_ge1_miss": 0.2833333333333333,
+          "missed_viol_rows": 0.0351981833195706,
+          "max_misses_in_one_base": 13,
+          "mean_misses_per_base_given_ge1": 4.011764705882353
+        },
+        "0.94": {
+          "q_hat": 0.006657457124686683,
+          "share_of_test_bases_with_ge1_miss": 0.11333333333333333,
+          "share_of_violating_test_bases_with_ge1_miss": 0.11333333333333333,
+          "missed_viol_rows": 0.011457473162675475,
+          "max_misses_in_one_base": 12,
+          "mean_misses_per_base_given_ge1": 3.264705882352941
+        },
+        "0.97": {
+          "q_hat": 0.0102073532989565,
+          "share_of_test_bases_with_ge1_miss": 0.013333333333333334,
+          "share_of_violating_test_bases_with_ge1_miss": 0.013333333333333334,
+          "missed_viol_rows": 0.000722543352601156,
+          "max_misses_in_one_base": 3,
+          "mean_misses_per_base_given_ge1": 1.75
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "family": "histgb",
+      "q_hat_090": 0.0020534393537054996,
+      "marginal_coverage_090": 0.8850269776112715,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 290,
+        "rows_per_group_median": 300.0,
+        "min": 0.51,
+        "p5": 0.6366666666666667,
+        "median": 0.935,
+        "share_below_085": 0.26881720430107525,
+        "share_below_085_expected_if_exact_target": 0.0024357516114652785
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.04838709677419355,
+        "p5": 0.8115591397849462,
+        "median": 0.9139784946236559,
+        "share_below_085": 0.10666666666666667,
+        "share_below_085_expected_if_exact_target": 0.018874334661934403
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.0020534393537054996,
+          "share_of_test_bases_with_ge1_miss": 0.53,
+          "share_of_violating_test_bases_with_ge1_miss": 0.53,
+          "missed_viol_rows": 0.0514037985136251,
+          "max_misses_in_one_base": 12,
+          "mean_misses_per_base_given_ge1": 3.1320754716981134
+        },
+        "0.94": {
+          "q_hat": 0.003394044695962939,
+          "share_of_test_bases_with_ge1_miss": 0.30666666666666664,
+          "share_of_violating_test_bases_with_ge1_miss": 0.30666666666666664,
+          "missed_viol_rows": 0.024050371593724196,
+          "max_misses_in_one_base": 11,
+          "mean_misses_per_base_given_ge1": 2.532608695652174
+        },
+        "0.97": {
+          "q_hat": 0.005352561828672053,
+          "share_of_test_bases_with_ge1_miss": 0.15,
+          "share_of_violating_test_bases_with_ge1_miss": 0.15,
+          "missed_viol_rows": 0.01032204789430223,
+          "max_misses_in_one_base": 10,
+          "mean_misses_per_base_given_ge1": 2.2222222222222223
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "family": "ridge",
+      "q_hat_090": 0.0049365181872691455,
+      "marginal_coverage_090": 0.8798372497356204,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 292,
+        "rows_per_group_median": 300.0,
+        "min": 0.5566666666666666,
+        "p5": 0.67,
+        "median": 0.92,
+        "share_below_085": 0.1774193548387097,
+        "share_below_085_expected_if_exact_target": 0.002432141202521315
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.05913978494623656,
+        "p5": 0.2629032258064516,
+        "median": 0.9354838709677419,
+        "share_below_085": 0.1,
+        "share_below_085_expected_if_exact_target": 0.018890385411998705
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.0049365181872691455,
+          "share_of_test_bases_with_ge1_miss": 0.22666666666666666,
+          "share_of_violating_test_bases_with_ge1_miss": 0.22666666666666666,
+          "missed_viol_rows": 0.02837471312330482,
+          "max_misses_in_one_base": 31,
+          "mean_misses_per_base_given_ge1": 4.0
+        },
+        "0.94": {
+          "q_hat": 0.006473333863994513,
+          "share_of_test_bases_with_ge1_miss": 0.08333333333333333,
+          "share_of_violating_test_bases_with_ge1_miss": 0.08333333333333333,
+          "missed_viol_rows": 0.00918005424577509,
+          "max_misses_in_one_base": 15,
+          "mean_misses_per_base_given_ge1": 3.52
+        },
+        "0.97": {
+          "q_hat": 0.01049638017738308,
+          "share_of_test_bases_with_ge1_miss": 0.0,
+          "share_of_violating_test_bases_with_ge1_miss": 0.0,
+          "missed_viol_rows": 0.0,
+          "max_misses_in_one_base": 0,
+          "mean_misses_per_base_given_ge1": 0.0
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "family": "histgb",
+      "q_hat_090": 0.002262051382869279,
+      "marginal_coverage_090": 0.9092864440501156,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 292,
+        "rows_per_group_median": 300.0,
+        "min": 0.59,
+        "p5": 0.7033333333333334,
+        "median": 0.95,
+        "share_below_085": 0.20967741935483872,
+        "share_below_085_expected_if_exact_target": 0.002432141202521315
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.0967741935483871,
+        "p5": 0.8440860215053764,
+        "median": 0.9301075268817204,
+        "share_below_085": 0.07,
+        "share_below_085_expected_if_exact_target": 0.018890385411998705
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.002262051382869279,
+          "share_of_test_bases_with_ge1_miss": 0.41333333333333333,
+          "share_of_violating_test_bases_with_ge1_miss": 0.41333333333333333,
+          "missed_viol_rows": 0.03306905904443981,
+          "max_misses_in_one_base": 11,
+          "mean_misses_per_base_given_ge1": 2.556451612903226
+        },
+        "0.94": {
+          "q_hat": 0.003288404849983384,
+          "share_of_test_bases_with_ge1_miss": 0.2833333333333333,
+          "share_of_violating_test_bases_with_ge1_miss": 0.2833333333333333,
+          "missed_viol_rows": 0.019507615272272065,
+          "max_misses_in_one_base": 9,
+          "mean_misses_per_base_given_ge1": 2.2
+        },
+        "0.97": {
+          "q_hat": 0.005327379026154766,
+          "share_of_test_bases_with_ge1_miss": 0.11,
+          "share_of_violating_test_bases_with_ge1_miss": 0.11,
+          "missed_viol_rows": 0.0069893594825787605,
+          "max_misses_in_one_base": 8,
+          "mean_misses_per_base_given_ge1": 2.0303030303030303
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "family": "ridge",
+      "q_hat_090": 0.00545320578083186,
+      "marginal_coverage_090": 0.9012206269828467,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 295,
+        "rows_per_group_median": 300.0,
+        "min": 0.6033333333333334,
+        "p5": 0.6808333333333334,
+        "median": 0.9366666666666666,
+        "share_below_085": 0.17204301075268819,
+        "share_below_085_expected_if_exact_target": 0.0024310830963599132
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.053763440860215055,
+        "p5": 0.44354838709677424,
+        "median": 0.946236559139785,
+        "share_below_085": 0.08,
+        "share_below_085_expected_if_exact_target": 0.018890385411998705
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.00545320578083186,
+          "share_of_test_bases_with_ge1_miss": 0.19666666666666666,
+          "share_of_violating_test_bases_with_ge1_miss": 0.19666666666666666,
+          "missed_viol_rows": 0.024102671118530886,
+          "max_misses_in_one_base": 19,
+          "mean_misses_per_base_given_ge1": 3.9152542372881354
+        },
+        "0.94": {
+          "q_hat": 0.007389140097740388,
+          "share_of_test_bases_with_ge1_miss": 0.06666666666666667,
+          "share_of_violating_test_bases_with_ge1_miss": 0.06666666666666667,
+          "missed_viol_rows": 0.006782136894824708,
+          "max_misses_in_one_base": 10,
+          "mean_misses_per_base_given_ge1": 3.25
+        },
+        "0.97": {
+          "q_hat": 0.010440146127610683,
+          "share_of_test_bases_with_ge1_miss": 0.006666666666666667,
+          "share_of_violating_test_bases_with_ge1_miss": 0.006666666666666667,
+          "missed_viol_rows": 0.00041736227045075126,
+          "max_misses_in_one_base": 2,
+          "mean_misses_per_base_given_ge1": 2.0
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "family": "histgb",
+      "q_hat_090": 0.002449047318323294,
+      "marginal_coverage_090": 0.8877059023856895,
+      "E12_element": {
+        "n_groups": 186,
+        "rows_per_group_min": 295,
+        "rows_per_group_median": 300.0,
+        "min": 0.56,
+        "p5": 0.6533333333333333,
+        "median": 0.9433333333333334,
+        "share_below_085": 0.27419354838709675,
+        "share_below_085_expected_if_exact_target": 0.0024310830963599132
+      },
+      "E13_base_coverage": {
+        "n_groups": 300,
+        "rows_per_group_min": 185,
+        "rows_per_group_median": 186.0,
+        "min": 0.08064516129032258,
+        "p5": 0.8061827956989247,
+        "median": 0.9193548387096774,
+        "share_below_085": 0.10666666666666667,
+        "share_below_085_expected_if_exact_target": 0.018890385411998705
+      },
+      "n_test_bases": 300,
+      "n_test_bases_with_violation": 300,
+      "any_miss": {
+        "0.9": {
+          "q_hat": 0.002449047318323294,
+          "share_of_test_bases_with_ge1_miss": 0.5233333333333333,
+          "share_of_violating_test_bases_with_ge1_miss": 0.5233333333333333,
+          "missed_viol_rows": 0.06270868113522537,
+          "max_misses_in_one_base": 27,
+          "mean_misses_per_base_given_ge1": 3.828025477707006
+        },
+        "0.94": {
+          "q_hat": 0.004018777664525741,
+          "share_of_test_bases_with_ge1_miss": 0.31666666666666665,
+          "share_of_violating_test_bases_with_ge1_miss": 0.31666666666666665,
+          "missed_viol_rows": 0.031302170283806344,
+          "max_misses_in_one_base": 27,
+          "mean_misses_per_base_given_ge1": 3.1578947368421053
+        },
+        "0.97": {
+          "q_hat": 0.006594729621320128,
+          "share_of_test_bases_with_ge1_miss": 0.07,
+          "share_of_violating_test_bases_with_ge1_miss": 0.07,
+          "missed_viol_rows": 0.004695325542570952,
+          "max_misses_in_one_base": 15,
+          "mean_misses_per_base_given_ge1": 2.142857142857143
+        }
+      }
+    }
+  ],
+  "summary": {
+    "ridge": {
+      "marginal_coverage_090": {
+        "mean": 0.8933896003705112,
+        "std": 0.013272306727773393,
+        "per_seed": [
+          0.9155926795604868,
+          0.8832807570977917,
+          0.8870166884758097,
+          0.8798372497356204,
+          0.9012206269828467
+        ]
+      },
+      "E12_element": {
+        "min": {
+          "mean": 0.5746666666666667,
+          "std": 0.01571976816340216,
+          "per_seed": [
+            0.5666666666666667,
+            0.57,
+            0.5766666666666667,
+            0.5566666666666666,
+            0.6033333333333334
+          ]
+        },
+        "p5": {
+          "mean": 0.6683333333333333,
+          "std": 0.009703951085339805,
+          "per_seed": [
+            0.67,
+            0.6508333333333333,
+            0.67,
+            0.67,
+            0.6808333333333334
+          ]
+        },
+        "median": {
+          "mean": 0.9349999999999999,
+          "std": 0.015202339001321839,
+          "per_seed": [
+            0.9633333333333334,
+            0.925,
+            0.93,
+            0.92,
+            0.9366666666666666
+          ]
+        },
+        "share_below_085": {
+          "mean": 0.1806451612903226,
+          "std": 0.0064516129032258,
+          "per_seed": [
+            0.1774193548387097,
+            0.1881720430107527,
+            0.1881720430107527,
+            0.1774193548387097,
+            0.17204301075268819
+          ]
+        },
+        "share_below_085_expected_if_exact_target": {
+          "mean": 0.002430421119225084,
+          "std": 3.9808512276357055e-06,
+          "per_seed": [
+            0.0024295383173162546,
+            0.0024235913684626602,
+            0.0024357516114652785,
+            0.002432141202521315,
+            0.0024310830963599132
+          ]
+        },
+        "n_groups_per_seed": [
+          186,
+          186,
+          186,
+          186,
+          186
+        ],
+        "rows_per_group_min_per_seed": [
+          291,
+          295,
+          290,
+          292,
+          295
+        ]
+      },
+      "E13_base_coverage": {
+        "min": {
+          "mean": 0.08602150537634409,
+          "std": 0.02521728903130876,
+          "per_seed": [
+            0.11827956989247312,
+            0.10215053763440861,
+            0.0967741935483871,
+            0.05913978494623656,
+            0.053763440860215055
+          ]
+        },
+        "p5": {
+          "mean": 0.4464705027608254,
+          "std": 0.19671900548422028,
+          "per_seed": [
+            0.8225806451612904,
+            0.33844086021505376,
+            0.36487939552455684,
+            0.2629032258064516,
+            0.44354838709677424
+          ]
+        },
+        "median": {
+          "mean": 0.935483870967742,
+          "std": 0.005889489865646983,
+          "per_seed": [
+            0.9354838709677419,
+            0.9301075268817204,
+            0.9301075268817204,
+            0.9354838709677419,
+            0.946236559139785
+          ]
+        },
+        "share_below_085": {
+          "mean": 0.08666666666666668,
+          "std": 0.015202339001321842,
+          "per_seed": [
+            0.06,
+            0.1,
+            0.09333333333333334,
+            0.1,
+            0.08
+          ]
+        },
+        "share_below_085_expected_if_exact_target": {
+          "mean": 0.018886372724482632,
+          "std": 7.1781136467286445e-06,
+          "per_seed": [
+            0.018882360036966556,
+            0.018894398099514785,
+            0.018874334661934403,
+            0.018890385411998705,
+            0.018890385411998705
+          ]
+        },
+        "n_groups_per_seed": [
+          300,
+          300,
+          300,
+          300,
+          300
+        ],
+        "rows_per_group_min_per_seed": [
+          185,
+          185,
+          185,
+          185,
+          185
+        ]
+      },
+      "any_miss": {
+        "0.9": {
+          "share_of_test_bases_with_ge1_miss": {
+            "mean": 0.22533333333333333,
+            "std": 0.03593821859184947,
+            "per_seed": [
+              0.18,
+              0.24,
+              0.2833333333333333,
+              0.22666666666666666,
+              0.19666666666666666
+            ]
+          },
+          "share_of_violating_test_bases_with_ge1_miss": {
+            "mean": 0.22533333333333333,
+            "std": 0.03593821859184947,
+            "per_seed": [
+              0.18,
+              0.24,
+              0.2833333333333333,
+              0.22666666666666666,
+              0.19666666666666666
+            ]
+          },
+          "missed_viol_rows": {
+            "mean": 0.029631523339489742,
+            "std": 0.004393889029106623,
+            "per_seed": [
+              0.02620042817820369,
+              0.034281620957838724,
+              0.0351981833195706,
+              0.02837471312330482,
+              0.024102671118530886
+            ]
+          },
+          "max_misses_in_one_base": {
+            "mean": 27.0,
+            "std": 11.29601699715435,
+            "per_seed": [
+              26.0,
+              46.0,
+              13.0,
+              31.0,
+              19.0
+            ]
+          },
+          "mean_misses_per_base_given_ge1": {
+            "mean": 4.267811196041505,
+            "std": 0.3609153692786218,
+            "per_seed": [
+              4.7592592592592595,
+              4.652777777777778,
+              4.011764705882353,
+              4.0,
+              3.9152542372881354
+            ]
+          }
+        },
+        "0.94": {
+          "share_of_test_bases_with_ge1_miss": {
+            "mean": 0.07666666666666666,
+            "std": 0.02033060090930254,
+            "per_seed": [
+              0.06333333333333334,
+              0.056666666666666664,
+              0.11333333333333333,
+              0.08333333333333333,
+              0.06666666666666667
+            ]
+          },
+          "share_of_violating_test_bases_with_ge1_miss": {
+            "mean": 0.07666666666666666,
+            "std": 0.02033060090930254,
+            "per_seed": [
+              0.06333333333333334,
+              0.056666666666666664,
+              0.11333333333333333,
+              0.08333333333333333,
+              0.06666666666666667
+            ]
+          },
+          "missed_viol_rows": {
+            "mean": 0.007935374720689281,
+            "std": 0.002089931235945204,
+            "per_seed": [
+              0.006014884289937812,
+              0.006242325010233319,
+              0.011457473162675475,
+              0.00918005424577509,
+              0.006782136894824708
+            ]
+          },
+          "max_misses_in_one_base": {
+            "mean": 11.8,
+            "std": 2.1354156504062622,
+            "per_seed": [
+              9.0,
+              13.0,
+              12.0,
+              15.0,
+              10.0
+            ]
+          },
+          "mean_misses_per_base_given_ge1": {
+            "mean": 3.3456408668730644,
+            "std": 0.1804063488594994,
+            "per_seed": [
+              3.1052631578947367,
+              3.588235294117647,
+              3.264705882352941,
+              3.52,
+              3.25
+            ]
+          }
+        },
+        "0.97": {
+          "share_of_test_bases_with_ge1_miss": {
+            "mean": 0.004666666666666667,
+            "std": 0.004988876515698589,
+            "per_seed": [
+              0.0033333333333333335,
+              0.0,
+              0.013333333333333334,
+              0.0,
+              0.006666666666666667
+            ]
+          },
+          "share_of_violating_test_bases_with_ge1_miss": {
+            "mean": 0.004666666666666667,
+            "std": 0.004988876515698589,
+            "per_seed": [
+              0.0033333333333333335,
+              0.0,
+              0.013333333333333334,
+              0.0,
+              0.006666666666666667
+            ]
+          },
+          "missed_viol_rows": {
+            "mean": 0.00026876000115233273,
+            "std": 0.0002744716340125178,
+            "per_seed": [
+              0.00020389438270975634,
+              0.0,
+              0.000722543352601156,
+              0.0,
+              0.00041736227045075126
+            ]
+          },
+          "max_misses_in_one_base": {
+            "mean": 1.4,
+            "std": 1.2000000000000002,
+            "per_seed": [
+              2.0,
+              0.0,
+              3.0,
+              0.0,
+              2.0
+            ]
+          },
+          "mean_misses_per_base_given_ge1": {
+            "mean": 1.15,
+            "std": 0.9433981132056604,
+            "per_seed": [
+              2.0,
+              0.0,
+              1.75,
+              0.0,
+              2.0
+            ]
+          }
+        }
+      },
+      "operating_point": 0.94,
+      "any_miss_at_operating_point": {
+        "share_of_test_bases_with_ge1_miss": {
+          "mean": 0.07666666666666666,
+          "std": 0.02033060090930254,
+          "per_seed": [
+            0.06333333333333334,
+            0.056666666666666664,
+            0.11333333333333333,
+            0.08333333333333333,
+            0.06666666666666667
+          ]
+        },
+        "share_of_violating_test_bases_with_ge1_miss": {
+          "mean": 0.07666666666666666,
+          "std": 0.02033060090930254,
+          "per_seed": [
+            0.06333333333333334,
+            0.056666666666666664,
+            0.11333333333333333,
+            0.08333333333333333,
+            0.06666666666666667
+          ]
+        },
+        "missed_viol_rows": {
+          "mean": 0.007935374720689281,
+          "std": 0.002089931235945204,
+          "per_seed": [
+            0.006014884289937812,
+            0.006242325010233319,
+            0.011457473162675475,
+            0.00918005424577509,
+            0.006782136894824708
+          ]
+        },
+        "max_misses_in_one_base": {
+          "mean": 11.8,
+          "std": 2.1354156504062622,
+          "per_seed": [
+            9.0,
+            13.0,
+            12.0,
+            15.0,
+            10.0
+          ]
+        },
+        "mean_misses_per_base_given_ge1": {
+          "mean": 3.3456408668730644,
+          "std": 0.1804063488594994,
+          "per_seed": [
+            3.1052631578947367,
+            3.588235294117647,
+            3.264705882352941,
+            3.52,
+            3.25
+          ]
+        }
+      }
+    },
+    "histgb": {
+      "marginal_coverage_090": {
+        "mean": 0.8981751371681603,
+        "std": 0.009841776143853134,
+        "per_seed": [
+          0.9047123985014968,
+          0.9041439632922282,
+          0.8850269776112715,
+          0.9092864440501156,
+          0.8877059023856895
+        ]
+      },
+      "E12_element": {
+        "min": {
+          "mean": 0.5566666666666666,
+          "std": 0.0303315017762062,
+          "per_seed": [
+            0.5866666666666667,
+            0.5366666666666666,
+            0.51,
+            0.59,
+            0.56
+          ]
+        },
+        "p5": {
+          "mean": 0.6613333333333333,
+          "std": 0.02266666666666667,
+          "per_seed": [
+            0.65,
+            0.6633333333333333,
+            0.6366666666666667,
+            0.7033333333333334,
+            0.6533333333333333
+          ]
+        },
+        "median": {
+          "mean": 0.9486666666666667,
+          "std": 0.008653836657164743,
+          "per_seed": [
+            0.9583333333333333,
+            0.9566666666666667,
+            0.935,
+            0.95,
+            0.9433333333333334
+          ]
+        },
+        "share_below_085": {
+          "mean": 0.23548387096774195,
+          "std": 0.029525871436012846,
+          "per_seed": [
+            0.20967741935483872,
+            0.21505376344086022,
+            0.26881720430107525,
+            0.20967741935483872,
+            0.27419354838709675
+          ]
+        },
+        "share_below_085_expected_if_exact_target": {
+          "mean": 0.002430421119225084,
+          "std": 3.9808512276357055e-06,
+          "per_seed": [
+            0.0024295383173162546,
+            0.0024235913684626602,
+            0.0024357516114652785,
+            0.002432141202521315,
+            0.0024310830963599132
+          ]
+        },
+        "n_groups_per_seed": [
+          186,
+          186,
+          186,
+          186,
+          186
+        ],
+        "rows_per_group_min_per_seed": [
+          291,
+          295,
+          290,
+          292,
+          295
+        ]
+      },
+      "E13_base_coverage": {
+        "min": {
+          "mean": 0.09354838709677418,
+          "std": 0.03127535391881503,
+          "per_seed": [
+            0.0967741935483871,
+            0.14516129032258066,
+            0.04838709677419355,
+            0.0967741935483871,
+            0.08064516129032258
+          ]
+        },
+        "p5": {
+          "mean": 0.8286515547805869,
+          "std": 0.016425567620880037,
+          "per_seed": [
+            0.8373437954083115,
+            0.8440860215053764,
+            0.8115591397849462,
+            0.8440860215053764,
+            0.8061827956989247
+          ]
+        },
+        "median": {
+          "mean": 0.9204301075268816,
+          "std": 0.005267719876953066,
+          "per_seed": [
+            0.9193548387096774,
+            0.9193548387096774,
+            0.9139784946236559,
+            0.9301075268817204,
+            0.9193548387096774
+          ]
+        },
+        "share_below_085": {
+          "mean": 0.08666666666666667,
+          "std": 0.01725623880739305,
+          "per_seed": [
+            0.08333333333333333,
+            0.06666666666666667,
+            0.10666666666666667,
+            0.07,
+            0.10666666666666667
+          ]
+        },
+        "share_below_085_expected_if_exact_target": {
+          "mean": 0.018886372724482632,
+          "std": 7.1781136467286445e-06,
+          "per_seed": [
+            0.018882360036966556,
+            0.018894398099514785,
+            0.018874334661934403,
+            0.018890385411998705,
+            0.018890385411998705
+          ]
+        },
+        "n_groups_per_seed": [
+          300,
+          300,
+          300,
+          300,
+          300
+        ],
+        "rows_per_group_min_per_seed": [
+          185,
+          185,
+          185,
+          185,
+          185
+        ]
+      },
+      "any_miss": {
+        "0.9": {
+          "share_of_test_bases_with_ge1_miss": {
+            "mean": 0.47133333333333327,
+            "std": 0.04726285833270961,
+            "per_seed": [
+              0.45666666666666667,
+              0.43333333333333335,
+              0.53,
+              0.41333333333333333,
+              0.5233333333333333
+            ]
+          },
+          "share_of_violating_test_bases_with_ge1_miss": {
+            "mean": 0.47133333333333327,
+            "std": 0.04726285833270961,
+            "per_seed": [
+              0.45666666666666667,
+              0.43333333333333335,
+              0.53,
+              0.41333333333333333,
+              0.5233333333333333
+            ]
+          },
+          "missed_viol_rows": {
+            "mean": 0.04716684182384393,
+            "std": 0.009772209302677339,
+            "per_seed": [
+              0.04557039453563054,
+              0.04308227589029881,
+              0.0514037985136251,
+              0.03306905904443981,
+              0.06270868113522537
+            ]
+          },
+          "max_misses_in_one_base": {
+            "mean": 19.2,
+            "std": 6.734983296193095,
+            "per_seed": [
+              26.0,
+              20.0,
+              12.0,
+              11.0,
+              27.0
+            ]
+          },
+          "mean_misses_per_base_given_ge1": {
+            "mean": 3.2035575646795245,
+            "std": 0.40460865477400104,
+            "per_seed": [
+              3.2627737226277373,
+              3.2384615384615385,
+              3.1320754716981134,
+              2.556451612903226,
+              3.828025477707006
+            ]
+          }
+        },
+        "0.94": {
+          "share_of_test_bases_with_ge1_miss": {
+            "mean": 0.292,
+            "std": 0.0165462315279878,
+            "per_seed": [
+              0.27666666666666667,
+              0.27666666666666667,
+              0.30666666666666664,
+              0.2833333333333333,
+              0.31666666666666665
+            ]
+          },
+          "share_of_violating_test_bases_with_ge1_miss": {
+            "mean": 0.292,
+            "std": 0.0165462315279878,
+            "per_seed": [
+              0.27666666666666667,
+              0.27666666666666667,
+              0.30666666666666664,
+              0.2833333333333333,
+              0.31666666666666665
+            ]
+          },
+          "missed_viol_rows": {
+            "mean": 0.02475625141522387,
+            "std": 0.0038256175872467798,
+            "per_seed": [
+              0.025486797838719544,
+              0.023434302087597215,
+              0.024050371593724196,
+              0.019507615272272065,
+              0.031302170283806344
+            ]
+          },
+          "max_misses_in_one_base": {
+            "mean": 18.2,
+            "std": 7.222188034107115,
+            "per_seed": [
+              25.0,
+              19.0,
+              11.0,
+              9.0,
+              27.0
+            ]
+          },
+          "mean_misses_per_base_given_ge1": {
+            "mean": 2.7323175539687354,
+            "std": 0.3415624857342293,
+            "per_seed": [
+              3.0120481927710845,
+              2.7590361445783134,
+              2.532608695652174,
+              2.2,
+              3.1578947368421053
+            ]
+          }
+        },
+        "0.97": {
+          "share_of_test_bases_with_ge1_miss": {
+            "mean": 0.11133333333333333,
+            "std": 0.02569911368986184,
+            "per_seed": [
+              0.10666666666666667,
+              0.12,
+              0.15,
+              0.11,
+              0.07
+            ]
+          },
+          "share_of_violating_test_bases_with_ge1_miss": {
+            "mean": 0.11133333333333333,
+            "std": 0.02569911368986184,
+            "per_seed": [
+              0.10666666666666667,
+              0.12,
+              0.15,
+              0.11,
+              0.07
+            ]
+          },
+          "missed_viol_rows": {
+            "mean": 0.008322140418251116,
+            "std": 0.0024468086914465597,
+            "per_seed": [
+              0.011621979814456111,
+              0.007981989357347523,
+              0.01032204789430223,
+              0.0069893594825787605,
+              0.004695325542570952
+            ]
+          },
+          "max_misses_in_one_base": {
+            "mean": 13.2,
+            "std": 6.43117407632541,
+            "per_seed": [
+              25.0,
+              8.0,
+              10.0,
+              8.0,
+              15.0
+            ]
+          },
+          "mean_misses_per_base_given_ge1": {
+            "mean": 2.4249098124098123,
+            "std": 0.5722152457471408,
+            "per_seed": [
+              3.5625,
+              2.1666666666666665,
+              2.2222222222222223,
+              2.0303030303030303,
+              2.142857142857143
+            ]
+          }
+        }
+      },
+      "operating_point": 0.97,
+      "any_miss_at_operating_point": {
+        "share_of_test_bases_with_ge1_miss": {
+          "mean": 0.11133333333333333,
+          "std": 0.02569911368986184,
+          "per_seed": [
+            0.10666666666666667,
+            0.12,
+            0.15,
+            0.11,
+            0.07
+          ]
+        },
+        "share_of_violating_test_bases_with_ge1_miss": {
+          "mean": 0.11133333333333333,
+          "std": 0.02569911368986184,
+          "per_seed": [
+            0.10666666666666667,
+            0.12,
+            0.15,
+            0.11,
+            0.07
+          ]
+        },
+        "missed_viol_rows": {
+          "mean": 0.008322140418251116,
+          "std": 0.0024468086914465597,
+          "per_seed": [
+            0.011621979814456111,
+            0.007981989357347523,
+            0.01032204789430223,
+            0.0069893594825787605,
+            0.004695325542570952
+          ]
+        },
+        "max_misses_in_one_base": {
+          "mean": 13.2,
+          "std": 6.43117407632541,
+          "per_seed": [
+            25.0,
+            8.0,
+            10.0,
+            8.0,
+            15.0
+          ]
+        },
+        "mean_misses_per_base_given_ge1": {
+          "mean": 2.4249098124098123,
+          "std": 0.5722152457471408,
+          "per_seed": [
+            3.5625,
+            2.1666666666666665,
+            2.2222222222222223,
+            2.0303030303030303,
+            2.142857142857143
+          ]
+        }
+      }
+    }
+  },
+  "five_lowest_elements_per_split": [
+    {
+      "seed": 0,
+      "family": "ridge",
+      "element": "line_67",
+      "coverage": 0.5666666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "ridge",
+      "element": "line_171",
+      "coverage": 0.58,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "ridge",
+      "element": "line_69",
+      "coverage": 0.5933333333333334,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "ridge",
+      "element": "line_66",
+      "coverage": 0.5966666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "ridge",
+      "element": "line_14",
+      "coverage": 0.6266666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "histgb",
+      "element": "trafo_3",
+      "coverage": 0.5866666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "histgb",
+      "element": "line_27",
+      "coverage": 0.59,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "histgb",
+      "element": "line_106",
+      "coverage": 0.6033333333333334,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "histgb",
+      "element": "line_14",
+      "coverage": 0.6133333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 0,
+      "family": "histgb",
+      "element": "line_171",
+      "coverage": 0.6166666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "ridge",
+      "element": "line_67",
+      "coverage": 0.57,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "ridge",
+      "element": "line_1",
+      "coverage": 0.5833333333333334,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "ridge",
+      "element": "trafo_3",
+      "coverage": 0.6033333333333334,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "ridge",
+      "element": "line_11",
+      "coverage": 0.6033333333333334,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "ridge",
+      "element": "line_171",
+      "coverage": 0.61,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "histgb",
+      "element": "trafo_3",
+      "coverage": 0.5366666666666666,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "histgb",
+      "element": "line_107",
+      "coverage": 0.58,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "histgb",
+      "element": "line_106",
+      "coverage": 0.5866666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "histgb",
+      "element": "line_171",
+      "coverage": 0.61,
+      "n_rows": 300
+    },
+    {
+      "seed": 1,
+      "family": "histgb",
+      "element": "line_49",
+      "coverage": 0.63,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "ridge",
+      "element": "line_171",
+      "coverage": 0.5766666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "ridge",
+      "element": "trafo_3",
+      "coverage": 0.59,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "ridge",
+      "element": "line_108",
+      "coverage": 0.6233333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "ridge",
+      "element": "line_107",
+      "coverage": 0.64,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "ridge",
+      "element": "line_69",
+      "coverage": 0.65,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "histgb",
+      "element": "trafo_3",
+      "coverage": 0.51,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "histgb",
+      "element": "line_27",
+      "coverage": 0.5933333333333334,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "histgb",
+      "element": "line_49",
+      "coverage": 0.6066666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "histgb",
+      "element": "line_107",
+      "coverage": 0.6133333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 2,
+      "family": "histgb",
+      "element": "trafo_0",
+      "coverage": 0.6172413793103448,
+      "n_rows": 290
+    },
+    {
+      "seed": 3,
+      "family": "ridge",
+      "element": "line_171",
+      "coverage": 0.5566666666666666,
+      "n_rows": 300
+    },
+    {
+      "seed": 3,
+      "family": "ridge",
+      "element": "line_108",
+      "coverage": 0.5866666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 3,
+      "family": "ridge",
+      "element": "line_67",
+      "coverage": 0.6133333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 3,
+      "family": "ridge",
+      "element": "trafo_3",
+      "coverage": 0.62,
+      "n_rows": 300
+    },
+    {
+      "seed": 3,
+      "family": "ridge",
+      "element": "line_1",
+      "coverage": 0.6333333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 3,
+      "family": "histgb",
+      "element": "trafo_3",
+      "coverage": 0.59,
+      "n_rows": 300
+    },
+    {
+      "seed": 3,
+      "family": "histgb",
+      "element": "line_49",
+      "coverage": 0.6366666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 3,
+      "family": "histgb",
+      "element": "line_171",
+      "coverage": 0.65,
+      "n_rows": 300
+    },
+    {
+      "seed": 3,
+      "family": "histgb",
+      "element": "trafo_0",
+      "coverage": 0.6575342465753424,
+      "n_rows": 292
+    },
+    {
+      "seed": 3,
+      "family": "histgb",
+      "element": "line_106",
+      "coverage": 0.6633333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "ridge",
+      "element": "line_67",
+      "coverage": 0.6033333333333334,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "ridge",
+      "element": "line_171",
+      "coverage": 0.6266666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "ridge",
+      "element": "line_66",
+      "coverage": 0.6333333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "ridge",
+      "element": "line_108",
+      "coverage": 0.6433333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "ridge",
+      "element": "line_69",
+      "coverage": 0.6466666666666666,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "histgb",
+      "element": "trafo_3",
+      "coverage": 0.56,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "histgb",
+      "element": "line_27",
+      "coverage": 0.57,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "histgb",
+      "element": "line_106",
+      "coverage": 0.6066666666666667,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "histgb",
+      "element": "line_108",
+      "coverage": 0.6133333333333333,
+      "n_rows": 300
+    },
+    {
+      "seed": 4,
+      "family": "histgb",
+      "element": "line_14",
+      "coverage": 0.6266666666666667,
+      "n_rows": 300
+    }
+  ],
+  "std_convention": "population std (ddof=0) over the five held-out splits",
+  "wall_time_s": 0.9678661823272705
+}

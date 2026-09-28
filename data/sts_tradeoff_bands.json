@@ -1,0 +1,498 @@
+{
+  "source": "data/tradeoff_curve_v2.json",
+  "std_convention": "population std (ddof=0) over five held-out splits",
+  "units": "fractions (0-1); the figure plots %",
+  "band": "mean +- 1 std for all four curves; missed band lower edge clipped at 0",
+  "models": {
+    "ridge": {
+      "first_sub_1pct_missed_coverage": 0.94,
+      "points": [
+        {
+          "coverage_target": 0.7,
+          "escalation": 0.14637358227032846,
+          "escalation_std": 0.02160823804397789,
+          "missed_viol": 0.1151438911404767,
+          "missed_viol_std": 0.010033494398515728,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.71,
+          "escalation": 0.15805314010381064,
+          "escalation_std": 0.023173192036374485,
+          "missed_viol": 0.11166167215637837,
+          "missed_viol_std": 0.010119377115508338,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.72,
+          "escalation": 0.16948533689810366,
+          "escalation_std": 0.023110305262125867,
+          "missed_viol": 0.10813503984676427,
+          "missed_viol_std": 0.009969402200947443,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.73,
+          "escalation": 0.18106804150534445,
+          "escalation_std": 0.024619857379143475,
+          "missed_viol": 0.10460031976977462,
+          "missed_viol_std": 0.009995370311911729,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.74,
+          "escalation": 0.19304872414207674,
+          "escalation_std": 0.023756849373805785,
+          "missed_viol": 0.1007819152854779,
+          "missed_viol_std": 0.009400795732634165,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.75,
+          "escalation": 0.20572129661961763,
+          "escalation_std": 0.022389498398414514,
+          "missed_viol": 0.09717305819228078,
+          "missed_viol_std": 0.008853179669018467,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.76,
+          "escalation": 0.21959126911367025,
+          "escalation_std": 0.019588238244915162,
+          "missed_viol": 0.09293950230636934,
+          "missed_viol_std": 0.008116662756224642,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.77,
+          "escalation": 0.234163825467281,
+          "escalation_std": 0.01800912308103493,
+          "missed_viol": 0.08872516261054401,
+          "missed_viol_std": 0.007973770672681978,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.78,
+          "escalation": 0.24759637368123086,
+          "escalation_std": 0.0191159921478234,
+          "missed_viol": 0.08453455922565598,
+          "missed_viol_std": 0.008725610123735416,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.79,
+          "escalation": 0.26359929672645255,
+          "escalation_std": 0.021977616805807062,
+          "missed_viol": 0.0803011108835987,
+          "missed_viol_std": 0.009335625643984652,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.8,
+          "escalation": 0.27973486754790866,
+          "escalation_std": 0.025484644215302065,
+          "missed_viol": 0.07619342830233025,
+          "missed_viol_std": 0.009620486069141341,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.81,
+          "escalation": 0.29884947014844665,
+          "escalation_std": 0.03043131391341687,
+          "missed_viol": 0.07156726309324471,
+          "missed_viol_std": 0.00955916053850295,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.82,
+          "escalation": 0.31555852247152993,
+          "escalation_std": 0.033322654689957716,
+          "missed_viol": 0.06675810243637015,
+          "missed_viol_std": 0.00942279706812229,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.83,
+          "escalation": 0.3360352778050974,
+          "escalation_std": 0.03395868339600697,
+          "missed_viol": 0.0619533547097447,
+          "missed_viol_std": 0.009406040817177807,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.84,
+          "escalation": 0.3548199702251258,
+          "escalation_std": 0.03095763856633988,
+          "missed_viol": 0.05796968336394244,
+          "missed_viol_std": 0.008604156966177145,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.85,
+          "escalation": 0.3753969446048101,
+          "escalation_std": 0.0315766469253045,
+          "missed_viol": 0.05310310743224439,
+          "missed_viol_std": 0.007716532112237156,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.86,
+          "escalation": 0.39897819156573083,
+          "escalation_std": 0.03605248907960249,
+          "missed_viol": 0.04872588185918374,
+          "missed_viol_std": 0.0074242937657088386,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.87,
+          "escalation": 0.41979559987686743,
+          "escalation_std": 0.03432232134055006,
+          "missed_viol": 0.044241078516991474,
+          "missed_viol_std": 0.006217422054635339,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.88,
+          "escalation": 0.44230150248950134,
+          "escalation_std": 0.03440772803164176,
+          "missed_viol": 0.03984017787069296,
+          "missed_viol_std": 0.0062775294222035035,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.89,
+          "escalation": 0.46553864120662014,
+          "escalation_std": 0.03156503625681594,
+          "missed_viol": 0.03503720907907974,
+          "missed_viol_std": 0.006205551914081158,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.9,
+          "escalation": 0.4906972404572077,
+          "escalation_std": 0.02660842497152996,
+          "missed_viol": 0.029631523339489742,
+          "missed_viol_std": 0.004393889029106623,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.91,
+          "escalation": 0.5169493637699788,
+          "escalation_std": 0.029256366882892796,
+          "missed_viol": 0.02504807430922059,
+          "missed_viol_std": 0.004247826993342357,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.92,
+          "escalation": 0.5552070396283366,
+          "escalation_std": 0.03556798633049492,
+          "missed_viol": 0.019092773647784965,
+          "missed_viol_std": 0.004969518598083814,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.93,
+          "escalation": 0.6001467589214695,
+          "escalation_std": 0.033042300031237884,
+          "missed_viol": 0.012465530532972276,
+          "missed_viol_std": 0.0037800378535038687,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.94,
+          "escalation": 0.6434123029630445,
+          "escalation_std": 0.027828248011902767,
+          "missed_viol": 0.007935374720689281,
+          "missed_viol_std": 0.002089931235945204,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.95,
+          "escalation": 0.6785333530184323,
+          "escalation_std": 0.02836047156720662,
+          "missed_viol": 0.004465748768113205,
+          "missed_viol_std": 0.0012237147058208738,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.96,
+          "escalation": 0.7143464325496895,
+          "escalation_std": 0.014099584699982579,
+          "missed_viol": 0.0014238160828900482,
+          "missed_viol_std": 0.0007199233013466297,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.97,
+          "escalation": 0.739111061073142,
+          "escalation_std": 0.010227210715964991,
+          "missed_viol": 0.00026876000115233273,
+          "missed_viol_std": 0.0002744716340125178,
+          "missed_band_lower_clipped_at_0": true
+        },
+        {
+          "coverage_target": 0.98,
+          "escalation": 0.7480445906267049,
+          "escalation_std": 0.008218862583842437,
+          "missed_viol": 0.0,
+          "missed_viol_std": 0.0,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.99,
+          "escalation": 0.7488763012003712,
+          "escalation_std": 0.008314299493481624,
+          "missed_viol": 0.0,
+          "missed_viol_std": 0.0,
+          "missed_band_lower_clipped_at_0": false
+        }
+      ]
+    },
+    "histgb": {
+      "first_sub_1pct_missed_coverage": 0.97,
+      "points": [
+        {
+          "coverage_target": 0.7,
+          "escalation": 0.03351842309810731,
+          "escalation_std": 0.010938874785379946,
+          "missed_viol": 0.12642771081454043,
+          "missed_viol_std": 0.013379173295827246,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.71,
+          "escalation": 0.03808194278869696,
+          "escalation_std": 0.010214770543526852,
+          "missed_viol": 0.12361650953175667,
+          "missed_viol_std": 0.013255269271199785,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.72,
+          "escalation": 0.04659585663090631,
+          "escalation_std": 0.0138385145881515,
+          "missed_viol": 0.11995401982489913,
+          "missed_viol_std": 0.012545487751388126,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.73,
+          "escalation": 0.05526048133907078,
+          "escalation_std": 0.018798501802730926,
+          "missed_viol": 0.11577447648518371,
+          "missed_viol_std": 0.01113898995392118,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.74,
+          "escalation": 0.06351989858126879,
+          "escalation_std": 0.021447235637083204,
+          "missed_viol": 0.1127648747821377,
+          "missed_viol_std": 0.01070520819103564,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.75,
+          "escalation": 0.07322403787735292,
+          "escalation_std": 0.023394252515050926,
+          "missed_viol": 0.10924867178502887,
+          "missed_viol_std": 0.010313641056409356,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.76,
+          "escalation": 0.08150151647506065,
+          "escalation_std": 0.025040806221032746,
+          "missed_viol": 0.10616875091715275,
+          "missed_viol_std": 0.009833663220315066,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.77,
+          "escalation": 0.09310919155203108,
+          "escalation_std": 0.034199313794884216,
+          "missed_viol": 0.10246008272515457,
+          "missed_viol_std": 0.009611859227518409,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.78,
+          "escalation": 0.10206059951835292,
+          "escalation_std": 0.03626102534886805,
+          "missed_viol": 0.09965549813670561,
+          "missed_viol_std": 0.008943264116301955,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.79,
+          "escalation": 0.11524218845560799,
+          "escalation_std": 0.036898425463639646,
+          "missed_viol": 0.09567206109147182,
+          "missed_viol_std": 0.00903947191057357,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.8,
+          "escalation": 0.12795759754763988,
+          "escalation_std": 0.03840136155498562,
+          "missed_viol": 0.09077062455731846,
+          "missed_viol_std": 0.008207190643863901,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.81,
+          "escalation": 0.14028253236483934,
+          "escalation_std": 0.03500605815787526,
+          "missed_viol": 0.08676538360152355,
+          "missed_viol_std": 0.008335969190723437,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.82,
+          "escalation": 0.15222364184362003,
+          "escalation_std": 0.0342009247285842,
+          "missed_viol": 0.08371507260236773,
+          "missed_viol_std": 0.008943063533148948,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.83,
+          "escalation": 0.16397484011773694,
+          "escalation_std": 0.03360406817873179,
+          "missed_viol": 0.08062359223209667,
+          "missed_viol_std": 0.00935772406404034,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.84,
+          "escalation": 0.18288139395057246,
+          "escalation_std": 0.03423631237847818,
+          "missed_viol": 0.07549282341540736,
+          "missed_viol_std": 0.008515673588083215,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.85,
+          "escalation": 0.1995404991681912,
+          "escalation_std": 0.02722226346374757,
+          "missed_viol": 0.07132258099896976,
+          "missed_viol_std": 0.008993007746117521,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.86,
+          "escalation": 0.21870156804566046,
+          "escalation_std": 0.02778083707044914,
+          "missed_viol": 0.06563702634700348,
+          "missed_viol_std": 0.008772737375951878,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.87,
+          "escalation": 0.2382964860955763,
+          "escalation_std": 0.027160942757852635,
+          "missed_viol": 0.06095609792539819,
+          "missed_viol_std": 0.008727087481395094,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.88,
+          "escalation": 0.25463632829608485,
+          "escalation_std": 0.025449551449449853,
+          "missed_viol": 0.057143062112479104,
+          "missed_viol_std": 0.008639114608238626,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.89,
+          "escalation": 0.27774082559856506,
+          "escalation_std": 0.02326030586624594,
+          "missed_viol": 0.05192964469276423,
+          "missed_viol_std": 0.009796215156139277,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.9,
+          "escalation": 0.3062513593744674,
+          "escalation_std": 0.02510014506527553,
+          "missed_viol": 0.04716684182384393,
+          "missed_viol_std": 0.009772209302677339,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.91,
+          "escalation": 0.33417061272372506,
+          "escalation_std": 0.023645166816039617,
+          "missed_viol": 0.04159120650486057,
+          "missed_viol_std": 0.008726603910527366,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.92,
+          "escalation": 0.3774148705119974,
+          "escalation_std": 0.028289741253295423,
+          "missed_viol": 0.03595169054311158,
+          "missed_viol_std": 0.007168449566659613,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.93,
+          "escalation": 0.4197342816699555,
+          "escalation_std": 0.031969077516328215,
+          "missed_viol": 0.030900093019604346,
+          "missed_viol_std": 0.006428827826235007,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.94,
+          "escalation": 0.4668395523921854,
+          "escalation_std": 0.027506508312459394,
+          "missed_viol": 0.02475625141522387,
+          "missed_viol_std": 0.0038256175872467798,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.95,
+          "escalation": 0.5118296511092764,
+          "escalation_std": 0.034227405863213385,
+          "missed_viol": 0.019439853129385738,
+          "missed_viol_std": 0.002115702844758649,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.96,
+          "escalation": 0.5695530868202232,
+          "escalation_std": 0.04251860017276775,
+          "missed_viol": 0.013568242668213118,
+          "missed_viol_std": 0.0019766797364070715,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.97,
+          "escalation": 0.6367945178499592,
+          "escalation_std": 0.05119212187435911,
+          "missed_viol": 0.008322140418251116,
+          "missed_viol_std": 0.0024468086914465597,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.98,
+          "escalation": 0.7199530796400196,
+          "escalation_std": 0.036705534577802804,
+          "missed_viol": 0.003045373954491564,
+          "missed_viol_std": 0.001328967169508556,
+          "missed_band_lower_clipped_at_0": false
+        },
+        {
+          "coverage_target": 0.99,
+          "escalation": 0.7965042762847028,
+          "escalation_std": 0.026060045071022685,
+          "missed_viol": 0.00035042447296725456,
+          "missed_viol_std": 0.00036686138486237814,
+          "missed_band_lower_clipped_at_0": true
+        }
+      ]
+    }
+  }
+}
