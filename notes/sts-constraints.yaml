@@ -1,0 +1,620 @@
+# STS 2027 compliance constraints
+#
+# One row per Master Plan section 2 rule.
+#
+# EVERY ROW STARTS status: verify. Nothing here is marked confirmed without the 2027
+# rules book. The corpus these came from spans the 2021-2024 cycles and the organizers
+# state the rules change annually. A row marked confirmed on the strength of a 2023
+# webinar is worse than a row marked verify, because the first stops anyone from checking.
+#
+# 2026-08-27: THE 2027 RULES BOOK WAS FETCHED. Rows checked against it below now carry
+# rule_ref (rule number + page) and verbatim text. Rows that the fetched pages cannot
+# settle STAY status: verify and name the page that would settle them. Reading pages 3-6
+# and 33-35 of a 50-page book does not license confirming a row from the other 41 pages.
+#
+# status values:
+#   verify        - not yet checked against the 2027 rules book. The only legal
+#                   starting value.
+#   confirmed     - checked against the 2027 rules book. date_checked REQUIRED.
+#   corrected     - the row was answerable and WRONG or materially incomplete as
+#                   recorded. superseded_text REQUIRED, plus the correct text with
+#                   its citation. Added 2026-08-27.
+#   contradicted  - the 2027 book says something different. note REQUIRED.
+#   ask           - ambiguous in the corpus; needs a question to STS staff.
+#   n/a           - does not apply to this project. note REQUIRED.
+#
+# scripts/check_compliance.py reads this file. Rows whose `check` field names a
+# mechanical check are enforced; rows without one are advisory and are reported as
+# MANUAL so they are never silently assumed satisfied.
+
+meta:
+  source_corpus: "STS official webinars, 2021-2024 cycles; 2027 applicant guidelines"
+  rules_book_2027_present: true
+  generated: "2026-08-19"
+  updated: "2026-08-27"
+  sources:
+    - id: GUIDE2027
+      title: "Research Report Guidelines, Regeneron Science Talent Search 2027"
+      url: "https://sspcdn.blob.core.windows.net/files/Documents/SEP/STS/2027/Application/Research-Report-Guidelines.pdf"
+      pages_total: 2
+      pages_read: "1-2 (complete)"
+      fetched: "2026-08-27"
+    - id: RULES2027
+      title: "Regeneron Science Talent Search 2027 Rules and Entry Instructions"
+      url: "https://sspcdn.blob.core.windows.net/files/Documents/SEP/STS/2027/Application/Official-Rules.pdf"
+      pages_total: 50
+      pages_read: "3-6, 33-35 ONLY. 41 pages of this book are UNREAD."
+      fetched: "2026-08-27"
+  warning: >-
+    A confirmed status without a date_checked is itself a defect and
+    check_compliance.py fails on it. RULES2027 is only 18% read: no row may be
+    confirmed from a page not listed in pages_read. Rows needing an unread page
+    stay status: verify and name that page.
+
+rules:
+
+  - id: R01
+    rule: "Deadline absolute; nothing submitted or achieved after it is judged"
+    source: "corpus, repeated"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "RULES2027 p.5, IMPORTANT DATES"
+    verbatim: >-
+      "Application & Recommendation Deadline  November 5, 2026 at 8:00 pm Eastern Time.
+      All parts of the application must be received by the Society by this date and time,
+      including recommendations. No portions of the application will be accepted after the
+      deadline for any reason. Materials are only accepted through the online application portal."
+    check: null
+    note: >-
+      CONFIRMED and matches the Master Plan header exactly. Same page also fixes the
+      downstream calendar: Top 300 Scholars 2027-01-07, Top 40 Finalists 2027-01-21,
+      Finals Week 2027-03-11 to 03-17, Top 10 2027-03-16.
+
+  - id: R02
+    rule: "Technical support deadline 24h prior; issues reported by then are guaranteed resolved"
+    source: "corpus"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "RULES2027 p.5, IMPORTANT DATES"
+    verbatim: >-
+      "Customer Support Deadline  November 4, 2026 at 8:00 pm Eastern Time. Students
+      submitting a support request by this date and time are guaranteed that the problem
+      reported will be resolved before the Application Deadline. The Society cannot guarantee
+      that requests for customer support will be resolved if submitted after this date and time."
+    check: null
+    note: "CONFIRMED and matches the Master Plan header exactly."
+
+  - id: R03
+    rule: "Sole-authored individual research; no team projects, no splitting a team project"
+    source: "corpus"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "RULES2027 p.6, AM I ELIGIBLE? section 4, TYPE OF RESEARCH"
+    verbatim: >-
+      "Applicants must complete individual research projects to enter Regeneron STS. Research
+      conducted as part of a pre-collegiate student team project is not eligible for Regeneron
+      STS. ... Students may not 'split' a team project and enter as individuals. ... Students
+      who have been part of a team project wishing to continue as an individual may only submit
+      the work completed independently and may not submit any work completed with the teammates.
+      Research conducted alongside adult researchers in a research institution is permitted, but
+      clarity and adequate knowledge of an individual's role and independence vs. work being done
+      by the collective laboratory throughout the application is vital. Students should take
+      credit only for their portion of the lab's work."
+    check: null
+    note: >-
+      CONFIRMED, and the Master Plan 3.3 question is now PARTLY ANSWERED. The prohibition is on
+      pre-collegiate STUDENT team projects (4a, 4a.i, 4a.ii). Research alongside ADULT
+      researchers is explicitly PERMITTED (4a.iii), conditioned on clarity about the
+      individual's role. WHICH CLAUSE GOVERNS THE URTC CO-AUTHORSHIP DEPENDS ON WHETHER THOSE
+      CO-AUTHORS ARE STUDENTS OR ADULTS - a fact NOT RECORDED IN THIS REPOSITORY and not
+      guessed here. Same page 4b: "Continuation research projects and research completed over
+      any length of time in any year of school are eligible."
+
+  - id: R04
+    rule: "Report written by the student WITHOUT generative AI; research use permitted and disclosable"
+    source: "2027 guidelines"
+    status: corrected
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 1; RULES2027 Appendix 4 p.34, ACCEPTABLE AI USAGE CHART"
+    superseded_text: >-
+      "Report written by the student WITHOUT generative AI; research use permitted and
+      disclosable" - materially INCOMPLETE. It records the prohibition but omits every
+      operative condition attached to the permitted uses, so the file understated what the
+      project must actually produce.
+    verbatim: >-
+      GUIDE2027 rule 1: "The Student Researcher is required to write the paper without the use
+      of generative AI (ChatGPT or other programs)." RULES2027 Appendix 4 is a 13-row graded
+      table, NOT a blanket ban. NEVER ACCEPTABLE: using AI to initially write the research plan,
+      abstract, paper or poster ("This must be the independent work of the student"); asking AI
+      to write an abstract or section and submitting as your own work; using AI to produce
+      conclusions or future steps; asking AI for a starter bibliography. PERMITTED WITH
+      CONDITIONS: "Use AI to write initial code for your project - Yes - Acceptable, only with
+      explicit citation stating which portions of the code were AI generated and with a log of
+      the prompts."; "Use an AI chatbot as a writing tool to help generate and develop ideas -
+      Yes - ... Maintain a logbook of your prompts as part of your research notebook."; "Use AI
+      to help identify appropriate statistical tests or software tools ... requires a log of your
+      prompts"; "You write an abstract. Ask AI to sharpen the language but not modify, add to, or
+      replace the main points - Yes - Acceptable use without explicit citation only if changes
+      suggested by AI are minor and limited to grammar and syntax. Must be credited."
+    check: authorship_boundary
+    note: >-
+      Enforced mechanically from 2026-08-18 by .claude/hooks/guard_report_prose.sh and
+      .claude/hooks/guard_report_bash.sh. TWO CONDITIONS, ONE MET AND ONE NOT. The prompt-log
+      condition is MET: notes/ai-prompt-log.md is the required logbook and predates this
+      finding. The code-portion condition is NOT MET: the Acknowledgments at
+      report/paper_current_STS.tex:287 says AI "was used to validate the code and grammar" but
+      names no portion. Recorded as erratum E3. The Master Plan 3.3 question about AI-resolved
+      citations is NOT settled by Appendix 4; the nearest row is the starter-bibliography row,
+      which is Never acceptable, while "fix the structure or formatting of your bibliography"
+      is acceptable. Independently verified resolution of a citation the student found is
+      neither row. STILL AN ASK.
+
+  - id: R05
+    rule: "Maximum 20 pages. Title page, abstract, bibliography EXCLUDED. Appendices INCLUDED."
+    source: "corpus, stated twice"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rules 4a, 4b, 4e"
+    verbatim: >-
+      4a: "The paper should be 20 pages or less. There is no page minimum. Pages of content
+      beyond page 20 (excluding the pages mentioned below) will not be read or considered."
+      4b: "Include a title page as the first page, abstract as the second page and a bibliography
+      at the end of the Research Report. The title page, abstract and bibliography do not count
+      toward the 20-page limit." 4e: "Appendices count toward the 20-page limit. Some students
+      choose to include all images, charts, data, etc. within the paper, while others place them
+      in appendices. Both options are acceptable."
+    check: page_count
+    note: >-
+      CONFIRMED exactly as recorded. The exclusions are worth 1.48 pp on the current manuscript
+      (title 0.22 + abstract 0.47 + bibliography 0.79); notes/writing-guide.md section 6.2
+      carries the corrected denominator. RULE 4e MEANS NOTHING MAY BE MOVED TO AN APPENDIX TO
+      EVADE THE LIMIT.
+
+  - id: R06
+    rule: "Font size at or above 10-11pt; students have been disqualified for cramming with tiny fonts"
+    source: "corpus"
+    status: corrected
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 5a"
+    superseded_text: >-
+      "Font size at or above 10-11pt" - the range was a corpus artefact. The 2027 floor is a
+      single value, and it is expressed as an APPEARANCE test, not a declared point size.
+    verbatim: >-
+      "Choose a font that is legible and appropriate for a research paper. Research Reports found
+      to use smaller than recommended font or margin size in order to increase word count may be
+      disqualified. The font size should appear on the page at least as large as Times New Roman
+      11pt font. Captions may be smaller if legible."
+    check: font_floor
+    note: >-
+      Floor is 11pt-equivalent, not 10pt. Manuscript declares 12pt Times (newtxtext) and PASSES.
+      Note the rule is about how the font APPEARS, so a declared point size is evidence, not
+      proof. "Captions may be smaller if legible" is what makes the Appendix 3 citation lines
+      affordable inside captions.
+
+  - id: R07
+    rule: "Single column, 1.5 line spacing, 1 inch margins, Times New Roman"
+    source: "2027 guidelines"
+    status: corrected
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 5b (with 5a for the font)"
+    superseded_text: >-
+      "Single column, 1.5 line spacing, 1 inch margins, Times New Roman" - the last item is
+      WRONG. The 2027 book does NOT mandate Times New Roman. It mandates a size that APPEARS at
+      least as large as TNR 11pt, which is a floor expressed in TNR units, not a typeface
+      requirement.
+    verbatim: >-
+      5b: "Use 1.5 line spacing and 1\" margins on all sides. Do not use multiple columns."
+    check: layout_packages
+    note: >-
+      Spacing, margins and single-column all PASS. Typeface is FREE, so newtxtext is a choice,
+      not a compliance item. ONE THING THE BOOK DOES NOT SETTLE: the rule says "1.5 line
+      spacing" without defining it, and the manuscript header at :8-12 records that
+      \onehalfspacing is Word-style 1.5 (baselinestretch ~1.24) rather than a literal 1.5.
+      The book does not adjudicate. Measuring a rendered page remains the only way to decide,
+      and there is no TeX toolchain here.
+
+  - id: R08
+    rule: "Judges will not click external links. Code must live inside the 20 pages or nowhere."
+    source: "corpus, Video 13"
+    status: corrected
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 5e"
+    superseded_text: >-
+      "Judges will not click external links. Code must live inside the 20 pages or nowhere." -
+      the FIRST sentence is a corpus/webinar claim and appears NOWHERE in the 2027 book; it must
+      not be cited as a rule. The SECOND overstates: the book restricts LINKS, and grants an
+      explicit exception the old row denies.
+    verbatim: >-
+      "Students may not provide links within the Research Report or application of any sort,
+      except within bibliographic references or where specifically requested in the application."
+    check: no_external_links
+    note: >-
+      The operative rule is about providing links, not about judge behaviour. The exception for
+      bibliographic references is explicit and resolves R09. CURRENT STATE: one \url{} in the
+      BODY at report/paper_current_STS.tex:287 (Acknowledgments) - VIOLATION, erratum E2. The
+      only other URL, :317 inside \bibitem{case118}, is PERMITTED by the exception. The clause
+      "or where specifically requested in the application" may cover a project-link field in the
+      application form; whether such a field exists is NOT VERIFIED here.
+
+  - id: R09
+    rule: "Whether bibliography URLs are permitted"
+    source: "ambiguous - corpus says links not permitted anywhere; v2 assumed bibliography was exempt"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 5e"
+    verbatim: >-
+      "Students may not provide links within the Research Report or application of any sort,
+      except within bibliographic references or where specifically requested in the application."
+    check: null
+    note: >-
+      ANSWERED - this row no longer needs a question to STS. Bibliography URLs ARE permitted;
+      the exception is stated in the rule itself. Status moved from ask to confirmed. This
+      unblocks R08's scope and makes "move the URL into a bibitem" a rules-compliant option for
+      the :287 defect (erratum E2).
+
+  - id: R10
+    rule: >-
+      Full APA citation directly beneath each figure AND table, naming the software used.
+      Includes self-created graphics. Reference lists for graphics not permitted.
+    source: "2027 guidelines"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 2; RULES2027 Appendix 3 p.33, CITATION GUIDE"
+    verbatim: >-
+      GUIDE2027 rule 2: "Every single image, graph, table, chart, etc. that appears in the
+      Research Report must be cited per the Citation Guide in Appendix 3 on page 33. This
+      includes images created by the Student Researcher. Failure to cite an image could result
+      in disqualification." Appendix 3: "ALL Graphics that appear within the Research Report
+      must be cited, in full, under or next to each individual graphic. Reference lists are not
+      permitted for graphics."; "'Graphics' includes any figure, table, graph, chart,
+      photography, logo, etc. that is referenced within the paper."; "APA style citations are
+      preferred."
+    check: apa_beneath_floats
+    note: >-
+      CONFIRMED, with two refinements to the recorded wording. (1) Placement is "under OR NEXT
+      TO", not strictly beneath. (2) APA is "preferred", not mandated; the mandatory content is
+      the three elements in R21. THE RECORDED NOTE IS NOW KNOWN TO BE MISLEADING: the manifests
+      carrying apa_citation (fig_floor, fig_identity) are for figures NOT IN THE PAPER. All four
+      in-paper figures lack the field, three lack a manifest entirely, and the two existing
+      values would still fail Appendix 3 because they carry neither the student attribution nor
+      the year. Erratum E4.
+
+  - id: R11
+    rule: "Every reference resolves. A discovered fake reference disqualifies."
+    source: "corpus + guidelines"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 4f"
+    verbatim: >-
+      "Bibliographic references should be submitted for all sources consulted in the project with
+      internal citations (a bibliography of sources does not count toward the 20-page limit).
+      Entrants should generate their reference lists without the use of AI, which is known to
+      hallucinate and create fake or altered references. Discovery of a fake reference will result
+      in disqualification."
+    check: citations_resolve
+    note: >-
+      CONFIRMED. Also confirms the bibliography page exclusion a second time, independently of
+      4b. STATE OF PLAY: notes/prior-art.md section 8 now carries two-source verification for
+      six previously bare bibitems, and scripts/check_citations.py enforces it. The nerc gap
+      named in the old note REMAINS OPEN - no prior-art entry, primary PDF returned HTTP 403.
+
+  - id: R12
+    rule: "Title page p1 unnumbered, abstract p2 unnumbered, body numbered bottom-right from 1"
+    source: "2027 guidelines"
+    status: corrected
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rules 4b and 5c"
+    superseded_text: >-
+      "body numbered bottom-right from 1" - the "from 1" is an INFERENCE and the book does not
+      state it. Recorded as if it were a rule.
+    verbatim: >-
+      4b: "Include a title page as the first page, abstract as the second page and a bibliography
+      at the end of the Research Report." 5c: "Number the pages of your research report in the
+      bottom right corner, starting after the abstract."
+    check: pagination
+    note: >-
+      Position CONFIRMED as bottom right. "Starting after the abstract" fixes WHERE numbering
+      begins but NOT what the first number is; whether page 3 is folio 1 or folio 3 is NOT
+      STATED and remains an open reading. CURRENT STATE: the .tex sets no \pagestyle, so article
+      defaults to bottom CENTRE - erratum E5 - and there is no abstract page break for numbering
+      to start after. Verifying the rendered result still requires a compiled PDF.
+
+  - id: R13
+    rule: "No emails or phone numbers on the title page"
+    source: "2027 guidelines"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 4d"
+    verbatim: >-
+      "List your name and project title (required) on the title page. It is also permitted to
+      list your lab and mentor names. Do not put any e-mail addresses or phone numbers on your
+      title page."
+    check: no_contact_details
+    note: >-
+      CONFIRMED, and the rule carries a POSITIVE requirement the old row omitted: name and
+      project title are REQUIRED on the title page, and lab and mentor names are PERMITTED.
+      The manuscript currently has no separate title page (R05/R12).
+
+  - id: R14
+    rule: "PDF at most 4MB; filename SAHA.RAJAN.<home zip>"
+    source: "2027 guidelines"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rules 5f and 5g"
+    verbatim: >-
+      5f: "PDF files that are 4MB or smaller are the only format accepted in the online system."
+      5g: "Please name your file 'LASTNAME.FIRSTNAME.ZIPCODE.' Please use your home address zip
+      code."
+    check: pdf_size_and_name
+    note: >-
+      The RULE is confirmed. THE ZIP VALUE REMAINS NO SOURCE - it is not recorded anywhere in
+      this repository and is NOT GUESSED HERE. Filename cannot be constructed until the owner
+      supplies it. Size: the four embedded PNGs total 443,554 bytes, about 11 percent of the
+      4MB cap, but the compiled PDF size is UNMEASURED - no TeX toolchain in this environment.
+
+  - id: R15
+    rule: "After upload, download the PDF and verify every symbol survived"
+    source: "corpus"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 5h"
+    verbatim: >-
+      "After uploading the report in the application system, download your application PDF to be
+      certain all symbols are still present and correct."
+    check: null
+    note: "CONFIRMED verbatim. Manual, post-submission. Cannot be mechanised here."
+
+  - id: R16
+    rule: "Literature reviews ineligible. Analysing others' data to reach your own conclusions is fine."
+    source: "corpus"
+    status: n/a
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 preamble"
+    verbatim: >-
+      "Students must have completed an independent scientific investigation and have results to
+      report. Research proposals, investigations not yet completed, literature reviews and essays
+      are not eligible for this competition. Students may not submit additional research after
+      the application deadline."
+    check: null
+    note: >-
+      APPLICABILITY UNCHANGED - n/a, this is original research with a generated dataset. The
+      ELIGIBILITY half of the rule is now CONFIRMED verbatim. THE SECOND HALF AS RECORDED -
+      "Analysing others' data to reach your own conclusions is fine" - IS NOT IN THE 2027 BOOK
+      on any page read. It is a corpus/webinar claim and must not be cited as a 2027 rule. Also
+      newly relevant: "may not submit additional research after the application deadline" bounds
+      what can be added post-2026-11-05.
+
+  - id: R17
+    rule: "Surveys and human testing require IRB pre-approval"
+    source: "corpus"
+    status: n/a
+    date_checked: null
+    check: null
+    note: >-
+      APPLICABILITY UNCHANGED - n/a, no human subjects, no surveys. NOT VERIFIED against the
+      book: RULES2027 carries HUMAN PARTICIPANT RULES at p.16 and INSTITUTIONAL REVIEW BOARD &
+      RISK ASSESSMENT at p.19, and NEITHER PAGE WAS READ. The n/a rests on the project having no
+      human subjects, which is a fact about this project, not a reading of the rule. If that ever
+      changes, read pp.16-19 and Appendices 10-13 before relying on this row.
+
+  - id: R18
+    rule: "Published work: unless first or sole author, submit a different write-up"
+    source: "corpus"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 6"
+    verbatim: >-
+      "Students may submit published work as long as all other formatting guidelines are similar
+      (do not use very small font) and adhere to Regeneron STS rules. It is not recommended that
+      students submit published research papers if they are not the sole or first author, or if
+      the formatting is different from Regeneron STS requirements. Publishing research of the lab
+      makes it difficult to assess student contribution to the work. In the case of published
+      group research, acknowledge the published paper in your application, and submit your own
+      version of the research to Regeneron STS that highlights your actual contributions to the
+      larger research project."
+    check: null
+    note: >-
+      CONFIRMED, and stronger than the recorded row. The book states that publication with a lab
+      makes student contribution HARDER to assess - publication is not treated as a credential.
+      The chosen strategy (from-scratch sole-authored STS write-up, URTC paper acknowledged) is
+      exactly what the rule prescribes. Branch table in Master Plan section 8 still governs the
+      three URTC outcomes.
+
+  - id: R19
+    rule: "Grades reviewed freshman through junior only; no senior Q1 needed"
+    source: "corpus"
+    status: verify
+    date_checked: null
+    check: null
+    note: >-
+      NOT ANSWERABLE from the pages read. WHAT WOULD SETTLE IT: RULES2027 APPLICATION
+      REQUIREMENTS p.8, or APPENDIX 8 HIGH SCHOOL REPORT p.41. Neither page was read. Appendix 5
+      p.35 (read) covers recommendation TYPES and states transcripts are uploaded by a counselor
+      and that "Current semester grades are not needed" - consistent with the recorded rule but
+      NOT a statement of which years are reviewed. Remains a counselor action item.
+
+  - id: R20
+    rule: "Disclose paid programs, mentors, anyone who read a draft, coaching, and the AI toolchain"
+    source: "corpus - non-disclosure discovered later is identified as fatal"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 closing paragraphs"
+    verbatim: >-
+      "However, full disclosure of any research or person that has influenced the applicant's
+      work is required." And: "the research report must accurately reflect the work of only the
+      student researcher. While students may seek review of their content and presentation of the
+      research report, both the content and writing should be the work of the applicant.
+      Submitting a paper co-authored by many individuals confuses the evaluators regarding the
+      contribution of the student. Adults reviewing research reports should suggest areas for
+      improvement, but not provide the student with replacement text or rewrite any portion of
+      the entry."
+    check: null
+    note: >-
+      The DISCLOSURE OBLIGATION is confirmed verbatim and is broad ("any research or person").
+      THE SPECIFIC ENUMERATION AS RECORDED - paid programs, mentors, draft readers, coaching, AI
+      toolchain - IS CORPUS-SOURCED, not verbatim in the 2027 book; the book's phrasing is
+      general and covers all of them. Standing facts unchanged: BU RISE was paid; Kalita and
+      Pinsky taught the material; AI use is logged in notes/ai-prompt-log.md. NEW CONSTRAINT
+      from the same passage: adults may suggest improvements but may NOT supply replacement text
+      - this is the human-review analogue of R04 and binds anyone who reads a draft.
+
+  # ---------------------------------------------------------------------------
+  # ROWS ADDED 2026-08-27 from the fetched 2027 book. These are rules the file
+  # did not previously carry. Every one cites its rule number, page and source id.
+  # ---------------------------------------------------------------------------
+
+  - id: R21
+    rule: >-
+      Graphics citation: every graphic cited under or next to itself, never in a reference
+      list, and a self-made graphic needs student attribution + creating program + year
+    source: "RULES2027 Appendix 3 p.33"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "RULES2027 Appendix 3 p.33, CITATION GUIDE"
+    verbatim: >-
+      "Regeneron STS entrants are required to properly cite ALL graphics that appear within their
+      Research Reports. This includes all graphics created by the finalist or their lab and all
+      graphics borrowed from any other source ... Please be aware that improper citation of
+      graphics is grounds for disqualification." Expectations: "ALL Graphics that appear within
+      the Research Report must be cited, in full, under or next to each individual graphic.
+      Reference lists are not permitted for graphics."; "'Graphics' includes any figure, table,
+      graph, chart, photography, logo, etc. that is referenced within the paper."; "All graphics
+      created by the finalist need to be cited."; "APA style citations are preferred." How To
+      Cite Graphics Created by the Student Researcher: "Be sure to include mention that you, the
+      student researcher, created the image."; "If you used third-party software (including but
+      not limited to BioRender, Canva, Microsoft Powerpoint, R, etc.) to create your image, you
+      need to mention the name of the program."; "Always mention the year the graphic was
+      created." EXAMPLE: "Graph created by the student researcher using BioRender, 2024."
+    check: apa_beneath_floats
+    note: >-
+      THIS IS THE OPERATIVE DETAIL BEHIND R10 AND IT IS DISQUALIFICATION-LEVEL. Three obligatory
+      elements, each its own bullet in the source: student attribution, creating program, year.
+      TABLES ARE GRAPHICS. A shared citation covering several floats is not permitted - the rule
+      says "each individual graphic". Current state: ZERO of six floats carry any citation line.
+      Erratum E4. Per-float specification in notes/writing-guide.md PART 10.3.
+
+  - id: R22
+    rule: >-
+      Generative AI is governed by a 13-row acceptability chart, not a blanket ban; several
+      permitted uses require a prompt logbook and code-portion citation
+    source: "RULES2027 Appendix 4 p.34"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "RULES2027 Appendix 4 p.34, ACCEPTABLE AI USAGE CHART"
+    verbatim: >-
+      NEVER ACCEPTABLE rows: "Use generative AI to initially write the research plan, abstract,
+      paper or poster - No - Never acceptable. This must be the independent work of the student.
+      Guidance or refinement after the initial document has been completed can be done with
+      explicit citation and a log."; "Ask generative AI to write an abstract or section of your
+      research paper. Submit as your own work - No - Never acceptable"; "Use AI to produce your
+      conclusions, future steps, etc. - No - Never acceptable."; "Write your research paper. Ask
+      AI to add additional points to your research paper - No - Never acceptable."; "Ask
+      generative AI to produce a starter bibliography - No - Never acceptable."; "Use AI to
+      collect data and write research plan. Use AI to provide citations that back up your claims
+      - No - Never acceptable"; "Ask AI to summarize a book or article in your field. Reproduce
+      that summary in your literature review without reading the book or article - No - Never
+      acceptable, as there has been no engagement with the book or source itself". PERMITTED
+      rows and their conditions: "Use AI to write initial code for your project - Yes -
+      Acceptable, only with explicit citation stating which portions of the code were AI
+      generated and with a log of the prompts."; "Use an AI chatbot as a writing tool to help
+      generate and develop ideas - Yes - Acceptable, may require explicit citation depending on
+      circumstances. Maintain a logbook of your prompts as part of your research notebook.";
+      "Use AI to help identify appropriate statistical tests or software tools. (Interpretation
+      of data must be done by the student researcher) - Yes - Acceptable, requires a log of your
+      prompts as part of your research notebook."; "You write an abstract. Ask AI to sharpen the
+      language but not modify, add to, or replace the main points - Yes - Acceptable use without
+      explicit citation only if changes suggested by AI are minor and limited to grammar and
+      syntax. Must be credited."; "Ask generative AI to identify or summarize key points in an
+      article before you read it. Use this as a starting point for your literature review - Yes
+      - Acceptable without explicit citation"; "Ask generative AI to produce a flowchart,
+      graphic, or image for a paper or presentation - Yes, with caution - Image should be
+      clearly marked as AI-generated and with explicit citation as to how the image was
+      created."; "Ask generative AI to fix the structure or formatting of your bibliography -
+      Yes - Acceptable without explicit citation. You must review and verify all citations as
+      valid." Table footnote: "Adapted from: Guiding Principles for Artificial Intelligence in
+      History Education. Approved by AHA Council, July 29, 2025."
+    check: null
+    note: >-
+      SUPERSEDES THE FLAT-BAN READING recorded in notes/finalist-paper-analysis.md section 1.3
+      and its R5. TWO CONDITIONS BIND THIS PROJECT. (1) Prompt logbook - MET;
+      notes/ai-prompt-log.md is exactly the required artefact and predates the finding.
+      (2) Explicit citation of WHICH PORTIONS of the code were AI generated - NOT MET; erratum
+      E3. NOTE the flowchart/graphic row interacts with R21: an AI-produced figure would need
+      BOTH the AI marking and the Appendix 3 elements. No figure in this paper is AI-generated.
+
+  - id: R23
+    rule: "No literature review or history of literature beyond the short introduction"
+    source: "GUIDE2027 rule 8"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 8"
+    verbatim: >-
+      "Do not include library research or a history of literature beyond the short introduction,
+      detailed explanations of experiments and procedures of other researchers that preceded the
+      project, lengthy autobiographical information or personal history."
+    check: null
+    note: >-
+      DISTINCT FROM R16, which is about eligibility genre; this is about report structure. It
+      independently justifies the decision already taken in notes/writing-guide.md 3.0 and 3.D
+      to demote Related Work from a standalone section to an in-place rewrite of :86 inside the
+      Introduction. A standalone Related Work section is what this rule discourages.
+
+  - id: R24
+    rule: "First person 'I' is permitted in place of 'we' to clarify independent work"
+    source: "GUIDE2027 rule 7"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 7"
+    verbatim: >-
+      "If it is widely accepted to write scientific journal articles in your specific subject
+      area using first person plural 'we' then it is acceptable for a student to use the first
+      person 'I' in place of 'we' in their Regeneron STS research report. This will help to
+      clarify what was done independently vs. with support. If this is not widely accepted in
+      your subject area, the passive voice should still be used."
+    check: null
+    note: >-
+      DIRECTLY RELEVANT to notes/writing-guide.md PART 2 item 11 (voice: the abstract's first
+      person against the body and Acknowledgments). Power-systems and ML venues use "we", so
+      this rule PERMITS "I" and states the reason - clarifying independent work. On a
+      sole-authored report the plural "the authors" at :287 is the anomaly, not the singular.
+
+  - id: R25
+    rule: "One entry, one Research Report, one topic per entrant"
+    source: "GUIDE2027 rule 3"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 rule 3"
+    verbatim: "Each entrant may submit only one entry and Research Report on one topic."
+    check: null
+    note: >-
+      Constrains the URTC/STS branch table in Master Plan section 8: whatever the URTC outcome,
+      exactly one STS report on one topic is submitted.
+
+  - id: R26
+    rule: "Continuation projects and multi-year research are eligible"
+    source: "RULES2027 p.6 section 4b"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "RULES2027 p.6, AM I ELIGIBLE? section 4b"
+    verbatim: >-
+      "Continuation research projects and research completed over any length of time in any year
+      of school are eligible for Regeneron STS."
+    check: null
+    note: >-
+      Confirms that the RISE-summer-to-fall continuation is eligible on its face. Also matches
+      GUIDE2027's "Research conducted during any year of high school is eligible."
+
+  - id: R27
+    rule: "Adults may suggest improvements but may not supply replacement text or rewrite any part"
+    source: "GUIDE2027 closing paragraph"
+    status: confirmed
+    date_checked: "2026-08-27"
+    rule_ref: "GUIDE2027 closing paragraph"
+    verbatim: >-
+      "Adults reviewing research reports should suggest areas for improvement, but not provide
+      the student with replacement text or rewrite any portion of the entry."
+    check: null
+    note: >-
+      The human-review analogue of R04/R22. Binds mentors, instructors and anyone who reads a
+      draft. Recorded separately from R20 because R20 is about DISCLOSING influence and this is
+      about BOUNDING it.

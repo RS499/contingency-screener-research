@@ -1,0 +1,108 @@
+# Prose-count map.
+#
+# Any COUNT stated in the manuscript must equal the row count, or a declared key
+# product, of the artifact that generated it. This exists because a draft claimed
+# 6,720 sweep evaluations against an artifact holding 16,800 rows, and a reviewer
+# independently computed 3,360 - three different numbers, none of them checked
+# against the file.
+#
+# axis_product entries are checked BOTH ways: the product must equal the declared
+# total AND the artifact's actual row count. A product that is internally consistent
+# but does not match the file is exactly the 6,720 failure.
+
+counts:
+
+  - id: sweep_total_evaluations
+    description: "total evaluations in the limit sweep"
+    artifact: data/sweep_results_long.parquet
+    kind: row_count
+    axis_product:
+      L: 56
+      model: 2
+      target: 30
+      seed: 5
+    expected: 16800
+    note: >-
+      A draft stated 6,720, which requires 12 targets. A reviewer computed 3,360,
+      which requires 6 targets. The artifact has 30 targets (0.70 to 0.99 step 0.01)
+      and 56 limits (0.900 to 0.955 step 0.001), with zero duplicate
+      (L, model, target, seed) keys.
+
+  - id: flag_confusion_rows
+    description: "rows in the flag confusion sweep"
+    artifact: data/flag_confusion_long.parquet
+    kind: row_count
+    axis_product:
+      model: 2
+      target: 30
+      seed: 5
+    expected: 300
+    note: "One row per (model, target, seed). No aggregation is performed by the producing script."
+
+  - id: dataset_total_rows
+    description: "total rows in the generated dataset"
+    artifact: data/dataset.parquet
+    kind: row_count
+    expected: 280500
+    note: "1,500 base scenarios x (1 base row + 186 contingencies) = 280,500."
+
+  - id: dataset_n1_attempted
+    description: "N-1 contingency solves attempted"
+    artifact: data/dataset.parquet
+    kind: filtered_count
+    filter: "outaged_type != 'none'"
+    expected: 279000
+    note: "1,500 x 186."
+
+  - id: dataset_n1_converged
+    description: "N-1 solves that converged"
+    artifact: data/dataset.parquet
+    kind: filtered_count
+    filter: "outaged_type != 'none' and converged"
+    expected: 278955
+    note: >-
+      The manuscript sentence "280,500 rows ... 278,955 of these solved successfully,
+      with the remainder failing to converge" implies 1,545 failures. Only 45 failed.
+      The other 1,500 are N-0 base rows, all of which converged, excluded because they
+      are base cases rather than contingencies.
+
+  - id: dataset_nonconverged
+    description: "genuine solver non-convergences"
+    artifact: data/dataset.parquet
+    kind: filtered_count
+    filter: "not converged"
+    expected: 45
+    note: "All 45 are transformer outages on three elements. Zero line outages."
+
+  - id: dataset_base_scenarios
+    description: "accepted base scenarios"
+    artifact: data/dataset.parquet
+    kind: filtered_count
+    filter: "outaged_type == 'none'"
+    expected: 1500
+    note: "All 1,500 converged; base convergence rate is 1.000000."
+
+  - id: case118_branches
+    description: "N-1 branch outages on case118"
+    artifact: null
+    kind: structural
+    expected: 186
+    note: >-
+      173 lines + 13 transformers. NETWORK-SPECIFIC. The manuscript Discussion says
+      "Every base case generates 186 related contingencies" two sentences before
+      discussing the 30-bus network, which has 41.
+
+  - id: case30_branches
+    description: "N-1 branch outages on case30"
+    artifact: null
+    kind: structural
+    expected: 41
+    note: "1,500 bases x 41 = 61,500 contingency scenarios."
+
+  - id: bibitem_count
+    description: "bibliography entries"
+    artifact: report/paper_current_STS.tex
+    kind: regex_count
+    pattern: '^\\bibitem'
+    expected: 19
+    note: "Must equal the \\begin{thebibliography}{N} width argument."

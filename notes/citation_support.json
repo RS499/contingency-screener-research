@@ -1,0 +1,163 @@
+{
+  "purpose": "Per-bibitem record of WHICH assertion the reference backs and HOW that was verified. A gate that only checks references exist cannot catch a real, resolvable reference cited for a claim it does not make.",
+  "rules": [
+    "Transcribe from the paper's own title block or publisher page. Never from memory, a search result, or another paper's reference list.",
+    "source_of_number: if a number attributed to this work was actually read somewhere else, name that source. Leaving it null asserts the number came from the cited work itself.",
+    "venue_status: published | preprint_only | ambiguous. 'ambiguous' fails the gate by design.",
+    "An unfilled entry FAILS. That is intended: the file starts as a checklist, not a certificate."
+  ],
+  "entries": {
+    "nerc": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "bates2021": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "manoharan2026": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "alcantara2026": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "christianson2025": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "ejebe1979": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "case118": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "pandapower": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "sklearn": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "lei2018": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "vovk2005": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "romano2019": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "barber2021": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "desalvo2015": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "angelopoulos2024": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "cortes2016": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "chow1970": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "tibshirani2019": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "UNFILLED. Every field must be completed by the author from local extraction notes. Do not fill from memory, a search result, or another paper's reference list."
+    },
+    "ansi2020": {
+      "cited_work": null,
+      "claim": null,
+      "verified_how": null,
+      "venue_status": null,
+      "source_of_number": null,
+      "_note": "KNOWN DEFECT, see notes/prior-art.md section 7.3: ANSI C84.1-2020 is real and correctly transcribed, but the 0.917 pu figure was read from a free NEMA front-matter excerpt, not the paid standard body text. Set source_of_number accordingly - this is the case that motivates the claim_support field."
+    }
+  }
+}

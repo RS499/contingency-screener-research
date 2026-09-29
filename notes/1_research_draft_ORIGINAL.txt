@@ -1,0 +1,211 @@
+% =====================================================================
+% AGENT-DRAFTED STRUCTURAL REFERENCE. NOT SUBMITTABLE AS WRITTEN.
+% Drafted by Claude (Claude Code, Opus 4.8) on 2026-07-21 under a scoped,
+% logged exception to CLAUDE.md section 10 (see notes/contribution-log.md).
+%
+% Purpose: a structure-only reference for learning the shape of an IEEE
+% conference paper. It is a .txt file, not a .tex file, on purpose.
+%
+% Rules honored while drafting:
+%  - Every metric is from data/frozen_poster_numbers.json. A \todo{} marks
+%    any number that is not in that file (do not read a \todo as a value).
+%  - Structural facts about case118 (line and transformer counts) are from
+%    CLAUDE.md section 5, flagged with an inline % comment where used.
+%  - Citations: arXiv entries from notes/prior-art.md; the classic and
+%    software entries were fetch-verified on 2026-07-21. Full list at end.
+%  - Claim ceiling: no "first", no "novel method", no "to our knowledge".
+%  - First person "we" is used, matching the three URTC sample papers,
+%    which is a deviation from the IEEE third-person suggestion.
+%
+% The author block is a placeholder. The owner completes it, resolves every
+% \todo, and rewrites the prose before any of this becomes real text.
+% =====================================================================
+
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+\begin{document}
+
+\title{Conformal-Gated Surrogate Screening for N-1 Under-Voltage Contingencies: Safety and Throughput Limits on a Marginally Secure Network}
+
+\author{\IEEEauthorblockN{[Author name]}
+\IEEEauthorblockA{\textit{Boston University RISE Summer Practicum} \\
+Boston, MA, USA \\
+[email]}}
+
+\maketitle
+
+\begin{abstract}
+Operators screen a grid against the loss of any single line or transformer, the N-1 criterion, by running an exact AC power-flow solve per outage. The check is slow, and a fast surrogate that replaces it can miss a violation with no warning. We wrap each prediction of the minimum post-contingency voltage in a one-sided split-conformal band and gate on it: certify when the band clears the 0.94 per-unit limit, flag when the prediction falls below, escalate to the solver when the band straddles it. On the IEEE 118-bus system the gate is fast but unsafe at 90\% coverage: the gradient-boosted surrogate reaches 3.04 times the solver throughput yet misses 6.91\% of true violations. Missed violations fall below 1\% only near 0.95 to 0.96 coverage, where escalation runs about 68 to 71\% and speedup falls to roughly 1.4 times. More than half of all contingencies sit in a 0.005 per-unit strip above the limit, which floors escalation for any surrogate. We report this on one marginal network, and the gating mechanism is not new.
+\end{abstract}
+
+\begin{IEEEkeywords}
+contingency screening, conformal prediction, power-flow surrogate, selective prediction, power system security
+\end{IEEEkeywords}
+
+\section{Introduction}
+Power grids are operated so that they survive the loss of any single component. The N-1 criterion asks, for each line or transformer that could fail, whether the grid still holds every voltage and flow within limits. The exact test is an alternating-current (AC) power-flow solve for each outage, and on a system with hundreds of components this is the slow inner loop of security assessment.
+
+A natural speedup is to replace most solves with a surrogate that predicts the outcome directly. The difficulty is not average accuracy but silent failure: if the surrogate calls an unsafe contingency safe, the operator skips the solve and never learns of the violation. A missed under-voltage is a safety event, so the error is asymmetric, and a point prediction gives no signal of when it is wrong.
+
+We attach a calibrated uncertainty band to each prediction and use it to decide, per contingency, whether to trust the surrogate or fall back to the exact solver. The band is a one-sided split-conformal interval in the physical units of the voltage limit. The gate has three outcomes: certify a case as safe and skip the solver, flag it as a violation and skip the solver, or escalate it to the exact AC solve when the band cannot resolve the case. We charge the escalated solver time back against the surrogate savings, so the reported speedup is the true end-to-end cost.
+
+Two recent papers are closest. Manoharan \cite{manoharan2026} pairs a cheap surrogate danger score with a random audit that runs the exact AC solve on a sampled subset, and bounds the thermal-violation rate of the skipped cases with a fixed-sequence risk-control procedure. Alcantara and Chatzivasileiadis \cite{alcantara2026} place conformal intervals on a foundation model's predictions and flag a contingency when the interval bound crosses the limit; their gate is a binary flag, they demonstrate on line loading, and they claim but do not demonstrate the voltage case. Relative to both, we escalate per instance rather than by population audit, we target under-voltage and demonstrate it, and we characterize why escalation is floored on this network. We do not claim the gating idea as new. Routing uncertain cases to a costlier oracle by a calibrated score is established in model-cascade and conformal-triage work, discussed in Section~V. What this paper adds is the instantiation for solver-in-the-loop voltage screening and the boundary-mass account of when the gate can and cannot pay for itself.
+
+\section{Background}
+A per-unit voltage expresses a bus voltage as a fraction of its nominal value, so 1.0 per unit is nominal and 0.94 per unit is 6\% low. Utilities hold service voltage inside a band around nominal, and this study screens against an under-voltage floor of 0.94 per unit. A base case can be within limits before any outage, the N-0 condition, and still drop below the floor after a single line or transformer is lost; N-1 screening is the search for those post-outage violations. Over-voltage does not bind on the case studied here, and thermal line loading never reaches its rating, so the only active constraint is the lower voltage limit. That one-sidedness carries through the whole method: we only ever need a lower bound on the predicted voltage, never an upper one.
+
+The exact check for a single contingency is an AC power-flow solve, which finds the voltage at every bus given the loads, the generation, and the post-outage topology. It is iterative and, with reactive-power limits enforced, takes several milliseconds per case, and multiplied across every component and every operating point it dominates screening cost. A surrogate prediction, by contrast, costs a small fraction of a millisecond, so replacing solves with predictions is where a speedup would come from if the predictions could be trusted. Classical fast screens rank contingencies by a performance index rather than solving each one exactly \cite{ejebe1979}, which gives an ordering rather than the exact minimum voltage.
+
+We study the IEEE 118-bus system \cite{case118}, a standard transmission benchmark with 173 lines and 13 transformers, % line and transformer counts from CLAUDE.md section 5 (structural facts of case118)
+so 186 single-element outages define the N-1 set. All power-flow solves use pandapower \cite{pandapower} with reactive-power limits enforced. Enforcing those limits is what makes the voltage constraint bind: without them the generators supply unlimited reactive power, voltages sit near nominal, and the problem nearly vanishes, so the enforced-limit case is the physically meaningful one. The network is close to its voltage security boundary under the operating points we sample, which is the property that makes screening hard and, as Section~IV shows, is what floors the escalation rate.
+
+\section{Method}
+\subsection{Dataset}
+Each base operating point is drawn by perturbing loads and generator setpoints around the benchmark case, spread across a range of loading and dispatch rather than clustered around one point. We keep a base only if it is feasible before any outage, meaning its own minimum bus voltage clears 0.94 per unit; this N-0 gate accepts 53.82\% of sampled bases.\footnote{The N-0 acceptance rate is recorded in the frozen results file, whose source note flags it as taken from a build log rather than a committed artifact.} For each accepted base we apply all 186 single-element outages and solve the exact AC power flow, recording the post-contingency minimum bus voltage as the label. This gives 1{,}500 bases and 280{,}500 rows including the base cases; 278{,}955 of the outage solves converge and form the screening set, with minimum voltage from 0.7179 to 0.9603 per unit and 17.48\% of cases violating the limit.
+
+\subsection{Surrogates}
+The surrogate predicts the minimum voltage from pre-contingency features: per-bus loads, generator setpoints and reactive limits, base-case bus voltages, and a one-hot encoding of which element is out. We use two regressors taught in the course, a ridge linear model on standardized inputs and a histogram gradient-boosted tree ensemble; hyperparameters follow course defaults and are not tuned against the test set. We split by base scenario at 60\%, 20\%, and 20\% into train, calibration, and test, so all outages of a base stay together and none leaks across the calibration boundary. Two trivial baselines set the bar: persistence, which predicts the pre-outage minimum voltage, and the training mean.
+
+\subsection{One-sided conformal band}
+Split conformal prediction turns held-out residuals into a coverage guarantee \cite{lei2018,vovk2005}. Because the danger is a true voltage below the prediction, we need only a lower bound. We take $\hat{q}$ to be the coverage quantile of the overshoot (prediction minus truth) on the calibration set, using the finite-sample rank of Lei et al.\ \cite{lei2018}, and form the one-sided band
+\begin{equation}
+\text{lower} = \hat{p} - \hat{q},
+\end{equation}
+where $\hat{p}$ is the prediction; the band has no upper edge. Under exchangeability of calibration and test cases, the true voltage lies at or above the lower edge with the target probability. Calibrating on one distribution and deploying on another breaks that assumption, the shift question raised in Section~V. A single global quantile is the simplest choice; locally adaptive alternatives exist \cite{romano2019,barber2021}. The calibrated band width at 90\% coverage is \todo{report the band width $\hat{q}$ at 0.90 coverage for each model; it is in data/tradeoff\_curve.json but not in the frozen file}.
+
+\subsection{Three-way gate}
+For each contingency the gate compares the band and the prediction against the limit $L = 0.94$:
+\begin{itemize}
+\item \textbf{Certify} (skip the solver) when $\hat{p} - \hat{q} \ge L$, so even the lower band edge clears the limit.
+\item \textbf{Flag} (skip the solver) when $\hat{p} < L$, so the prediction itself is below the limit.
+\item \textbf{Escalate} (run the exact solver) otherwise, when the band straddles the limit.
+\end{itemize}
+The flag test is on the point prediction, not a band edge, because the one-sided band has no upper edge (Fig.~\ref{fig:gate}). The exact solver is called only on escalated cases, and the net speedup counts that cost:
+\begin{equation}
+\text{net speedup} = \frac{n\, t_{\text{solve}}}{n\, t_{\text{surr}} + n_{\text{esc}}\, t_{\text{solve}}},
+\end{equation}
+where $t_{\text{solve}}$ is the per-case solve time (9.14 ms on the pinned configuration), $t_{\text{surr}}$ is the surrogate time, and $n_{\text{esc}}$ is the escalated count. Only straddling cases pay for a solve, so the escalation rate is the throughput knob, and because the surrogate is far cheaper than a solve the speedup is close to its reciprocal.
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{data/gate_schematic.png}}
+\caption{The three-way conformal gate. The surrogate predicts the minimum post-contingency voltage (marker) with a one-sided band extending only downward (bar), since the risk is a true voltage below the prediction. A case is certified and the solver skipped when the whole band clears the 0.94 per-unit limit (Certify), and escalated to the solver when the band straddles it (Escalate). The flag decision (Flag) tests the point prediction alone, not a band edge: a case is flagged when the prediction falls below the limit, which for this one-sided band means the marker itself is below it. The shaded strip is one band width above the limit.}
+\label{fig:gate}
+\end{figure}
+
+\section{Results}
+At 90\% coverage the two surrogates trade safety against throughput in opposite ways. The ridge model escalates 48.2\% of cases, holds 89.0\% coverage, misses 3.23\% of true violations, and reaches 2.08 times the solver throughput. The gradient-boosted model escalates only 33.0\%, holds 89.9\% coverage, and is faster at 3.04 times, but misses 6.91\%. Both hold coverage within a point of the 90\% target, so the band is calibrated; the safety problem is not miscoverage but where the uncovered mass falls.
+
+\begin{table}[t]
+\caption{Safety operating points on the IEEE 118-bus system, means over five random splits. Escalation, empirical coverage, missed-violation rate (share of true violations), and net speedup at each target coverage.}
+\label{tab:ops}
+\centering
+\begin{tabular}{llcccc}
+\hline
+Model & Cov.\ target & Esc.\ (\%) & Cov.\ (\%) & Missed (\%) & Speedup \\
+\hline
+ridge  & 0.90 & 48.2 & 89.0 & 3.23 & 2.08 \\
+ridge  & 0.94 & 62.4 & 93.5 & 1.11 & 1.61 \\
+ridge  & 0.95 & 67.7 & 94.9 & 0.59 & 1.48 \\
+ridge  & 0.96 & 71.7 & 95.8 & 0.22 & 1.40 \\
+ridge  & 0.97 & 74.4 & 96.9 & 0.03 & 1.34 \\
+ridge  & 0.98 & 75.1 & 97.9 & 0.00 & 1.33 \\
+histgb & 0.90 & 33.0 & 89.9 & 6.91 & 3.04 \\
+histgb & 0.94 & 57.5 & 94.0 & 2.36 & 1.74 \\
+histgb & 0.95 & 64.4 & 95.0 & 1.58 & 1.55 \\
+histgb & 0.96 & 71.3 & 95.9 & 0.84 & 1.40 \\
+histgb & 0.97 & 75.9 & 96.9 & 0.45 & 1.32 \\
+histgb & 0.98 & 80.5 & 98.0 & 0.08 & 1.24 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Safety comes at high escalation}
+Table~\ref{tab:ops} sweeps the target from 0.90 to 0.98. Raising it widens the band, lifting coverage and lowering the missed rate but escalating more cases. For the gradient-boosted model, moving from 0.90 to 0.94 cuts the missed rate from 6.91\% to 2.36\% but lifts escalation to 57.5\% and drops the speedup to 1.74 times. The missed rate falls below 1\% only at 0.95 for the ridge model (0.59\% missed, 67.7\% escalation, 1.48 times) and at 0.96 for the gradient-boosted model (0.84\% missed, 71.3\% escalation, 1.40 times). No target in the sweep is both safe and fast; Fig.~\ref{fig:tradeoff} marks the crossings.
+
+\begin{table}[t]
+\caption{Four-model comparison at 90\% target coverage, means over five random splits. Mean absolute error (MAE) and coefficient of determination ($R^2$) measure fit on the held-out minimum voltage; escalation, missed-violation rate (share of true violations), and net speedup measure the gate. The two trivial baselines fail in opposite ways: persistence predicts the pre-outage voltage, which the N-0 gate has already forced above the limit, so it can never flag and escalates almost every case, while the train-mean baseline predicts a constant below the limit, so it flags every case and never escalates. $^{\dagger}$Because the train-mean model never calls the solver its speedup is unbounded and not a real screening speedup. Fit values are from data/screener\_metrics.json.}
+\label{tab:models}
+\centering
+\begin{tabular}{lccccc}
+\hline
+Model & MAE (pu) & $R^2$ & Esc.\ (\%) & Missed (\%) & Speedup \\
+\hline
+persistence      & 0.0042 & $-0.06$ & 99.5 & 0.31 & 1.00 \\
+train mean       & 0.0067 & $-0.00$ & 0.0  & 0.00 & $2.1{\times}10^{7\dagger}$ \\
+ridge            & 0.0037 & 0.78    & 48.2 & 3.23 & 2.08 \\
+gradient-boosted & 0.0018 & 0.91    & 33.0 & 6.91 & 3.04 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{The faster model is not the safer one}
+Model choice reverses along the coverage axis, and Table~\ref{tab:models} shows that accuracy does not settle it. The gradient-boosted model fits the held-out voltages far more closely than the linear model, with a coefficient of determination of 0.91 against 0.78 and roughly half the mean absolute error, and at 0.90 coverage it also wins on throughput, 3.04 against 2.08 times. On fit alone it is the obvious pick. The ranking inverts where safety is required: at 0.96 coverage the two models tie at 1.40 times speedup, yet the linear model misses only 0.22\% of true violations against the gradient-boosted model's 0.84\%, so at equal speed the less accurate model is nearly four times safer. The closer fit buys throughput at loose coverage and gives it back as missed violations at tight coverage, so the model an operator would deploy depends on the required regime, not on the fit. Predictive accuracy alone does not choose the surrogate.
+
+\subsection{Boundary mass floors escalation}
+Escalation stays high for a structural reason. Fig.~\ref{fig:boundary} shows the distribution of the minimum post-contingency voltage: 56.86\% of converged contingencies fall in the 0.005 per-unit strip from 0.94 to 0.945, just above the limit, and 17.48\% fall below it as violations. The concentration is a smooth boundary layer, not a spike, since no single 0.001 per-unit bin holds more than about 14\% and the share at any exact value is 0.0\%. It is driven by a few buses: bus 75 is the weakest in 27.1\% of contingencies, bus 52 in 16.81\%, and bus 106 in 9.31\%.
+
+Any band wide enough to cover the calibration residuals reaches into this strip, and every straddling case must escalate. A perfect surrogate would still escalate the strip, a floor that saturates near 82.6\% of the population as the band widens. The models ceiling below that, 75.2\% for the linear model and 84.2\% for the gradient-boosted model, because a model only flags when its own prediction is below the limit. Persistence makes the ceiling concrete: it predicts the pre-outage minimum voltage, and the N-0 gate has already forced every base above 0.94, so its prediction never falls below the limit, it can never flag, and every case it does not certify must escalate. In Table~\ref{tab:models} it escalates 99.5\% of cases and reaches only 1.00 times the solver throughput, a screener barely faster than solving everything. The train-mean baseline fails in the opposite direction: it predicts a constant below the limit, so it flags every contingency and never escalates, missing no violation while certifying nothing, an empty safety that separates no case from another. Going below the floor means certifying boundary cases as safe, which is the missed-violation rate: at 0.90 the models escalate only 48.2\% and 33.0\% and pay for it with the 3.23\% and 6.91\% missed rates. Throughput and safety are two views of the same boundary layer.
+
+The operating-point choice follows: an operator who required the sub-1\% missed rate would run at 0.95 or 0.96 coverage and accept a 1.4 to 1.5 times speedup, not the 2 to 3 times the headline 0.90 numbers suggest. The honest speedup on this network is measured at a safe operating point, and it is modest.
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{data/boundary_mass_hist.png}}
+\caption{Distribution of the minimum post-contingency voltage over all converged single-element contingencies. Cases left of the line are violations; cases at or above it are within limit. More than half fall in the 0.005 per-unit strip just above the limit, yet no single 0.001 per-unit bin exceeds about 14\%, so the mass is a smooth boundary layer, not a spike; a thin tail of severe violations extends well below.}
+\label{fig:boundary}
+\end{figure}
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{data/tradeoff_hero_col.png}}
+\caption{Escalation rate (solid, left axis) and missed-violation rate (dotted, right axis) versus coverage target, for the linear (ridge) and gradient-boosted surrogates, averaged over five random splits. The vertical lines mark where each model's missed-violation rate first drops below 1\% of true violations, 0.95 for the linear model and 0.96 for the gradient-boosted model, where escalation is high and speedup small. Being fast and being safe are in tension.}
+\label{fig:tradeoff}
+\end{figure}
+
+\section{Discussion and limitations}
+The results are for one network, the IEEE 118-bus system, and we make no claim that the numbers transfer to another grid; the boundary-mass mechanism is a property of a network operated near its voltage security limit. The base operating points are synthetic, sampled around a standard benchmark rather than drawn from operational records, so the topology is real but the loading is constructed. We screen at 0.94 per unit rather than the 0.95 per-unit ANSI and NERC service range because the network is marginal at 0.95: only a small share of feasible bases clear the higher limit, \todo{the exact 0.95 base-clearance share for this build is not committed; the clip-era value 2.93\% is in notes/artifact-clip-0.94.md and the current value is low single digits} so screening at 0.95 would leave almost nothing certifiable before any outage.
+
+We compare only against trivial baselines. Persistence is beaten and the training mean is degenerate, but a classical voltage screen (performance-index or sensitivity-based) is not built here, and a DC power-flow baseline cannot see voltage at all; the closest prior work builds such baselines \cite{alcantara2026}, and their absence is a known gap. The net speedup is close to the reciprocal of the escalation rate, so it restates one axis rather than adding independent evidence. We have not yet run the intended distribution-shift test, calibrating on single-element and testing on unseen double-element outages, so the coverage guarantee is demonstrated only within the calibration regime.
+
+The gating idea is not ours to claim. Calibrated uncertainty routing an uncertain case to a costlier model, with the threshold chosen by cost, is the subject of recent model-cascade work \cite{kotte2026,valkanas2025,guo2026}, and the three-way release, flag, defer structure is the subject of conformal triage \cite{angelopoulos2024}; the reject-option primitive underneath is older still \cite{geifman2019,chow1970}. What differs here is the escalation target, an exact numerical solver rather than a larger learned model or a human reviewer, the band living in the physical units of a safety limit, and the boundary-mass account of the floor. Those are the contributions we defend, and we name the precedents so the boundary is clear.
+
+\section{Conclusion}
+A conformal-gated surrogate can screen N-1 under-voltage contingencies on the IEEE 118-bus system, but on this marginal network being fast and being safe are in tension. At 90\% coverage the gate is fast and misses too many violations; pushing the missed rate below 1\% drives escalation past two thirds and collapses the speedup toward the cost of solving everything. The cause is a boundary layer holding more than half of all contingencies in a thin strip above the limit, which floors escalation for any surrogate. The boundary-mass floor, not the headline speedup, is the result to carry forward. Future work is the double-outage shift test, a second network to test whether the floor is general, and a classical voltage-screen baseline.
+
+\section*{Acknowledgment}
+This work was carried out in the Boston University RISE summer practicum. The author thanks the RISE instructors and teaching staff. Power-flow computation used pandapower \cite{pandapower} and the surrogates used scikit-learn \cite{sklearn}. The author used an AI coding assistant for software scaffolding and for a structural draft; all reported numbers were produced by the author's committed, tested code under a pinned solver configuration.
+
+% =====================================================================
+% References. arXiv entries verified in notes/prior-art.md; the classic and
+% software entries were fetch-verified on 2026-07-21 (dblp, IEEE Xplore,
+% Oxford Academic, NeurIPS proceedings, JMLR, UW test-case archive). No
+% field is filled from memory. Caveat carried from prior-art.md 6.6: the
+% Manoharan record's demonstrated-scope characterization rests on the
+% 2026-07-19 pass and the full text should be re-read; the bib fields below
+% (authors, title, arXiv id, year) are correct.
+% =====================================================================
+\begin{thebibliography}{16}
+\bibitem{manoharan2026} J. Manoharan, ``Audited selective verification for risk-controlled N-1 thermal contingency screening under deployment shift,'' arXiv:2607.13221, 2026.
+\bibitem{alcantara2026} A. Alcantara and S. Chatzivasileiadis, ``Trustworthiness layer for foundation models in power systems: Application to N-k contingency screening,'' arXiv:2602.07995v2, 2026.
+\bibitem{ejebe1979} G. C. Ejebe and B. F. Wollenberg, ``Automatic contingency selection,'' \textit{IEEE Trans. Power App. Syst.}, vol. PAS-98, no. 1, pp. 97--109, 1979.
+\bibitem{case118} R. Christie, ``Power systems test case archive: IEEE 118-bus system,'' Univ. of Washington, 1993. [Online]. Available: https://labs.ece.uw.edu/pstca/
+\bibitem{pandapower} L. Thurner, A. Scheidler, F. Sch\"afer, \textit{et al.}, ``pandapower---an open-source Python tool for convenient modeling, analysis, and optimization of electric power systems,'' \textit{IEEE Trans. Power Syst.}, vol. 33, no. 6, pp. 6510--6521, Nov. 2018.
+\bibitem{lei2018} J. Lei, M. G'Sell, A. Rinaldo, R. J. Tibshirani, and L. Wasserman, ``Distribution-free predictive inference for regression,'' \textit{J. Amer. Statist. Assoc.}, vol. 113, no. 523, pp. 1094--1111, 2018.
+\bibitem{vovk2005} V. Vovk, A. Gammerman, and G. Shafer, \textit{Algorithmic Learning in a Random World}. New York, NY, USA: Springer, 2005.
+\bibitem{romano2019} Y. Romano, E. Patterson, and E. J. Cand\`es, ``Conformalized quantile regression,'' in \textit{Adv. Neural Inf. Process. Syst. (NeurIPS)}, vol. 32, 2019, pp. 3538--3548.
+\bibitem{barber2021} R. F. Barber, E. J. Cand\`es, A. Ramdas, and R. J. Tibshirani, ``The limits of distribution-free conditional predictive inference,'' \textit{Inf. Inference: J. IMA}, vol. 10, no. 2, pp. 455--482, 2021.
+\bibitem{kotte2026} V. Kotte, ``UCCI: Calibrated uncertainty for cost-optimal LLM cascade routing,'' arXiv:2605.18796, 2026.
+\bibitem{valkanas2025} A. Valkanas, S. Pal, P. Rumiantsev, Y. Zhang, and M. Coates, ``C3PO: Optimized LLM cascades with probabilistic cost constraints for reasoning,'' arXiv:2511.07396, 2025.
+\bibitem{guo2026} D. Guo, J. Wu, and S. M. Yiu, ``RouteNLP: Closed-loop LLM routing with conformal cascading and distillation co-optimization,'' arXiv:2604.23577, 2026.
+\bibitem{angelopoulos2024} A. N. Angelopoulos \textit{et al.}, ``Conformal triage for medical imaging AI deployment,'' medRxiv, 2024.
+\bibitem{geifman2019} Y. Geifman and R. El-Yaniv, ``SelectiveNet: A deep neural network with an integrated reject option,'' in \textit{Proc. Int. Conf. Mach. Learn. (ICML)}, 2019.
+\bibitem{chow1970} C. K. Chow, ``On optimum recognition error and reject tradeoff,'' \textit{IEEE Trans. Inf. Theory}, vol. 16, no. 1, pp. 41--46, 1970.
+\bibitem{sklearn} F. Pedregosa \textit{et al.}, ``Scikit-learn: Machine learning in Python,'' \textit{J. Mach. Learn. Res.}, vol. 12, pp. 2825--2830, 2011.
+\end{thebibliography}
+
+\end{document}
