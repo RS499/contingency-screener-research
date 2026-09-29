@@ -19,5 +19,11 @@ paper_current.pdf
 data/archive_clip/
 
 # Private — never commit to the public fork
-notes/
+/notes/cited papers/
+/notes/files_for_STS_portal/
+/notes/lit/
+/notes/reference/
+/notes/retired/
+/notes/utrc_samples/
+
 CLAUDE.md
