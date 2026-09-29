@@ -1,0 +1,25 @@
+{
+  "step": "N5 step 0 environment check",
+  "shard_seed": 100,
+  "scenarios": 375,
+  "rows_new": 70125,
+  "rows_old": 70125,
+  "columns_match": true,
+  "frame_equals": true,
+  "n_columns_differing": 0,
+  "differing": [],
+  "byte_identical": true,
+  "reject_file": "375,370",
+  "wall_s": 928.3386197090149,
+  "python": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "dataset_sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e",
+  "generated_utc": "2026-09-29T00:20:45Z"
+}

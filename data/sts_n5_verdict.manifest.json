@@ -1,0 +1,51 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n5_verdict.json"
+  ],
+  "generating_script": "scratch/n5_summarize.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n5_summarize.py"
+  ],
+  "script_git_blob_sha": "73b249f2992a4c8d1739900b4c76d984c731622d",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "b12355cae2c0120a1510a4ac7f2496a176ec195f",
+  "inputs": [
+    {
+      "path": "data/sts_n5_gate_094.json",
+      "sha256": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db"
+    },
+    {
+      "path": "data/sts_n5_gate_095.json",
+      "sha256": "32cc5d68fcc57ca989672c440f66879d75d635783f1ee4ac738f509340b7fd1d"
+    },
+    {
+      "path": "scratch/n5_decision_rule.md",
+      "sha256": "84239071721caded377c5a1e714a1f63e6525e0d5307ade9260b1c8b19dd8e67"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n5_verdict.json",
+      "sha256": "22a6a964953b357134f677a13ecba79c8fd61652d4a04d39144cbce7a70823b3",
+      "md5": "0e6c55a73294ed9a68677d9c8e3cabaf",
+      "bytes": 65437,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-29T02:43:41Z",
+  "parameters": {
+    "model_hyperparameters": "see manifests of the two inputs (M2 configs per split)"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

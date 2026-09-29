@@ -1,0 +1,49 @@
+{
+  "gen_vm_lo": 0.95,
+  "shard_seeds": [
+    200,
+    201,
+    202,
+    203
+  ],
+  "summary": {
+    "rows": 280500,
+    "n1_converged_rows": 278957,
+    "nonconverged_rows": 43,
+    "boundary_mass_pct": 34.816835569639764,
+    "boundary_rows": 97124,
+    "conditional_boundary_pct": 41.44417087335555,
+    "rows_at_or_above_limit": 234349,
+    "violation_rate_pct": 15.990995027907527,
+    "violation_rows": 44608,
+    "n0_bases": 1500,
+    "n0_in_strip_pct": 39.13333333333333,
+    "n0_min_vm_median": 0.9464659932840362,
+    "gate_accepted": 1500,
+    "gate_rejected": 537,
+    "gate_pass_pct": 73.63770250368188,
+    "min_vm_min": 0.5980568079042862,
+    "min_vm_max": 0.9599961337608289,
+    "wall_s": 1563.0320539474487
+  },
+  "build1_summary_for_comparison": {
+    "rows": 280500,
+    "n1_converged_rows": 278971,
+    "nonconverged_rows": 29,
+    "boundary_mass_pct": 32.95432141692147,
+    "boundary_rows": 91933,
+    "conditional_boundary_pct": 39.23428844561664,
+    "rows_at_or_above_limit": 234318,
+    "violation_rate_pct": 16.00632323789928,
+    "violation_rows": 44653,
+    "n0_bases": 1500,
+    "n0_in_strip_pct": 36.86666666666667,
+    "n0_min_vm_median": 0.9464741693506693,
+    "gate_accepted": 1500,
+    "gate_rejected": 571,
+    "gate_pass_pct": 72.4287783679382,
+    "min_vm_min": 0.7154544690495342,
+    "min_vm_max": 0.9585890458368175,
+    "wall_s": 24843.61835718155
+  }
+}

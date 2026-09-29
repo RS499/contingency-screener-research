@@ -1,0 +1,96 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "n5_gate_094stored_seeds0.json"
+  ],
+  "generating_script": "scratch/n5_gate_eval.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n5_gate_eval.py",
+    "094stored",
+    "0"
+  ],
+  "script_git_blob_sha": "c6b9772fa06a39efaf28bc36ffd510c3531d7c60",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "b12355cae2c0120a1510a4ac7f2496a176ec195f",
+  "inputs": [
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/solve_time.json",
+      "sha256": "94d8e8059d2b35260da090e33e3ce058c0437ef7b578556a134bbdc258a0d4ec"
+    },
+    {
+      "path": "scripts/tune_surrogates.py",
+      "sha256": "9395044201a93337d20c3f208cb095a39d568be669b4d7f992f922b44cf0cc9e"
+    },
+    {
+      "path": "scripts/baselines.py",
+      "sha256": "d5dfd375e0a1624252a957e726c008f0d6662878a8d469b6b9ef6b190fa5a95b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "scratch/n5_gate_094stored_seeds0.json",
+      "sha256": "7beb63c7c24a0350c5d08e279ee6f05c8ae5469f93decb9bbd33b5fbe7e681c5",
+      "md5": "253433b44fe26e6068ae6dc0de6b80d6",
+      "bytes": 45947,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-29T00:27:26Z",
+  "parameters": {
+    "run": "094stored",
+    "seeds": [
+      0
+    ],
+    "targets": [
+      0.9,
+      0.91,
+      0.92,
+      0.93,
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.98
+    ],
+    "limit": 0.94,
+    "fail_ceiling": 0.005,
+    "model_hyperparameters": {
+      "search": "scripts/tune_surrogates.py candidates (15 ridge alphas, 26 histgb)",
+      "selected_m2_per_seed": {
+        "0": {
+          "ridge": {
+            "tag": "alpha1",
+            "alpha": 1.0
+          },
+          "histgb": {
+            "tag": "rand00",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        }
+      }
+    },
+    "inner_seed_offset": 1000,
+    "inner_missed_ceiling": 0.01,
+    "omp_num_threads": "4"
+  },
+  "no_new_solves": "No AC solve. Model fits: the full tune_surrogates search plus M2 refits, per seed."
+}

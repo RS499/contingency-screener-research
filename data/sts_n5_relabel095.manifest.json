@@ -1,0 +1,73 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n5_relabel095.parquet",
+    "sts_n5_relabel095.json"
+  ],
+  "generating_script": "scratch/n5_relabel095.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n5_relabel095.py"
+  ],
+  "script_git_blob_sha": "1a9bcd12ca7606457c1730ceb4de2b1e9b8fd3df",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "b12355cae2c0120a1510a4ac7f2496a176ec195f",
+  "inputs": [
+    {
+      "path": "data/sts_n3_floor095.parquet",
+      "sha256": "49363a25309bc0e14df03b39215a6038c3953c480389a4708c5a42a9a636e9f6"
+    },
+    {
+      "path": "scripts/sts_n2_label_audit.py",
+      "sha256": "e4a54e78dddbcfe81ed9666ade44d9cffde95ddf36839506447b8d9c54fc6a45"
+    },
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n5_relabel095.parquet",
+      "sha256": "f3e3c081362337532d8fc8deab93b32b6f2d67531cb4c3e78094caaf4c3f1bdc",
+      "md5": "772e798f5ec45acc399698a83647ae41",
+      "bytes": 8352181,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n5_relabel095.json",
+      "sha256": "76e51814ce0fa7be43144eb025a2f33684a1ce68dc4cba073b02df63678a6501",
+      "md5": "8a1a66d0ac058df6444ba7bfa29e4b03",
+      "bytes": 990,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-29T01:03:52Z",
+  "parameters": {
+    "gen_vm_lo": 0.95,
+    "nproc": 4,
+    "limit": 0.94,
+    "shard_seeds": [
+      100,
+      101,
+      102,
+      103
+    ],
+    "n_total": 1500,
+    "switchback_tol_q": 0.001,
+    "switchback_tol_v": 0.001,
+    "switchback_max_outer": 30,
+    "solver": "pandapower runpp enforce_q_lims=True init=dc numba=True (pinned)",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: this run re-solves every converged row with the pinned solver and runs the switch-back loop"
+}

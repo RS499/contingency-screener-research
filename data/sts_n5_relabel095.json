@@ -1,0 +1,35 @@
+{
+  "question": "N5 step 2: switch-back relabel of the 0.95-floor dataset (N2 method)",
+  "method": "scripts/sts_n2_label_audit.py replay_shard + audit_scenario, unchanged; replay with GEN_VM_LO=0.95",
+  "replay_n0_max_abs_diff": 0.0,
+  "replay_n_scenarios": 1500,
+  "rejects_per_shard": {
+    "100": 168,
+    "101": 122,
+    "102": 142,
+    "103": 139
+  },
+  "shard_wall_s": {
+    "100": 567.3255798816681,
+    "101": 670.9741921424866,
+    "102": 927.9500200748444,
+    "103": 922.0237519741058
+  },
+  "wall_s": 3099.6526572704315,
+  "summary": {
+    "n1_rows": 278971,
+    "status_counts": {
+      "converged": 265373,
+      "not_needed": 13598
+    },
+    "n1_failed": 0,
+    "n1_failed_share": 0.0,
+    "n1_needing_switchback": 265373,
+    "max_repro_abs_diff": 0.0,
+    "flip_viol_to_safe": 4379,
+    "flip_safe_to_viol": 1534,
+    "stored_violation_rate": 0.1600632323789928,
+    "corrected_violation_rate": 0.14986503973531298,
+    "corrected_boundary_mass": 0.2864096984991272
+  }
+}
