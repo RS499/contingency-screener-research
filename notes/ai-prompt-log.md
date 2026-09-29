@@ -6271,3 +6271,45 @@ N5b pre-registration: scratch/n5_decision_rule.md sha256 84239071721caded377c5a1
 Prompt verbatim: "save this prompt result in an md file. in addition, i must commit and push this to pull fro my laptop. give me commands. do not commit urself"
 
 Claude wrote scratch/n5_result.md and gave the owner the git commands. Claude ran no git writes.
+
+## 2026-09-29 — Read the pulled N5 commit (1772e21)
+
+"ok now read all the enw files i js pulled"
+
+Claude read all 25 files in commit 1772e21, verified the decision-rule hash, and recomputed the held-out verdict and the 0.95 relabel counts from the raw JSON/parquet. No files written except this log entry.
+
+## 2026-09-29 (b) — Pull prep for 45f0a26 (notes + .gitignore) and report on the N5 night run
+
+"alr i committed some of the notes and teh new gitignore. pull those two. then read all the new stuff there. then tell me how the run went last night. btw the pull will duplicate the stuff here so be sure to handle that as well"
+
+Claude ran git fetch (no merge, no working-tree change; CLAUDE.md §8), compared the 97 incoming notes files with the local copies (95 identical, 1 new: notes/overnight_status.md; 1 different: this log, with divergent appended entries), tested the fast-forward in a throwaway clone (it silently overwrites the ignored local log), read notes/overnight_status.md and log entries (e)-(g) from origin/main, and gave the owner pull commands that preserve this machine's log entries.
+
+## 2026-09-29 (c) — Are the N5/N3 results good or bad for the paper?
+
+"are these results good or bad for the paper"
+
+Claude gave an assessment in chat only (no files written).
+
+## 2026-09-29 (d) — Any way to make the gate beat the simple baseline?
+
+"is there any awy i could make it beat simple baseline"
+
+Claude read data/baselines.json (existing) and answered in chat; no files written.
+
+## 2026-09-29 (e) — Can more runs go on the Mac mini?
+
+"could i do more runs on the mac mini?"
+
+Answered in chat; no files written.
+
+## 2026-09-29 (f) — Write the Mac mini run prompt and pre-registration draft
+
+"write the run prompt and pre-registration draft"
+
+Claude wrote scratch/run_prompt_n9.md and scratch/n9_decision_rule_DRAFT.md (drafts for owner review; nothing run, nothing hashed).
+
+## 2026-09-29 (g) — Fix divergent push/pull (laptop commit 53953eb vs remote 45f0a26)
+
+(pasted git push/pull errors)
+
+Claude diagnosed read-only (git fetch, log, diff), tested the fix in a throwaway clone, and gave the owner commands. No git writes in the repo.
