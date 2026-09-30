@@ -1,0 +1,17 @@
+{
+  "source": "data/sts_n9_budget_curve.json",
+  "family": "histgb",
+  "band": "+-1 std (ddof=0) over 5 splits; oracle drawn without band",
+  "declared_k_table": "see data/sts_n9_budget_curve.json -> table",
+  "panels": {
+    "D94": {
+      "n_splits": 5,
+      "k_max": 186
+    },
+    "D95a": {
+      "n_splits": 5,
+      "k_max": 186
+    }
+  },
+  "x_view": "k in [0, 130] of 186"
+}

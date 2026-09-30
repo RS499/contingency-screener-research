@@ -1,0 +1,32 @@
+{
+  "target": 0.9,
+  "pooled_over_splits": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "reproduction_of_n5": {
+    "max_abs_diff_escalation_vs_n5": 0.0,
+    "max_abs_diff_missed_vs_n5": 0.0
+  },
+  "models": {
+    "ridge": {
+      "n_misses_pooled": 1528,
+      "qhat90_mean": 0.004914146018356336,
+      "share_within_qhat": 0.8036649214659686,
+      "share_deeper_than_0p005": 0.18651832460732984,
+      "max_depth": 0.04752564444429552,
+      "p99_depth": 0.015632305773298362
+    },
+    "histgb": {
+      "n_misses_pooled": 1936,
+      "qhat90_mean": 0.002090398331449994,
+      "share_within_qhat": 0.6265495867768595,
+      "share_deeper_than_0p005": 0.17303719008264462,
+      "max_depth": 0.0682266002078391,
+      "p99_depth": 0.023110044810077134
+    }
+  }
+}

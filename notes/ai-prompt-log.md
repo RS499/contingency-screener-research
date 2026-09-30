@@ -6355,3 +6355,45 @@ Claude wrote scratch/run_prompt_n10.md, scratch/n10_decision_rule_DRAFT.md and n
 "wati give me step by step what i need to do"
 
 Answered in chat; no files written.
+
+## 2026-09-30 (g) — Octave installed; mpver undefined on the Mac mini
+
+(pasted brew install octave log and the mpver error)
+
+Answered in chat; no files written.
+
+## 2026-09-30 (h) — MATPOWER 8.1 now found by Octave on the Mac mini
+
+(pasted mpver output)
+
+Answered in chat; no files written.
+
+## 2026-09-30 (i) — Where to replace numbers and figures
+
+"where to replace the numbers and figures"
+
+Claude grep-mapped the .tex (read-only) and appended a location map to notes/paper_fix_plan.md.
+
+## 2026-09-30 (j) — Create all new figures and table bodies (corrected labels)
+
+"create all teh new figures and new table figures"
+
+Claude built corrected-label figures and table bodies as new files (scripts/sts_paper_*.py, data/sts_paper_*); no .tex edits.
+
+## 2026-09-30 (k) — Fig. 2 legend as 2x2
+
+"for fig 2, make the legend so that its only a max of two lengths down and two lengths wide, so 2 by 2 instead of 1 by 4"
+
+Claude changed the legend layout in scripts/sts_paper_corrected.py (fig2) and regenerated data/sts_paper_fig2_tradeoff.png.
+
+## 2026-09-30 (l) — Anything else that can run on the Mac mini?
+
+"wait ru sure theres nothing else i can do that can js be run on the mac mini?"
+
+Answered in chat; no files written.
+
+## 2026-09-30 (m) — Prompt for all seven Mac mini runs
+
+"make prompt to do all seven. ill put it into the mac mini now. ill have it keep running"
+
+Claude wrote scratch/n11_decision_rule_DRAFT.md and scratch/run_prompt_n11.md (drafts; nothing run).

@@ -1,0 +1,120 @@
+{
+  "generating_script": "scripts/sts_paper_corrected.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scripts/sts_paper_corrected.py"
+  ],
+  "inputs": [
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_paper_fig4_boundary.png",
+      "sha256": "b8c1e36724e8647054727014405964a26f24126820d6a5d9b72bda9fb8405df5"
+    },
+    {
+      "path": "data/sts_paper_fig4_boundary.json",
+      "sha256": "218cf0e170e647a0832ef5c5e96379aa5ebdb9ea534fb049099639fbbbefaea1"
+    }
+  ],
+  "settings": {
+    "figure": "Fig. 4 equivalent, corrected labels",
+    "figsize_in": [
+      3.5,
+      2.6
+    ],
+    "dpi": 300,
+    "hist_range": [
+      0.715,
+      0.965
+    ],
+    "view": [
+      0.87,
+      0.965
+    ],
+    "bin_width_pu": 0.001,
+    "shaded": "[0.94, 0.945)"
+  },
+  "labels": "switch-back corrected min_vm (N2 method); 1 failed row dropped",
+  "model_hyperparameters": {
+    "ridge_seed0": {
+      "tag": "alpha100",
+      "alpha": 100.0
+    },
+    "histgb_seed0": {
+      "tag": "rand15",
+      "learning_rate": 0.1,
+      "max_iter": 600,
+      "max_depth": null,
+      "max_leaf_nodes": 127,
+      "min_samples_leaf": 20,
+      "l2_regularization": 1.0
+    },
+    "ridge_seed1": {
+      "tag": "alpha0.3162",
+      "alpha": 0.31622776601683794
+    },
+    "histgb_seed1": {
+      "tag": "rand13",
+      "learning_rate": 0.08,
+      "max_iter": 600,
+      "max_depth": null,
+      "max_leaf_nodes": 255,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.1
+    },
+    "ridge_seed2": {
+      "tag": "alpha0.01",
+      "alpha": 0.01
+    },
+    "histgb_seed2": {
+      "tag": "rand01",
+      "learning_rate": 0.1,
+      "max_iter": 1000,
+      "max_depth": null,
+      "max_leaf_nodes": 255,
+      "min_samples_leaf": 50,
+      "l2_regularization": 10.0
+    },
+    "ridge_seed3": {
+      "tag": "alpha0.003162",
+      "alpha": 0.0031622776601683794
+    },
+    "histgb_seed3": {
+      "tag": "rand06",
+      "learning_rate": 0.03,
+      "max_iter": 600,
+      "max_depth": null,
+      "max_leaf_nodes": 255,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.1
+    },
+    "ridge_seed4": {
+      "tag": "alpha0.001",
+      "alpha": 0.001
+    },
+    "histgb_seed4": {
+      "tag": "rand20",
+      "learning_rate": 0.08,
+      "max_iter": 1000,
+      "max_depth": null,
+      "max_leaf_nodes": 255,
+      "min_samples_leaf": 50,
+      "l2_regularization": 0.1
+    }
+  },
+  "plotting_library": "matplotlib 3.11.1",
+  "python": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "generated_utc": "2026-09-30T21:30:49Z"
+}

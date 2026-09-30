@@ -146,14 +146,26 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 | Figure | Action | Source |
 |---|---|---|
 | Fig. 1 gate schematic | keep | unchanged |
-| Fig. 2 trade-off | swap for the banded version on corrected labels | N10 Part C (a); interim: `data/sts_tradeoff_bands.png` (old labels) |
-| Fig. 3 miss depth | regenerate on corrected labels, no annotation | N10 Part C (b); interim: `data/sts_miss_depth_noannot.png` (old labels) |
-| Fig. 4 boundary histogram | regenerate on corrected labels | N10 Part C (c) |
+| Fig. 2 trade-off | swap for the banded version on corrected labels | **`data/sts_paper_fig2_tradeoff.png`** (done 2026-09-30) |
+| Fig. 3 miss depth | regenerate on corrected labels, no annotation | **`data/sts_paper_fig3_missdepth.png`** (done) |
+| Fig. 4 boundary histogram | regenerate on corrected labels | **`data/sts_paper_fig4_boundary.png`** (done) |
 | Fig. 5 bus map | author decision (AD-9); if kept, upload `data/sts_critical_bus_map.png` and name igraph in the credit line | — |
-| New: budget curve | add; the key new result | N10 Part C (d), from `data/sts_n9_budget_curve.json` |
+| New: budget curve | add; the key new result | **`data/sts_paper_fig_budget.png`** (done) |
 | Optional: cross-network scatter / limit sweep | only if pages allow | `data/sts_crossnet_scatter.png`, `data/sts_limit_sweep.png` |
 
 - **Every figure needs a credit line** under it: you as creator, the program, the year (R21).
+- **AI-drawn figures (author decision; ask STS staff).** The `data/sts_paper_*` figures and table bodies were
+  produced by AI-written code (`scripts/sts_paper_corrected.py`). So were several earlier figures (the
+  `sts_*` scripts). RULES2027 App. 4 (R22) says an AI-produced graphic "should be clearly marked as
+  AI-generated and with explicit citation as to how the image was created". The current credit line
+  "Graph created by Rajan Saha using Matplotlib 3.11.1, 2026" may be incomplete for these. Decide the
+  wording, and add this to the STS staff questions.
+- **Table bodies:** `data/sts_paper_tables.tex` holds Table 1 (models), Table 2 (operating points,
+  plus a variant with speedup B), a floor-experiment table, and a gate-vs-static table, all on corrected
+  labels. Values and manifests are in `data/sts_paper_tables.json`. Note two changes: the train-mean
+  baseline now escalates every case (the corrected mean is 0.9403 > 0.94), so the old "never calls
+  the solver" footnote no longer applies; and at the held-out point, histgb has 3 of 5 splits ≤ 1% and
+  ridge 0 of 5.
 - **Upload every changed PNG to Overleaf,** then re-run the pixel check. The last export had a stale Fig. 5.
 
 ## Step 5 — Compile and compliance (after each big change)
@@ -216,3 +228,51 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 - [ ] Overleaf compile ≤ 20 counted pages; `check_compliance.py` run; std rule checked.
 - [ ] Every number traced to a JSON key (spot-check with a verifier pass).
 - [ ] Final PDF downloaded and inspected; filename per R14; submitted before 11-04.
+
+---
+
+## Location map — where each number and figure lives in the .tex
+
+Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
+- **Line numbers are for navigation only.** Search by the anchor words, because lines move as you edit.
+- **"Source → value"** is where the corrected number comes from (Step 2). N10 Part C re-emits Table 1-2
+  bodies and Figs. 2-4 on corrected labels; use those when they exist.
+
+### Numbers
+
+| Section | Line | Anchor (first words) | Now | Change to (source → value) |
+|---|---|---|---|---|
+| Abstract | 73 | "The power system grid should remain resilient…" | histgb 3.29× and 4.72% @90% | `tables["094"]` histgb 0.90 → speedup 3.83 ± 0.40 (rule A), missed 4.24 ± 1.76% |
+| Abstract | 73 | same paragraph | "first … under 1% … 0.97", 63.7% esc, 1.58× | held-out point → esc 50.2 ± 8.4%, missed 1.51 ± 1.35% (3 of 5 splits ≤ 1%), speedup 2.06 ± 0.41 (A) / 1.55 ± 0.23 (B) |
+| Abstract | 73 | same paragraph | 56.86% vs 7.09% | 56.22% corrected (case118); case30 7.09% is on stored labels, so say so. Add the floor experiment (Step 3) |
+| Method, Dataset | 111 | "I determined the load levels by scaling…" | 17.48%; range 0.7179-0.9603 | 16.60%; 0.8077-0.9595 (`sts_n2_label_audit.parquet` corrected_min_vm). Add the switch-back label method here (patch P-003) and the setpoint floor (P-007) |
+| Method, Dataset | 113 | "The previous implementation of the dataset generator…" | clip story, 56.86% | keep the clip story (a strength); say which label set 56.86/56.22 refers to |
+| Method, Conformal band | 124 | "where $\hat{p}$ is the prediction…" | q̂ 0.0052 / 0.0023; "same type of condition" | q̂ from `sts_n5_gate_094.json` (per-split `q_hat` at 0.90); fix the exchangeability wording (patch P-010) |
+| Method, Theory | 181 | "For the IEEE 118-bus system, using the statistic above…" | S_mean 0.6038 / 0.7919 | **delete** S_mean (patch E5b-E15) |
+| Results intro | 191 | "Both surrogate models accurately predict…" | MAE 0.0038 / 0.0016, R² 0.77 / 0.92; 49.1/2.96/2.04; 30.6/4.72/3.29 | `sts_n5_gate_094.json → fits`: ridge 0.00349 / 0.804, histgb 0.00133 / 0.956; @0.90 ridge 46.8% esc, 3.36% missed; histgb 26.3%, 4.24% |
+| Table 1 | 209-210 (+ persistence and train-mean rows) | "ridge & 3.8…", "histgb & 1.6…" | old-label rows | `data/sts_paper_tables.tex` (tab:models body, corrected; persistence and train-mean recomputed). Add the static-ranking comparison (gate-vs-static body in the same file) |
+| IV-A text | 223 | "In Table~\ref{tab:ops}, I adjusted the target…" | 0.94 / 0.97 picked on test; 64.3 / 63.7; 1.56 / 1.58; "1.0-1.07%" | held-out point (as above); the test-picked points only as description; 1.07 → recompute from the corrected table |
+| Table 2 | 240-251 | "ridge & 0.90…" to "histgb & 0.98…" | 12 old-label rows | `data/sts_paper_tables.tex` (tab:ops body, corrected; the held-out rows are included) |
+| IV-B | 284 | "On the IEEE 118-bus system, the more accurate model is not safer…" | 3.29 vs 2.04; worst miss 0.0915 / 0.8485; 26.7% / 21.4% | **delete** the worst-miss sentence (P-001). Rewrite the comparison at matched escalation (patch C8; values from `sts_matched_escalation.json`, stored labels, or redo on corrected) |
+| IV-C | 306 | "Most of the contingencies lie within 0.005 per unit…" | 56.86%, 17.48%, 2.04 | 56.22%, 16.60%; move the reject-option digression out (cuts.md) |
+| IV-C ceiling | 339 | "A case is escalated when the prediction lies…" | 30.6%; 74.89 / 82.79 / 82.64 | recompute on corrected labels or keep as stored-label description; "just above" → "at" (std rule) |
+| IV-C | 341 | "Persistence is the baseline model…" | "0.94 or a 0.97 target … about a 1.6 times speedup" | held-out point; add the static-ranking result (N5 FASTER clause 2) and the budget curve (N9) |
+| IV-D | 345 | "I used non-overlapping calibration and testing data…" | 0.4726 / 0.4933; "locked tes" typo | per-network errors (patch E2); fix the typo |
+| Discussion | 357 | "The key findings obtained during the experiments…" | 56.86 / 17.48; "escalation floor"; case30 | 56.22 / 16.60; replace the causal claim with the floor experiment (`sts_n9_floor_replication.json`) |
+| Discussion | 359 | "All metrics reported use the sampled N-1 population…" | worst-case collapse story (0.0915) | **delete** the mechanism story (P-001); keep the gen-out counts (374 / 69,532), and fix the N-1 wording (C6) |
+| Conclusion | 380 | "My models can predict N-1 under-voltage contingencies…" | "almost two-thirds … 1.6" | held-out-point numbers; static-ranking and budget-curve result; floor experiment |
+
+### Figures (`\includegraphics` lines)
+
+| Fig. | Line | File now | Replace with | Caption line to revise |
+|---|---|---|---|---|
+| 1, gate | 146 | `data/gate_schematic_v4.png` | keep | 147 |
+| 2, trade-off | 272 | `data/tradeoff_hero_col_v2.png` (no error bars) | N10 Part C (a) corrected banded figure; interim `data/sts_tradeoff_bands.png` (old labels) | 273: drop "first falls just under 1%… 0.94 / 0.97"; state the ±std numerically |
+| 3, miss depth | 294 | `data/miss_depth_v3.png` (prints "deepest miss 0.0915") | N10 Part C (b); interim `data/sts_miss_depth_noannot.png` | 295: remove the 0.0915 / 0.8485 case and the 74% / 55% old-label shares |
+| 4, boundary | 314 | `data/boundary_mass_hist_v2.png` | N10 Part C (c) corrected histogram | 315: 56.9% → corrected value, one precision everywhere |
+| 5, bus map | 330 | `data/critical_bus_map.png` (Overleaf copy stale, 0-based) | cut (AD-9), or `data/sts_critical_bus_map.png` | 331: name igraph in the credit line |
+| New, budget curve | — | — | N10 Part C (d) | new caption: SURR vs STATIC vs ORACLE catch by budget |
+
+- **Upload to Overleaf:** after changing an `\includegraphics` path, upload the new PNG to Overleaf's
+  `data/` folder, then re-export and pixel-check it against the repo file.
+- **Credit lines:** every figure and table keeps its "created by Rajan Saha using …, 2026" line (R21).

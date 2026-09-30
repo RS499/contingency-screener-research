@@ -16,8 +16,8 @@
 5. **Keep the Mac mini awake** under `caffeinate -i`.
 6. **Leave the laptop idle** until the results are pushed from the Mac mini and pulled on the laptop.
 
-Expected wall time: Part A about 1 h, Part B about 5-6 h (relabel about 2 h, tuning search about 3 h),
-Part C about 1 h.
+Expected wall time: Part A about 1 h, Part B about 5-6 h (relabel about 2 h, tuning search about 3 h).
+Part C is skipped: it was already done on the laptop.
 
 ## Prompt (paste everything below this line)
 
@@ -83,20 +83,8 @@ Step 4 - Part B evaluation.
   networks).
 - Output data/sts_n10_illinois.json plus manifest.
 
-Step 5 - Part C, paper artifacts on corrected labels (case118, D94 = N2
-labels), no verdict. Prose-free figures in the style of the existing STS
-figures, each with a values JSON and a manifest:
-  (a) the Fig. 2 equivalent: escalation and missed vs target 0.70-0.99, with
-      ±1 std bands, from the N5 corrected sweep in data/sts_n5_gate_094.json;
-  (b) the Fig. 3 equivalent: miss-depth histogram at 0.90 on corrected labels,
-      with no deepest-miss annotation;
-  (c) the Fig. 4 equivalent: boundary histogram of corrected min_vm;
-  (d) the budget-curve figure (SURR / STATIC / ORACLE catch vs k) for D94 and
-      D95a, from data/sts_n9_budget_curve.json;
-  (e) Table 1 and Table 2 bodies (.tex fragments) regenerated from the
-      corrected-label JSON, in the column layout of notes/paper_tables_v2.tex.
-Output data/sts_n10_fig_*.png/json and data/sts_n10_tables.tex, each with a
-manifest.
+Step 5 - Part C: SKIP. The corrected-label figures and table bodies were already produced
+on the laptop (scripts/sts_paper_corrected.py -> data/sts_paper_*). Do not rebuild them.
 
 Finish by writing scratch/n10_result.md: what ran, each check, the Part A
 verdicts, the two Part B verdicts, the Part B descriptive tables, the Part C
