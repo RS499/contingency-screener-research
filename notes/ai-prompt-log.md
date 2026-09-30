@@ -6319,3 +6319,39 @@ Claude diagnosed read-only (git fetch, log, diff), tested the fix in a throwaway
 Prompt: "run it now in this session", referring to scratch/run_prompt_n9.md. The prompt section of that file (committed in fb64040) is the run spec; not re-quoted here, see the file.
 N9 pre-registration: scratch/n9_decision_rule.md sha256 37a614def80e95df3a00746573933114b93e9402c36f81f7b1dc7c77b3a7fa01, recorded 2026-09-29T23:17:06Z; draft committed in fb64040027f359efb4d53c00ed07d842185394b5.
 N9 outcome: SHIFT-ADVANTAGE NO (see scratch/n9_result.md). Claude ran no git writes.
+
+## 2026-09-30 — Review the N9 commit (6623314) and scratch/n9_result.md
+
+"ok look at the new commit and the new files and specifically scratch/n9_result.md"
+
+Claude verified the N9 rule hash and timeline, read the shift/budget scripts, and recomputed the verdict, budget table and replication counts from the raw JSON/parquet. No files written except this log entry.
+
+## 2026-09-30 (b) — Good or bad, in short?
+
+"in short is this good or bad"
+
+Answered in chat; no files written.
+
+## 2026-09-30 (c) — Plain-language summary of what happened
+
+"ok like explain to me in simple terms what happened, what has been done  and what were hte results"
+
+Answered in chat; no files written.
+
+## 2026-09-30 (d) — What else would improve the paper?
+
+"what else can i do that can make the paper better???"
+
+Answered in chat; no files written.
+
+## 2026-09-30 (e) — Mac mini plan for items 9-10 and a paper-fix plan file
+
+"how to do 9 and 10 on mac mini? give me gameplan for the whole paper fix (aka steps 1-8) and give me md file for the plan to change paper currntly"
+
+Claude wrote scratch/run_prompt_n10.md, scratch/n10_decision_rule_DRAFT.md and notes/paper_fix_plan.md (plans only; nothing run).
+
+## 2026-09-30 (f) — Step-by-step instructions
+
+"wati give me step by step what i need to do"
+
+Answered in chat; no files written.
