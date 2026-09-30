@@ -6313,3 +6313,9 @@ Claude wrote scratch/run_prompt_n9.md and scratch/n9_decision_rule_DRAFT.md (dra
 (pasted git push/pull errors)
 
 Claude diagnosed read-only (git fetch, log, diff), tested the fix in a throwaway clone, and gave the owner commands. No git writes in the repo.
+
+## 2026-09-29 (h) — N9 run on the Mac mini (Claude Code)
+
+Prompt: "run it now in this session", referring to scratch/run_prompt_n9.md. The prompt section of that file (committed in fb64040) is the run spec; not re-quoted here, see the file.
+N9 pre-registration: scratch/n9_decision_rule.md sha256 37a614def80e95df3a00746573933114b93e9402c36f81f7b1dc7c77b3a7fa01, recorded 2026-09-29T23:17:06Z; draft committed in fb64040027f359efb4d53c00ed07d842185394b5.
+N9 outcome: SHIFT-ADVANTAGE NO (see scratch/n9_result.md). Claude ran no git writes.

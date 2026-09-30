@@ -1,0 +1,58 @@
+{
+  "question": "N9 switch-back relabel of data/sts_n9_floor095_seed300.parquet (N2 method)",
+  "method": "scripts/sts_n2_label_audit.py replay_shard + audit_scenario, unchanged; replay with GEN_VM_LO=0.95",
+  "shard_seeds": [
+    300,
+    301,
+    302,
+    303
+  ],
+  "replay_n0_max_abs_diff": 0.0,
+  "replay_n_scenarios": 1500,
+  "rejects_per_shard": {
+    "300": 145,
+    "301": 127,
+    "302": 150,
+    "303": 110
+  },
+  "shard_wall_s": {
+    "300": 415.0802757740021,
+    "301": 422.22236490249634,
+    "302": 417.36889910697937,
+    "303": 414.3403570652008
+  },
+  "wall_s": 1678.2716209888458,
+  "checks": {
+    "replay_n0_exact": true,
+    "resolve_min_vm_exact": true,
+    "failed_share_le_0p5pct": true
+  },
+  "summary": {
+    "n1_rows": 278950,
+    "status_counts": {
+      "converged": 262092,
+      "not_needed": 16858
+    },
+    "n1_failed": 0,
+    "n1_failed_share": 0.0,
+    "n1_needing_switchback": 262092,
+    "max_repro_abs_diff": 0.0,
+    "flip_viol_to_safe": 4680,
+    "flip_safe_to_viol": 699,
+    "stored_violation_rate": 0.160405090518014,
+    "corrected_violation_rate": 0.14613371571966302,
+    "corrected_boundary_mass": 0.2995698153791002
+  },
+  "deepest_stored_row": {
+    "scenario_id": 300000007,
+    "outaged_type": "trafo",
+    "outaged_idx": 0,
+    "stored_min_vm": 0.6584959636244203,
+    "corrected_status": "converged",
+    "corrected_min_vm": 0.9090154331880037,
+    "corrected_violation": true,
+    "n_inconsistent_absorbing": 4,
+    "n_inconsistent_injecting": 2,
+    "n_outer_iter": 1
+  }
+}

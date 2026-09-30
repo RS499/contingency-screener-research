@@ -134,3 +134,77 @@
     sts_n5_floor095_seed200.{parquet,json,manifest.json}.
   - notes: this file and ai-prompt-log.md were appended.
 - No existing data file, no .tex file, and no git state was changed.
+
+# N9 run (prompt: scratch/run_prompt_n9.md, run in-session on the Mac mini)
+
+## 2026-09-29T23:17:06Z — Step 0 done (environment)
+- Python 3.13.11; pandapower 3.5.4, numpy 2.3.5, pandas 2.3.3, scikit-learn 1.7.2, pyarrow 21.0.0, numba 0.66.0.
+  All match the N5 run.
+- git HEAD 8488e8c9ee18cd03344455bf93d73328cf1df8f9. Clean apart from untracked SAHA.RAJAN.BIB.pdf and report/STS Activities Science Fair Projects.md.
+
+## 2026-09-29T23:17:06Z — Step 1 done (pre-registration)
+- scratch/n9_decision_rule.md copied byte-for-byte from the draft.
+  - sha256 37a614def80e95df3a00746573933114b93e9402c36f81f7b1dc7c77b3a7fa01, recorded 2026-09-29T23:17:06Z, in scratch/n9_decision_rule.sha256.
+- The draft was committed in fb64040027f359efb4d53c00ed07d842185394b5 (2026-09-29T18:41:47-04:00). The working copy is identical to that commit
+  (yes).
+- Hashed before any N9 model fit or N9 number.
+
+## 2026-09-29T23:19:15Z — progress
+- Step 2 running: scratch/n9_relabel.py on D95b.
+  - Replay exact: max N-0 diff 0 over 1,500 scenarios; rejects 144/144/110/139 = 537, which matches the build.
+- Step 3 running: scratch/n9_budget_curve.py.
+  - Seed-0 N5 reproduction on D94 is exact for ridge and histgb (MAE, held-out escalation and missed).
+  - D95a check pending.
+- Step 4 script written (scratch/n9_shift.py); it runs after Step 3.
+
+## 2026-09-29T23:27:53Z — Step 3 done (Part 1, budget curve; descriptive)
+- Output: data/sts_n9_budget_curve.json plus manifest. Wall 549 s.
+- N5 reproduction: all 20 (dataset, seed, family) cells are exact (test MAE, held-out escalation, missed),
+  not only seed 0.
+- Histgb, SURR vs STATIC catch, std-rule verdict per declared k:
+  - D94: k = 20, 40, 57 SURR higher; k = 89, 120 STATIC higher. Crossover k = 89.
+  - D95a: k = 20, 40 SURR higher; k = 57, 89 tie; k = 120 STATIC higher. Crossover k = 57.
+- Ridge: a tie at every k on both datasets (SURR within 0.5 pp of STATIC).
+  - Structural reading, not tested: ridge is additive in the branch one-hots, so within a base case its
+    ranking is the same fixed element order in every scenario, i.e. a static-type ranking.
+- Full table in the JSON. Step 4 launched.
+
+## 2026-09-29T23:37:19Z — Step 4 done (Part 2, shift test; the verdict)
+- Output: data/sts_n9_shift.json plus manifest. The rule hash (37a614de…) was re-verified before the verdict.
+- Feature alignment: 0 of the D94 kept columns are missing in D95a.
+- **SHIFT-ADVANTAGE: NO.** D94 -> D95a, histgb, held-out target, rule B:
+  - gate catch 97.24 ± 1.34% vs static 97.06 ± 1.42%;
+  - gap 0.18 pp is not > STD 1.42 pp.
+- Reported only, histgb D94 -> D95a:
+  - solve share B 39.1 ± 4.4%; missed 2.76 ± 1.34%; 0 of 5 splits <= 1%.
+  - empirical coverage 0.965 vs target 0.960.
+  - degradation vs D95a -> D95a: gate -1.64 ± 1.47 pp; static -0.21 ± 0.13 pp (same k_B).
+- Reverse direction D95a -> D94 (reported only):
+  - histgb: gate 98.56 ± 0.43 vs static 98.56 ± 0.70, a tie; 1 of 5 splits <= 1%; coverage 0.916 vs target
+    0.974.
+  - ridge, D94 -> D95a: gate 98.13 ± 0.35 vs static 99.11 ± 0.35 (static higher by the std rule).
+  - ridge, reverse: gap -1.22 pp, equal to STD 1.22 pp, so not higher.
+- Step 2 (D95b relabel) is still running. Step 5 waits until it finishes.
+
+## 2026-09-29T23:50:40Z — Step 2 done (D95b relabel)
+- Output: data/sts_n9_relabel095_seed200.{parquet,json} plus manifest. Shards 552 / 556 / 430 / 417 s.
+- Checks: replay N-0 exact; pinned re-solve reproduces every stored min_vm (max diff 0); failed 0 of 278,957
+  (0.0%).
+- Flips at 0.94: viol->safe 4,474; safe->viol 784.
+  - Violation rate: stored 15.991% -> corrected 14.668%.
+  - Corrected BM: 30.68%.
+- **Deepest stored row** (scenario 202000172, line 78 out; stored 0.598 pu):
+  - 5 inconsistent absorbing generators; switch-back converged in 2 outer iterations.
+  - Corrected min_vm 0.949 pu, so it is NOT a violation after relabel.
+  - Line 78 is also the outage in N2's named worst case (scenario 101000025).
+- Steps 0-4 all finished, so Step 5 launched: scratch/n9_build_seed300.py (seeds 300-303).
+
+## 2026-09-30T00:33:48Z — Step 5 done; N9 run complete
+- D95c built (seeds 300-303) and relabeled.
+  - All checks pass; failed 0.
+  - Deepest row goes from 0.658 pu to 0.909 pu corrected, still a violation.
+- Part 3 (data/sts_n9_floor_replication.json): all 3 builds fall in the N3 predicted ranges for BM, CBM and VR
+  (stored labels). Values over the 3 builds, mean ± std (ddof=0):
+  - stored: BM 34.23 ± 0.90, CBM 40.75 ± 1.08, VR 16.01 ± 0.02;
+  - corrected: BM 29.76 ± 0.84, CBM 34.91 ± 0.93, VR 14.76 ± 0.17.
+- Summary: scratch/n9_result.md. No deviations from the hashed rule. No decisions taken.

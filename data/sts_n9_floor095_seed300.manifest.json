@@ -1,0 +1,87 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n9_floor095_seed300.parquet",
+    "sts_n9_floor095_seed300.json"
+  ],
+  "generating_script": "scratch/n9_build_seed300.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n9_build_seed300.py"
+  ],
+  "script_git_blob_sha": "bde14342af929fc5419b9a53f8606d20f663379e",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "8488e8c9ee18cd03344455bf93d73328cf1df8f9",
+  "inputs": [
+    {
+      "path": "scratch/n3_floor_rebuild.py",
+      "sha256": "7f7ce84ff89a256a2811b6a867e53eb673e46ec372f5a070d5a79f0a23b00f90"
+    },
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    },
+    {
+      "path": "data/sts_n3_floor095.json",
+      "sha256": "1a42ae7c40fda76a92fc26f864c333919aa4eed6917f940e228f524eb0977b8f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n9_floor095_seed300.parquet",
+      "sha256": "8e100e68fd457336988199bfa82ddc0bb7a3ba963dfa0cf4cfea09314d2a25d2",
+      "md5": "9b6d890a9e6fb9ea8f242d03ad8507c5",
+      "bytes": 9999655,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n9_floor095_seed300.json",
+      "sha256": "e69ec58f1b5885970de6fdb1c2fd4f69241b68da30fce5867df7f50d1dc59ac9",
+      "md5": "5b835207f164248c9ab1f18a0d3e15c3",
+      "bytes": 1384,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-30T00:05:00Z",
+  "parameters": {
+    "gen_vm_lo": 0.95,
+    "config": {
+      "mult_lo": 1.0,
+      "mult_hi": 1.12,
+      "reg_lo": 1.0,
+      "reg_hi": 1.12,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025,
+      "network": "case118"
+    },
+    "n_total": 1500,
+    "shard_seeds": [
+      300,
+      301,
+      302,
+      303
+    ],
+    "scenarios_per_shard": 375,
+    "mode": "mixed",
+    "stress": "fixed",
+    "solver": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    },
+    "model_hyperparameters": "none (no model fit)",
+    "python": "3.13.11"
+  },
+  "no_new_solves": "FALSE: full dataset build (N-0 and N-1 AC solves, pinned solver)"
+}

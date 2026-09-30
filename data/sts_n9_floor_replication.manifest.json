@@ -1,0 +1,72 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n9_floor_replication.json"
+  ],
+  "generating_script": "scratch/n9_replication.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n9_replication.py"
+  ],
+  "script_git_blob_sha": "2fd31d878dfc7ae6164092d5ef1a13a5af9db1ec",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "8488e8c9ee18cd03344455bf93d73328cf1df8f9",
+  "inputs": [
+    {
+      "path": "scratch/n3_floor_prediction.md",
+      "sha256": "9975a07ec1c1a3004b524636239194a1584a8eadc5b6e3748766c4714446ba0f"
+    },
+    {
+      "path": "data/sts_n3_floor095.parquet",
+      "sha256": "49363a25309bc0e14df03b39215a6038c3953c480389a4708c5a42a9a636e9f6"
+    },
+    {
+      "path": "data/sts_n5_relabel095.parquet",
+      "sha256": "f3e3c081362337532d8fc8deab93b32b6f2d67531cb4c3e78094caaf4c3f1bdc"
+    },
+    {
+      "path": "data/sts_n5_floor095_seed200.parquet",
+      "sha256": "2c364ae1bcbeda07607f0fb20dfccb6a14fcfdade4ea0ec00cabcfe55d4648e8"
+    },
+    {
+      "path": "data/sts_n9_relabel095_seed200.parquet",
+      "sha256": "11e1948a17db7a39425bf1058dccbbb9d93ab9c6364cfe2aa0dd9b0dde99008b"
+    },
+    {
+      "path": "data/sts_n9_floor095_seed300.parquet",
+      "sha256": "8e100e68fd457336988199bfa82ddc0bb7a3ba963dfa0cf4cfea09314d2a25d2"
+    },
+    {
+      "path": "data/sts_n9_relabel095_seed300.parquet",
+      "sha256": "2b08b8b08ae93a64104901fd1bd3643f862294e93e35dd0f5a953edaead3b6ba"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n9_floor_replication.json",
+      "sha256": "ceef378afb460230e25b0e26761f9bfa69e5b064fe97a4681bc8d911cbe9a8d0",
+      "md5": "87f8c2672391103f7ea1044c96b9858d",
+      "bytes": 4183,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-30T00:33:01Z",
+  "parameters": {
+    "builds": [
+      "D95a",
+      "D95b",
+      "D95c"
+    ],
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

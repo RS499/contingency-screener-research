@@ -1,0 +1,167 @@
+{
+  "part": "N9 Part 3: floor replication (descriptive)",
+  "decision_rule": "scratch/n9_decision_rule.md",
+  "n3_prediction": "scratch/n3_floor_prediction.md",
+  "n3_prediction_sha256": "9975a07ec1c1a3004b524636239194a1584a8eadc5b6e3748766c4714446ba0f",
+  "n3_predicted_ranges_pct": {
+    "BM": [
+      33.0,
+      20.0,
+      45.0
+    ],
+    "CBM": [
+      40.0,
+      28.0,
+      55.0
+    ],
+    "VR": [
+      15.5,
+      12.0,
+      18.0
+    ]
+  },
+  "n_builds": 3,
+  "per_build": [
+    {
+      "build": "D95a",
+      "dataset": "data/sts_n3_floor095.parquet",
+      "labels": "data/sts_n5_relabel095.parquet",
+      "n_relabel_failed": 0,
+      "stored": {
+        "n_rows": 278971,
+        "BM": 32.95432141692147,
+        "CBM": 39.23428844561664,
+        "VR": 16.00632323789928
+      },
+      "corrected": {
+        "n_rows": 278971,
+        "BM": 28.640969849912715,
+        "CBM": 33.68990947154489,
+        "VR": 14.986503973531299
+      },
+      "stored_min_vm_min": 0.7154544690495342,
+      "corrected_min_vm_min": 0.7463078212261014,
+      "stored_in_n3_predicted_range": {
+        "BM": true,
+        "CBM": true,
+        "VR": true
+      }
+    },
+    {
+      "build": "D95b",
+      "dataset": "data/sts_n5_floor095_seed200.parquet",
+      "labels": "data/sts_n9_relabel095_seed200.parquet",
+      "n_relabel_failed": 0,
+      "stored": {
+        "n_rows": 278957,
+        "BM": 34.816835569639764,
+        "CBM": 41.44417087335555,
+        "VR": 15.990995027907527
+      },
+      "corrected": {
+        "n_rows": 278957,
+        "BM": 30.67569553730503,
+        "CBM": 35.94873109028352,
+        "VR": 14.668210512731353
+      },
+      "stored_min_vm_min": 0.5980568079042862,
+      "corrected_min_vm_min": 0.8116268384113721,
+      "stored_in_n3_predicted_range": {
+        "BM": true,
+        "CBM": true,
+        "VR": true
+      }
+    },
+    {
+      "build": "D95c",
+      "dataset": "data/sts_n9_floor095_seed300.parquet",
+      "labels": "data/sts_n9_relabel095_seed300.parquet",
+      "n_relabel_failed": 0,
+      "stored": {
+        "n_rows": 278950,
+        "BM": 34.91127442193942,
+        "CBM": 41.581093486475524,
+        "VR": 16.040509051801397
+      },
+      "corrected": {
+        "n_rows": 278950,
+        "BM": 29.95698153791002,
+        "CBM": 35.08392600740598,
+        "VR": 14.613371571966303
+      },
+      "stored_min_vm_min": 0.6584959636244203,
+      "corrected_min_vm_min": 0.7875858773602274,
+      "stored_in_n3_predicted_range": {
+        "BM": true,
+        "CBM": true,
+        "VR": true
+      }
+    }
+  ],
+  "across_builds": {
+    "stored": {
+      "BM": {
+        "values": [
+          32.95432141692147,
+          34.816835569639764,
+          34.91127442193942
+        ],
+        "mean": 34.22747713616689,
+        "std_ddof0": 0.9010822338689534,
+        "std_ddof1": 1.1035958446330771
+      },
+      "CBM": {
+        "values": [
+          39.23428844561664,
+          41.44417087335555,
+          41.581093486475524
+        ],
+        "mean": 40.75318426848257,
+        "std_ddof0": 1.0754751945180885,
+        "std_ddof1": 1.3171827287949007
+      },
+      "VR": {
+        "values": [
+          16.00632323789928,
+          15.990995027907527,
+          16.040509051801397
+        ],
+        "mean": 16.0126091058694,
+        "std_ddof0": 0.020696919942252787,
+        "std_ddof1": 0.025348446552876405
+      }
+    },
+    "corrected": {
+      "BM": {
+        "values": [
+          28.640969849912715,
+          30.67569553730503,
+          29.95698153791002
+        ],
+        "mean": 29.757882308375923,
+        "std_ddof0": 0.842519053447987,
+        "std_ddof1": 1.0318708897601183
+      },
+      "CBM": {
+        "values": [
+          33.68990947154489,
+          35.94873109028352,
+          35.08392600740598
+        ],
+        "mean": 34.907522189744796,
+        "std_ddof0": 0.9305580786045681,
+        "std_ddof1": 1.139696234302956
+      },
+      "VR": {
+        "values": [
+          14.986503973531299,
+          14.668210512731353,
+          14.613371571966303
+        ],
+        "mean": 14.756028686076318,
+        "std_ddof0": 0.16450120759769563,
+        "std_ddof1": 0.20147201034300083
+      }
+    }
+  }
+}
