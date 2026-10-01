@@ -1,0 +1,48 @@
+{
+  "question": "N11 Part 2: switch-back relabel of case30_thermal (N2 method, network-parameterized)",
+  "build_config": {
+    "network": "case30",
+    "stress": "fixed",
+    "mult_lo": 0.87,
+    "mult_hi": 0.99,
+    "reg_lo": 0.87,
+    "reg_hi": 0.99,
+    "pf_lo": 0.9,
+    "pf_hi": 1.15,
+    "dvm": 0.025
+  },
+  "build_seed": 100,
+  "replay_draws": 8050,
+  "replay_rejected": {
+    "nonconvergence": 0,
+    "voltage": 840,
+    "thermal": 5710
+  },
+  "replay_n0_max_abs_diff": 0.0,
+  "checks": {
+    "replay_exact": true,
+    "resolve_min_vm_exact": true,
+    "all_rows_audited": true,
+    "failed_share_le_0p5pct": true
+  },
+  "summary": {
+    "n1_converged_rows": 61500,
+    "rows_expected": 61500,
+    "status_counts": {
+      "not_needed": 61205,
+      "converged": 295
+    },
+    "n1_failed": 0,
+    "n1_failed_share": 0.0,
+    "n_needing_switchback": 295,
+    "max_repro_abs_diff": 0.0,
+    "flip_viol_to_safe": 8,
+    "flip_safe_to_viol": 0,
+    "stored_violation_rate": 0.15396747967479674,
+    "stored_boundary_mass": 0.07086178861788618,
+    "corrected_violation_rate": 0.15383739837398375,
+    "corrected_boundary_mass": 0.07095934959349594
+  },
+  "sgen_note": "helper-only apply_fixed (as N10): the network's own sgens are never switched",
+  "wall_s": 331.08462619781494
+}

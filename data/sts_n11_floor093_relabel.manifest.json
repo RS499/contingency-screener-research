@@ -1,0 +1,78 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n11_floor093_relabel.parquet",
+    "sts_n11_floor093_relabel.json"
+  ],
+  "generating_script": "scratch/n11_relabel_floor.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n11_relabel_floor.py",
+    "data/sts_n11_floor093.parquet",
+    "100,101,102,103",
+    "data/sts_n11_floor093_relabel.parquet",
+    "scratch/n11_relabel_floor093_shards",
+    "0.93"
+  ],
+  "script_git_blob_sha": "ba45e20a9b60410e75317aed0d0fc0b2e5e2de09",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "data/sts_n11_floor093.parquet",
+      "sha256": "7b90093b76c5fbd9bc6c06eb98273c806bff993f7f83016e3cbcdb9e692daddb"
+    },
+    {
+      "path": "scripts/sts_n2_label_audit.py",
+      "sha256": "e4a54e78dddbcfe81ed9666ade44d9cffde95ddf36839506447b8d9c54fc6a45"
+    },
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n11_floor093_relabel.parquet",
+      "sha256": "4dd02472ef13829501f9a440dbd307130b5faad8a2ac1e31941ce74590472387",
+      "md5": "987aeb777a395cdf007c5e780c72c861",
+      "bytes": 7283151,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n11_floor093_relabel.json",
+      "sha256": "8c102e7a76ec1495ba013c15ca858f2010988c588940c2fa146e7beaf75e7fc4",
+      "md5": "a77b7656932be6518041976cefc3b9b1",
+      "bytes": 1564,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-01T01:05:07Z",
+  "parameters": {
+    "gen_vm_lo": 0.93,
+    "nproc": 4,
+    "limit": 0.94,
+    "shard_seeds": [
+      100,
+      101,
+      102,
+      103
+    ],
+    "n_total": 1500,
+    "switchback_tol_q": 0.001,
+    "switchback_tol_v": 0.001,
+    "switchback_max_outer": 30,
+    "solver": "pandapower runpp enforce_q_lims=True init=dc numba=True (pinned)",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: this run re-solves every converged row with the pinned solver and runs the switch-back loop"
+}

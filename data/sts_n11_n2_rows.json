@@ -1,0 +1,24 @@
+{
+  "part": "N11 Part 1 build: N-2 rows on D94 base cases",
+  "pair_seed": 20261001,
+  "n_pairs_per_base": 50,
+  "replay_n0_max_abs_diff": 0.0,
+  "summary": {
+    "n_rows": 75000,
+    "n_pinned_nonconverged": 79,
+    "pinned_nonconverged_share": 0.0010533333333333334,
+    "n_corrected_failed_among_converged": 1,
+    "corrected_failed_share_of_converged": 1.3347392586858156e-05,
+    "status_counts": {
+      "converged": 70174,
+      "not_needed": 4746,
+      "pinned_nonconverged": 79,
+      "nonconverged": 1
+    },
+    "corrected_violation_rate": 0.30180192205018685,
+    "pinned_violation_rate": 0.32037746426235636,
+    "adjacent_share": 0.03328,
+    "n_branch": 186
+  },
+  "wall_s": 874.3817729949951
+}

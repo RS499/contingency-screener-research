@@ -1,0 +1,50 @@
+{
+  "question": "N11 Part 2: switch-back relabel of case24_ieee_rts (N2 method, network-parameterized)",
+  "build_config": {
+    "network": "case24_ieee_rts",
+    "stress": "fixed",
+    "mult_lo": 0.82,
+    "mult_hi": 0.94,
+    "reg_lo": 0.82,
+    "reg_hi": 0.94,
+    "pf_lo": 0.9,
+    "pf_hi": 1.15,
+    "dvm": 0.025
+  },
+  "build_seed": 100,
+  "replay_draws": 8348,
+  "replay_rejected": {
+    "nonconvergence": 540,
+    "voltage": 6308,
+    "thermal": 0
+  },
+  "replay_n0_max_abs_diff": 0.0,
+  "checks": {
+    "replay_exact": true,
+    "resolve_min_vm_exact": false,
+    "all_rows_audited": true,
+    "failed_share_le_0p5pct": true
+  },
+  "summary": {
+    "n1_converged_rows": 54676,
+    "rows_expected": 54676,
+    "status_counts": {
+      "converged": 47511,
+      "not_needed": 7137,
+      "iteration_cap": 19,
+      "nonconverged": 9
+    },
+    "n1_failed": 28,
+    "n1_failed_share": 0.0005121076889311581,
+    "n_needing_switchback": 47539,
+    "max_repro_abs_diff": 1.0325074129013956e-13,
+    "flip_viol_to_safe": 6988,
+    "flip_safe_to_viol": 1422,
+    "stored_violation_rate": 0.5806203818860195,
+    "stored_boundary_mass": 0.20703782281073962,
+    "corrected_violation_rate": 0.47879153857414725,
+    "corrected_boundary_mass": 0.2094495681452203
+  },
+  "sgen_note": "helper-only apply_fixed (as N10): the network's own sgens are never switched",
+  "wall_s": 691.0905978679657
+}

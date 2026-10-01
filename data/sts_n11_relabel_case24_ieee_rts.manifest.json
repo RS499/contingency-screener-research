@@ -1,0 +1,91 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n11_relabel_case24_ieee_rts.parquet",
+    "sts_n11_relabel_case24_ieee_rts.json"
+  ],
+  "generating_script": "scratch/n11_relabel_net.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n11_relabel_net.py",
+    "case24_ieee_rts"
+  ],
+  "script_git_blob_sha": "fb6ed6b15ac24b4007ed0095cb6feeec705b5119",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "sha256": "29896224c999756aa1d60455e135d198906098142e66eff45995703cf17decab"
+    },
+    {
+      "path": "data/netstudy/case24_ieee_rts/build_stats.json",
+      "sha256": "4ecae485599f39e2e48473fffb65d8f11ff45c17b578de2edf3c2b6e68174f09"
+    },
+    {
+      "path": "scripts/sts_n2_label_audit.py",
+      "sha256": "e4a54e78dddbcfe81ed9666ade44d9cffde95ddf36839506447b8d9c54fc6a45"
+    },
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    },
+    {
+      "path": "scripts/case30_thermal.py",
+      "sha256": "cb80fdde5840478a72ebbc54eaa577530eb8bd600064ba765cb4183317374a87"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n11_relabel_case24_ieee_rts.parquet",
+      "sha256": "e82c772cc9183b7ebbc1f1d0cb55b311c792ee5f20f851036816feea11d8ce7b",
+      "md5": "2e25add73721aa0ad4b778f61530f6a7",
+      "bytes": 1672483,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n11_relabel_case24_ieee_rts.json",
+      "sha256": "ad8c2da08db523c8f704aa55c5bab1ee0b2b696ff87e2e27987352707b4a2dc5",
+      "md5": "c49093fff3aff0769ed4da7b16ee0314",
+      "bytes": 1393,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-01T00:47:30Z",
+  "parameters": {
+    "name": "case24_ieee_rts",
+    "network": "case24_ieee_rts",
+    "build_config": {
+      "network": "case24_ieee_rts",
+      "stress": "fixed",
+      "mult_lo": 0.82,
+      "mult_hi": 0.94,
+      "reg_lo": 0.82,
+      "reg_hi": 0.94,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025
+    },
+    "build_seed": 100,
+    "n_scenarios": 1500,
+    "chunk": 50,
+    "nproc": 4,
+    "limit": 0.94,
+    "switchback_tol_q": 0.001,
+    "switchback_tol_v": 0.001,
+    "switchback_max_outer": 30,
+    "n0_gate": "voltage AND thermal (case30_thermal.n0_feasible)",
+    "solver": "pandapower runpp enforce_q_lims=True init=dc numba=True (pinned)",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: replays the N-0 build and re-solves every converged N-1 row with the switch-back loop"
+}

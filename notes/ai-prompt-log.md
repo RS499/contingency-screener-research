@@ -6397,3 +6397,23 @@ Answered in chat; no files written.
 "make prompt to do all seven. ill put it into the mac mini now. ill have it keep running"
 
 Claude wrote scratch/n11_decision_rule_DRAFT.md and scratch/run_prompt_n11.md (drafts; nothing run).
+
+## 2026-09-30 (i) — N10 run on the Mac mini (Claude Code)
+
+Prompt: the owner pasted the prompt section of scratch/run_prompt_n10.md (committed in 7f2c289), adding: "MATPOWER 8.1 is installed at ~/matpower; load it in Octave with addpath(genpath('~/matpower'))." The run spec is that file; not re-quoted here.
+N10 pre-registration: scratch/n10_decision_rule.md sha256 7f94bd0a8958c011832895caded9db3275681ceae402e92913b3a3467e2f8907, recorded 2026-09-30T21:12:28Z; draft committed in 7f2c289.
+
+## 2026-09-30 (j) — owner: compare N10 Part C with data/sts_paper_*, then chain into N11 (Claude Code)
+
+Prompt (verbatim): "Yes, compare your data/sts_n10_fig_* figures and table bodies against my data/sts_paper_* versions. Numbers only: for each figure's values JSON and each table row, report whether they match and the largest difference. Don't modify or overwrite any data/sts_paper_* file. Write the comparison to scratch/n10_vs_paper_check.md. When N10 finishes and scratch/n10_result.md is written, continue straight into the prompt section of scratch/run_prompt_n11.md. Its Step 0 will see that N10 is done and move on. The N11 draft is in commit af7dcba, so record that commit when you hash it in Step 1. No git writes at any point. When N11 is completely finished, give me the exact commands to commit and push everything from N10 and N11."
+
+## 2026-10-01 (k) — N11 run on the Mac mini (Claude Code), chained after N10 per entry (j)
+
+Prompt: the prompt section of scratch/run_prompt_n11.md (committed in af7dcba), started on the owner's instruction in entry (j). Not re-quoted here, see the file.
+N11 pre-registration: scratch/n11_decision_rule.md sha256 4a0e48d47d1c1b8a053dedd6036977c60ede4957dbcb6f542356552a64f0775d, recorded 2026-09-30T23:54:42Z; draft committed in af7dcbac0f4c7b89963898f491528334e0f397a1.
+Correction to the heading above: the N11 entry date is 2026-09-30 (UTC 23:54), not 2026-10-01.
+
+## 2026-09-30 (l) — owner: no-question rules for the rest of N11 (Claude Code)
+
+Prompt (verbatim): "For the rest of this run, do not ask me questions. Handle problems with these rules, and log every use in notes/overnight_status.md and in a \"Interpretations and deviations\" section of scratch/n11_result.md: 1. If a rule is ambiguous, choose the narrowest reading that drops or skips data rather than changing a method. Log it as an \"interpretation\" and continue. 2. If a dataset or step fails a check (replay mismatch, reproduction mismatch, failure ceiling, crash), stop only that dataset or step, report what you have, and continue with the next step. Never change settings, caps, seeds or thresholds to make something pass. 3. If a script errors because of a coding bug in your own new script, fix the bug and rerun that step, and log it as a \"deviation (code fix)\". If the fix would change any method defined in scratch/n11_decision_rule.md, don't fix it: skip the step and log it. 4. Stop the whole run only if: the decision-rule hash fails to verify, disk space falls below 5 GB, or .venv/bin/python stops working. 5. Keep going until every step is done or skipped, then write scratch/n11_result.md and give me the git commands. No git writes."
+N11 outcome: COVERAGE-HOLDS-N2 NO; MONDRIAN-BEATS-STATIC NO; FLOOR-DOSE-RESPONSE YES (see scratch/n11_result.md). Claude gave the owner the git commands for N10 + N11 and ran no git writes.

@@ -1,0 +1,69 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n11_classical.json"
+  ],
+  "generating_script": "scratch/n11_classical.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n11_classical.py"
+  ],
+  "script_git_blob_sha": "64e09c32219e8a34ad3397b3364a2c0f34b25ac1",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "data/classical_predictions.parquet",
+      "sha256": "1dab2705c5137abc1f3f1367484ca3158228882e4ffe42b39580caaef9de8bc0"
+    },
+    {
+      "path": "data/classical_predictions_meta.json",
+      "sha256": "b38ba183005119ce1740d6bbc2d96e8db2672639a961d6213ca9f432d51349eb"
+    },
+    {
+      "path": "data/classical_screen_metrics.json",
+      "sha256": "84ea2c6b0607f56df6066459a5f09c6dbfb218e7a8d279d1abef215c78372b07"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n11_classical.json",
+      "sha256": "6315748c367d69085509f5b93da5aed2bcd756cc47c2c795e20d5d231e7a0d1b",
+      "md5": "b6360df12240ab82cc050c74b0df17c7",
+      "bytes": 7859,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-30T23:59:45Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "target": 0.9,
+    "limit": 0.94,
+    "model_hyperparameters": "none: committed linearized screen predictions, not refit",
+    "solver_settings": "no solve; labels = N2 pinned pandapower + switch-back"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

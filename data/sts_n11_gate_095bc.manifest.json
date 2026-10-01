@@ -1,0 +1,307 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n11_gate_095bc.json"
+  ],
+  "generating_script": "scratch/n11_gate_095bc.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n11_gate_095bc.py"
+  ],
+  "script_git_blob_sha": "20f87bbc2d727dde4f2861d6adbd86e4c9fce21d",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "data/sts_n5_gate_094.json",
+      "sha256": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db"
+    },
+    {
+      "path": "data/sts_n5_gate_095.json",
+      "sha256": "32cc5d68fcc57ca989672c440f66879d75d635783f1ee4ac738f509340b7fd1d"
+    },
+    {
+      "path": "data/sts_n5_floor095_seed200.parquet",
+      "sha256": "2c364ae1bcbeda07607f0fb20dfccb6a14fcfdade4ea0ec00cabcfe55d4648e8"
+    },
+    {
+      "path": "data/sts_n9_relabel095_seed200.parquet",
+      "sha256": "11e1948a17db7a39425bf1058dccbbb9d93ab9c6364cfe2aa0dd9b0dde99008b"
+    },
+    {
+      "path": "data/sts_n9_floor095_seed300.parquet",
+      "sha256": "8e100e68fd457336988199bfa82ddc0bb7a3ba963dfa0cf4cfea09314d2a25d2"
+    },
+    {
+      "path": "data/sts_n9_relabel095_seed300.parquet",
+      "sha256": "2b08b8b08ae93a64104901fd1bd3643f862294e93e35dd0f5a953edaead3b6ba"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n11_gate_095bc.json",
+      "sha256": "8749ced13efe0e3ada5dcbf7cc321259f24f4b979b5191327b71fd889182056d",
+      "md5": "c18c1467426c2644c50abadf932ec30c",
+      "bytes": 321613,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-01T02:59:32Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "model_hyperparameters": {
+      "D95b": [
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand00",
+          "config": {
+            "tag": "rand00",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha31.62",
+          "config": {
+            "tag": "alpha31.62",
+            "alpha": 31.622776601683793
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha1000",
+          "config": {
+            "tag": "alpha1000",
+            "alpha": 1000.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand20",
+          "config": {
+            "tag": "rand20",
+            "learning_rate": 0.08,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha316.2",
+          "config": {
+            "tag": "alpha316.2",
+            "alpha": 316.22776601683796
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        }
+      ],
+      "D95c": [
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha0.1",
+          "config": {
+            "tag": "alpha0.1",
+            "alpha": 0.1
+          }
+        },
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand20",
+          "config": {
+            "tag": "rand20",
+            "learning_rate": 0.08,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha1000",
+          "config": {
+            "tag": "alpha1000",
+            "alpha": 1000.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand15",
+          "config": {
+            "tag": "rand15",
+            "learning_rate": 0.1,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 127,
+            "min_samples_leaf": 20,
+            "l2_regularization": 1.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha3.162",
+          "config": {
+            "tag": "alpha3.162",
+            "alpha": 3.1622776601683795
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha0.01",
+          "config": {
+            "tag": "alpha0.01",
+            "alpha": 0.01
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha100",
+          "config": {
+            "tag": "alpha100",
+            "alpha": 100.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand14",
+          "config": {
+            "tag": "rand14",
+            "learning_rate": 0.05,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 50,
+            "l2_regularization": 10.0
+          }
+        }
+      ]
+    },
+    "search": "scripts/tune_surrogates.py candidates (15 ridge, 26 histgb)",
+    "solver_settings": "labels: pinned pandapower + N2 switch-back (N9 relabels)"
+  },
+  "no_new_solves": "No AC solve. Model fits: full tune_surrogates search + M2 refits per build and seed."
+}

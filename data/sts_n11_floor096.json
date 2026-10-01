@@ -1,0 +1,29 @@
+{
+  "gen_vm_lo": 0.96,
+  "shard_seeds": [
+    100,
+    101,
+    102,
+    103
+  ],
+  "summary": {
+    "rows": 280500,
+    "n1_converged_rows": 278963,
+    "nonconverged_rows": 37,
+    "boundary_mass_pct": 19.913752002953796,
+    "boundary_rows": 55552,
+    "conditional_boundary_pct": 23.28101753871299,
+    "rows_at_or_above_limit": 238615,
+    "violation_rate_pct": 14.463566852951825,
+    "violation_rows": 40348,
+    "n0_bases": 1500,
+    "n0_in_strip_pct": 20.333333333333332,
+    "n0_min_vm_median": 0.9488391455700371,
+    "gate_accepted": 1500,
+    "gate_rejected": 327,
+    "gate_pass_pct": 82.10180623973727,
+    "min_vm_min": 0.6937681670049367,
+    "min_vm_max": 0.9646434707221678,
+    "wall_s": 1052.206768989563
+  }
+}

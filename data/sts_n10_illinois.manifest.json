@@ -1,0 +1,236 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n10_illinois.json"
+  ],
+  "generating_script": "scratch/n10_gate_illinois.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n10_gate_illinois.py",
+    "full"
+  ],
+  "script_git_blob_sha": "348cb910ec2dacb47a269eb4ef7b78e62c59b74e",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "data/netstudy/case_illinois200/dataset.parquet",
+      "sha256": "aba7a9201b964250ff901c64ca53a13e50023494c7e53489385d1311ee4553bd"
+    },
+    {
+      "path": "data/sts_n10_relabel_illinois200.parquet",
+      "sha256": "6df9743a700df5d5f16fa04b30dc8670b74ee0741b070aa546b829ecd34d989b"
+    },
+    {
+      "path": "data/netstudy2/case_illinois200/frozen.json",
+      "sha256": "c989883857e51621ce249c950d1ff2c11945f9c7671bc52c4b94939ecc066289"
+    },
+    {
+      "path": "scratch/n10_decision_rule.md",
+      "sha256": "7f94bd0a8958c011832895caded9db3275681ceae402e92913b3a3467e2f8907"
+    },
+    {
+      "path": "data/sts_n5_gate_094.json",
+      "sha256": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    },
+    {
+      "path": "scripts/tune_surrogates.py",
+      "sha256": "9395044201a93337d20c3f208cb095a39d568be669b4d7f992f922b44cf0cc9e"
+    },
+    {
+      "path": "scripts/baselines.py",
+      "sha256": "d5dfd375e0a1624252a957e726c008f0d6662878a8d469b6b9ef6b190fa5a95b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n10_illinois.json",
+      "sha256": "95b654e86edee99aa8a2455c63cdeac145d42f949ec08ed491d93d018247cfeb",
+      "md5": "f006b5bd51f33c5c91d7c0de2b4e2d6b",
+      "bytes": 219251,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-30T23:53:27Z",
+  "parameters": {
+    "network": "case_illinois200",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "targets": [
+      0.9,
+      0.91,
+      0.92,
+      0.93,
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.98
+    ],
+    "limit": 0.94,
+    "k_declared": [
+      26,
+      53,
+      75,
+      117,
+      158
+    ],
+    "k_declared_shares": [
+      0.108,
+      0.215,
+      0.306,
+      0.478,
+      0.645
+    ],
+    "top_n": [
+      5,
+      10
+    ],
+    "model_hyperparameters": {
+      "search": "scripts/tune_surrogates.py candidates (15 ridge, 26 histgb)",
+      "selected_m2": [
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha31.62",
+          "config": {
+            "tag": "alpha31.62",
+            "alpha": 31.622776601683793
+          }
+        },
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha10",
+          "config": {
+            "tag": "alpha10",
+            "alpha": 10.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha0.1",
+          "config": {
+            "tag": "alpha0.1",
+            "alpha": 0.1
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        }
+      ],
+      "case118_extras": "N5 M2 configs from data/sts_n5_gate_094.json, refit"
+    },
+    "solver_settings": "labels from data/sts_n10_relabel_illinois200.parquet (pinned pandapower + N2 switch-back); no solve here",
+    "omp_num_threads": "8"
+  },
+  "no_new_solves": "No AC solve. Model fits: full tune_surrogates search + M2 refits per seed; case118 N5 configs refit."
+}

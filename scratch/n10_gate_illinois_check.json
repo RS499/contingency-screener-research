@@ -1,0 +1,29 @@
+{
+  "check": "N10 Step 4 stored-label reproduction of frozen.json, seed 0, target 0.90",
+  "results": [
+    {
+      "family": "ridge",
+      "m2_tag": "alpha316.2",
+      "esc_n10": 0.14384587644594857,
+      "esc_frozen": 0.14384587644594857,
+      "missed_n10": 0.010260701074511186,
+      "missed_frozen": 0.010260701074511186,
+      "test_index_hash_n10": "2c89a6175379f94a",
+      "test_index_hash_frozen": "2c89a6175379f94a",
+      "exact": true
+    },
+    {
+      "family": "histgb",
+      "m2_tag": "rand13",
+      "esc_n10": 0.08634081389220229,
+      "esc_frozen": 0.08634081389220229,
+      "missed_n10": 0.010789149198520346,
+      "missed_frozen": 0.010789149198520346,
+      "test_index_hash_n10": "2c89a6175379f94a",
+      "test_index_hash_frozen": "2c89a6175379f94a",
+      "exact": true
+    }
+  ],
+  "all_exact": true,
+  "m2_tags_recorded_in_frozen": false
+}

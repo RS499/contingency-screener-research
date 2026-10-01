@@ -1,0 +1,48 @@
+{
+  "question": "N10 Part B: switch-back relabel of case_illinois200 (N2 method, network-parameterized)",
+  "build_config": {
+    "network": "case_illinois200",
+    "stress": "fixed",
+    "mult_lo": 0.87,
+    "mult_hi": 0.99,
+    "reg_lo": 0.87,
+    "reg_hi": 0.99,
+    "pf_lo": 0.9,
+    "pf_hi": 1.15,
+    "dvm": 0.025
+  },
+  "build_seed": 100,
+  "replay_draws": 7880,
+  "replay_rejected": {
+    "nonconvergence": 9,
+    "voltage": 6359,
+    "thermal": 12
+  },
+  "replay_n0_max_abs_diff": 0.0,
+  "checks": {
+    "replay_exact": true,
+    "resolve_min_vm_exact": true,
+    "all_rows_audited": true,
+    "failed_share_le_0p5pct": true
+  },
+  "summary": {
+    "n1_converged_rows": 360589,
+    "rows_expected": 360589,
+    "status_counts": {
+      "converged": 275323,
+      "not_needed": 85266
+    },
+    "n1_failed": 0,
+    "n1_failed_share": 0.0,
+    "n_needing_switchback": 275323,
+    "max_repro_abs_diff": 0.0,
+    "flip_viol_to_safe": 27478,
+    "flip_safe_to_viol": 0,
+    "stored_violation_rate": 0.29279872652798616,
+    "stored_boundary_mass": 0.19328653952283625,
+    "corrected_violation_rate": 0.2165956254905169,
+    "corrected_boundary_mass": 0.14314912545862463
+  },
+  "sgen_note": "helper-only apply_fixed: the network's 11 own sgens are never switched (N2 switched all sgens; case118 has none)",
+  "wall_s": 3804.486051797867
+}

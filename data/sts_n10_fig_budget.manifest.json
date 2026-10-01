@@ -1,0 +1,57 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n10_fig_budget.json",
+    "sts_n10_fig_budget.png"
+  ],
+  "generating_script": "scratch/n10_paper_artifacts.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n10_paper_artifacts.py"
+  ],
+  "script_git_blob_sha": "e6c1d7be600cd6d42eb00b7ac09565f5dd8eeca7",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "7f2c289d94e06283125c9c35cabe110a44569c6a",
+  "inputs": [
+    {
+      "path": "data/sts_n9_budget_curve.json",
+      "sha256": "79b0067b68815af3c78fe5cefc71e0b8571fe96e9f9874376bb7b1ec9a9bab3f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n10_fig_budget.json",
+      "sha256": "ee1ea6ee6217786103f698ea28bb133148f748210ff9103f4c88a44d84cf57e5",
+      "md5": "c9ff0684d6b16b15e0a5380d0c2ec12f",
+      "bytes": 90100,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n10_fig_budget.png",
+      "sha256": "bf52c4c763f3dba3112c57d9aa820c73793007092c22db315bd429f73bdbf7ce",
+      "md5": "6d7196874af6f84acb69ca061baecf21",
+      "bytes": 169499,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-30T21:31:43Z",
+  "parameters": {
+    "figure": "budget curve SURR/STATIC/ORACLE, D94 and D95a",
+    "model_hyperparameters": "N5 M2 configs (see data/sts_n9_budget_curve.manifest.json)",
+    "dpi": 300,
+    "figsize_in": [
+      7.0,
+      2.7
+    ]
+  },
+  "no_new_solves": "No AC solve. Figures (b) and tables (e) refit the N5 M2 configs on D94 corrected labels; persistence and train-mean recomputed."
+}

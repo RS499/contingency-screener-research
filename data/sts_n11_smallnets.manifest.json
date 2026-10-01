@@ -1,0 +1,331 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n11_smallnets.json"
+  ],
+  "generating_script": "scratch/n11_smallnets.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n11_smallnets.py"
+  ],
+  "script_git_blob_sha": "3a7fb93d0c1231dd3cda0c555f6294cddbe97ce8",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "data/sts_n5_verdict.json",
+      "sha256": "22a6a964953b357134f677a13ecba79c8fd61652d4a04d39144cbce7a70823b3"
+    },
+    {
+      "path": "data/sts_n5_gate_094.json",
+      "sha256": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db"
+    },
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    },
+    {
+      "path": "data/case30_thermal/dataset.parquet",
+      "sha256": "cb1a38e9a39ef2333ade9a3423c188938bf21ff4883bdc3a0deacc7daefb9f98"
+    },
+    {
+      "path": "data/sts_n11_relabel_case30_thermal.parquet",
+      "sha256": "0a4ce1e3ca6cd47b50ae2b6a34590da8aea138a85fa334e0dc21d4c1891b2ab7"
+    },
+    {
+      "path": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "sha256": "29896224c999756aa1d60455e135d198906098142e66eff45995703cf17decab"
+    },
+    {
+      "path": "data/sts_n11_relabel_case24_ieee_rts.parquet",
+      "sha256": "e82c772cc9183b7ebbc1f1d0cb55b311c792ee5f20f851036816feea11d8ce7b"
+    },
+    {
+      "path": "data/sts_n10_illinois.json",
+      "sha256": "95b654e86edee99aa8a2455c63cdeac145d42f949ec08ed491d93d018247cfeb"
+    },
+    {
+      "path": "data/sts_n10_relabel_illinois200.json",
+      "sha256": "bf841f66a5c7bac08154553f4539918afadc4e10d03b46bec6c763cdc23d70a0"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n11_smallnets.json",
+      "sha256": "a4d5a504dfe4f50e2380d0aeee2390d04f81ac2ee465ada3fcd35629369f7675",
+      "md5": "e99db1a2ea335da69b9823ff5a5074a6",
+      "bytes": 264682,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-01T01:10:12Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "targets": [
+      0.9,
+      0.91,
+      0.92,
+      0.93,
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.98
+    ],
+    "limit": 0.94,
+    "model_hyperparameters": {
+      "case30_thermal": [
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        },
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand19",
+          "config": {
+            "tag": "rand19",
+            "learning_rate": 0.03,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha1",
+          "config": {
+            "tag": "alpha1",
+            "alpha": 1.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha0.1",
+          "config": {
+            "tag": "alpha0.1",
+            "alpha": 0.1
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand00",
+          "config": {
+            "tag": "rand00",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand00",
+          "config": {
+            "tag": "rand00",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha0.003162",
+          "config": {
+            "tag": "alpha0.003162",
+            "alpha": 0.0031622776601683794
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        }
+      ],
+      "case24_ieee_rts": [
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand23",
+          "config": {
+            "tag": "rand23",
+            "learning_rate": 0.05,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 200,
+            "l2_regularization": 0.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand16",
+          "config": {
+            "tag": "rand16",
+            "learning_rate": 0.1,
+            "max_iter": 300,
+            "max_depth": null,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 50,
+            "l2_regularization": 1.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand17",
+          "config": {
+            "tag": "rand17",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 200,
+            "l2_regularization": 0.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand23",
+          "config": {
+            "tag": "rand23",
+            "learning_rate": 0.05,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 200,
+            "l2_regularization": 0.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "committed",
+          "config": {
+            "tag": "committed",
+            "learning_rate": 0.08,
+            "max_iter": 300,
+            "max_depth": 8,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.0
+          }
+        }
+      ]
+    },
+    "search": "scripts/tune_surrogates.py candidates (15 ridge, 26 histgb)",
+    "solver_settings": "labels: pinned pandapower + N2 switch-back (scratch/n11_relabel_net.py)"
+  },
+  "no_new_solves": "No AC solve. Model fits: full tune_surrogates search + M2 refits per network and seed."
+}

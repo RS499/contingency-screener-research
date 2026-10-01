@@ -1,0 +1,210 @@
+{
+  "question": "sensitivity of the per-solve cost to a warm start from the pre-outage solution",
+  "pinned_config_unchanged": true,
+  "configs": {
+    "cold": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr",
+      "note": "pinned (data/solve_time.json basis)"
+    },
+    "warm": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "results",
+      "algorithm": "nr",
+      "note": "net.res_bus reset to the N-0 solution before every warm solve (reset not timed in per-solve numbers)"
+    }
+  },
+  "sampling": {
+    "generator_flags": {
+      "mult_lo": 1.0,
+      "mult_hi": 1.12,
+      "reg_lo": 1.0,
+      "reg_hi": 1.12,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025,
+      "network": "case118"
+    },
+    "stress": "fixed",
+    "seed": 2026,
+    "n_bases": 12,
+    "n_rejected_draws": 5,
+    "outages_per_base": 186,
+    "warmup": "one extra base, first 30 outages, both inits, discarded",
+    "order": "paired per outage; cold/warm order alternates by outage and base"
+  },
+  "per_solve": {
+    "cold": {
+      "n": 2232,
+      "min_ms": 8.961208999608061,
+      "median_ms": 11.08983350059134,
+      "mean_ms": 11.108244292560606,
+      "std_ms": 1.2770638208016103,
+      "p90_ms": 11.613529199894401
+    },
+    "warm": {
+      "n": 2232,
+      "min_ms": 7.5250419995427364,
+      "median_ms": 9.528584000690898,
+      "mean_ms": 9.48898671417672,
+      "std_ms": 0.874442856753804,
+      "p90_ms": 9.96012950072327
+    },
+    "median_ratio_cold_over_warm": 1.1638490566685709,
+    "min_ratio_cold_over_warm": 1.1908516922766137,
+    "paired_median_of_cold_minus_warm_ms": 1.562333000038052
+  },
+  "full_sweep_one_base": {
+    "first_base": {
+      "base": 1,
+      "n0_min_vm": 0.9431426285351898,
+      "n_outages": 186,
+      "cold_sweep_ms": 2057.8143340007955,
+      "warm_sweep_ms": 1776.6492499995366
+    },
+    "cold_ms": {
+      "median": 2081.7671669992706,
+      "min": 1835.71587500046,
+      "max": 2187.590667001132
+    },
+    "warm_ms": {
+      "median": 1803.9445834992875,
+      "min": 1591.9783749995986,
+      "max": 1926.7636660006247
+    },
+    "median_ratio_cold_over_warm": 1.158258814655604,
+    "per_base": [
+      {
+        "base": 1,
+        "n0_min_vm": 0.9431426285351898,
+        "n_outages": 186,
+        "cold_sweep_ms": 2057.8143340007955,
+        "warm_sweep_ms": 1776.6492499995366
+      },
+      {
+        "base": 2,
+        "n0_min_vm": 0.9466370413042873,
+        "n_outages": 186,
+        "cold_sweep_ms": 2112.7595830002974,
+        "warm_sweep_ms": 1806.8065420011408
+      },
+      {
+        "base": 3,
+        "n0_min_vm": 0.9407991491098715,
+        "n_outages": 186,
+        "cold_sweep_ms": 2069.8873330002243,
+        "warm_sweep_ms": 1791.8091249994177
+      },
+      {
+        "base": 4,
+        "n0_min_vm": 0.9403741361093353,
+        "n_outages": 186,
+        "cold_sweep_ms": 2097.9896249991725,
+        "warm_sweep_ms": 1781.9460000009713
+      },
+      {
+        "base": 5,
+        "n0_min_vm": 0.9406739636188556,
+        "n_outages": 186,
+        "cold_sweep_ms": 2121.652207999432,
+        "warm_sweep_ms": 1828.7428330004332
+      },
+      {
+        "base": 6,
+        "n0_min_vm": 0.9443609253330036,
+        "n_outages": 186,
+        "cold_sweep_ms": 2187.590667001132,
+        "warm_sweep_ms": 1926.7636660006247
+      },
+      {
+        "base": 7,
+        "n0_min_vm": 0.9469272665766052,
+        "n_outages": 186,
+        "cold_sweep_ms": 2072.1449589982512,
+        "warm_sweep_ms": 1802.2616669986746
+      },
+      {
+        "base": 8,
+        "n0_min_vm": 0.9443759458089345,
+        "n_outages": 186,
+        "cold_sweep_ms": 1835.71587500046,
+        "warm_sweep_ms": 1591.9783749995986
+      },
+      {
+        "base": 9,
+        "n0_min_vm": 0.9400228269576627,
+        "n_outages": 186,
+        "cold_sweep_ms": 2138.197291000324,
+        "warm_sweep_ms": 1822.7118750000955
+      },
+      {
+        "base": 10,
+        "n0_min_vm": 0.946334751384668,
+        "n_outages": 186,
+        "cold_sweep_ms": 2061.835250000513,
+        "warm_sweep_ms": 1888.6156669996126
+      },
+      {
+        "base": 11,
+        "n0_min_vm": 0.9455731860342974,
+        "n_outages": 186,
+        "cold_sweep_ms": 2091.38937500029,
+        "warm_sweep_ms": 1805.6274999999005
+      },
+      {
+        "base": 12,
+        "n0_min_vm": 0.9442022135741026,
+        "n_outages": 186,
+        "cold_sweep_ms": 2065.298958999847,
+        "warm_sweep_ms": 1781.2780829990515
+      }
+    ]
+  },
+  "agreement": {
+    "n_pairs": 2232,
+    "n_both_converged": 2232,
+    "n_cold_only_converged": 0,
+    "n_warm_only_converged": 0,
+    "max_abs_min_vm_diff": 4.3298697960381105e-15,
+    "n_min_vm_diff_gt_1e6": 0,
+    "n_violation_label_differs": 0
+  },
+  "committed_reference": {
+    "path": "data/solve_time.json",
+    "note": "committed ms_solver is the min over 400 cold solves drawn with feasibility/measure_solve.py (seed 0, only --mult-hi 1.12 set, about 2-3 base cases); this run uses the full committed generator flags, seed 2026, 12 base cases, so its cold min is an independent re-measurement"
+  },
+  "load_average_before": [
+    1.93310546875,
+    4.34130859375,
+    6.3388671875
+  ],
+  "load_average_after": [
+    2.29345703125,
+    3.8662109375,
+    5.94580078125
+  ],
+  "load_rule": {
+    "rule": "wait up to 30 min for 1-min load average < 2.0 at start, else run anyway",
+    "result": {
+      "waited_s": 180.05773282051086,
+      "quiet_reached": true,
+      "load_at_start": [
+        1.93310546875,
+        4.34130859375,
+        6.3388671875
+      ],
+      "n_checks": 7
+    }
+  },
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "system": "Darwin",
+    "release": "25.6.0",
+    "cpu": "Apple M4"
+  },
+  "wall_time_s": 94.72327184677124
+}

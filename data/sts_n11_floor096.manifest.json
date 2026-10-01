@@ -1,0 +1,84 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n11_floor096.parquet",
+    "sts_n11_floor096.json"
+  ],
+  "generating_script": "scratch/n11_floor_build.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n11_floor_build.py",
+    "0.96"
+  ],
+  "script_git_blob_sha": "b92288cf5d9ab7b5bc2925ed43bba5311c3ec153",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "scratch/n3_floor_rebuild.py",
+      "sha256": "7f7ce84ff89a256a2811b6a867e53eb673e46ec372f5a070d5a79f0a23b00f90"
+    },
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n11_floor096.parquet",
+      "sha256": "aa48f08799249171f86ab866876df4fde0826009135ae610bb32841ee3601290",
+      "md5": "2a9260150edf46cbfe32de1f53430967",
+      "bytes": 10040302,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n11_floor096.json",
+      "sha256": "95a1e03f5b829c6c10aedde364c049f60ea2cc77c078852b50f5c4f1884fdb4e",
+      "md5": "18ab260a96f1aabb14287bb9d5393c2a",
+      "bytes": 731,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-01T01:22:41Z",
+  "parameters": {
+    "gen_vm_lo": 0.96,
+    "config": {
+      "mult_lo": 1.0,
+      "mult_hi": 1.12,
+      "reg_lo": 1.0,
+      "reg_hi": 1.12,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025,
+      "network": "case118"
+    },
+    "n_total": 1500,
+    "shard_seeds": [
+      100,
+      101,
+      102,
+      103
+    ],
+    "scenarios_per_shard": 375,
+    "mode": "mixed",
+    "stress": "fixed",
+    "solver": {
+      "enforce_q_lims": true,
+      "numba": true,
+      "init": "dc",
+      "algorithm": "nr"
+    },
+    "model_hyperparameters": "none (no model fit)",
+    "python": "3.13.11"
+  },
+  "no_new_solves": "FALSE: full dataset build (N-0 and N-1 AC solves, pinned solver)"
+}

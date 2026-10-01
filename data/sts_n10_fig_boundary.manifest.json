@@ -1,0 +1,57 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n10_fig_boundary.json",
+    "sts_n10_fig_boundary.png"
+  ],
+  "generating_script": "scratch/n10_paper_artifacts.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n10_paper_artifacts.py"
+  ],
+  "script_git_blob_sha": "e6c1d7be600cd6d42eb00b7ac09565f5dd8eeca7",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "7f2c289d94e06283125c9c35cabe110a44569c6a",
+  "inputs": [
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n10_fig_boundary.json",
+      "sha256": "830d528b8b6dd76cc0766795d0a291860077ed0b2d5dd8d7df3cd3c63249c906",
+      "md5": "7eb5a60622bb8e35c0f017ad57ae6ed7",
+      "bytes": 9748,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n10_fig_boundary.png",
+      "sha256": "3c2c4cdee890e2909811b16a3126cd25cdd53db8fcc75894dee25e6b575872aa",
+      "md5": "ce32483dd0656aa5b555c13cf68b2f21",
+      "bytes": 51802,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-30T21:31:43Z",
+  "parameters": {
+    "figure": "Fig. 4 equivalent, corrected labels, no prose",
+    "model_hyperparameters": "none (model-independent)",
+    "dpi": 300,
+    "figsize_in": [
+      3.5,
+      2.6
+    ]
+  },
+  "no_new_solves": "No AC solve. Figures (b) and tables (e) refit the N5 M2 configs on D94 corrected labels; persistence and train-mean recomputed."
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n11_dose_response.json"
+  ],
+  "generating_script": "scratch/n11_dose_response.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n11_dose_response.py"
+  ],
+  "script_git_blob_sha": "ed616cf986e5475d622d2f0ce8e3a86c3fc5328d",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "scratch/n11_decision_rule.md",
+      "sha256": "4a0e48d47d1c1b8a053dedd6036977c60ede4957dbcb6f542356552a64f0775d"
+    },
+    {
+      "path": "data/sts_n11_floor093.parquet",
+      "sha256": "7b90093b76c5fbd9bc6c06eb98273c806bff993f7f83016e3cbcdb9e692daddb"
+    },
+    {
+      "path": "data/sts_n11_floor093_relabel.parquet",
+      "sha256": "4dd02472ef13829501f9a440dbd307130b5faad8a2ac1e31941ce74590472387"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    },
+    {
+      "path": "data/sts_n3_floor095.parquet",
+      "sha256": "49363a25309bc0e14df03b39215a6038c3953c480389a4708c5a42a9a636e9f6"
+    },
+    {
+      "path": "data/sts_n5_relabel095.parquet",
+      "sha256": "f3e3c081362337532d8fc8deab93b32b6f2d67531cb4c3e78094caaf4c3f1bdc"
+    },
+    {
+      "path": "data/sts_n11_floor096.parquet",
+      "sha256": "aa48f08799249171f86ab866876df4fde0826009135ae610bb32841ee3601290"
+    },
+    {
+      "path": "data/sts_n11_floor096_relabel.parquet",
+      "sha256": "16bca257fdab7fe637a1b485c130245a64fd0c09d17a8a2cd1cc1b755de8a237"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n11_dose_response.json",
+      "sha256": "884ce6d4b71455f796808d8eb9668ce240edb0fd9cd6ea290b4d5441300eb35f",
+      "md5": "81224b478344fb90ecc07f246494733d",
+      "bytes": 4719,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-01T01:56:59Z",
+  "parameters": {
+    "floors": [
+      0.93,
+      0.94,
+      0.95,
+      0.96
+    ],
+    "predictions": {
+      "0.93": {
+        "BM": [
+          55.0,
+          50.0,
+          62.0
+        ],
+        "CBM": [
+          67.0,
+          62.0,
+          73.0
+        ],
+        "VR": [
+          17.5,
+          15.5,
+          19.5
+        ]
+      },
+      "0.96": {
+        "BM": [
+          20.0,
+          8.0,
+          30.0
+        ],
+        "CBM": [
+          24.0,
+          10.0,
+          36.0
+        ],
+        "VR": [
+          15.0,
+          12.0,
+          17.5
+        ]
+      }
+    },
+    "model_hyperparameters": "none (no model fit)",
+    "solver_settings": "labels: stored pinned pandapower and N2 switch-back"
+  },
+  "no_new_solves": "No AC solve; reads the four builds and their relabels."
+}

@@ -1,0 +1,185 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n11_mondrian.json"
+  ],
+  "generating_script": "scratch/n11_mondrian.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n11_mondrian.py"
+  ],
+  "script_git_blob_sha": "6235576aad060a46d0c9688da87e59f21051c00a",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "af7dcbac0f4c7b89963898f491528334e0f397a1",
+  "inputs": [
+    {
+      "path": "data/sts_n5_gate_094.json",
+      "sha256": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    },
+    {
+      "path": "scratch/n11_decision_rule.md",
+      "sha256": "4a0e48d47d1c1b8a053dedd6036977c60ede4957dbcb6f542356552a64f0775d"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n11_mondrian.json",
+      "sha256": "2272e41e5fd9089ca011b969b3e0b5574ea71f893f3606f2d8b7bbbfd83ec8d1",
+      "md5": "b3e77246249e98fdb6b6d06d1d51e7d0",
+      "bytes": 12324,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-01T00:09:21Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "families": [
+      "ridge",
+      "histgb"
+    ],
+    "limit": 0.94,
+    "min_cal_rows": 20,
+    "model_hyperparameters": [
+      {
+        "seed": 0,
+        "family": "ridge",
+        "tag": "alpha100",
+        "config": {
+          "tag": "alpha100",
+          "alpha": 100.0
+        }
+      },
+      {
+        "seed": 0,
+        "family": "histgb",
+        "tag": "rand15",
+        "config": {
+          "tag": "rand15",
+          "learning_rate": 0.1,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 127,
+          "min_samples_leaf": 20,
+          "l2_regularization": 1.0
+        }
+      },
+      {
+        "seed": 1,
+        "family": "ridge",
+        "tag": "alpha0.3162",
+        "config": {
+          "tag": "alpha0.3162",
+          "alpha": 0.31622776601683794
+        }
+      },
+      {
+        "seed": 1,
+        "family": "histgb",
+        "tag": "rand13",
+        "config": {
+          "tag": "rand13",
+          "learning_rate": 0.08,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 20,
+          "l2_regularization": 0.1
+        }
+      },
+      {
+        "seed": 2,
+        "family": "ridge",
+        "tag": "alpha0.01",
+        "config": {
+          "tag": "alpha0.01",
+          "alpha": 0.01
+        }
+      },
+      {
+        "seed": 2,
+        "family": "histgb",
+        "tag": "rand01",
+        "config": {
+          "tag": "rand01",
+          "learning_rate": 0.1,
+          "max_iter": 1000,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 50,
+          "l2_regularization": 10.0
+        }
+      },
+      {
+        "seed": 3,
+        "family": "ridge",
+        "tag": "alpha0.003162",
+        "config": {
+          "tag": "alpha0.003162",
+          "alpha": 0.0031622776601683794
+        }
+      },
+      {
+        "seed": 3,
+        "family": "histgb",
+        "tag": "rand06",
+        "config": {
+          "tag": "rand06",
+          "learning_rate": 0.03,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 20,
+          "l2_regularization": 0.1
+        }
+      },
+      {
+        "seed": 4,
+        "family": "ridge",
+        "tag": "alpha0.001",
+        "config": {
+          "tag": "alpha0.001",
+          "alpha": 0.001
+        }
+      },
+      {
+        "seed": 4,
+        "family": "histgb",
+        "tag": "rand20",
+        "config": {
+          "tag": "rand20",
+          "learning_rate": 0.08,
+          "max_iter": 1000,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 50,
+          "l2_regularization": 0.1
+        }
+      }
+    ],
+    "solver_settings": "no solve; D94 corrected labels (N2)"
+  },
+  "no_new_solves": "No AC solve. Model fits: N5 D94 M2 configs refit per split."
+}

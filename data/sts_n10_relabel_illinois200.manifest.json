@@ -1,0 +1,89 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n10_relabel_illinois200.parquet",
+    "sts_n10_relabel_illinois200.json"
+  ],
+  "generating_script": "scratch/n10_relabel_illinois.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n10_relabel_illinois.py"
+  ],
+  "script_git_blob_sha": "cbd66fed97bf19a3cf4759d68e9c0f5ee690c822",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "7f2c289d94e06283125c9c35cabe110a44569c6a",
+  "inputs": [
+    {
+      "path": "data/netstudy/case_illinois200/dataset.parquet",
+      "sha256": "aba7a9201b964250ff901c64ca53a13e50023494c7e53489385d1311ee4553bd"
+    },
+    {
+      "path": "data/netstudy/case_illinois200/build_stats.json",
+      "sha256": "91ed8726eef8c76285adb6dcaa4af90dae46ed984e969aacfb89609c9117f5b5"
+    },
+    {
+      "path": "scripts/sts_n2_label_audit.py",
+      "sha256": "e4a54e78dddbcfe81ed9666ade44d9cffde95ddf36839506447b8d9c54fc6a45"
+    },
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    },
+    {
+      "path": "scripts/case30_thermal.py",
+      "sha256": "cb80fdde5840478a72ebbc54eaa577530eb8bd600064ba765cb4183317374a87"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n10_relabel_illinois200.parquet",
+      "sha256": "6df9743a700df5d5f16fa04b30dc8670b74ee0741b070aa546b829ecd34d989b",
+      "md5": "7ed060b9108778026046bd6e539f99bd",
+      "bytes": 10156046,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n10_relabel_illinois200.json",
+      "sha256": "bf841f66a5c7bac08154553f4539918afadc4e10d03b46bec6c763cdc23d70a0",
+      "md5": "bcb3a011a6b4b236684e394a77e1bc72",
+      "bytes": 1343,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-30T22:17:30Z",
+  "parameters": {
+    "network": "case_illinois200",
+    "build_config": {
+      "network": "case_illinois200",
+      "stress": "fixed",
+      "mult_lo": 0.87,
+      "mult_hi": 0.99,
+      "reg_lo": 0.87,
+      "reg_hi": 0.99,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025
+    },
+    "build_seed": 100,
+    "n_scenarios": 1500,
+    "chunk": 50,
+    "nproc": 4,
+    "limit": 0.94,
+    "switchback_tol_q": 0.001,
+    "switchback_tol_v": 0.001,
+    "switchback_max_outer": 30,
+    "n0_gate": "voltage AND thermal (case30_thermal.n0_feasible)",
+    "solver": "pandapower runpp enforce_q_lims=True init=dc numba=True (pinned)",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: replays the N-0 build and re-solves every converged N-1 row with the switch-back loop"
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n10_matpower_check.parquet",
+    "sts_n10_matpower_check.json"
+  ],
+  "generating_script": "scratch/n10_matpower_check.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n10_matpower_check.py"
+  ],
+  "script_git_blob_sha": "0dc9b9b4f934a03955ee619c61fd9363f2f1677c",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "7f2c289d94e06283125c9c35cabe110a44569c6a",
+  "inputs": [
+    {
+      "path": "data/sts_label_crosscheck_rows.parquet",
+      "sha256": "60868f144cf60438d951da87af9b8ef4002e0c76cc7712f66852147477f8a1b8"
+    },
+    {
+      "path": "scratch/n10_switchback.m",
+      "sha256": "b992b8a698e0f65314a5703813d39c878a451bd3fca1aeea8b38cf1adfd388c1"
+    },
+    {
+      "path": "scripts/sts_n2_label_audit.py",
+      "sha256": "e4a54e78dddbcfe81ed9666ade44d9cffde95ddf36839506447b8d9c54fc6a45"
+    },
+    {
+      "path": "feasibility/generate_dataset.py",
+      "sha256": "30923b161f71f6a2ba8faa587b018cc59c5f1b076515f7e63bbb943a8da3e5bb"
+    },
+    {
+      "path": "scratch/n10_decision_rule.md",
+      "sha256": "7f94bd0a8958c011832895caded9db3275681ceae402e92913b3a3467e2f8907"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n10_matpower_check.parquet",
+      "sha256": "cb4b078375e0fe5d7b2eea69f6a796a265ebdd28b8771402870bd7a4524d0795",
+      "md5": "c56e80a8ffa890c6506e8f7989285b43",
+      "bytes": 27678,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n10_matpower_check.json",
+      "sha256": "1096e5ec96069766e26fb0653c060cda953909a4e428f514905b329b6ab96069",
+      "md5": "4b55e4c6c78065234d192c67216ba6b5",
+      "bytes": 3168,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-09-30T21:20:28Z",
+  "parameters": {
+    "limit": 0.94,
+    "tol_a0": 1e-06,
+    "switchback_tol_q_mvar": 0.001,
+    "switchback_tol_v_pu": 0.001,
+    "max_outer": 30,
+    "matpower_options": {
+      "alg": "NR",
+      "tol": 1e-08,
+      "nr_max_it": 30,
+      "enforce_q_lims": "M0: 0; M1, M2: 1"
+    },
+    "matpower": "8.1",
+    "octave": "11.3.0",
+    "case_generator_config": {
+      "mult_lo": 1.0,
+      "mult_hi": 1.12,
+      "reg_lo": 1.0,
+      "reg_hi": 1.12,
+      "pf_lo": 0.9,
+      "pf_hi": 1.15,
+      "dvm": 0.025,
+      "network": "case118"
+    },
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: pandapower no-limit solve per row, plus MATPOWER M0/M1/M2 solves under Octave"
+}

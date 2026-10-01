@@ -1,0 +1,131 @@
+{
+  "part": "N10 Part A: independent-solver (MATPOWER) label check",
+  "decision_rule": "scratch/n10_decision_rule.md",
+  "decision_rule_sha256": "7f94bd0a8958c011832895caded9db3275681ceae402e92913b3a3467e2f8907",
+  "decision_rule_hash_verified": true,
+  "verdict": {
+    "A0_pass": true,
+    "A1_pass": true,
+    "A2": "CONFIRMED",
+    "A2_marking": "",
+    "named_worst_case": {
+      "m0_min_vm": 0.939009496036312,
+      "m1_min_vm": 0.848543258220119,
+      "m2_status": "converged",
+      "m2_min_vm": 0.945072990633458,
+      "m2_n_outer": 3,
+      "stored_min_vm": 0.8485430748588177,
+      "n2_min_vm": 0.9450729906334574,
+      "m2_ge_limit": true
+    },
+    "scope_of_verdict": "all 201 rows (the 200 sampled rows plus the named worst case)"
+  },
+  "checks": {
+    "all_201": {
+      "A0": {
+        "k": 201,
+        "n": 201,
+        "share": 1.0,
+        "ci95": [
+          0.9818147499456137,
+          1.0
+        ],
+        "threshold": 0.99,
+        "passes": true
+      },
+      "A1": {
+        "k": 201,
+        "n": 201,
+        "share": 1.0,
+        "ci95": [
+          0.9818147499456137,
+          1.0
+        ],
+        "threshold": 0.95,
+        "passes": true
+      },
+      "A2_share": {
+        "k": 201,
+        "n": 201,
+        "share": 1.0,
+        "ci95": [
+          0.9818147499456137,
+          1.0
+        ],
+        "threshold": 0.95,
+        "passes": true
+      }
+    },
+    "sample_200": {
+      "A0": {
+        "k": 200,
+        "n": 200,
+        "share": 1.0,
+        "ci95": [
+          0.9817246596448638,
+          1.0
+        ],
+        "threshold": 0.99,
+        "passes": true
+      },
+      "A1": {
+        "k": 200,
+        "n": 200,
+        "share": 1.0,
+        "ci95": [
+          0.9817246596448638,
+          1.0
+        ],
+        "threshold": 0.95,
+        "passes": true
+      },
+      "A2_share": {
+        "k": 200,
+        "n": 200,
+        "share": 1.0,
+        "ci95": [
+          0.9817246596448638,
+          1.0
+        ],
+        "threshold": 0.95,
+        "passes": true
+      }
+    }
+  },
+  "by_stratum": {
+    "viol_to_safe": {
+      "n": 100,
+      "a1_agree": 100,
+      "a2_agree": 100,
+      "m2_status_counts": {
+        "converged": 100
+      }
+    },
+    "safe_to_viol": {
+      "n": 100,
+      "a1_agree": 100,
+      "a2_agree": 100,
+      "m2_status_counts": {
+        "converged": 100
+      }
+    }
+  },
+  "diagnostics": {
+    "a0_max_abs_diff": 2.0545017320738879e-07,
+    "m1_minus_stored_max_abs": 1.5781243728474337e-06,
+    "m2_minus_n2_max_abs": 5.632640652786236e-07,
+    "m2_minus_n2_median_abs": 2.19934391809673e-08,
+    "m0_nonconverged": 0,
+    "m1_nonconverged": 0,
+    "m2_status_counts": {
+      "converged": 201
+    }
+  },
+  "matpower_version": "8.1",
+  "octave_version": "11.3.0",
+  "export": "pandapower.converter.matpower.to_mpc(net, init='flat')",
+  "alignment_note": "slack (ext_grid) generator QMAX/QMIN set to +/-Inf for M1/M2, because pandapower's enforce_q_lims never limits the ext_grid",
+  "nonconvergence_rule": "a MATPOWER solve that does not converge counts as a failure of the check",
+  "export_wall_s": 73.18745684623718,
+  "wall_s": 159.6673069000244
+}
