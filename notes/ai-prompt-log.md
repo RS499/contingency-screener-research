@@ -6417,3 +6417,39 @@ Correction to the heading above: the N11 entry date is 2026-09-30 (UTC 23:54), n
 
 Prompt (verbatim): "For the rest of this run, do not ask me questions. Handle problems with these rules, and log every use in notes/overnight_status.md and in a \"Interpretations and deviations\" section of scratch/n11_result.md: 1. If a rule is ambiguous, choose the narrowest reading that drops or skips data rather than changing a method. Log it as an \"interpretation\" and continue. 2. If a dataset or step fails a check (replay mismatch, reproduction mismatch, failure ceiling, crash), stop only that dataset or step, report what you have, and continue with the next step. Never change settings, caps, seeds or thresholds to make something pass. 3. If a script errors because of a coding bug in your own new script, fix the bug and rerun that step, and log it as a \"deviation (code fix)\". If the fix would change any method defined in scratch/n11_decision_rule.md, don't fix it: skip the step and log it. 4. Stop the whole run only if: the decision-rule hash fails to verify, disk space falls below 5 GB, or .venv/bin/python stops working. 5. Keep going until every step is done or skipped, then write scratch/n11_result.md and give me the git commands. No git writes."
 N11 outcome: COVERAGE-HOLDS-N2 NO; MONDRIAN-BEATS-STATIC NO; FLOOR-DOSE-RESPONSE YES (see scratch/n11_result.md). Claude gave the owner the git commands for N10 + N11 and ran no git writes.
+
+## 2026-09-30 (n) — Run N11 simultaneously with N10?
+
+"can i run n11 simultaneously rn?"
+
+Answered in chat; no files written.
+
+## 2026-09-30 (o) — N11 case39 relabel over the 0.5% failure ceiling: which option?
+
+(pasted Mac mini question: drop case39 only vs stop all of Part 2)
+
+Answered in chat; no files written.
+
+## 2026-09-30 (p) — How to keep the Mac mini run going without interruptions
+
+"ok and how do i ensure that itll keep going for the rest of the night iwhtout any more interrurptions like this"
+
+Answered in chat; no files written.
+
+## 2026-09-30 (q) — N10 and N11 finished on the Mac mini (pasted summary)
+
+(pasted Mac mini final summary and its git commands)
+
+Claude assessed the results in chat and gave laptop pull commands that preserve laptop-only log entries.
+
+## 2026-09-30 (r) — What to do with the Mac mini now that the runs are finished
+
+"wait what do i do now with teh mac mini now that its not running anyomore"
+
+Answered in chat; no files written.
+
+## 2026-09-30 (s) — Fix the blocked pull (541dc4d)
+
+(pasted git pull error: local changes to notes/ai-prompt-log.md would be overwritten)
+
+Claude saved the laptop-only log entries to ~/prompt-log-laptop-only.md (outside the repo) and gave the owner the pull commands; no git writes.
