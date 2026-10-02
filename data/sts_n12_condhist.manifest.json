@@ -1,0 +1,103 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n12_condhist.json"
+  ],
+  "generating_script": "scratch/n12_condhist.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n12_condhist.py"
+  ],
+  "script_git_blob_sha": "d2a79d9fee393d7a831b4e137ef272e6db354977",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "d5744e6ce363be60246f907987a6434cdc6ee3e7",
+  "inputs": [
+    {
+      "path": "data/case30_thermal/dataset.parquet",
+      "sha256": "cb1a38e9a39ef2333ade9a3423c188938bf21ff4883bdc3a0deacc7daefb9f98"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "sha256": "29896224c999756aa1d60455e135d198906098142e66eff45995703cf17decab"
+    },
+    {
+      "path": "data/netstudy/case_illinois200/dataset.parquet",
+      "sha256": "aba7a9201b964250ff901c64ca53a13e50023494c7e53489385d1311ee4553bd"
+    },
+    {
+      "path": "data/sts_n10_illinois.json",
+      "sha256": "95b654e86edee99aa8a2455c63cdeac145d42f949ec08ed491d93d018247cfeb"
+    },
+    {
+      "path": "data/sts_n10_relabel_illinois200.parquet",
+      "sha256": "6df9743a700df5d5f16fa04b30dc8670b74ee0741b070aa546b829ecd34d989b"
+    },
+    {
+      "path": "data/sts_n11_relabel_case24_ieee_rts.parquet",
+      "sha256": "e82c772cc9183b7ebbc1f1d0cb55b311c792ee5f20f851036816feea11d8ce7b"
+    },
+    {
+      "path": "data/sts_n11_relabel_case30_thermal.parquet",
+      "sha256": "0a4ce1e3ca6cd47b50ae2b6a34590da8aea138a85fa334e0dc21d4c1891b2ab7"
+    },
+    {
+      "path": "data/sts_n11_smallnets.json",
+      "sha256": "a4d5a504dfe4f50e2380d0aeee2390d04f81ac2ee465ada3fcd35629369f7675"
+    },
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    },
+    {
+      "path": "data/sts_n5_gate_094.json",
+      "sha256": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db"
+    },
+    {
+      "path": "scratch/n12_decision_rule.md",
+      "sha256": "8d11714cba7a5aa1f65e209e37438e4f1b3f99cb49820b2937f421d6a5aead50"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n12_condhist.json",
+      "sha256": "8d253e1868ec39e4f367dfe55876e70b908d5ec51d93388c8fe8b569b4111431",
+      "md5": "c508aca91b331afd5974f3d032a94d15",
+      "bytes": 24112,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-02T03:20:30Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "bins": 5,
+    "bin_quantiles": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "smoothing_a": 10.0,
+    "limit": 0.94,
+    "model_hyperparameters": "none: lookup table, no model fit; gate numbers reused from the stored gate JSONs"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

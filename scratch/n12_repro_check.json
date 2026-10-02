@@ -1,0 +1,207 @@
+{
+  "check": "N12 Step 2: per-split fixed-budget static catch at k_B (histgb, held-out) reproduced exactly",
+  "networks": {
+    "case118": {
+      "labels": {
+        "n_rows_loaded": 278955,
+        "labels": "switch-back corrected_min_vm from data/sts_n2_label_audit.parquet",
+        "n_failed_dropped": 1,
+        "failed_share": 3.5848075854528508e-06,
+        "failed_status_counts": {
+          "nonconverged": 1
+        },
+        "n_label_flips": 6777,
+        "n_rows_used": 278954
+      },
+      "per_split": [
+        {
+          "seed": 0,
+          "k_B": 125,
+          "static_catch_B_stored": 0.9826124288934206,
+          "static_catch_B_n12": 0.9826124288934206,
+          "exact": true
+        },
+        {
+          "seed": 1,
+          "k_B": 123,
+          "static_catch_B_stored": 0.9879649890590809,
+          "static_catch_B_n12": 0.9879649890590809,
+          "exact": true
+        },
+        {
+          "seed": 2,
+          "k_B": 143,
+          "static_catch_B_stored": 0.99675506322032,
+          "static_catch_B_n12": 0.99675506322032,
+          "exact": true
+        },
+        {
+          "seed": 3,
+          "k_B": 126,
+          "static_catch_B_stored": 0.9971162377994676,
+          "static_catch_B_n12": 0.9971162377994676,
+          "exact": true
+        },
+        {
+          "seed": 4,
+          "k_B": 94,
+          "static_catch_B_stored": 0.9763111502864699,
+          "static_catch_B_n12": 0.9763111502864699,
+          "exact": true
+        }
+      ],
+      "all_exact": true
+    },
+    "case_illinois200": {
+      "labels": {
+        "n_rows_loaded": 360589,
+        "labels": "switch-back corrected_min_vm from data/sts_n10_relabel_illinois200.parquet",
+        "n_failed_dropped": 0,
+        "failed_share": 0.0,
+        "failed_status_counts": {},
+        "n_label_flips": 27478,
+        "n_rows_used": 360589
+      },
+      "per_split": [
+        {
+          "seed": 0,
+          "k_B": 77,
+          "static_catch_B_stored": 0.8811184569660945,
+          "static_catch_B_n12": 0.8811184569660945,
+          "exact": true
+        },
+        {
+          "seed": 1,
+          "k_B": 77,
+          "static_catch_B_stored": 0.8981571921599271,
+          "static_catch_B_n12": 0.8981571921599271,
+          "exact": true
+        },
+        {
+          "seed": 2,
+          "k_B": 85,
+          "static_catch_B_stored": 0.9005723840761464,
+          "static_catch_B_n12": 0.9005723840761464,
+          "exact": true
+        },
+        {
+          "seed": 3,
+          "k_B": 67,
+          "static_catch_B_stored": 0.869221866702975,
+          "static_catch_B_n12": 0.869221866702975,
+          "exact": true
+        },
+        {
+          "seed": 4,
+          "k_B": 80,
+          "static_catch_B_stored": 0.895725865880619,
+          "static_catch_B_n12": 0.895725865880619,
+          "exact": true
+        }
+      ],
+      "all_exact": true
+    },
+    "case30_thermal": {
+      "labels": {
+        "n_rows_loaded": 61500,
+        "labels": "switch-back corrected_min_vm from data/sts_n11_relabel_case30_thermal.parquet",
+        "n_failed_dropped": 0,
+        "failed_share": 0.0,
+        "failed_status_counts": {},
+        "n_label_flips": 8,
+        "n_rows_used": 61500
+      },
+      "per_split": [
+        {
+          "seed": 0,
+          "k_B": 8,
+          "static_catch_B_stored": 0.8096757044125465,
+          "static_catch_B_n12": 0.8096757044125465,
+          "exact": true
+        },
+        {
+          "seed": 1,
+          "k_B": 10,
+          "static_catch_B_stored": 0.8969128996692393,
+          "static_catch_B_n12": 0.8969128996692393,
+          "exact": true
+        },
+        {
+          "seed": 2,
+          "k_B": 10,
+          "static_catch_B_stored": 0.8818609513852588,
+          "static_catch_B_n12": 0.8818609513852588,
+          "exact": true
+        },
+        {
+          "seed": 3,
+          "k_B": 8,
+          "static_catch_B_stored": 0.8036939313984169,
+          "static_catch_B_n12": 0.8036939313984169,
+          "exact": true
+        },
+        {
+          "seed": 4,
+          "k_B": 8,
+          "static_catch_B_stored": 0.8123989218328841,
+          "static_catch_B_n12": 0.8123989218328841,
+          "exact": true
+        }
+      ],
+      "all_exact": true
+    },
+    "case24_ieee_rts": {
+      "labels": {
+        "n_rows_loaded": 54676,
+        "labels": "switch-back corrected_min_vm from data/sts_n11_relabel_case24_ieee_rts.parquet",
+        "n_failed_dropped": 28,
+        "failed_share": 0.0005121076889311581,
+        "failed_status_counts": {
+          "iteration_cap": 19,
+          "nonconverged": 9
+        },
+        "n_label_flips": 8410,
+        "n_rows_used": 54648
+      },
+      "per_split": [
+        {
+          "seed": 0,
+          "k_B": 24,
+          "static_catch_B_stored": 0.927015666794039,
+          "static_catch_B_n12": 0.927015666794039,
+          "exact": true
+        },
+        {
+          "seed": 1,
+          "k_B": 24,
+          "static_catch_B_stored": 0.9336941813261164,
+          "static_catch_B_n12": 0.9336941813261164,
+          "exact": true
+        },
+        {
+          "seed": 2,
+          "k_B": 24,
+          "static_catch_B_stored": 0.9391321044546851,
+          "static_catch_B_n12": 0.9391321044546851,
+          "exact": true
+        },
+        {
+          "seed": 3,
+          "k_B": 23,
+          "static_catch_B_stored": 0.9069268292682927,
+          "static_catch_B_n12": 0.9069268292682927,
+          "exact": true
+        },
+        {
+          "seed": 4,
+          "k_B": 23,
+          "static_catch_B_stored": 0.9174682570219315,
+          "static_catch_B_n12": 0.9174682570219315,
+          "exact": true
+        }
+      ],
+      "all_exact": true
+    }
+  },
+  "wall_s": 4.215842962265015
+}
