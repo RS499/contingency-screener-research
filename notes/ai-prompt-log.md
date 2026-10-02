@@ -6483,3 +6483,15 @@ Claude ran the timing on the laptop (M5) into new files and wrote scratch/n12_de
 "stop the timing and js give me promtp and commit command"
 
 Claude stopped the laptop timing run (no output written) and gave the N12 prompt and commit commands.
+
+## 2026-10-02 (m) — N12 run on the Mac mini (Claude Code) [RESTORED]
+
+Restoration note: this entry was first appended during the N12 run and was discarded by a `git reset --hard origin/main` at 2026-10-02 17:34 -04:00 (reflog), before it was committed. It is re-appended here from the session record, same content.
+
+Prompt: the owner pasted the prompt section of scratch/run_prompt_n12.md (committed in d5744e6, rewritten to 4eb61ec per notes/commit-map-2026-10-02.txt). Not re-quoted here, see the file. It includes the no-question rules 1-4.
+N12 pre-registration: scratch/n12_decision_rule.md sha256 8d11714cba7a5aa1f65e209e37438e4f1b3f99cb49820b2937f421d6a5aead50, recorded 2026-10-02T03:18:58Z; draft committed in d5744e6ce363be60246f907987a6434cdc6ee3e7 (now 4eb61eca11f3eb948c187adae13b7cf8c285d5e8).
+N12 outcome: GATE-BEATS-CONDHIST (primary, Illinois) YES; 3 of 4 networks (see scratch/n12_result.md). Claude gave the git commands; no git writes.
+
+## 2026-10-02 (n) — owner: push rejected after a remote history rewrite (Claude Code)
+
+The owner pasted the output of their git commands: the N12 commit d589758 was made locally, but the push was rejected (non-fast-forward) because origin/main had been force-pushed (message rewrite, e74d3f2). Claude diagnosed read-only (log, reflog, merge-base, diff, commit map): the earlier reset had discarded the uncommitted N12 notes appends, so Claude re-appended them (marked RESTORED) and gave rebase/commit/push commands. No git writes by Claude.

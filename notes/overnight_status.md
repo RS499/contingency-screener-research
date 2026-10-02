@@ -478,3 +478,58 @@
   - escalation 34.30 ± 0.83 [1.02]%; missed 1.39 ± 0.53 [0.65]%; speedup B 2.136 ± 0.073 [0.089];
   - gate catch 98.61 ± 0.53%; static catch 98.06 ± 0.35%.
 - **N11 complete.** Every step ran; case39 was excluded from Part 2 (interpretation). Disk 84 GB free.
+
+# N12 run (prompt: scratch/run_prompt_n12.md, in-session on the Mac mini) [RESTORED]
+
+Restoration note: the N12 entries below were first appended during the run (2026-10-02 03:18-~04:00 UTC) and
+were discarded by a `git reset --hard origin/main` at 2026-10-02 17:34 -04:00 (reflog), before they were
+committed. They are re-appended from the session record with the same content. Per-step UTC times after
+Step 1 were not preserved; all steps ran within about an hour of 03:18Z.
+
+## 2026-10-02T03:18:58Z — Step 0 done (environment)
+- Python/pandapower/numpy/pandas/sklearn/pyarrow/numba = 3.13.11 3.5.4 2.3.5 2.3.3 1.7.2 21.0.0 0.66.0
+  (matches N11).
+- git HEAD d5744e6ce363be60246f907987a6434cdc6ee3e7 (= origin/main at the time; rewritten to 4eb61ec).
+
+## 2026-10-02T03:18:58Z — Step 1 done (pre-registration)
+- scratch/n12_decision_rule.md copied byte-for-byte from the draft.
+  - sha256 8d11714cba7a5aa1f65e209e37438e4f1b3f99cb49820b2937f421d6a5aead50, recorded 2026-10-02T03:18:58Z.
+- The draft was committed in d5744e6 (2026-10-01T23:18:15-04:00); the working copy matched it.
+
+## Step 2 done (loaders and reproduction check)
+- Script: scratch/n12_loaders.py. Evidence: scratch/n12_repro_check.json.
+- All 4 networks reproduce the per-split fixed-budget static catch at k_B (histgb, held-out) exactly, 5/5
+  splits each. Loader = n5_gate_eval.load_relabeled.
+
+## Step 3 done (Part A, COND-HIST; verdict)
+- Script: scratch/n12_condhist.py. Output: data/sts_n12_condhist.json plus manifest. The rule hash was verified
+  before and after.
+- **GATE-BEATS-CONDHIST (primary, case_illinois200): YES.** Gate 99.04 ± 0.22% vs COND-HIST 97.94 ± 0.97%; gap
+  1.10 pp > STD 0.97 pp.
+- Per network (gate vs COND-HIST):
+  - case118 98.49 vs 99.06 (no, tie);
+  - case30_thermal 99.37 vs 89.44 (yes);
+  - case24_ieee_rts 99.02 vs 94.62 (yes).
+  - Total: 3 of 4.
+- GLOBAL-STATIC is within 0.65 pp of the fixed-budget static catch on every network.
+
+## Step 4 done (Part B, price of a guarantee; descriptive)
+- Script: scratch/n12_guarantee.py. Output: data/sts_n12_guarantee.json plus manifest. All 20 refits reproduce
+  the stored held-out numbers exactly. 0 certify/flag overlaps.
+- Any-miss share (histgb), global -> base-level alpha 0.10:
+  - case118 17.1 -> 8.1%;
+  - Illinois 23.9 -> 10.1%.
+- Speedup B (histgb), global -> base-level:
+  - case118 1.55 -> 1.32;
+  - Illinois 3.12 -> 2.46.
+- Full table in scratch/n12_result.md.
+
+## Step 5 done (Part C, cross-network table); N12 complete
+- Script: scratch/n12_crossnet.py. Output: data/sts_n12_crossnet.json plus manifest. n = 4, no law claimed.
+- Interpretations and deviations: none.
+
+## 2026-10-02 — push rejected; notes restored
+- The local N12 commit d589758 was rejected by origin because origin/main had been force-pushed with rewritten
+  hashes (e74d3f2).
+- The content is identical to the pre-rewrite d5744e6 plus notes/commit-map-2026-10-02.txt.
+- Fix given to the owner: rebase d589758 onto origin/main, then commit these restored notes.
