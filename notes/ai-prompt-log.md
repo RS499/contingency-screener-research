@@ -6453,3 +6453,33 @@ Answered in chat; no files written.
 (pasted git pull error: local changes to notes/ai-prompt-log.md would be overwritten)
 
 Claude saved the laptop-only log entries to ~/prompt-log-laptop-only.md (outside the repo) and gave the owner the pull commands; no git writes.
+
+## 2026-09-30 (t) — Verify N10 and N11 results
+
+"ok pulled, now verify n10 and n11 results"
+
+Claude verified hashes, timelines, scripts and recomputed the verdicts from raw outputs; no files written except this log entry.
+
+## 2026-10-01 — Are the N10/N11 results good or bad for the paper?
+
+"are these results good? is this good or bad for paper"
+
+Answered in chat; no files written.
+
+## 2026-10-01 (b) — How to fix the remaining weaknesses (Mac mini runs and paper fixes)
+
+"how do i fix whats still weak? what can i have mac mini do or fix in paper"
+
+Answered in chat; no files written.
+
+## 2026-10-01 (c) — Write the N12 prompt and run the solver timing on the laptop
+
+"yes write n12 prompt and run the timing"
+
+Claude ran the timing on the laptop (M5) into new files and wrote scratch/n12_decision_rule_DRAFT.md and scratch/run_prompt_n12.md.
+
+## 2026-10-01 (d) — Stop the timing; give the N12 prompt and commit command
+
+"stop the timing and js give me promtp and commit command"
+
+Claude stopped the laptop timing run (no output written) and gave the N12 prompt and commit commands.

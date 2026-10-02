@@ -276,3 +276,69 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 - **Upload to Overleaf:** after changing an `\includegraphics` path, upload the new PNG to Overleaf's
   `data/` folder, then re-export and pixel-check it against the repo file.
 - **Credit lines:** every figure and table keeps its "created by Rajan Saha using …, 2026" line (R21).
+
+---
+
+## Update 2026-10-01 — N10 / N11 results and where they go
+
+**Status labels.**
+- **VERIFIED:** recomputed by the lead from the raw files on 2026-10-01 (prompt-log entry 2026-09-30 (t)).
+- **Reported:** read from `scratch/n10_result.md` / `scratch/n11_result.md`. Re-read the JSON key before
+  printing.
+
+**The story now.** It answers both research questions:
+- **RQ2, when does the gate pay?** Not on case118 under this sampler, where history ties. It does on 3 other
+  networks, and the floor experiment shows why.
+- **RQ1, does coverage survive N-1 → N-2?** No.
+
+### New results
+
+| Result | Numbers | Status | Source | Where in the paper |
+|---|---|---|---|---|
+| Independent solver check (MATPOWER 8.1) | 201/201 labels agree with the corrected labels; worst case 0.94507 pu | VERIFIED | `data/sts_n10_matpower_check.json` | Method, label section (P-003): one sentence |
+| Illinois-200 relabel | VR 29.28 → 21.66%; BM 19.33 → 14.31%; 0 failures | VERIFIED | `data/sts_n10_relabel_illinois200.json` | Method, datasets |
+| Illinois gate vs history (pre-registered) | gate 99.04 ± 0.22% vs history 88.90 ± 1.20%; the gate is higher in 5/5 splits | VERIFIED | `data/sts_n10_illinois.json` (points, held_out) | Results, gate vs history: the first "yes" |
+| Illinois safety (pre-registered) | 2 of 5 splits ≤ 1% missed | VERIFIED | same | Results, safety |
+| Illinois held-out point | esc 10.7 ± 2.2%; missed 0.96 ± 0.22%; speedup A 9.64 ± 1.99, B 3.12 ± 0.25 | Reported | `data/sts_n10_illinois.json` → table | Results |
+| Why the gate wins on Illinois | within-base ranking ties history at every budget; the gain comes from spending solves on riskier base cases | Reported | `curves_at_declared_k` | Discussion (N12 tests this) |
+| case30_thermal, corrected | held-out: esc 6.2%, missed 0.63%, 4/5 ≤ 1%; gate 99.37 vs history 84.09; @0.97: esc 4.6 ± 0.4%, missed 0.66 ± 0.17%, speedup A 21.60 | Reported | `data/sts_n11_smallnets.json` | **Abstract** (replaces the old-label case30 numbers) and Results, network table |
+| case24_ieee_rts, corrected | held-out: esc 16.9%, missed 0.98%, 2/5; gate 99.02 vs history 92.48 | Reported | same | Results, network table |
+| case39 | excluded: 1.09% of rows failed the switch-back solve (> 0.5% ceiling) | Reported | `data/sts_n11_relabel_case39.json` | Method or limitations: one sentence |
+| N-1 → N-2 coverage (pre-registered) | histgb 0.8346 ± 0.0181 vs N-1 0.8981 (threshold 0.8819): **does not hold**; N-2 missed 3.95%; ridge 0.611 | VERIFIED | `data/sts_n11_n2.json` | Results, new subsection answering RQ1 |
+| Mondrian vs history (pre-registered) | tie (gap 0.17 vs std 1.43) | VERIFIED | `data/sts_n11_mondrian.json` | Results, one sentence |
+| Floor dose-response (pre-registered) | BM 58.07 / 56.86 / 32.95 / 19.91% at floors 0.93 / 0.94 / 0.95 / 0.96; all 6 predictions in range | VERIFIED | `data/sts_n11_dose_response.json` | Results, mechanism. Replaces the 2-level floor table; consider a small figure |
+| Classical screen, corrected (Table 1 row) | 3.7 ± 0.1 / 0.14 ± 0.01 / 90.7 ± 1.1% / 1.83 ± 0.57% / 1.10 ± 0.01 | Reported | `data/sts_n11_classical.json` | Table 1 |
+| D95b / D95c gate | both builds: N5 rules SAFER no, FASTER no | Reported | `data/sts_n11_gate_095bc.json` | Results or appendix: one sentence |
+| Solver time | the M4 Mac mini timing is not comparable to the M5 laptop; the laptop re-time was stopped (not run) | — | — | Method, timing (P-033): say "median" or keep 9.14 ms with its basis |
+
+### Changes to the earlier steps
+
+- **Step 3, Results order (revised):**
+  1. corrected-label trade-off (case118);
+  2. safety at the held-out point (all networks);
+  3. **gate vs history across 4 networks** (case118 tie; Illinois, case30, case24 gate higher), plus the budget
+     curve;
+  4. mechanism: the 4-level floor dose-response;
+  5. N-2 coverage;
+  6. Mondrian (one sentence).
+- **Claim ceiling, now allowed:**
+  - "the gate beat the history ranking on 3 of 4 networks; on case118 they tie";
+  - "boundary mass responded to the generator voltage floor as predicted at all 4 levels";
+  - "coverage calibrated on N-1 fell to 83% under N-2".
+- **Claim ceiling, still not allowed:**
+  - a general law from 4 networks;
+  - that the ML ordering is better than history (on Illinois the gain comes from allocation across base
+    cases);
+  - any guarantee on missed rate.
+- **Abstract:** case30 numbers must come from the corrected-label run (case30 @0.97 or held-out, as above),
+  not the old 5.84% / 17.9×.
+- **Figure candidates:**
+  - a 4-network gate-vs-history bar or table;
+  - the floor dose-response (4 points vs the predicted ranges);
+  - the N-2 coverage comparison.
+
+  These can be built from the JSONs above (same script style as `scripts/sts_paper_corrected.py`); ask
+  before adding pages.
+- **N12** (pending, Mac mini) tests whether a no-ML "conditional history" baseline that may also spend more on
+  risky base cases closes the gate's advantage. Its verdict decides how the Illinois/case30/case24 win is
+  described.
