@@ -6501,3 +6501,21 @@ The owner pasted the output of their git commands: the N12 commit d589758 was ma
 (pasted git pull output: e74d3f2..3f04101, no tracking information)
 
 Claude diagnosed read-only and gave commands; no git writes.
+
+## 2026-10-02 (c) — Verify N12 results
+
+"ok pulled, now verify n12 results"
+
+Claude verified the N12 rule hash, timeline and scripts and recomputed the verdicts; no files written except this log entry.
+
+## 2026-10-02 (d) — Is N12 good or bad for the paper?
+
+"is this a good or a bad result in terms fo the paper"
+
+Answered in chat; no files written.
+
+## 2026-10-02 (e) — Update the paper fix plan with N12; commit command
+
+"update paper fix plan with n12 and give commit command"
+
+Claude appended an N12 section to notes/paper_fix_plan.md and gave commit commands.

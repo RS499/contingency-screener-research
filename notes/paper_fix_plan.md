@@ -342,3 +342,67 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 - **N12** (pending, Mac mini) tests whether a no-ML "conditional history" baseline that may also spend more on
   risky base cases closes the gate's advantage. Its verdict decides how the Illinois/case30/case24 win is
   described.
+
+---
+
+## Update 2026-10-02 — N12 results and final experimental picture
+
+**Experiments are closed.** From here on, everything is writing (Steps 1-8 above, with the additions below).
+
+**Status labels.**
+- **VERIFIED:** recomputed by the lead on 2026-10-02 (prompt-log entry 2026-10-02 (c)).
+  - The Illinois COND-HIST was re-implemented independently and matches per split to 3 decimals.
+  - The commit map ties the N12 draft's old ID `d5744e6` to the current `4eb61ec`; the rule hash `8d11714c…`
+    matches.
+- **Reported:** read from `scratch/n12_result.md`; re-read the key before printing.
+
+### N12 results and where they go
+
+| Result | Numbers | Status | Source | Where in the paper |
+|---|---|---|---|---|
+| Gate vs conditional history (no-ML lookup by line × pre-outage voltage margin; same solve budget), **Illinois, primary, pre-registered** | gate 99.04 ± 0.22% vs COND-HIST 97.94 ± 0.97%: **yes, narrowly** (gap 1.10 vs std 0.97); gate higher in 5/5 splits | VERIFIED | `data/sts_n12_condhist.json` → networks.case_illinois200 | Results, gate vs baselines; the key robustness check |
+| Same, case30_thermal | 99.37 vs 89.44: yes (gap 9.93 vs 3.90), 5/5 | VERIFIED | same | same table |
+| Same, case24_ieee_rts | 99.02 vs 94.62: yes (gap 4.40 vs 0.72), 5/5 | VERIFIED | same | same table |
+| Same, case118 | 98.49 vs 99.06: tie (history higher in 3/5) | VERIFIED | same | same table |
+| Global budget alone (GLOBAL-STATIC) | within 0.65 pp of fixed-budget static on every network: the gain comes from conditioning on the operating condition, not from moving the budget | Reported | same | Discussion: one sentence |
+| Price of a guarantee, base-level (P(any miss in a new base case) ≤ 10%) | case118 histgb: esc 50.2 → 60.0%, speedup B 1.55 → 1.32, any-miss 17.1 → 8.1% (5/5 splits ≤ 10%). Illinois histgb: esc 10.7 → 19.6%, speedup B 3.12 → 2.46, any-miss 23.9 → 10.1% (3/5 ≤ 10%) | Reported | `data/sts_n12_guarantee.json` | Results, safety: the guaranteed alternative, with its cost |
+| Price of a guarantee, row-level α = 0.01 | case118 histgb missed 1.22 ± 0.70% (3/5 ≤ 1%); Illinois 1.03 ± 0.14% (3/5); rows are not exchangeable, so this is no per-row guarantee | Reported | same | Footnote or one sentence |
+| Cross-network table | BM, VR, risk spread across base cases, top-10 concentration, and gate / static / COND-HIST / GLOBAL-STATIC catch, for 4 networks | Reported | `data/sts_n12_crossnet.json` | **Main results table (new)**: candidate to replace the old case118-vs-case30 contrast |
+
+### Final claim ceiling (supersedes earlier lists)
+
+**Can say:**
+- **The bug:** a pandapower Q-limit artifact; independently confirmed by MATPOWER (201/201); labels
+  corrected.
+- **The mechanism:** escalation is the prediction mass near the limit; the generator voltage floor moved
+  boundary mass as predicted at 4 levels (pre-registered).
+- **The baselines:** the gate beat a no-ML conditional-history baseline at the same solve budget on 3 of 4
+  networks (narrowly on Illinois, clearly on case30 and case24) and tied on case118.
+- **Safety:** at the held-out point, missed is about 1-1.5% and is not guaranteed. A base-level calibration
+  guarantees P(any miss) ≤ 10% per operating condition, at a stated cost in solves.
+- **Shift:** coverage calibrated on N-1 falls to about 83% under N-2.
+
+**Cannot say:**
+- that the ML ranking beats history in general;
+- that the gate is "safe" without naming the guarantee and its cost;
+- any law from 4 networks;
+- "first" or "novel method".
+
+### Suggested Results structure (final)
+
+1. Labels and correction: the bug, the MATPOWER confirmation, the corrected numbers.
+2. Accuracy and the gate trade-off on case118 (Table 1, Fig. 2).
+3. **Gate vs baselines across 4 networks:** the cross-network table, with fixed static, COND-HIST and the gate,
+   plus the budget-curve figure.
+4. Mechanism: the floor dose-response (4 levels, prediction vs outcome).
+5. Safety: the held-out missed rate, and the base-level guarantee with its cost.
+6. Shift: the N-2 coverage result.
+
+Mondrian, D95b/c and the row-level guarantee get one sentence each or go in an appendix if the pages allow.
+
+### Data artifacts still to build (on request, no new solves)
+
+- A 4-network results table body (`.tex`) from `data/sts_n12_crossnet.json` + `data/sts_n12_condhist.json`.
+- A floor dose-response figure (4 levels vs the hashed predicted ranges) from
+  `data/sts_n11_dose_response.json`.
+- An optional N-2 coverage bar figure from `data/sts_n11_n2.json`.
