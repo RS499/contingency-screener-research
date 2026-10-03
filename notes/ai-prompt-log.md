@@ -6495,3 +6495,9 @@ N12 outcome: GATE-BEATS-CONDHIST (primary, Illinois) YES; 3 of 4 networks (see s
 ## 2026-10-02 (n) — owner: push rejected after a remote history rewrite (Claude Code)
 
 The owner pasted the output of their git commands: the N12 commit d589758 was made locally, but the push was rejected (non-fast-forward) because origin/main had been force-pushed (message rewrite, e74d3f2). Claude diagnosed read-only (log, reflog, merge-base, diff, commit map): the earlier reset had discarded the uncommitted N12 notes appends, so Claude re-appended them (marked RESTORED) and gave rebase/commit/push commands. No git writes by Claude.
+
+## 2026-10-02 (b) — git pull: no tracking information for main
+
+(pasted git pull output: e74d3f2..3f04101, no tracking information)
+
+Claude diagnosed read-only and gave commands; no git writes.
