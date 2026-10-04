@@ -6549,3 +6549,9 @@ Claude checked the review claims against the data (read-only computations) and u
 (pasted second review)
 
 Claude checked each point against the data and GitHub push events (read-only) and updated notes/paper_fix_plan.md.
+
+## 2026-10-04 (d) — Round-2 review prompt for a new session
+
+"wait can you give me the same prompt that i originallygave u on Sep 27 to a new cc in this. and then once it comes up with all the info needed to revise, itll then cross reference the paper fix plan and then update that if needed"
+
+Claude wrote scratch/run_prompt_review_round2.md (adapted from entry 2026-09-27 (b): review-only, with plan reconciliation).
