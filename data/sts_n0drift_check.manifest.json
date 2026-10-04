@@ -1,0 +1,46 @@
+{
+  "artifacts": [
+    "data/sts_n0drift_check.json"
+  ],
+  "generating_script": "scratch/n0drift_check.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n0drift_check.py"
+  ],
+  "script_sha256": "72c71d305aacae42d69bcaa0956ebb9055f5a4cc4b298d9557b3ec27a5202ab1",
+  "inputs": {
+    "data/sts_n2_label_audit.parquet": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239",
+    "data/sts_n5_gate_094.json": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db",
+    "data/dataset.parquet": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e",
+    "data/sts_n10_relabel_illinois200.parquet": "6df9743a700df5d5f16fa04b30dc8670b74ee0741b070aa546b829ecd34d989b",
+    "data/sts_n11_relabel_case30_thermal.parquet": "0a4ce1e3ca6cd47b50ae2b6a34590da8aea138a85fa334e0dc21d4c1891b2ab7",
+    "data/sts_n11_relabel_case24_ieee_rts.parquet": "e82c772cc9183b7ebbc1f1d0cb55b311c792ee5f20f851036816feea11d8ce7b"
+  },
+  "model_hyperparameters": "N5 M2 per-seed configs from data/sts_n5_gate_094.json (fits[].config), refit on train; held-out targets = selections[].m2_inner_cov_at",
+  "drift_bins": [
+    0.0,
+    1e-06,
+    0.0001,
+    0.001,
+    1.0
+  ],
+  "limit": 0.94,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "python": "3.13.9",
+  "output_sha256": "881ea37b585686131211dde857f93c8b6d4e73b583f875cfb5d70705d9d48a94",
+  "generated_utc": "2026-10-04T15:41:18Z"
+}

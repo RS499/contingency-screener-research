@@ -1,0 +1,628 @@
+{
+  "question": "does the pinned-vs-corrected N-0 mismatch change case118 held-out safety? (no retraining)",
+  "nine_bases": [
+    100000066,
+    100000220,
+    101000070,
+    101000084,
+    101000164,
+    102000001,
+    102000297,
+    103000284,
+    103000319
+  ],
+  "summary": {
+    "histgb": {
+      "missed_as_evaluated": [
+        0.015089124038380192,
+        0.013546958168829268
+      ],
+      "missed_without_9": [
+        0.013138776891938889,
+        0.007861591644481287
+      ],
+      "any_miss_as_evaluated": [
+        0.1706666666666667,
+        0.07233870947762953
+      ],
+      "any_miss_without_9": [
+        0.18589378465129852,
+        0.07255625868948
+      ],
+      "splits_missed_le_1pct_as_evaluated": 3,
+      "splits_missed_le_1pct_without_9": 1,
+      "max_repro_diff_vs_n5": 0.0,
+      "missed_by_n0_drift_pooled": {
+        "none (<=1e-6)": {
+          "n_rows_pooled": 150449,
+          "n_true_viol_pooled": 23545,
+          "missed_pooled": 0.00849437247823317
+        },
+        "1e-6..1e-4": {
+          "n_rows_pooled": 62856,
+          "n_true_viol_pooled": 11024,
+          "missed_pooled": 0.011248185776487663
+        },
+        "1e-4..1e-3": {
+          "n_rows_pooled": 34773,
+          "n_true_viol_pooled": 5560,
+          "missed_pooled": 0.022661870503597123
+        },
+        ">1e-3": {
+          "n_rows_pooled": 30872,
+          "n_true_viol_pooled": 5357,
+          "missed_pooled": 0.04424117976479373
+        }
+      }
+    },
+    "ridge": {
+      "missed_as_evaluated": [
+        0.01818206612627541,
+        0.005885231494755158
+      ],
+      "missed_without_9": [
+        0.012083104661939483,
+        0.0026295799014485516
+      ],
+      "any_miss_as_evaluated": [
+        0.11399999999999999,
+        0.022251092357704845
+      ],
+      "any_miss_without_9": [
+        0.11294589721143558,
+        0.022760257408839052
+      ],
+      "splits_missed_le_1pct_as_evaluated": 0,
+      "splits_missed_le_1pct_without_9": 1,
+      "max_repro_diff_vs_n5": 0.0,
+      "missed_by_n0_drift_pooled": {
+        "none (<=1e-6)": {
+          "n_rows_pooled": 150449,
+          "n_true_viol_pooled": 23545,
+          "missed_pooled": 0.011764705882352941
+        },
+        "1e-6..1e-4": {
+          "n_rows_pooled": 62856,
+          "n_true_viol_pooled": 11024,
+          "missed_pooled": 0.009343251088534107
+        },
+        "1e-4..1e-3": {
+          "n_rows_pooled": 34773,
+          "n_true_viol_pooled": 5560,
+          "missed_pooled": 0.01420863309352518
+        },
+        ">1e-3": {
+          "n_rows_pooled": 30872,
+          "n_true_viol_pooled": 5357,
+          "missed_pooled": 0.06906850849355983
+        }
+      }
+    }
+  },
+  "per_split": [
+    {
+      "seed": 0,
+      "family": "histgb",
+      "target": 0.96,
+      "as_evaluated": {
+        "q_hat": 0.0040932984354807855,
+        "missed": 0.011055060641837502,
+        "any_miss_share": 0.15333333333333332,
+        "any_miss_share_bases_with_violation": 0.15333333333333332,
+        "n_test": 55789,
+        "n_true_viol": 9317
+      },
+      "without_9_bases": {
+        "q_hat": 0.0038544620269416185,
+        "missed": 0.013302034428794992,
+        "any_miss_share": 0.18120805369127516,
+        "any_miss_share_bases_with_violation": 0.18120805369127516,
+        "n_test": 55417,
+        "n_true_viol": 8946
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 30498,
+          "n_true_viol": 4792,
+          "missed": 0.00667779632721202
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 12459,
+          "n_true_viol": 2144,
+          "missed": 0.007462686567164179
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 6694,
+          "n_true_viol": 1104,
+          "missed": 0.03170289855072464
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 6138,
+          "n_true_viol": 1277,
+          "missed": 0.015661707126076743
+        }
+      ],
+      "n_test_rows_removed": 372,
+      "n_cal_rows_removed": 930
+    },
+    {
+      "seed": 0,
+      "family": "ridge",
+      "target": 0.92,
+      "as_evaluated": {
+        "q_hat": 0.006005044230206313,
+        "missed": 0.025652033916496727,
+        "any_miss_share": 0.12,
+        "any_miss_share_bases_with_violation": 0.12,
+        "n_test": 55789,
+        "n_true_viol": 9317
+      },
+      "without_9_bases": {
+        "q_hat": 0.005951340445263575,
+        "missed": 0.011737089201877934,
+        "any_miss_share": 0.1174496644295302,
+        "any_miss_share_bases_with_violation": 0.1174496644295302,
+        "n_test": 55417,
+        "n_true_viol": 8946
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 30498,
+          "n_true_viol": 4792,
+          "missed": 0.007512520868113523
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 12459,
+          "n_true_viol": 2144,
+          "missed": 0.009328358208955223
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 6694,
+          "n_true_viol": 1104,
+          "missed": 0.025362318840579712
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 6138,
+          "n_true_viol": 1277,
+          "missed": 0.12137823022709475
+        }
+      ],
+      "n_test_rows_removed": 372,
+      "n_cal_rows_removed": 930
+    },
+    {
+      "seed": 1,
+      "family": "histgb",
+      "target": 0.97,
+      "as_evaluated": {
+        "q_hat": 0.004203446882677597,
+        "missed": 0.009846827133479213,
+        "any_miss_share": 0.17,
+        "any_miss_share_bases_with_violation": 0.17,
+        "n_test": 55792,
+        "n_true_viol": 9140
+      },
+      "without_9_bases": {
+        "q_hat": 0.004183771247094903,
+        "missed": 0.010161920714684533,
+        "any_miss_share": 0.1705685618729097,
+        "any_miss_share_bases_with_violation": 0.1705685618729097,
+        "n_test": 55606,
+        "n_true_viol": 8955
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 28267,
+          "n_true_viol": 4452,
+          "missed": 0.006064690026954178
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 12274,
+          "n_true_viol": 2192,
+          "missed": 0.011405109489051095
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 8369,
+          "n_true_viol": 1309,
+          "missed": 0.01833460656990069
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 6882,
+          "n_true_viol": 1187,
+          "missed": 0.011794439764111205
+        }
+      ],
+      "n_test_rows_removed": 186,
+      "n_cal_rows_removed": 186
+    },
+    {
+      "seed": 1,
+      "family": "ridge",
+      "target": 0.94,
+      "as_evaluated": {
+        "q_hat": 0.0063978774268944605,
+        "missed": 0.011050328227571116,
+        "any_miss_share": 0.09666666666666666,
+        "any_miss_share_bases_with_violation": 0.09666666666666666,
+        "n_test": 55792,
+        "n_true_viol": 9140
+      },
+      "without_9_bases": {
+        "q_hat": 0.006380694201362447,
+        "missed": 0.011390284757118929,
+        "any_miss_share": 0.09698996655518395,
+        "any_miss_share_bases_with_violation": 0.09698996655518395,
+        "n_test": 55606,
+        "n_true_viol": 8955
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 28267,
+          "n_true_viol": 4452,
+          "missed": 0.00876010781671159
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 12274,
+          "n_true_viol": 2192,
+          "missed": 0.014598540145985401
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 8369,
+          "n_true_viol": 1309,
+          "missed": 0.006875477463712758
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 6882,
+          "n_true_viol": 1187,
+          "missed": 0.017691659646166806
+        }
+      ],
+      "n_test_rows_removed": 186,
+      "n_cal_rows_removed": 186
+    },
+    {
+      "seed": 2,
+      "family": "histgb",
+      "target": 0.97,
+      "as_evaluated": {
+        "q_hat": 0.005615864197883846,
+        "missed": 0.003356831151393085,
+        "any_miss_share": 0.06666666666666667,
+        "any_miss_share_bases_with_violation": 0.06666666666666667,
+        "n_test": 55787,
+        "n_true_viol": 8937
+      },
+      "without_9_bases": {
+        "q_hat": 0.005436050737609666,
+        "missed": 0.0038044086382454964,
+        "any_miss_share": 0.08,
+        "any_miss_share_bases_with_violation": 0.08,
+        "n_test": 55787,
+        "n_true_viol": 8937
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 29011,
+          "n_true_viol": 4477,
+          "missed": 0.003127094036184945
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 12459,
+          "n_true_viol": 2169,
+          "missed": 0.0009220839096357768
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 7623,
+          "n_true_viol": 1241,
+          "missed": 0.0056406124093473006
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 6694,
+          "n_true_viol": 1050,
+          "missed": 0.006666666666666667
+        }
+      ],
+      "n_test_rows_removed": 0,
+      "n_cal_rows_removed": 186
+    },
+    {
+      "seed": 2,
+      "family": "ridge",
+      "target": 0.95,
+      "as_evaluated": {
+        "q_hat": 0.006266618232323662,
+        "missed": 0.01544142329640819,
+        "any_miss_share": 0.15333333333333332,
+        "any_miss_share_bases_with_violation": 0.15333333333333332,
+        "n_test": 55787,
+        "n_true_viol": 8937
+      },
+      "without_9_bases": {
+        "q_hat": 0.0062569369240800254,
+        "missed": 0.01544142329640819,
+        "any_miss_share": 0.15333333333333332,
+        "any_miss_share_bases_with_violation": 0.15333333333333332,
+        "n_test": 55787,
+        "n_true_viol": 8937
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 29011,
+          "n_true_viol": 4477,
+          "missed": 0.016082197900379718
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 12459,
+          "n_true_viol": 2169,
+          "missed": 0.012909174734900875
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 7623,
+          "n_true_viol": 1241,
+          "missed": 0.015310233682514102
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 6694,
+          "n_true_viol": 1050,
+          "missed": 0.018095238095238095
+        }
+      ],
+      "n_test_rows_removed": 0,
+      "n_cal_rows_removed": 186
+    },
+    {
+      "seed": 3,
+      "family": "histgb",
+      "target": 0.96,
+      "as_evaluated": {
+        "q_hat": 0.004325458086333334,
+        "missed": 0.009538598047914819,
+        "any_miss_share": 0.17,
+        "any_miss_share_bases_with_violation": 0.17,
+        "n_test": 55791,
+        "n_true_viol": 9016
+      },
+      "without_9_bases": {
+        "q_hat": 0.004047407801990199,
+        "missed": 0.010869565217391304,
+        "any_miss_share": 0.19,
+        "any_miss_share_bases_with_violation": 0.19,
+        "n_test": 55791,
+        "n_true_viol": 9016
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 32732,
+          "n_true_viol": 5207,
+          "missed": 0.006721720760514692
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 10786,
+          "n_true_viol": 1910,
+          "missed": 0.008900523560209424
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 6323,
+          "n_true_viol": 995,
+          "missed": 0.021105527638190954
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 5950,
+          "n_true_viol": 904,
+          "missed": 0.014380530973451327
+        }
+      ],
+      "n_test_rows_removed": 0,
+      "n_cal_rows_removed": 744
+    },
+    {
+      "seed": 3,
+      "family": "ridge",
+      "target": 0.93,
+      "as_evaluated": {
+        "q_hat": 0.0060488249054228005,
+        "missed": 0.014086069210292812,
+        "any_miss_share": 0.11,
+        "any_miss_share_bases_with_violation": 0.11,
+        "n_test": 55791,
+        "n_true_viol": 9016
+      },
+      "without_9_bases": {
+        "q_hat": 0.0060475428106505635,
+        "missed": 0.014086069210292812,
+        "any_miss_share": 0.11,
+        "any_miss_share_bases_with_violation": 0.11,
+        "n_test": 55791,
+        "n_true_viol": 9016
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 32732,
+          "n_true_viol": 5207,
+          "missed": 0.016324178989821393
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 10786,
+          "n_true_viol": 1910,
+          "missed": 0.0062827225130890054
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 6323,
+          "n_true_viol": 995,
+          "missed": 0.020100502512562814
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 5950,
+          "n_true_viol": 904,
+          "missed": 0.011061946902654867
+        }
+      ],
+      "n_test_rows_removed": 0,
+      "n_cal_rows_removed": 744
+    },
+    {
+      "seed": 4,
+      "family": "histgb",
+      "target": 0.94,
+      "as_evaluated": {
+        "q_hat": 0.0028811819685949924,
+        "missed": 0.04164830321727633,
+        "any_miss_share": 0.29333333333333333,
+        "any_miss_share_bases_with_violation": 0.29333333333333333,
+        "n_test": 55791,
+        "n_true_viol": 9076
+      },
+      "without_9_bases": {
+        "q_hat": 0.0027540630777659336,
+        "missed": 0.027555955460578114,
+        "any_miss_share": 0.3076923076923077,
+        "any_miss_share_bases_with_violation": 0.3076923076923077,
+        "n_test": 55605,
+        "n_true_viol": 8891
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 29941,
+          "n_true_viol": 4617,
+          "missed": 0.019926359107645657
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 14878,
+          "n_true_viol": 2609,
+          "missed": 0.024530471444998085
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 5764,
+          "n_true_viol": 911,
+          "missed": 0.042810098792535674
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 5208,
+          "n_true_viol": 939,
+          "missed": 0.19488817891373802
+        }
+      ],
+      "n_test_rows_removed": 186,
+      "n_cal_rows_removed": 186
+    },
+    {
+      "seed": 4,
+      "family": "ridge",
+      "target": 0.94,
+      "as_evaluated": {
+        "q_hat": 0.006742489955315456,
+        "missed": 0.0246804759806082,
+        "any_miss_share": 0.09,
+        "any_miss_share_bases_with_violation": 0.09,
+        "n_test": 55791,
+        "n_true_viol": 9076
+      },
+      "without_9_bases": {
+        "q_hat": 0.006742489955315456,
+        "missed": 0.00776065684399955,
+        "any_miss_share": 0.08695652173913043,
+        "any_miss_share_bases_with_violation": 0.08695652173913043,
+        "n_test": 55605,
+        "n_true_viol": 8891
+      },
+      "repro_missed_vs_n5": 0.0,
+      "missed_by_n0_drift": [
+        {
+          "bin": "none (<=1e-6)",
+          "n_rows": 29941,
+          "n_true_viol": 4617,
+          "missed": 0.009746588693957114
+        },
+        {
+          "bin": "1e-6..1e-4",
+          "n_rows": 14878,
+          "n_true_viol": 2609,
+          "missed": 0.004216174779609045
+        },
+        {
+          "bin": "1e-4..1e-3",
+          "n_rows": 5764,
+          "n_true_viol": 911,
+          "missed": 0.003293084522502744
+        },
+        {
+          "bin": ">1e-3",
+          "n_rows": 5208,
+          "n_true_viol": 939,
+          "missed": 0.1757188498402556
+        }
+      ],
+      "n_test_rows_removed": 186,
+      "n_cal_rows_removed": 186
+    }
+  ],
+  "n0_drift_counts": {
+    "case_illinois200": {
+      "n_bases": 0,
+      "note": "N-0 rows were not audited in this relabel file; drift not measurable without N-0 switch-back solves"
+    },
+    "case30_thermal": {
+      "n_bases": 0,
+      "note": "N-0 rows were not audited in this relabel file; drift not measurable without N-0 switch-back solves"
+    },
+    "case24_ieee_rts": {
+      "n_bases": 0,
+      "note": "N-0 rows were not audited in this relabel file; drift not measurable without N-0 switch-back solves"
+    },
+    "case118": {
+      "n_bases": 1500,
+      "gt_1e6": 712,
+      "gt_1e4": 362,
+      "gt_1e3": 174,
+      "max": 0.010674459858274088,
+      "corrected_n0_below_limit": 9
+    }
+  },
+  "std": "population ddof=0 over 5 splits",
+  "wall_s": 182.44201183319092
+}

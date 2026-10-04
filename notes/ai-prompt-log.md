@@ -6555,3 +6555,75 @@ Claude checked each point against the data and GitHub push events (read-only) an
 "wait can you give me the same prompt that i originallygave u on Sep 27 to a new cc in this. and then once it comes up with all the info needed to revise, itll then cross reference the paper fix plan and then update that if needed"
 
 Claude wrote scratch/run_prompt_review_round2.md (adapted from entry 2026-09-27 (b): review-only, with plan reconciliation).
+
+## 2026-10-04 (e) — Third plan review (per-run pre-registration check, N-0 drift check, dose-response wording, case30 speedup, stale lines)
+
+(pasted third review)
+
+Claude verified the pushed drafts against the rule hashes via the backup mirror, ran a no-retrain N-0 drift check, and updated notes/paper_fix_plan.md.
+
+## 2026-10-04 (f) — Why the N-0 features are uncorrected
+
+"wait what i use the uncorrected N-0 solve??? why not corrected"
+
+Claude explained, from feasibility/generate_dataset.py, scripts/sts_n2_label_audit.py and scratch/n5_gate_eval.py, why the vm0_* / n0_min_vm features come from the pinned solve. No files changed except this log.
+
+## 2026-10-04 (g) — N13 pre-registration draft and Mac mini prompt (corrected N-0 inputs)
+
+"yes write the pre-registration rule and give prompt to put into mac mini"
+
+Claude drafted scratch/n13_decision_rule_DRAFT.md and scratch/run_prompt_n13.md (owner review before commit/push).
+
+## 2026-10-04 (h) — Plain-language explanation of the N13 owner decisions
+
+"wait tell me in simple terms what i need to settle myself before committing"
+
+Claude explained the three OWNER notes in scratch/n13_decision_rule_DRAFT.md. No other files changed.
+
+## 2026-10-04 (i) — Keep base set vs re-gate on corrected N-0
+
+"whats the diff between keeping base set and re-gate on the corrected N-0"
+
+Claude explained the trade-off (no files changed except this log).
+
+## 2026-10-04 (j) — Is the kept base set incorrect?
+
+"but isnt the base set incorrect"
+
+Claude checked the direction of the N-0 correction in data/sts_n2_label_audit.parquet (read-only) and answered.
+
+## 2026-10-04 (k) — Owner decision: rebuild every dataset with the corrected N-0 check
+
+"Rebuild every dataset with the corrected pre-outage check. put this in the draft"
+
+Claude rewrote scratch/n13_decision_rule_DRAFT.md and scratch/run_prompt_n13.md for a full rebuild.
+
+## 2026-10-04 (l) — Is the switch-back correction actually correct?
+
+"wait are you sure itll be corrected? what was wrongm about it originally"
+
+Claude re-read the label cross-check and MATPOWER check results (read-only) and explained.
+
+## 2026-10-04 (m) — Add an independent-solver check to N13; remaining decisions
+
+"yes add it to the draft. what else do i need to decide on"
+
+Claude added the independent-solver spot check to scratch/n13_decision_rule_DRAFT.md and listed the open decisions.
+
+## 2026-10-04 (n) — Review of the N13 draft and run prompt
+
+(pasted review: rule/prompt mismatch, full rebuild primary + arm F diagnostic, header, checks, verdicts, commitments)
+
+Claude checked the review against the current draft (read-only checks of data/sts_label_crosscheck_rows.parquet and data/sts_n10_matpower_check.parquet) and revised scratch/n13_decision_rule_DRAFT.md and scratch/run_prompt_n13.md.
+
+## 2026-10-04 (o) — Second review of the N13 draft and run prompt
+
+(pasted review: D94-failure rule, tier-A-finished definition, behaviour after the cutoff, tier-B fallback, near-limit counts, stratum (d) agreement, instruction line, N2R dependency, overvoltage/critical-bus recomputable)
+
+Claude checked the cited numbers (read-only) and revised scratch/n13_decision_rule_DRAFT.md and scratch/run_prompt_n13.md.
+
+## 2026-10-04 (p) — Owner settles the N13 OWNER notes
+
+"Cutoff on Oct 14. That leaves about three weeks before the 11-04 deadline. Exclude a failed non-D94 dataset. D94 already has its own fallback. The rebuilt numbers lead whichever way they move. This is the one that matters most for the run's credibility."
+
+Claude replaced the three OWNER notes in scratch/n13_decision_rule_DRAFT.md with the settled wording and removed the instruction line.

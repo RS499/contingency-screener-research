@@ -62,15 +62,15 @@ Deadline 2026-11-05, 8 pm ET (support deadline 11-04).
 
 | Where in the current paper | Current (old labels) | Corrected source → value |
 |---|---|---|
-| Abstract, Table 1, Table 2: histgb @0.90 | 30.6% esc, 4.72% missed, 3.29× | `tables["094"]` histgb 0.90 → esc 26.3 ± 2.8%, missed 4.24 ± 1.76%, speedup A 3.83 ± 0.40, speedup B 2.39 ± 0.15 |
-| Abstract and IV-A headline point | "first under 1%" at 0.97, 63.7% esc, 1.58× (picked on test) | **Use the held-out point** (patch Top5-2d-E5): histgb esc 50.2 ± 8.4%, missed 1.51 ± 1.35% (3 of 5 splits ≤ 1%), speedup A 2.06 ± 0.41, speedup B 1.55 ± 0.23 |
+| Abstract, Table 1, Table 2: histgb @0.90 | 30.6% esc, 4.72% missed, 3.29× | `tables["094"]` histgb 0.90 → esc 26.3 ± 2.8%, missed 4.24 ± 1.76%, **speedup B 2.39 ± 0.15** (headline: flagged cases are solved), speedup A 3.83 ± 0.40 (only if flags are trusted unsolved) |
+| Abstract and IV-A headline point | "first under 1%" at 0.97, 63.7% esc, 1.58× (picked on test) | **Use the held-out point** (patch Top5-2d-E5): histgb esc 50.2 ± 8.4%, missed 1.51 ± 1.35% (3 of 5 splits ≤ 1%), **speedup B 1.55 ± 0.23** (headline), speedup A 2.06 ± 0.41 |
 | Ridge @0.90 / held-out | 49.1% esc, 2.96% missed / 0.94 point | ridge 0.90: esc 46.8 ± 3.8%, missed 3.36 ± 0.39%; held-out: esc 59.5 ± 2.2%, missed 1.82 ± 0.59% |
 | Table 1 MAE and R² | 0.0038 / 0.77; 0.0016 / 0.92 | `sts_n5_gate_094.json → fits`: ridge 0.00349 ± 0.00015 / 0.804 ± 0.013; histgb 0.00133 ± 0.00003 / 0.956 ± 0.002 |
 | Violation rate | 17.48% | 16.60% = 46,295 of **278,954** (one row failed the switch-back solve and is dropped; use 278,954 everywhere) |
 | Boundary mass | 56.86% | corrected 56.22% (patch P-003); say which label set you use |
 | Min-voltage range | 0.7179-0.9603 | corrected 0.8077-0.9595 (N2 parquet `corrected_min_vm`, 278,954 rows) |
 | Worst miss 0.0915 pu / 0.8485 | printed 3 times | **delete** (solver artifact; patch P-001) |
-| case30 numbers | 5.84 ± 1.25% etc. | **corrected (N11):** BM 7.10%, VR 15.38%; @0.97 esc 4.60%, missed 0.66 ± 0.17%, speedup A 21.60; @0.96 missed 0.92 ± 0.25% (`data/sts_n11_smallnets.json`) |
+| case30 numbers | 5.84 ± 1.25% etc. | **corrected (N11):** BM 7.10%, VR 15.38%; @0.97 esc 4.60%, missed 0.66 ± 0.17%, **speedup B 5.06** (A 21.60); held-out **B 4.76 ± 0.58** (A 19.34, a mean of per-split ratios; see 2026-10-04 (e)); @0.96 missed 0.92 ± 0.25% (`data/sts_n11_smallnets.json`) |
 
 - **Rows not in the mapping above:** every Table 2 row (0.90-0.98) comes from `tables["094"]`. N10 Part C (e)
   emits the table bodies. Each table's attribution line stays.
@@ -87,7 +87,7 @@ a causal network claim.
 2. the gate idea;
 3. the question;
 4. the mechanism, stated once in plain words;
-5. the pre-registered floor experiment and its outcome (generator setpoint floor at 4 levels; all 6 hashed predictions in range; see the 2026-10-04 section);
+5. the pre-registered floor experiment and its outcome (generator setpoint floor: 2 new pre-registered levels, 0.93 and 0.96, beside the existing 0.94 and 0.95 builds; all 6 hashed predictions in range; see the 2026-10-04 section);
 6. the honest headline (held-out missed rate; speedup; static ranking ties or wins at that budget);
 7. where ML does help (small solve budgets);
 8. the limitation (4 networks, one synthetic stress sampler, one build per floor level except 0.95).
@@ -103,7 +103,7 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 - the switch-back labeling and why it's needed (P-003);
 - the held-out operating-point selection;
 - the static-ranking baseline;
-- the pre-registration practice (hashes, git timestamps);
+- the pre-registration practice: each N9-N12 rule was pushed to GitHub before any result (GitHub push records, `notes/github_events_2026-10-04.json`) and the pushed draft hashes to the recorded rule hash (verified 2026-10-04 (e)); N3's prediction has only a self-recorded timestamp;
 - a compact reproducibility table (P-011).
 
 **Results, suggested order:**
@@ -228,6 +228,8 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 - [ ] Overleaf compile ≤ 20 counted pages; `check_compliance.py` run; std rule checked.
 - [ ] Every number traced to a JSON key (spot-check with a verifier pass).
 - [ ] Final PDF downloaded and inspected; filename per R14; submitted before 11-04.
+- [ ] Feature/label mismatch decided (2026-10-04 (e)): full N-0 fix rerun, or disclosed as a limitation with the drift-bin numbers.
+- [ ] Per-run pre-registration check recorded: each N9-N12 pushed draft hashes to its rule hash (done 2026-10-04 (e)); the paper's wording matches it, and N3 is worded as self-timestamped.
 
 ---
 
@@ -242,8 +244,8 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 
 | Section | Line | Anchor (first words) | Now | Change to (source → value) |
 |---|---|---|---|---|
-| Abstract | 73 | "The power system grid should remain resilient…" | histgb 3.29× and 4.72% @90% | `tables["094"]` histgb 0.90 → speedup 3.83 ± 0.40 (rule A), missed 4.24 ± 1.76% |
-| Abstract | 73 | same paragraph | "first … under 1% … 0.97", 63.7% esc, 1.58× | held-out point → esc 50.2 ± 8.4%, missed 1.51 ± 1.35% (3 of 5 splits ≤ 1%), speedup 2.06 ± 0.41 (A) / 1.55 ± 0.23 (B) |
+| Abstract | 73 | "The power system grid should remain resilient…" | histgb 3.29× and 4.72% @90% | `tables["094"]` histgb 0.90 → speedup B 2.39 ± 0.15 (A 3.83 ± 0.40), missed 4.24 ± 1.76% |
+| Abstract | 73 | same paragraph | "first … under 1% … 0.97", 63.7% esc, 1.58× | held-out point → esc 50.2 ± 8.4%, missed 1.51 ± 1.35% (3 of 5 splits ≤ 1%), speedup B 1.55 ± 0.23 (A 2.06 ± 0.41) |
 | Abstract | 73 | same paragraph | 56.86% vs 7.09% | 56.22% corrected (case118); case30 corrected 7.10% (N11). Add the floor experiment (Step 3) |
 | Method, Dataset | 111 | "I determined the load levels by scaling…" | 17.48%; range 0.7179-0.9603 | 16.60%; 0.8077-0.9595 (`sts_n2_label_audit.parquet` corrected_min_vm). Add the switch-back label method here (patch P-003) and the setpoint floor (P-007) |
 | Method, Dataset | 113 | "The previous implementation of the dataset generator…" | clip story, 56.86% | keep the clip story (a strength); say which label set 56.86/56.22 refers to |
@@ -301,10 +303,10 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 | Illinois safety (pre-registered) | 2 of 5 splits ≤ 1% missed | VERIFIED | same | Results, safety |
 | Illinois held-out point | esc 10.7 ± 2.2%; missed 0.96 ± 0.22%; speedup A 9.64 ± 1.99, B 3.12 ± 0.25 | Reported | `data/sts_n10_illinois.json` → table | Results |
 | Why the gate wins on Illinois | within-base ranking ties history at every budget; the gain comes from spending solves on riskier base cases | Reported | `curves_at_declared_k` | Discussion (N12 tests this) |
-| case30_thermal, corrected | held-out: esc 6.2%, missed 0.63%, 4/5 ≤ 1%; gate 99.37 vs history 84.09; @0.97: esc 4.6 ± 0.4%, missed 0.66 ± 0.17%, speedup A 21.60 | Reported | `data/sts_n11_smallnets.json` | **Abstract** (replaces the old-label case30 numbers) and Results, network table |
+| case30_thermal, corrected | held-out: esc 6.2%, missed 0.63%, 4/5 ≤ 1%; gate 99.37 vs history 84.09; @0.97: esc 4.6 ± 0.4%, missed 0.66 ± 0.17%, speedup B 5.06 (A 21.60); held-out B 4.76 ± 0.58 | Reported | `data/sts_n11_smallnets.json` | **Abstract** (replaces the old-label case30 numbers) and Results, network table |
 | case24_ieee_rts, corrected | held-out: esc 16.9%, missed 0.98%, 2/5; gate 99.02 vs history 92.48 | Reported | same | Results, network table |
 | case39 | excluded: 1.09% of rows failed the switch-back solve (> 0.5% ceiling) | Reported | `data/sts_n11_relabel_case39.json` | Method or limitations: one sentence |
-| N-1 → N-2 coverage (pre-registered) | histgb 0.8346 ± 0.0181 vs N-1 0.8981 (threshold 0.8819): **does not hold**; N-2 missed 3.95%; ridge 0.611 | VERIFIED | `data/sts_n11_n2.json` | Results, new subsection answering RQ1 |
+| N-1 → N-2 coverage (pre-registered) | histgb 0.8346 ± 0.0181 vs N-1 0.8981 (threshold 0.8819): **does not hold**; N-2 missed 3.95%; ridge 0.611 | VERIFIED | `data/sts_n11_n2.json` | Results, new subsection answering RQ2 (renumbered; see 2026-10-04) |
 | Mondrian vs history (pre-registered) | tie (gap 0.17 vs std 1.43) | VERIFIED | `data/sts_n11_mondrian.json` | Results, one sentence |
 | Floor dose-response (pre-registered) | BM 58.07 / 56.86 / 32.95 / 19.91% at floors 0.93 / 0.94 / 0.95 / 0.96; all 6 predictions in range | VERIFIED | `data/sts_n11_dose_response.json` | Results, mechanism. Replaces the 2-level floor table; consider a small figure |
 | Classical screen, corrected (Table 1 row) | 3.7 ± 0.1 / 0.14 ± 0.01 / 90.7 ± 1.1% / 1.83 ± 0.57% / 1.10 ± 0.01 | Reported | `data/sts_n11_classical.json` | Table 1 |
@@ -318,7 +320,7 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
   2. safety at the held-out point (all networks);
   3. **gate vs history across 4 networks** (case118 tie; Illinois, case30, case24 gate higher), plus the budget
      curve;
-  4. mechanism: the 4-level floor dose-response;
+  4. mechanism: the floor dose-response (2 new predicted levels beside the 0.94/0.95 builds);
   5. N-2 coverage;
   6. Mondrian (one sentence).
 - **Claim ceiling, now allowed:**
@@ -378,7 +380,7 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
   boundary mass as predicted at 2 new pre-registered levels (0.93, 0.96), consistent with the 0.94 and 0.95 builds.
 - **The baselines:** the gate beat a no-ML conditional-history baseline at the same solve budget on 3 of 4
   networks (narrowly on Illinois, clearly on case30 and case24) and tied on case118.
-- **Safety:** at the held-out point, missed is about 1-1.5% and is not guaranteed. A base-level calibration
+- **Safety:** at the held-out point, missed is a mean over 5 splits (case118 histgb 1.51 ± 1.35%, worst split 4.16%; ridge 1.82 ± 0.59%), measured, not guaranteed. A base-level calibration
   guarantees P(any miss) ≤ 10% per operating condition, at a stated cost in solves.
 - **Shift:** coverage calibrated on N-1 falls to about 83% under N-2.
 
@@ -394,7 +396,7 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 2. Accuracy and the gate trade-off on case118 (Table 1, Fig. 2).
 3. **Gate vs baselines across 4 networks:** the cross-network table, with fixed static, COND-HIST and the gate,
    plus the budget-curve figure.
-4. Mechanism: the floor dose-response (4 levels, prediction vs outcome).
+4. Mechanism: the floor dose-response (boundary mass at 4 floors; predictions exist only for the 2 new levels, 0.93 and 0.96).
 5. Safety: the held-out missed rate, and the base-level guarantee with its cost.
 6. Shift: the N-2 coverage result.
 
@@ -403,7 +405,7 @@ Mondrian, D95b/c and the row-level guarantee get one sentence each or go in an a
 ### Data artifacts still to build (on request, no new solves)
 
 - A 4-network results table body (`.tex`) from `data/sts_n12_crossnet.json` + `data/sts_n12_condhist.json`.
-- A floor dose-response figure (4 levels vs the hashed predicted ranges) from
+- A floor dose-response figure (boundary mass at 4 floors; hashed predicted ranges drawn only at 0.93 and 0.96) from
   `data/sts_n11_dose_response.json`.
 - An optional N-2 coverage bar figure from `data/sts_n11_n2.json`.
 
@@ -651,3 +653,160 @@ author-decision list were corrected in place. Numbers below are lead-computed (p
 `data/sts_critical_bus_map.png` was made from **stored** labels (frozen_v2 critical_bus_top5). If Fig. 5 is
 kept, it must be regenerated from corrected argmin (29.65 / 17.07 / 10.17%). That's a quick data task, no
 new solves; ask if needed. Otherwise cut it (AD-9).
+
+---
+
+## Update 2026-10-04 (e) — Third plan review (checked against data)
+
+### 1. Per-run pre-registration: every pushed draft hashes to its rule hash
+
+The check: take the draft file from inside each commit GitHub recorded as pushed (pre-rewrite IDs, read from
+`~/csr-backup-before-rewrite.git`), hash it, and compare with the run's recorded `.sha256`. It also confirms that
+the draft commit is an ancestor of the pushed commit.
+
+| Run | Draft commit | Inside pushed commit | Draft sha256 (first 16) | Recorded rule hash | Match |
+|---|---|---|---|---|---|
+| N9 | fb64040 | 8488e8c (yes) | 37a614def80e95df | 37a614def80e95df | YES |
+| N10 | 7f2c289 | 7f2c289 (yes) | 7f94bd0a… | 7f94bd0a… | YES |
+| N11 | af7dcba | af7dcba (yes) | 4a0e48d4… | 4a0e48d4… | YES |
+| N12 | d5744e6 | d5744e6 (yes) | 8d11714c… | 8d11714c… | YES |
+
+- **So the wording in 2026-10-04 (c) §5 now holds for all of N9-N12:** the rule that was hashed is the rule
+  that was pushed, and the push came before any result.
+- **N3 is unchanged:** its prediction was pushed after its results, so it is self-timestamped only.
+- **Dependency:** the proof needs the backup (the old commit IDs no longer exist in the public repo).
+  Copy it off this machine.
+
+### 2. Feature/label mismatch: no-retrain check
+
+Script `scratch/n0drift_check.py` → `data/sts_n0drift_check.json` (+ manifest).
+- **Method:** case118 held-out point, N5 M2 configs refit on train. The refit reproduces N5's missed rate
+  exactly (max difference 0.0).
+- **Background:** the model's N-0 inputs (vm0_*, n0_min_vm) come from the pinned one-way solve; the labels
+  come from the switch-back solve. They differ on 712 of 1,500 base cases by > 1e-6 pu, 362 by > 1e-4 and
+  174 by > 1e-3 (max 0.0107 pu).
+
+**(a) Missed rate by the base case's N-0 drift** (pooled over 5 splits, test rows):
+
+| N-0 drift (pu) | Share of rows | Violation share | histgb missed | ridge missed |
+|---|---|---|---|---|
+| ≤ 1e-6 | 53.9% | 15.65% | 0.85% | 1.18% |
+| 1e-6 to 1e-4 | 22.5% | 17.54% | 1.12% | 0.93% |
+| 1e-4 to 1e-3 | 12.5% | 15.99% | 2.27% | 1.42% |
+| > 1e-3 | 11.1% | 17.35% | 4.42% | 6.91% |
+
+- **Misses concentrate where the inputs and the labels disagree most.** The top-drift bin has about 5× the
+  missed rate of the no-drift bin for histgb, and about 6× for ridge.
+- **A stress confound is not ruled out.** The violation share is similar across bins (15.65-17.54%), so the
+  overall violation rate does not explain it. Closeness of cases to the limit within each bin was not
+  checked.
+- **These rates are pooled, with no per-split std,** so the std rule cannot be applied to them. Treat them as
+  descriptive.
+
+**(b) Removing the 9 bases whose corrected N-0 minimum is below 0.94** (from both cal and test, no retraining):
+
+| Model | Missed, as evaluated | Missed, without the 9 | Splits ≤ 1% | Any-miss share of base cases |
+|---|---|---|---|---|
+| histgb | 1.51 ± 1.35% | 1.31 ± 0.79% | 3 → 1 | 17.1 → 18.6% |
+| ridge | 1.82 ± 0.59% | 1.21 ± 0.26% | 0 → 1 | 11.4 → 11.3% |
+
+- **histgb:** the 0.20 pp change is below the 1.35 std, so it is no change by the std rule. Two effects
+  cancel:
+  - removing the bases from test removes some misses (split 4: 4.16 → 2.76%);
+  - removing them from cal lowers q̂, so more cases are certified and missed rises slightly in the other
+    splits (split 0: 1.11 → 1.33%).
+- **ridge:** the 0.61 pp drop barely exceeds the 0.59 std. It comes from splits 0 and 4, where those bases
+  were in test.
+- **Implication:** dropping the 9 bases does not fix safety, and the "3 of 5 splits ≤ 1%" figure is fragile
+  to it. Report both, or neither as a headline.
+
+**(c) Other networks: not measurable.** The Illinois, case30 and case24 relabel files contain no N-0 rows
+(N-0 was not switch-back solved), so their drift is unknown. Measuring it needs N-0 switch-back solves for those
+networks: 1 solve per base case, cheap.
+
+**Recommendation (author decision).** The full N-0 fix is a Mac mini job:
+1. recompute N-0 with switch-back for all 4 networks;
+2. rebuild the vm0_* / n0_min_vm features;
+3. retrain the M2 configs (no re-search);
+4. rerun the held-out gate.
+
+Without it, the paper must state the mismatch as a limitation, with the drift-bin table above as evidence. A
+pre-registered rule would be needed before rerunning, because the result could move the headline.
+
+### 3. Dose-response wording
+
+- **Each new level had a different prediction:**
+  - **0.93 predicted no change:** BM 55 [50, 62], a range that contains the 0.94 baseline of 56.86.
+    Observed 58.07.
+  - **0.96 predicted a drop:** BM 20 [8, 30]. Observed 19.91.
+- **Correct the claim.** "Moved as predicted" fits 0.96 only. At 0.93 the prediction was that boundary mass
+  would stay put, and it did.
+- **Print the ranges in the paper** (stored labels, as hashed in N11):
+
+  | Floor | BM pred [range] → observed | CBM pred [range] → observed | VR pred [range] → observed |
+  |---|---|---|---|
+  | 0.93 | 55 [50, 62] → 58.07 | 67 [62, 73] → 70.20 | 17.5 [15.5, 19.5] → 17.28 |
+  | 0.96 | 20 [8, 30] → 19.91 | 24 [10, 36] → 23.28 | 15.0 [12.0, 17.5] → 14.46 |
+
+- **The 0.96 ranges are wide** (BM spans 22 pp). Say so: "in range" is a weak test there.
+- **The verdict itself** (FLOOR_DOSE_RESPONSE) rested on two clauses:
+  - BM(0.96) < BM(0.95) − 5 pp: 19.91 vs 32.95;
+  - |BM(0.93) − BM(0.94)| ≤ 5 pp: 1.21.
+
+  Both are sharper than the ranges.
+
+### 4. case30 held-out speedup: why A is 19.34 and 1/escalation is about 16
+
+- **Escalation varies a lot across splits:** 4.24 / 9.24 / 9.80 / 3.48 / 4.05%, mean 6.16 ± 2.76%.
+- **Speedup A per split:** 22.91 / 10.76 / 10.17 / 28.51 / 24.38. Their mean, 19.34, is what is reported.
+- **Mean of ratios vs ratio of means.** The mean of per-split ratios differs from the ratio of means:
+  1/mean(esc) = 16.22, while mean(1/esc) = 19.60. Low-escalation splits dominate the mean of ratios.
+- **Rule B, held-out:** 4.76 ± 0.58.
+- **Method must say:** "speedups are means of per-split ratios". The case30 A std is large, so lead with B.
+
+### 5. Stale lines fixed in place this round
+
+- **Rule B now leads:**
+  - Step 2 rows (histgb 0.90; held-out);
+  - the location-map abstract rows;
+  - the case30 rows (Step 2 and the 2026-10-01 table): B 5.06 at 0.97, held-out B 4.76.
+- **RQ numbering:** the 2026-10-01 N-2 row says RQ2 (renumbered).
+- **"4 levels" removed:**
+  - Step 3 abstract item 5;
+  - the 2026-10-01 Results item 4;
+  - the final Results item 4;
+  - the data-artifacts bullet.
+- **Final claim ceiling, safety line:** now a 5-split mean with the worst split (histgb 1.51 ± 1.35%, worst
+  4.16%; ridge 1.82 ± 0.59%).
+- **Step 3 Method, pre-registration:** GitHub push records plus the per-run hash check; N3 is
+  self-timestamped.
+- **"Done when":** the feature/label decision and the per-run pre-registration check were added.
+
+### 6. Open author decisions (updated)
+
+- **Full N-0 fix rerun** (§2):
+  - Option 1: run it (Mac mini, with a new pre-registered rule).
+  - Option 2: disclose it as a limitation with the drift table.
+  - **Recommended:** option 2 if time is short, option 1 otherwise. The 5× bin gap is the paper's most
+    exposed safety caveat.
+- **The 9 bases:** report both ways (recommended), or drop them with a stated rule.
+- **Still open:**
+  - AI-drawn figure credit lines (R22);
+  - the disclosure wording;
+  - cutting §IV.4;
+  - Fig. 5.
+
+**Decided 2026-10-04 (owner):** rebuild every dataset with the corrected solver: N-0 acceptance, inputs and
+labels. Pre-registration draft: `scratch/n13_decision_rule_DRAFT.md`; run prompt: `scratch/run_prompt_n13.md`.
+- This supersedes the "full N-0 fix rerun" options above, and the "9 bases" decision. A rebuild re-gates every
+  base case, so it fixes the wrongly admitted 9 and the wrongly rejected draws.
+- Every number in the paper will change. Hold the number edits (Step 2 and the location map) until N13
+  finishes, then re-derive them from `data/sts_n13_*`.
+- **Until N13 finishes,** write only the parts that don't depend on numbers:
+  - the Introduction and Background;
+  - the Method procedure, now including corrected N-0 acceptance and inputs;
+  - the Discussion structure.
+
+  Every dataset-level number becomes a placeholder too: VR, BM, the dose-response values and the 278,954 row
+  count. If the rebuild completes, the "inputs from the uncorrected N-0 solve" limitation leaves the Abstract
+  and Discussion.
