@@ -111,9 +111,9 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 2. safety at the held-out point: missed rate is measured, not guaranteed (E5b); the N5 SAFER verdict;
 3. the static baseline and the budget curve: ML wins at small budgets, history at large ones (N9 Part 1,
    the N5 FASTER verdict);
-4. the mechanism: the floor experiment, prediction vs outcome over 3 builds;
+4. the mechanism: the generator-setpoint-floor dose-response (2 pre-registered new levels, 0.93 and 0.96, consistent with the 0.94/0.95 builds; see 2026-10-04 (c));
 5. shift: the N9 shift test (SHIFT-ADVANTAGE no; coverage held forward, failed in reverse);
-6. a second network, if N10 runs.
+6. (superseded) the 4-network comparison is item 3 of the final Results structure (2026-10-02).
 
 **Discussion:**
 - why the static ranking is hard to beat here (violation concentration, step 6);
@@ -132,7 +132,7 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 **Claim ceiling:**
 - **Can say:**
   - escalation equals the prediction mass near the limit (accounting);
-  - the floor manipulation moved it as predicted, 3 times;
+  - the setpoint-floor manipulation moved it as predicted at 2 new levels (0.93, 0.96), consistent with the 2 earlier builds;
   - ML ranking beats history at small budgets on case118;
   - the gate did not beat history at the held-out budget, and did not beat it under the tested shift.
 - **Cannot say:**
@@ -203,7 +203,7 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 
 - **Measure:** the share of base cases with at least one missed violation at the held-out point.
 - **Values:** stored labels 7.7 ± 2.0% (ridge@0.94) and 11.1 ± 2.6% (histgb@0.97) in
-  `data/sts_e12_e13_conditional.json`. Use the corrected-label value from N10 when it exists.
+  `data/sts_e12_e13_conditional.json`. Corrected value: 17.1 ± 7.2% (case118 histgb, held-out; see Step 2).
 - **Where it goes:** one sentence in Results 2.
 
 ---
@@ -214,8 +214,8 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 - **Title** (AD-3).
 - **Disclosure wording and STS staff answers** (AD-4).
 - **Fig. 5** (AD-9).
-- **Whether to include the N10 Illinois results.** If N10 runs, report its verdicts whichever way they go.
-- **Whether to relabel case30** or keep it labeled as old-label evidence.
+- ~~Whether to include the N10 Illinois results~~ **resolved:** included; its verdicts are reported.
+- ~~Whether to relabel case30~~ **resolved:** relabeled in N11 (BM 7.10%, VR 15.38%).
 - **Checker regex** (AD-11).
 
 ## Done when
@@ -244,7 +244,7 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 |---|---|---|---|---|
 | Abstract | 73 | "The power system grid should remain resilient…" | histgb 3.29× and 4.72% @90% | `tables["094"]` histgb 0.90 → speedup 3.83 ± 0.40 (rule A), missed 4.24 ± 1.76% |
 | Abstract | 73 | same paragraph | "first … under 1% … 0.97", 63.7% esc, 1.58× | held-out point → esc 50.2 ± 8.4%, missed 1.51 ± 1.35% (3 of 5 splits ≤ 1%), speedup 2.06 ± 0.41 (A) / 1.55 ± 0.23 (B) |
-| Abstract | 73 | same paragraph | 56.86% vs 7.09% | 56.22% corrected (case118); case30 7.09% is on stored labels, so say so. Add the floor experiment (Step 3) |
+| Abstract | 73 | same paragraph | 56.86% vs 7.09% | 56.22% corrected (case118); case30 corrected 7.10% (N11). Add the floor experiment (Step 3) |
 | Method, Dataset | 111 | "I determined the load levels by scaling…" | 17.48%; range 0.7179-0.9603 | 16.60%; 0.8077-0.9595 (`sts_n2_label_audit.parquet` corrected_min_vm). Add the switch-back label method here (patch P-003) and the setpoint floor (P-007) |
 | Method, Dataset | 113 | "The previous implementation of the dataset generator…" | clip story, 56.86% | keep the clip story (a strength); say which label set 56.86/56.22 refers to |
 | Method, Conformal band | 124 | "where $\hat{p}$ is the prediction…" | q̂ 0.0052 / 0.0023; "same type of condition" | q̂ from `sts_n5_gate_094.json` (per-split `q_hat` at 0.90); fix the exchangeability wording (patch P-010) |
@@ -257,7 +257,7 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 | IV-C | 306 | "Most of the contingencies lie within 0.005 per unit…" | 56.86%, 17.48%, 2.04 | 56.22%, 16.60%; move the reject-option digression out (cuts.md) |
 | IV-C ceiling | 339 | "A case is escalated when the prediction lies…" | 30.6%; 74.89 / 82.79 / 82.64 | recompute on corrected labels or keep as stored-label description; "just above" → "at" (std rule) |
 | IV-C | 341 | "Persistence is the baseline model…" | "0.94 or a 0.97 target … about a 1.6 times speedup" | held-out point; add the static-ranking result (N5 FASTER clause 2) and the budget curve (N9) |
-| IV-D | 345 | "I used non-overlapping calibration and testing data…" | 0.4726 / 0.4933; "locked tes" typo | per-network errors (patch E2); fix the typo |
+| IV-D | 345 | "I used non-overlapping calibration and testing data…" | 0.4726 / 0.4933; "locked tes" typo | **cut this section** (2026-10-04 §B); if kept, recompute on corrected labels without case39 |
 | Discussion | 357 | "The key findings obtained during the experiments…" | 56.86 / 17.48; "escalation floor"; case30 | 56.22 / 16.60; replace the causal claim with the floor experiment (`sts_n9_floor_replication.json`) |
 | Discussion | 359 | "All metrics reported use the sampled N-1 population…" | worst-case collapse story (0.0915) | **delete** the mechanism story (P-001); keep the gen-out counts (374 / 69,532), and fix the N-1 wording (C6) |
 | Conclusion | 380 | "My models can predict N-1 under-voltage contingencies…" | "almost two-thirds … 1.6" | held-out-point numbers; static-ranking and budget-curve result; floor experiment |
@@ -287,9 +287,9 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
   printing.
 
 **The story now.** It answers both research questions:
-- **RQ2, when does the gate pay?** Not on case118 under this sampler, where history ties. It does on 3 other
+- **RQ1 (renumbered 2026-10-04), when does the gate pay?** Not on case118 under this sampler, where history ties. It does on 3 other
   networks, and the floor experiment shows why.
-- **RQ1, does coverage survive N-1 → N-2?** No.
+- **RQ2 (renumbered), does coverage survive N-1 → N-2?** No.
 
 ### New results
 
@@ -323,7 +323,7 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
   6. Mondrian (one sentence).
 - **Claim ceiling, now allowed:**
   - "the gate beat the history ranking on 3 of 4 networks; on case118 they tie";
-  - "boundary mass responded to the generator voltage floor as predicted at all 4 levels";
+  - "boundary mass responded to the generator voltage floor as predicted at the 2 new levels (0.93, 0.96), consistent with the 2 earlier builds";
   - "coverage calibrated on N-1 fell to 83% under N-2".
 - **Claim ceiling, still not allowed:**
   - a general law from 4 networks;
@@ -375,7 +375,7 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 - **The bug:** a pandapower Q-limit artifact; independently confirmed by MATPOWER (201/201); labels
   corrected.
 - **The mechanism:** escalation is the prediction mass near the limit; the generator voltage floor moved
-  boundary mass as predicted at 4 levels (pre-registered).
+  boundary mass as predicted at 2 new pre-registered levels (0.93, 0.96), consistent with the 0.94 and 0.95 builds.
 - **The baselines:** the gate beat a no-ML conditional-history baseline at the same solve budget on 3 of 4
   networks (narrowly on Illinois, clearly on case30 and case24) and tied on case118.
 - **Safety:** at the held-out point, missed is about 1-1.5% and is not guaranteed. A base-level calibration
@@ -537,3 +537,117 @@ corrected in place on 2026-10-04. Every number below was computed by the lead fr
    subsection. Then compile and count pages.
 5. **Sweep the old-label numbers** in §C.
 6. **Prose, clarity and the underscore fix;** then the prior-work wording check.
+
+---
+
+## Update 2026-10-04 (c) — Second plan review: checked against data
+
+Stale lines in Steps 3 and 8, the location map, the Oct 1 RQ labels, the Oct 2 claim ceiling and the
+author-decision list were corrected in place. Numbers below are lead-computed (prompt-log entry
+2026-10-04 (c)).
+
+### 1. Rule B makes the flag a label, not a saving: the framing must change
+
+- **Under rule B (the proposed headline)** a flagged case is solved, so the gate is effectively two-way:
+  certify (skip the solver) or solve. The flag branch saves solves **only under rule A**.
+- **The text must say so everywhere it says flags skip the solver:**
+  - §III.4 "Flag (skip the solver)";
+  - the Fig. 1 caption "the solver skipped";
+  - the intro's first "distinct way", the three-way gate.
+- **Present flag precision next to rule A,** where it matters: at the held-out point, case118 histgb 90.4%,
+  ridge 59.4%; Illinois histgb 93.8%. Under rule A, 10% of histgb flags and 41% of ridge flags on case118 are
+  unverified false alarms.
+- **Rule-B values for the abstract** (computed):
+
+  | Network, point | Speedup A | Speedup B |
+  |---|---|---|
+  | case118 histgb, 0.90 | 3.83 | 2.39 |
+  | case118 histgb, held-out | 2.06 | 1.55 |
+  | Illinois histgb, held-out | 9.64 | 3.12 |
+  | **case30 histgb, 0.97** | **21.60** | **5.06** |
+  | case30 histgb, held-out | 19.34 | 4.76 |
+
+  case30 flag share is 15.1%. Source: `data/sts_n11_smallnets.json` → case30_thermal table. A and B
+  differ most on case30, so never quote 21.6× without saying it is rule A.
+
+### 2. The 9 base cases that fail the acceptance rule under the corrected solve, and the feature-label mismatch
+
+- **9 of the 1,500 bases** have a corrected N-0 minimum below 0.94, so they would have been rejected.
+  - Their 1,674 N-1 rows are 96.2% violations, mostly not outage-caused.
+  - Violation rate: 16.60% with them, **16.12% without them**.
+  - **Decision for the author:** drop these bases, or report the rate both ways. Recommended: report both and
+    state it. Dropping them changes every trained model, which needs a rerun.
+- **Features come from the old (one-way) solve, labels from the corrected one.**
+  - The pre-outage inputs (vm0_*, n0_min_vm) are from the pinned pandapower N-0 solve.
+  - The corrected N-0 minimum differs from the stored one on **712 of 1,500 bases** (> 1e-6 pu): 362 by more
+    than 1e-4, 174 by more than 1e-3, max 0.0107 pu.
+  - So the models train on artifact-affected inputs paired with corrected labels.
+  - **Minimum fix (text):** state in Method which solve produced the features and which produced the labels,
+    with these magnitudes.
+  - **Full fix (new run, author decision):** recompute the 1,500 N-0 states with switch-back (cheap: 1,500
+    solves), rebuild the vm0 features, retrain and re-evaluate. It needs no new N-1 solves, but it changes
+    every model number. Not started.
+- **Persistence (§IV.3):** it uses the stored n0_min_vm, which is always ≥ 0.94, so it still never predicts
+  below the limit as computed. But the sentence "all pre-outage voltages are above 0.94" is false under the
+  corrected solve for 9 bases. Reword.
+
+### 3. Dose-response: scope the claim to what was predicted
+
+- **Only 2 levels were predicted (0.93, 0.96).** The six hashed predictions are BM, CBM and VR at those two
+  levels. 0.94 and 0.95 are earlier builds.
+- **Claim wording** (the claim ceilings are now fixed): "as predicted at 2 new levels (0.93, 0.96),
+  consistent with the 2 earlier builds."
+- **On corrected labels, all 6 still fall inside the hashed ranges** (`data/sts_n11_dose_response.json`):
+
+  | Floor | BM | CBM | VR |
+  |---|---|---|---|
+  | 0.93 | 56.42 ∈ [50, 62] | 68.52 ∈ [62, 73] | 17.66 ∈ [15.5, 19.5] |
+  | 0.96 | 15.75 ∈ [8, 30] | 18.19 ∈ [10, 36] | 13.43 ∈ [12, 17.5] |
+
+  On corrected labels, 0.93 → 0.94 is flat (56.42 vs 56.22), which is what the "a floor below the limit does
+  little" prediction expected.
+- **Define CBM** (conditional boundary mass = share in [0.94, 0.945) among non-violations) before first use.
+
+### 4. case24 paired std: recomputed, not copied
+
+- From the per-split values in `data/sts_n12_condhist.json`: paired std 0.7198; unpaired gate std 0.1833;
+  COND-HIST std 0.7157.
+- The two round to 0.72 by coincidence.
+- Report the paired values to 2 decimals and the unpaired ones as given:
+
+  | Network | Paired std | Gate std | COND-HIST std |
+  |---|---|---|---|
+  | case118 | 1.01 | 1.35 | 0.80 |
+  | Illinois | 0.83 | 0.22 | 0.97 |
+  | case30 | 3.61 | 0.31 | 3.90 |
+  | case24 | 0.72 | 0.18 | 0.72 |
+
+### 5. Pre-registration evidence: third-party timestamps exist
+
+- **GitHub's push events are recorded by GitHub, not by this machine.** They list the original (pre-rewrite)
+  commit IDs. Saved to `notes/github_events_2026-10-04.json`; the API keeps them only about 90 days, so keep
+  this file.
+
+  | Run | Draft commit pushed (GitHub time) | Rule hashed (self-recorded) | First output |
+  |---|---|---|---|
+  | N9 | push 45f0a26 → 8488e8c at 2026-09-29T22:43:43Z (contains the N9 draft) | 23:17:06Z | 23:27Z |
+  | N10 | 7f2c289 at 2026-09-30T21:00:15Z | 21:12:28Z | 21:20Z |
+  | N11 | af7dcba at 2026-09-30T22:18:01Z | 23:54:42Z | 23:59Z |
+  | N12 | d5744e6 at 2026-10-02T03:18:18Z | 03:18:58Z | 03:20:30Z |
+  | N3 | prediction commit pushed 2026-09-28T22:57:05Z, **after** its results (10:11Z) | 03:15:32Z | builds 03:17Z |
+
+- **Wording for the paper:**
+  - N9-N12: "pre-registered; each decision rule was pushed to a hosted repository before any result
+    existed (host push records retained)."
+  - N3: "prediction hashed before the builds (self-recorded timestamp)."
+- **The draft's content is still tied to its pushed commit:** the content hash of each rule file equals the
+  hash of the draft in the pushed commit. That holds for N12's d5744e6, verified via the commit map and the
+  backup.
+- **Copy the pre-rewrite backup** `~/csr-backup-before-rewrite.git` off this machine (e.g. a private remote or
+  external drive).
+
+### 6. Fig. 5 label set
+
+`data/sts_critical_bus_map.png` was made from **stored** labels (frozen_v2 critical_bus_top5). If Fig. 5 is
+kept, it must be regenerated from corrected argmin (29.65 / 17.07 / 10.17%). That's a quick data task, no
+new solves; ask if needed. Otherwise cut it (AD-9).

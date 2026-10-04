@@ -6543,3 +6543,9 @@ Answered in chat (pointed to the logged prompt); no other files written.
 (pasted multi-section review of notes/paper_fix_plan.md)
 
 Claude checked the review claims against the data (read-only computations) and updated notes/paper_fix_plan.md.
+
+## 2026-10-04 (c) — Second pasted review of the plan (rule B, 9 failing bases, dose-response scope, case24 std, pre-registration evidence)
+
+(pasted second review)
+
+Claude checked each point against the data and GitHub push events (read-only) and updated notes/paper_fix_plan.md.
