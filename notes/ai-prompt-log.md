@@ -6519,3 +6519,27 @@ Answered in chat; no files written.
 "update paper fix plan with n12 and give commit command"
 
 Claude appended an N12 section to notes/paper_fix_plan.md and gave commit commands.
+
+## 2026-10-02 (f) — Chance estimate after the changes
+
+"do you think the paper has a better chance now if i do implement these changes? chance me now"
+
+Answered in chat; no files written.
+
+## 2026-10-03 — Will the paper + overall application truly be 45-60%?
+
+"will my paper + my overall app truly be a 45-60% aftre these changes"
+
+Answered in chat; no files written.
+
+## 2026-10-04 — Which earlier prompt caught the paper inconsistencies?
+
+"what was the prompt i ran earlier that let you catch all these inconsistencies in the paper again"
+
+Answered in chat (pointed to the logged prompt); no other files written.
+
+## 2026-10-04 (b) — Pasted review of the paper fix plan against the current PDF
+
+(pasted multi-section review of notes/paper_fix_plan.md)
+
+Claude checked the review claims against the data (read-only computations) and updated notes/paper_fix_plan.md.

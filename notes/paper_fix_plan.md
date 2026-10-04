@@ -66,16 +66,16 @@ Deadline 2026-11-05, 8 pm ET (support deadline 11-04).
 | Abstract and IV-A headline point | "first under 1%" at 0.97, 63.7% esc, 1.58× (picked on test) | **Use the held-out point** (patch Top5-2d-E5): histgb esc 50.2 ± 8.4%, missed 1.51 ± 1.35% (3 of 5 splits ≤ 1%), speedup A 2.06 ± 0.41, speedup B 1.55 ± 0.23 |
 | Ridge @0.90 / held-out | 49.1% esc, 2.96% missed / 0.94 point | ridge 0.90: esc 46.8 ± 3.8%, missed 3.36 ± 0.39%; held-out: esc 59.5 ± 2.2%, missed 1.82 ± 0.59% |
 | Table 1 MAE and R² | 0.0038 / 0.77; 0.0016 / 0.92 | `sts_n5_gate_094.json → fits`: ridge 0.00349 ± 0.00015 / 0.804 ± 0.013; histgb 0.00133 ± 0.00003 / 0.956 ± 0.002 |
-| Violation rate | 17.48% | `sts_n2_label_audit.json` → 16.60% (46,295 of 278,955) |
+| Violation rate | 17.48% | 16.60% = 46,295 of **278,954** (one row failed the switch-back solve and is dropped; use 278,954 everywhere) |
 | Boundary mass | 56.86% | corrected 56.22% (patch P-003); say which label set you use |
 | Min-voltage range | 0.7179-0.9603 | corrected 0.8077-0.9595 (N2 parquet `corrected_min_vm`, 278,954 rows) |
 | Worst miss 0.0915 pu / 0.8485 | printed 3 times | **delete** (solver artifact; patch P-001) |
-| case30 numbers | 5.84 ± 1.25% etc. | still stored-label; either relabel case30 (not planned) or label it "stored pandapower labels" |
+| case30 numbers | 5.84 ± 1.25% etc. | **corrected (N11):** BM 7.10%, VR 15.38%; @0.97 esc 4.60%, missed 0.66 ± 0.17%, speedup A 21.60; @0.96 missed 0.92 ± 0.25% (`data/sts_n11_smallnets.json`) |
 
 - **Rows not in the mapping above:** every Table 2 row (0.90-0.98) comes from `tables["094"]`. N10 Part C (e)
   emits the table bodies. Each table's attribution line stays.
-- **Operator number (step 8):** share of base cases with ≥ 1 missed violation. The stored-label value is in
-  `data/sts_e12_e13_conditional.json`; the corrected one comes from N10 Part B.
+- **Operator number (step 8):** share of base cases with ≥ 1 missed violation. Corrected values exist: case118 histgb
+  17.1 ± 7.2% at the held-out point (`data/sts_n12_guarantee.json`, global-q̂ row; also `data/sts_n10_illinois.json` case118 extras); Illinois histgb 23.9 ± 4.9%.
 
 ## Step 3 — Rewrite around the new story (content order, not text)
 
@@ -87,10 +87,10 @@ a causal network claim.
 2. the gate idea;
 3. the question;
 4. the mechanism, stated once in plain words;
-5. the pre-registered floor experiment and its outcome (3 builds, all in the predicted range);
+5. the pre-registered floor experiment and its outcome (generator setpoint floor at 4 levels; all 6 hashed predictions in range; see the 2026-10-04 section);
 6. the honest headline (held-out missed rate; speedup; static ranking ties or wins at that budget);
 7. where ML does help (small solve budgets);
-8. the limitation (one network, or two if N10 runs).
+8. the limitation (4 networks, one synthetic stress sampler, one build per floor level except 0.95).
 
 Define "boundary mass" and "coverage" before use (patches C12, C4).
 
@@ -118,7 +118,7 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 **Discussion:**
 - why the static ranking is hard to beat here (violation concentration, step 6);
 - the two self-found artifacts: the clip bug and the Q-limit solver bug;
-- limitations: one or two networks, a synthetic stress sampler, pandapower-based labels, and n = 3 builds.
+- limitations: 4 networks (case39 excluded), a synthetic stress sampler, pandapower-based labels corrected by a switch-back loop (confirmed by MATPOWER), and one build per setpoint-floor level except 0.95 (3 builds).
 
 **Delete or shrink** (patches `cuts.md`, E14, E5b-E15):
 - the deepest-miss collapse story;
@@ -406,3 +406,134 @@ Mondrian, D95b/c and the row-level guarantee get one sentence each or go in an a
 - A floor dose-response figure (4 levels vs the hashed predicted ranges) from
   `data/sts_n11_dose_response.json`.
 - An optional N-2 coverage bar figure from `data/sts_n11_n2.json`.
+
+---
+
+## Update 2026-10-04 — Response to the plan review (checked against data)
+
+This section supersedes the earlier sections wherever they disagree. The stale lines in Steps 2, 3 and 8 were
+corrected in place on 2026-10-04. Every number below was computed by the lead from the named file
+(prompt-log entry 2026-10-04 (b)).
+
+### A. Definitions the paper must state (they decide whether headline sentences hold)
+
+- **Speedup A** = n·t_solve / (n·t_surr + n_esc·t_solve): flagged cases are not solved (the paper's Eq. 2).
+- **Speedup B** = n·t_solve / (n·t_surr + (n_esc + n_flag)·t_solve): **flagged cases are also solved**.
+  - Check: 1/B = escalation + flag share (case118 histgb held-out 0.659 vs 0.658).
+  - The extra term the review back-computed is exactly the flag share (case118 histgb 15.7%; Illinois 21.4%),
+    not overhead.
+  - Make B the operator-relevant headline; give A as the paper's original accounting.
+- **Catch** (gate vs baselines) = 1 − missed = true violations escalated or flagged, under rule B.
+  - **Flags are not free:** every flagged case costs a solve in the budget, and the baseline gets the same
+    total budget.
+  - State this. Add a flag-precision column (held-out point):
+
+    | Network | histgb | ridge |
+    |---|---|---|
+    | case118 | 90.4 ± 0.8% | 59.4 ± 4.1% |
+    | Illinois | 93.8 ± 0.3% | 89.4 ± 1.6% |
+
+    Derived from the `points` fields in `data/sts_n5_gate_094.json` and `data/sts_n10_illinois.json`.
+- **Gate vs COND-HIST, paired form** (report next to the std-rule verdict). Gate minus COND-HIST, mean ± std
+  over the 5 paired splits:
+
+  | Network | Paired difference | Minimum | Positive splits |
+  |---|---|---|---|
+  | Illinois | 1.10 ± 0.83 pp | +0.24 | 5/5 |
+  | case30 | 9.93 ± 3.61 pp | — | 5/5 |
+  | case24 | 4.40 ± 0.72 pp | — | 5/5 |
+  | case118 | −0.57 ± 1.01 pp | — | 2/5 |
+
+  - With 5 splits, 5/5 is the strongest a sign test can show (two-sided p = 0.0625). Say so.
+  - Say that 4 networks were compared.
+- **Two "floors":** rename one.
+  - "Generator setpoint floor" (GEN_VM_LO, 0.93-0.96) is the sampler knob.
+  - "Under-voltage limit" (L = 0.94 pu) is the screening limit.
+  - Never call L a "floor"; that touches the Fig. 3 caption, §II and the §IV.3 heading.
+
+### B. Decisions on stale or contradictory items
+
+- **Cut §IV.4 (cross-network prediction A/B).** Its 54 predictions include case39 (now excluded) and use old
+  labels. It is about a page; the 4-network table replaces it. If kept, recompute it on the corrected
+  `cross_points` in `data/sts_n11_smallnets.json`, which does not include case39.
+- **The Illinois explanation:** use only the Oct 2 wording. "Most of the gain over fixed-budget history comes
+  from conditioning on the operating condition, which a no-ML lookup table also captures. The gate keeps a
+  small, consistent extra (1.10 ± 0.83 pp paired)." Delete the Oct 1 "riskier base cases" phrasing.
+- **Reconcile the budget curve with the gate-vs-history table** (one sentence; they measure different things):
+  - The **budget curve** ranks rows *within* each base case at a fixed k. On case118 the model ranking (SURR)
+    loses to static history at k = 89 and 120.
+  - The **table** compares the *gate* at its own rule-B budget: escalation + flag share = 65.8% → k_B ≈ 122
+    per base, not 50.2% × 186 ≈ 93.
+  - At that budget, gate vs fixed static is 98.49 vs 98.82 (tie), and gate vs COND-HIST is 98.49 vs 99.06
+    (tie).
+- **Section IV.2 "The faster model is not the safer one": remove the heading and the 0.96 comparison.** On
+  corrected labels:
+  - at 0.90, ridge 3.36 ± 0.39% vs histgb 4.24 ± 1.76% missed: a tie under the std rule;
+  - at the held-out point, histgb has the lower mean (1.51 vs 1.82%) and lower escalation (50.2 vs 59.5%).
+- **Report the safety spread, not just the mean.**
+  - case118 histgb held-out missed is 1.51 ± 1.35%, 3 of 5 splits ≤ 1%, **worst split 4.16%**.
+  - Add one sentence: the inner-split choice (≤ 1% inner missed) did not transfer to test on 2 of 5 splits.
+  - Lead safety with the operator metric: 17.1 ± 7.2% of case118 test base cases have ≥ 1 missed violation.
+- **Base-level guarantee wording.**
+  - Illinois realized 10.1% against α = 10%, with 3/5 splits ≤ 10%.
+  - Say the guarantee is marginal (in expectation over calibration draws).
+  - With 300 test bases per split (confirmed for both networks), one split's sampling std is about 1.7 pp.
+- **Dose-response label set.**
+  - The verdict uses **stored** labels: 0.94 = 56.86%, the original D94 build.
+  - Corrected values are reported alongside: 56.42 / 56.22 / 28.64 / 15.75% at 0.93 / 0.94 / 0.95 / 0.96.
+  - Name the 6 predictions: BM, CBM and VR at the 0.93 and 0.96 floors.
+- **Order of the research questions.** Renumber them in the order the Results answer them: RQ1 = when the
+  gate pays off; RQ2 = coverage under N-2.
+
+### C. Old-label numbers not covered earlier: corrected value, or label them
+
+| PDF item | Old | Corrected / action |
+|---|---|---|
+| Critical buses 76 / 53 / 107 (§IV.3, Fig. 5 caption) | 27.1 / 16.81 / 9.31% | **29.65 / 17.07 / 10.17%** (`sts_n2_label_audit.parquet` corrected_argmin + 1) |
+| Tallest 0.001 pu bin (§IV.3, Fig. 4 caption) | ~14% / 14.1% | **12.69%** at [0.940, 0.941) (`data/sts_paper_fig4_boundary.json`) |
+| Bases above 0.95 pu (§V) | 86 of 1,500 | **91** (corrected N-0 minima); 9 bases fall below 0.94 before any outage under the corrected solve, so say so |
+| Ridge escalation at L = 0.95 (§V) | 1.38 ± 0.33% | not recomputed: label "stored labels" or cut |
+| Over-voltage share > 1.05 pu (§II) | 73.1% | not recomputable without new solves (corrected max_vm not stored): label "stored labels" or cut |
+| case30 violation rate / 0.96 missed (§V) | 15.40% / 0.91 ± 0.22% | **15.38% / 0.92 ± 0.25%** (N11) |
+| case30 boundary mass (abstract, §V) | 7.09% | **7.10%** corrected; use it next to case118's corrected 56.22% |
+| Ablation MAEs and permutation values (§V.1) | old labels | label "stored labels" (N4 also ran on stored labels), or cut with the ablation |
+| Fig. 3 q̂ annotation | 0.0052 / 0.0023 | already corrected in `data/sts_paper_fig3_missdepth.png` (0.0049 / 0.0021) |
+
+### D. Other paper issues the review found
+
+- **"0.94 pu as a conservative choice" (§V) is backwards.** 0.94 is the looser limit. Reword: 0.95 would flag
+  nearly every case, so 0.94 is the practical one.
+- **Underscores are missing in the PDF** ("case24 ieee rts", "agg loading", "vm0 *", "pre p mw"…). Use `\_`
+  or `\texttt{}` for every network and column name, especially in the new 4-network table.
+- **Check the prior-work characterizations, not just the bibliography fields.** Before keeping a sentence,
+  verify against the source PDF (in `notes/cited papers/` or `notes/lit/`):
+  - [5] (christianson2025): "no false negatives, only for DC";
+  - [3] (manoharan2026), whose re-read is still pending (P-028);
+  - [4] (alcantara2026).
+- **Fig. 2 range:** plotted from 0.70 while Table 2 starts at 0.90. Say why in the caption, or crop the
+  figure to 0.90-0.99.
+- **Fig. 5:** the on-plot "pandapower igraph" credit vs a caption crediting only Matplotlib. Cut Fig. 5, or
+  name both (AD-9).
+- **Pre-registration after the history rewrite.**
+  - Git dates on rewritten commits are not independent evidence.
+  - The anchors are the rule-file sha256 hashes, the prompt-log timestamps, and the **pre-rewrite mirror
+    backup `~/csr-backup-before-rewrite.git`**, which still holds the original commits (including `d5744e6`).
+    Keep that backup.
+  - Explain the remap in one sentence or in the reproducibility table (`notes/commit-map-2026-10-02.txt`).
+- **Mark what was not pre-registered:**
+  - the held-out-point selection procedure (it pre-dates the rules);
+  - the Illinois allocation explanation;
+  - the GLOBAL-STATIC decomposition;
+  - all descriptive parts.
+
+### E. Order of work (revised)
+
+1. **Disclosure and the STS staff question first**, including the AI-drawn-figure credit lines; the answer may
+   change every caption.
+2. **Definitions (§A above)** and the dose-response label set.
+3. **Verify the "Reported" numbers headed for the abstract.** Done today for the case30 corrected rows (above).
+   The Illinois held-out row is in `data/sts_n10_illinois.json` → table; spot-check it before printing.
+4. **Cut §IV.4, shrink the ablation,** and add the 4-network table, the dose-response figure and the N-2
+   subsection. Then compile and count pages.
+5. **Sweep the old-label numbers** in §C.
+6. **Prose, clarity and the underscore fix;** then the prior-work wording check.
