@@ -1,0 +1,123 @@
+{
+  "check": "N13 check 6: independent complementarity solver",
+  "dataset": "D93",
+  "passed": true,
+  "validation": {
+    "passed": true,
+    "max_pv_minus_pp_nolim": 3.3925893205832836e-09,
+    "n_rows_validated": 2300,
+    "n_model_build_failed": 0,
+    "model_build_failed_rows": [],
+    "interpretation": "validation over rows whose independent model could be built; model-build failures counted under the 2% non-convergence stop rule"
+  },
+  "stop_rules": {
+    "nonconverged_or_inconsistent_share": 0.0,
+    "stop_conv": false,
+    "label_disagreements_far_from_limit": 0,
+    "stop_label": false,
+    "share_diff_gt_1e3": 0.0004347826086956522,
+    "stop_diff": false
+  },
+  "per_stratum": {
+    "n0": {
+      "n": 1500,
+      "n_converged_consistent": 1500,
+      "label_agree": 1499,
+      "agree_share": 0.9993333333333333,
+      "ci95": [
+        0.9962912264793653,
+        0.9999831216037856
+      ],
+      "median_abs_diff": 1.7620904735338172e-12,
+      "max_abs_diff": 0.0009969387504309424,
+      "n_gt_1e6": 526,
+      "n_gt_1e4": 471,
+      "population": 1500
+    },
+    "a": {
+      "n": 200,
+      "n_converged_consistent": 200,
+      "label_agree": 200,
+      "agree_share": 1.0,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "median_abs_diff": 3.3306690738754696e-16,
+      "max_abs_diff": 9.051238415547225e-06,
+      "n_gt_1e6": 5,
+      "n_gt_1e4": 0,
+      "population": 32584
+    },
+    "b": {
+      "n": 200,
+      "n_converged_consistent": 200,
+      "label_agree": 200,
+      "agree_share": 1.0,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "median_abs_diff": 1.3322676295501878e-15,
+      "max_abs_diff": 0.0009309773540889799,
+      "n_gt_1e6": 12,
+      "n_gt_1e4": 7,
+      "population": 72103
+    },
+    "c": {
+      "n": 200,
+      "n_converged_consistent": 200,
+      "label_agree": 200,
+      "agree_share": 1.0,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "median_abs_diff": 2.220446049250313e-16,
+      "max_abs_diff": 0.0011624847491662482,
+      "n_gt_1e6": 17,
+      "n_gt_1e4": 7,
+      "population": 174269
+    },
+    "d": {
+      "n": 200,
+      "n_converged_consistent": 200,
+      "label_agree": 200,
+      "agree_share": 1.0,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "median_abs_diff": 3.3306690738754696e-16,
+      "max_abs_diff": 0.0003423048377485527,
+      "n_gt_1e6": 9,
+      "n_gt_1e4": 4,
+      "population": 157116
+    }
+  },
+  "stratum_d_figure": {
+    "n": 200,
+    "n_converged_consistent": 200,
+    "label_agree": 200,
+    "agree_share": 1.0,
+    "ci95": [
+      0.9817246596448638,
+      1.0
+    ],
+    "median_abs_diff": 3.3306690738754696e-16,
+    "max_abs_diff": 0.0003423048377485527,
+    "n_gt_1e6": 9,
+    "n_gt_1e4": 4,
+    "population": 157116
+  },
+  "near_limit_population": {
+    "count": 41180,
+    "share": 0.14762184717303087,
+    "n_converged_outage_rows": 278956,
+    "definition": "|corrected min_vm - 0.94| <= 1e-3 pu over all converged outage rows"
+  },
+  "n_compared": 2300,
+  "seed": 20261004,
+  "n_per_stratum": 200,
+  "wall_s": 58.822614908218384
+}

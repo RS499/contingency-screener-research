@@ -1,0 +1,60 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_build_N2R.json"
+  ],
+  "generating_script": "scratch/n13_n2r.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_n2r.py"
+  ],
+  "script_git_blob_sha": "5727c75ecd2673071c28e93b808d4f3fceefaf96",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "scratch/n13_build/D94/phase1_100.json",
+      "sha256": "824cd162b9712e88970526702bd4c72899a5e4bac86a2e0acde92d9111b33a78"
+    },
+    {
+      "path": "data/sts_n11_n2_rows.parquet",
+      "sha256": "9e0ed68512eaa10367c04bbb643a7e2fd4e1ba1dcb2448b486a16e882f1b5389"
+    },
+    {
+      "path": "scratch/n11_n2_build.py",
+      "sha256": "6e129c04a43303cabe66eed89a600f8b2dafe600633df99f15ebc675109590ee"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_build_N2R.json",
+      "sha256": "97ebc1c07bf567bf09f4355ead3fcc4d2b16b067346cce242a87e4b8949b5036",
+      "md5": "5d5dcf9b85a77746d65ff3b59619fd9b",
+      "bytes": 687,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T21:08:32Z",
+  "parameters": {
+    "pair_seed": 20261001,
+    "n_pairs_per_base": 50,
+    "check6_seed": 20261004,
+    "n_per_stratum": 200,
+    "solver": "pinned + N2 switch-back (n11_n2_build.solve_shard); independent: label_crosscheck",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: N-2 pinned + switch-back solves; independent solves of sampled rows"
+}

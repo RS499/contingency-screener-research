@@ -1,0 +1,56 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_floorrep.json"
+  ],
+  "generating_script": "scratch/n13_analyses.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_analyses.py",
+    "floorrep"
+  ],
+  "script_git_blob_sha": "0d988f786c26ec7e0f8671705c58e2c6d1a0d99b",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n13_D95a.parquet",
+      "sha256": "cc657653347e8b104bf40364601f20391e384939a612c0f99a23a542bf875d92"
+    },
+    {
+      "path": "data/sts_n13_D95b.parquet",
+      "sha256": "957608ae30bd5bf687c5ffd26ec0fbe699ab7f515832745b8e3b0f780b522b4b"
+    },
+    {
+      "path": "data/sts_n13_D95c.parquet",
+      "sha256": "75c7ce54eedc83054ff57ea6b54d02fcddb2d6b228c64a37c66a5d423bce1a0c"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_floorrep.json",
+      "sha256": "efaac7524d9436d7e4993748c84de7ac10ab2a8846a6c1dc3ddd7a4ae50ba5b2",
+      "md5": "053f18edfbc8a936ab8dd4caa2fb7b0a",
+      "bytes": 1401,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T02:26:55Z",
+  "parameters": {
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "No AC solve unless stated in the output."
+}

@@ -1,0 +1,72 @@
+{
+  "check": "N13 check 6 on N2R rows",
+  "passed": true,
+  "validation_passed": true,
+  "stop_rules": {
+    "nonconverged_or_inconsistent_share": 0.0,
+    "stop_conv": false,
+    "label_disagreements_far": 0,
+    "stop_label": false,
+    "share_diff_gt_1e3": 0.0,
+    "stop_diff": false
+  },
+  "per_stratum": {
+    "a": {
+      "n": 200,
+      "label_agree": 199,
+      "ci95": [
+        0.9724581015427943,
+        0.999873418972133
+      ],
+      "population": 7748,
+      "median_abs_diff": 2.220446049250313e-16,
+      "max_abs_diff": 0.0005635222347769586,
+      "n_gt_1e6": 17,
+      "n_gt_1e4": 4
+    },
+    "b": {
+      "n": 200,
+      "label_agree": 200,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "population": 22262,
+      "median_abs_diff": 1.887379141862766e-15,
+      "max_abs_diff": 0.00033703997225031923,
+      "n_gt_1e6": 16,
+      "n_gt_1e4": 7
+    },
+    "c": {
+      "n": 200,
+      "label_agree": 200,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "population": 44904,
+      "median_abs_diff": 2.220446049250313e-16,
+      "max_abs_diff": 0.0008636140599946884,
+      "n_gt_1e6": 12,
+      "n_gt_1e4": 5
+    },
+    "d": {
+      "n": 200,
+      "label_agree": 200,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "population": 35121,
+      "median_abs_diff": 2.220446049250313e-16,
+      "max_abs_diff": 0.00023407868020253186,
+      "n_gt_1e6": 8,
+      "n_gt_1e4": 4
+    }
+  },
+  "near_limit_population": {
+    "count": 10861,
+    "share": 0.14497957658114638
+  },
+  "seed": 20261004
+}

@@ -1,0 +1,105 @@
+{
+  "name": "C30",
+  "tier": "A",
+  "original_file": "data/case30_thermal/dataset.parquet",
+  "draws": 8050,
+  "accepted": 1500,
+  "rejected_by_reason": {
+    "nonconvergence": 0,
+    "voltage": 840,
+    "thermal": 5710,
+    "n0_correction_failed": 0
+  },
+  "base_set": {
+    "per_shard_prefix": [
+      {
+        "shard_seed": 100,
+        "first_differing_draw": 8050,
+        "prefix_draws": 8050,
+        "prefix_accepted": 1500,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": false,
+        "old_draws": 8050,
+        "new_draws": 8050
+      }
+    ],
+    "n_old_bases": 1500,
+    "n_new_bases": 1500,
+    "n_common": 1500,
+    "n_old_rejected": 0,
+    "n_new_added": 0
+  },
+  "checks": {
+    "check2_shared_prefix": {
+      "passed": true
+    },
+    "check3_label_reproduction": {
+      "passed": true,
+      "n_rows_compared": 61500,
+      "n_pinned_compared": 61500,
+      "max_abs_pinned_diff": 0.0,
+      "pinned_status_mismatches": 0,
+      "n_corrected_compared": 61500,
+      "max_abs_corrected_diff": 0.0,
+      "corrected_status_mismatches": 0,
+      "tolerance": 1e-09
+    },
+    "check4_acceptance": {
+      "passed": true,
+      "n_bases": 1500,
+      "n_bad": 0
+    },
+    "check5_failure_ceilings": {
+      "passed": true,
+      "failed_outage_rows": 0,
+      "outage_rows": 61500,
+      "failed_outage_share": 0.0,
+      "n0_correction_failed_draws": 0,
+      "draws": 8050,
+      "n0_correction_failed_share": 0.0,
+      "ceiling": 0.005
+    }
+  },
+  "failed_rows": 0,
+  "pinned_nonconverged_outage_rows": 0,
+  "VR": 0.15383739837398375,
+  "BM": 0.07095934959349594,
+  "CBM": 0.08386018178673688,
+  "min_vm_range": [
+    0.8618251617126288,
+    0.9866209663383864
+  ],
+  "over_voltage_share_max_vm_gt_1p05": 0.0,
+  "critical_bus_top5_share": {
+    "18": 0.283869918699187,
+    "7": 0.25951219512195123,
+    "29": 0.20764227642276423,
+    "6": 0.05678048780487805,
+    "17": 0.035934959349593495
+  },
+  "switchback_outer_iterations": {
+    "mean_all_outage_rows": 0.004796747967479675,
+    "max": 1,
+    "mean_rows_needing_switchback": 1.0,
+    "n_rows_needing_switchback": 295
+  },
+  "n0_switchback_needed": 8,
+  "build_info": {
+    "name": "C30",
+    "n_accepted": 1500,
+    "n_draws": 8050,
+    "rejected": {
+      "nonconvergence": 0,
+      "voltage": 840,
+      "thermal": 5710,
+      "n0_correction_failed": 0
+    },
+    "schema_same_columns": true,
+    "schema_dtype_differences": [],
+    "n0_rebuild_mismatches": 0,
+    "phase1_wall_s": 84.5346531867981,
+    "wall_s": 228.1473879814148
+  },
+  "wall_s": 0.16889119148254395,
+  "all_checks_2_5_passed": true
+}

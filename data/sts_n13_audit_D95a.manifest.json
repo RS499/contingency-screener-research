@@ -1,0 +1,68 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_audit_D95a.parquet"
+  ],
+  "generating_script": "scratch/n13_build.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_build.py",
+    "D95a"
+  ],
+  "script_git_blob_sha": "4872b70789c2daa1ed920135773a8b3c0a2de4c9",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n3_floor095.parquet",
+      "sha256": "49363a25309bc0e14df03b39215a6038c3953c480389a4708c5a42a9a636e9f6"
+    },
+    {
+      "path": "data/sts_n5_relabel095.parquet",
+      "sha256": "f3e3c081362337532d8fc8deab93b32b6f2d67531cb4c3e78094caaf4c3f1bdc"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_audit_D95a.parquet",
+      "sha256": "247161a17322caa092fee8534718b631e4b4d68cc007f9e1cea177a45a173eb2",
+      "md5": "ddf460d14505deb8541cbc04b7d4f644",
+      "bytes": 5110755,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T20:31:42Z",
+  "parameters": {
+    "dataset": "D95a",
+    "spec": {
+      "kind": "case118",
+      "file": "data/sts_n3_floor095.parquet",
+      "floor": 0.95,
+      "seeds": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "labels": "data/sts_n5_relabel095.parquet",
+      "tier": "A"
+    },
+    "solver": "corrected: pandapower runpp enforce_q_lims=True init=dc numba=True, then the N2 switch-back (TOL_V = TOL_Q = 1e-3, 30 outer iterations)",
+    "invocation": "scratch/n13_build.py D95a",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: corrected-solver rebuild (N-0 and every outage)"
+}

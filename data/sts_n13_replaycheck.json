@@ -1,0 +1,528 @@
+{
+  "check": "N13 check 1: original pinned acceptance replay, N-0 only; stored n0_min_vm reproduced exactly",
+  "summary": {
+    "D94": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 2787
+    },
+    "ILL": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 7880
+    },
+    "C30": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 8050
+    },
+    "C24": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 8348
+    },
+    "D93": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 6278
+    },
+    "D95a": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 2071
+    },
+    "D96": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 1827
+    },
+    "D95b": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 2037
+    },
+    "D95c": {
+      "check1_passed": true,
+      "n_accepted_total": 1500,
+      "n_stored_bases": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_draws_total": 2032
+    },
+    "N2R": {
+      "check1_passed": true,
+      "note": "N2R uses the D94 base cases; check 1 is D94's"
+    }
+  },
+  "per_shard": [
+    {
+      "name": "D94",
+      "shard_seed": 100,
+      "n_draws": 745,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 17.27496099472046,
+      "extra": {
+        "n_reject": 370
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D94_100.parquet"
+    },
+    {
+      "name": "D94",
+      "shard_seed": 101,
+      "n_draws": 688,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 15.699176788330078,
+      "extra": {
+        "n_reject": 313
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D94_101.parquet"
+    },
+    {
+      "name": "D94",
+      "shard_seed": 102,
+      "n_draws": 662,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 15.695075035095215,
+      "extra": {
+        "n_reject": 287
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D94_102.parquet"
+    },
+    {
+      "name": "D94",
+      "shard_seed": 103,
+      "n_draws": 692,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 16.021321058273315,
+      "extra": {
+        "n_reject": 317
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D94_103.parquet"
+    },
+    {
+      "name": "ILL",
+      "shard_seed": 100,
+      "n_draws": 7880,
+      "n_accepted": 1500,
+      "n_accepted_flagged": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 170.0729432106018,
+      "extra": {
+        "draws": 7880,
+        "rejected": {
+          "nonconvergence": 9,
+          "voltage": 6359,
+          "thermal": 12
+        },
+        "cfg": {
+          "network": "case_illinois200",
+          "stress": "fixed",
+          "mult_lo": 0.87,
+          "mult_hi": 0.99,
+          "reg_lo": 0.87,
+          "reg_hi": 0.99,
+          "pf_lo": 0.9,
+          "pf_hi": 1.15,
+          "dvm": 0.025
+        }
+      },
+      "draw_log": "scratch/n13_drawlogs/old_ILL_100.parquet"
+    },
+    {
+      "name": "C30",
+      "shard_seed": 100,
+      "n_draws": 8050,
+      "n_accepted": 1500,
+      "n_accepted_flagged": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 86.96116018295288,
+      "extra": {
+        "draws": 8050,
+        "rejected": {
+          "nonconvergence": 0,
+          "voltage": 840,
+          "thermal": 5710
+        },
+        "cfg": {
+          "network": "case30",
+          "stress": "fixed",
+          "mult_lo": 0.87,
+          "mult_hi": 0.99,
+          "reg_lo": 0.87,
+          "reg_hi": 0.99,
+          "pf_lo": 0.9,
+          "pf_hi": 1.15,
+          "dvm": 0.025
+        }
+      },
+      "draw_log": "scratch/n13_drawlogs/old_C30_100.parquet"
+    },
+    {
+      "name": "C24",
+      "shard_seed": 100,
+      "n_draws": 8348,
+      "n_accepted": 1500,
+      "n_accepted_flagged": 1500,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 122.99382615089417,
+      "extra": {
+        "draws": 8348,
+        "rejected": {
+          "nonconvergence": 540,
+          "voltage": 6308,
+          "thermal": 0
+        },
+        "cfg": {
+          "network": "case24_ieee_rts",
+          "stress": "fixed",
+          "mult_lo": 0.82,
+          "mult_hi": 0.94,
+          "reg_lo": 0.82,
+          "reg_hi": 0.94,
+          "pf_lo": 0.9,
+          "pf_hi": 1.15,
+          "dvm": 0.025
+        }
+      },
+      "draw_log": "scratch/n13_drawlogs/old_C24_100.parquet"
+    },
+    {
+      "name": "D93",
+      "shard_seed": 100,
+      "n_draws": 1614,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 34.469841718673706,
+      "extra": {
+        "n_reject": 1239
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D93_100.parquet"
+    },
+    {
+      "name": "D93",
+      "shard_seed": 101,
+      "n_draws": 1538,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 31.86684513092041,
+      "extra": {
+        "n_reject": 1163
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D93_101.parquet"
+    },
+    {
+      "name": "D93",
+      "shard_seed": 102,
+      "n_draws": 1587,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 33.149293184280396,
+      "extra": {
+        "n_reject": 1212
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D93_102.parquet"
+    },
+    {
+      "name": "D93",
+      "shard_seed": 103,
+      "n_draws": 1539,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 31.952642679214478,
+      "extra": {
+        "n_reject": 1164
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D93_103.parquet"
+    },
+    {
+      "name": "D95a",
+      "shard_seed": 100,
+      "n_draws": 543,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 11.01723599433899,
+      "extra": {
+        "n_reject": 168
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95a_100.parquet"
+    },
+    {
+      "name": "D95a",
+      "shard_seed": 101,
+      "n_draws": 497,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 10.36082410812378,
+      "extra": {
+        "n_reject": 122
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95a_101.parquet"
+    },
+    {
+      "name": "D95a",
+      "shard_seed": 102,
+      "n_draws": 517,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 10.74191403388977,
+      "extra": {
+        "n_reject": 142
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95a_102.parquet"
+    },
+    {
+      "name": "D95a",
+      "shard_seed": 103,
+      "n_draws": 514,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 10.577578067779541,
+      "extra": {
+        "n_reject": 139
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95a_103.parquet"
+    },
+    {
+      "name": "D96",
+      "shard_seed": 100,
+      "n_draws": 465,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 9.36995005607605,
+      "extra": {
+        "n_reject": 90
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D96_100.parquet"
+    },
+    {
+      "name": "D96",
+      "shard_seed": 101,
+      "n_draws": 457,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 9.434042930603027,
+      "extra": {
+        "n_reject": 82
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D96_101.parquet"
+    },
+    {
+      "name": "D96",
+      "shard_seed": 102,
+      "n_draws": 459,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 9.220493793487549,
+      "extra": {
+        "n_reject": 84
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D96_102.parquet"
+    },
+    {
+      "name": "D96",
+      "shard_seed": 103,
+      "n_draws": 446,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 8.967302083969116,
+      "extra": {
+        "n_reject": 71
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D96_103.parquet"
+    },
+    {
+      "name": "D95b",
+      "shard_seed": 200,
+      "n_draws": 519,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 10.59623408317566,
+      "extra": {
+        "n_reject": 144
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95b_200.parquet"
+    },
+    {
+      "name": "D95b",
+      "shard_seed": 201,
+      "n_draws": 519,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 10.494985818862915,
+      "extra": {
+        "n_reject": 144
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95b_201.parquet"
+    },
+    {
+      "name": "D95b",
+      "shard_seed": 202,
+      "n_draws": 485,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 10.15654993057251,
+      "extra": {
+        "n_reject": 110
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95b_202.parquet"
+    },
+    {
+      "name": "D95b",
+      "shard_seed": 203,
+      "n_draws": 514,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 10.607456922531128,
+      "extra": {
+        "n_reject": 139
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95b_203.parquet"
+    },
+    {
+      "name": "D95c",
+      "shard_seed": 300,
+      "n_draws": 520,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 10.740024089813232,
+      "extra": {
+        "n_reject": 145
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95c_300.parquet"
+    },
+    {
+      "name": "D95c",
+      "shard_seed": 301,
+      "n_draws": 502,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 9.914002180099487,
+      "extra": {
+        "n_reject": 127
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95c_301.parquet"
+    },
+    {
+      "name": "D95c",
+      "shard_seed": 302,
+      "n_draws": 525,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 9.081522941589355,
+      "extra": {
+        "n_reject": 150
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95c_302.parquet"
+    },
+    {
+      "name": "D95c",
+      "shard_seed": 303,
+      "n_draws": 485,
+      "n_accepted": 375,
+      "n_accepted_flagged": 375,
+      "max_abs_n0_diff": 0.0,
+      "n_nan": 0,
+      "exact": true,
+      "wall_s": 7.865926265716553,
+      "extra": {
+        "n_reject": 110
+      },
+      "draw_log": "scratch/n13_drawlogs/old_D95c_303.parquet"
+    }
+  ],
+  "wall_s": 172.00897312164307
+}

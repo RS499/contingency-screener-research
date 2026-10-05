@@ -1,0 +1,575 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_armF.json"
+  ],
+  "generating_script": "scratch/n13_armF.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_armF.py"
+  ],
+  "script_git_blob_sha": "a0b7fd54f9b9b9153c3bc477c7fa0f21071a11ff",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/case30_thermal/dataset.parquet",
+      "sha256": "cb1a38e9a39ef2333ade9a3423c188938bf21ff4883bdc3a0deacc7daefb9f98"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "sha256": "29896224c999756aa1d60455e135d198906098142e66eff45995703cf17decab"
+    },
+    {
+      "path": "data/netstudy/case_illinois200/dataset.parquet",
+      "sha256": "aba7a9201b964250ff901c64ca53a13e50023494c7e53489385d1311ee4553bd"
+    },
+    {
+      "path": "data/sts_n0drift_check.json",
+      "sha256": "881ea37b585686131211dde857f93c8b6d4e73b583f875cfb5d70705d9d48a94"
+    },
+    {
+      "path": "data/sts_n10_illinois.json",
+      "sha256": "95b654e86edee99aa8a2455c63cdeac145d42f949ec08ed491d93d018247cfeb"
+    },
+    {
+      "path": "data/sts_n10_relabel_illinois200.parquet",
+      "sha256": "6df9743a700df5d5f16fa04b30dc8670b74ee0741b070aa546b829ecd34d989b"
+    },
+    {
+      "path": "data/sts_n11_relabel_case24_ieee_rts.parquet",
+      "sha256": "e82c772cc9183b7ebbc1f1d0cb55b311c792ee5f20f851036816feea11d8ce7b"
+    },
+    {
+      "path": "data/sts_n11_relabel_case30_thermal.parquet",
+      "sha256": "0a4ce1e3ca6cd47b50ae2b6a34590da8aea138a85fa334e0dc21d4c1891b2ab7"
+    },
+    {
+      "path": "data/sts_n11_smallnets.json",
+      "sha256": "a4d5a504dfe4f50e2380d0aeee2390d04f81ac2ee465ada3fcd35629369f7675"
+    },
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    },
+    {
+      "path": "data/sts_n5_gate_094.json",
+      "sha256": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_armF.json",
+      "sha256": "8f1f617b130375f5ed01f3af1fe6bfe8df1c6363377eeb602e265d28e88d56dd",
+      "md5": "f3aa053143586b1ab7d595f232724ff8",
+      "bytes": 158744,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T00:11:00Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "bins": [
+      0.0,
+      1e-06,
+      0.0001,
+      0.001,
+      1.0
+    ],
+    "model_hyperparameters": {
+      "D94": [
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand15",
+          "config": {
+            "tag": "rand15",
+            "learning_rate": 0.1,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 127,
+            "min_samples_leaf": 20,
+            "l2_regularization": 1.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand01",
+          "config": {
+            "tag": "rand01",
+            "learning_rate": 0.1,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand06",
+          "config": {
+            "tag": "rand06",
+            "learning_rate": 0.03,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand20",
+          "config": {
+            "tag": "rand20",
+            "learning_rate": 0.08,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha100",
+          "config": {
+            "tag": "alpha100",
+            "alpha": 100.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha0.3162",
+          "config": {
+            "tag": "alpha0.3162",
+            "alpha": 0.31622776601683794
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha0.01",
+          "config": {
+            "tag": "alpha0.01",
+            "alpha": 0.01
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha0.003162",
+          "config": {
+            "tag": "alpha0.003162",
+            "alpha": 0.0031622776601683794
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        }
+      ],
+      "ILL": [
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha31.62",
+          "config": {
+            "tag": "alpha31.62",
+            "alpha": 31.622776601683793
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha10",
+          "config": {
+            "tag": "alpha10",
+            "alpha": 10.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha0.1",
+          "config": {
+            "tag": "alpha0.1",
+            "alpha": 0.1
+          }
+        }
+      ],
+      "C30": [
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand19",
+          "config": {
+            "tag": "rand19",
+            "learning_rate": 0.03,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand00",
+          "config": {
+            "tag": "rand00",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand00",
+          "config": {
+            "tag": "rand00",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha1",
+          "config": {
+            "tag": "alpha1",
+            "alpha": 1.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha0.1",
+          "config": {
+            "tag": "alpha0.1",
+            "alpha": 0.1
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha0.001",
+          "config": {
+            "tag": "alpha0.001",
+            "alpha": 0.001
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha0.003162",
+          "config": {
+            "tag": "alpha0.003162",
+            "alpha": 0.0031622776601683794
+          }
+        }
+      ],
+      "C24": [
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand23",
+          "config": {
+            "tag": "rand23",
+            "learning_rate": 0.05,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 200,
+            "l2_regularization": 0.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand16",
+          "config": {
+            "tag": "rand16",
+            "learning_rate": 0.1,
+            "max_iter": 300,
+            "max_depth": null,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 50,
+            "l2_regularization": 1.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand17",
+          "config": {
+            "tag": "rand17",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 200,
+            "l2_regularization": 0.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand23",
+          "config": {
+            "tag": "rand23",
+            "learning_rate": 0.05,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 200,
+            "l2_regularization": 0.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "committed",
+          "config": {
+            "tag": "committed",
+            "learning_rate": 0.08,
+            "max_iter": 300,
+            "max_depth": 8,
+            "max_leaf_nodes": 31,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.0
+          }
+        },
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha1e+04",
+          "config": {
+            "tag": "alpha1e+04",
+            "alpha": 10000.0
+          }
+        }
+      ]
+    },
+    "note": "existing M2 configs and held-out targets, refit (no search)"
+  },
+  "no_new_solves": "FALSE: corrected N-0 solves of the original bases; model refits"
+}

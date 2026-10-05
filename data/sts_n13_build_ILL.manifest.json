@@ -1,0 +1,71 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_build_ILL.json"
+  ],
+  "generating_script": "scratch/n13_checks.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_checks.py",
+    "ILL"
+  ],
+  "script_git_blob_sha": "ec0b2e1b6f9a01dd3e53e84606ebd3f7df110643",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/netstudy/case_illinois200/dataset.parquet",
+      "sha256": "aba7a9201b964250ff901c64ca53a13e50023494c7e53489385d1311ee4553bd"
+    },
+    {
+      "path": "data/sts_n10_relabel_illinois200.parquet",
+      "sha256": "6df9743a700df5d5f16fa04b30dc8670b74ee0741b070aa546b829ecd34d989b"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    },
+    {
+      "path": "data/sts_n13_ILL.parquet",
+      "sha256": "1e42d3dee36af2cde7cd49a0551b8df734172572f071f8c51f296dfd0e35cb44"
+    },
+    {
+      "path": "data/sts_n13_audit_ILL.parquet",
+      "sha256": "a48db246ee2f5690a79e4f8cd4a1b3c55eca03970ce5c352fb85e211c13c3b1f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_build_ILL.json",
+      "sha256": "23d6020ff93df6f498964dc308ffbd062de2702419b29906ba512680b3668260",
+      "md5": "f0169a8712be1bc99c18d221b145df9e",
+      "bytes": 2661,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T19:28:22Z",
+  "parameters": {
+    "dataset": "ILL",
+    "spec": {
+      "kind": "netstudy",
+      "network": "case_illinois200",
+      "file": "data/netstudy/case_illinois200/dataset.parquet",
+      "stats": "data/netstudy/case_illinois200/build_stats.json",
+      "labels": "data/sts_n10_relabel_illinois200.parquet",
+      "tier": "A"
+    },
+    "solver": "corrected: pandapower runpp enforce_q_lims=True init=dc numba=True, then the N2 switch-back (TOL_V = TOL_Q = 1e-3, 30 outer iterations)",
+    "invocation": "scratch/n13_build.py ILL",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "No AC solve; checks and summaries from the rebuild outputs."
+}

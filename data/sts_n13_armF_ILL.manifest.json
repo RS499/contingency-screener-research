@@ -1,0 +1,53 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_armF_ILL.parquet"
+  ],
+  "generating_script": "scratch/n13_armF.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_armF.py"
+  ],
+  "script_git_blob_sha": "004e50705491b026cf7d8e0fe0b2608e90528a45",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/netstudy/case_illinois200/dataset.parquet",
+      "sha256": "aba7a9201b964250ff901c64ca53a13e50023494c7e53489385d1311ee4553bd"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_armF_ILL.parquet",
+      "sha256": "76f550e1dcd04f5f248ad9419f3dd0b178a01a7e03dfa8244e120680013918b9",
+      "md5": "910745164f432cf281d56c7a839d4245",
+      "bytes": 11822497,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T23:36:39Z",
+  "parameters": {
+    "dataset": "ILL",
+    "replaced": [
+      "vm0_*",
+      "n0_min_vm"
+    ],
+    "solver": "corrected N-0: pinned + N2 switch-back (n13_common.corrected_pf)",
+    "model_hyperparameters": "none (dataset file)"
+  },
+  "no_new_solves": "FALSE: corrected N-0 solve of every original base"
+}

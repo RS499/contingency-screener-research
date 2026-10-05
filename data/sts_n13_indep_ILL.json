@@ -1,0 +1,142 @@
+{
+  "check": "N13 check 6: independent complementarity solver",
+  "dataset": "ILL",
+  "passed": true,
+  "validation": {
+    "passed": true,
+    "max_pv_minus_pp_nolim": 1.2030779705796135e-09,
+    "n_rows_validated": 2297,
+    "n_model_build_failed": 3,
+    "model_build_failed_rows": [
+      {
+        "scenario_id": 100000300,
+        "outaged_type": "trafo",
+        "outaged_idx": 63,
+        "ref_min": 1.04
+      },
+      {
+        "scenario_id": 100001282,
+        "outaged_type": "trafo",
+        "outaged_idx": 63,
+        "ref_min": 1.04
+      },
+      {
+        "scenario_id": 100001439,
+        "outaged_type": "trafo",
+        "outaged_idx": 63,
+        "ref_min": 1.04
+      }
+    ],
+    "interpretation": "validation over rows whose independent model could be built; model-build failures counted under the 2% non-convergence stop rule"
+  },
+  "stop_rules": {
+    "nonconverged_or_inconsistent_share": 0.0013043478260869566,
+    "stop_conv": false,
+    "label_disagreements_far_from_limit": 0,
+    "stop_label": false,
+    "share_diff_gt_1e3": 0.0,
+    "stop_diff": false
+  },
+  "per_stratum": {
+    "n0": {
+      "n": 1500,
+      "n_converged_consistent": 1500,
+      "label_agree": 1500,
+      "agree_share": 1.0,
+      "ci95": [
+        0.9975437685158015,
+        1.0
+      ],
+      "median_abs_diff": 5.264677582772492e-13,
+      "max_abs_diff": 0.0009799884835521855,
+      "n_gt_1e6": 137,
+      "n_gt_1e4": 120,
+      "population": 1500
+    },
+    "a": {
+      "n": 200,
+      "n_converged_consistent": 200,
+      "label_agree": 200,
+      "agree_share": 1.0,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "median_abs_diff": 1.0669798378160067e-12,
+      "max_abs_diff": 0.00037545842903630167,
+      "n_gt_1e6": 13,
+      "n_gt_1e4": 6,
+      "population": 54957
+    },
+    "b": {
+      "n": 200,
+      "n_converged_consistent": 200,
+      "label_agree": 200,
+      "agree_share": 1.0,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "median_abs_diff": 8.892331315735191e-13,
+      "max_abs_diff": 0.00020836440477900453,
+      "n_gt_1e6": 26,
+      "n_gt_1e4": 6,
+      "population": 221295
+    },
+    "c": {
+      "n": 200,
+      "n_converged_consistent": 197,
+      "label_agree": 197,
+      "agree_share": 0.985,
+      "ci95": [
+        0.9567917180822874,
+        0.9968958923784464
+      ],
+      "median_abs_diff": 2.5501822875639846e-13,
+      "max_abs_diff": 8.047015142964575e-05,
+      "n_gt_1e6": 3,
+      "n_gt_1e4": 0,
+      "population": 83942
+    },
+    "d": {
+      "n": 200,
+      "n_converged_consistent": 200,
+      "label_agree": 200,
+      "agree_share": 1.0,
+      "ci95": [
+        0.9817246596448638,
+        1.0
+      ],
+      "median_abs_diff": 7.151501613122946e-13,
+      "max_abs_diff": 0.00019140216323776382,
+      "n_gt_1e6": 18,
+      "n_gt_1e4": 5,
+      "population": 67552
+    }
+  },
+  "stratum_d_figure": {
+    "n": 200,
+    "n_converged_consistent": 200,
+    "label_agree": 200,
+    "agree_share": 1.0,
+    "ci95": [
+      0.9817246596448638,
+      1.0
+    ],
+    "median_abs_diff": 7.151501613122946e-13,
+    "max_abs_diff": 0.00019140216323776382,
+    "n_gt_1e6": 18,
+    "n_gt_1e4": 5,
+    "population": 67552
+  },
+  "near_limit_population": {
+    "count": 23628,
+    "share": 0.06559798330899459,
+    "n_converged_outage_rows": 360194,
+    "definition": "|corrected min_vm - 0.94| <= 1e-3 pu over all converged outage rows"
+  },
+  "n_compared": 2300,
+  "seed": 20261004,
+  "n_per_stratum": 200,
+  "wall_s": 105.44138503074646
+}

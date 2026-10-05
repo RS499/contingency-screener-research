@@ -1,0 +1,3291 @@
+{
+  "part": "N13 Step 8: old vs rebuilt, unpaired, std rule",
+  "n_rows": 334,
+  "n_differs": 76,
+  "n_within_std": 238,
+  "n_not_run": 20,
+  "rows": [
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.90 escalation",
+      "old_mean": 0.46782589515263373,
+      "old_std": 0.03795490155684669,
+      "rebuilt_mean": 0.47276912251691555,
+      "rebuilt_std": 0.04486323697936694,
+      "diff": 0.004943227364281821,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.90 coverage_emp",
+      "old_mean": 0.8889265832993074,
+      "old_std": 0.01601760103645096,
+      "rebuilt_mean": 0.8944380102791503,
+      "rebuilt_std": 0.015335770437431895,
+      "diff": 0.0055114269798428595,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.90 missed",
+      "old_mean": 0.03361468814462425,
+      "old_std": 0.003933294094312231,
+      "rebuilt_mean": 0.02987428756980053,
+      "rebuilt_std": 0.006720057774871899,
+      "diff": -0.0037404005748237178,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.90 speedup_A",
+      "old_mean": 2.1487370649700503,
+      "old_std": 0.1616216652260367,
+      "rebuilt_mean": 2.131794249895007,
+      "rebuilt_std": 0.18436435737824797,
+      "diff": -0.01694281507504325,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.90 speedup_B",
+      "old_mean": 1.4413504277504405,
+      "old_std": 0.05730251837937824,
+      "rebuilt_mean": 1.4362915559928784,
+      "rebuilt_std": 0.08327515826561313,
+      "diff": -0.0050588717575621445,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.94 escalation",
+      "old_mean": 0.6066672199082774,
+      "old_std": 0.040117875434063595,
+      "rebuilt_mean": 0.6254155035086468,
+      "rebuilt_std": 0.02804218432261051,
+      "diff": 0.018748283600369398,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.94 coverage_emp",
+      "old_mean": 0.9327190720774624,
+      "old_std": 0.007691041374814293,
+      "rebuilt_mean": 0.9379985014380271,
+      "rebuilt_std": 0.00589188159910197,
+      "diff": 0.005279429360564691,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.94 missed",
+      "old_mean": 0.01725556811159278,
+      "old_std": 0.005714502659445866,
+      "rebuilt_mean": 0.01161931163575389,
+      "rebuilt_std": 0.002772747922864152,
+      "diff": -0.005636256475838888,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.94 speedup_A",
+      "old_mean": 1.6547011803771312,
+      "old_std": 0.11323829322921214,
+      "rebuilt_mean": 1.6016796052866265,
+      "rebuilt_std": 0.07209461670845325,
+      "diff": -0.05302157509050476,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.94 speedup_B",
+      "old_mean": 1.2021331660965893,
+      "old_std": 0.05931331312836917,
+      "rebuilt_mean": 1.1763270612788552,
+      "rebuilt_std": 0.04709691369360674,
+      "diff": -0.025806104817734044,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.95 escalation",
+      "old_mean": 0.6559804606144721,
+      "old_std": 0.04818106647037201,
+      "rebuilt_mean": 0.6717942326077692,
+      "rebuilt_std": 0.013944804429516523,
+      "diff": 0.015813771993297032,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.95 coverage_emp",
+      "old_mean": 0.9448287563826131,
+      "old_std": 0.006126729034650184,
+      "rebuilt_mean": 0.9492840039355807,
+      "rebuilt_std": 0.006506579891359753,
+      "diff": 0.004455247552967556,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.95 missed",
+      "old_mean": 0.011088053249367588,
+      "old_std": 0.006721249605197514,
+      "rebuilt_mean": 0.007434778458053881,
+      "rebuilt_std": 0.0023418430295711447,
+      "diff": -0.003653274791313707,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.95 speedup_A",
+      "old_mean": 1.5321116218728423,
+      "old_std": 0.11784533034666195,
+      "rebuilt_mean": 1.4887648388260915,
+      "rebuilt_std": 0.030596697630045834,
+      "diff": -0.04334678304675088,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.95 speedup_B",
+      "old_mean": 1.13562100202974,
+      "old_std": 0.06267385115375225,
+      "rebuilt_mean": 1.1140842715742008,
+      "rebuilt_std": 0.016888253872285104,
+      "diff": -0.021536730455539166,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.96 escalation",
+      "old_mean": 0.6986333859846803,
+      "old_std": 0.04108991899731971,
+      "rebuilt_mean": 0.7163293503680892,
+      "rebuilt_std": 0.02424937396089765,
+      "diff": 0.017695964383408924,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.96 coverage_emp",
+      "old_mean": 0.956017154004863,
+      "old_std": 0.004152174880078781,
+      "rebuilt_mean": 0.9596872475494328,
+      "rebuilt_std": 0.002530163733073581,
+      "diff": 0.003670093544569819,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.96 missed",
+      "old_mean": 0.007263566163293295,
+      "old_std": 0.006053397824157711,
+      "rebuilt_mean": 0.0042039164642792394,
+      "rebuilt_std": 0.0020493945318620374,
+      "diff": -0.003059649699014055,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.96 speedup_A",
+      "old_mean": 1.435680130764831,
+      "old_std": 0.0878245661168582,
+      "rebuilt_mean": 1.3971778597245899,
+      "rebuilt_std": 0.04566573730262757,
+      "diff": -0.038502271040241176,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.96 speedup_B",
+      "old_mean": 1.0822575502201293,
+      "old_std": 0.048366143255746535,
+      "rebuilt_mean": 1.0615409812067595,
+      "rebuilt_std": 0.019413503385459004,
+      "diff": -0.020716569013369712,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.97 escalation",
+      "old_mean": 0.7366947231517524,
+      "old_std": 0.025452629857303528,
+      "rebuilt_mean": 0.7515230824002748,
+      "rebuilt_std": 0.021691383372281513,
+      "diff": 0.014828359248522327,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.97 coverage_emp",
+      "old_mean": 0.966986890959074,
+      "old_std": 0.003354682631882317,
+      "rebuilt_mean": 0.9690368028119904,
+      "rebuilt_std": 0.003069308155404058,
+      "diff": 0.002049911852916475,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.97 missed",
+      "old_mean": 0.004322505792205181,
+      "old_std": 0.005685515819424095,
+      "rebuilt_mean": 0.002068909227462189,
+      "rebuilt_std": 0.001463051826900193,
+      "diff": -0.0022535965647429916,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.97 speedup_A",
+      "old_mean": 1.3582768076685094,
+      "old_std": 0.04703907224046494,
+      "rebuilt_mean": 1.3313670122402712,
+      "rebuilt_std": 0.03721899787751604,
+      "diff": -0.026909795428238237,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.97 speedup_B",
+      "old_mean": 1.0377526081544528,
+      "old_std": 0.01395926408156643,
+      "rebuilt_mean": 1.0231772779677595,
+      "rebuilt_std": 0.014118520774660876,
+      "diff": -0.014575330186693325,
+      "std_rule": "differs"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.98 escalation",
+      "old_mean": 0.7678905005998438,
+      "old_std": 0.019439980576745713,
+      "rebuilt_mean": 0.7688673813864748,
+      "rebuilt_std": 0.02102191512710844,
+      "diff": 0.0009768807866310514,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.98 coverage_emp",
+      "old_mean": 0.9779566041371203,
+      "old_std": 0.0038568434952429304,
+      "rebuilt_mean": 0.9792216352725482,
+      "rebuilt_std": 0.0013814654649212008,
+      "diff": 0.0012650311354279742,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.98 missed",
+      "old_mean": 0.00033284067495939734,
+      "old_std": 0.000454589017853022,
+      "rebuilt_mean": 0.0010556003487798295,
+      "rebuilt_std": 0.0012505252306521972,
+      "diff": 0.0007227596738204322,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.98 speedup_A",
+      "old_mean": 1.3024049502793038,
+      "old_std": 0.03289592796126197,
+      "rebuilt_mean": 1.3012626723543614,
+      "rebuilt_std": 0.03553662296274581,
+      "diff": -0.0011422779249423698,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge 0.98 speedup_B",
+      "old_mean": 1.0050533594883257,
+      "old_std": 0.004272888413083001,
+      "rebuilt_mean": 1.0051581512370178,
+      "rebuilt_std": 0.00291624908084689,
+      "diff": 0.00010479174869204577,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge held-out target",
+      "old_mean": 0.9359999999999999,
+      "old_std": 0.01019803902718553,
+      "rebuilt_mean": 0.9339999999999999,
+      "rebuilt_std": 0.01019803902718553,
+      "diff": -0.0020000000000000018,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge held-out escalation",
+      "old_mean": 0.5946008645166627,
+      "old_std": 0.021811015050935485,
+      "rebuilt_mean": 0.5946666396035013,
+      "rebuilt_std": 0.05907247691195802,
+      "diff": 6.577508683858202e-05,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge held-out coverage_emp",
+      "old_mean": 0.9315182930125413,
+      "old_std": 0.008968986769331663,
+      "rebuilt_mean": 0.9335566089373705,
+      "rebuilt_std": 0.012978762350120167,
+      "diff": 0.0020383159248291705,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge held-out missed",
+      "old_mean": 0.01818206612627541,
+      "old_std": 0.005885231494755158,
+      "rebuilt_mean": 0.015084485502176379,
+      "rebuilt_std": 0.006000599991871887,
+      "diff": -0.003097580624099032,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge held-out speedup_A",
+      "old_mean": 1.6829196322648052,
+      "old_std": 0.061846673652438566,
+      "rebuilt_mean": 1.6980256252160355,
+      "rebuilt_std": 0.17140069460913712,
+      "diff": 0.015105992951230274,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "ridge held-out speedup_B",
+      "old_mean": 1.2178856303003063,
+      "old_std": 0.03292444477910751,
+      "rebuilt_mean": 1.2257246666491173,
+      "rebuilt_std": 0.09588893816832363,
+      "diff": 0.007839036348811002,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.90 escalation",
+      "old_mean": 0.2629107565923401,
+      "old_std": 0.028087511202711628,
+      "rebuilt_mean": 0.24230047102784055,
+      "rebuilt_std": 0.03353242198623245,
+      "diff": -0.020610285564499536,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.90 coverage_emp",
+      "old_mean": 0.8980967039288101,
+      "old_std": 0.017308923016374416,
+      "rebuilt_mean": 0.9049594847538515,
+      "rebuilt_std": 0.013934118149633126,
+      "diff": 0.006862780825041326,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.90 missed",
+      "old_mean": 0.042354025131890904,
+      "old_std": 0.0176015374152544,
+      "rebuilt_mean": 0.040554615436952476,
+      "rebuilt_std": 0.007267359670301361,
+      "diff": -0.001799409694938428,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.90 speedup_A",
+      "old_mean": 3.832228242405974,
+      "old_std": 0.39640471468087607,
+      "rebuilt_mean": 4.181486696455506,
+      "rebuilt_std": 0.5262462197238547,
+      "diff": 0.34925845404953204,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.90 speedup_B",
+      "old_mean": 2.38711732421507,
+      "old_std": 0.14988334748930893,
+      "rebuilt_mean": 2.4549292327138312,
+      "rebuilt_std": 0.2008554492507791,
+      "diff": 0.0678119084987614,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.94 escalation",
+      "old_mean": 0.394802842524766,
+      "old_std": 0.04008729000491623,
+      "rebuilt_mean": 0.3642708086013645,
+      "rebuilt_std": 0.03967377898205892,
+      "diff": -0.03053203392340148,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.94 coverage_emp",
+      "old_mean": 0.9405271860976724,
+      "old_std": 0.011216894095444203,
+      "rebuilt_mean": 0.9425834483726063,
+      "rebuilt_std": 0.006004999686014277,
+      "diff": 0.00205626227493394,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.94 missed",
+      "old_mean": 0.025042501585344802,
+      "old_std": 0.011858685612494209,
+      "rebuilt_mean": 0.023551773303597236,
+      "rebuilt_std": 0.006596614138488032,
+      "diff": -0.0014907282817475664,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.94 speedup_A",
+      "old_mean": 2.553724588544772,
+      "old_std": 0.2650939752913852,
+      "rebuilt_mean": 2.7674483908623926,
+      "rebuilt_std": 0.2784512049774701,
+      "diff": 0.21372380231762067,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.94 speedup_B",
+      "old_mean": 1.8193860727914206,
+      "old_std": 0.13157527606706906,
+      "rebuilt_mean": 1.8896502169943616,
+      "rebuilt_std": 0.13852857018293746,
+      "diff": 0.07026414420294103,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.95 escalation",
+      "old_mean": 0.4435713044689834,
+      "old_std": 0.0371630639379192,
+      "rebuilt_mean": 0.4031567157390564,
+      "rebuilt_std": 0.034822408681482946,
+      "diff": -0.04041458872992698,
+      "std_rule": "differs"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.95 coverage_emp",
+      "old_mean": 0.9476789732336762,
+      "old_std": 0.009714263599593353,
+      "rebuilt_mean": 0.9512160464236056,
+      "rebuilt_std": 0.006163746630311793,
+      "diff": 0.0035370731899293517,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.95 missed",
+      "old_mean": 0.018276594572204187,
+      "old_std": 0.009316603812718323,
+      "rebuilt_mean": 0.019381962141649424,
+      "rebuilt_std": 0.005997559106648051,
+      "diff": 0.001105367569445237,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.95 speedup_A",
+      "old_mean": 2.266020661302159,
+      "old_std": 0.19608114769089838,
+      "rebuilt_mean": 2.4910277600501955,
+      "rebuilt_std": 0.19715779891471297,
+      "diff": 0.2250070987480366,
+      "std_rule": "differs"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.95 speedup_B",
+      "old_mean": 1.6694179384270005,
+      "old_std": 0.10322007520202536,
+      "rebuilt_mean": 1.757616494724348,
+      "rebuilt_std": 0.10443429146369261,
+      "diff": 0.08819855629734752,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.96 escalation",
+      "old_mean": 0.4966487120788054,
+      "old_std": 0.03126022474610364,
+      "rebuilt_mean": 0.46814836183226394,
+      "rebuilt_std": 0.02311672201254804,
+      "diff": -0.02850035024654146,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.96 coverage_emp",
+      "old_mean": 0.958473037265974,
+      "old_std": 0.010328414059467288,
+      "rebuilt_mean": 0.9607627004957902,
+      "rebuilt_std": 0.0038603067063598534,
+      "diff": 0.0022896632298161634,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.96 missed",
+      "old_mean": 0.014454340305257121,
+      "old_std": 0.008539213838106885,
+      "rebuilt_mean": 0.014023741037311044,
+      "rebuilt_std": 0.004669533823209948,
+      "diff": -0.00043059926794607704,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.96 speedup_A",
+      "old_mean": 2.018188587431964,
+      "old_std": 0.1355971040546708,
+      "rebuilt_mean": 2.1363074660861225,
+      "rebuilt_std": 0.09925792672659556,
+      "diff": 0.11811887865415871,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.96 speedup_B",
+      "old_mean": 1.5316240929116425,
+      "old_std": 0.0733622275720634,
+      "rebuilt_mean": 1.5744403235424989,
+      "rebuilt_std": 0.05930410277644765,
+      "diff": 0.04281623063085638,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.97 escalation",
+      "old_mean": 0.5679915009964869,
+      "old_std": 0.035883892082286796,
+      "rebuilt_mean": 0.5378754244372607,
+      "rebuilt_std": 0.02590686273897772,
+      "diff": -0.030116076559226213,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.97 coverage_emp",
+      "old_mean": 0.9708192936802605,
+      "old_std": 0.007520947968275227,
+      "rebuilt_mean": 0.9700691959139303,
+      "rebuilt_std": 0.004162126250489117,
+      "diff": -0.0007500977663302821,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.97 missed",
+      "old_mean": 0.0070963697753270525,
+      "old_std": 0.0026647542560927066,
+      "rebuilt_mean": 0.010296001472950941,
+      "rebuilt_std": 0.00455090845309414,
+      "diff": 0.003199631697623889,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.97 speedup_A",
+      "old_mean": 1.765129433933795,
+      "old_std": 0.1184796991672631,
+      "rebuilt_mean": 1.859778530829247,
+      "rebuilt_std": 0.08637048968428031,
+      "diff": 0.09464909689545187,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.97 speedup_B",
+      "old_mean": 1.3814085109247105,
+      "old_std": 0.06973615628314733,
+      "rebuilt_mean": 1.418978540837959,
+      "rebuilt_std": 0.05496749013491401,
+      "diff": 0.037570029913248426,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.98 escalation",
+      "old_mean": 0.6517448956287157,
+      "old_std": 0.041158510502184366,
+      "rebuilt_mean": 0.6339088912374308,
+      "rebuilt_std": 0.026299091523804132,
+      "diff": -0.017836004391284965,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.98 coverage_emp",
+      "old_mean": 0.9824736556265774,
+      "old_std": 0.0036342569883218573,
+      "rebuilt_mean": 0.979418777843357,
+      "rebuilt_std": 0.0037050045008414282,
+      "diff": -0.0030548777832204443,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.98 missed",
+      "old_mean": 0.003025944088610189,
+      "old_std": 0.0007889177671480255,
+      "rebuilt_mean": 0.00685603751678218,
+      "rebuilt_std": 0.003831709765524456,
+      "diff": 0.003830093428171991,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.98 speedup_A",
+      "old_mean": 1.5387771413534916,
+      "old_std": 0.10555771292938647,
+      "rebuilt_mean": 1.5776434687233438,
+      "rebuilt_std": 0.06486613085916215,
+      "diff": 0.03886632736985218,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb 0.98 speedup_B",
+      "old_mean": 1.2386760261282244,
+      "old_std": 0.06532374757194603,
+      "rebuilt_mean": 1.248566562383836,
+      "rebuilt_std": 0.04256364241644573,
+      "diff": 0.009890536255611648,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb held-out target",
+      "old_mean": 0.96,
+      "old_std": 0.010954451150103333,
+      "rebuilt_mean": 0.97,
+      "rebuilt_std": 0.010954451150103331,
+      "diff": 0.010000000000000009,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb held-out escalation",
+      "old_mean": 0.5016722211341014,
+      "old_std": 0.08449502270763484,
+      "rebuilt_mean": 0.5424699126065449,
+      "rebuilt_std": 0.0967520352793901,
+      "diff": 0.0407976914724435,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb held-out coverage_emp",
+      "old_mean": 0.9590574288285918,
+      "old_std": 0.019156942812798835,
+      "rebuilt_mean": 0.969581484794736,
+      "rebuilt_std": 0.014400459204530777,
+      "diff": 0.010524055966144252,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb held-out missed",
+      "old_mean": 0.015089124038380192,
+      "old_std": 0.013546958168829268,
+      "rebuilt_mean": 0.011359965149122797,
+      "rebuilt_std": 0.009569465819038826,
+      "diff": -0.003729158889257395,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb held-out speedup_A",
+      "old_mean": 2.057985259723226,
+      "old_std": 0.41261331752822733,
+      "rebuilt_mean": 1.9119900807907626,
+      "rebuilt_std": 0.4104439769314188,
+      "diff": -0.1459951789324634,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:ops",
+      "key": "histgb held-out speedup_B",
+      "old_mean": 1.5454223907871036,
+      "old_std": 0.22515717281524747,
+      "rebuilt_mean": 1.4390628661570048,
+      "rebuilt_std": 0.2282470027882188,
+      "diff": -0.10635952463009879,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "ridge mae (mV)",
+      "old_mean": 3.491784088395627,
+      "old_std": 0.15476385713962099,
+      "rebuilt_mean": 3.436209235562494,
+      "rebuilt_std": 0.1157048387064152,
+      "diff": -0.055574852833133015,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "ridge r2",
+      "old_mean": 0.8041855400971419,
+      "old_std": 0.013407686222985432,
+      "rebuilt_mean": 0.8149027101809857,
+      "rebuilt_std": 0.010009275156144646,
+      "diff": 0.010717170083843763,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "ridge 0.90 escalation",
+      "old_mean": 0.46782589515263373,
+      "old_std": 0.03795490155684669,
+      "rebuilt_mean": 0.47276912251691555,
+      "rebuilt_std": 0.04486323697936694,
+      "diff": 0.004943227364281821,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "ridge 0.90 missed",
+      "old_mean": 0.03361468814462425,
+      "old_std": 0.003933294094312231,
+      "rebuilt_mean": 0.02987428756980053,
+      "rebuilt_std": 0.006720057774871899,
+      "diff": -0.0037404005748237178,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "ridge 0.90 speedup_A",
+      "old_mean": 2.1487370649700503,
+      "old_std": 0.1616216652260367,
+      "rebuilt_mean": 2.131794249895007,
+      "rebuilt_std": 0.18436435737824797,
+      "diff": -0.01694281507504325,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "histgb mae (mV)",
+      "old_mean": 1.3275909586018515,
+      "old_std": 0.029360829332919735,
+      "rebuilt_mean": 1.2956418253717186,
+      "rebuilt_std": 0.16852482962415075,
+      "diff": -0.03194913323013293,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "histgb r2",
+      "old_mean": 0.955854548054976,
+      "old_std": 0.0016630401241154412,
+      "rebuilt_mean": 0.9533695303317588,
+      "rebuilt_std": 0.007001103254910653,
+      "diff": -0.0024850177232172976,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "histgb 0.90 escalation",
+      "old_mean": 0.2629107565923401,
+      "old_std": 0.028087511202711628,
+      "rebuilt_mean": 0.24230047102784055,
+      "rebuilt_std": 0.03353242198623245,
+      "diff": -0.020610285564499536,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "histgb 0.90 missed",
+      "old_mean": 0.042354025131890904,
+      "old_std": 0.0176015374152544,
+      "rebuilt_mean": 0.040554615436952476,
+      "rebuilt_std": 0.007267359670301361,
+      "diff": -0.001799409694938428,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "histgb 0.90 speedup_A",
+      "old_mean": 3.832228242405974,
+      "old_std": 0.39640471468087607,
+      "rebuilt_mean": 4.181486696455506,
+      "rebuilt_std": 0.5262462197238547,
+      "diff": 0.34925845404953204,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "persistence 0.90 mae",
+      "old_mean": 4.076802380618996,
+      "old_std": 0.06855794216866397,
+      "rebuilt_mean": 3.9007049864999765,
+      "rebuilt_std": 0.045736678178971736,
+      "diff": -0.17609739411901915,
+      "std_rule": "differs"
+    },
+    {
+      "table": "tab:models",
+      "key": "persistence 0.90 r2",
+      "old_mean": -0.04891414665124105,
+      "old_std": 0.006764350549943806,
+      "rebuilt_mean": -0.05026214683631691,
+      "rebuilt_std": 0.004854010333105051,
+      "diff": -0.0013480001850758594,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "persistence 0.90 escalation",
+      "old_mean": 0.9820003225478612,
+      "old_std": 0.003999038618849749,
+      "rebuilt_mean": 0.9840073375937692,
+      "rebuilt_std": 0.0074152307777802596,
+      "diff": 0.002007015045908056,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "persistence 0.90 missed",
+      "old_mean": 0.013505264590819707,
+      "old_std": 0.0034000932200406527,
+      "rebuilt_mean": 0.01161382709897953,
+      "rebuilt_std": 0.005692956134419202,
+      "diff": -0.0018914374918401772,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "persistence 0.90 speedup_A",
+      "old_mean": 1.0183461452145612,
+      "old_std": 0.004121882611822661,
+      "rebuilt_mean": 1.0163105365915883,
+      "rebuilt_std": 0.007724104252439497,
+      "diff": -0.0020356086229729176,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "train_mean 0.90 mae",
+      "old_mean": 6.188874977883889,
+      "old_std": 0.18802677516791688,
+      "rebuilt_mean": 6.287355310009392,
+      "rebuilt_std": 0.13918708789383216,
+      "diff": 0.09848033212550344,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "train_mean 0.90 r2",
+      "old_mean": -0.00033435328026114596,
+      "old_std": 0.0002669938744593191,
+      "rebuilt_mean": -0.00028705310233232415,
+      "rebuilt_std": 0.00022419590561884609,
+      "diff": 4.730017792882181e-05,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "train_mean 0.90 escalation",
+      "old_mean": 1.0,
+      "old_std": 0.0,
+      "rebuilt_mean": 1.0,
+      "rebuilt_std": 0.0,
+      "diff": 0.0,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "train_mean 0.90 missed",
+      "old_mean": 0.0,
+      "old_std": 0.0,
+      "rebuilt_mean": 0.0,
+      "rebuilt_std": 0.0,
+      "diff": 0.0,
+      "std_rule": "within std"
+    },
+    {
+      "table": "tab:models",
+      "key": "train_mean 0.90 speedup_A",
+      "old_mean": 0.9999995865835668,
+      "old_std": 9.971989953363248e-09,
+      "rebuilt_mean": 0.9999995749781743,
+      "rebuilt_std": 3.064214074859459e-08,
+      "diff": -1.160539253586279e-08,
+      "std_rule": "within std"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.93 BM (old stored labels vs rebuilt)",
+      "old_mean": 58.06946540531046,
+      "old_std": 0.0,
+      "rebuilt_mean": 56.322860952981834,
+      "rebuilt_std": 0.0,
+      "diff": -1.7466044523286257,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.93 BM (old corrected labels vs rebuilt)",
+      "old_mean": 56.41653432941759,
+      "old_std": 0.0,
+      "rebuilt_mean": 56.322860952981834,
+      "rebuilt_std": 0.0,
+      "diff": -0.09367337643575269,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.93 CBM (old stored labels vs rebuilt)",
+      "old_mean": 70.2012125624591,
+      "old_std": 0.0,
+      "rebuilt_mean": 67.32831100712211,
+      "rebuilt_std": 0.0,
+      "diff": -2.8729015553369948,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.93 CBM (old corrected labels vs rebuilt)",
+      "old_mean": 68.51591444381076,
+      "old_std": 0.0,
+      "rebuilt_mean": 67.32831100712211,
+      "rebuilt_std": 0.0,
+      "diff": -1.1876034366886472,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.93 VR (old stored labels vs rebuilt)",
+      "old_mean": 17.281392606081898,
+      "old_std": 0.0,
+      "rebuilt_mean": 16.345947031073003,
+      "rebuilt_std": 0.0,
+      "diff": -0.9354455750088952,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.93 VR (old corrected labels vs rebuilt)",
+      "old_mean": 17.659225907749885,
+      "old_std": 0.0,
+      "rebuilt_mean": 16.345947031073003,
+      "rebuilt_std": 0.0,
+      "diff": -1.3132788766768826,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.94 BM (old stored labels vs rebuilt)",
+      "old_mean": 56.862934881970205,
+      "old_std": 0.0,
+      "rebuilt_mean": 54.74627614762767,
+      "rebuilt_std": 0.0,
+      "diff": -2.1166587343425363,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.94 BM (old corrected labels vs rebuilt)",
+      "old_mean": 56.21607863662109,
+      "old_std": 0.0,
+      "rebuilt_mean": 54.74627614762767,
+      "rebuilt_std": 0.0,
+      "diff": -1.4698024889934231,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.94 CBM (old stored labels vs rebuilt)",
+      "old_mean": 68.9043726054056,
+      "old_std": 0.0,
+      "rebuilt_mean": 65.37356752383357,
+      "rebuilt_std": 0.0,
+      "diff": -3.5308050815720264,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.94 CBM (old corrected labels vs rebuilt)",
+      "old_mean": 67.40207771889331,
+      "old_std": 0.0,
+      "rebuilt_mean": 65.37356752383357,
+      "rebuilt_std": 0.0,
+      "diff": -2.028510195059738,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.94 VR (old stored labels vs rebuilt)",
+      "old_mean": 17.4755784983241,
+      "old_std": 0.0,
+      "rebuilt_mean": 16.256251232321784,
+      "rebuilt_std": 0.0,
+      "diff": -1.219327266002317,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.94 VR (old corrected labels vs rebuilt)",
+      "old_mean": 16.595926210056138,
+      "old_std": 0.0,
+      "rebuilt_mean": 16.256251232321784,
+      "rebuilt_std": 0.0,
+      "diff": -0.3396749777343544,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.95 BM (old stored labels vs rebuilt)",
+      "old_mean": 32.95432141692147,
+      "old_std": 0.0,
+      "rebuilt_mean": 33.35603988226057,
+      "rebuilt_std": 0.0,
+      "diff": 0.40171846533909417,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.95 BM (old corrected labels vs rebuilt)",
+      "old_mean": 28.640969849912718,
+      "old_std": 0.0,
+      "rebuilt_mean": 33.35603988226057,
+      "rebuilt_std": 0.0,
+      "diff": 4.71507003234785,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.95 CBM (old stored labels vs rebuilt)",
+      "old_mean": 39.23428844561664,
+      "old_std": 0.0,
+      "rebuilt_mean": 39.15715133481201,
+      "rebuilt_std": 0.0,
+      "diff": -0.07713711080462815,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.95 CBM (old corrected labels vs rebuilt)",
+      "old_mean": 33.68990947154489,
+      "old_std": 0.0,
+      "rebuilt_mean": 39.15715133481201,
+      "rebuilt_std": 0.0,
+      "diff": 5.467241863267127,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.95 VR (old stored labels vs rebuilt)",
+      "old_mean": 16.00632323789928,
+      "old_std": 0.0,
+      "rebuilt_mean": 14.814947601650646,
+      "rebuilt_std": 0.0,
+      "diff": -1.191375636248635,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.95 VR (old corrected labels vs rebuilt)",
+      "old_mean": 14.986503973531299,
+      "old_std": 0.0,
+      "rebuilt_mean": 14.814947601650646,
+      "rebuilt_std": 0.0,
+      "diff": -0.1715563718806532,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.96 BM (old stored labels vs rebuilt)",
+      "old_mean": 19.913752002953796,
+      "old_std": 0.0,
+      "rebuilt_mean": 18.967303438856607,
+      "rebuilt_std": 0.0,
+      "diff": -0.9464485640971887,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.96 BM (old corrected labels vs rebuilt)",
+      "old_mean": 15.750173858805141,
+      "old_std": 0.0,
+      "rebuilt_mean": 18.967303438856607,
+      "rebuilt_std": 0.0,
+      "diff": 3.2171295800514663,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.96 CBM (old stored labels vs rebuilt)",
+      "old_mean": 23.28101753871299,
+      "old_std": 0.0,
+      "rebuilt_mean": 21.94930722641666,
+      "rebuilt_std": 0.0,
+      "diff": -1.3317103122963303,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.96 CBM (old corrected labels vs rebuilt)",
+      "old_mean": 18.193600748663545,
+      "old_std": 0.0,
+      "rebuilt_mean": 21.94930722641666,
+      "rebuilt_std": 0.0,
+      "diff": 3.7557064777531153,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.96 VR (old stored labels vs rebuilt)",
+      "old_mean": 14.463566852951825,
+      "old_std": 0.0,
+      "rebuilt_mean": 13.585867457224895,
+      "rebuilt_std": 0.0,
+      "diff": -0.8776993957269301,
+      "std_rule": "differs"
+    },
+    {
+      "table": "floor",
+      "key": "floor 0.96 VR (old corrected labels vs rebuilt)",
+      "old_mean": 13.430144607509268,
+      "old_std": 0.0,
+      "rebuilt_mean": 13.585867457224895,
+      "rebuilt_std": 0.0,
+      "diff": 0.15572284971562667,
+      "std_rule": "differs"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 histgb held-out escalation",
+      "old_mean": 0.5016722211341014,
+      "old_std": 0.08449502270763484,
+      "rebuilt_mean": 0.5424699126065449,
+      "rebuilt_std": 0.0967520352793901,
+      "diff": 0.0407976914724435,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 histgb held-out missed",
+      "old_mean": 0.015089124038380192,
+      "old_std": 0.013546958168829268,
+      "rebuilt_mean": 0.011359965149122797,
+      "rebuilt_std": 0.009569465819038826,
+      "diff": -0.003729158889257395,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 histgb held-out solve_share_B",
+      "old_mean": 0.6584064285598139,
+      "old_std": 0.0850585883922608,
+      "rebuilt_mean": 0.7093959575515285,
+      "rebuilt_std": 0.09876737329202935,
+      "diff": 0.050989528991714606,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 histgb held-out gate_catch",
+      "old_mean": 0.9849108759616199,
+      "old_std": 0.013546958168829266,
+      "rebuilt_mean": 0.9886400348508773,
+      "rebuilt_std": 0.009569465819038834,
+      "diff": 0.0037291588892574,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 histgb held-out static_catch_B",
+      "old_mean": 0.9881519738517518,
+      "old_std": 0.008065950646639083,
+      "rebuilt_mean": 0.9915547822903428,
+      "rebuilt_std": 0.005775359667870349,
+      "diff": 0.0034028084385909763,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 histgb held-out speedup_B",
+      "old_mean": 1.5454223907871036,
+      "old_std": 0.22515717281524747,
+      "rebuilt_mean": 1.4390628661570048,
+      "rebuilt_std": 0.2282470027882188,
+      "diff": -0.10635952463009879,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 ridge held-out escalation",
+      "old_mean": 0.5946008645166627,
+      "old_std": 0.021811015050935485,
+      "rebuilt_mean": 0.5946666396035013,
+      "rebuilt_std": 0.05907247691195802,
+      "diff": 6.577508683858202e-05,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 ridge held-out missed",
+      "old_mean": 0.01818206612627541,
+      "old_std": 0.005885231494755158,
+      "rebuilt_mean": 0.015084485502176379,
+      "rebuilt_std": 0.006000599991871887,
+      "diff": -0.003097580624099032,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 ridge held-out solve_share_B",
+      "old_mean": 0.8212936411305334,
+      "old_std": 0.022223181294179325,
+      "rebuilt_mean": 0.8204863000789064,
+      "rebuilt_std": 0.061992587385262116,
+      "diff": -0.0008073410516269419,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 ridge held-out gate_catch",
+      "old_mean": 0.9818179338737245,
+      "old_std": 0.005885231494755161,
+      "rebuilt_mean": 0.9849155144978236,
+      "rebuilt_std": 0.006000599991871877,
+      "diff": 0.003097580624099039,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 ridge held-out static_catch_B",
+      "old_mean": 0.9958560351529583,
+      "old_std": 0.002607798002060908,
+      "rebuilt_mean": 0.9969000869370305,
+      "rebuilt_std": 0.0012070570112274702,
+      "diff": 0.0010440517840721864,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "D94 ridge held-out speedup_B",
+      "old_mean": 1.2178856303003063,
+      "old_std": 0.03292444477910751,
+      "rebuilt_mean": 1.2257246666491173,
+      "rebuilt_std": 0.09588893816832363,
+      "diff": 0.007839036348811002,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL histgb held-out escalation",
+      "old_mean": 0.10704966148403879,
+      "old_std": 0.021518931612086404,
+      "rebuilt_mean": 0.08721360819710947,
+      "rebuilt_std": 0.01642924492892968,
+      "diff": -0.01983605328692932,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL histgb held-out missed",
+      "old_mean": 0.00962790589377946,
+      "old_std": 0.0022000698134453643,
+      "rebuilt_mean": 0.00912364587478609,
+      "rebuilt_std": 0.002528590358976828,
+      "diff": -0.0005042600189933688,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL histgb held-out solve_share_B",
+      "old_mean": 0.32113906392929426,
+      "old_std": 0.0243264798535614,
+      "rebuilt_mean": 0.3638889928693522,
+      "rebuilt_std": 0.025871949144976893,
+      "diff": 0.04274992894005797,
+      "std_rule": "differs"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL histgb held-out gate_catch",
+      "old_mean": 0.9903720941062206,
+      "old_std": 0.0022000698134453513,
+      "rebuilt_mean": 0.9908763541252139,
+      "rebuilt_std": 0.002528590358976814,
+      "diff": 0.0005042600189932855,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL histgb held-out static_catch_B",
+      "old_mean": 0.8889591531571523,
+      "old_std": 0.011969097278333837,
+      "rebuilt_mean": 0.8481748905102284,
+      "rebuilt_std": 0.016868890113463406,
+      "diff": -0.04078426264692392,
+      "std_rule": "differs"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL histgb held-out speedup_B",
+      "old_mean": 3.1229653831487627,
+      "old_std": 0.24688945422429312,
+      "rebuilt_mean": 2.7518515855632097,
+      "rebuilt_std": 0.18098363638853426,
+      "diff": -0.37111379758555296,
+      "std_rule": "differs"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL ridge held-out escalation",
+      "old_mean": 0.19486157280233174,
+      "old_std": 0.01564424827516016,
+      "rebuilt_mean": 0.13870262414768617,
+      "rebuilt_std": 0.024769232901563867,
+      "diff": -0.056158948654645574,
+      "std_rule": "differs"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL ridge held-out missed",
+      "old_mean": 0.008289977118303923,
+      "old_std": 0.001139564110849658,
+      "rebuilt_mean": 0.010745311215523126,
+      "rebuilt_std": 0.0019078941092364866,
+      "diff": 0.002455334097219203,
+      "std_rule": "differs"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL ridge held-out solve_share_B",
+      "old_mean": 0.4150529531827443,
+      "old_std": 0.022614066661824632,
+      "rebuilt_mean": 0.42135223387201826,
+      "rebuilt_std": 0.03507540871924494,
+      "diff": 0.006299280689273934,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL ridge held-out gate_catch",
+      "old_mean": 0.9917100228816962,
+      "old_std": 0.0011395641108496487,
+      "rebuilt_mean": 0.989254688784477,
+      "rebuilt_std": 0.0019078941092364739,
+      "diff": -0.0024553340972192084,
+      "std_rule": "differs"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL ridge held-out static_catch_B",
+      "old_mean": 0.9518374346961014,
+      "old_std": 0.01548828034435847,
+      "rebuilt_mean": 0.895124574543322,
+      "rebuilt_std": 0.018732932561934014,
+      "diff": -0.05671286015277943,
+      "std_rule": "differs"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "ILL ridge held-out speedup_B",
+      "old_mean": 2.4151085829775942,
+      "old_std": 0.12913457630606764,
+      "rebuilt_mean": 2.3871372025468767,
+      "rebuilt_std": 0.17810142636421514,
+      "diff": -0.027971380430717563,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 histgb held-out escalation",
+      "old_mean": 0.06164227642276423,
+      "old_std": 0.02760736197688743,
+      "rebuilt_mean": 0.06133333333333334,
+      "rebuilt_std": 0.0215337968958427,
+      "diff": -0.00030894308943089227,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 histgb held-out missed",
+      "old_mean": 0.006304332914509897,
+      "old_std": 0.0031288338128265224,
+      "rebuilt_mean": 0.007364663956596082,
+      "rebuilt_std": 0.0034971488377435345,
+      "diff": 0.0010603310420861855,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 histgb held-out solve_share_B",
+      "old_mean": 0.21279674796747966,
+      "old_std": 0.027800151740180308,
+      "rebuilt_mean": 0.21208130081300816,
+      "rebuilt_std": 0.020474030729154612,
+      "diff": -0.0007154471544714991,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 histgb held-out gate_catch",
+      "old_mean": 0.9936956670854901,
+      "old_std": 0.003128833812826505,
+      "rebuilt_mean": 0.9926353360434039,
+      "rebuilt_std": 0.003497148837743541,
+      "diff": -0.0010603310420861378,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 histgb held-out static_catch_B",
+      "old_mean": 0.840908481739669,
+      "old_std": 0.03996699573510293,
+      "rebuilt_mean": 0.8316471807473869,
+      "rebuilt_std": 0.03005162208070793,
+      "diff": -0.009261300992282173,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 histgb held-out speedup_B",
+      "old_mean": 4.7626232013098,
+      "old_std": 0.5845662134112036,
+      "rebuilt_mean": 4.7478667453650845,
+      "rebuilt_std": 0.4431244405072257,
+      "diff": -0.014756455944715974,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 ridge held-out escalation",
+      "old_mean": 0.30004878048780487,
+      "old_std": 0.03862463270123667,
+      "rebuilt_mean": 0.30112195121951213,
+      "rebuilt_std": 0.040800062728460464,
+      "diff": 0.0010731707317072625,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 ridge held-out missed",
+      "old_mean": 0.010859382649895116,
+      "old_std": 0.003539920297295228,
+      "rebuilt_mean": 0.010640480345756742,
+      "rebuilt_std": 0.004109574880676647,
+      "diff": -0.0002189023041383742,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 ridge held-out solve_share_B",
+      "old_mean": 0.4562439024390244,
+      "old_std": 0.03920417259914673,
+      "rebuilt_mean": 0.4572682926829269,
+      "rebuilt_std": 0.04160348094264524,
+      "diff": 0.0010243902439024954,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 ridge held-out gate_catch",
+      "old_mean": 0.989140617350105,
+      "old_std": 0.003539920297295227,
+      "rebuilt_mean": 0.9893595196542432,
+      "rebuilt_std": 0.004109574880676648,
+      "diff": 0.00021890230413823542,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 ridge held-out static_catch_B",
+      "old_mean": 0.9732851466674515,
+      "old_std": 0.01039648061691141,
+      "rebuilt_mean": 0.9732851466674515,
+      "rebuilt_std": 0.01039648061691141,
+      "diff": 0.0,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C30 ridge held-out speedup_B",
+      "old_mean": 2.208222588278995,
+      "old_std": 0.19292091132504494,
+      "rebuilt_mean": 2.205085006540945,
+      "rebuilt_std": 0.202237889259718,
+      "diff": -0.0031375817380498994,
+      "std_rule": "within std"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 histgb held-out escalation",
+      "old_mean": 0.168642308968204,
+      "old_std": 0.011425161993262115,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 histgb held-out missed",
+      "old_mean": 0.00983907925779266,
+      "old_std": 0.0018329197245845427,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 histgb held-out solve_share_B",
+      "old_mean": 0.6484681953535345,
+      "old_std": 0.016180459546951066,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 histgb held-out gate_catch",
+      "old_mean": 0.9901609207422073,
+      "old_std": 0.0018329197245845446,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 histgb held-out static_catch_B",
+      "old_mean": 0.924847407773013,
+      "old_std": 0.011511892186087858,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 histgb held-out speedup_B",
+      "old_mean": 1.5413811755355062,
+      "old_std": 0.03864782073224706,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 ridge held-out escalation",
+      "old_mean": 0.13481693935989902,
+      "old_std": 0.03587914927604869,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 ridge held-out missed",
+      "old_mean": 0.01224052827199496,
+      "old_std": 0.00530570102004465,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 ridge held-out solve_share_B",
+      "old_mean": 0.7288230786587391,
+      "old_std": 0.03428790488303753,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 ridge held-out gate_catch",
+      "old_mean": 0.987759471728005,
+      "old_std": 0.005305701020044629,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 ridge held-out static_catch_B",
+      "old_mean": 0.9617554285546216,
+      "old_std": 0.014356824623356555,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "gate_vs_static",
+      "key": "C24 ridge held-out speedup_B",
+      "old_mean": 1.3750254101001056,
+      "old_std": 0.0634267622471291,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=20 surr",
+      "old_mean": 0.6167036407690969,
+      "old_std": 0.00867090131644432,
+      "rebuilt_mean": 0.6163600577843276,
+      "rebuilt_std": 0.007784605522770714,
+      "diff": -0.0003435829847693306,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=20 static",
+      "old_mean": 0.6220422076644458,
+      "old_std": 0.008284501013873635,
+      "rebuilt_mean": 0.621164890526767,
+      "rebuilt_std": 0.00712332474445416,
+      "diff": -0.0008773171376788014,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=20 oracle",
+      "old_mean": 0.6590373048548372,
+      "old_std": 0.00927844031705336,
+      "rebuilt_mean": 0.6555798489602884,
+      "rebuilt_std": 0.009236091656411398,
+      "diff": -0.003457455894548822,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=40 surr",
+      "old_mean": 0.867203156542117,
+      "old_std": 0.01125452876016246,
+      "rebuilt_mean": 0.8654074951617557,
+      "rebuilt_std": 0.007060743653885326,
+      "diff": -0.0017956613803612465,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=40 static",
+      "old_mean": 0.8675983774433629,
+      "old_std": 0.010894829840279133,
+      "rebuilt_mean": 0.8653631085272832,
+      "rebuilt_std": 0.007116178385956331,
+      "diff": -0.0022352689160797246,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=40 oracle",
+      "old_mean": 0.9693855511383502,
+      "old_std": 0.011882597315900603,
+      "rebuilt_mean": 0.9695457067298656,
+      "rebuilt_std": 0.00671721871497579,
+      "diff": 0.00016015559151538739,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=57 surr",
+      "old_mean": 0.9409988876798774,
+      "old_std": 0.011112619221265175,
+      "rebuilt_mean": 0.9369621874546686,
+      "rebuilt_std": 0.006208254892999168,
+      "diff": -0.004036700225208745,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=57 static",
+      "old_mean": 0.9415896133025633,
+      "old_std": 0.010886815426233156,
+      "rebuilt_mean": 0.9369796035716812,
+      "rebuilt_std": 0.0057485314404550425,
+      "diff": -0.004610009730882103,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=57 oracle",
+      "old_mean": 0.986245084550972,
+      "old_std": 0.010071648891054755,
+      "rebuilt_mean": 0.9908924607388127,
+      "rebuilt_std": 0.004790610535949489,
+      "diff": 0.004647376187840613,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=89 surr",
+      "old_mean": 0.9750426104146142,
+      "old_std": 0.008420475597094652,
+      "rebuilt_mean": 0.9715641732682005,
+      "rebuilt_std": 0.003234285816086868,
+      "diff": -0.0034784371464136044,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=89 static",
+      "old_mean": 0.9782949575739496,
+      "old_std": 0.008666581770608021,
+      "rebuilt_mean": 0.9753153425634633,
+      "rebuilt_std": 0.0035024653977290565,
+      "diff": -0.0029796150104862695,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=89 oracle",
+      "old_mean": 0.9916409097015484,
+      "old_std": 0.007770857321575372,
+      "rebuilt_mean": 0.9988968734116745,
+      "rebuilt_std": 0.001094909680454969,
+      "diff": 0.0072559637101261565,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=120 surr",
+      "old_mean": 0.988136751307757,
+      "old_std": 0.005817185171409879,
+      "rebuilt_mean": 0.9873773123731884,
+      "rebuilt_std": 0.0023203450282093764,
+      "diff": -0.0007594389345686459,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=120 static",
+      "old_mean": 0.9889249876362893,
+      "old_std": 0.005714509742391479,
+      "rebuilt_mean": 0.9880971847473601,
+      "rebuilt_std": 0.0020713422015696506,
+      "diff": -0.0008278028889292521,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "ridge k=120 oracle",
+      "old_mean": 0.9943332675036294,
+      "old_std": 0.005272546266133172,
+      "rebuilt_mean": 1.0,
+      "rebuilt_std": 0.0,
+      "diff": 0.005666732496370619,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=20 surr",
+      "old_mean": 0.6511421437989677,
+      "old_std": 0.009118385286026336,
+      "rebuilt_mean": 0.6482371496981152,
+      "rebuilt_std": 0.007122440825099887,
+      "diff": -0.0029049941008525426,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=20 static",
+      "old_mean": 0.6220422076644458,
+      "old_std": 0.008284501013873635,
+      "rebuilt_mean": 0.621164890526767,
+      "rebuilt_std": 0.00712332474445416,
+      "diff": -0.0008773171376788014,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=20 oracle",
+      "old_mean": 0.6590373048548372,
+      "old_std": 0.00927844031705336,
+      "rebuilt_mean": 0.6555798489602884,
+      "rebuilt_std": 0.009236091656411398,
+      "diff": -0.003457455894548822,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=40 surr",
+      "old_mean": 0.9345922340565298,
+      "old_std": 0.012558031243426715,
+      "rebuilt_mean": 0.9274068033946916,
+      "rebuilt_std": 0.008521241494090394,
+      "diff": -0.007185430661838188,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=40 static",
+      "old_mean": 0.8675983774433629,
+      "old_std": 0.010894829840279133,
+      "rebuilt_mean": 0.8653631085272832,
+      "rebuilt_std": 0.007116178385956331,
+      "diff": -0.0022352689160797246,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=40 oracle",
+      "old_mean": 0.9693855511383502,
+      "old_std": 0.011882597315900603,
+      "rebuilt_mean": 0.9695457067298656,
+      "rebuilt_std": 0.00671721871497579,
+      "diff": 0.00016015559151538739,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=57 surr",
+      "old_mean": 0.9573287222236134,
+      "old_std": 0.011407340113911594,
+      "rebuilt_mean": 0.9524311134474976,
+      "rebuilt_std": 0.004699667090060933,
+      "diff": -0.0048976087761157805,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=57 static",
+      "old_mean": 0.9415896133025633,
+      "old_std": 0.010886815426233156,
+      "rebuilt_mean": 0.9369796035716812,
+      "rebuilt_std": 0.0057485314404550425,
+      "diff": -0.004610009730882103,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=57 oracle",
+      "old_mean": 0.986245084550972,
+      "old_std": 0.010071648891054755,
+      "rebuilt_mean": 0.9908924607388127,
+      "rebuilt_std": 0.004790610535949489,
+      "diff": 0.004647376187840613,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=89 surr",
+      "old_mean": 0.9670999837836975,
+      "old_std": 0.009120982219620266,
+      "rebuilt_mean": 0.9639294887053115,
+      "rebuilt_std": 0.00365144901657193,
+      "diff": -0.003170495078386071,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=89 static",
+      "old_mean": 0.9782949575739496,
+      "old_std": 0.008666581770608021,
+      "rebuilt_mean": 0.9753153425634633,
+      "rebuilt_std": 0.0035024653977290565,
+      "diff": -0.0029796150104862695,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=89 oracle",
+      "old_mean": 0.9916409097015484,
+      "old_std": 0.007770857321575372,
+      "rebuilt_mean": 0.9988968734116745,
+      "rebuilt_std": 0.001094909680454969,
+      "diff": 0.0072559637101261565,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=120 surr",
+      "old_mean": 0.9797474563331218,
+      "old_std": 0.00614679998411194,
+      "rebuilt_mean": 0.9758510570689657,
+      "rebuilt_std": 0.003156096026599822,
+      "diff": -0.0038963992641560807,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=120 static",
+      "old_mean": 0.9889249876362893,
+      "old_std": 0.005714509742391479,
+      "rebuilt_mean": 0.9880971847473601,
+      "rebuilt_std": 0.0020713422015696506,
+      "diff": -0.0008278028889292521,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D94",
+      "key": "histgb k=120 oracle",
+      "old_mean": 0.9943332675036294,
+      "old_std": 0.005272546266133172,
+      "rebuilt_mean": 1.0,
+      "rebuilt_std": 0.0,
+      "diff": 0.005666732496370619,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=20 surr",
+      "old_mean": 0.676753910154628,
+      "old_std": 0.01276369815751989,
+      "rebuilt_mean": 0.67907149380198,
+      "rebuilt_std": 0.0054352027434225875,
+      "diff": 0.0023175836473519063,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=20 static",
+      "old_mean": 0.6785273439866855,
+      "old_std": 0.012799435974511268,
+      "rebuilt_mean": 0.6823807575537709,
+      "rebuilt_std": 0.005161802722418425,
+      "diff": 0.003853413567085462,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=20 oracle",
+      "old_mean": 0.7267682537683899,
+      "old_std": 0.014094847025276646,
+      "rebuilt_mean": 0.728101753494673,
+      "rebuilt_std": 0.006948790546050848,
+      "diff": 0.0013334997262830495,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=40 surr",
+      "old_mean": 0.9212923092498035,
+      "old_std": 0.012282482465432443,
+      "rebuilt_mean": 0.9280189205637814,
+      "rebuilt_std": 0.0041202716901153884,
+      "diff": 0.006726611313977893,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=40 static",
+      "old_mean": 0.9213171883206925,
+      "old_std": 0.012320197955675863,
+      "rebuilt_mean": 0.9278972021158802,
+      "rebuilt_std": 0.0040614508725053435,
+      "diff": 0.006580013795187689,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=40 oracle",
+      "old_mean": 0.973206640062867,
+      "old_std": 0.010225810602204375,
+      "rebuilt_mean": 0.9904246000175387,
+      "rebuilt_std": 0.0045212856392208255,
+      "diff": 0.01721795995467179,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=57 surr",
+      "old_mean": 0.9608487799709172,
+      "old_std": 0.010331926170751751,
+      "rebuilt_mean": 0.9700776271119962,
+      "rebuilt_std": 0.003085183600965215,
+      "diff": 0.009228847141078966,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=57 static",
+      "old_mean": 0.9617673678720073,
+      "old_std": 0.010185794952321784,
+      "rebuilt_mean": 0.9708817663246355,
+      "rebuilt_std": 0.0029271065154258796,
+      "diff": 0.00911439845262818,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=57 oracle",
+      "old_mean": 0.9827721635656179,
+      "old_std": 0.009628634297000243,
+      "rebuilt_mean": 0.9980502019304055,
+      "rebuilt_std": 0.0017487847022639497,
+      "diff": 0.015278038364787583,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=89 surr",
+      "old_mean": 0.9791914355800078,
+      "old_std": 0.0068588259103289344,
+      "rebuilt_mean": 0.9866226559152829,
+      "rebuilt_std": 0.0018388247330275863,
+      "diff": 0.007431220335275102,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=89 static",
+      "old_mean": 0.9808683464581683,
+      "old_std": 0.007224151349427834,
+      "rebuilt_mean": 0.9878653012353714,
+      "rebuilt_std": 0.0021657039628940355,
+      "diff": 0.006996954777203079,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=89 oracle",
+      "old_mean": 0.9885516711277009,
+      "old_std": 0.007187615942058411,
+      "rebuilt_mean": 1.0,
+      "rebuilt_std": 0.0,
+      "diff": 0.011448328872299074,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=120 surr",
+      "old_mean": 0.9883621582867598,
+      "old_std": 0.004835154116313023,
+      "rebuilt_mean": 0.9942118864472895,
+      "rebuilt_std": 0.0008481616776185886,
+      "diff": 0.005849728160529755,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=120 static",
+      "old_mean": 0.989210637091222,
+      "old_std": 0.004909925155879007,
+      "rebuilt_mean": 0.99433230793811,
+      "rebuilt_std": 0.0011901057281662162,
+      "diff": 0.005121670846887971,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "ridge k=120 oracle",
+      "old_mean": 0.9922873432281605,
+      "old_std": 0.004830189361568659,
+      "rebuilt_mean": 1.0,
+      "rebuilt_std": 0.0,
+      "diff": 0.007712656771839521,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=20 surr",
+      "old_mean": 0.7168015381003323,
+      "old_std": 0.013685587035290327,
+      "rebuilt_mean": 0.7198690130809189,
+      "rebuilt_std": 0.006286836874086595,
+      "diff": 0.003067474980586571,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=20 static",
+      "old_mean": 0.6785273439866855,
+      "old_std": 0.012799435974511268,
+      "rebuilt_mean": 0.6823807575537709,
+      "rebuilt_std": 0.005161802722418425,
+      "diff": 0.003853413567085462,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=20 oracle",
+      "old_mean": 0.7267682537683899,
+      "old_std": 0.014094847025276646,
+      "rebuilt_mean": 0.728101753494673,
+      "rebuilt_std": 0.006948790546050848,
+      "diff": 0.0013334997262830495,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=40 surr",
+      "old_mean": 0.9557206162338829,
+      "old_std": 0.011221935525284596,
+      "rebuilt_mean": 0.9677684938249748,
+      "rebuilt_std": 0.0030576285860223415,
+      "diff": 0.012047877591091827,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=40 static",
+      "old_mean": 0.9213171883206925,
+      "old_std": 0.012320197955675863,
+      "rebuilt_mean": 0.9278972021158802,
+      "rebuilt_std": 0.0040614508725053435,
+      "diff": 0.006580013795187689,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=40 oracle",
+      "old_mean": 0.973206640062867,
+      "old_std": 0.010225810602204375,
+      "rebuilt_mean": 0.9904246000175387,
+      "rebuilt_std": 0.0045212856392208255,
+      "diff": 0.01721795995467179,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=57 surr",
+      "old_mean": 0.9683046453519701,
+      "old_std": 0.009463142084662316,
+      "rebuilt_mean": 0.9797075561244591,
+      "rebuilt_std": 0.0035718538058519323,
+      "diff": 0.011402910772489006,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=57 static",
+      "old_mean": 0.9617673678720073,
+      "old_std": 0.010185794952321784,
+      "rebuilt_mean": 0.9708817663246355,
+      "rebuilt_std": 0.0029271065154258796,
+      "diff": 0.00911439845262818,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=57 oracle",
+      "old_mean": 0.9827721635656179,
+      "old_std": 0.009628634297000243,
+      "rebuilt_mean": 0.9980502019304055,
+      "rebuilt_std": 0.0017487847022639497,
+      "diff": 0.015278038364787583,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=89 surr",
+      "old_mean": 0.9749288538472671,
+      "old_std": 0.007229653010091365,
+      "rebuilt_mean": 0.9846948218898316,
+      "rebuilt_std": 0.002678956468427425,
+      "diff": 0.009765968042564466,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=89 static",
+      "old_mean": 0.9808683464581683,
+      "old_std": 0.007224151349427834,
+      "rebuilt_mean": 0.9878653012353714,
+      "rebuilt_std": 0.0021657039628940355,
+      "diff": 0.006996954777203079,
+      "std_rule": "within std"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=89 oracle",
+      "old_mean": 0.9885516711277009,
+      "old_std": 0.007187615942058411,
+      "rebuilt_mean": 1.0,
+      "rebuilt_std": 0.0,
+      "diff": 0.011448328872299074,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=120 surr",
+      "old_mean": 0.9833866740644984,
+      "old_std": 0.004807549646975019,
+      "rebuilt_mean": 0.9915258119531989,
+      "rebuilt_std": 0.002513996669573726,
+      "diff": 0.008139137888700465,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=120 static",
+      "old_mean": 0.989210637091222,
+      "old_std": 0.004909925155879007,
+      "rebuilt_mean": 0.99433230793811,
+      "rebuilt_std": 0.0011901057281662162,
+      "diff": 0.005121670846887971,
+      "std_rule": "differs"
+    },
+    {
+      "table": "budget_curve_D95a",
+      "key": "histgb k=120 oracle",
+      "old_mean": 0.9922873432281605,
+      "old_std": 0.004830189361568659,
+      "rebuilt_mean": 1.0,
+      "rebuilt_std": 0.0,
+      "diff": 0.007712656771839521,
+      "std_rule": "differs"
+    },
+    {
+      "table": "n2",
+      "key": "ridge t090 n2_coverage",
+      "old_mean": 0.611254111719137,
+      "old_std": 0.020428194956585623,
+      "rebuilt_mean": 0.6137407581607699,
+      "rebuilt_std": 0.03076035354428509,
+      "diff": 0.002486646441632878,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge t090 n1_coverage",
+      "old_mean": 0.8889265832993074,
+      "old_std": 0.01601760103645096,
+      "rebuilt_mean": 0.8944380102791503,
+      "rebuilt_std": 0.015335770437431895,
+      "diff": 0.0055114269798428595,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge t090 n2_missed",
+      "old_mean": 0.11665048516423467,
+      "old_std": 0.008005483961690136,
+      "rebuilt_mean": 0.12160984111765474,
+      "rebuilt_std": 0.0119875966119881,
+      "diff": 0.004959355953420078,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge t090 n2_escalation",
+      "old_mean": 0.17541225697873186,
+      "old_std": 0.020066890678427887,
+      "rebuilt_mean": 0.16880203060166768,
+      "rebuilt_std": 0.027569042413027697,
+      "diff": -0.006610226377064182,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge t090 n2_speedup_B",
+      "old_mean": 2.3400007680172643,
+      "old_std": 0.12133372281414179,
+      "rebuilt_mean": 2.385131355392764,
+      "rebuilt_std": 0.14705137604261273,
+      "diff": 0.04513058737549969,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge held_out n2_coverage",
+      "old_mean": 0.7192499009111966,
+      "old_std": 0.021145573446436985,
+      "rebuilt_mean": 0.7245005259785848,
+      "rebuilt_std": 0.052405728475000135,
+      "diff": 0.00525062506738827,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge held_out n1_coverage",
+      "old_mean": 0.9315182930125413,
+      "old_std": 0.008968986769331663,
+      "rebuilt_mean": 0.9335566089373705,
+      "rebuilt_std": 0.012978762350120167,
+      "diff": 0.0020383159248291705,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge held_out n2_missed",
+      "old_mean": 0.07455523811836728,
+      "old_std": 0.008640725359036584,
+      "rebuilt_mean": 0.0779770308233465,
+      "rebuilt_std": 0.023996317952312017,
+      "diff": 0.0034217927049792207,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge held_out n2_escalation",
+      "old_mean": 0.28863794408458116,
+      "old_std": 0.030075357513928803,
+      "rebuilt_mean": 0.29320208305273876,
+      "rebuilt_std": 0.08399700807430481,
+      "diff": 0.004564138968157605,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "ridge held_out n2_speedup_B",
+      "old_mean": 1.8527707431313671,
+      "old_std": 0.11006856588259281,
+      "rebuilt_mean": 1.8750873219643807,
+      "rebuilt_std": 0.2662200077378913,
+      "diff": 0.022316578833013523,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb t090 n2_coverage",
+      "old_mean": 0.8346104144753305,
+      "old_std": 0.018060810336261113,
+      "rebuilt_mean": 0.8393650664501913,
+      "rebuilt_std": 0.012575493907617636,
+      "diff": 0.004754651974860802,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb t090 n1_coverage",
+      "old_mean": 0.8980967039288101,
+      "old_std": 0.017308923016374416,
+      "rebuilt_mean": 0.9049594847538515,
+      "rebuilt_std": 0.013934118149633126,
+      "diff": 0.006862780825041326,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb t090 n2_missed",
+      "old_mean": 0.03954329892092908,
+      "old_std": 0.010574357716888865,
+      "rebuilt_mean": 0.045969541975119765,
+      "rebuilt_std": 0.00798092156182597,
+      "diff": 0.006426243054190685,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb t090 n2_escalation",
+      "old_mean": 0.23002220754564567,
+      "old_std": 0.02464950197331737,
+      "rebuilt_mean": 0.21375773155975542,
+      "rebuilt_std": 0.02708334670147835,
+      "diff": -0.01626447598589026,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb t090 n2_speedup_B",
+      "old_mean": 1.9406519688762411,
+      "old_std": 0.08760472375896129,
+      "rebuilt_mean": 1.9606965632337439,
+      "rebuilt_std": 0.11578347659769048,
+      "diff": 0.02004459435750272,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb held_out n2_coverage",
+      "old_mean": 0.9168820008013876,
+      "old_std": 0.024660025393540043,
+      "rebuilt_mean": 0.9351930541354566,
+      "rebuilt_std": 0.020797565173608784,
+      "diff": 0.018311053334069016,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb held_out n1_coverage",
+      "old_mean": 0.9590574288285918,
+      "old_std": 0.019156942812798835,
+      "rebuilt_mean": 0.969581484794736,
+      "rebuilt_std": 0.014400459204530777,
+      "diff": 0.010524055966144252,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb held_out n2_missed",
+      "old_mean": 0.01641319914612945,
+      "old_std": 0.00905160102497347,
+      "rebuilt_mean": 0.013980715395509578,
+      "rebuilt_std": 0.01042195158560587,
+      "diff": -0.002432483750619871,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb held_out n2_escalation",
+      "old_mean": 0.43263965682321726,
+      "old_std": 0.06881930798543923,
+      "rebuilt_mean": 0.46740052308527924,
+      "rebuilt_std": 0.07893242032591437,
+      "diff": 0.034760866262061985,
+      "std_rule": "within std"
+    },
+    {
+      "table": "n2",
+      "key": "histgb held_out n2_speedup_B",
+      "old_mean": 1.4047838813694877,
+      "old_std": 0.14577842520562465,
+      "rebuilt_mean": 1.3233207444994624,
+      "rebuilt_std": 0.15794096385101525,
+      "diff": -0.08146313687002538,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "ridge escalation",
+      "old_mean": 0.47285924620962055,
+      "old_std": 0.02568136379276821,
+      "rebuilt_mean": 0.4575404105043959,
+      "rebuilt_std": 0.07063768163860291,
+      "diff": -0.015318835705224632,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "ridge missed",
+      "old_mean": 0.0228888029473351,
+      "old_std": 0.004861898061257211,
+      "rebuilt_mean": 0.02193168252065373,
+      "rebuilt_std": 0.007856621724694961,
+      "diff": -0.0009571204266813696,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "ridge gate_catch",
+      "old_mean": 0.9771111970526649,
+      "old_std": 0.0048618980612571885,
+      "rebuilt_mean": 0.9780683174793463,
+      "rebuilt_std": 0.007856621724694951,
+      "diff": 0.0009571204266813904,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "ridge static_catch_B",
+      "old_mean": 0.9914598387908071,
+      "old_std": 0.0042918791035606255,
+      "rebuilt_mean": 0.9906340423980984,
+      "rebuilt_std": 0.0028171367729770778,
+      "diff": -0.0008257963927087442,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "ridge speedup_B",
+      "old_mean": 1.4295206225722072,
+      "old_std": 0.035618050005872086,
+      "rebuilt_mean": 1.4781087247987423,
+      "rebuilt_std": 0.1415261776548286,
+      "diff": 0.04858810222653509,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "histgb escalation",
+      "old_mean": 0.369745182175524,
+      "old_std": 0.07137384442568451,
+      "rebuilt_mean": 0.3768606144250918,
+      "rebuilt_std": 0.08270627000943374,
+      "diff": 0.007115432249567788,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "histgb missed",
+      "old_mean": 0.01759697690455996,
+      "old_std": 0.014282310649101829,
+      "rebuilt_mean": 0.01221187406231118,
+      "rebuilt_std": 0.007609621371574948,
+      "diff": -0.005385102842248779,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "histgb gate_catch",
+      "old_mean": 0.9824030230954401,
+      "old_std": 0.014282310649101834,
+      "rebuilt_mean": 0.9877881259376888,
+      "rebuilt_std": 0.007609621371574926,
+      "diff": 0.00538510284224869,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "histgb static_catch_B",
+      "old_mean": 0.9807244024342445,
+      "old_std": 0.011173792549013068,
+      "rebuilt_mean": 0.9799745477427125,
+      "rebuilt_std": 0.006791769531140699,
+      "diff": -0.0007498546915319926,
+      "std_rule": "within std"
+    },
+    {
+      "table": "mondrian",
+      "key": "histgb speedup_B",
+      "old_mean": 1.9284909258132994,
+      "old_std": 0.23912114623104128,
+      "rebuilt_mean": 1.878706517933876,
+      "rebuilt_std": 0.2814677702708119,
+      "diff": -0.0497844078794234,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "D94 gate_catch",
+      "old_mean": 0.9849108759616199,
+      "old_std": 0.013546958168829266,
+      "rebuilt_mean": 0.9886400348508773,
+      "rebuilt_std": 0.009569465819038834,
+      "diff": 0.0037291588892574,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "D94 static_fixed_catch",
+      "old_mean": 0.9881519738517518,
+      "old_std": 0.008065950646639083,
+      "rebuilt_mean": 0.9915547822903428,
+      "rebuilt_std": 0.005775359667870349,
+      "diff": 0.0034028084385909763,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "D94 condhist_catch",
+      "old_mean": 0.9906400104409633,
+      "old_std": 0.007999148562763578,
+      "rebuilt_mean": 0.9964224913676931,
+      "rebuilt_std": 0.003571483682134801,
+      "diff": 0.005782480926729838,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "D94 global_static_catch",
+      "old_mean": 0.9881956227750784,
+      "old_std": 0.00807603234251324,
+      "rebuilt_mean": 0.9915770789140342,
+      "rebuilt_std": 0.005675956438803563,
+      "diff": 0.0033814561389557962,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "ILL gate_catch",
+      "old_mean": 0.9903720941062206,
+      "old_std": 0.0022000698134453513,
+      "rebuilt_mean": 0.9908763541252139,
+      "rebuilt_std": 0.002528590358976814,
+      "diff": 0.0005042600189932855,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "ILL static_fixed_catch",
+      "old_mean": 0.8889591531571523,
+      "old_std": 0.011969097278333837,
+      "rebuilt_mean": 0.8481748905102284,
+      "rebuilt_std": 0.016868890113463406,
+      "diff": -0.04078426264692392,
+      "std_rule": "differs"
+    },
+    {
+      "table": "condhist",
+      "key": "ILL condhist_catch",
+      "old_mean": 0.9793829110203498,
+      "old_std": 0.00967293617683633,
+      "rebuilt_mean": 0.9845241963691066,
+      "rebuilt_std": 0.006113315892637821,
+      "diff": 0.005141285348756797,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "ILL global_static_catch",
+      "old_mean": 0.8861879933935531,
+      "old_std": 0.01201118624747795,
+      "rebuilt_mean": 0.8449275753388698,
+      "rebuilt_std": 0.017096999383049632,
+      "diff": -0.04126041805468339,
+      "std_rule": "differs"
+    },
+    {
+      "table": "condhist",
+      "key": "C30 gate_catch",
+      "old_mean": 0.9936956670854901,
+      "old_std": 0.003128833812826505,
+      "rebuilt_mean": 0.9926353360434039,
+      "rebuilt_std": 0.003497148837743541,
+      "diff": -0.0010603310420861378,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "C30 static_fixed_catch",
+      "old_mean": 0.840908481739669,
+      "old_std": 0.03996699573510293,
+      "rebuilt_mean": 0.8316471807473869,
+      "rebuilt_std": 0.03005162208070793,
+      "diff": -0.009261300992282173,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "C30 condhist_catch",
+      "old_mean": 0.8943669010410208,
+      "old_std": 0.03900354572020673,
+      "rebuilt_mean": 0.898146324579956,
+      "rebuilt_std": 0.028887973722527927,
+      "diff": 0.0037794235389352338,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "C30 global_static_catch",
+      "old_mean": 0.8344276649370936,
+      "old_std": 0.045495998009035074,
+      "rebuilt_mean": 0.835564836206817,
+      "rebuilt_std": 0.03437717697239021,
+      "diff": 0.0011371712697233471,
+      "std_rule": "within std"
+    },
+    {
+      "table": "condhist",
+      "key": "C24 gate_catch",
+      "old_mean": 0.9901609207422073,
+      "old_std": 0.0018329197245845446,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "condhist",
+      "key": "C24 static_fixed_catch",
+      "old_mean": 0.924847407773013,
+      "old_std": 0.011511892186087858,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "condhist",
+      "key": "C24 condhist_catch",
+      "old_mean": 0.9461758696131876,
+      "old_std": 0.007157390440038791,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "condhist",
+      "key": "C24 global_static_catch",
+      "old_mean": 0.9243573504210781,
+      "old_std": 0.01222455141941039,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb global_gate escalation",
+      "old_mean": 0.5016722211341014,
+      "old_std": 0.08449502270763484,
+      "rebuilt_mean": 0.5424699126065449,
+      "rebuilt_std": 0.0967520352793901,
+      "diff": 0.0407976914724435,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb global_gate missed",
+      "old_mean": 0.015089124038380192,
+      "old_std": 0.013546958168829268,
+      "rebuilt_mean": 0.011359965149122797,
+      "rebuilt_std": 0.009569465819038826,
+      "diff": -0.003729158889257395,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb global_gate any_miss_share",
+      "old_mean": 0.1706666666666667,
+      "old_std": 0.07233870947762953,
+      "rebuilt_mean": 0.124,
+      "rebuilt_std": 0.09369928257759262,
+      "diff": -0.04666666666666669,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb global_gate speedup_B",
+      "old_mean": 1.5454223907871036,
+      "old_std": 0.22515717281524747,
+      "rebuilt_mean": 1.4390628661570048,
+      "rebuilt_std": 0.2282470027882188,
+      "diff": -0.10635952463009879,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb row_level escalation",
+      "old_mean": 0.5274211065068997,
+      "old_std": 0.029584979257162598,
+      "rebuilt_mean": 0.5056744784217286,
+      "rebuilt_std": 0.02831303444142779,
+      "diff": -0.021746628085171027,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb row_level missed",
+      "old_mean": 0.012156549089675155,
+      "old_std": 0.007005037165655567,
+      "rebuilt_mean": 0.012180114197140575,
+      "rebuilt_std": 0.0055061172007930285,
+      "diff": 2.356510746541994e-05,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb row_level any_miss_share",
+      "old_mean": 0.146,
+      "old_std": 0.02823709144606316,
+      "rebuilt_mean": 0.1433333333333333,
+      "rebuilt_std": 0.040933550488023336,
+      "diff": -0.0026666666666666783,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb row_level speedup_B",
+      "old_mean": 1.462205851308638,
+      "old_std": 0.06221093289624136,
+      "rebuilt_mean": 1.4873889016826312,
+      "rebuilt_std": 0.06694126966659579,
+      "diff": 0.025183050373993154,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb base_level escalation",
+      "old_mean": 0.6004449276769288,
+      "old_std": 0.01803582815699703,
+      "rebuilt_mean": 0.5483347648123089,
+      "rebuilt_std": 0.035278233545808425,
+      "diff": -0.05211016286461989,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb base_level missed",
+      "old_mean": 0.004830811232560005,
+      "old_std": 0.001334210730776491,
+      "rebuilt_mean": 0.010208946460264693,
+      "rebuilt_std": 0.004712129719982041,
+      "diff": 0.005378135227704688,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb base_level any_miss_share",
+      "old_mean": 0.08066666666666666,
+      "old_std": 0.010413666234542207,
+      "rebuilt_mean": 0.11200000000000002,
+      "rebuilt_std": 0.03429285639896449,
+      "diff": 0.03133333333333335,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 histgb base_level speedup_B",
+      "old_mean": 1.3197453439165323,
+      "old_std": 0.030942539829739536,
+      "rebuilt_mean": 1.3993589567806328,
+      "rebuilt_std": 0.06765926045761442,
+      "diff": 0.07961361286410051,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge global_gate escalation",
+      "old_mean": 0.5946008645166627,
+      "old_std": 0.021811015050935485,
+      "rebuilt_mean": 0.5946666396035013,
+      "rebuilt_std": 0.05907247691195802,
+      "diff": 6.577508683858202e-05,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge global_gate missed",
+      "old_mean": 0.01818206612627541,
+      "old_std": 0.005885231494755158,
+      "rebuilt_mean": 0.015084485502176379,
+      "rebuilt_std": 0.006000599991871887,
+      "diff": -0.003097580624099032,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge global_gate any_miss_share",
+      "old_mean": 0.11399999999999999,
+      "old_std": 0.022251092357704845,
+      "rebuilt_mean": 0.11733333333333333,
+      "rebuilt_std": 0.049188977988524576,
+      "diff": 0.003333333333333341,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge global_gate speedup_B",
+      "old_mean": 1.2178856303003063,
+      "old_std": 0.03292444477910751,
+      "rebuilt_mean": 1.2257246666491173,
+      "rebuilt_std": 0.09588893816832363,
+      "diff": 0.007839036348811002,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge row_level escalation",
+      "old_mean": 0.579272118465296,
+      "old_std": 0.03380569249689125,
+      "rebuilt_mean": 0.6023294982084046,
+      "rebuilt_std": 0.017235344704948943,
+      "diff": 0.02305737974310862,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge row_level missed",
+      "old_mean": 0.01982206181322257,
+      "old_std": 0.0038591220294153213,
+      "rebuilt_mean": 0.013709752877724635,
+      "rebuilt_std": 0.0018078135910447996,
+      "diff": -0.006112308935497936,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge row_level any_miss_share",
+      "old_mean": 0.12666666666666665,
+      "old_std": 0.03681787005729087,
+      "rebuilt_mean": 0.10533333333333332,
+      "rebuilt_std": 0.016679994670929073,
+      "diff": -0.02133333333333333,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge row_level speedup_B",
+      "old_mean": 1.2424475523946854,
+      "old_std": 0.053806042433455145,
+      "rebuilt_mean": 1.208457383801619,
+      "rebuilt_std": 0.03875532912921932,
+      "diff": -0.03399016859306636,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge base_level escalation",
+      "old_mean": 0.5990680198966463,
+      "old_std": 0.024556127749670132,
+      "rebuilt_mean": 0.6200416285819497,
+      "rebuilt_std": 0.01718501681563274,
+      "diff": 0.020973608685303402,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge base_level missed",
+      "old_mean": 0.01739966387362541,
+      "old_std": 0.004963345460233946,
+      "rebuilt_mean": 0.011981666808964574,
+      "rebuilt_std": 0.0014962252106752471,
+      "diff": -0.0054179970646608365,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge base_level any_miss_share",
+      "old_mean": 0.11133333333333333,
+      "old_std": 0.027696770770454654,
+      "rebuilt_mean": 0.09466666666666668,
+      "rebuilt_std": 0.010873004286866729,
+      "diff": -0.01666666666666665,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "D94 ridge base_level speedup_B",
+      "old_mean": 1.2117651910540779,
+      "old_std": 0.04078668248912729,
+      "rebuilt_mean": 1.1827972370312574,
+      "rebuilt_std": 0.03165270029096098,
+      "diff": -0.028967954022820486,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb global_gate escalation",
+      "old_mean": 0.10704966148403879,
+      "old_std": 0.021518931612086404,
+      "rebuilt_mean": 0.08721360819710947,
+      "rebuilt_std": 0.01642924492892968,
+      "diff": -0.01983605328692932,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb global_gate missed",
+      "old_mean": 0.00962790589377946,
+      "old_std": 0.0022000698134453643,
+      "rebuilt_mean": 0.00912364587478609,
+      "rebuilt_std": 0.002528590358976828,
+      "diff": -0.0005042600189933688,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb global_gate any_miss_share",
+      "old_mean": 0.23933333333333334,
+      "old_std": 0.04864383025854586,
+      "rebuilt_mean": 0.28400000000000003,
+      "rebuilt_std": 0.048460751587696665,
+      "diff": 0.04466666666666669,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb global_gate speedup_B",
+      "old_mean": 3.1229653831487627,
+      "old_std": 0.24688945422429312,
+      "rebuilt_mean": 2.7518515855632097,
+      "rebuilt_std": 0.18098363638853426,
+      "diff": -0.37111379758555296,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb row_level escalation",
+      "old_mean": 0.09947794129128204,
+      "old_std": 0.01678922465219295,
+      "rebuilt_mean": 0.08305094890665599,
+      "rebuilt_std": 0.011334743595817723,
+      "diff": -0.016426992384626055,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb row_level missed",
+      "old_mean": 0.010297472788182247,
+      "old_std": 0.001398332635495307,
+      "rebuilt_mean": 0.009857472959897324,
+      "rebuilt_std": 0.0018107373929619902,
+      "diff": -0.00043999982828492323,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb row_level any_miss_share",
+      "old_mean": 0.24866666666666667,
+      "old_std": 0.0382157617279107,
+      "rebuilt_mean": 0.304,
+      "rebuilt_std": 0.0437873649964614,
+      "diff": 0.05533333333333332,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb row_level speedup_B",
+      "old_mean": 3.1975628789418926,
+      "old_std": 0.24452141460684415,
+      "rebuilt_mean": 2.7777151441126913,
+      "rebuilt_std": 0.14143708759589016,
+      "diff": -0.41984773482920135,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb base_level escalation",
+      "old_mean": 0.19591652952710265,
+      "old_std": 0.036076876831958274,
+      "rebuilt_mean": 0.1900469020008532,
+      "rebuilt_std": 0.022163833647226325,
+      "diff": -0.005869627526249449,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb base_level missed",
+      "old_mean": 0.0036788719980327066,
+      "old_std": 0.0007871625725997478,
+      "rebuilt_mean": 0.0031796040078918945,
+      "rebuilt_std": 0.0008969735195719618,
+      "diff": -0.0004992679901408121,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb base_level any_miss_share",
+      "old_mean": 0.10066666666666665,
+      "old_std": 0.03511251755270318,
+      "rebuilt_mean": 0.11199999999999999,
+      "rebuilt_std": 0.025174943451332272,
+      "diff": 0.011333333333333334,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL histgb base_level speedup_B",
+      "old_mean": 2.459150981372488,
+      "old_std": 0.2480031597199769,
+      "rebuilt_mean": 2.146735923041193,
+      "rebuilt_std": 0.14270317802346902,
+      "diff": -0.312415058331295,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge global_gate escalation",
+      "old_mean": 0.19486157280233174,
+      "old_std": 0.01564424827516016,
+      "rebuilt_mean": 0.13870262414768617,
+      "rebuilt_std": 0.024769232901563867,
+      "diff": -0.056158948654645574,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge global_gate missed",
+      "old_mean": 0.008289977118303923,
+      "old_std": 0.001139564110849658,
+      "rebuilt_mean": 0.010745311215523126,
+      "rebuilt_std": 0.0019078941092364866,
+      "diff": 0.002455334097219203,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge global_gate any_miss_share",
+      "old_mean": 0.20400000000000004,
+      "old_std": 0.03549021774454978,
+      "rebuilt_mean": 0.31533333333333335,
+      "rebuilt_std": 0.04399999999999999,
+      "diff": 0.11133333333333331,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge global_gate speedup_B",
+      "old_mean": 2.4151085829775942,
+      "old_std": 0.12913457630606764,
+      "rebuilt_mean": 2.3871372025468767,
+      "rebuilt_std": 0.17810142636421514,
+      "diff": -0.027971380430717563,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge row_level escalation",
+      "old_mean": 0.1763385257182179,
+      "old_std": 0.02592744000089512,
+      "rebuilt_mean": 0.1379321696330778,
+      "rebuilt_std": 0.024715166746432687,
+      "diff": -0.03840635608514009,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge row_level missed",
+      "old_mean": 0.009619883022010611,
+      "old_std": 0.0018292383864572193,
+      "rebuilt_mean": 0.010778295145677016,
+      "rebuilt_std": 0.0013429794229949364,
+      "diff": 0.0011584121236664045,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge row_level any_miss_share",
+      "old_mean": 0.23466666666666666,
+      "old_std": 0.03131204950884635,
+      "rebuilt_mean": 0.31933333333333336,
+      "rebuilt_std": 0.042079290234825345,
+      "diff": 0.0846666666666667,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge row_level speedup_B",
+      "old_mean": 2.5425334460280853,
+      "old_std": 0.236571295375253,
+      "rebuilt_mean": 2.391548740828964,
+      "rebuilt_std": 0.18910599289803426,
+      "diff": -0.1509847051991211,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge base_level escalation",
+      "old_mean": 0.3495037097711131,
+      "old_std": 0.025894970243555207,
+      "rebuilt_mean": 0.3243646678692923,
+      "rebuilt_std": 0.0339408018136211,
+      "diff": -0.025139041901820813,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge base_level missed",
+      "old_mean": 0.0029997324747691803,
+      "old_std": 0.0006479224594043496,
+      "rebuilt_mean": 0.0023368514183642096,
+      "rebuilt_std": 0.0005670895697678855,
+      "diff": -0.0006628810564049707,
+      "std_rule": "differs"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge base_level any_miss_share",
+      "old_mean": 0.08133333333333334,
+      "old_std": 0.012578641509408801,
+      "rebuilt_mean": 0.08533333333333334,
+      "rebuilt_std": 0.022666666666666665,
+      "diff": 0.0040000000000000036,
+      "std_rule": "within std"
+    },
+    {
+      "table": "guarantee",
+      "key": "ILL ridge base_level speedup_B",
+      "old_mean": 1.7620458532332877,
+      "old_std": 0.11524831362273466,
+      "rebuilt_mean": 1.6544649979667878,
+      "rebuilt_std": 0.11294253716981296,
+      "diff": -0.10758085526649985,
+      "std_rule": "within std"
+    },
+    {
+      "table": "crossnet",
+      "key": "D94 boundary_mass",
+      "old_mean": 0.5621607863662109,
+      "old_std": 0.0,
+      "rebuilt_mean": 0.5474627614762767,
+      "rebuilt_std": 0.0,
+      "diff": -0.014698024889934214,
+      "std_rule": "differs"
+    },
+    {
+      "table": "crossnet",
+      "key": "D94 violation_rate",
+      "old_mean": 0.1659592621005614,
+      "old_std": 0.0,
+      "rebuilt_mean": 0.16256251232321783,
+      "rebuilt_std": 0.0,
+      "diff": -0.003396749777343555,
+      "std_rule": "differs"
+    },
+    {
+      "table": "crossnet",
+      "key": "D94 risk_spread",
+      "old_mean": 0.0555437364230539,
+      "old_std": 0.015440983394757494,
+      "rebuilt_mean": 0.046674568685693585,
+      "rebuilt_std": 0.0045615614524836005,
+      "diff": -0.008869167737360316,
+      "std_rule": "within std"
+    },
+    {
+      "table": "crossnet",
+      "key": "D94 top10_concentration",
+      "old_mean": 0.32946277940350477,
+      "old_std": 0.004575059416610679,
+      "rebuilt_mean": 0.32818621452322905,
+      "rebuilt_std": 0.004779309901854933,
+      "diff": -0.0012765648802757212,
+      "std_rule": "within std"
+    },
+    {
+      "table": "crossnet",
+      "key": "ILL boundary_mass",
+      "old_mean": 0.14314912545862463,
+      "old_std": 0.0,
+      "rebuilt_mean": 0.18754337940110052,
+      "rebuilt_std": 0.0,
+      "diff": 0.0443942539424759,
+      "std_rule": "differs"
+    },
+    {
+      "table": "crossnet",
+      "key": "ILL violation_rate",
+      "old_mean": 0.2165956254905169,
+      "old_std": 0.0,
+      "rebuilt_mean": 0.27165638517021384,
+      "rebuilt_std": 0.0,
+      "diff": 0.05506075967969695,
+      "std_rule": "differs"
+    },
+    {
+      "table": "crossnet",
+      "key": "ILL risk_spread",
+      "old_mean": 0.12795306517450777,
+      "old_std": 0.006827101718125104,
+      "rebuilt_mean": 0.17033715385413545,
+      "rebuilt_std": 0.00457599257793962,
+      "diff": 0.042384088679627674,
+      "std_rule": "differs"
+    },
+    {
+      "table": "crossnet",
+      "key": "ILL top10_concentration",
+      "old_mean": 0.18352617691516515,
+      "old_std": 0.012572994412757537,
+      "rebuilt_mean": 0.13669955379193335,
+      "rebuilt_std": 0.007298280756734236,
+      "diff": -0.0468266231232318,
+      "std_rule": "differs"
+    },
+    {
+      "table": "crossnet",
+      "key": "C30 boundary_mass",
+      "old_mean": 0.07095934959349594,
+      "old_std": 0.0,
+      "rebuilt_mean": 0.07095934959349594,
+      "rebuilt_std": 0.0,
+      "diff": 0.0,
+      "std_rule": "within std"
+    },
+    {
+      "table": "crossnet",
+      "key": "C30 violation_rate",
+      "old_mean": 0.15383739837398375,
+      "old_std": 0.0,
+      "rebuilt_mean": 0.15383739837398375,
+      "rebuilt_std": 0.0,
+      "diff": 0.0,
+      "std_rule": "within std"
+    },
+    {
+      "table": "crossnet",
+      "key": "C30 risk_spread",
+      "old_mean": 0.0824370826988615,
+      "old_std": 0.00449530550007126,
+      "rebuilt_mean": 0.0824370826988615,
+      "rebuilt_std": 0.00449530550007126,
+      "diff": 0.0,
+      "std_rule": "within std"
+    },
+    {
+      "table": "crossnet",
+      "key": "C30 top10_concentration",
+      "old_mean": 0.8945950781054007,
+      "old_std": 0.006799463372663172,
+      "rebuilt_mean": 0.8945950781054007,
+      "rebuilt_std": 0.006799463372663172,
+      "diff": 0.0,
+      "std_rule": "within std"
+    },
+    {
+      "table": "crossnet",
+      "key": "C24 boundary_mass",
+      "old_mean": 0.2094495681452203,
+      "old_std": 0.0,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "crossnet",
+      "key": "C24 violation_rate",
+      "old_mean": 0.47879153857414725,
+      "old_std": 0.0,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "crossnet",
+      "key": "C24 risk_spread",
+      "old_mean": 0.20933486531406179,
+      "old_std": 0.008283985733217642,
+      "rebuilt": "not run"
+    },
+    {
+      "table": "crossnet",
+      "key": "C24 top10_concentration",
+      "old_mean": 0.5149661183744035,
+      "old_std": 0.004295060448829693,
+      "rebuilt": "not run"
+    }
+  ],
+  "std_rule": "differs only if |rebuilt - old| > max(old std, rebuilt std); numbers without a std (std 0) compare exactly",
+  "wall_s": 1.1595549583435059
+}

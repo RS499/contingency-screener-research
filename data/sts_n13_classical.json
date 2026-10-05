@@ -1,0 +1,6 @@
+{
+  "run_classical": "stopped by its own guard",
+  "guard_message": "scenario 100000000: reconstructed vm0 differs from stored by 1.58e-03 (tolerance 1e-05). The screen would be reading a different operating point than the dataset recorded. Stopping rather than reporting a wrong number.",
+  "analysis": "classical screen (run_classical + eval_classical) on rebuilt D94",
+  "wall_s": 4.333796262741089
+}

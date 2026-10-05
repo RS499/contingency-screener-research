@@ -1,0 +1,231 @@
+{
+  "part": "N13 Step 5: tier-A verdicts on rebuilt data (replications under the original definitions)",
+  "decision_rule": "scratch/n13_decision_rule.md",
+  "decision_rule_sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce",
+  "definitions_quoted": {
+    "SAFER": {
+      "file": "scratch/n5_decision_rule.md",
+      "text": "histgb missed = certified true violations / true violations <= 0.01 in at least 4 of 5 splits.",
+      "verbatim_in_file": true
+    },
+    "BEATS_STATIC": {
+      "file": "scratch/n10_decision_rule.md",
+      "text": "mean(gate catch) \u2212 mean(static catch at k_B) > max(std gate, std static)",
+      "verbatim_in_file": true
+    },
+    "SAFER_IL": {
+      "file": "scratch/n10_decision_rule.md",
+      "text": "Histgb held-out missed \u2264 1% in \u2265 4 of 5 splits.",
+      "verbatim_in_file": true
+    },
+    "CONDHIST": {
+      "file": "scratch/n12_decision_rule.md",
+      "text": "mean_split(gate catch) \u2212 mean_split(COND-HIST catch) > max(std gate, std COND-HIST)",
+      "verbatim_in_file": true
+    },
+    "N2": {
+      "file": "scratch/n11_decision_rule.md",
+      "text": "mean_split(coverage_N2) \u2265 0.90 \u2212 max(std_split(coverage_N2), std_split(coverage_N1))",
+      "verbatim_in_file": true
+    },
+    "MONDRIAN": {
+      "file": "scratch/n11_decision_rule.md",
+      "text": "mean(Mondrian gate catch) \u2212 mean(static catch at the Mondrian gate's k_B) > max(std gate, std static)",
+      "verbatim_in_file": true
+    },
+    "FLOOR1": {
+      "file": "scratch/n11_decision_rule.md",
+      "text": "1. BM(0.96) < BM(0.95 build D95a) \u2212 5 pp.",
+      "verbatim_in_file": true
+    },
+    "FLOOR2": {
+      "file": "scratch/n11_decision_rule.md",
+      "text": "2. |BM(0.93) \u2212 BM(0.94)| \u2264 5 pp.",
+      "verbatim_in_file": true
+    },
+    "V2": {
+      "file": "scratch/n13_decision_rule.md",
+      "text": "| V2. SAFETY-CHANGED: \\|mean missed (rebuilt) \u2212 mean missed (old, `data/sts_n5_gate_094.json`)\\| > max(the two stds), histgb, held-out; unpaired; sign reported |",
+      "verbatim_in_file": true
+    }
+  },
+  "verdicts": {
+    "V1_SAFER_94": {
+      "holds": true,
+      "splits_missed_le_1pct": 4,
+      "missed_per_split": [
+        0.005166217430368374,
+        0.007221006564551422,
+        0.03026979600789647,
+        0.009073233959818535,
+        0.0050695717829791825
+      ],
+      "old_build": {
+        "holds": false,
+        "splits_missed_le_1pct": 3,
+        "source": "data/sts_n5_gate_094.json (N5 reported the 0.94 count; the N5 verdict was on 0.95)"
+      },
+      "primary": true,
+      "definition": "SAFER"
+    },
+    "V2_SAFETY_CHANGED": {
+      "holds": false,
+      "rebuilt_mean": 0.011359965149122797,
+      "rebuilt_std": 0.009569465819038826,
+      "old_mean": 0.015089124038380192,
+      "old_std": 0.013546958168829268,
+      "diff_rebuilt_minus_old": -0.003729158889257395,
+      "STD": 0.013546958168829268,
+      "sign": "rebuilt lower",
+      "primary": true,
+      "definition": "V2",
+      "old_build": "not applicable (defined by N13)"
+    },
+    "BEATS_STATIC": {
+      "per_network": {
+        "D94": {
+          "holds": false,
+          "gate_catch_mean": 0.9886400348508773,
+          "gate_catch_std": 0.009569465819038834,
+          "static_catch_mean": 0.9915547822903428,
+          "static_catch_std": 0.005775359667870349,
+          "gap": -0.002914747439465515,
+          "STD": 0.009569465819038834,
+          "old_build": {
+            "holds": false,
+            "gate_catch_mean": 0.9849108759616199,
+            "gate_catch_std": 0.013546958168829266,
+            "static_catch_mean": 0.9881519738517518,
+            "static_catch_std": 0.008065950646639083,
+            "gap": -0.0032410978901319387,
+            "STD": 0.013546958168829266
+          }
+        },
+        "ILL": {
+          "holds": true,
+          "gate_catch_mean": 0.9908763541252139,
+          "gate_catch_std": 0.002528590358976814,
+          "static_catch_mean": 0.8481748905102284,
+          "static_catch_std": 0.016868890113463406,
+          "gap": 0.14270146361498548,
+          "STD": 0.016868890113463406,
+          "old_build": {
+            "holds": true,
+            "gate_catch_mean": 0.9903720941062206,
+            "gate_catch_std": 0.0022000698134453513,
+            "static_catch_mean": 0.8889591531571523,
+            "static_catch_std": 0.011969097278333837,
+            "gap": 0.10141294094906828,
+            "STD": 0.011969097278333837
+          }
+        },
+        "C30": {
+          "holds": true,
+          "gate_catch_mean": 0.9926353360434039,
+          "gate_catch_std": 0.003497148837743541,
+          "static_catch_mean": 0.8316471807473869,
+          "static_catch_std": 0.03005162208070793,
+          "gap": 0.16098815529601707,
+          "STD": 0.03005162208070793,
+          "old_build": {
+            "holds": true,
+            "gate_catch_mean": 0.9936956670854901,
+            "gate_catch_std": 0.003128833812826505,
+            "static_catch_mean": 0.840908481739669,
+            "static_catch_std": 0.03996699573510293,
+            "gap": 0.15278718534582103,
+            "STD": 0.03996699573510293
+          }
+        },
+        "C24": "not run"
+      },
+      "primary_network": "ILL",
+      "definition": "BEATS_STATIC"
+    },
+    "SAFER_IL": {
+      "holds": false,
+      "splits_missed_le_1pct": 3,
+      "missed_per_split": [
+        0.011530292303024173,
+        0.006721327104585757,
+        0.005703928780851858,
+        0.009631578947368422,
+        0.012031102238100241
+      ],
+      "old_build": {
+        "holds": false,
+        "splits_missed_le_1pct": 2,
+        "source": "data/sts_n10_illinois.json"
+      },
+      "definition": "SAFER_IL"
+    },
+    "GATE_BEATS_CONDHIST": {
+      "per_network": {
+        "D94": {
+          "holds": false,
+          "gap": -0.007782456516815861,
+          "STD": 0.009569465819038834,
+          "gate_catch_mean": 0.9886400348508773,
+          "condhist_catch_mean": 0.9964224913676931,
+          "old_build": false
+        },
+        "ILL": {
+          "holds": true,
+          "gap": 0.006352157756107313,
+          "STD": 0.006113315892637821,
+          "gate_catch_mean": 0.9908763541252139,
+          "condhist_catch_mean": 0.9845241963691066,
+          "old_build": true
+        },
+        "C30": {
+          "holds": true,
+          "gap": 0.0944890114634479,
+          "STD": 0.028887973722527927,
+          "gate_catch_mean": 0.9926353360434039,
+          "condhist_catch_mean": 0.898146324579956,
+          "old_build": true
+        },
+        "C24": "not run"
+      },
+      "primary_network": "ILL",
+      "count": 2,
+      "definition": "CONDHIST"
+    },
+    "COVERAGE_HOLDS_N2": {
+      "holds": false,
+      "coverage_n2_mean": 0.8393650664501913,
+      "coverage_n2_std": 0.012575493907617636,
+      "coverage_n1_std": 0.013934118149633126,
+      "threshold": 0.8860658818503669,
+      "old_build": false,
+      "primary": true,
+      "definition": "N2"
+    },
+    "MONDRIAN_BEATS_STATIC": {
+      "holds": true,
+      "gap": 0.0078135781949763,
+      "STD": 0.007609621371574926,
+      "old_build": false,
+      "definition": "MONDRIAN"
+    },
+    "FLOOR_DOSE_RESPONSE": {
+      "holds": true,
+      "clause1": true,
+      "clause2": true,
+      "bm": {
+        "0.93": 56.322860952981834,
+        "0.94": 54.74627614762767,
+        "0.95": 33.35603988226057,
+        "0.96": 18.967303438856607
+      },
+      "old_build": true,
+      "primary": true,
+      "definition": [
+        "FLOOR1",
+        "FLOOR2"
+      ]
+    }
+  },
+  "tier_B_verdicts": "not part of this file (SAFER/FASTER N5 form on D95a, SHIFT-ADVANTAGE)",
+  "std_convention": "population std (ddof=0) over 5 splits"
+}

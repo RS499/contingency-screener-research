@@ -1,0 +1,61 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_classical.json"
+  ],
+  "generating_script": "scratch/n13_classical.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_classical.py"
+  ],
+  "script_git_blob_sha": "58d324b13df21a65512d7c3bb19b80c375c06286",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5"
+    },
+    {
+      "path": "scripts/run_classical.py",
+      "sha256": "a7ef979c9a4113cfeb7f59321e5924cc72f405a865510b419fd51be8ede9d1ee"
+    },
+    {
+      "path": "scripts/eval_classical.py",
+      "sha256": "314414273619c94103d268c85879b5266cfc329e9d91ef02d732d5e5c9c05286"
+    },
+    {
+      "path": "scripts/classical_screen.py",
+      "sha256": "6036b5363f48047767ebdec75bb0b8a260d638d869bfa03fe1513dff7a962e81"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_classical.json",
+      "sha256": "8c17b6b6db9f9729e2b15c7b0df37c7d17c6a8435186ed58f15025ebfe058b34",
+      "md5": "1ea12ab0101191fb8036f84b7d47edeb",
+      "bytes": 403,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T18:47:28Z",
+  "parameters": {
+    "model_hyperparameters": "none: linearized screen, no fit",
+    "vm0_guard_tol": 1e-05,
+    "solver": "classical_screen.solve_base: pandapower runpp enforce_q_lims=True init=dc numba=True"
+  },
+  "no_new_solves": "FALSE: classical base solves per scenario (if run_classical ran)"
+}

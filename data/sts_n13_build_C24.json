@@ -1,0 +1,105 @@
+{
+  "name": "C24",
+  "tier": "A",
+  "original_file": "data/netstudy/case24_ieee_rts/dataset.parquet",
+  "draws": 5079,
+  "accepted": 1500,
+  "rejected_by_reason": {
+    "nonconvergence": 322,
+    "voltage": 3252,
+    "thermal": 0,
+    "n0_correction_failed": 5
+  },
+  "base_set": {
+    "per_shard_prefix": [
+      {
+        "shard_seed": 100,
+        "first_differing_draw": 10,
+        "prefix_draws": 10,
+        "prefix_accepted": 2,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 8348,
+        "new_draws": 5079
+      }
+    ],
+    "n_old_bases": 1500,
+    "n_new_bases": 1500,
+    "n_common": 62,
+    "n_old_rejected": 1438,
+    "n_new_added": 1438
+  },
+  "checks": {
+    "check2_shared_prefix": {
+      "passed": true
+    },
+    "check3_label_reproduction": {
+      "passed": false,
+      "n_rows_compared": 2356,
+      "n_pinned_compared": 2266,
+      "max_abs_pinned_diff": 1.9539925233402755e-14,
+      "pinned_status_mismatches": 0,
+      "n_corrected_compared": 2266,
+      "max_abs_corrected_diff": 0.0,
+      "corrected_status_mismatches": 0,
+      "tolerance": 1e-09
+    },
+    "check4_acceptance": {
+      "passed": true,
+      "n_bases": 1500,
+      "n_bad": 0
+    },
+    "check5_failure_ceilings": {
+      "passed": true,
+      "failed_outage_rows": 20,
+      "outage_rows": 57000,
+      "failed_outage_share": 0.0003508771929824561,
+      "n0_correction_failed_draws": 5,
+      "draws": 5079,
+      "n0_correction_failed_share": 0.0009844457570387872,
+      "ceiling": 0.005
+    }
+  },
+  "failed_rows": 20,
+  "pinned_nonconverged_outage_rows": 3482,
+  "VR": 0.5423754159033982,
+  "BM": 0.24092489438857528,
+  "CBM": 0.5264684257822073,
+  "min_vm_range": [
+    0.8187828641167465,
+    0.9766005656894979
+  ],
+  "over_voltage_share_max_vm_gt_1p05": 0.6841751093498822,
+  "critical_bus_top5_share": {
+    "2": 0.8792852069236233,
+    "3": 0.0613854723541067,
+    "7": 0.04861863994915698,
+    "8": 0.008617144566152006,
+    "4": 0.002056151631836704
+  },
+  "switchback_outer_iterations": {
+    "mean_all_outage_rows": 1.0652105263157894,
+    "max": 30,
+    "mean_rows_needing_switchback": 1.2511487976261617,
+    "n_rows_needing_switchback": 48529
+  },
+  "n0_switchback_needed": 1377,
+  "build_info": {
+    "name": "C24",
+    "n_accepted": 1500,
+    "n_draws": 5079,
+    "rejected": {
+      "nonconvergence": 322,
+      "voltage": 3252,
+      "thermal": 0,
+      "n0_correction_failed": 5
+    },
+    "schema_same_columns": true,
+    "schema_dtype_differences": [],
+    "n0_rebuild_mismatches": 0,
+    "phase1_wall_s": 134.03719186782837,
+    "wall_s": 419.5257637500763
+  },
+  "wall_s": 0.16550612449645996,
+  "all_checks_2_5_passed": false
+}

@@ -1,0 +1,119 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_compare.json"
+  ],
+  "generating_script": "scratch/n13_compare.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_compare.py"
+  ],
+  "script_git_blob_sha": "2073057f9735b0a53d68880a735a23752da3b418",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n5_gate_094.json",
+      "sha256": "1b98e43b05a058cc2cabd98ff5762d8f5be9d68b4ba9ed09e0e858c0572101db"
+    },
+    {
+      "path": "data/sts_n13_gate_D94.json",
+      "sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e"
+    },
+    {
+      "path": "data/sts_n10_illinois.json",
+      "sha256": "95b654e86edee99aa8a2455c63cdeac145d42f949ec08ed491d93d018247cfeb"
+    },
+    {
+      "path": "data/sts_n11_smallnets.json",
+      "sha256": "a4d5a504dfe4f50e2380d0aeee2390d04f81ac2ee465ada3fcd35629369f7675"
+    },
+    {
+      "path": "data/sts_n11_dose_response.json",
+      "sha256": "884ce6d4b71455f796808d8eb9668ce240edb0fd9cd6ea290b4d5441300eb35f"
+    },
+    {
+      "path": "data/sts_n13_floor.json",
+      "sha256": "0b778352838556b52907bf325f27221777a83681b6d20d1f8d7badc98e745a05"
+    },
+    {
+      "path": "data/sts_n9_budget_curve.json",
+      "sha256": "79b0067b68815af3c78fe5cefc71e0b8571fe96e9f9874376bb7b1ec9a9bab3f"
+    },
+    {
+      "path": "data/sts_n13_budget.json",
+      "sha256": "1cd36a3d3091f46f587f8c101c2385701108c7bb76b64bc972f38a063cd6b8db"
+    },
+    {
+      "path": "data/sts_n11_n2.json",
+      "sha256": "a3564b5a52b0c91231b4911d198f9db372111f17851ca4531df0c67c3e371ffb"
+    },
+    {
+      "path": "data/sts_n13_n2.json",
+      "sha256": "1d458d7dd57840affdcc2c2da8d6d56d27842aff23c31231d84cd83f360ca30b"
+    },
+    {
+      "path": "data/sts_n11_mondrian.json",
+      "sha256": "2272e41e5fd9089ca011b969b3e0b5574ea71f893f3606f2d8b7bbbfd83ec8d1"
+    },
+    {
+      "path": "data/sts_n13_mondrian.json",
+      "sha256": "4a5834faf8df54493bc8b773de4fde8a3c44fa7ee427544e59415a552cf44b9b"
+    },
+    {
+      "path": "data/sts_n12_condhist.json",
+      "sha256": "8d253e1868ec39e4f367dfe55876e70b908d5ec51d93388c8fe8b569b4111431"
+    },
+    {
+      "path": "data/sts_n13_condhist.json",
+      "sha256": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7"
+    },
+    {
+      "path": "data/sts_n12_guarantee.json",
+      "sha256": "e48e5aa769d568bb5e358ba12062be1f158bf29c2cab5cfdb5b093286c8f23ed"
+    },
+    {
+      "path": "data/sts_n13_guarantee.json",
+      "sha256": "e3025c40e689a5bfe2a95534cf19e80bd943c3d85a2c9a0a1bf274f6a5cac68d"
+    },
+    {
+      "path": "data/sts_n12_crossnet.json",
+      "sha256": "6ec2851c842e35a3e2346f6800339bb03dc52429f5c4ef4e4dbefc40964fbf7c"
+    },
+    {
+      "path": "data/sts_n13_crossnet.json",
+      "sha256": "72997b2c3a6df511c98f06f08e58b7150117cbe24077e5e952007afbeb3dfcd9"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_compare.json",
+      "sha256": "9acd296ecdc5219b56ea673593efb62b6e191c1f0bd581775fbd22e042f8bf08",
+      "md5": "61b16dad46afea3a1846d04322701705",
+      "bytes": 100455,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T02:29:35Z",
+  "parameters": {
+    "model_hyperparameters": "none fitted here except persistence/train-mean baselines (no hyperparameters)"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

@@ -1,0 +1,139 @@
+{
+  "analysis": "N11 Part 5 procedure on the rebuilt 0.95 builds",
+  "builds": {
+    "D95a": {
+      "histgb_held_out": {
+        "target": {
+          "mean": 0.9800000000000001,
+          "std": 0.006324555320336764
+        },
+        "escalation": {
+          "mean": 0.3736480692136673,
+          "std": 0.08748212870959217
+        },
+        "missed": {
+          "mean": 0.009417631822197407,
+          "std": 0.003357856067742666
+        },
+        "gate_catch": {
+          "mean": 0.9905823681778025,
+          "std": 0.0033578560677426754
+        },
+        "static_catch_B": {
+          "mean": 0.9888247472726235,
+          "std": 0.0038884089055903387
+        },
+        "speedup_B": {
+          "mean": 1.9706327323331998,
+          "std": 0.2774822009179277
+        }
+      },
+      "missed_per_split": [
+        0.003677371904878647,
+        0.011570447149572135,
+        0.008102136017677388,
+        0.010281517747858017,
+        0.01345668629100084
+      ],
+      "n5_rules_replication": {
+        "label": "see tier-B verdicts",
+        "SAFER": false,
+        "splits_missed_le_1pct": 2,
+        "FASTER": false,
+        "clause1": true,
+        "clause2": false
+      }
+    },
+    "D95b": {
+      "histgb_held_out": {
+        "target": {
+          "mean": 0.9720000000000001,
+          "std": 0.009797958971132722
+        },
+        "escalation": {
+          "mean": 0.31054815428706284,
+          "std": 0.09428161605442485
+        },
+        "missed": {
+          "mean": 0.013240146307352364,
+          "std": 0.0066279405046072055
+        },
+        "gate_catch": {
+          "mean": 0.9867598536926477,
+          "std": 0.006627940504607192
+        },
+        "static_catch_B": {
+          "mean": 0.9838349466254982,
+          "std": 0.007027472953619114
+        },
+        "speedup_B": {
+          "mean": 2.2747950877329712,
+          "std": 0.40729133221118335
+        }
+      },
+      "missed_per_split": [
+        0.011768944397742283,
+        0.014712976362759285,
+        0.025216226093312217,
+        0.0075297546757347586,
+        0.006972830007213273
+      ],
+      "n5_rules_replication": {
+        "label": "replication of N5 rule, not a new verdict",
+        "SAFER": false,
+        "splits_missed_le_1pct": 2,
+        "FASTER": false,
+        "clause1": true,
+        "clause2": false
+      }
+    },
+    "D95c": "not run"
+  },
+  "across": {
+    "escalation": {
+      "builds": [
+        "D95a",
+        "D95b"
+      ],
+      "mean": 0.3420981117503651,
+      "std_ddof0": 0.03154995746330222,
+      "std_ddof1": 0.044618377736896246
+    },
+    "missed": {
+      "builds": [
+        "D95a",
+        "D95b"
+      ],
+      "mean": 0.011328889064774885,
+      "std_ddof0": 0.0019112572425774785,
+      "std_ddof1": 0.0027029259136368746
+    },
+    "gate_catch": {
+      "builds": [
+        "D95a",
+        "D95b"
+      ],
+      "mean": 0.9886711109352251,
+      "std_ddof0": 0.0019112572425774021,
+      "std_ddof1": 0.0027029259136367666
+    },
+    "speedup_B": {
+      "builds": [
+        "D95a",
+        "D95b"
+      ],
+      "mean": 2.1227139100330854,
+      "std_ddof0": 0.15208117769988572,
+      "std_ddof1": 0.2150752640848511
+    },
+    "static_catch_B": {
+      "builds": [
+        "D95a",
+        "D95b"
+      ],
+      "mean": 0.9863298469490609,
+      "std_ddof0": 0.0024949003235626432,
+      "std_ddof1": 0.003528321874351313
+    }
+  }
+}

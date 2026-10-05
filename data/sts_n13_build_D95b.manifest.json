@@ -1,0 +1,76 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_build_D95b.json"
+  ],
+  "generating_script": "scratch/n13_checks.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_checks.py",
+    "D95b"
+  ],
+  "script_git_blob_sha": "ec0b2e1b6f9a01dd3e53e84606ebd3f7df110643",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n5_floor095_seed200.parquet",
+      "sha256": "2c364ae1bcbeda07607f0fb20dfccb6a14fcfdade4ea0ec00cabcfe55d4648e8"
+    },
+    {
+      "path": "data/sts_n9_relabel095_seed200.parquet",
+      "sha256": "11e1948a17db7a39425bf1058dccbbb9d93ab9c6364cfe2aa0dd9b0dde99008b"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    },
+    {
+      "path": "data/sts_n13_D95b.parquet",
+      "sha256": "957608ae30bd5bf687c5ffd26ec0fbe699ab7f515832745b8e3b0f780b522b4b"
+    },
+    {
+      "path": "data/sts_n13_audit_D95b.parquet",
+      "sha256": "34e091c67d6f83c35e2a1b95747a1d921725e1049de7532413dbd4a3e7181ec6"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_build_D95b.json",
+      "sha256": "ecc5e8a429b87c26bd141719828fde68e4fc896ad589ca4add3a862efabaad3c",
+      "md5": "b98327a81582891dbea689fe06ddda39",
+      "bytes": 3459,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T00:33:16Z",
+  "parameters": {
+    "dataset": "D95b",
+    "spec": {
+      "kind": "case118",
+      "file": "data/sts_n5_floor095_seed200.parquet",
+      "floor": 0.95,
+      "seeds": [
+        200,
+        201,
+        202,
+        203
+      ],
+      "labels": "data/sts_n9_relabel095_seed200.parquet",
+      "tier": "B"
+    },
+    "solver": "corrected: pandapower runpp enforce_q_lims=True init=dc numba=True, then the N2 switch-back (TOL_V = TOL_Q = 1e-3, 30 outer iterations)",
+    "invocation": "scratch/n13_build.py D95b",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "No AC solve; checks and summaries from the rebuild outputs."
+}

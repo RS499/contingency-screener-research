@@ -1,0 +1,184 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_budget_D95a.json"
+  ],
+  "generating_script": "scratch/n13_analyses.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_analyses.py",
+    "budget"
+  ],
+  "script_git_blob_sha": "0d988f786c26ec7e0f8671705c58e2c6d1a0d99b",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n13_D95a.parquet",
+      "sha256": "cc657653347e8b104bf40364601f20391e384939a612c0f99a23a542bf875d92"
+    },
+    {
+      "path": "data/sts_n13_gate_D95a.json",
+      "sha256": "ef1d283b14896d607dda85328cdc79e8eea463f5b5ac4320f91280a874702e6f"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_budget_D95a.json",
+      "sha256": "772026a07141f8812538409ab8ba7e323c9dc03a627cb55ece2b7bd64624f005",
+      "md5": "152050e01baae3ee8a55680755360100",
+      "bytes": 148917,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T02:29:21Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "k_declared": [
+      20,
+      40,
+      57,
+      89,
+      120
+    ],
+    "model_hyperparameters": {
+      "D95a": [
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha0.01",
+          "config": {
+            "tag": "alpha0.01",
+            "alpha": 0.01
+          }
+        },
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand20",
+          "config": {
+            "tag": "rand20",
+            "learning_rate": 0.08,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha0.03162",
+          "config": {
+            "tag": "alpha0.03162",
+            "alpha": 0.03162277660168379
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand00",
+          "config": {
+            "tag": "rand00",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha1",
+          "config": {
+            "tag": "alpha1",
+            "alpha": 1.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand15",
+          "config": {
+            "tag": "rand15",
+            "learning_rate": 0.1,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 127,
+            "min_samples_leaf": 20,
+            "l2_regularization": 1.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha1000",
+          "config": {
+            "tag": "alpha1000",
+            "alpha": 1000.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha10",
+          "config": {
+            "tag": "alpha10",
+            "alpha": 10.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand01",
+          "config": {
+            "tag": "rand01",
+            "learning_rate": 0.1,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 10.0
+          }
+        }
+      ]
+    }
+  },
+  "no_new_solves": "No AC solve unless stated in the output."
+}

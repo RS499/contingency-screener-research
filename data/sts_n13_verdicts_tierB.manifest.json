@@ -1,0 +1,63 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_verdicts_tierB.json"
+  ],
+  "generating_script": "scratch/n13_verdicts_B.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_verdicts_B.py"
+  ],
+  "script_git_blob_sha": "0f6276ec5c58a43c26eb1f12f643d300a947ddab",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    },
+    {
+      "path": "data/sts_n13_gate_D94.json",
+      "sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e"
+    },
+    {
+      "path": "data/sts_n13_gate_D95a.json",
+      "sha256": "ef1d283b14896d607dda85328cdc79e8eea463f5b5ac4320f91280a874702e6f"
+    },
+    {
+      "path": "data/sts_n13_shift.json",
+      "sha256": "0530c024246e455235bd613a98253d7149d0f527273884892cc961f3ffd33858"
+    },
+    {
+      "path": "data/sts_n5_verdict.json",
+      "sha256": "22a6a964953b357134f677a13ecba79c8fd61652d4a04d39144cbce7a70823b3"
+    },
+    {
+      "path": "data/sts_n9_shift.json",
+      "sha256": "c4fc2326727a9d3eb07270b6e42ff6e2861d3b4e64d74d5f26c61559c18bdcdc"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_verdicts_tierB.json",
+      "sha256": "95695355a4f0df610278d5293c06963fa82a040fa76d450b1e1fa03af4b6aa66",
+      "md5": "a3409545dc69510de9ee75458f4772e6",
+      "bytes": 2771,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T02:26:56Z",
+  "parameters": {
+    "model_hyperparameters": "see the input gate manifests"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

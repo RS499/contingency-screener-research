@@ -1,0 +1,68 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_audit_D96.parquet"
+  ],
+  "generating_script": "scratch/n13_build.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_build.py",
+    "D96"
+  ],
+  "script_git_blob_sha": "4872b70789c2daa1ed920135773a8b3c0a2de4c9",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n11_floor096.parquet",
+      "sha256": "aa48f08799249171f86ab866876df4fde0826009135ae610bb32841ee3601290"
+    },
+    {
+      "path": "data/sts_n11_floor096_relabel.parquet",
+      "sha256": "16bca257fdab7fe637a1b485c130245a64fd0c09d17a8a2cd1cc1b755de8a237"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_audit_D96.parquet",
+      "sha256": "c841c3a009c66a60ffb3c0d7acc4e32679b1fcfafcec943a07ba6c3802f7ade5",
+      "md5": "b4ed5101d5fed0dc37ac475fc4f57d61",
+      "bytes": 5199093,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T20:56:06Z",
+  "parameters": {
+    "dataset": "D96",
+    "spec": {
+      "kind": "case118",
+      "file": "data/sts_n11_floor096.parquet",
+      "floor": 0.96,
+      "seeds": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "labels": "data/sts_n11_floor096_relabel.parquet",
+      "tier": "A"
+    },
+    "solver": "corrected: pandapower runpp enforce_q_lims=True init=dc numba=True, then the N2 switch-back (TOL_V = TOL_Q = 1e-3, 30 outer iterations)",
+    "invocation": "scratch/n13_build.py D96",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: corrected-solver rebuild (N-0 and every outage)"
+}

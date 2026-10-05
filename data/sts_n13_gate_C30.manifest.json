@@ -1,0 +1,236 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_gate_C30.json"
+  ],
+  "generating_script": "scratch/n13_gate.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_gate.py",
+    "C30"
+  ],
+  "script_git_blob_sha": "8cc145fea7d630baf2dd1d6544977446ced4ff12",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C30.parquet",
+      "sha256": "9f18a31eebd990b1b7ccfb0ae3568cf02639e63e493a2efe025fae89a10ae044"
+    },
+    {
+      "path": "data/solve_time.json",
+      "sha256": "94d8e8059d2b35260da090e33e3ce058c0437ef7b578556a134bbdc258a0d4ec"
+    },
+    {
+      "path": "scripts/tune_surrogates.py",
+      "sha256": "9395044201a93337d20c3f208cb095a39d568be669b4d7f992f922b44cf0cc9e"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_gate_C30.json",
+      "sha256": "ddee380ed8a0231d7e215141f7e484846c59d6291857baffdc652f7a1690aa93",
+      "md5": "b8efc7959af153e63229d19ca7008fd0",
+      "bytes": 182131,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T21:26:26Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "invocation": "scratch/n13_gate.py C30",
+    "candidate_grids": {
+      "ridge_alphas": [
+        0.001,
+        0.0031622776601683794,
+        0.01,
+        0.03162277660168379,
+        0.1,
+        0.31622776601683794,
+        1.0,
+        3.1622776601683795,
+        10.0,
+        31.622776601683793,
+        100.0,
+        316.22776601683796,
+        1000.0,
+        3162.2776601683795,
+        10000.0
+      ],
+      "histgb_space": {
+        "learning_rate": [
+          0.03,
+          0.05,
+          0.08,
+          0.1,
+          0.2
+        ],
+        "max_iter": [
+          100,
+          300,
+          600,
+          1000
+        ],
+        "max_leaf_nodes": [
+          31,
+          63,
+          127,
+          255
+        ],
+        "min_samples_leaf": [
+          20,
+          50,
+          200
+        ],
+        "l2_regularization": [
+          0.0,
+          0.1,
+          1.0,
+          10.0
+        ],
+        "n_random": 24,
+        "search_seed": 0
+      }
+    },
+    "inner_seed_offset": 1000,
+    "inner_missed_ceiling": 0.01,
+    "model_hyperparameters": [
+      {
+        "seed": 0,
+        "family": "ridge",
+        "tag": "alpha0.001",
+        "config": {
+          "tag": "alpha0.001",
+          "alpha": 0.001
+        }
+      },
+      {
+        "seed": 0,
+        "family": "histgb",
+        "tag": "rand15",
+        "config": {
+          "tag": "rand15",
+          "learning_rate": 0.1,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 127,
+          "min_samples_leaf": 20,
+          "l2_regularization": 1.0
+        }
+      },
+      {
+        "seed": 1,
+        "family": "ridge",
+        "tag": "alpha31.62",
+        "config": {
+          "tag": "alpha31.62",
+          "alpha": 31.622776601683793
+        }
+      },
+      {
+        "seed": 1,
+        "family": "histgb",
+        "tag": "rand11",
+        "config": {
+          "tag": "rand11",
+          "learning_rate": 0.2,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 31,
+          "min_samples_leaf": 20,
+          "l2_regularization": 0.0
+        }
+      },
+      {
+        "seed": 2,
+        "family": "ridge",
+        "tag": "alpha0.1",
+        "config": {
+          "tag": "alpha0.1",
+          "alpha": 0.1
+        }
+      },
+      {
+        "seed": 2,
+        "family": "histgb",
+        "tag": "rand15",
+        "config": {
+          "tag": "rand15",
+          "learning_rate": 0.1,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 127,
+          "min_samples_leaf": 20,
+          "l2_regularization": 1.0
+        }
+      },
+      {
+        "seed": 3,
+        "family": "ridge",
+        "tag": "alpha0.001",
+        "config": {
+          "tag": "alpha0.001",
+          "alpha": 0.001
+        }
+      },
+      {
+        "seed": 3,
+        "family": "histgb",
+        "tag": "rand00",
+        "config": {
+          "tag": "rand00",
+          "learning_rate": 0.2,
+          "max_iter": 1000,
+          "max_depth": null,
+          "max_leaf_nodes": 63,
+          "min_samples_leaf": 20,
+          "l2_regularization": 10.0
+        }
+      },
+      {
+        "seed": 4,
+        "family": "ridge",
+        "tag": "alpha0.01",
+        "config": {
+          "tag": "alpha0.01",
+          "alpha": 0.01
+        }
+      },
+      {
+        "seed": 4,
+        "family": "histgb",
+        "tag": "rand15",
+        "config": {
+          "tag": "rand15",
+          "learning_rate": 0.1,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 127,
+          "min_samples_leaf": 20,
+          "l2_regularization": 1.0
+        }
+      }
+    ],
+    "omp_num_threads": "4"
+  },
+  "no_new_solves": "No AC solve. Model fits: full tune_surrogates search + M2 refits per seed."
+}

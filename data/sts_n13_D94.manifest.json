@@ -1,0 +1,68 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_D94.parquet"
+  ],
+  "generating_script": "scratch/n13_build.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_build.py",
+    "D94"
+  ],
+  "script_git_blob_sha": "4872b70789c2daa1ed920135773a8b3c0a2de4c9",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/sts_n2_label_audit.parquet",
+      "sha256": "200a329a71e30285bf0e6f8011a3c63d27840a52e781b9174281bdd9b1954239"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5",
+      "md5": "b8ea3e2c144a33fadc23fb1ddc579ffe",
+      "bytes": 9477293,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T18:42:39Z",
+  "parameters": {
+    "dataset": "D94",
+    "spec": {
+      "kind": "case118",
+      "file": "data/dataset.parquet",
+      "floor": 0.94,
+      "seeds": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "labels": "data/sts_n2_label_audit.parquet",
+      "tier": "A"
+    },
+    "solver": "corrected: pandapower runpp enforce_q_lims=True init=dc numba=True, then the N2 switch-back (TOL_V = TOL_Q = 1e-3, 30 outer iterations)",
+    "invocation": "scratch/n13_build.py D94",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: corrected-solver rebuild (N-0 and every outage)"
+}

@@ -1,0 +1,86 @@
+{
+  "part": "N13 tier-B verdicts on rebuilt data (replications)",
+  "decision_rule": "scratch/n13_decision_rule.md",
+  "decision_rule_sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce",
+  "definitions_quoted": {
+    "SAFER": {
+      "file": "scratch/n5_decision_rule.md",
+      "text": "histgb missed = certified true violations / true violations <= 0.01 in at least 4 of 5 splits.",
+      "verbatim_in_file": true
+    },
+    "FASTER1": {
+      "file": "scratch/n5_decision_rule.md",
+      "text": "10. **FASTER, clause 1.** mean_split(speedup_B, 0.95) - mean_split(speedup_B, 0.94) >",
+      "verbatim_in_file": true
+    },
+    "FASTER2": {
+      "file": "scratch/n5_decision_rule.md",
+      "text": "Clause 2 holds if mean(gate catch) - mean(static catch) > max(std(gate catch), std(static catch)).",
+      "verbatim_in_file": true
+    },
+    "SHIFT": {
+      "file": "scratch/n9_decision_rule.md",
+      "text": "mean_split(gate catch) \u2212 mean_split(static catch) > max(std_split(gate catch), std_split(static catch))",
+      "verbatim_in_file": true
+    }
+  },
+  "verdicts": {
+    "SAFER_N5": {
+      "holds": false,
+      "splits_missed_le_1pct": 2,
+      "missed_per_split": [
+        0.003677371904878647,
+        0.011570447149572135,
+        0.008102136017677388,
+        0.010281517747858017,
+        0.01345668629100084
+      ],
+      "old_build": {
+        "holds": false,
+        "splits_missed_le_1pct": 1,
+        "source": "data/sts_n5_verdict.json"
+      }
+    },
+    "FASTER_N5": {
+      "holds": false,
+      "clause1": {
+        "holds": true,
+        "speedup_B_095": 1.9706327323331998,
+        "std_095": 0.2774822009179277,
+        "speedup_B_094": 1.4390628661570048,
+        "std_094": 0.2282470027882188,
+        "diff": 0.531569866176195,
+        "STD": 0.2774822009179277
+      },
+      "clause2": {
+        "holds": false,
+        "gate_catch": 0.9905823681778025,
+        "gate_std": 0.0033578560677426754,
+        "static_catch": 0.9888247472726235,
+        "static_std": 0.0038884089055903387,
+        "diff": 0.0017576209051790581,
+        "STD": 0.0038884089055903387
+      },
+      "old_build": {
+        "holds": false,
+        "clause1": true,
+        "clause2": false,
+        "source": "data/sts_n5_verdict.json"
+      }
+    },
+    "SHIFT_ADVANTAGE": {
+      "holds": false,
+      "gate_catch_mean": 0.986392134307801,
+      "gate_catch_std": 0.006626878677339158,
+      "static_catch_mean": 0.9864031796307551,
+      "static_catch_std": 0.0061061148277718824,
+      "gap": -1.1045322954039705e-05,
+      "STD": 0.006626878677339158,
+      "old_build": {
+        "holds": false,
+        "source": "data/sts_n9_shift.json"
+      }
+    }
+  },
+  "std_convention": "population std (ddof=0) over 5 splits"
+}

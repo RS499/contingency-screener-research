@@ -6627,3 +6627,9 @@ Claude checked the cited numbers (read-only) and revised scratch/n13_decision_ru
 "Cutoff on Oct 14. That leaves about three weeks before the 11-04 deadline. Exclude a failed non-D94 dataset. D94 already has its own fallback. The rebuilt numbers lead whichever way they move. This is the one that matters most for the run's credibility."
 
 Claude replaced the three OWNER notes in scratch/n13_decision_rule_DRAFT.md with the settled wording and removed the instruction line.
+
+## 2026-10-04 (o) — N13 run on the Mac mini (Claude Code), session 1
+
+Prompt: the owner pasted the prompt section of scratch/run_prompt_n13.md (committed in 504d728741c8ef7ab16bd309a7c1294024a40abb). Not re-quoted here, see the file. Multi-session; no-question rules 1-6.
+N13 pre-registration: scratch/n13_decision_rule.md sha256 ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce, recorded 2026-10-04T18:12:44Z; draft committed in 504d728741c8ef7ab16bd309a7c1294024a40abb. Cutoff (rule §1): 2026-10-14 23:59 local.
+N13 outcome: see scratch/n13_result.md. Tier-A primary: V1 SAFER-94 YES (old NO), V2 NO, BEATS-STATIC-ILL YES, CONDHIST-ILL YES (narrow), N2 NO, FLOOR YES; MONDRIAN YES (old NO); tier B all NO; V3 NO. C24 excluded; my N11 C24 report corrected. Claude gave git commands; no git writes.

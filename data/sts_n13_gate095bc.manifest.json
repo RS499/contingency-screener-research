@@ -1,0 +1,291 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_gate095bc.json"
+  ],
+  "generating_script": "scratch/n13_analyses.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_analyses.py",
+    "gate095bc"
+  ],
+  "script_git_blob_sha": "0d988f786c26ec7e0f8671705c58e2c6d1a0d99b",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n13_gate_D95a.json",
+      "sha256": "ef1d283b14896d607dda85328cdc79e8eea463f5b5ac4320f91280a874702e6f"
+    },
+    {
+      "path": "data/sts_n13_gate_D95b.json",
+      "sha256": "09120d16d27c9ae325a0a9254146013ce44f9f08ab649e8296c902700b1f6f50"
+    },
+    {
+      "path": "data/sts_n13_gate_D94.json",
+      "sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_gate095bc.json",
+      "sha256": "02f67a858ae9274ac9383697dc3640cf1b6cdf304a7deabbde802b41b624d4a3",
+      "md5": "929c725dc1ceba076339f991054aa778",
+      "bytes": 3389,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T02:26:56Z",
+  "parameters": {
+    "model_hyperparameters": {
+      "D95a": [
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha0.01",
+          "config": {
+            "tag": "alpha0.01",
+            "alpha": 0.01
+          }
+        },
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand20",
+          "config": {
+            "tag": "rand20",
+            "learning_rate": 0.08,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha0.03162",
+          "config": {
+            "tag": "alpha0.03162",
+            "alpha": 0.03162277660168379
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand00",
+          "config": {
+            "tag": "rand00",
+            "learning_rate": 0.2,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 63,
+            "min_samples_leaf": 20,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha1",
+          "config": {
+            "tag": "alpha1",
+            "alpha": 1.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand15",
+          "config": {
+            "tag": "rand15",
+            "learning_rate": 0.1,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 127,
+            "min_samples_leaf": 20,
+            "l2_regularization": 1.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha1000",
+          "config": {
+            "tag": "alpha1000",
+            "alpha": 1000.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand13",
+          "config": {
+            "tag": "rand13",
+            "learning_rate": 0.08,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 20,
+            "l2_regularization": 0.1
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha10",
+          "config": {
+            "tag": "alpha10",
+            "alpha": 10.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand01",
+          "config": {
+            "tag": "rand01",
+            "learning_rate": 0.1,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 10.0
+          }
+        }
+      ],
+      "D95b": [
+        {
+          "seed": 0,
+          "family": "ridge",
+          "tag": "alpha316.2",
+          "config": {
+            "tag": "alpha316.2",
+            "alpha": 316.22776601683796
+          }
+        },
+        {
+          "seed": 0,
+          "family": "histgb",
+          "tag": "rand15",
+          "config": {
+            "tag": "rand15",
+            "learning_rate": 0.1,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 127,
+            "min_samples_leaf": 20,
+            "l2_regularization": 1.0
+          }
+        },
+        {
+          "seed": 1,
+          "family": "ridge",
+          "tag": "alpha3162",
+          "config": {
+            "tag": "alpha3162",
+            "alpha": 3162.2776601683795
+          }
+        },
+        {
+          "seed": 1,
+          "family": "histgb",
+          "tag": "rand15",
+          "config": {
+            "tag": "rand15",
+            "learning_rate": 0.1,
+            "max_iter": 600,
+            "max_depth": null,
+            "max_leaf_nodes": 127,
+            "min_samples_leaf": 20,
+            "l2_regularization": 1.0
+          }
+        },
+        {
+          "seed": 2,
+          "family": "ridge",
+          "tag": "alpha3162",
+          "config": {
+            "tag": "alpha3162",
+            "alpha": 3162.2776601683795
+          }
+        },
+        {
+          "seed": 2,
+          "family": "histgb",
+          "tag": "rand01",
+          "config": {
+            "tag": "rand01",
+            "learning_rate": 0.1,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 3,
+          "family": "ridge",
+          "tag": "alpha0.003162",
+          "config": {
+            "tag": "alpha0.003162",
+            "alpha": 0.0031622776601683794
+          }
+        },
+        {
+          "seed": 3,
+          "family": "histgb",
+          "tag": "rand01",
+          "config": {
+            "tag": "rand01",
+            "learning_rate": 0.1,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 10.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "ridge",
+          "tag": "alpha1000",
+          "config": {
+            "tag": "alpha1000",
+            "alpha": 1000.0
+          }
+        },
+        {
+          "seed": 4,
+          "family": "histgb",
+          "tag": "rand01",
+          "config": {
+            "tag": "rand01",
+            "learning_rate": 0.1,
+            "max_iter": 1000,
+            "max_depth": null,
+            "max_leaf_nodes": 255,
+            "min_samples_leaf": 50,
+            "l2_regularization": 10.0
+          }
+        }
+      ]
+    }
+  },
+  "no_new_solves": "No AC solve unless stated in the output."
+}

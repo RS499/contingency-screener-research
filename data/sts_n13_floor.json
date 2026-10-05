@@ -1,0 +1,41 @@
+{
+  "analysis": "N11 Part 3 numbers on rebuilt data (rebuilt labels = corrected solver)",
+  "per_floor": [
+    {
+      "floor": 0.93,
+      "dataset": "D93",
+      "available": true,
+      "n_rows": 278956,
+      "BM": 56.322860952981834,
+      "CBM": 67.32831100712211,
+      "VR": 16.345947031073003
+    },
+    {
+      "floor": 0.94,
+      "dataset": "D94",
+      "available": true,
+      "n_rows": 278945,
+      "BM": 54.74627614762767,
+      "CBM": 65.37356752383357,
+      "VR": 16.256251232321784
+    },
+    {
+      "floor": 0.95,
+      "dataset": "D95a",
+      "available": true,
+      "n_rows": 278921,
+      "BM": 33.35603988226057,
+      "CBM": 39.15715133481201,
+      "VR": 14.814947601650646
+    },
+    {
+      "floor": 0.96,
+      "dataset": "D96",
+      "available": true,
+      "n_rows": 278959,
+      "BM": 18.967303438856607,
+      "CBM": 21.94930722641666,
+      "VR": 13.585867457224895
+    }
+  ]
+}

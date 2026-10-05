@@ -1,0 +1,60 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_indep_D94.json"
+  ],
+  "generating_script": "scratch/n13_indep_check.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_indep_check.py",
+    "D94"
+  ],
+  "script_git_blob_sha": "e0c563584c437e092fe883e605c590bd938c7179",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5"
+    },
+    {
+      "path": "data/sts_n13_audit_D94.parquet",
+      "sha256": "fa176e5c518f9bc30971b5553d8960e8b23eed431df2a7ed39b19931d631bca7"
+    },
+    {
+      "path": "scratch/label_crosscheck.py",
+      "sha256": "e1669ca59981cea570c2a32527fc74d514f05801bc4973ddb5dd37fb2302631e"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_indep_D94.json",
+      "sha256": "0d310ab8f038a3c23ddb848e1ddda4ae39ff6aa1facc0faf4ba13d4e1d99031c",
+      "md5": "54c1738ce9ae24322ba696aabff71f26",
+      "bytes": 2839,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T18:43:56Z",
+  "parameters": {
+    "seed": 20261004,
+    "n_per_stratum": 200,
+    "limit": 0.94,
+    "solver": "scratch/label_crosscheck.py semismooth Newton complementarity (C_SCALE, TOL, MAX_IT as in that file)",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: independent AC solves of the compared rows"
+}

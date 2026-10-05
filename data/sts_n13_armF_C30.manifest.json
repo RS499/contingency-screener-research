@@ -1,0 +1,53 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_armF_C30.parquet"
+  ],
+  "generating_script": "scratch/n13_armF.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_armF.py"
+  ],
+  "script_git_blob_sha": "004e50705491b026cf7d8e0fe0b2608e90528a45",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/case30_thermal/dataset.parquet",
+      "sha256": "cb1a38e9a39ef2333ade9a3423c188938bf21ff4883bdc3a0deacc7daefb9f98"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_armF_C30.parquet",
+      "sha256": "03c53a12be8ac30b0daad48ced06bc7b3980e9be2e7598f854627d8da19ef6e0",
+      "md5": "125e56b2669de7bfd5103af7fa666ebe",
+      "bytes": 1974026,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T23:50:13Z",
+  "parameters": {
+    "dataset": "C30",
+    "replaced": [
+      "vm0_*",
+      "n0_min_vm"
+    ],
+    "solver": "corrected N-0: pinned + N2 switch-back (n13_common.corrected_pf)",
+    "model_hyperparameters": "none (dataset file)"
+  },
+  "no_new_solves": "FALSE: corrected N-0 solve of every original base"
+}

@@ -1,0 +1,133 @@
+{
+  "name": "D93",
+  "tier": "A",
+  "original_file": "data/sts_n11_floor093.parquet",
+  "draws": 5980,
+  "accepted": 1500,
+  "rejected_by_reason": {
+    "nonconvergence": 75,
+    "voltage": 4405,
+    "n0_correction_failed": 0
+  },
+  "base_set": {
+    "per_shard_prefix": [
+      {
+        "shard_seed": 100,
+        "first_differing_draw": 64,
+        "prefix_draws": 64,
+        "prefix_accepted": 12,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 1614,
+        "new_draws": 1450
+      },
+      {
+        "shard_seed": 101,
+        "first_differing_draw": 8,
+        "prefix_draws": 8,
+        "prefix_accepted": 5,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 1538,
+        "new_draws": 1489
+      },
+      {
+        "shard_seed": 102,
+        "first_differing_draw": 39,
+        "prefix_draws": 39,
+        "prefix_accepted": 11,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 1587,
+        "new_draws": 1482
+      },
+      {
+        "shard_seed": 103,
+        "first_differing_draw": 22,
+        "prefix_draws": 22,
+        "prefix_accepted": 4,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 1539,
+        "new_draws": 1559
+      }
+    ],
+    "n_old_bases": 1500,
+    "n_new_bases": 1500,
+    "n_common": 76,
+    "n_old_rejected": 1424,
+    "n_new_added": 1424
+  },
+  "checks": {
+    "check2_shared_prefix": {
+      "passed": true
+    },
+    "check3_label_reproduction": {
+      "passed": true,
+      "n_rows_compared": 14136,
+      "n_pinned_compared": 14136,
+      "max_abs_pinned_diff": 0.0,
+      "pinned_status_mismatches": 0,
+      "n_corrected_compared": 14136,
+      "max_abs_corrected_diff": 0.0,
+      "corrected_status_mismatches": 0,
+      "tolerance": 1e-09
+    },
+    "check4_acceptance": {
+      "passed": true,
+      "n_bases": 1500,
+      "n_bad": 0
+    },
+    "check5_failure_ceilings": {
+      "passed": true,
+      "failed_outage_rows": 0,
+      "outage_rows": 279000,
+      "failed_outage_share": 0.0,
+      "n0_correction_failed_draws": 0,
+      "draws": 5980,
+      "n0_correction_failed_share": 0.0,
+      "ceiling": 0.005
+    }
+  },
+  "failed_rows": 0,
+  "pinned_nonconverged_outage_rows": 44,
+  "VR": 0.16345947031073002,
+  "BM": 0.5632286095298183,
+  "CBM": 0.673283110071221,
+  "min_vm_range": [
+    0.7662257483911874,
+    0.9564025777241998
+  ],
+  "over_voltage_share_max_vm_gt_1p05": 0.7313841609429445,
+  "critical_bus_top5_share": {
+    "75": 0.2766995511836992,
+    "52": 0.16577883250405082,
+    "0": 0.11222558396306227,
+    "106": 0.10345000645263053,
+    "20": 0.0389416252025409
+  },
+  "switchback_outer_iterations": {
+    "mean_all_outage_rows": 1.1725878136200716,
+    "max": 4,
+    "mean_rows_needing_switchback": 1.2340794724969635,
+    "n_rows_needing_switchback": 265098
+  },
+  "n0_switchback_needed": 1423,
+  "build_info": {
+    "name": "D93",
+    "n_accepted": 1500,
+    "n_draws": 5980,
+    "rejected": {
+      "nonconvergence": 75,
+      "voltage": 4405,
+      "n0_correction_failed": 0
+    },
+    "schema_same_columns": true,
+    "schema_dtype_differences": [],
+    "n0_rebuild_mismatches": 0,
+    "phase1_wall_s": 51.98463988304138,
+    "wall_s": 1466.072501897812
+  },
+  "wall_s": 0.7488551139831543,
+  "all_checks_2_5_passed": true
+}

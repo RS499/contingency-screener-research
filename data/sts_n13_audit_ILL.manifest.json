@@ -1,0 +1,63 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_audit_ILL.parquet"
+  ],
+  "generating_script": "scratch/n13_build.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_build.py",
+    "ILL"
+  ],
+  "script_git_blob_sha": "4872b70789c2daa1ed920135773a8b3c0a2de4c9",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/netstudy/case_illinois200/dataset.parquet",
+      "sha256": "aba7a9201b964250ff901c64ca53a13e50023494c7e53489385d1311ee4553bd"
+    },
+    {
+      "path": "data/sts_n10_relabel_illinois200.parquet",
+      "sha256": "6df9743a700df5d5f16fa04b30dc8670b74ee0741b070aa546b829ecd34d989b"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_audit_ILL.parquet",
+      "sha256": "a48db246ee2f5690a79e4f8cd4a1b3c55eca03970ce5c352fb85e211c13c3b1f",
+      "md5": "59eee821bf1cff4945404add0fd11bd1",
+      "bytes": 6603068,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T19:28:21Z",
+  "parameters": {
+    "dataset": "ILL",
+    "spec": {
+      "kind": "netstudy",
+      "network": "case_illinois200",
+      "file": "data/netstudy/case_illinois200/dataset.parquet",
+      "stats": "data/netstudy/case_illinois200/build_stats.json",
+      "labels": "data/sts_n10_relabel_illinois200.parquet",
+      "tier": "A"
+    },
+    "solver": "corrected: pandapower runpp enforce_q_lims=True init=dc numba=True, then the N2 switch-back (TOL_V = TOL_Q = 1e-3, 30 outer iterations)",
+    "invocation": "scratch/n13_build.py ILL",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: corrected-solver rebuild (N-0 and every outage)"
+}

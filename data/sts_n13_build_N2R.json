@@ -1,0 +1,29 @@
+{
+  "name": "N2R",
+  "rows": 75000,
+  "schema_same_columns": true,
+  "schema_dtype_differences": [],
+  "n_common_bases": 159,
+  "checks": {
+    "check3_label_reproduction": {
+      "passed": true,
+      "n_rows_compared": 1816,
+      "max_abs_pinned_diff": 0.0,
+      "max_abs_corrected_diff": 0.0,
+      "status_mismatches": 0
+    },
+    "check5_failure_ceilings": {
+      "passed": true,
+      "failed_rows": 2,
+      "share": 2.6666666666666667e-05
+    },
+    "check6_independent": {
+      "passed": true
+    }
+  },
+  "pinned_nonconverged": 84,
+  "corrected_violation_rate": 0.29878260405264706,
+  "adjacent_share": 0.03328,
+  "wall_s": 635.936360836029,
+  "all_checks_passed": true
+}

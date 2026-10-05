@@ -1,0 +1,590 @@
+{
+  "part": "N13 \u00a75: old rejected draws that pass the corrected N-0 check",
+  "summary": {
+    "D94": {
+      "replay_exact": true,
+      "old_rejected_draws": 1287,
+      "would_pass_corrected": 185,
+      "share": 0.14374514374514374
+    },
+    "ILL": {
+      "replay_exact": true,
+      "old_rejected_draws": 6380,
+      "would_pass_corrected": 423,
+      "share": 0.06630094043887147
+    },
+    "C30": {
+      "replay_exact": true,
+      "old_rejected_draws": 6550,
+      "would_pass_corrected": 0,
+      "share": 0.0
+    },
+    "C24": {
+      "replay_exact": true,
+      "old_rejected_draws": 6848,
+      "would_pass_corrected": 1084,
+      "share": 0.1582943925233645
+    },
+    "D93": {
+      "replay_exact": true,
+      "old_rejected_draws": 4778,
+      "would_pass_corrected": 152,
+      "share": 0.03181247383842612
+    },
+    "D95a": {
+      "replay_exact": true,
+      "old_rejected_draws": 571,
+      "would_pass_corrected": 148,
+      "share": 0.2591943957968476
+    },
+    "D96": {
+      "replay_exact": true,
+      "old_rejected_draws": 327,
+      "would_pass_corrected": 83,
+      "share": 0.25382262996941896
+    },
+    "D95b": {
+      "replay_exact": true,
+      "old_rejected_draws": 537,
+      "would_pass_corrected": 144,
+      "share": 0.2681564245810056
+    },
+    "D95c": {
+      "replay_exact": true,
+      "old_rejected_draws": 532,
+      "would_pass_corrected": 139,
+      "share": 0.26127819548872183
+    }
+  },
+  "per_shard": [
+    {
+      "name": "D94",
+      "shard_seed": 100,
+      "replay_exact": true,
+      "n_rejected": 370,
+      "n_would_pass": 55,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 8
+        },
+        "voltage": {
+          "would_pass": 55,
+          "rejected": 362
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 353,
+        "not_needed": 9,
+        "pinned_nonconverged": 8
+      }
+    },
+    {
+      "name": "D94",
+      "shard_seed": 101,
+      "replay_exact": true,
+      "n_rejected": 313,
+      "n_would_pass": 43,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 3
+        },
+        "voltage": {
+          "would_pass": 43,
+          "rejected": 310
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 291,
+        "not_needed": 19,
+        "pinned_nonconverged": 3
+      }
+    },
+    {
+      "name": "D94",
+      "shard_seed": 102,
+      "replay_exact": true,
+      "n_rejected": 287,
+      "n_would_pass": 41,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 3
+        },
+        "voltage": {
+          "would_pass": 41,
+          "rejected": 284
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 276,
+        "not_needed": 8,
+        "pinned_nonconverged": 3
+      }
+    },
+    {
+      "name": "D94",
+      "shard_seed": 103,
+      "replay_exact": true,
+      "n_rejected": 317,
+      "n_would_pass": 46,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 2
+        },
+        "voltage": {
+          "would_pass": 46,
+          "rejected": 315
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 303,
+        "not_needed": 12,
+        "pinned_nonconverged": 2
+      }
+    },
+    {
+      "name": "ILL",
+      "shard_seed": 100,
+      "replay_exact": true,
+      "n_rejected": 6380,
+      "n_would_pass": 423,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 9
+        },
+        "thermal": {
+          "would_pass": 2,
+          "rejected": 12
+        },
+        "voltage": {
+          "would_pass": 421,
+          "rejected": 6359
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 5175,
+        "not_needed": 1196,
+        "pinned_nonconverged": 9
+      }
+    },
+    {
+      "name": "C30",
+      "shard_seed": 100,
+      "replay_exact": true,
+      "n_rejected": 6550,
+      "n_would_pass": 0,
+      "by_pinned_reason": {
+        "thermal": {
+          "would_pass": 0,
+          "rejected": 5710
+        },
+        "voltage": {
+          "would_pass": 0,
+          "rejected": 840
+        }
+      },
+      "corrected_status_counts": {
+        "not_needed": 6519,
+        "converged": 31
+      }
+    },
+    {
+      "name": "C24",
+      "shard_seed": 100,
+      "replay_exact": true,
+      "n_rejected": 6848,
+      "n_would_pass": 1084,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 540
+        },
+        "voltage": {
+          "would_pass": 1084,
+          "rejected": 6308
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 5879,
+        "pinned_nonconverged": 540,
+        "not_needed": 425,
+        "iteration_cap": 4
+      }
+    },
+    {
+      "name": "D93",
+      "shard_seed": 100,
+      "replay_exact": true,
+      "n_rejected": 1239,
+      "n_would_pass": 51,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 16
+        },
+        "voltage": {
+          "would_pass": 51,
+          "rejected": 1223
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 1185,
+        "not_needed": 38,
+        "pinned_nonconverged": 16
+      }
+    },
+    {
+      "name": "D93",
+      "shard_seed": 101,
+      "replay_exact": true,
+      "n_rejected": 1163,
+      "n_would_pass": 33,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 25
+        },
+        "voltage": {
+          "would_pass": 33,
+          "rejected": 1138
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 1086,
+        "not_needed": 52,
+        "pinned_nonconverged": 25
+      }
+    },
+    {
+      "name": "D93",
+      "shard_seed": 102,
+      "replay_exact": true,
+      "n_rejected": 1212,
+      "n_would_pass": 30,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 20
+        },
+        "voltage": {
+          "would_pass": 30,
+          "rejected": 1192
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 1143,
+        "not_needed": 49,
+        "pinned_nonconverged": 20
+      }
+    },
+    {
+      "name": "D93",
+      "shard_seed": 103,
+      "replay_exact": true,
+      "n_rejected": 1164,
+      "n_would_pass": 38,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 23
+        },
+        "voltage": {
+          "would_pass": 38,
+          "rejected": 1141
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 1090,
+        "not_needed": 51,
+        "pinned_nonconverged": 23
+      }
+    },
+    {
+      "name": "D95a",
+      "shard_seed": 100,
+      "replay_exact": true,
+      "n_rejected": 168,
+      "n_would_pass": 42,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 42,
+          "rejected": 168
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 162,
+        "not_needed": 6
+      }
+    },
+    {
+      "name": "D95a",
+      "shard_seed": 101,
+      "replay_exact": true,
+      "n_rejected": 122,
+      "n_would_pass": 39,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 39,
+          "rejected": 122
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 119,
+        "not_needed": 3
+      }
+    },
+    {
+      "name": "D95a",
+      "shard_seed": 102,
+      "replay_exact": true,
+      "n_rejected": 142,
+      "n_would_pass": 33,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 1
+        },
+        "voltage": {
+          "would_pass": 33,
+          "rejected": 141
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 130,
+        "not_needed": 11,
+        "pinned_nonconverged": 1
+      }
+    },
+    {
+      "name": "D95a",
+      "shard_seed": 103,
+      "replay_exact": true,
+      "n_rejected": 139,
+      "n_would_pass": 34,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 34,
+          "rejected": 139
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 132,
+        "not_needed": 7
+      }
+    },
+    {
+      "name": "D96",
+      "shard_seed": 100,
+      "replay_exact": true,
+      "n_rejected": 90,
+      "n_would_pass": 22,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 22,
+          "rejected": 90
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 84,
+        "not_needed": 6
+      }
+    },
+    {
+      "name": "D96",
+      "shard_seed": 101,
+      "replay_exact": true,
+      "n_rejected": 82,
+      "n_would_pass": 18,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 18,
+          "rejected": 82
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 77,
+        "not_needed": 5
+      }
+    },
+    {
+      "name": "D96",
+      "shard_seed": 102,
+      "replay_exact": true,
+      "n_rejected": 84,
+      "n_would_pass": 27,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 27,
+          "rejected": 84
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 82,
+        "not_needed": 2
+      }
+    },
+    {
+      "name": "D96",
+      "shard_seed": 103,
+      "replay_exact": true,
+      "n_rejected": 71,
+      "n_would_pass": 16,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 16,
+          "rejected": 71
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 68,
+        "not_needed": 3
+      }
+    },
+    {
+      "name": "D95b",
+      "shard_seed": 200,
+      "replay_exact": true,
+      "n_rejected": 144,
+      "n_would_pass": 47,
+      "by_pinned_reason": {
+        "nonconvergence": {
+          "would_pass": 0,
+          "rejected": 1
+        },
+        "voltage": {
+          "would_pass": 47,
+          "rejected": 143
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 141,
+        "not_needed": 2,
+        "pinned_nonconverged": 1
+      }
+    },
+    {
+      "name": "D95b",
+      "shard_seed": 201,
+      "replay_exact": true,
+      "n_rejected": 144,
+      "n_would_pass": 36,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 36,
+          "rejected": 144
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 139,
+        "not_needed": 5
+      }
+    },
+    {
+      "name": "D95b",
+      "shard_seed": 202,
+      "replay_exact": true,
+      "n_rejected": 110,
+      "n_would_pass": 22,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 22,
+          "rejected": 110
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 107,
+        "not_needed": 3
+      }
+    },
+    {
+      "name": "D95b",
+      "shard_seed": 203,
+      "replay_exact": true,
+      "n_rejected": 139,
+      "n_would_pass": 39,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 39,
+          "rejected": 139
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 136,
+        "not_needed": 3
+      }
+    },
+    {
+      "name": "D95c",
+      "shard_seed": 300,
+      "replay_exact": true,
+      "n_rejected": 145,
+      "n_would_pass": 38,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 38,
+          "rejected": 145
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 141,
+        "not_needed": 4
+      }
+    },
+    {
+      "name": "D95c",
+      "shard_seed": 301,
+      "replay_exact": true,
+      "n_rejected": 127,
+      "n_would_pass": 28,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 28,
+          "rejected": 127
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 120,
+        "not_needed": 7
+      }
+    },
+    {
+      "name": "D95c",
+      "shard_seed": 302,
+      "replay_exact": true,
+      "n_rejected": 150,
+      "n_would_pass": 43,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 43,
+          "rejected": 150
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 146,
+        "not_needed": 4
+      }
+    },
+    {
+      "name": "D95c",
+      "shard_seed": 303,
+      "replay_exact": true,
+      "n_rejected": 110,
+      "n_would_pass": 30,
+      "by_pinned_reason": {
+        "voltage": {
+          "would_pass": 30,
+          "rejected": 110
+        }
+      },
+      "corrected_status_counts": {
+        "converged": 105,
+        "not_needed": 5
+      }
+    }
+  ],
+  "wall_s": 746.7870709896088
+}

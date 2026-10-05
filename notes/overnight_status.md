@@ -533,3 +533,343 @@ Step 1 were not preserved; all steps ran within about an hour of 03:18Z.
   hashes (e74d3f2).
 - The content is identical to the pre-rewrite d5744e6 plus notes/commit-map-2026-10-02.txt.
 - Fix given to the owner: rebase d589758 onto origin/main, then commit these restored notes.
+
+# N13 run (prompt: scratch/run_prompt_n13.md, multi-session, Mac mini)
+
+## 2026-10-04T18:12:44Z — session 1 start; cutoff check
+- Local time 2026-10-04T14:12:44-0400. Cutoff 2026-10-14 23:59 local (rule §1): not reached.
+
+## 2026-10-04T18:12:44Z — Step 0 done (environment)
+- Python/pandapower/numpy/pandas/sklearn/pyarrow/numba = 3.13.11 3.5.4 2.3.5 2.3.3 1.7.2 21.0.0 0.66.0 scipy 1.18.0. Pinned versions match N12.
+- git HEAD 504d728741c8ef7ab16bd309a7c1294024a40abb (= origin/main). Only owner files are untracked (SAHA.RAJAN.BIB.pdf, report/ md) plus
+  intermediate dirs.
+
+## 2026-10-04T18:12:44Z — Step 1 done (pre-registration)
+- scratch/n13_decision_rule.md copied byte-for-byte from the draft.
+  - sha256 ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce, recorded 2026-10-04T18:12:44Z.
+- The draft was committed in 504d728741c8ef7ab16bd309a7c1294024a40abb (2026-10-04T14:11:21-04:00); the working copy matches that commit (yes).
+- Hashed before any N13 computation.
+
+## 2026-10-04T18:19:00Z — Step 2 done (check 1, original pinned replay; all datasets PASS)
+- Scripts: scratch/n13_common.py (solver wrappers; nothing existing edited) and scratch/n13_replay.py.
+  Output: data/sts_n13_replaycheck.json plus manifest.
+- Draw logs (per-draw parameter hash, N-0 result, acceptance) in scratch/n13_drawlogs/old_<name>_<shard>.parquet.
+- Every dataset reproduces every stored n0_min_vm exactly (max diff 0) and accepts all 1,500 bases.
+- Draws: D94 2,787; ILL 7,880; C30 8,050; C24 8,348; D93 6,278; D95a 2,071; D96 1,827; D95b 2,037; D95c 2,032.
+- N2R uses the D94 bases, so its check 1 is D94's (pass).
+
+## 2026-10-04T18:43:02Z — Step 3: D94 rebuilt; checks 2-5 PASS (check 6 running)
+- Scripts: scratch/n13_build.py and scratch/n13_checks.py. Outputs: data/sts_n13_D94.parquet,
+  data/sts_n13_audit_D94.parquet and data/sts_n13_build_D94.json, each with a manifest. Wall 1,270 s.
+- Schema identical to data/dataset.parquet (same columns, same dtypes). The phase-2 N-0 re-solve matched
+  phase 1 on every base.
+- Draws 2,501 (old 2,787). Rejected: voltage 992, nonconvergence 9, N-0 correction failed 0.
+- Base set:
+  - shared prefix 7 / 37 / 4 / 1 draws (seeds 100-103), hashes identical;
+  - common bases 159; old rejected 1,341; new added 1,341.
+- Check 3 (159 common bases, 29,570 outage rows): pinned minima = old stored min_vm exactly; corrected = old
+  N2 labels (max diff 0); 0 status mismatches.
+- Check 4: all 1,500 bases converged with min >= 0.94.
+- Check 5: failed outage rows 0 / 279,000; N-0 correction failures 0 / 2,501.
+- Rebuilt D94 (converged N-1 rows, corrected):
+  - VR 16.26%; BM 54.75%; CBM 65.37%; min_vm range [0.7605, 0.9594];
+  - over-voltage share (max_vm > 1.05) 73.4%; top critical buses (0-based) 75: 28.4%, 52: 15.4%, 106: 10.4%.
+- Switch-back needed on 264,868 outage rows (mean 1.16 outer iterations, max 4) and on 1,424 N-0 states.
+  Pinned nonconverged outage rows: 55.
+- ILL build launched (background).
+
+## 2026-10-04T18:45:36Z — Step 3: D94 check 6 PASS; D94 complete (all checks 1-6)
+- Script: scratch/n13_indep_check.py. Output: data/sts_n13_indep_D94.json plus manifest. Wall 62 s.
+- Validation: pv-mode vs pandapower no-limit, max 3.2e-9 pu, so it passes.
+- Stop rules:
+  - 0% nonconverged or inconsistent;
+  - 0 label disagreements far from the limit;
+  - 0% of rows with diff > 1e-3.
+- Label agreement:
+  - N-0: 1,500/1,500 (CP95 [0.998, 1]); N-0 vector max |Δ| 9.99e-4; 556 rows > 1e-6; 483 > 1e-4.
+  - Strata a/b/c/d: 200/200 each (CP95 [0.982, 1]). Max |Δ|: a 9.2e-5, b 3.4e-4, c 3.4e-4, d 9.8e-4.
+  - Stratum (d) [0.94, 0.945): 200/200 agree.
+- Near-limit population (|corrected min_vm - 0.94| <= 1e-3): 43,283 / 278,945 = 15.52% of converged outage rows.
+
+## 2026-10-04T18:46:41Z — progress
+- ILL rebuild phase 1 done: 1,500 accepted from 6,042 draws (old 7,880), 212 s. Phase 2 (outage rows) running.
+- Arm S gate re-search on rebuilt D94 started (scratch/n13_gate.py D94); it overlaps the builds for CPU use only.
+- Scripts written, not yet run: scratch/n13_n2r.py (N2R build + its checks 3, 5, 6) and scratch/n13_analyses.py
+  (condhist, budget, guarantee, crossnet, mondrian, floor, n2). Both are thin wrappers around the original
+  functions.
+
+## 2026-10-04T18:47:36Z — Step 4: classical screen on rebuilt D94 STOPPED (rule 2)
+- scratch/n13_classical.py ran scripts/run_classical.py unchanged on data/sts_n13_D94.parquet; only paths changed.
+- Its own guard stopped it at the first base (scenario 100000000): "reconstructed vm0 differs from stored by
+  1.58e-03 (tolerance 1e-05)".
+  - Cause: the classical screen re-solves each base with the PINNED solver (classical_screen.solve_base) and
+    requires that state to equal the stored vm0_*. On the rebuilt D94 the stored vm0_* are the corrected N-0
+    states.
+  - Running it would need a corrected base solve inside the classical screen, which is a method change. Not done.
+- Output: data/sts_n13_classical.json plus manifest, recording the stop. The classical row is "not run on
+  rebuilt data".
+
+## 2026-10-04T18:50:55Z — scripts staged for later steps (not run)
+- scratch/n13_verdicts.py (Step 5): each definition is checked verbatim against its hashed rule file; old-build
+  verdict reported beside each.
+- scratch/n13_armF.py (Step 6): replay, corrected N-0, armF datasets, exact reproduction gate, V3 and paired
+  differences.
+- scratch/n13_compare.py (Step 8).
+- ILL phase 2 is slow (25 bases x 245 outages per chunk on a 200-bus network); estimated about 2 h.
+
+## 2026-10-04T19:28:44Z — Step 3: ILL rebuilt; checks 2-5 PASS (check 6 running)
+- Outputs: data/sts_n13_ILL.parquet, data/sts_n13_audit_ILL.parquet and data/sts_n13_build_ILL.json, each with
+  a manifest. Wall 2,703 s. Schema identical.
+- Draws 6,042 (old 7,880). Rejected: voltage 4,508, nonconvergence 20, thermal 14, N-0 correction failed 0.
+- Base set: shared prefix 10 draws (one stream); common bases 10; old rejected 1,490; new added 1,490.
+- Check 3 (10 common bases, 2,404 rows): pinned and corrected exact (max diff 0), 0 status mismatches.
+- Check 4: all bases pass. Check 5: 0 failed outage rows / 367,500; 0 N-0 correction failures.
+- Rebuilt ILL: VR 27.17%, BM 18.75%, CBM 25.75%.
+- Next, chained in the background: ILL check 6, then build + checks 2-6 for C30, C24, D93, D95a, D96.
+
+## 2026-10-04T19:32:35Z — Step 3: ILL check 6 — INTERPRETATION applied; PASS
+- **First run reported "passed: false"** only because the validation flag counted 3 rows where
+  label_crosscheck.network_model raised an exception (KeyError 'baseMVA') before any solve.
+  - All 3 are trafo-63 outages: removing trafo 63 disconnects 199 of 200 buses from the slack.
+  - pandapower then reports min_vm = 1.04 (slack only); the independent model of an empty network cannot be
+    built.
+- **Interpretation (rule 1):**
+  - Validation covers rows whose independent model can be built: 2,297, max |pv - pp no-limit| 1.2e-9 pu, PASS.
+  - Model-build failures count under the rule's own 2% non-convergence stop: 0.13%, not stopped.
+  - The alternative reading would exclude the whole dataset over 3 islanded rows. It is broader, not narrower,
+    and changes no method.
+  - The same rule applies to every dataset (script change made before C30's check 6 ran). D94 had 0 such rows,
+    so its result is unchanged.
+- Other stop rules: 0 far-from-limit label disagreements; 0% of rows with diff > 1e-3.
+  - Labels: N-0 1,500/1,500; a 200/200; b 200/200; c 197/197 modelled; d 200/200.
+- Near-limit population: 23,628 / 360,194 = 6.56% of converged outage rows.
+- **Finding:** all 1,500 trafo-63 outage rows of ILL, in the OLD build and the rebuilt one alike, are this
+  islanding case (min_vm = 1.04, slack only), labelled "safe". This is a property of the original ILL pipeline.
+  Reported, not changed.
+- ILL is complete (checks 1-6 pass, with the interpretation above).
+
+## 2026-10-04T19:34:39Z — Step 3: C30 rebuilt; checks 2-6 PASS
+- Draws 8,050 (= old). Rejected: thermal 5,710, voltage 840, 0 nonconvergence, 0 N-0 correction failed.
+- Base set identical to the old build: the shared prefix covers all 8,050 draws, all 1,500 bases are common, and
+  0 bases were added or dropped.
+- Check 3: all 61,500 outage rows reproduce exactly (pinned and corrected, max diff 0).
+- Check 5: 0 failed rows.
+- Check 6:
+  - validation pass, 0 model-build failures, all stop rules clear;
+  - N-0 1,500/1,500; a 8/8 (population 8); b, c, d 200/200 each;
+  - near-limit share 2.06%.
+- Rebuilt C30: VR 15.38%, BM 7.10%, CBM 8.39%. These equal the N11 corrected-label values because the base set
+  and labels are unchanged.
+
+## 2026-10-04T19:43:40Z — Step 3: C24 FAILS check 3, so C24 is EXCLUDED (rule §2)
+- Checks 2, 4, 5 and 6 pass. Rebuild: 5,079 draws; 62 common bases; 20 failed outage rows (0.035%); 5 N-0
+  correction failures (0.10%).
+- **Check 3 fails.** On the 62 common bases, the pinned outage minima differ from the old stored min_vm on
+  1,062 of 2,266 rows, max |diff| 1.95e-14 pu. The rule requires "exactly".
+  - The corrected minima match the old N11 labels exactly (max diff 0, 0 status mismatches).
+- **Cause, identified:** the N10/N11 corrected solve adds one out-of-service helper sgen per generator BEFORE the
+  pinned solve.
+  - C24 already has 22 sgens, and the extra entries change pandapower's floating-point summation order.
+  - On scenario 100000001 / line 0: fresh net without helpers 0.9302299793844059 (= stored); with helpers
+    0.9302299793844045.
+  - D94 (no sgens), ILL (11 sgens) and C30 (none) reproduced exactly.
+- **Not worked around.** Rule §1 prescribes the N10/N11 version of the corrected solve, which includes this
+  ordering, and rule 2 forbids changing settings to make a check pass.
+  - C24 is excluded from the rebuilt results and from cross-network claims. Its old results are not
+    substituted back.
+- **CORRECTION to my N11 report:** N11's own C24 relabel recorded resolve_min_vm_exact = False (max 1.03e-13,
+  data/sts_n11_relabel_case24_ieee_rts.json). My N11 status entry and scratch/n11_result.md wrongly said every C24
+  check passed. My monitor only matched the replay and failure-ceiling flags, not this one.
+  - N11's case24 relabel therefore did NOT pass its pinned-reproduction check either.
+  - (scratch/n11_result.md is an existing file and is not edited; the correction is recorded here and in
+    scratch/n13_result.md.)
+
+## 2026-10-04T20:08:11Z — Step 3: D93 rebuilt; checks 2-6 PASS
+- Draws 5,980 (old 6,278). Rejected: voltage 4,405, nonconvergence 75, N-0 correction failed 0.
+- Base set: shared prefix 64 / 8 / 39 / 22 draws; common bases 76.
+- Check 3 (76 bases, 14,136 rows): exact, 0 mismatches. Check 5: 0 failed rows.
+- Check 6:
+  - all stop rules clear; 0.04% of rows differ by > 1e-3 (limit 1%), max 1.16e-3 in stratum c;
+  - N-0 1,499/1,500 agree; the 1 disagreement is within 1e-3 of the limit;
+  - strata a/b/c/d 200/200 each; near-limit share 14.76%.
+- Rebuilt D93: VR 16.35%, BM 56.32%, CBM 67.33%.
+
+## 2026-10-04T20:33:05Z — Step 3: D95a rebuilt; checks 2-6 PASS
+- Draws 1,839 (old 2,071). Rejected: voltage 339, nonconvergence 0, N-0 correction failed 0.
+- Base set: shared prefix 5 / 19 / 6 / 0 draws; common bases 108.
+- Check 3 (108 bases, 20,088 rows): exact. Check 5: 0 failed.
+- Check 6: every stratum agrees fully (N-0 1,500/1,500, a-d 200/200); near-limit share 6.22%.
+- Rebuilt D95a: VR 14.81%, BM 33.36%, CBM 39.16%.
+
+## 2026-10-04T20:57:23Z — Step 3: D96 rebuilt; checks 2-6 PASS
+- Draws 1,707 (old 1,827). Rejected: voltage 207, nonconvergence 0, N-0 correction failed 0.
+- Base set: shared prefix 10 / 18 / 0 / 23 draws; common bases 382.
+- Check 3 (382 bases, 71,052 rows): exact.
+- Check 5: 1 failed outage row (0.0004%).
+- Check 6: every stratum agrees fully; near-limit share 3.69%.
+- Rebuilt D96: VR 13.59%, BM 18.97%, CBM 21.95%.
+- Tier-A dataset status:
+  - complete: D94, ILL, C30, D93, D95a, D96;
+  - excluded: C24 (check 3);
+  - N2R building now. Then the ILL and C30 gates (queued); the D94 gate is on split 4 of 5.
+
+## 2026-10-04T21:08:46Z — Step 3: N2R built on rebuilt D94 bases; checks PASS. Tier-A builds complete.
+- Script: scratch/n13_n2r.py (n11_n2_build.draw_pairs / solve_shard unchanged). Outputs: data/sts_n13_N2R.parquet,
+  data/sts_n13_build_N2R.json and data/sts_n13_indep_N2R.json, each with a manifest.
+  - 75,000 rows; schema identical; wall 613 s.
+- Check 3: 1,816 rows have the same base (hash) AND the same pair as the old N-2 build; pinned and corrected
+  exact, 0 status mismatches.
+- Check 5: 2 failed rows (0.003%). Pinned nonconverged: 84.
+- Check 6:
+  - a/b/c/d 200/200 each; max |Δ| 8.6e-4;
+  - near-limit share 14.50% of converged N-2 rows.
+  - The N-0 states are D94's (already checked).
+- N-2 corrected violation rate 29.88%.
+- Tier-A builds:
+  - complete: D94, ILL, C30, D93, D95a, D96, N2R;
+  - excluded: C24.
+- Floor numbers run: data/sts_n13_floor.json.
+
+## 2026-10-04T21:20:18Z — Step 4: arm S gate on rebuilt D94 done
+- Script: scratch/n13_gate.py D94 (n5_gate_eval.run_seed; full tune_surrogates search). Output:
+  data/sts_n13_gate_D94.json plus manifest (selected M2 configs per split). Wall 9,253 s.
+- Histgb held-out:
+  - targets 0.97/0.98/0.95/0.97/0.98; escalation 54.2%;
+  - missed 0.52 / 0.72 / 3.03 / 0.91 / 0.51% (mean 1.14 ± 0.96%);
+  - gate catch 98.86 ± 0.96 vs static 99.16 ± 0.58.
+  - Verdicts are computed in Step 5.
+- Launched the budget, mondrian and n2 analyses (background). The ILL and C30 gates are still running.
+
+## 2026-10-04T21:32:26Z — Step 4: budget, mondrian, n2 (rebuilt D94) and the C30 gate done
+- Outputs: data/sts_n13_budget.json, data/sts_n13_mondrian.json, data/sts_n13_n2.json and
+  data/sts_n13_gate_C30.json, each with a manifest.
+- Every refit reproduced the rebuilt gate exactly; no stop.
+- Budget (histgb): SURR higher at k = 20, 40, 57; STATIC higher at k = 89, 120 (crossover 89, as in the old
+  build).
+- Mondrian histgb: catch 98.78 ± 0.76 vs static 98.00 ± 0.68.
+- The ILL gate is still running. Then condhist, guarantee and crossnet.
+
+## 2026-10-04T21:52:30Z — §5 old-rejects: DEVIATION (code fix), rerun in progress
+- The first run of scratch/n13_old_rejects.py gave wrong counts. Its outputs were overwritten by the rerun and
+  never used.
+  - (1) Its log list was module-level and accumulated across pool tasks (e.g. D95a showed 2,941 "rejected" vs
+    571 real).
+  - (2) It ran the corrected solve on the replay's own net. The added helper sgens then shifted C24's later
+    pinned solves by about 1e-14, so the C24 replay was not exact.
+- Fix (rule 3): reset the log per task; run the corrected solve on a deep copy of the net. The counting method is
+  unchanged.
+- N2R: COVERAGE input ready (histgb 0.90: N-2 coverage 0.8394 ± 0.0126; N-1 0.9050).
+
+## 2026-10-04T21:55:03Z — §5 old-rejects done (after the code fix): data/sts_n13_old_rejects.json
+- Every replay is exact.
+- Old rejected draws that would pass the corrected N-0 check:
+  - D94 185 / 1287;
+  - ILL 423 / 6,380; C30 0 / 6,550; C24 1,084 / 6,848;
+  - D93 152 / 4,778; D95a 148 / 571; D96 83 / 327; D95b 144 / 537; D95c 139 / 532.
+
+## 2026-10-04T23:25:59Z — Step 4 done (tier-A analyses) and Step 5 done (tier-A verdicts)
+- Analyses: data/sts_n13_gate_{D94,ILL,C30}.json, sts_n13_{condhist,budget,guarantee,crossnet,n2,mondrian,floor}.json.
+  - Classical stopped (its own guard). C24 excluded (check 3).
+- Verdicts: data/sts_n13_verdicts.json plus manifest. The hash was verified before and after; all 9 definition
+  strings are verbatim in their hashed rule files.
+
+  | Verdict | Rebuilt | Numbers | Old build |
+  |---|---|---|---|
+  | V1 SAFER-94 (primary) | YES | 4/5 splits <= 1% (0.52/0.72/3.03/0.91/0.51%) | NO, 3/5 |
+  | V2 SAFETY-CHANGED (primary) | NO | missed 1.136 ± 0.957% vs 1.509 ± 1.355%; diff -0.37 pp, rebuilt lower; within STD 1.36 | n/a |
+  | BEATS-STATIC D94 | no | gap -0.29 vs STD 0.96 | no |
+  | BEATS-STATIC ILL (primary) | YES | 99.09 ± 0.25 vs 84.82 ± 1.69; gap 14.27 > 1.69 | YES |
+  | BEATS-STATIC C30 | yes | gap 16.10 > 3.01 | yes |
+  | SAFER-IL | NO | 3/5 | NO, 2/5 |
+  | GATE-BEATS-CONDHIST D94 | no | gap -0.78 vs 0.96 | no |
+  | GATE-BEATS-CONDHIST ILL (primary) | YES, narrow | gate 99.09 vs COND-HIST 98.45; gap 0.64 > STD 0.61 | YES |
+  | GATE-BEATS-CONDHIST C30 | yes | gap 9.45 > 2.89 | yes |
+  | COVERAGE-HOLDS-N2 (primary) | NO | N-2 coverage 0.8394 ± 0.0126 < threshold 0.8861 | NO |
+  | MONDRIAN-BEATS-STATIC | YES, narrow | gap 0.78 > STD 0.76 | NO |
+  | FLOOR_DOSE_RESPONSE (primary) | YES | BM 56.32 / 54.75 / 33.36 / 18.97 (0.93-0.96) | YES |
+
+- Guarantee (base-level any-miss, alpha 0.10; histgb): D94 11.2%, speedup B 1.40; ILL 11.2%, speedup B 2.15.
+- Tier A is finished (rule §1): every tier-A dataset has completed or been excluded (C24), and the analyses and
+  verdicts are written. Next: Step 6 (arm F).
+
+## 2026-10-04T23:27:51Z — Step 6 (arm F) running; tier B queued
+- scratch/n13_armF.py is running.
+- Queued to start after arm F (rule §1 order: tier A, then diagnostic, then tier B; the owner did not say "stop
+  after the diagnostic"):
+  - D95b and D95c rebuilds with checks 2-6;
+  - gates D95a, D95b, D95c;
+  - budget D95a, shift, floor replication, D95b/c summary;
+  - tier-B verdicts (scratch/n13_verdicts_B.py);
+  - then the Step 8 comparison (scratch/n13_compare.py).
+- Tier-B analysis modes were added to scratch/n13_analyses.py before any tier-B computation.
+
+## 2026-10-04T23:50:42Z — Step 6: DEVIATION (code fix) in scratch/n13_armF.py; rerun
+- The first run crashed at C30 (KeyError 'fits'). N11's smallnets file stores only the M2 tag per split.
+- Fix:
+  - the config is looked up from the tag in the unchanged tune_surrogates candidate list;
+  - t_surr is recovered from the stored held-out speedup B (t_surr = t_solve (1/speedup_B - s_B)).
+- No method in the hashed rule changed. The D94/ILL/C30 arm F datasets already written are reused.
+- D94 and ILL had passed the exact reproduction gate in every split before the crash.
+
+## 2026-10-05T00:11:23Z — Step 6 done (arm F diagnostic): data/sts_n13_armF.json, data/sts_n13_armF_{D94,ILL,C30,C24}.parquet
+- Every network and family passed the exact reproduction gate: the refit on the original inputs equals the
+  stored held-out missed rate in every split.
+- The arm F datasets keep the original schema. Bases whose minimum changed by > 1e-6:
+  D94 712, ILL 1,156, C30 8, C24 1,310.
+- **Interpretation (rule 1):** C24 had 2 bases whose N-0 switch-back failed. They keep their stored (pinned)
+  inputs, since no corrected input exists. Logged.
+- **V3 MISMATCH-DRIVES-DRIFT-GAP: NO.** Histgb, held-out, > 1e-3 drift bin:
+  - pinned 1.57 / 1.18 / 0.67 / 1.44 / 19.49% (mean 4.87 ± 7.32);
+  - corrected 1.57 / 0.67 / 1.43 / 2.10 / 2.13% (mean 1.58 ± 0.53);
+  - gap 3.29 pp, not > STD 7.32 pp.
+  - The pinned rates and row counts equal data/sts_n0drift_check.json exactly in every split.
+  - Split 4's 19.49% (5,208 rows) falls to 2.13% with corrected inputs, but one split drives the pinned std.
+- Paired differences (corrected - original inputs), histgb:
+  - D94: missed -0.41 ± 0.83 pp; escalation -4.13 ± 3.84 pp; speedup B +0.072 ± 0.080.
+  - ILL: missed -0.16 ± 0.17; escalation -1.35 ± 0.37; speedup B +0.085 ± 0.047.
+  - C30: missed +0.06 ± 0.15; escalation +0.02 ± 0.18; speedup B -0.012 ± 0.040.
+  - C24: missed +0.30 ± 0.43; escalation -6.34 ± 0.81; speedup B +0.161 ± 0.013.
+- Arm F numbers never replace paper numbers. Tier B now starts (queued).
+
+## 2026-10-05T00:34:31Z — Step 7: D95b rebuilt; checks 2-6 PASS
+- Draws 1,843 (old 2,037). Rejected: voltage 343, nonconvergence 0, N-0 correction failed 0.
+- Base set: shared prefix 20 / 9 / 15 / 22 draws; common bases 214.
+- Check 3 (214 bases, 39,804 rows): exact. Check 5: 0 failed.
+- Check 6: every stratum agrees fully; near-limit share 6.24%.
+- Rebuilt D95b: VR 14.92%, BM 31.60%, CBM 37.14%.
+
+## 2026-10-05T02:30:22Z — Step 7 done (tier B), with one analysis stopped and one code fix; Step 8 done
+- **D95c rebuilt; checks 2-6 PASS.**
+  - Draws 1,874 (old 2,032); common bases 232; check 3 exact on 43,152 rows; 1 failed row.
+  - Check 6: every stratum agrees fully; near-limit share 6.29%.
+  - Rebuilt D95c: VR 14.72%, BM 31.90%, CBM 37.41%.
+- Gates: D95a and D95b done (data/sts_n13_gate_D95{a,b}.json).
+- **D95c gate STOPPED (rule 2):** it crashed in split 4's ridge M2 search inside the unchanged scikit-learn Ridge
+  (numpy LinAlgError "SVD did not converge"), after splits 0-3 had finished.
+  - Not retried, settings unchanged. D95c gate results are "not run".
+  - The D95c dataset is still used in the floor replication.
+- **DEVIATION (code fix):** my queue passed "budget D95a" as one argument, so the script stopped with "unknown
+  analysis". It was rerun correctly (data/sts_n13_budget_D95a.json). Histgb: SURR higher at k = 20, 40, 57;
+  STATIC higher at k = 89, 120.
+- Shift (data/sts_n13_shift.json), D94 -> D95a:
+  - histgb gate 98.64 ± 0.66 vs static 98.64 ± 0.61;
+  - ridge: static higher.
+- Floor replication (rebuilt D95a/b/c): BM 32.29 ± 0.77; CBM 37.90 ± 0.89; VR 14.82 ± 0.08 (ddof=0).
+- **Tier-B verdicts** (data/sts_n13_verdicts_tierB.json; hash verified; definitions verbatim):
+
+  | Verdict | Rebuilt | Numbers | Old build |
+  |---|---|---|---|
+  | SAFER (N5 form, D95a) | NO | 2/5 splits <= 1% (0.37/1.16/0.81/1.03/1.35) | NO, 1/5 |
+  | FASTER (N5 form) | NO | clause 1 yes (speedup B 1.971 vs 1.439, diff 0.53 > 0.28); clause 2 no (gate 99.06 vs static 98.88, diff 0.18 < 0.39) | NO |
+  | SHIFT-ADVANTAGE | NO | gap -0.00 vs STD 0.66 | NO |
+
+- N11 Part 5 replication: D95b SAFER no (2/5), FASTER no.
+- **Step 8 comparison** (data/sts_n13_compare.json, unpaired, std rule): 334 rows; 76 differ, 238 within std,
+  20 not run (all C24).
+  - The floor and cross-net BM/VR values are single numbers (no std), so "differs" there means "not equal".
+
+## 2026-10-05T02:31:50Z — N13 complete; scratch/n13_result.md written
+- Every step ran in session 1, before the cutoff.
+- Not run: C24 (excluded at check 3), the classical screen on rebuilt D94 (its own guard), and the D95c gate
+  (scikit-learn crash).
+- The owner gets the git commands; Claude made no git writes.

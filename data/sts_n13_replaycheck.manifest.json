@@ -1,0 +1,198 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_replaycheck.json"
+  ],
+  "generating_script": "scratch/n13_replay.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_replay.py"
+  ],
+  "script_git_blob_sha": "ad5d10cf6b9b37b61e703f73bd4ed706c366d1e8",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    },
+    {
+      "path": "data/dataset.parquet",
+      "sha256": "8f0fd1081c8603e805e07a776e9f8e70392795203751fbd915d46ea4e49c1b8e"
+    },
+    {
+      "path": "data/netstudy/case_illinois200/dataset.parquet",
+      "sha256": "aba7a9201b964250ff901c64ca53a13e50023494c7e53489385d1311ee4553bd"
+    },
+    {
+      "path": "data/netstudy/case_illinois200/build_stats.json",
+      "sha256": "91ed8726eef8c76285adb6dcaa4af90dae46ed984e969aacfb89609c9117f5b5"
+    },
+    {
+      "path": "data/case30_thermal/dataset.parquet",
+      "sha256": "cb1a38e9a39ef2333ade9a3423c188938bf21ff4883bdc3a0deacc7daefb9f98"
+    },
+    {
+      "path": "data/case30_thermal/h3_build_stats.json",
+      "sha256": "f2d3717c163ff9641fe1fcb6afd3ecc1b7cdcf93c9af07013eb1104bbd37f256"
+    },
+    {
+      "path": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "sha256": "29896224c999756aa1d60455e135d198906098142e66eff45995703cf17decab"
+    },
+    {
+      "path": "data/netstudy/case24_ieee_rts/build_stats.json",
+      "sha256": "4ecae485599f39e2e48473fffb65d8f11ff45c17b578de2edf3c2b6e68174f09"
+    },
+    {
+      "path": "data/sts_n11_floor093.parquet",
+      "sha256": "7b90093b76c5fbd9bc6c06eb98273c806bff993f7f83016e3cbcdb9e692daddb"
+    },
+    {
+      "path": "data/sts_n3_floor095.parquet",
+      "sha256": "49363a25309bc0e14df03b39215a6038c3953c480389a4708c5a42a9a636e9f6"
+    },
+    {
+      "path": "data/sts_n11_floor096.parquet",
+      "sha256": "aa48f08799249171f86ab866876df4fde0826009135ae610bb32841ee3601290"
+    },
+    {
+      "path": "data/sts_n5_floor095_seed200.parquet",
+      "sha256": "2c364ae1bcbeda07607f0fb20dfccb6a14fcfdade4ea0ec00cabcfe55d4648e8"
+    },
+    {
+      "path": "data/sts_n9_floor095_seed300.parquet",
+      "sha256": "8e100e68fd457336988199bfa82ddc0bb7a3ba963dfa0cf4cfea09314d2a25d2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_replaycheck.json",
+      "sha256": "b2088bbcd7978b1b4f55f31b7de665207edae9b3371a966f08e14c874fd75724",
+      "md5": "c1b7a88de20cdb5b11162230e8aa35e9",
+      "bytes": 12580,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T18:18:54Z",
+  "parameters": {
+    "datasets": {
+      "D94": {
+        "kind": "case118",
+        "file": "data/dataset.parquet",
+        "floor": 0.94,
+        "seeds": [
+          100,
+          101,
+          102,
+          103
+        ],
+        "labels": "data/sts_n2_label_audit.parquet",
+        "tier": "A"
+      },
+      "ILL": {
+        "kind": "netstudy",
+        "network": "case_illinois200",
+        "file": "data/netstudy/case_illinois200/dataset.parquet",
+        "stats": "data/netstudy/case_illinois200/build_stats.json",
+        "labels": "data/sts_n10_relabel_illinois200.parquet",
+        "tier": "A"
+      },
+      "C30": {
+        "kind": "case30",
+        "network": "case30",
+        "file": "data/case30_thermal/dataset.parquet",
+        "stats": "data/case30_thermal/h3_build_stats.json",
+        "labels": "data/sts_n11_relabel_case30_thermal.parquet",
+        "tier": "A"
+      },
+      "C24": {
+        "kind": "netstudy",
+        "network": "case24_ieee_rts",
+        "file": "data/netstudy/case24_ieee_rts/dataset.parquet",
+        "stats": "data/netstudy/case24_ieee_rts/build_stats.json",
+        "labels": "data/sts_n11_relabel_case24_ieee_rts.parquet",
+        "tier": "A"
+      },
+      "D93": {
+        "kind": "case118",
+        "file": "data/sts_n11_floor093.parquet",
+        "floor": 0.93,
+        "seeds": [
+          100,
+          101,
+          102,
+          103
+        ],
+        "labels": "data/sts_n11_floor093_relabel.parquet",
+        "tier": "A"
+      },
+      "D95a": {
+        "kind": "case118",
+        "file": "data/sts_n3_floor095.parquet",
+        "floor": 0.95,
+        "seeds": [
+          100,
+          101,
+          102,
+          103
+        ],
+        "labels": "data/sts_n5_relabel095.parquet",
+        "tier": "A"
+      },
+      "D96": {
+        "kind": "case118",
+        "file": "data/sts_n11_floor096.parquet",
+        "floor": 0.96,
+        "seeds": [
+          100,
+          101,
+          102,
+          103
+        ],
+        "labels": "data/sts_n11_floor096_relabel.parquet",
+        "tier": "A"
+      },
+      "D95b": {
+        "kind": "case118",
+        "file": "data/sts_n5_floor095_seed200.parquet",
+        "floor": 0.95,
+        "seeds": [
+          200,
+          201,
+          202,
+          203
+        ],
+        "labels": "data/sts_n9_relabel095_seed200.parquet",
+        "tier": "B"
+      },
+      "D95c": {
+        "kind": "case118",
+        "file": "data/sts_n9_floor095_seed300.parquet",
+        "floor": 0.95,
+        "seeds": [
+          300,
+          301,
+          302,
+          303
+        ],
+        "labels": "data/sts_n9_relabel095_seed300.parquet",
+        "tier": "B"
+      }
+    },
+    "seeds": "per dataset (see datasets)",
+    "nproc": 8,
+    "solver": "pandapower runpp enforce_q_lims=True init=dc numba=True (pinned, original acceptance)",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: N-0 pinned solves of every original draw (replay)"
+}

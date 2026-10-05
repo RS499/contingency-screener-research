@@ -1,0 +1,59 @@
+{
+  "analysis": "N9 Part 3 replication over the rebuilt 0.95 builds (rebuilt labels)",
+  "per_build": [
+    {
+      "build": "D95a",
+      "available": true,
+      "BM": 33.35603988226057,
+      "CBM": 39.15715133481201,
+      "VR": 14.814947601650646,
+      "in_n3_range_descriptive": {
+        "BM": true,
+        "CBM": true,
+        "VR": true
+      }
+    },
+    {
+      "build": "D95b",
+      "available": true,
+      "BM": 31.600817438692097,
+      "CBM": 37.141400350593315,
+      "VR": 14.917539079305895,
+      "in_n3_range_descriptive": {
+        "BM": true,
+        "CBM": true,
+        "VR": true
+      }
+    },
+    {
+      "build": "D95c",
+      "available": true,
+      "BM": 31.90140718831227,
+      "CBM": 37.407407407407405,
+      "VR": 14.719010486689971,
+      "in_n3_range_descriptive": {
+        "BM": true,
+        "CBM": true,
+        "VR": true
+      }
+    }
+  ],
+  "across": {
+    "BM": {
+      "mean": 32.286088169754976,
+      "std_ddof0": 0.7664576742888514,
+      "std_ddof1": 0.9387151057239956
+    },
+    "CBM": {
+      "mean": 37.90198636427091,
+      "std_ddof0": 0.894154821054985,
+      "std_ddof1": 1.0951115313171569
+    },
+    "VR": {
+      "mean": 14.817165722548836,
+      "std_ddof0": 0.08106413332152149,
+      "std_ddof1": 0.09928288153933745
+    }
+  },
+  "n3_ranges_note": "N3 ranges were made for the old builds; shown as descriptive in-range flags only"
+}

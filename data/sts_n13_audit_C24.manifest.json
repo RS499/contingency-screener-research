@@ -1,0 +1,63 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_audit_C24.parquet"
+  ],
+  "generating_script": "scratch/n13_build.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_build.py",
+    "C24"
+  ],
+  "script_git_blob_sha": "4872b70789c2daa1ed920135773a8b3c0a2de4c9",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "sha256": "29896224c999756aa1d60455e135d198906098142e66eff45995703cf17decab"
+    },
+    {
+      "path": "data/sts_n11_relabel_case24_ieee_rts.parquet",
+      "sha256": "e82c772cc9183b7ebbc1f1d0cb55b311c792ee5f20f851036816feea11d8ce7b"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_audit_C24.parquet",
+      "sha256": "f3d9a4fd4365a8b5d0b399f23e283ae8a7ecaf8a3c155fe8d48cf59977eabbd8",
+      "md5": "8040223549e3c195c8f72187c32d7d60",
+      "bytes": 1164676,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-04T19:41:28Z",
+  "parameters": {
+    "dataset": "C24",
+    "spec": {
+      "kind": "netstudy",
+      "network": "case24_ieee_rts",
+      "file": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "stats": "data/netstudy/case24_ieee_rts/build_stats.json",
+      "labels": "data/sts_n11_relabel_case24_ieee_rts.parquet",
+      "tier": "A"
+    },
+    "solver": "corrected: pandapower runpp enforce_q_lims=True init=dc numba=True, then the N2 switch-back (TOL_V = TOL_Q = 1e-3, 30 outer iterations)",
+    "invocation": "scratch/n13_build.py C24",
+    "model_hyperparameters": "none (no model fit)"
+  },
+  "no_new_solves": "FALSE: corrected-solver rebuild (N-0 and every outage)"
+}

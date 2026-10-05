@@ -1,0 +1,53 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_armF_C24.parquet"
+  ],
+  "generating_script": "scratch/n13_armF.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_armF.py"
+  ],
+  "script_git_blob_sha": "a0b7fd54f9b9b9153c3bc477c7fa0f21071a11ff",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "504d728741c8ef7ab16bd309a7c1294024a40abb",
+  "inputs": [
+    {
+      "path": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "sha256": "29896224c999756aa1d60455e135d198906098142e66eff45995703cf17decab"
+    },
+    {
+      "path": "scratch/n13_decision_rule.md",
+      "sha256": "ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_armF_C24.parquet",
+      "sha256": "8e2af78bddfd3ca6ec8f3043bc06bd8a9f8f0dd169eda08db56e5dc5f7b00ddf",
+      "md5": "98c2390556377886d8e644d9535fbd6c",
+      "bytes": 2145936,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T00:10:42Z",
+  "parameters": {
+    "dataset": "C24",
+    "replaced": [
+      "vm0_*",
+      "n0_min_vm"
+    ],
+    "solver": "corrected N-0: pinned + N2 switch-back (n13_common.corrected_pf)",
+    "model_hyperparameters": "none (dataset file)"
+  },
+  "no_new_solves": "FALSE: corrected N-0 solve of every original base"
+}

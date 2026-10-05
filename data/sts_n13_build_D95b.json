@@ -1,0 +1,133 @@
+{
+  "name": "D95b",
+  "tier": "B",
+  "original_file": "data/sts_n5_floor095_seed200.parquet",
+  "draws": 1843,
+  "accepted": 1500,
+  "rejected_by_reason": {
+    "nonconvergence": 0,
+    "voltage": 343,
+    "n0_correction_failed": 0
+  },
+  "base_set": {
+    "per_shard_prefix": [
+      {
+        "shard_seed": 200,
+        "first_differing_draw": 20,
+        "prefix_draws": 20,
+        "prefix_accepted": 15,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 519,
+        "new_draws": 471
+      },
+      {
+        "shard_seed": 201,
+        "first_differing_draw": 9,
+        "prefix_draws": 9,
+        "prefix_accepted": 8,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 519,
+        "new_draws": 459
+      },
+      {
+        "shard_seed": 202,
+        "first_differing_draw": 15,
+        "prefix_draws": 15,
+        "prefix_accepted": 12,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 485,
+        "new_draws": 451
+      },
+      {
+        "shard_seed": 203,
+        "first_differing_draw": 22,
+        "prefix_draws": 22,
+        "prefix_accepted": 16,
+        "prefix_hashes_identical": true,
+        "draw_at_divergence_hash_identical": true,
+        "old_draws": 514,
+        "new_draws": 462
+      }
+    ],
+    "n_old_bases": 1500,
+    "n_new_bases": 1500,
+    "n_common": 214,
+    "n_old_rejected": 1286,
+    "n_new_added": 1286
+  },
+  "checks": {
+    "check2_shared_prefix": {
+      "passed": true
+    },
+    "check3_label_reproduction": {
+      "passed": true,
+      "n_rows_compared": 39804,
+      "n_pinned_compared": 39799,
+      "max_abs_pinned_diff": 0.0,
+      "pinned_status_mismatches": 0,
+      "n_corrected_compared": 39799,
+      "max_abs_corrected_diff": 0.0,
+      "corrected_status_mismatches": 0,
+      "tolerance": 1e-09
+    },
+    "check4_acceptance": {
+      "passed": true,
+      "n_bases": 1500,
+      "n_bad": 0
+    },
+    "check5_failure_ceilings": {
+      "passed": true,
+      "failed_outage_rows": 0,
+      "outage_rows": 279000,
+      "failed_outage_share": 0.0,
+      "n0_correction_failed_draws": 0,
+      "draws": 1843,
+      "n0_correction_failed_share": 0.0,
+      "ceiling": 0.005
+    }
+  },
+  "failed_rows": 0,
+  "pinned_nonconverged_outage_rows": 80,
+  "VR": 0.14917539079305894,
+  "BM": 0.31600817438692097,
+  "CBM": 0.3714140035059331,
+  "min_vm_range": [
+    0.7736270894714963,
+    0.9599961337608289
+  ],
+  "over_voltage_share_max_vm_gt_1p05": 0.7223182274487309,
+  "critical_bus_top5_share": {
+    "75": 0.2894199053492041,
+    "52": 0.2622149720349921,
+    "0": 0.08738706439122329,
+    "20": 0.06986591137243654,
+    "37": 0.036153735838233184
+  },
+  "switchback_outer_iterations": {
+    "mean_all_outage_rows": 1.0778709677419356,
+    "max": 4,
+    "mean_rows_needing_switchback": 1.132899852325126,
+    "n_rows_needing_switchback": 265448
+  },
+  "n0_switchback_needed": 1427,
+  "build_info": {
+    "name": "D95b",
+    "n_accepted": 1500,
+    "n_draws": 1843,
+    "rejected": {
+      "nonconvergence": 0,
+      "voltage": 343,
+      "n0_correction_failed": 0
+    },
+    "schema_same_columns": true,
+    "schema_dtype_differences": [],
+    "n0_rebuild_mismatches": 0,
+    "phase1_wall_s": 14.439707040786743,
+    "wall_s": 1287.550780057907
+  },
+  "wall_s": 0.6299307346343994,
+  "all_checks_2_5_passed": true
+}
