@@ -6633,3 +6633,13 @@ Claude replaced the three OWNER notes in scratch/n13_decision_rule_DRAFT.md with
 Prompt: the owner pasted the prompt section of scratch/run_prompt_n13.md (committed in 504d728741c8ef7ab16bd309a7c1294024a40abb). Not re-quoted here, see the file. Multi-session; no-question rules 1-6.
 N13 pre-registration: scratch/n13_decision_rule.md sha256 ae941f64cf14b66eb5471a63396152365dc37e27c9066af99c1381b7cea5a5ce, recorded 2026-10-04T18:12:44Z; draft committed in 504d728741c8ef7ab16bd309a7c1294024a40abb. Cutoff (rule §1): 2026-10-14 23:59 local.
 N13 outcome: see scratch/n13_result.md. Tier-A primary: V1 SAFER-94 YES (old NO), V2 NO, BEATS-STATIC-ILL YES, CONDHIST-ILL YES (narrow), N2 NO, FLOOR YES; MONDRIAN YES (old NO); tier B all NO; V3 NO. C24 excluded; my N11 C24 report corrected. Claude gave git commands; no git writes.
+
+## 2026-10-05 (p) — N14 pre-facts and draft rule (Claude Code)
+
+Prompt: the owner pasted an instruction to write scratch/n14_prefacts.md (read-only fact checks: C24 status, C24 check 3, islanding in N13, trafo 63 on ILL, other outages meeting the exclusion criterion) and scratch/n14_decision_rule_DRAFT.md (§A C24 amendment, §B islanding, §C classical screen and D95c diagnosis from notes/paper_fix_plan.md, §D common rules, §E replacement), no analyses, no models, no hashing, no git writes. Full text pasted in session; not re-quoted.
+Outcome: wrote scratch/n14_prefacts.md and scratch/n14_decision_rule_DRAFT.md (not hashed, not pushed). C24 amendment not blocked (no rebuilt-C24 model result; arm F C24 refits on original bases flagged for owner). Islanding: D94 9 outages / 4.84%, ILL 72 / 29.98%, C30 3 / 7.32%; exclusion criterion catches ILL trafo 63 only. §C items have no definition in notes/paper_fix_plan.md, marked OWNER. No analyses, no models, no git writes.
+
+## 2026-10-05 (q) — settle N14 OWNER items; write run_prompt_n14 (Claude Code)
+
+Prompt: the owner pasted instructions to (1) classify why the N13 classical screen and D95c diagnosis did not run, (2) settle every OWNER item in scratch/n14_decision_rule_DRAFT.md with given wording (arm F/C24 disclosure, amendment sentence, exclusion criterion, D94/C30 restated with hash condition, sensitivity scope, ILL outcome wording, classical/D95c by classification, replacement, tolerances, cutoff 2026-10-12 23:59 America/New_York), (3) write scratch/run_prompt_n14.md. No analyses, no model fits, no git writes. Full text pasted in session; not re-quoted.
+Outcome: Part 1 classified the classical screen and the D95c gate as (b) (method incompatibility; failed computation), so both are dropped from N14. Rewrote scratch/n14_decision_rule_DRAFT.md with every OWNER item settled as given; wrote scratch/run_prompt_n14.md. No analyses, no git writes.
