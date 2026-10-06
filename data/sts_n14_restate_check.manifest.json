@@ -1,0 +1,91 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n14_restate_check.json"
+  ],
+  "generating_script": "scratch/n14_restate_check.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n14_restate_check.py"
+  ],
+  "script_git_blob_sha": "b5aacfe92b21bd4f9aab8e085cebe8e3e2ec1e28",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9ca3c06507f009c9a6531ab7c8a248dbd926e77f",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C30.parquet",
+      "sha256": "9f18a31eebd990b1b7ccfb0ae3568cf02639e63e493a2efe025fae89a10ae044"
+    },
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5"
+    },
+    {
+      "path": "data/sts_n13_budget.json",
+      "sha256": "1cd36a3d3091f46f587f8c101c2385701108c7bb76b64bc972f38a063cd6b8db"
+    },
+    {
+      "path": "data/sts_n13_condhist.json",
+      "sha256": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7"
+    },
+    {
+      "path": "data/sts_n13_crossnet.json",
+      "sha256": "72997b2c3a6df511c98f06f08e58b7150117cbe24077e5e952007afbeb3dfcd9"
+    },
+    {
+      "path": "data/sts_n13_floor.json",
+      "sha256": "0b778352838556b52907bf325f27221777a83681b6d20d1f8d7badc98e745a05"
+    },
+    {
+      "path": "data/sts_n13_gate_C30.json",
+      "sha256": "ddee380ed8a0231d7e215141f7e484846c59d6291857baffdc652f7a1690aa93"
+    },
+    {
+      "path": "data/sts_n13_gate_D94.json",
+      "sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e"
+    },
+    {
+      "path": "data/sts_n13_guarantee.json",
+      "sha256": "e3025c40e689a5bfe2a95534cf19e80bd943c3d85a2c9a0a1bf274f6a5cac68d"
+    },
+    {
+      "path": "data/sts_n13_mondrian.json",
+      "sha256": "4a5834faf8df54493bc8b773de4fde8a3c44fa7ee427544e59415a552cf44b9b"
+    },
+    {
+      "path": "data/sts_n13_n2.json",
+      "sha256": "1d458d7dd57840affdcc2c2da8d6d56d27842aff23c31231d84cd83f360ca30b"
+    },
+    {
+      "path": "data/sts_n13_verdicts.json",
+      "sha256": "0092564a18f0246acda8a426e959ca808bef9be33c5a6ed0914034cbb63227d5"
+    },
+    {
+      "path": "scratch/n14_decision_rule.md",
+      "sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n14_restate_check.json",
+      "sha256": "f207936d9e839d4496ccf9e165995b654a823d6ba3c68a19c848b9358a8f52ea",
+      "md5": "26bfeb804b22d593c9559cc67167d22b",
+      "bytes": 4714,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T22:32:15Z",
+  "parameters": {
+    "model_hyperparameters": "none (hash comparison only)"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

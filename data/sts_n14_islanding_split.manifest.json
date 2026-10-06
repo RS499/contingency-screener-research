@@ -1,0 +1,83 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n14_islanding_split.json"
+  ],
+  "generating_script": "scratch/n14_analyses.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n14_analyses.py",
+    "islsplit"
+  ],
+  "script_git_blob_sha": "40a55d0bf09e86053eb829e2eb1f6ee61e22df73",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9ca3c06507f009c9a6531ab7c8a248dbd926e77f",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C24.parquet",
+      "sha256": "4e61f47a0f64926e4e0eb7cdde5fdcca025dcdbfc8ad58a0c41e981261483f70"
+    },
+    {
+      "path": "data/sts_n13_C30.parquet",
+      "sha256": "9f18a31eebd990b1b7ccfb0ae3568cf02639e63e493a2efe025fae89a10ae044"
+    },
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5"
+    },
+    {
+      "path": "data/sts_n13_ILL.parquet",
+      "sha256": "1e42d3dee36af2cde7cd49a0551b8df734172572f071f8c51f296dfd0e35cb44"
+    },
+    {
+      "path": "data/sts_n13_gate_C30.json",
+      "sha256": "ddee380ed8a0231d7e215141f7e484846c59d6291857baffdc652f7a1690aa93"
+    },
+    {
+      "path": "data/sts_n13_gate_D94.json",
+      "sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e"
+    },
+    {
+      "path": "data/sts_n14_gate_C24.json",
+      "sha256": "e0dc60ddf6a56e8a8f97fd202a34e64da465e5dfe2d74dec67b72d9730d0a7e8"
+    },
+    {
+      "path": "data/sts_n14_gate_ILL.json",
+      "sha256": "6edb07a9a8e313582069a55f9ba1f8a394e8710079f7426242e0495c2d345475"
+    },
+    {
+      "path": "scratch/n14_decision_rule.md",
+      "sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n14_islanding_split.json",
+      "sha256": "e93c5ccd068e21b0b30745218940865d4143a7e7f4867c7e97d06634d6a9b207",
+      "md5": "d04e54562ad37f5a4de42679f538a2fa",
+      "bytes": 9544,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-06T01:32:23Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "model_hyperparameters": "M2 configs from the primary gate files (refit, no search)"
+  },
+  "no_new_solves": "No AC solve."
+}

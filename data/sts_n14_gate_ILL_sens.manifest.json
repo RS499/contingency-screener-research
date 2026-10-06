@@ -1,0 +1,522 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n14_gate_ILL_sens.json"
+  ],
+  "generating_script": "scratch/n14_gate.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n14_gate.py",
+    "ILL",
+    "sensitivity"
+  ],
+  "script_git_blob_sha": "aff14553e85a7fb8fa758156d1e72b20b05e8288",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9ca3c06507f009c9a6531ab7c8a248dbd926e77f",
+  "inputs": [
+    {
+      "path": "data/sts_n13_ILL.parquet",
+      "sha256": "1e42d3dee36af2cde7cd49a0551b8df734172572f071f8c51f296dfd0e35cb44"
+    },
+    {
+      "path": "data/solve_time.json",
+      "sha256": "94d8e8059d2b35260da090e33e3ce058c0437ef7b578556a134bbdc258a0d4ec"
+    },
+    {
+      "path": "scratch/n14_decision_rule.md",
+      "sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n14_gate_ILL_sens.json",
+      "sha256": "22c7656b4d02ad65b9c2330ddf41c2daea51eb2a0c2ff40b070f3468de243853",
+      "md5": "8b31d19168ee89c644fe75ba5fa1babd",
+      "bytes": 189980,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-06T00:40:25Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "mode": "sensitivity",
+    "excluded_outages": [
+      {
+        "outaged_type": "line",
+        "outaged_idx": 0
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 4
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 7
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 10
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 14
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 19
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 20
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 26
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 27
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 28
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 29
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 30
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 33
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 34
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 37
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 40
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 43
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 46
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 47
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 50
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 53
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 54
+      },
+      {
+        "outaged_type": "line",
+        "outaged_idx": 57
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 2
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 3
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 4
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 5
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 6
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 8
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 9
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 10
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 11
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 12
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 13
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 14
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 15
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 16
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 17
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 18
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 19
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 22
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 23
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 24
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 25
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 28
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 29
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 31
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 32
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 36
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 37
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 38
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 41
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 42
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 43
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 45
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 46
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 47
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 48
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 49
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 51
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 52
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 53
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 54
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 55
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 56
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 57
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 58
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 60
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 61
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 63
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 64
+      },
+      {
+        "outaged_type": "trafo",
+        "outaged_idx": 65
+      }
+    ],
+    "invocation": "scratch/n14_gate.py ILL sensitivity",
+    "candidate_grids": {
+      "ridge_alphas": [
+        0.001,
+        0.0031622776601683794,
+        0.01,
+        0.03162277660168379,
+        0.1,
+        0.31622776601683794,
+        1.0,
+        3.1622776601683795,
+        10.0,
+        31.622776601683793,
+        100.0,
+        316.22776601683796,
+        1000.0,
+        3162.2776601683795,
+        10000.0
+      ],
+      "histgb_space": {
+        "learning_rate": [
+          0.03,
+          0.05,
+          0.08,
+          0.1,
+          0.2
+        ],
+        "max_iter": [
+          100,
+          300,
+          600,
+          1000
+        ],
+        "max_leaf_nodes": [
+          31,
+          63,
+          127,
+          255
+        ],
+        "min_samples_leaf": [
+          20,
+          50,
+          200
+        ],
+        "l2_regularization": [
+          0.0,
+          0.1,
+          1.0,
+          10.0
+        ],
+        "n_random": 24,
+        "search_seed": 0
+      }
+    },
+    "model_hyperparameters": [
+      {
+        "seed": 0,
+        "family": "ridge",
+        "tag": "alpha1e+04",
+        "config": {
+          "tag": "alpha1e+04",
+          "alpha": 10000.0
+        }
+      },
+      {
+        "seed": 0,
+        "family": "histgb",
+        "tag": "rand19",
+        "config": {
+          "tag": "rand19",
+          "learning_rate": 0.03,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 20,
+          "l2_regularization": 10.0
+        }
+      },
+      {
+        "seed": 1,
+        "family": "ridge",
+        "tag": "alpha100",
+        "config": {
+          "tag": "alpha100",
+          "alpha": 100.0
+        }
+      },
+      {
+        "seed": 1,
+        "family": "histgb",
+        "tag": "rand13",
+        "config": {
+          "tag": "rand13",
+          "learning_rate": 0.08,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 20,
+          "l2_regularization": 0.1
+        }
+      },
+      {
+        "seed": 2,
+        "family": "ridge",
+        "tag": "alpha0.01",
+        "config": {
+          "tag": "alpha0.01",
+          "alpha": 0.01
+        }
+      },
+      {
+        "seed": 2,
+        "family": "histgb",
+        "tag": "rand15",
+        "config": {
+          "tag": "rand15",
+          "learning_rate": 0.1,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 127,
+          "min_samples_leaf": 20,
+          "l2_regularization": 1.0
+        }
+      },
+      {
+        "seed": 3,
+        "family": "ridge",
+        "tag": "alpha1000",
+        "config": {
+          "tag": "alpha1000",
+          "alpha": 1000.0
+        }
+      },
+      {
+        "seed": 3,
+        "family": "histgb",
+        "tag": "rand13",
+        "config": {
+          "tag": "rand13",
+          "learning_rate": 0.08,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 20,
+          "l2_regularization": 0.1
+        }
+      },
+      {
+        "seed": 4,
+        "family": "ridge",
+        "tag": "alpha3162",
+        "config": {
+          "tag": "alpha3162",
+          "alpha": 3162.2776601683795
+        }
+      },
+      {
+        "seed": 4,
+        "family": "histgb",
+        "tag": "rand13",
+        "config": {
+          "tag": "rand13",
+          "learning_rate": 0.08,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 20,
+          "l2_regularization": 0.1
+        }
+      }
+    ],
+    "omp_num_threads": "3"
+  },
+  "no_new_solves": "No AC solve. Model fits: full tune_surrogates search + M2 refits per seed."
+}

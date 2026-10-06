@@ -1,0 +1,213 @@
+{
+  "part": "N14 verdicts (replications on the rebuilt N13 data, N14 primary and sensitivity)",
+  "decision_rule_sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5",
+  "definitions_quoted": {
+    "BEATS_STATIC": {
+      "file": "scratch/n10_decision_rule.md",
+      "text": "mean(gate catch) \u2212 mean(static catch at k_B) > max(std gate, std static)",
+      "verbatim_in_file": true
+    },
+    "SAFER_IL": {
+      "file": "scratch/n10_decision_rule.md",
+      "text": "Histgb held-out missed \u2264 1% in \u2265 4 of 5 splits.",
+      "verbatim_in_file": true
+    },
+    "CONDHIST": {
+      "file": "scratch/n12_decision_rule.md",
+      "text": "mean_split(gate catch) \u2212 mean_split(COND-HIST catch) > max(std gate, std COND-HIST)",
+      "verbatim_in_file": true
+    },
+    "OUTCOME_A": {
+      "file": "scratch/n14_decision_rule.md",
+      "text": "the gate's advantage over COND-HIST on Illinois holds with and without islanding outages",
+      "verbatim_in_file": true
+    },
+    "OUTCOME_B": {
+      "file": "scratch/n14_decision_rule.md",
+      "text": "the gate's advantage on Illinois depends on including islanding outages",
+      "verbatim_in_file": true
+    },
+    "OUTCOME_C": {
+      "file": "scratch/n14_decision_rule.md",
+      "text": "on Illinois the gate does not beat COND-HIST once trafo 63 is excluded",
+      "verbatim_in_file": true
+    }
+  },
+  "verdicts": {
+    "primary": {
+      "BEATS_STATIC": {
+        "D94": {
+          "holds": false,
+          "gate_catch_mean": 0.9886400348508773,
+          "gate_catch_std": 0.009569465819038834,
+          "static_catch_mean": 0.9915547822903428,
+          "static_catch_std": 0.005775359667870349,
+          "gap": -0.002914747439465515,
+          "STD": 0.009569465819038834,
+          "n13": false,
+          "source": "data/sts_n13_gate_D94.json"
+        },
+        "ILL": {
+          "holds": true,
+          "gate_catch_mean": 0.9901860567756058,
+          "gate_catch_std": 0.003119906133179286,
+          "static_catch_mean": 0.8459037276871493,
+          "static_catch_std": 0.0263454479922784,
+          "gap": 0.1442823290884565,
+          "STD": 0.0263454479922784,
+          "n13": true,
+          "source": "data/sts_n14_gate_ILL.json"
+        },
+        "C30": {
+          "holds": true,
+          "gate_catch_mean": 0.9926353360434039,
+          "gate_catch_std": 0.003497148837743541,
+          "static_catch_mean": 0.8316471807473869,
+          "static_catch_std": 0.03005162208070793,
+          "gap": 0.16098815529601707,
+          "STD": 0.03005162208070793,
+          "n13": true,
+          "source": "data/sts_n13_gate_C30.json"
+        },
+        "C24": {
+          "holds": true,
+          "gate_catch_mean": 0.9885222812744268,
+          "gate_catch_std": 0.0027055236189026544,
+          "static_catch_mean": 0.8965138350986823,
+          "static_catch_std": 0.010060153676864332,
+          "gap": 0.09200844617574444,
+          "STD": 0.010060153676864332,
+          "n13": "not run",
+          "source": "data/sts_n14_gate_C24.json"
+        }
+      },
+      "SAFER_IL": {
+        "holds": false,
+        "splits_missed_le_1pct": 2,
+        "missed_per_split": [
+          0.014716294123596643,
+          0.006768996091143102,
+          0.006130390745775361,
+          0.010473684210526316,
+          0.010980350950929915
+        ],
+        "n13": false
+      },
+      "GATE_BEATS_CONDHIST": {
+        "per_network": {
+          "D94": {
+            "holds": false,
+            "gate_catch_mean": 0.9886400348508773,
+            "condhist_catch_mean": 0.9964224913676931,
+            "gap": -0.007782456516815861,
+            "STD": 0.009569465819038834,
+            "n13": false
+          },
+          "ILL": {
+            "holds": false,
+            "gate_catch_mean": 0.9901860567756058,
+            "condhist_catch_mean": 0.9820559373111436,
+            "gap": 0.008130119464462182,
+            "STD": 0.010799032144329219,
+            "n13": true
+          },
+          "C30": {
+            "holds": true,
+            "gate_catch_mean": 0.9926353360434039,
+            "condhist_catch_mean": 0.898146324579956,
+            "gap": 0.0944890114634479,
+            "STD": 0.028887973722527927,
+            "n13": true
+          },
+          "C24": {
+            "holds": true,
+            "gate_catch_mean": 0.9885222812744268,
+            "condhist_catch_mean": 0.9718190038817014,
+            "gap": 0.01670327739272537,
+            "STD": 0.004124846024126445,
+            "n13": "not run"
+          }
+        },
+        "primary_network": "ILL",
+        "count_gate_wins": 2,
+        "n_networks": 4
+      }
+    },
+    "sensitivity": {
+      "BEATS_STATIC": {
+        "D94": {
+          "holds": false,
+          "gate_catch_mean": 0.9885748645882841,
+          "gate_catch_std": 0.010276981751114545,
+          "static_catch_mean": 0.9912435022848209,
+          "static_catch_std": 0.0060902695726478525,
+          "gap": -0.002668637696536802,
+          "STD": 0.010276981751114545
+        },
+        "ILL": {
+          "holds": true,
+          "gate_catch_mean": 0.9907168346141739,
+          "gate_catch_std": 0.0023527879446230454,
+          "static_catch_mean": 0.8394808744409591,
+          "static_catch_std": 0.021911715063579577,
+          "gap": 0.15123596017321483,
+          "STD": 0.021911715063579577
+        },
+        "C30": {
+          "holds": true,
+          "gate_catch_mean": 0.9933178042389009,
+          "gate_catch_std": 0.0034158325943683945,
+          "static_catch_mean": 0.8305559538821166,
+          "static_catch_std": 0.018090852961981867,
+          "gap": 0.16276185035678437,
+          "STD": 0.018090852961981867
+        },
+        "C24": {
+          "holds": true,
+          "gate_catch_mean": 0.9892857139039712,
+          "gate_catch_std": 0.003686955888072307,
+          "static_catch_mean": 0.9002180978779826,
+          "static_catch_std": 0.015015095357465405,
+          "gap": 0.08906761602598867,
+          "STD": 0.015015095357465405
+        }
+      },
+      "GATE_BEATS_CONDHIST": {
+        "D94": {
+          "holds": false,
+          "gate_catch_mean": 0.9885748645882841,
+          "condhist_catch_mean": 0.9963236669251462,
+          "gap": -0.007748802336862037,
+          "STD": 0.010276981751114545
+        },
+        "ILL": {
+          "holds": true,
+          "gate_catch_mean": 0.9907168346141739,
+          "condhist_catch_mean": 0.9785689266928588,
+          "gap": 0.012147907921315149,
+          "STD": 0.008575737200620517
+        },
+        "C30": {
+          "holds": true,
+          "gate_catch_mean": 0.9933178042389009,
+          "condhist_catch_mean": 0.888123459291052,
+          "gap": 0.10519434494784896,
+          "STD": 0.026699601655871916
+        },
+        "C24": {
+          "holds": true,
+          "gate_catch_mean": 0.9892857139039712,
+          "condhist_catch_mean": 0.9728833667502143,
+          "gap": 0.01640234715375699,
+          "STD": 0.005813203410811368
+        }
+      }
+    },
+    "ILL_outcome": {
+      "case": "c",
+      "wording": "on Illinois the gate does not beat COND-HIST once trafo 63 is excluded",
+      "note": "the cross-network count of networks where the gate wins drops by one"
+    }
+  },
+  "std_convention": "population std (ddof=0) over 5 splits"
+}

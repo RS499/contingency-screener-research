@@ -1,0 +1,68 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n14_crossnet.json"
+  ],
+  "generating_script": "scratch/n14_analyses.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n14_analyses.py",
+    "crossnet"
+  ],
+  "script_git_blob_sha": "40a55d0bf09e86053eb829e2eb1f6ee61e22df73",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9ca3c06507f009c9a6531ab7c8a248dbd926e77f",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C24.parquet",
+      "sha256": "4e61f47a0f64926e4e0eb7cdde5fdcca025dcdbfc8ad58a0c41e981261483f70"
+    },
+    {
+      "path": "data/sts_n13_ILL.parquet",
+      "sha256": "1e42d3dee36af2cde7cd49a0551b8df734172572f071f8c51f296dfd0e35cb44"
+    },
+    {
+      "path": "data/sts_n13_crossnet.json",
+      "sha256": "72997b2c3a6df511c98f06f08e58b7150117cbe24077e5e952007afbeb3dfcd9"
+    },
+    {
+      "path": "data/sts_n14_condhist.json",
+      "sha256": "20e457f7e0dff4b6ae3fe2dee300ec45d99577325178dd7362499b7ce08ecf58"
+    },
+    {
+      "path": "scratch/n14_decision_rule.md",
+      "sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n14_crossnet.json",
+      "sha256": "0c8f5f2ade0f5d9c3fe40250282caf1b4539a78857ad1fd386662f9f641fb249",
+      "md5": "66af543571a3106ca6569c37b3913a44",
+      "bytes": 3221,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-06T01:25:34Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "top_n": 10,
+    "model_hyperparameters": "none here"
+  },
+  "no_new_solves": "No AC solve."
+}

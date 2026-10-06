@@ -1,0 +1,61 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n14_c24_check3.json"
+  ],
+  "generating_script": "scratch/n14_c24_check3.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n14_c24_check3.py"
+  ],
+  "script_git_blob_sha": "3c3bcdf2b612ebdc2da1b61f7d2b6625712bc128",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9ca3c06507f009c9a6531ab7c8a248dbd926e77f",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C24.parquet",
+      "sha256": "4e61f47a0f64926e4e0eb7cdde5fdcca025dcdbfc8ad58a0c41e981261483f70"
+    },
+    {
+      "path": "data/sts_n13_audit_C24.parquet",
+      "sha256": "f3d9a4fd4365a8b5d0b399f23e283ae8a7ecaf8a3c155fe8d48cf59977eabbd8"
+    },
+    {
+      "path": "data/netstudy/case24_ieee_rts/dataset.parquet",
+      "sha256": "29896224c999756aa1d60455e135d198906098142e66eff45995703cf17decab"
+    },
+    {
+      "path": "data/sts_n11_relabel_case24_ieee_rts.parquet",
+      "sha256": "e82c772cc9183b7ebbc1f1d0cb55b311c792ee5f20f851036816feea11d8ce7b"
+    },
+    {
+      "path": "scratch/n14_decision_rule.md",
+      "sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n14_c24_check3.json",
+      "sha256": "38ca1f699e3f7657e95458d7a5e8524e415a5c3476c54e4212c30c1422b59657",
+      "md5": "1c87d50a0766b1c4a18dc5f4c53aadcd",
+      "bytes": 1368,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-05T22:32:51Z",
+  "parameters": {
+    "tolerance_pinned": 1e-09,
+    "tolerance_corrected": 1e-09,
+    "model_hyperparameters": "none (check only)"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

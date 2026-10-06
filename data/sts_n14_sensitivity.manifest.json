@@ -1,0 +1,83 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n14_sensitivity.json"
+  ],
+  "generating_script": "scratch/n14_analyses.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n14_analyses.py",
+    "sensitivity"
+  ],
+  "script_git_blob_sha": "40a55d0bf09e86053eb829e2eb1f6ee61e22df73",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9ca3c06507f009c9a6531ab7c8a248dbd926e77f",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C24.parquet",
+      "sha256": "4e61f47a0f64926e4e0eb7cdde5fdcca025dcdbfc8ad58a0c41e981261483f70"
+    },
+    {
+      "path": "data/sts_n13_C30.parquet",
+      "sha256": "9f18a31eebd990b1b7ccfb0ae3568cf02639e63e493a2efe025fae89a10ae044"
+    },
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5"
+    },
+    {
+      "path": "data/sts_n13_ILL.parquet",
+      "sha256": "1e42d3dee36af2cde7cd49a0551b8df734172572f071f8c51f296dfd0e35cb44"
+    },
+    {
+      "path": "data/sts_n14_gate_C24_sens.json",
+      "sha256": "f4882fe690d46f1b78506aa3598a9f1546203ea1d3550a9068efb706bbedb9dd"
+    },
+    {
+      "path": "data/sts_n14_gate_C30_sens.json",
+      "sha256": "62f064f46ea016e659dd8725c8e0562048aa4fe26b6193f7213849dd4462ade0"
+    },
+    {
+      "path": "data/sts_n14_gate_D94_sens.json",
+      "sha256": "445faa2ec35b6e1cf448b18953d55fde84ec3938bfe91f2ad2501f37e7e88bae"
+    },
+    {
+      "path": "data/sts_n14_gate_ILL_sens.json",
+      "sha256": "22c7656b4d02ad65b9c2330ddf41c2daea51eb2a0c2ff40b070f3468de243853"
+    },
+    {
+      "path": "scratch/n14_decision_rule.md",
+      "sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n14_sensitivity.json",
+      "sha256": "0789656a25aae86f055e4e2db726545cd7efb1425dad7d10328d3e8546580354",
+      "md5": "0ba31939ce8d502cfe3107954f6c5251",
+      "bytes": 39182,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-06T01:25:38Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "model_hyperparameters": "from the sensitivity gate files"
+  },
+  "no_new_solves": "No AC solve."
+}

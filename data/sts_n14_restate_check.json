@@ -1,0 +1,109 @@
+{
+  "step": "N14 Step 2: D94 / C30 hash check before restating",
+  "decision_rule_sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5",
+  "networks": {
+    "D94": {
+      "files": [
+        {
+          "file": "data/sts_n13_D94.parquet",
+          "recorded_sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5",
+          "current_sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_gate_D94.json",
+          "recorded_sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e",
+          "current_sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_condhist.json",
+          "recorded_sha256": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7",
+          "current_sha256": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_budget.json",
+          "recorded_sha256": "1cd36a3d3091f46f587f8c101c2385701108c7bb76b64bc972f38a063cd6b8db",
+          "current_sha256": "1cd36a3d3091f46f587f8c101c2385701108c7bb76b64bc972f38a063cd6b8db",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_guarantee.json",
+          "recorded_sha256": "e3025c40e689a5bfe2a95534cf19e80bd943c3d85a2c9a0a1bf274f6a5cac68d",
+          "current_sha256": "e3025c40e689a5bfe2a95534cf19e80bd943c3d85a2c9a0a1bf274f6a5cac68d",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_crossnet.json",
+          "recorded_sha256": "72997b2c3a6df511c98f06f08e58b7150117cbe24077e5e952007afbeb3dfcd9",
+          "current_sha256": "72997b2c3a6df511c98f06f08e58b7150117cbe24077e5e952007afbeb3dfcd9",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_n2.json",
+          "recorded_sha256": "1d458d7dd57840affdcc2c2da8d6d56d27842aff23c31231d84cd83f360ca30b",
+          "current_sha256": "1d458d7dd57840affdcc2c2da8d6d56d27842aff23c31231d84cd83f360ca30b",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_mondrian.json",
+          "recorded_sha256": "4a5834faf8df54493bc8b773de4fde8a3c44fa7ee427544e59415a552cf44b9b",
+          "current_sha256": "4a5834faf8df54493bc8b773de4fde8a3c44fa7ee427544e59415a552cf44b9b",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_floor.json",
+          "recorded_sha256": "0b778352838556b52907bf325f27221777a83681b6d20d1f8d7badc98e745a05",
+          "current_sha256": "0b778352838556b52907bf325f27221777a83681b6d20d1f8d7badc98e745a05",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_verdicts.json",
+          "recorded_sha256": "0092564a18f0246acda8a426e959ca808bef9be33c5a6ed0914034cbb63227d5",
+          "current_sha256": "0092564a18f0246acda8a426e959ca808bef9be33c5a6ed0914034cbb63227d5",
+          "match": true
+        }
+      ],
+      "all_match": true,
+      "decision": "restated from N13"
+    },
+    "C30": {
+      "files": [
+        {
+          "file": "data/sts_n13_C30.parquet",
+          "recorded_sha256": "9f18a31eebd990b1b7ccfb0ae3568cf02639e63e493a2efe025fae89a10ae044",
+          "current_sha256": "9f18a31eebd990b1b7ccfb0ae3568cf02639e63e493a2efe025fae89a10ae044",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_gate_C30.json",
+          "recorded_sha256": "ddee380ed8a0231d7e215141f7e484846c59d6291857baffdc652f7a1690aa93",
+          "current_sha256": "ddee380ed8a0231d7e215141f7e484846c59d6291857baffdc652f7a1690aa93",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_condhist.json",
+          "recorded_sha256": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7",
+          "current_sha256": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_crossnet.json",
+          "recorded_sha256": "72997b2c3a6df511c98f06f08e58b7150117cbe24077e5e952007afbeb3dfcd9",
+          "current_sha256": "72997b2c3a6df511c98f06f08e58b7150117cbe24077e5e952007afbeb3dfcd9",
+          "match": true
+        },
+        {
+          "file": "data/sts_n13_verdicts.json",
+          "recorded_sha256": "0092564a18f0246acda8a426e959ca808bef9be33c5a6ed0914034cbb63227d5",
+          "current_sha256": "0092564a18f0246acda8a426e959ca808bef9be33c5a6ed0914034cbb63227d5",
+          "match": true
+        }
+      ],
+      "all_match": true,
+      "decision": "restated from N13"
+    }
+  },
+  "generated_utc": "2026-10-05T22:32:14Z"
+}

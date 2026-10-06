@@ -6643,3 +6643,8 @@ Outcome: wrote scratch/n14_prefacts.md and scratch/n14_decision_rule_DRAFT.md (n
 
 Prompt: the owner pasted instructions to (1) classify why the N13 classical screen and D95c diagnosis did not run, (2) settle every OWNER item in scratch/n14_decision_rule_DRAFT.md with given wording (arm F/C24 disclosure, amendment sentence, exclusion criterion, D94/C30 restated with hash condition, sensitivity scope, ILL outcome wording, classical/D95c by classification, replacement, tolerances, cutoff 2026-10-12 23:59 America/New_York), (3) write scratch/run_prompt_n14.md. No analyses, no model fits, no git writes. Full text pasted in session; not re-quoted.
 Outcome: Part 1 classified the classical screen and the D95c gate as (b) (method incompatibility; failed computation), so both are dropped from N14. Rewrote scratch/n14_decision_rule_DRAFT.md with every OWNER item settled as given; wrote scratch/run_prompt_n14.md. No analyses, no git writes.
+
+## 2026-10-05 (r) — N14 run on the Mac mini (Claude Code), session 1
+
+Prompt: the owner instructed: follow only the text below "Prompt (paste everything below this line)" in scratch/run_prompt_n14.md (committed in 9ca3c06507f009c9a6531ab7c8a248dbd926e77f); before Step 1, record git log -1 and git status under "N14 run", confirm the rule draft is in HEAD with no uncommitted changes, then begin at Step 0. Not re-quoted; see the file.
+N14 pre-registration: scratch/n14_decision_rule.md sha256 a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5, recorded 2026-10-05T22:32:00Z; draft committed in 9ca3c06507f009c9a6531ab7c8a248dbd926e77f. Cutoff 2026-10-12 23:59 America/New_York.

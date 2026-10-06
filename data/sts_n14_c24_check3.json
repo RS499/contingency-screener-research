@@ -1,0 +1,56 @@
+{
+  "step": "N14 Step 3: C24 check 3 under the amendment (pinned clause tolerance 1e-9 pu)",
+  "decision_rule_sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5",
+  "C24": {
+    "passed": true,
+    "n_common_bases": 62,
+    "n_rows_compared": 2356,
+    "n_pinned_compared": 2266,
+    "max_abs_pinned_diff": 1.9539925233402755e-14,
+    "n_pinned_diff_nonzero": 1062,
+    "pinned_status_mismatches": 0,
+    "n_corrected_compared": 2266,
+    "max_abs_corrected_diff": 0.0,
+    "corrected_status_mismatches": 0,
+    "tolerance": 1e-09
+  },
+  "other_datasets_pinned_max_diff_from_n13": {
+    "D94": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    },
+    "ILL": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    },
+    "C30": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    },
+    "D93": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    },
+    "D95a": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    },
+    "D96": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    },
+    "D95b": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    },
+    "D95c": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    },
+    "N2R": {
+      "max_abs_pinned_diff": 0.0,
+      "within_1e9": true
+    }
+  },
+  "generated_utc": "2026-10-05T22:32:51Z"
+}

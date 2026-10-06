@@ -873,3 +873,95 @@ Step 1 were not preserved; all steps ran within about an hour of 03:18Z.
 - Not run: C24 (excluded at check 3), the classical screen on rebuilt D94 (its own guard), and the D95c gate
   (scikit-learn crash).
 - The owner gets the git commands; Claude made no git writes.
+
+# N14 run (prompt: scratch/run_prompt_n14.md, in-session on the Mac mini)
+
+## 2026-10-05T22:32:00Z — pre-checks
+- git log -1: 9ca3c06507f009c9a6531ab7c8a248dbd926e77f (2026-10-05 18:29:16 -0400, "N14 pre-registration: C24 amendment, trafo-63 exclusion, islanding
+  sensitivity, classical/D95c dropped"). origin/main is the same commit.
+- git status: the tracked working tree is clean (0 modified or staged files).
+  - Untracked: two owner files (SAHA.RAJAN.BIB.pdf, report/STS Activities Science Fair Projects.md) and
+    intermediate dirs from N5-N13 (scratch/*_shards, *_chunks, n10_mpc_cases, n13_build, n13_drawlogs).
+- scratch/n14_decision_rule_DRAFT.md is in HEAD and has no uncommitted changes. OK to hash.
+
+## 2026-10-05T22:32:00Z — Step 0 done (environment); cutoff check
+- Local time 2026-10-05T18:32:00-0400; cutoff 2026-10-12 23:59 America/New_York, not reached.
+- Versions 3.13.11 3.5.4 2.3.5 2.3.3 1.7.2 21.0.0 0.66.0 (match N13).
+
+## 2026-10-05T22:32:00Z — Step 1 done (pre-registration)
+- scratch/n14_decision_rule.md copied byte-for-byte from the draft.
+  - sha256 a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5, recorded 2026-10-05T22:32:00Z.
+- The draft was committed in 9ca3c06507f009c9a6531ab7c8a248dbd926e77f (2026-10-05T18:29:16-04:00).
+- Hashed before any N14 computation.
+
+## 2026-10-05T22:32:18Z — Step 2 done (D94/C30 hash check); cutoff not reached
+- scratch/n14_restate_check.py → data/sts_n14_restate_check.json plus manifest.
+- D94: 10/10 files match their N13 manifest sha256. C30: 5/5 match.
+- So D94 and C30 primary results are restated from N13 (rule §B).
+
+## 2026-10-05T22:33:37Z — Step 3a done (C24 check 3 under the amendment): PASS
+- scratch/n14_c24_check3.py → data/sts_n14_c24_check3.json plus manifest.
+- C24, 62 common bases:
+  - pinned max |diff| 1.95e-14 pu on 2,266 rows (nonzero on 1,062), within 1e-9;
+  - corrected max |diff| 0;
+  - 0 status mismatches.
+- Every other dataset's N13 pinned maximum difference was 0 (D94, ILL, C30, D93, D95a, D96, D95b, D95c, N2R).
+- C24 is re-admitted. Its tier-A analyses follow (Step 3b).
+
+## 2026-10-05T22:35:58Z — Steps 3b/4/5 gates running; DEVIATION (code fix) in the launch command
+- Scripts:
+  - scratch/n14_common.py: topology-based removal; it confirms the primary removes only ILL trafo 63, and the
+    sensitivity removes D94 9, ILL 72, C30 3, C24 1 outages;
+  - scratch/n14_gate.py: the N13 arm-S gate procedure, unchanged functions;
+  - scratch/n14_analyses.py.
+- The first launch failed at once for all six gates: zsh did not word-split my job string, so each got one
+  combined argument. No output was written. Relaunched with explicit arguments (code fix in my own launch
+  command; no method changed).
+- Running:
+  - ILL primary (trafo 63 removed: 358,694 rows);
+  - ILL / D94 / C30 / C24 sensitivity;
+  - C24 primary (no removal).
+
+## 2026-10-06T01:33:39Z — Steps 3b-8 done; cutoff not reached (2026-10-05T21:33-0400)
+- Gates (data/sts_n14_gate_*.json):
+  - C24 primary;
+  - ILL primary (trafo 63 removed, 358,694 rows);
+  - sensitivity runs for D94, ILL, C30, C24 (13,500 / 108,000 / 4,500 / 1,462 rows removed).
+- Analyses: data/sts_n14_{condhist,guarantee,crossnet,sensitivity,islanding_split}.json. Every refit gate check
+  passed. D94 and C30 primary results are restated from N13 (hash check).
+- **Verdicts** (data/sts_n14_verdicts.json; hash verified; definitions and the fixed outcome wording are
+  verbatim). Primary:
+
+  | Verdict | Result | Numbers | N13 |
+  |---|---|---|---|
+  | BEATS-STATIC D94 | no | gap -0.29 vs 0.96 | no |
+  | BEATS-STATIC ILL | YES | 99.02 ± 0.31 vs 84.59 ± 2.63 | YES |
+  | BEATS-STATIC C30 | yes | | yes |
+  | BEATS-STATIC C24 | YES | 98.85 ± 0.27 vs 89.65 ± 1.01; gap 9.20 > 1.01 | not run |
+  | SAFER-IL | NO | 2/5 (1.47/0.68/0.61/1.05/1.10%) | NO |
+  | GATE-BEATS-CONDHIST D94 | no | | no |
+  | **GATE-BEATS-CONDHIST ILL (primary)** | **NO** | gate 99.02 vs COND-HIST 98.21; gap 0.81 < STD 1.08 (COND-HIST std 1.08) | YES (gap 0.64 > 0.61) |
+  | GATE-BEATS-CONDHIST C30 | yes | | yes |
+  | GATE-BEATS-CONDHIST C24 | yes | gap 1.67 > 0.41 | not run |
+
+  - Gate wins on 2 of 4 networks (C30, C24).
+- Sensitivity:
+  - BEATS-STATIC: D94 no; ILL, C30, C24 yes.
+  - GATE-BEATS-CONDHIST: D94 no; ILL yes (gap 1.22 > 0.86); C30 yes; C24 yes.
+- **ILL outcome: (c)** "on Illinois the gate does not beat COND-HIST once trafo 63 is excluded". The
+  cross-network count of networks where the gate wins drops by one. (c) applies whatever the sensitivity result;
+  the sensitivity holds.
+- Comparison (data/sts_n14_compare.json): 101 rows; 92 within std, 4 differ.
+  - All 4 are ILL sensitivity: solve share B up 6-7 pp, speedup B down about 0.35-0.39.
+  - ILL primary vs N13, paired: gate catch -0.07 ± 0.14 pp; COND-HIST -0.25 ± 0.51 pp; every row within std.
+
+## 2026-10-06T01:34:43Z — result file written; deviation (code fix) in the comparison
+- scratch/n14_compare.py had left out the ILL cross-network risk spread and top-10 concentration (both have N13
+  counterparts). Added unpaired rows and re-ran.
+  - 103 rows; 94 within std, 4 differ (the same 4 ILL sensitivity rows).
+- Before writing scratch/n14_result.md, its claims were checked against the files:
+  - N13 SAFER-IL 3/5;
+  - N13 ILL gap 0.635 > 0.611;
+  - C30 islanding violation rate 2.38%;
+  - C24 gate path = n10_gate_illinois.run_seed, as in N13.
+- N14 complete. No git writes.

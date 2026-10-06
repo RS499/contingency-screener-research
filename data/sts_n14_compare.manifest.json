@@ -1,0 +1,95 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n14_compare.json"
+  ],
+  "generating_script": "scratch/n14_compare.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n14_compare.py"
+  ],
+  "script_git_blob_sha": "1698a492bd1bbd42c6b67016c4f40c01ee88c4da",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9ca3c06507f009c9a6531ab7c8a248dbd926e77f",
+  "inputs": [
+    {
+      "path": "data/sts_n13_gate_ILL.json",
+      "sha256": "7c7b5d0b630c27f820ff65db0628fdcb7a287b66c638885beeb8ccd6a08ba8ba"
+    },
+    {
+      "path": "data/sts_n14_gate_ILL.json",
+      "sha256": "6edb07a9a8e313582069a55f9ba1f8a394e8710079f7426242e0495c2d345475"
+    },
+    {
+      "path": "data/sts_n13_condhist.json",
+      "sha256": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7"
+    },
+    {
+      "path": "data/sts_n14_condhist.json",
+      "sha256": "20e457f7e0dff4b6ae3fe2dee300ec45d99577325178dd7362499b7ce08ecf58"
+    },
+    {
+      "path": "data/sts_n14_sensitivity.json",
+      "sha256": "0789656a25aae86f055e4e2db726545cd7efb1425dad7d10328d3e8546580354"
+    },
+    {
+      "path": "data/sts_n13_guarantee.json",
+      "sha256": "e3025c40e689a5bfe2a95534cf19e80bd943c3d85a2c9a0a1bf274f6a5cac68d"
+    },
+    {
+      "path": "data/sts_n14_guarantee.json",
+      "sha256": "0a3568335e86e2ce13d087fff2edb1c62e33e48f22e6814b3f700374ffa95901"
+    },
+    {
+      "path": "data/sts_n13_crossnet.json",
+      "sha256": "72997b2c3a6df511c98f06f08e58b7150117cbe24077e5e952007afbeb3dfcd9"
+    },
+    {
+      "path": "data/sts_n14_crossnet.json",
+      "sha256": "0c8f5f2ade0f5d9c3fe40250282caf1b4539a78857ad1fd386662f9f641fb249"
+    },
+    {
+      "path": "data/sts_n14_gate_D94_sens.json",
+      "sha256": "445faa2ec35b6e1cf448b18953d55fde84ec3938bfe91f2ad2501f37e7e88bae"
+    },
+    {
+      "path": "data/sts_n14_gate_ILL_sens.json",
+      "sha256": "22c7656b4d02ad65b9c2330ddf41c2daea51eb2a0c2ff40b070f3468de243853"
+    },
+    {
+      "path": "data/sts_n14_gate_C30_sens.json",
+      "sha256": "62f064f46ea016e659dd8725c8e0562048aa4fe26b6193f7213849dd4462ade0"
+    },
+    {
+      "path": "data/sts_n14_gate_C24_sens.json",
+      "sha256": "f4882fe690d46f1b78506aa3598a9f1546203ea1d3550a9068efb706bbedb9dd"
+    },
+    {
+      "path": "scratch/n14_decision_rule.md",
+      "sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n14_compare.json",
+      "sha256": "93fd951fd318acd25b1754b15d994e27a09e34b1689875bfed3c09c273650028",
+      "md5": "ac71c22c01493b0a2132ee6134d60b1b",
+      "bytes": 42308,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-06T01:34:29Z",
+  "parameters": {
+    "model_hyperparameters": "none fitted here"
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n14_condhist.json"
+  ],
+  "generating_script": "scratch/n14_analyses.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n14_analyses.py",
+    "condhist"
+  ],
+  "script_git_blob_sha": "40a55d0bf09e86053eb829e2eb1f6ee61e22df73",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "9ca3c06507f009c9a6531ab7c8a248dbd926e77f",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C24.parquet",
+      "sha256": "4e61f47a0f64926e4e0eb7cdde5fdcca025dcdbfc8ad58a0c41e981261483f70"
+    },
+    {
+      "path": "data/sts_n13_ILL.parquet",
+      "sha256": "1e42d3dee36af2cde7cd49a0551b8df734172572f071f8c51f296dfd0e35cb44"
+    },
+    {
+      "path": "data/sts_n13_condhist.json",
+      "sha256": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7"
+    },
+    {
+      "path": "data/sts_n14_gate_C24.json",
+      "sha256": "e0dc60ddf6a56e8a8f97fd202a34e64da465e5dfe2d74dec67b72d9730d0a7e8"
+    },
+    {
+      "path": "data/sts_n14_gate_ILL.json",
+      "sha256": "6edb07a9a8e313582069a55f9ba1f8a394e8710079f7426242e0495c2d345475"
+    },
+    {
+      "path": "scratch/n14_decision_rule.md",
+      "sha256": "a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n14_condhist.json",
+      "sha256": "20e457f7e0dff4b6ae3fe2dee300ec45d99577325178dd7362499b7ce08ecf58",
+      "md5": "d26080670cfa7f85fbb3eae1f674b7cd",
+      "bytes": 18725,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-06T01:20:07Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "bins": 5,
+    "smoothing": 10.0,
+    "model_hyperparameters": "none (lookup table); gates from the listed gate files"
+  },
+  "no_new_solves": "No AC solve."
+}
