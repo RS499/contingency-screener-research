@@ -13,6 +13,428 @@ Deadline 2026-11-05, 8 pm ET (support deadline 11-04).
 
 ---
 
+## Current numbers (after N14): the only numbers to write from
+
+Added 2026-10-06 by Claude Code.
+- **Generated, not typed:** by `scratch/current_numbers.py` → `data/sts_current_numbers.json` (+ manifest).
+  Re-run it if any source file changes.
+- **Every older table in this plan is superseded.** Each such section carries a banner saying so; use them only
+  for *where* a number goes, never for its value.
+- **Conventions:** population std (ddof=0) over 5 splits. "Tie" means the gap is within the larger std
+  (CLAUDE.md std rule).
+- **Network scope:**
+  - D94 (case118) and C30 are the N13 rebuilt results, restated by N14 after hash checks.
+  - ILL excludes trafo 63 (N14).
+  - C24 is included under the N14 amendment, which needs its disclosure sentence.
+
+**Not available from any N13/N14 file:**
+- **Flag precision on rebuilt data.** The earlier 90.4% / 59.4% / 93.8% / 89.4% were on old labels. A refit would
+  be needed; until then, don't print a flag-precision number.
+- **Classical screen:** not run on rebuilt data (N14 rule §C). The rebuilt Table 1 has no classical row.
+- **D95c gate:** not run on rebuilt data. Report it from the old build, labeled "old build, uncorrected solver".
+
+**Verdict summary** (details in the tables below):
+
+| Question | Current answer |
+|---|---|
+| Safety, D94 (V1 SAFER-94) | YES, 4/5 splits ≤ 1%. The mean did not change vs the old build (V2 NO): it is one split crossing 1% |
+| Gate vs fixed static ranking | YES on ILL, C30, C24; tie on D94 |
+| Gate vs COND-HIST | YES on C30, C24 (C24 under the amendment); tie on D94 (history numerically higher); NO on ILL (outcome c) |
+| RQ2: N-1 coverage holds under N-2 | NO: N-2 coverage 0.8394 ± 0.0126 vs threshold 0.8861 (N-1 0.9050 ± 0.0139) |
+| Floor dose-response (replication) | YES, both clauses: BM 56.32 / 54.75 / 33.36 / 18.97% at 0.93 / 0.94 / 0.95 / 0.96 |
+| Mondrian vs static | YES, by 0.02 pp over the std (0.78 vs 0.76); treat as barely clearing the bar |
+| V3 (did correcting inputs alone cut high-drift misses?) | NO by the std rule: 4.87 ± 7.32% → 1.58 ± 0.53%. Split 4 fell 19.49 → 2.13%, but that one split sets the pinned std |
+| Tier B (rebuilt): SAFER (D95a), FASTER, SHIFT | all NO, same as the old build; D95a, D95b gates and both budget curves ran on rebuilt data |
+
+**D94 (case118, 0.94 floor) — Table 1**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| ridge mae (mV) | 3.44 ± 0.12 | `data/sts_n13_compare.json` → rows[table=tab:models, key='ridge mae (mV)'] → rebuilt_mean/std |
+| ridge r2 | 0.815 ± 0.010 | `data/sts_n13_compare.json` → rows[table=tab:models, key='ridge r2'] → rebuilt_mean/std |
+| ridge 0.90 escalation | 47.28 ± 4.49% | `data/sts_n13_compare.json` → rows[table=tab:models, key='ridge 0.90 escalation'] → rebuilt_mean/std |
+| ridge 0.90 missed | 2.99 ± 0.67% | `data/sts_n13_compare.json` → rows[table=tab:models, key='ridge 0.90 missed'] → rebuilt_mean/std |
+| ridge 0.90 speedup_A | 2.13 ± 0.18 | `data/sts_n13_compare.json` → rows[table=tab:models, key='ridge 0.90 speedup_A'] → rebuilt_mean/std |
+| histgb mae (mV) | 1.30 ± 0.17 | `data/sts_n13_compare.json` → rows[table=tab:models, key='histgb mae (mV)'] → rebuilt_mean/std |
+| histgb r2 | 0.953 ± 0.007 | `data/sts_n13_compare.json` → rows[table=tab:models, key='histgb r2'] → rebuilt_mean/std |
+| histgb 0.90 escalation | 24.23 ± 3.35% | `data/sts_n13_compare.json` → rows[table=tab:models, key='histgb 0.90 escalation'] → rebuilt_mean/std |
+| histgb 0.90 missed | 4.06 ± 0.73% | `data/sts_n13_compare.json` → rows[table=tab:models, key='histgb 0.90 missed'] → rebuilt_mean/std |
+| histgb 0.90 speedup_A | 4.18 ± 0.53 | `data/sts_n13_compare.json` → rows[table=tab:models, key='histgb 0.90 speedup_A'] → rebuilt_mean/std |
+| persistence 0.90 mae | 3.90 ± 0.05 | `data/sts_n13_compare.json` → rows[table=tab:models, key='persistence 0.90 mae'] → rebuilt_mean/std |
+| persistence 0.90 r2 | -0.050 ± 0.005 | `data/sts_n13_compare.json` → rows[table=tab:models, key='persistence 0.90 r2'] → rebuilt_mean/std |
+| persistence 0.90 escalation | 98.40 ± 0.74% | `data/sts_n13_compare.json` → rows[table=tab:models, key='persistence 0.90 escalation'] → rebuilt_mean/std |
+| persistence 0.90 missed | 1.16 ± 0.57% | `data/sts_n13_compare.json` → rows[table=tab:models, key='persistence 0.90 missed'] → rebuilt_mean/std |
+| persistence 0.90 speedup_A | 1.02 ± 0.01 | `data/sts_n13_compare.json` → rows[table=tab:models, key='persistence 0.90 speedup_A'] → rebuilt_mean/std |
+| train_mean 0.90 mae | 6.29 ± 0.14 | `data/sts_n13_compare.json` → rows[table=tab:models, key='train_mean 0.90 mae'] → rebuilt_mean/std |
+| train_mean 0.90 r2 | -0.000 ± 0.000 | `data/sts_n13_compare.json` → rows[table=tab:models, key='train_mean 0.90 r2'] → rebuilt_mean/std |
+| train_mean 0.90 escalation | 100.00 ± 0.00% | `data/sts_n13_compare.json` → rows[table=tab:models, key='train_mean 0.90 escalation'] → rebuilt_mean/std |
+| train_mean 0.90 missed | 0.00 ± 0.00% | `data/sts_n13_compare.json` → rows[table=tab:models, key='train_mean 0.90 missed'] → rebuilt_mean/std |
+| train_mean 0.90 speedup_A | 1.00 ± 0.00 | `data/sts_n13_compare.json` → rows[table=tab:models, key='train_mean 0.90 speedup_A'] → rebuilt_mean/std |
+
+<details><summary><b>D94 (case118, 0.94 floor) — Table 2</b> (72 rows; click to expand)</summary>
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| ridge 0.90 escalation | 47.28 ± 4.49% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.90 escalation'] → rebuilt_mean/std |
+| ridge 0.90 coverage_emp | 0.894 ± 0.015 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.90 coverage_emp'] → rebuilt_mean/std |
+| ridge 0.90 missed | 2.99 ± 0.67% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.90 missed'] → rebuilt_mean/std |
+| ridge 0.90 speedup_A | 2.13 ± 0.18 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.90 speedup_A'] → rebuilt_mean/std |
+| ridge 0.90 speedup_B | 1.44 ± 0.08 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.90 speedup_B'] → rebuilt_mean/std |
+| ridge 0.94 escalation | 62.54 ± 2.80% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.94 escalation'] → rebuilt_mean/std |
+| ridge 0.94 coverage_emp | 0.938 ± 0.006 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.94 coverage_emp'] → rebuilt_mean/std |
+| ridge 0.94 missed | 1.16 ± 0.28% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.94 missed'] → rebuilt_mean/std |
+| ridge 0.94 speedup_A | 1.60 ± 0.07 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.94 speedup_A'] → rebuilt_mean/std |
+| ridge 0.94 speedup_B | 1.18 ± 0.05 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.94 speedup_B'] → rebuilt_mean/std |
+| ridge 0.95 escalation | 67.18 ± 1.39% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.95 escalation'] → rebuilt_mean/std |
+| ridge 0.95 coverage_emp | 0.949 ± 0.007 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.95 coverage_emp'] → rebuilt_mean/std |
+| ridge 0.95 missed | 0.74 ± 0.23% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.95 missed'] → rebuilt_mean/std |
+| ridge 0.95 speedup_A | 1.49 ± 0.03 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.95 speedup_A'] → rebuilt_mean/std |
+| ridge 0.95 speedup_B | 1.11 ± 0.02 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.95 speedup_B'] → rebuilt_mean/std |
+| ridge 0.96 escalation | 71.63 ± 2.42% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.96 escalation'] → rebuilt_mean/std |
+| ridge 0.96 coverage_emp | 0.960 ± 0.003 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.96 coverage_emp'] → rebuilt_mean/std |
+| ridge 0.96 missed | 0.42 ± 0.20% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.96 missed'] → rebuilt_mean/std |
+| ridge 0.96 speedup_A | 1.40 ± 0.05 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.96 speedup_A'] → rebuilt_mean/std |
+| ridge 0.96 speedup_B | 1.06 ± 0.02 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.96 speedup_B'] → rebuilt_mean/std |
+| ridge 0.97 escalation | 75.15 ± 2.17% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.97 escalation'] → rebuilt_mean/std |
+| ridge 0.97 coverage_emp | 0.969 ± 0.003 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.97 coverage_emp'] → rebuilt_mean/std |
+| ridge 0.97 missed | 0.21 ± 0.15% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.97 missed'] → rebuilt_mean/std |
+| ridge 0.97 speedup_A | 1.33 ± 0.04 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.97 speedup_A'] → rebuilt_mean/std |
+| ridge 0.97 speedup_B | 1.02 ± 0.01 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.97 speedup_B'] → rebuilt_mean/std |
+| ridge 0.98 escalation | 76.89 ± 2.10% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.98 escalation'] → rebuilt_mean/std |
+| ridge 0.98 coverage_emp | 0.979 ± 0.001 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.98 coverage_emp'] → rebuilt_mean/std |
+| ridge 0.98 missed | 0.11 ± 0.13% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.98 missed'] → rebuilt_mean/std |
+| ridge 0.98 speedup_A | 1.30 ± 0.04 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.98 speedup_A'] → rebuilt_mean/std |
+| ridge 0.98 speedup_B | 1.01 ± 0.00 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge 0.98 speedup_B'] → rebuilt_mean/std |
+| ridge held-out target | 0.934 ± 0.010 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge held-out target'] → rebuilt_mean/std |
+| ridge held-out escalation | 59.47 ± 5.91% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge held-out escalation'] → rebuilt_mean/std |
+| ridge held-out coverage_emp | 0.934 ± 0.013 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge held-out coverage_emp'] → rebuilt_mean/std |
+| ridge held-out missed | 1.51 ± 0.60% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge held-out missed'] → rebuilt_mean/std |
+| ridge held-out speedup_A | 1.70 ± 0.17 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge held-out speedup_A'] → rebuilt_mean/std |
+| ridge held-out speedup_B | 1.23 ± 0.10 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='ridge held-out speedup_B'] → rebuilt_mean/std |
+| histgb 0.90 escalation | 24.23 ± 3.35% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.90 escalation'] → rebuilt_mean/std |
+| histgb 0.90 coverage_emp | 0.905 ± 0.014 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.90 coverage_emp'] → rebuilt_mean/std |
+| histgb 0.90 missed | 4.06 ± 0.73% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.90 missed'] → rebuilt_mean/std |
+| histgb 0.90 speedup_A | 4.18 ± 0.53 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.90 speedup_A'] → rebuilt_mean/std |
+| histgb 0.90 speedup_B | 2.45 ± 0.20 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.90 speedup_B'] → rebuilt_mean/std |
+| histgb 0.94 escalation | 36.43 ± 3.97% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.94 escalation'] → rebuilt_mean/std |
+| histgb 0.94 coverage_emp | 0.943 ± 0.006 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.94 coverage_emp'] → rebuilt_mean/std |
+| histgb 0.94 missed | 2.36 ± 0.66% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.94 missed'] → rebuilt_mean/std |
+| histgb 0.94 speedup_A | 2.77 ± 0.28 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.94 speedup_A'] → rebuilt_mean/std |
+| histgb 0.94 speedup_B | 1.89 ± 0.14 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.94 speedup_B'] → rebuilt_mean/std |
+| histgb 0.95 escalation | 40.32 ± 3.48% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.95 escalation'] → rebuilt_mean/std |
+| histgb 0.95 coverage_emp | 0.951 ± 0.006 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.95 coverage_emp'] → rebuilt_mean/std |
+| histgb 0.95 missed | 1.94 ± 0.60% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.95 missed'] → rebuilt_mean/std |
+| histgb 0.95 speedup_A | 2.49 ± 0.20 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.95 speedup_A'] → rebuilt_mean/std |
+| histgb 0.95 speedup_B | 1.76 ± 0.10 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.95 speedup_B'] → rebuilt_mean/std |
+| histgb 0.96 escalation | 46.81 ± 2.31% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.96 escalation'] → rebuilt_mean/std |
+| histgb 0.96 coverage_emp | 0.961 ± 0.004 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.96 coverage_emp'] → rebuilt_mean/std |
+| histgb 0.96 missed | 1.40 ± 0.47% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.96 missed'] → rebuilt_mean/std |
+| histgb 0.96 speedup_A | 2.14 ± 0.10 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.96 speedup_A'] → rebuilt_mean/std |
+| histgb 0.96 speedup_B | 1.57 ± 0.06 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.96 speedup_B'] → rebuilt_mean/std |
+| histgb 0.97 escalation | 53.79 ± 2.59% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.97 escalation'] → rebuilt_mean/std |
+| histgb 0.97 coverage_emp | 0.970 ± 0.004 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.97 coverage_emp'] → rebuilt_mean/std |
+| histgb 0.97 missed | 1.03 ± 0.46% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.97 missed'] → rebuilt_mean/std |
+| histgb 0.97 speedup_A | 1.86 ± 0.09 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.97 speedup_A'] → rebuilt_mean/std |
+| histgb 0.97 speedup_B | 1.42 ± 0.05 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.97 speedup_B'] → rebuilt_mean/std |
+| histgb 0.98 escalation | 63.39 ± 2.63% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.98 escalation'] → rebuilt_mean/std |
+| histgb 0.98 coverage_emp | 0.979 ± 0.004 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.98 coverage_emp'] → rebuilt_mean/std |
+| histgb 0.98 missed | 0.69 ± 0.38% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.98 missed'] → rebuilt_mean/std |
+| histgb 0.98 speedup_A | 1.58 ± 0.06 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.98 speedup_A'] → rebuilt_mean/std |
+| histgb 0.98 speedup_B | 1.25 ± 0.04 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb 0.98 speedup_B'] → rebuilt_mean/std |
+| histgb held-out target | 0.970 ± 0.011 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb held-out target'] → rebuilt_mean/std |
+| histgb held-out escalation | 54.25 ± 9.68% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb held-out escalation'] → rebuilt_mean/std |
+| histgb held-out coverage_emp | 0.970 ± 0.014 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb held-out coverage_emp'] → rebuilt_mean/std |
+| histgb held-out missed | 1.14 ± 0.96% | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb held-out missed'] → rebuilt_mean/std |
+| histgb held-out speedup_A | 1.91 ± 0.41 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb held-out speedup_A'] → rebuilt_mean/std |
+| histgb held-out speedup_B | 1.44 ± 0.23 | `data/sts_n13_compare.json` → rows[table=tab:ops, key='histgb held-out speedup_B'] → rebuilt_mean/std |
+
+</details>
+
+**D94 (case118, 0.94 floor) — held-out**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| histgb held-out target | 0.970 ± 0.011 | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → target |
+| histgb held-out escalation | 54.2 ± 9.7% | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → escalation |
+| histgb held-out flag_share | 16.7 ± 0.3% | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → flag_share |
+| histgb held-out missed | 1.14 ± 0.96% | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → missed |
+| histgb held-out speedup_A | 1.91 ± 0.41 | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → speedup_A |
+| histgb held-out speedup_B | 1.44 ± 0.23 | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → speedup_B |
+| histgb held-out q_hat | 5.12 ± 1.02 mV | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → q_hat |
+| histgb held-out gate_catch | 98.86 ± 0.96% | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → gate_catch |
+| histgb held-out static_catch_B | 99.16 ± 0.58% | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → static_catch_B |
+| histgb held-out missed per split | 0.52 / 0.72 / 3.03 / 0.91 / 0.51 % (4/5 ≤ 1%) | `data/sts_n13_gate_D94.json` → points[family=histgb, point=held_out], 5 splits → missed |
+| ridge held-out target | 0.934 ± 0.010 | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → target |
+| ridge held-out escalation | 59.5 ± 5.9% | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → escalation |
+| ridge held-out flag_share | 22.6 ± 1.8% | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → flag_share |
+| ridge held-out missed | 1.51 ± 0.60% | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → missed |
+| ridge held-out speedup_A | 1.70 ± 0.17 | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → speedup_A |
+| ridge held-out speedup_B | 1.23 ± 0.10 | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → speedup_B |
+| ridge held-out q_hat | 6.20 ± 0.78 mV | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → q_hat |
+| ridge held-out gate_catch | 98.49 ± 0.60% | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → gate_catch |
+| ridge held-out static_catch_B | 99.69 ± 0.12% | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → static_catch_B |
+| ridge held-out missed per split | 2.31 / 1.13 / 2.02 / 1.44 / 0.65 % (1/5 ≤ 1%) | `data/sts_n13_gate_D94.json` → points[family=ridge, point=held_out], 5 splits → missed |
+
+**D94 (case118, 0.94 floor) — dataset**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| converged outage rows | 278,945 | `data/sts_n13_D94.parquet` → outaged_type != none & converged |
+| violation rate | 16.26% | `data/sts_n13_D94.parquet` → mean(min_vm < 0.94) |
+| boundary mass [0.94, 0.945) | 54.75% | `data/sts_n13_D94.parquet` → share of rows |
+| min_vm range | 0.7605 to 0.9594 pu | `data/sts_n13_D94.parquet` → min, max of min_vm |
+| rows in [0.940, 0.941) | 14.15% | `data/sts_n13_D94.parquet` → share of rows |
+| rows within 1e-3 pu of the limit | 15.52% | `data/sts_n13_D94.parquet` → share with abs(min_vm - 0.94) <= 1e-3 (label set within switch-back tolerance) |
+| over-voltage share (max_vm > 1.05) | 73.38% | `data/sts_n13_D94.parquet` → share of rows |
+| critical-bus top 5 (argmin_bus share of rows) | index 75 (IEEE 76) 28.40%, index 52 (IEEE 53) 15.40%, index 106 (IEEE 107) 10.38%, index 0 (IEEE 1) 9.10%, index 20 (IEEE 21) 4.44% | `data/sts_n13_D94.parquet` → feasibility/freeze_poster_numbers.py definition; 0-based index, IEEE name = index + 1 on case118 |
+
+**D94 (case118, 0.94 floor) — baselines**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| gate_catch | 98.86 ± 0.96% | `data/sts_n13_condhist.json` → networks.D94.summary → gate_catch_mean/std |
+| static_fixed_catch | 99.16 ± 0.58% | `data/sts_n13_condhist.json` → networks.D94.summary → static_fixed_catch_mean/std |
+| condhist_catch | 99.64 ± 0.36% | `data/sts_n13_condhist.json` → networks.D94.summary → condhist_catch_mean/std |
+| global_static_catch | 99.16 ± 0.57% | `data/sts_n13_condhist.json` → networks.D94.summary → global_static_catch_mean/std |
+| GLOBAL-STATIC minus fixed static | +0.00 pp | `data/sts_n13_condhist.json` → networks.D94.summary (difference of means) |
+| rule-B solve share s_B | 70.9 ± 9.9% | `data/sts_n13_condhist.json` → networks.D94.summary → s_B |
+
+**D94 (case118, 0.94 floor) — guarantee (histgb)**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| global_gate any_miss_share | 12.4 ± 9.4% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].global_gate.any_miss_share |
+| global_gate escalation | 54.2 ± 9.7% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].global_gate.escalation |
+| global_gate missed | 1.14 ± 0.96% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].global_gate.missed |
+| global_gate speedup_B | 1.44 ± 0.23 | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].global_gate.speedup_B |
+| row_level any_miss_share | 14.3 ± 4.1% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].row_level.any_miss_share |
+| row_level escalation | 50.6 ± 2.8% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].row_level.escalation |
+| row_level missed | 1.22 ± 0.55% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].row_level.missed |
+| row_level speedup_B | 1.49 ± 0.07 | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].row_level.speedup_B |
+| base_level any_miss_share | 11.2 ± 3.4% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].base_level.any_miss_share |
+| base_level escalation | 54.8 ± 3.5% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].base_level.escalation |
+| base_level missed | 1.02 ± 0.47% | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].base_level.missed |
+| base_level speedup_B | 1.40 ± 0.07 | `data/sts_n13_guarantee.json` → networks.D94.histgb.per_split[].base_level.speedup_B |
+
+**D94 (case118, 0.94 floor) — budget curve (histgb)**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| k = 20 | ML 64.82 ± 0.71 vs static 62.12 ± 0.71: SURR higher | `data/sts_n13_budget.json` → table[family=histgb, k=20] |
+| k = 40 | ML 92.74 ± 0.85 vs static 86.54 ± 0.71: SURR higher | `data/sts_n13_budget.json` → table[family=histgb, k=40] |
+| k = 57 | ML 95.24 ± 0.47 vs static 93.70 ± 0.57: SURR higher | `data/sts_n13_budget.json` → table[family=histgb, k=57] |
+| k = 89 | ML 96.39 ± 0.37 vs static 97.53 ± 0.35: STATIC higher | `data/sts_n13_budget.json` → table[family=histgb, k=89] |
+| k = 120 | ML 97.59 ± 0.32 vs static 98.81 ± 0.21: STATIC higher | `data/sts_n13_budget.json` → table[family=histgb, k=120] |
+
+**D94 (case118, 0.94 floor) — N-2 (RQ2)**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| histgb t090: N-2 coverage / N-1 coverage | 0.8394 ± 0.0126 / 0.9050 ± 0.0139 | `data/sts_n13_n2.json` → summary[family=histgb, point=t090] |
+| histgb t090: N-2 missed | 4.60 ± 0.80% (0/5 ≤ 1%) | `data/sts_n13_n2.json` → summary[family=histgb, point=t090] |
+| histgb held_out: N-2 coverage / N-1 coverage | 0.9352 ± 0.0208 / 0.9696 ± 0.0144 | `data/sts_n13_n2.json` → summary[family=histgb, point=held_out] |
+| histgb held_out: N-2 missed | 1.40 ± 1.04% (3/5 ≤ 1%) | `data/sts_n13_n2.json` → summary[family=histgb, point=held_out] |
+
+**D94 (case118, 0.94 floor) — Mondrian**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| ridge gate vs static catch | 97.81 ± 0.79 vs 99.06 ± 0.28 | `data/sts_n13_mondrian.json` → summary[family=ridge] |
+| histgb gate vs static catch | 98.78 ± 0.76 vs 98.00 ± 0.68 | `data/sts_n13_mondrian.json` → summary[family=histgb] |
+
+**Floor dose-response (rebuilt)**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| floor 0.93 (D93) | BM 56.32%, CBM 67.33%, VR 16.35%, rows 278,956 | `data/sts_n13_floor.json` → per_floor[floor=0.93] |
+| floor 0.94 (D94) | BM 54.75%, CBM 65.37%, VR 16.26%, rows 278,945 | `data/sts_n13_floor.json` → per_floor[floor=0.94] |
+| floor 0.95 (D95a) | BM 33.36%, CBM 39.16%, VR 14.81%, rows 278,921 | `data/sts_n13_floor.json` → per_floor[floor=0.95] |
+| floor 0.96 (D96) | BM 18.97%, CBM 21.95%, VR 13.59%, rows 278,959 | `data/sts_n13_floor.json` → per_floor[floor=0.96] |
+| 0.95 builds D95a/b/c, mean ± std (ddof=0) | BM 32.29 ± 0.77, CBM 37.90 ± 0.89, VR 14.82 ± 0.08 | `data/sts_n13_floorrep.json` → across |
+
+**ILL (case_illinois200, trafo 63 excluded) — held-out**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| histgb held-out target | 0.924 ± 0.022 | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → target |
+| histgb held-out escalation | 8.6 ± 2.7% | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → escalation |
+| histgb held-out flag_share | 27.7 ± 1.2% | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → flag_share |
+| histgb held-out missed | 0.98 ± 0.31% | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → missed |
+| histgb held-out speedup_A | 12.44 ± 3.45 | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → speedup_A |
+| histgb held-out speedup_B | 2.76 ± 0.24 | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → speedup_B |
+| histgb held-out q_hat | 2.43 ± 0.63 mV | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → q_hat |
+| histgb held-out gate_catch | 99.02 ± 0.31% | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → gate_catch |
+| histgb held-out static_catch_B | 84.59 ± 2.63% | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → static_catch_B |
+| histgb held-out missed per split | 1.47 / 0.68 / 0.61 / 1.05 / 1.10 % (2/5 ≤ 1%) | `data/sts_n14_gate_ILL.json` → points[family=histgb, point=held_out], 5 splits → missed |
+
+**ILL (case_illinois200, trafo 63 excluded) — dataset**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| converged outage rows | 358,694 | `data/sts_n13_ILL.parquet (trafo 63 removed)` → outaged_type != none & converged |
+| violation rate | 27.28% | `data/sts_n13_ILL.parquet (trafo 63 removed)` → mean(min_vm < 0.94) |
+| boundary mass [0.94, 0.945) | 18.83% | `data/sts_n13_ILL.parquet (trafo 63 removed)` → share of rows |
+| min_vm range | 0.7006 to 0.9931 pu | `data/sts_n13_ILL.parquet (trafo 63 removed)` → min, max of min_vm |
+| rows in [0.940, 0.941) | 3.65% | `data/sts_n13_ILL.parquet (trafo 63 removed)` → share of rows |
+| rows within 1e-3 pu of the limit | 6.59% | `data/sts_n13_ILL.parquet (trafo 63 removed)` → share with abs(min_vm - 0.94) <= 1e-3 (label set within switch-back tolerance) |
+| over-voltage share (max_vm > 1.05) | 8.31% | `data/sts_n13_ILL.parquet (trafo 63 removed)` → share of rows |
+| critical-bus top 5 (argmin_bus share of rows) | index 147 (IEEE 148) 83.25%, index 61 (IEEE 62) 1.62%, index 138 (IEEE 139) 0.90%, index 118 (IEEE 119) 0.77%, index 39 (IEEE 40) 0.67% | `data/sts_n13_ILL.parquet (trafo 63 removed)` → feasibility/freeze_poster_numbers.py definition; 0-based index, IEEE name = index + 1 on case118 |
+
+**ILL (case_illinois200, trafo 63 excluded) — baselines**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| gate_catch | 99.02 ± 0.31% | `data/sts_n14_condhist.json` → networks.ILL.summary → gate_catch_mean/std |
+| static_fixed_catch | 84.59 ± 2.63% | `data/sts_n14_condhist.json` → networks.ILL.summary → static_fixed_catch_mean/std |
+| condhist_catch | 98.21 ± 1.08% | `data/sts_n14_condhist.json` → networks.ILL.summary → condhist_catch_mean/std |
+| global_static_catch | 84.23 ± 2.64% | `data/sts_n14_condhist.json` → networks.ILL.summary → global_static_catch_mean/std |
+| GLOBAL-STATIC minus fixed static | -0.36 pp | `data/sts_n14_condhist.json` → networks.ILL.summary (difference of means) |
+| rule-B solve share s_B | 36.3 ± 3.4% | `data/sts_n14_condhist.json` → networks.ILL.summary → s_B |
+
+**ILL (case_illinois200, trafo 63 excluded) — guarantee (histgb)**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| global_gate any_miss_share | 30.1 ± 6.9% | `data/sts_n14_guarantee.json` → networks.ILL.histgb.per_split[].global_gate.any_miss_share |
+| global_gate speedup_B | 2.76 ± 0.24 | `data/sts_n14_guarantee.json` → networks.ILL.histgb.per_split[].global_gate.speedup_B |
+| base_level any_miss_share | 10.1 ± 2.5% | `data/sts_n14_guarantee.json` → networks.ILL.histgb.per_split[].base_level.any_miss_share |
+| base_level speedup_B | 2.12 ± 0.15 | `data/sts_n14_guarantee.json` → networks.ILL.histgb.per_split[].base_level.speedup_B |
+
+**C30 (case30_thermal) — held-out**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| histgb held-out target | 0.972 ± 0.017 | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → target |
+| histgb held-out escalation | 6.1 ± 2.2% | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → escalation |
+| histgb held-out flag_share | 15.1 ± 0.4% | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → flag_share |
+| histgb held-out missed | 0.74 ± 0.35% | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → missed |
+| histgb held-out speedup_A | 18.49 ± 6.76 | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → speedup_A |
+| histgb held-out speedup_B | 4.75 ± 0.44 | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → speedup_B |
+| histgb held-out q_hat | 4.57 ± 1.24 mV | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → q_hat |
+| histgb held-out gate_catch | 99.26 ± 0.35% | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → gate_catch |
+| histgb held-out static_catch_B | 83.16 ± 3.01% | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → static_catch_B |
+| histgb held-out missed per split | 0.90 / 0.39 / 0.26 / 1.16 / 0.97 % (4/5 ≤ 1%) | `data/sts_n13_gate_C30.json` → points[family=histgb, point=held_out], 5 splits → missed |
+
+**C30 (case30_thermal) — dataset**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| converged outage rows | 61,500 | `data/sts_n13_C30.parquet` → outaged_type != none & converged |
+| violation rate | 15.38% | `data/sts_n13_C30.parquet` → mean(min_vm < 0.94) |
+| boundary mass [0.94, 0.945) | 7.10% | `data/sts_n13_C30.parquet` → share of rows |
+| min_vm range | 0.8618 to 0.9866 pu | `data/sts_n13_C30.parquet` → min, max of min_vm |
+| rows in [0.940, 0.941) | 1.15% | `data/sts_n13_C30.parquet` → share of rows |
+| rows within 1e-3 pu of the limit | 2.06% | `data/sts_n13_C30.parquet` → share with abs(min_vm - 0.94) <= 1e-3 (label set within switch-back tolerance) |
+| over-voltage share (max_vm > 1.05) | 0.00% | `data/sts_n13_C30.parquet` → share of rows |
+| critical-bus top 5 (argmin_bus share of rows) | index 18 (IEEE 19) 28.39%, index 7 (IEEE 8) 25.95%, index 29 (IEEE 30) 20.76%, index 6 (IEEE 7) 5.68%, index 17 (IEEE 18) 3.59% | `data/sts_n13_C30.parquet` → feasibility/freeze_poster_numbers.py definition; 0-based index, IEEE name = index + 1 on case118 |
+
+**C30 (case30_thermal) — baselines**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| gate_catch | 99.26 ± 0.35% | `data/sts_n13_condhist.json` → networks.C30.summary → gate_catch_mean/std |
+| static_fixed_catch | 83.16 ± 3.01% | `data/sts_n13_condhist.json` → networks.C30.summary → static_fixed_catch_mean/std |
+| condhist_catch | 89.81 ± 2.89% | `data/sts_n13_condhist.json` → networks.C30.summary → condhist_catch_mean/std |
+| global_static_catch | 83.56 ± 3.44% | `data/sts_n13_condhist.json` → networks.C30.summary → global_static_catch_mean/std |
+| GLOBAL-STATIC minus fixed static | +0.39 pp | `data/sts_n13_condhist.json` → networks.C30.summary (difference of means) |
+| rule-B solve share s_B | 21.2 ± 2.0% | `data/sts_n13_condhist.json` → networks.C30.summary → s_B |
+
+**C24 (case24_ieee_rts, N14 amendment) — held-out**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| histgb held-out target | 0.824 ± 0.016 | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → target |
+| histgb held-out escalation | 7.4 ± 0.8% | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → escalation |
+| histgb held-out flag_share | 56.1 ± 1.3% | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → flag_share |
+| histgb held-out missed | 1.15 ± 0.27% | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → missed |
+| histgb held-out speedup_A | 13.47 ± 1.50 | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → speedup_A |
+| histgb held-out speedup_B | 1.57 ± 0.03 | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → speedup_B |
+| histgb held-out q_hat | 1.39 ± 0.10 mV | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → q_hat |
+| histgb held-out gate_catch | 98.85 ± 0.27% | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → gate_catch |
+| histgb held-out static_catch_B | 89.65 ± 1.01% | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → static_catch_B |
+| histgb held-out missed per split | 1.65 / 0.85 / 1.12 / 1.10 / 1.02 % (1/5 ≤ 1%) | `data/sts_n14_gate_C24.json` → points[family=histgb, point=held_out], 5 splits → missed |
+
+**C24 (case24_ieee_rts, N14 amendment) — dataset**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| converged outage rows | 53,498 | `data/sts_n13_C24.parquet` → outaged_type != none & converged |
+| violation rate | 54.24% | `data/sts_n13_C24.parquet` → mean(min_vm < 0.94) |
+| boundary mass [0.94, 0.945) | 24.09% | `data/sts_n13_C24.parquet` → share of rows |
+| min_vm range | 0.8188 to 0.9766 pu | `data/sts_n13_C24.parquet` → min, max of min_vm |
+| rows in [0.940, 0.941) | 5.37% | `data/sts_n13_C24.parquet` → share of rows |
+| rows within 1e-3 pu of the limit | 9.54% | `data/sts_n13_C24.parquet` → share with abs(min_vm - 0.94) <= 1e-3 (label set within switch-back tolerance) |
+| over-voltage share (max_vm > 1.05) | 68.42% | `data/sts_n13_C24.parquet` → share of rows |
+| critical-bus top 5 (argmin_bus share of rows) | index 2 (IEEE 3) 87.93%, index 3 (IEEE 4) 6.14%, index 7 (IEEE 8) 4.86%, index 8 (IEEE 9) 0.86%, index 4 (IEEE 5) 0.21% | `data/sts_n13_C24.parquet` → feasibility/freeze_poster_numbers.py definition; 0-based index, IEEE name = index + 1 on case118 |
+
+**C24 (case24_ieee_rts, N14 amendment) — baselines**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| gate_catch | 98.85 ± 0.27% | `data/sts_n14_condhist.json` → networks.C24.summary → gate_catch_mean/std |
+| static_fixed_catch | 89.65 ± 1.01% | `data/sts_n14_condhist.json` → networks.C24.summary → static_fixed_catch_mean/std |
+| condhist_catch | 97.18 ± 0.41% | `data/sts_n14_condhist.json` → networks.C24.summary → condhist_catch_mean/std |
+| global_static_catch | 90.09 ± 1.05% | `data/sts_n14_condhist.json` → networks.C24.summary → global_static_catch_mean/std |
+| GLOBAL-STATIC minus fixed static | +0.44 pp | `data/sts_n14_condhist.json` → networks.C24.summary (difference of means) |
+| rule-B solve share s_B | 63.6 ± 1.3% | `data/sts_n14_condhist.json` → networks.C24.summary → s_B |
+
+**Network size**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| case118 | 118 buses, 186 branches | `pandapower.networks.case118()` → len(bus), len(line) + len(trafo) |
+| ILL | 200 buses, 245 branches | `pandapower.networks.case_illinois200()` → len(bus), len(line) + len(trafo) |
+| C30 | 30 buses, 41 branches | `pandapower.networks.case30()` → len(bus), len(line) + len(trafo) |
+| C24 | 24 buses, 38 branches | `pandapower.networks.case24_ieee_rts()` → len(bus), len(line) + len(trafo) |
+
+**Verdicts (current)**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| V1 SAFER-94 (D94) | YES (4/5) | `data/sts_n13_verdicts.json` → verdicts.V1_SAFER_94 |
+| V2 SAFETY-CHANGED (D94 rebuilt vs old) | NO: 1.14 ± 0.96% vs 1.51 ± 1.35% | `data/sts_n13_verdicts.json` → verdicts.V2_SAFETY_CHANGED |
+| BEATS_STATIC D94 | NO: tie (within the larger std); gap -0.29 pp vs larger std 0.96 | `data/sts_n14_verdicts.json` → verdicts.primary.BEATS_STATIC.D94 |
+| GATE_BEATS_CONDHIST D94 | NO: tie (within the larger std); gap -0.78 pp vs larger std 0.96 | `data/sts_n14_verdicts.json` → verdicts.primary.GATE_BEATS_CONDHIST.per_network.D94 |
+| BEATS_STATIC ILL | YES; gap +14.43 pp vs larger std 2.63 | `data/sts_n14_verdicts.json` → verdicts.primary.BEATS_STATIC.ILL |
+| GATE_BEATS_CONDHIST ILL | NO: tie (within the larger std); gap +0.81 pp vs larger std 1.08 | `data/sts_n14_verdicts.json` → verdicts.primary.GATE_BEATS_CONDHIST.per_network.ILL |
+| BEATS_STATIC C30 | YES; gap +16.10 pp vs larger std 3.01 | `data/sts_n14_verdicts.json` → verdicts.primary.BEATS_STATIC.C30 |
+| GATE_BEATS_CONDHIST C30 | YES; gap +9.45 pp vs larger std 2.89 | `data/sts_n14_verdicts.json` → verdicts.primary.GATE_BEATS_CONDHIST.per_network.C30 |
+| BEATS_STATIC C24 | YES; gap +9.20 pp vs larger std 1.01 | `data/sts_n14_verdicts.json` → verdicts.primary.BEATS_STATIC.C24 |
+| GATE_BEATS_CONDHIST C24 | YES; gap +1.67 pp vs larger std 0.41 | `data/sts_n14_verdicts.json` → verdicts.primary.GATE_BEATS_CONDHIST.per_network.C24 |
+| SAFER-IL | NO (2/5) | `data/sts_n14_verdicts.json` → verdicts.primary.SAFER_IL |
+| ILL outcome wording (fixed in advance) | on Illinois the gate does not beat COND-HIST once trafo 63 is excluded | `data/sts_n14_verdicts.json` → verdicts.ILL_outcome |
+| COVERAGE-HOLDS-N2 (RQ2) | NO: N-2 coverage 0.8394 ± 0.0126 vs threshold 0.8861 | `data/sts_n13_verdicts.json` → verdicts.COVERAGE_HOLDS_N2 |
+| MONDRIAN-BEATS-STATIC | YES: gap 0.78 pp vs std 0.76 | `data/sts_n13_verdicts.json` → verdicts.MONDRIAN_BEATS_STATIC |
+| FLOOR_DOSE_RESPONSE (replication) | YES: clause 1 True, clause 2 True; BM 56.32 / 54.75 / 33.36 / 18.97 | `data/sts_n13_verdicts.json` → verdicts.FLOOR_DOSE_RESPONSE |
+| V3 MISMATCH-DRIVES-DRIFT-GAP (arm F, diagnostic) | NO: >1e-3 drift bin missed 4.87 ± 7.32% (pinned inputs) vs 1.58 ± 0.53% (corrected); split 4 19.49 → 2.13% | `data/sts_n13_armF.json` → V3 |
+
+**Verdicts (current) — tier B (rebuilt D95a; all ran except the D95c gate)**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| SAFER (N5 form, D95a) | NO (2/5) | `data/sts_n13_verdicts_tierB.json` → verdicts.SAFER_N5 |
+| FASTER (N5 form) | NO: clause 1 True (speedup B 0.95 1.97 ± 0.28 vs 0.94 1.44 ± 0.23); clause 2 False (gate 99.06 vs static 98.88, diff 0.18 < 0.39) | `data/sts_n13_verdicts_tierB.json` → verdicts.FASTER_N5 |
+| SHIFT-ADVANTAGE (D94 → D95a) | NO: gate 98.64 ± 0.66 vs static 98.64 ± 0.61 | `data/sts_n13_verdicts_tierB.json` → verdicts.SHIFT_ADVANTAGE |
+| D95a gate, histgb held-out | escalation 37.4 ± 8.7%, missed 0.94 ± 0.34% | `data/sts_n13_gate095bc.json` → builds.D95a.histgb_held_out |
+| D95b gate, histgb held-out | escalation 31.1 ± 9.4%, missed 1.32 ± 0.66% | `data/sts_n13_gate095bc.json` → builds.D95b.histgb_held_out |
+| D95c gate | not run on rebuilt data (crash); report from the old build, labeled 'old build, uncorrected solver' | `data/sts_n11_gate_095bc.json` → N14 rule §C |
+
+**Verdicts (current) — islanding sensitivity (beside primary, never replaces it)**
+
+| Quantity | Value | Source → key |
+|---|---|---|
+| BEATS_STATIC D94 | NO; gap -0.27 pp vs larger std 1.03 | `data/sts_n14_verdicts.json` → verdicts.sensitivity.BEATS_STATIC.D94 |
+| GATE_BEATS_CONDHIST D94 | NO; gap -0.77 pp vs larger std 1.03 | `data/sts_n14_verdicts.json` → verdicts.sensitivity.GATE_BEATS_CONDHIST.D94 |
+| BEATS_STATIC ILL | YES; gap +15.12 pp vs larger std 2.19 | `data/sts_n14_verdicts.json` → verdicts.sensitivity.BEATS_STATIC.ILL |
+| GATE_BEATS_CONDHIST ILL | YES; gap +1.21 pp vs larger std 0.86 | `data/sts_n14_verdicts.json` → verdicts.sensitivity.GATE_BEATS_CONDHIST.ILL |
+| BEATS_STATIC C30 | YES; gap +16.28 pp vs larger std 1.81 | `data/sts_n14_verdicts.json` → verdicts.sensitivity.BEATS_STATIC.C30 |
+| GATE_BEATS_CONDHIST C30 | YES; gap +10.52 pp vs larger std 2.67 | `data/sts_n14_verdicts.json` → verdicts.sensitivity.GATE_BEATS_CONDHIST.C30 |
+| BEATS_STATIC C24 | YES; gap +8.91 pp vs larger std 1.50 | `data/sts_n14_verdicts.json` → verdicts.sensitivity.BEATS_STATIC.C24 |
+| GATE_BEATS_CONDHIST C24 | YES; gap +1.64 pp vs larger std 0.58 | `data/sts_n14_verdicts.json` → verdicts.sensitivity.GATE_BEATS_CONDHIST.C24 |
+
+---
+
+
 ## Timeline
 
 | Dates | Work |
@@ -46,6 +468,9 @@ Deadline 2026-11-05, 8 pm ET (support deadline 11-04).
   the regex or accept the FAIL knowingly.
 
 ## Step 2 — Replace the numbers with corrected-label numbers
+
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
 
 **The rule.** Every result number moves from the old pandapower labels to the switch-back labels.
 
@@ -189,6 +614,9 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 
 ## Step 7 — Budget curve as a main result
 
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
+
 - **Source:** `data/sts_n9_budget_curve.json`, and the N10 figure.
 - **Content** (histgb, corrected labels, catch ± std):
 
@@ -200,6 +628,9 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
   k is per base case, out of about 186. Ridge ties history at every k.
 
 ## Step 8 — Operator metric
+
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
 
 - **Measure:** the share of base cases with at least one missed violation at the held-out point.
 - **Values:** stored labels 7.7 ± 2.0% (ridge@0.94) and 11.1 ± 2.6% (histgb@0.97) in
@@ -234,6 +665,9 @@ Define "boundary mass" and "coverage" before use (patches C12, C4).
 ---
 
 ## Location map — where each number and figure lives in the .tex
+
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
 
 Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 - **Line numbers are for navigation only.** Search by the anchor words, because lines move as you edit.
@@ -282,6 +716,9 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 ---
 
 ## Update 2026-10-01 — N10 / N11 results and where they go
+
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
 
 **Status labels.**
 - **VERIFIED:** recomputed by the lead from the raw files on 2026-10-01 (prompt-log entry 2026-09-30 (t)).
@@ -349,6 +786,9 @@ Mapped 2026-09-30 against `report/paper_current_STS.tex` sha256 `1e2c36d1…`.
 
 ## Update 2026-10-02 — N12 results and final experimental picture
 
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
+
 **Experiments are closed.** From here on, everything is writing (Steps 1-8 above, with the additions below).
 
 **Status labels.**
@@ -412,6 +852,9 @@ Mondrian, D95b/c and the row-level guarantee get one sentence each or go in an a
 ---
 
 ## Update 2026-10-04 — Response to the plan review (checked against data)
+
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
 
 This section supersedes the earlier sections wherever they disagree. The stale lines in Steps 2, 3 and 8 were
 corrected in place on 2026-10-04. Every number below was computed by the lead from the named file
@@ -544,6 +987,9 @@ corrected in place on 2026-10-04. Every number below was computed by the lead fr
 
 ## Update 2026-10-04 (c) — Second plan review: checked against data
 
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
+
 Stale lines in Steps 3 and 8, the location map, the Oct 1 RQ labels, the Oct 2 claim ceiling and the
 author-decision list were corrected in place. Numbers below are lead-computed (prompt-log entry
 2026-10-04 (c)).
@@ -657,6 +1103,9 @@ new solves; ask if needed. Otherwise cut it (AD-9).
 ---
 
 ## Update 2026-10-04 (e) — Third plan review (checked against data)
+
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
 
 ### 1. Per-run pre-registration: every pushed draft hashes to its rule hash
 
@@ -810,3 +1259,161 @@ labels. Pre-registration draft: `scratch/n13_decision_rule_DRAFT.md`; run prompt
   Every dataset-level number becomes a placeholder too: VR, BM, the dose-response values and the 278,954 row
   count. If the rebuild completes, the "inputs from the uncorrected N-0 solve" limitation leaves the Abstract
   and Discussion.
+
+---
+
+## Update 2026-10-05 — N13 verified (rebuild with the corrected solver)
+
+> **Superseded numbers (2026-10-06).** Values in this section predate the N13 rebuild and/or N14. Take every number from **Current numbers (after N14)** at the top; use this section only for where things go.
+
+
+Source: `scratch/n13_result.md`, commit 42fd1d5. Everything below was checked by Claude on the laptop, read-only,
+against the data files.
+
+### 1. Pre-registration: holds
+
+- The hashed rule (`scratch/n13_decision_rule.md`, sha256 ae941f64…) is byte-identical to the draft in 504d728.
+- **Timing, from GitHub's repository activity log** (saved to `notes/github_activity_2026-10-06.json`):
+
+  | Event | Time (UTC) |
+  |---|---|
+  | 504d728 pushed | 2026-10-04 18:11:22 |
+  | Rule hashed | 18:12:44 |
+  | First computation | after the hash |
+  | Results pushed (42fd1d5) | 2026-10-05 02:41:46 |
+
+- **Use the activity log for future checks.** The events endpoint used on 2026-10-04 did not list these
+  pushes; the activity endpoint (`repos/…/activity`) does.
+
+### 2. Recomputed by Claude (VERIFIED)
+
+- **V1 / V2:** D94 histgb held-out missed per split 0.52 / 0.72 / 3.03 / 0.91 / 0.51%.
+  - 4/5 splits ≤ 1%.
+  - Mean 1.136 ± 0.957% vs old 1.509 ± 1.355%: no change by the std rule.
+- **BEATS-STATIC ILL:** gate 99.088 ± 0.253 vs static 84.817 ± 1.687.
+- **GATE-BEATS-CONDHIST ILL:** COND-HIST re-implemented independently from `data/sts_n13_ILL.parquet`.
+  - 98.451 ± 0.613; gap 0.636 > 0.613.
+  - Matches the run exactly. It is narrow.
+- **Rebuilt D94 data:**
+  - schema identical to `data/dataset.parquet`;
+  - 1,500 bases, every corrected N-0 minimum ≥ 0.94 (0 below);
+  - 278,945 converged outage rows; VR 16.26%, BM 54.75%.
+- **Check 6** (`scratch/n13_indep_rows_{D94,ILL}.parquet`, joined to the datasets):
+  - labels agree on every compared row, including all 200 near-limit rows (stratum d) on each network;
+  - no difference > 1e-3 pu (D94 max 9.84e-4).
+- **C24 exclusion:** pinned minima differ by up to 1.95e-14 pu. The corrected labels reproduce exactly
+  (max diff 0.0). The exclusion is a correct application of the rule's "exactly", on a floating-point-sized
+  difference. Report it that way.
+
+### 3. A correction that applies to Claude too
+
+N11's C24 relabel had already recorded `resolve_min_vm_exact = false`. The Mac mini's N11 report said every
+check passed, and **Claude's own N11 verification on this laptop did not catch it either.** The old C24 numbers
+in this plan (2026-10-01 table, N12 rows) therefore rest on a failed check. Do not use them.
+
+### 4. Not yet decided: islanding outages (see the 2026-10-05 discussion)
+
+| Network | Islanding outages | Share of outage rows | What gets cut off |
+|---|---|---|---|
+| D94 | 9 | 4.84% | 8 of 9 include a generator; lines 6 and 7 are violations in every base case |
+| ILL | 72 | 29.98% | 37 a generator bus, 23 a load bus, 11 a bus with neither; trafo 63 cuts off 199 of 200 buses (labeled safe at 1.04 pu, the slack bus only) |
+| C30 | 3 | 7.32% | — |
+
+- The owner chose "option 1" (exclude all islanding outages) before these shares were known. It is being
+  reconsidered; see the Claude reply of 2026-10-05.
+- N14 is not drafted until it is decided.
+
+---
+
+## Update 2026-10-06 — N14 verified (C24 amendment, Illinois without trafo 63, islanding)
+
+Source: `scratch/n14_result.md`, `scratch/n14_decision_rule.md`, `scratch/n14_prefacts.md`, commit 56423a9.
+Checked by Claude on the laptop, read-only. This supersedes §4 of the 2026-10-05 update: islanding was decided
+in N14 as option 3 (keep islanding outages; exclude only trafo 63).
+
+### 1. Pre-registration: holds
+
+- The hashed rule (sha256 a0985845…) is byte-identical to the draft in 9ca3c06.
+- **Timing, from GitHub's activity log:**
+
+  | Event | Time (UTC) |
+  |---|---|
+  | 9ca3c06 pushed | 2026-10-05 22:29:17 |
+  | Rule hashed | 22:32:00 |
+  | Results pushed (56423a9) | 2026-10-06 01:58:52 |
+
+- **Two parts are post hoc, and the rule says so.** The paper must too:
+  - the C24 tolerance (1e-9 pu, written after the 1.95e-14 pu failure);
+  - the trafo-63 exclusion criterion (written after identifying trafo 63).
+- **Why the C24 amendment is defensible:** C24's corrected labels reproduced exactly (max diff 0). No C24
+  gate-vs-baseline result existed when the amendment was written. The arm-F safety numbers did, and the rule
+  discloses them.
+
+### 2. Recomputed by Claude (VERIFIED)
+
+- **COND-HIST** recomputed with an independent implementation from `data/sts_n13_{ILL,C24}.parquet` and the N14
+  gate files.
+
+  | Network | Gate | COND-HIST | Gap vs larger std | Paired diff | Splits where gate > COND-HIST |
+  |---|---|---|---|---|---|
+  | ILL, trafo 63 excluded (358,694 rows) | 99.019 ± 0.312 | 98.205 ± 1.081 | 0.814 < 1.081: **NO** | 0.81 ± 0.77 | **3/5** (1.86 / −0.02 / −0.14 / 1.16 / 1.21) |
+  | C24 | 98.852 ± 0.271 | 97.185 ± 0.406 | 1.667 > 0.406: **YES** | 1.67 ± 0.20 | 5/5 |
+
+- **Static catch:** ILL 84.59 ± 2.64; C24 89.65 ± 1.01.
+- Both match `data/sts_n14_verdicts.json`.
+
+### 3. What this changes in the paper
+
+**Claim ceiling (supersedes the 2026-10-02 "final claim ceiling" baselines line).**
+
+| Comparison | Gate wins on | Gate does not win on |
+|---|---|---|
+| vs the fixed static ranking | ILL, C30, C24 | case118: tie (gap −0.29 within the larger std 0.96) |
+| vs the no-ML conditional-history baseline (COND-HIST) | C30, C24 | case118: tie, history numerically higher (gap −0.78 within the larger std 0.96); ILL: gap 0.81 < std 1.08, gate higher in only 3 of 5 splits |
+
+- C24's result carries the amendment disclosure.
+- **Illinois wording, fixed in advance (outcome c):** "on Illinois the gate does not beat COND-HIST once trafo 63
+  is excluded".
+  - The islanding sensitivity run (all islanding outages removed) passes on Illinois (1.21 > 0.86; the Mac mini's report rounded it to 1.22). It is
+    reported beside the primary result and never replaces it.
+- **Drop the old "first yes" framing** for Illinois everywhere in this plan.
+- **What still stands on Illinois:** the gate beats the fixed static ranking by a wide margin (14.4 points).
+- **Why history catches up (the Oct 4 §B wording, re-checked on rebuilt data):** the gain over fixed static comes
+  from conditioning on the operating condition, which the no-ML COND-HIST table also does. It does not come from
+  moving the solve budget across base cases.
+  - Evidence: GLOBAL-STATIC, which moves the budget across base cases without conditioning, stays within 0.44 pp
+    of fixed static on every network on rebuilt data: D94 +0.00, ILL −0.36, C30 +0.39, C24 +0.44 pp
+    (`data/sts_n13_condhist.json`, `data/sts_n14_condhist.json`).
+  - Do not use the "riskier base cases" or "spending solves across base cases" phrasing.
+
+**Safety on Illinois:** SAFER-IL is no. Held-out missed per split: 1.47 / 0.68 / 0.61 / 1.05 / 1.10%, so 2 of 5
+splits ≤ 1%.
+
+**Method must state:**
+- the label definition: the lowest voltage on buses still connected to the reference bus, with lost load on
+  cut-off buses a separate event the gate does not screen;
+- the single-slack assumption;
+- the trafo-63 exclusion criterion and its post-hoc origin;
+- the islanding counts per network: D94 9 outages (4.84% of rows), ILL 72 (29.98%), C30 3 (7.32%), C24 1.
+
+**Dropped from the rebuilt results:**
+- **Classical screen:** "not run" in the rebuilt Table 1. It needs a corrected base solve, which is a method
+  change.
+- **D95c gate:** reported from the old build, labeled "old build, uncorrected solver".
+
+### 4. Which file holds each number now
+
+| Network | Source |
+|---|---|
+| D94, C30 | N13 files (`data/sts_n13_*`), restated by N14 after hash checks |
+| ILL | `data/sts_n14_gate_ILL.json`, `data/sts_n14_condhist.json`, `data/sts_n14_guarantee.json` |
+| C24 | `data/sts_n14_gate_C24.json`, `data/sts_n14_condhist.json` |
+| Cross-network table (n = 4) | `data/sts_n14_crossnet.json` |
+| Islanding sensitivity | `data/sts_n14_sensitivity.json`, `data/sts_n14_islanding_split.json` |
+
+- **C24 is a different regime.** Rebuilt C24: VR 54.24%, BM 24.09%. Over half of its outage rows are violations,
+  against 15.38-27.28% on the other three networks.
+  - The gate beats COND-HIST on exactly two networks, C30 and C24. Both are the smallest (30 and 24 buses), and
+    C24 is the most stressed.
+  - **In the cross-network table,** put VR and network size (buses, branches) next to the verdicts.
+  - **Do not write a sentence that suggests why the gate wins there.** n = 4 supports no explanation.

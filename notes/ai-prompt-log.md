@@ -6648,3 +6648,51 @@ Outcome: Part 1 classified the classical screen and the D95c gate as (b) (method
 
 Prompt: the owner instructed: follow only the text below "Prompt (paste everything below this line)" in scratch/run_prompt_n14.md (committed in 9ca3c06507f009c9a6531ab7c8a248dbd926e77f); before Step 1, record git log -1 and git status under "N14 run", confirm the rule draft is in HEAD with no uncommitted changes, then begin at Step 0. Not re-quoted; see the file.
 N14 pre-registration: scratch/n14_decision_rule.md sha256 a0985845b76d46911d19e38718f996d3fa5c1f02a0a13b1e3b029310788692d5, recorded 2026-10-05T22:32:00Z; draft committed in 9ca3c06507f009c9a6531ab7c8a248dbd926e77f. Cutoff 2026-10-12 23:59 America/New_York.
+
+## 2026-10-04 (q) — N13 run report from the Mac mini
+
+(pasted Mac mini N13 final summary)
+
+Claude checked whether the N13 files are on origin (read-only fetch) and assessed the report.
+
+## 2026-10-04 (r) — Why not have the Mac mini run the follow-ups
+
+"why not have the mac mini do this"
+
+Claude explained the post-hoc status and the order (push, pull, verify, pre-register N14, run). No files changed.
+
+## 2026-10-04 (s) — Pull blocked by local prompt-log changes
+
+(pasted git pull error: local changes to notes/ai-prompt-log.md would be overwritten)
+
+Claude saved its uncommitted prompt-log entries, restored the file to the committed version (read-only git show plus a file write) so the owner's pull could fast-forward, and re-appended the entries after the pull.
+
+## 2026-10-04 (t) — Verify N13; islanding scope option 1; draft N14
+
+"pulled, option 1"
+
+Claude verified N13 (read-only), saved GitHub's repository activity log to notes/github_activity_2026-10-06.json, and updated notes/paper_fix_plan.md. It held off drafting N14: the islanding counts (30% of Illinois rows, mostly generator buses) changed its recommendation, so it asked the owner to reconsider option 1.
+
+## 2026-10-05 (a) — Pull blocked again by local prompt-log changes
+
+(pasted git pull error: local changes to notes/ai-prompt-log.md would be overwritten; origin had N14 commits 9ca3c06 and 56423a9)
+
+Claude saved its uncommitted prompt-log entries, restored the file to the committed version so the pull could fast-forward, and re-appended them after the pull.
+
+## 2026-10-05 (b) — Verify N14
+
+"look at new pull" (plus the pasted Mac mini N14 summary)
+
+Claude verified N14 read-only (rule hash and push timing, the C24 amendment, recomputed verdicts) and updated notes/paper_fix_plan.md.
+
+## 2026-10-06 (a) — Review of the plan after N14 (std wording, Illinois explanation, missing N13 replications, current-numbers table, C24 regime)
+
+(pasted review, five points)
+
+Claude wrote scratch/current_numbers.py, which reads every current number from the N13/N14 JSON and rebuilt data files (no fits, no solves) into data/sts_current_numbers.json plus manifest. It inserted the generated "Current numbers (after N14)" section at the top of notes/paper_fix_plan.md, put superseded banners on 10 older sections, and fixed the 2026-10-06 wording: the case118 ties, the conditioning explanation re-checked with GLOBAL-STATIC on rebuilt data, the C24 regime note, and the Illinois sensitivity gap 1.21.
+
+## 2026-10-10 (a) — Is the paper fix plan current?
+
+"is this paper fix plan updated to trhe current version"
+
+Claude checked the plan against git and the newest result files (read-only).
