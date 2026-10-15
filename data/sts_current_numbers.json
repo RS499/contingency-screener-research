@@ -1,0 +1,1855 @@
+{
+  "question": "every number the paper can use after N14, with source file and key",
+  "rows": [
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "ridge mae (mV)",
+      "value": "3.44 \u00b1 0.12",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='ridge mae (mV)'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "ridge r2",
+      "value": "0.815 \u00b1 0.010",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='ridge r2'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "ridge 0.90 escalation",
+      "value": "47.28 \u00b1 4.49%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='ridge 0.90 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "ridge 0.90 missed",
+      "value": "2.99 \u00b1 0.67%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='ridge 0.90 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "ridge 0.90 speedup_A",
+      "value": "2.13 \u00b1 0.18",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='ridge 0.90 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "histgb mae (mV)",
+      "value": "1.30 \u00b1 0.17",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='histgb mae (mV)'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "histgb r2",
+      "value": "0.953 \u00b1 0.007",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='histgb r2'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "histgb 0.90 escalation",
+      "value": "24.23 \u00b1 3.35%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='histgb 0.90 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "histgb 0.90 missed",
+      "value": "4.06 \u00b1 0.73%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='histgb 0.90 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "histgb 0.90 speedup_A",
+      "value": "4.18 \u00b1 0.53",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='histgb 0.90 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "persistence 0.90 mae",
+      "value": "3.90 \u00b1 0.05",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='persistence 0.90 mae'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "persistence 0.90 r2",
+      "value": "-0.050 \u00b1 0.005",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='persistence 0.90 r2'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "persistence 0.90 escalation",
+      "value": "98.40 \u00b1 0.74%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='persistence 0.90 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "persistence 0.90 missed",
+      "value": "1.16 \u00b1 0.57%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='persistence 0.90 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "persistence 0.90 speedup_A",
+      "value": "1.02 \u00b1 0.01",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='persistence 0.90 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "train_mean 0.90 mae",
+      "value": "6.29 \u00b1 0.14",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='train_mean 0.90 mae'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "train_mean 0.90 r2",
+      "value": "-0.000 \u00b1 0.000",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='train_mean 0.90 r2'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "train_mean 0.90 escalation",
+      "value": "100.00 \u00b1 0.00%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='train_mean 0.90 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "train_mean 0.90 missed",
+      "value": "0.00 \u00b1 0.00%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='train_mean 0.90 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 1",
+      "quantity": "train_mean 0.90 speedup_A",
+      "value": "1.00 \u00b1 0.00",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:models, key='train_mean 0.90 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.90 escalation",
+      "value": "47.28 \u00b1 4.49%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.90 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.90 coverage_emp",
+      "value": "0.894 \u00b1 0.015",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.90 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.90 missed",
+      "value": "2.99 \u00b1 0.67%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.90 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.90 speedup_A",
+      "value": "2.13 \u00b1 0.18",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.90 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.90 speedup_B",
+      "value": "1.44 \u00b1 0.08",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.90 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.94 escalation",
+      "value": "62.54 \u00b1 2.80%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.94 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.94 coverage_emp",
+      "value": "0.938 \u00b1 0.006",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.94 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.94 missed",
+      "value": "1.16 \u00b1 0.28%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.94 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.94 speedup_A",
+      "value": "1.60 \u00b1 0.07",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.94 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.94 speedup_B",
+      "value": "1.18 \u00b1 0.05",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.94 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.95 escalation",
+      "value": "67.18 \u00b1 1.39%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.95 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.95 coverage_emp",
+      "value": "0.949 \u00b1 0.007",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.95 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.95 missed",
+      "value": "0.74 \u00b1 0.23%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.95 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.95 speedup_A",
+      "value": "1.49 \u00b1 0.03",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.95 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.95 speedup_B",
+      "value": "1.11 \u00b1 0.02",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.95 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.96 escalation",
+      "value": "71.63 \u00b1 2.42%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.96 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.96 coverage_emp",
+      "value": "0.960 \u00b1 0.003",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.96 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.96 missed",
+      "value": "0.42 \u00b1 0.20%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.96 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.96 speedup_A",
+      "value": "1.40 \u00b1 0.05",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.96 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.96 speedup_B",
+      "value": "1.06 \u00b1 0.02",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.96 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.97 escalation",
+      "value": "75.15 \u00b1 2.17%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.97 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.97 coverage_emp",
+      "value": "0.969 \u00b1 0.003",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.97 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.97 missed",
+      "value": "0.21 \u00b1 0.15%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.97 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.97 speedup_A",
+      "value": "1.33 \u00b1 0.04",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.97 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.97 speedup_B",
+      "value": "1.02 \u00b1 0.01",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.97 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.98 escalation",
+      "value": "76.89 \u00b1 2.10%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.98 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.98 coverage_emp",
+      "value": "0.979 \u00b1 0.001",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.98 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.98 missed",
+      "value": "0.11 \u00b1 0.13%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.98 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.98 speedup_A",
+      "value": "1.30 \u00b1 0.04",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.98 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge 0.98 speedup_B",
+      "value": "1.01 \u00b1 0.00",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge 0.98 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge held-out target",
+      "value": "0.934 \u00b1 0.010",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge held-out target'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge held-out escalation",
+      "value": "59.47 \u00b1 5.91%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge held-out escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge held-out coverage_emp",
+      "value": "0.934 \u00b1 0.013",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge held-out coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge held-out missed",
+      "value": "1.51 \u00b1 0.60%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge held-out missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge held-out speedup_A",
+      "value": "1.70 \u00b1 0.17",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge held-out speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "ridge held-out speedup_B",
+      "value": "1.23 \u00b1 0.10",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='ridge held-out speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.90 escalation",
+      "value": "24.23 \u00b1 3.35%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.90 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.90 coverage_emp",
+      "value": "0.905 \u00b1 0.014",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.90 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.90 missed",
+      "value": "4.06 \u00b1 0.73%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.90 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.90 speedup_A",
+      "value": "4.18 \u00b1 0.53",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.90 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.90 speedup_B",
+      "value": "2.45 \u00b1 0.20",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.90 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.94 escalation",
+      "value": "36.43 \u00b1 3.97%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.94 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.94 coverage_emp",
+      "value": "0.943 \u00b1 0.006",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.94 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.94 missed",
+      "value": "2.36 \u00b1 0.66%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.94 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.94 speedup_A",
+      "value": "2.77 \u00b1 0.28",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.94 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.94 speedup_B",
+      "value": "1.89 \u00b1 0.14",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.94 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.95 escalation",
+      "value": "40.32 \u00b1 3.48%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.95 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.95 coverage_emp",
+      "value": "0.951 \u00b1 0.006",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.95 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.95 missed",
+      "value": "1.94 \u00b1 0.60%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.95 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.95 speedup_A",
+      "value": "2.49 \u00b1 0.20",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.95 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.95 speedup_B",
+      "value": "1.76 \u00b1 0.10",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.95 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.96 escalation",
+      "value": "46.81 \u00b1 2.31%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.96 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.96 coverage_emp",
+      "value": "0.961 \u00b1 0.004",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.96 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.96 missed",
+      "value": "1.40 \u00b1 0.47%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.96 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.96 speedup_A",
+      "value": "2.14 \u00b1 0.10",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.96 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.96 speedup_B",
+      "value": "1.57 \u00b1 0.06",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.96 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.97 escalation",
+      "value": "53.79 \u00b1 2.59%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.97 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.97 coverage_emp",
+      "value": "0.970 \u00b1 0.004",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.97 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.97 missed",
+      "value": "1.03 \u00b1 0.46%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.97 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.97 speedup_A",
+      "value": "1.86 \u00b1 0.09",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.97 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.97 speedup_B",
+      "value": "1.42 \u00b1 0.05",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.97 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.98 escalation",
+      "value": "63.39 \u00b1 2.63%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.98 escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.98 coverage_emp",
+      "value": "0.979 \u00b1 0.004",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.98 coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.98 missed",
+      "value": "0.69 \u00b1 0.38%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.98 missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.98 speedup_A",
+      "value": "1.58 \u00b1 0.06",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.98 speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb 0.98 speedup_B",
+      "value": "1.25 \u00b1 0.04",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb 0.98 speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb held-out target",
+      "value": "0.970 \u00b1 0.011",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb held-out target'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb held-out escalation",
+      "value": "54.25 \u00b1 9.68%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb held-out escalation'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb held-out coverage_emp",
+      "value": "0.970 \u00b1 0.014",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb held-out coverage_emp'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb held-out missed",
+      "value": "1.14 \u00b1 0.96%",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb held-out missed'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb held-out speedup_A",
+      "value": "1.91 \u00b1 0.41",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb held-out speedup_A'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Table 2",
+      "quantity": "histgb held-out speedup_B",
+      "value": "1.44 \u00b1 0.23",
+      "source": "data/sts_n13_compare.json",
+      "key": "rows[table=tab:ops, key='histgb held-out speedup_B'] \u2192 rebuilt_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out target",
+      "value": "0.970 \u00b1 0.011",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 target"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out escalation",
+      "value": "54.2 \u00b1 9.7%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 escalation"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out flag_share",
+      "value": "16.7 \u00b1 0.3%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 flag_share"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out missed",
+      "value": "1.14 \u00b1 0.96%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out speedup_A",
+      "value": "1.91 \u00b1 0.41",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 speedup_A"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out speedup_B",
+      "value": "1.44 \u00b1 0.23",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 speedup_B"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out q_hat",
+      "value": "5.12 \u00b1 1.02 mV",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 q_hat"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out gate_catch",
+      "value": "98.86 \u00b1 0.96%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 gate_catch"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out static_catch_B",
+      "value": "99.16 \u00b1 0.58%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 static_catch_B"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "histgb held-out missed per split",
+      "value": "0.52 / 0.72 / 3.03 / 0.91 / 0.51 % (4/5 \u2264 1%)",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out target",
+      "value": "0.934 \u00b1 0.010",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 target"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out escalation",
+      "value": "59.5 \u00b1 5.9%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 escalation"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out flag_share",
+      "value": "22.6 \u00b1 1.8%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 flag_share"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out missed",
+      "value": "1.51 \u00b1 0.60%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out speedup_A",
+      "value": "1.70 \u00b1 0.17",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 speedup_A"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out speedup_B",
+      "value": "1.23 \u00b1 0.10",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 speedup_B"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out q_hat",
+      "value": "6.20 \u00b1 0.78 mV",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 q_hat"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out gate_catch",
+      "value": "98.49 \u00b1 0.60%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 gate_catch"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out static_catch_B",
+      "value": "99.69 \u00b1 0.12%",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 static_catch_B"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 held-out",
+      "quantity": "ridge held-out missed per split",
+      "value": "2.31 / 1.13 / 2.02 / 1.44 / 0.65 % (1/5 \u2264 1%)",
+      "source": "data/sts_n13_gate_D94.json",
+      "key": "points[family=ridge, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 dataset",
+      "quantity": "converged outage rows",
+      "value": "278,945",
+      "source": "data/sts_n13_D94.parquet",
+      "key": "outaged_type != none & converged"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 dataset",
+      "quantity": "violation rate",
+      "value": "16.26%",
+      "source": "data/sts_n13_D94.parquet",
+      "key": "mean(min_vm < 0.94)"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 dataset",
+      "quantity": "boundary mass [0.94, 0.945)",
+      "value": "54.75%",
+      "source": "data/sts_n13_D94.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 dataset",
+      "quantity": "min_vm range",
+      "value": "0.7605 to 0.9594 pu",
+      "source": "data/sts_n13_D94.parquet",
+      "key": "min, max of min_vm"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 dataset",
+      "quantity": "rows in [0.940, 0.941)",
+      "value": "14.15%",
+      "source": "data/sts_n13_D94.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 dataset",
+      "quantity": "rows within 1e-3 pu of the limit",
+      "value": "15.52%",
+      "source": "data/sts_n13_D94.parquet",
+      "key": "share with abs(min_vm - 0.94) <= 1e-3 (label set within switch-back tolerance)"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 dataset",
+      "quantity": "over-voltage share (max_vm > 1.05)",
+      "value": "73.38%",
+      "source": "data/sts_n13_D94.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 dataset",
+      "quantity": "critical-bus top 5 (argmin_bus share of rows)",
+      "value": "index 75 (IEEE 76) 28.40%, index 52 (IEEE 53) 15.40%, index 106 (IEEE 107) 10.38%, index 0 (IEEE 1) 9.10%, index 20 (IEEE 21) 4.44%",
+      "source": "data/sts_n13_D94.parquet",
+      "key": "feasibility/freeze_poster_numbers.py definition; 0-based index, IEEE name = index + 1 on case118"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 baselines",
+      "quantity": "gate_catch",
+      "value": "98.86 \u00b1 0.96%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.D94.summary \u2192 gate_catch_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 baselines",
+      "quantity": "static_fixed_catch",
+      "value": "99.16 \u00b1 0.58%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.D94.summary \u2192 static_fixed_catch_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 baselines",
+      "quantity": "condhist_catch",
+      "value": "99.64 \u00b1 0.36%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.D94.summary \u2192 condhist_catch_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 baselines",
+      "quantity": "global_static_catch",
+      "value": "99.16 \u00b1 0.57%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.D94.summary \u2192 global_static_catch_mean/std"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 baselines",
+      "quantity": "GLOBAL-STATIC minus fixed static",
+      "value": "+0.00 pp",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.D94.summary (difference of means)"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 baselines",
+      "quantity": "rule-B solve share s_B",
+      "value": "70.9 \u00b1 9.9%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.D94.summary \u2192 s_B"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "global_gate any_miss_share",
+      "value": "12.4 \u00b1 9.4%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].global_gate.any_miss_share"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "global_gate escalation",
+      "value": "54.2 \u00b1 9.7%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].global_gate.escalation"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "global_gate missed",
+      "value": "1.14 \u00b1 0.96%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].global_gate.missed"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "global_gate speedup_B",
+      "value": "1.44 \u00b1 0.23",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].global_gate.speedup_B"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "row_level any_miss_share",
+      "value": "14.3 \u00b1 4.1%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].row_level.any_miss_share"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "row_level escalation",
+      "value": "50.6 \u00b1 2.8%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].row_level.escalation"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "row_level missed",
+      "value": "1.22 \u00b1 0.55%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].row_level.missed"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "row_level speedup_B",
+      "value": "1.49 \u00b1 0.07",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].row_level.speedup_B"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "base_level any_miss_share",
+      "value": "11.2 \u00b1 3.4%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].base_level.any_miss_share"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "base_level escalation",
+      "value": "54.8 \u00b1 3.5%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].base_level.escalation"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "base_level missed",
+      "value": "1.02 \u00b1 0.47%",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].base_level.missed"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 guarantee (histgb)",
+      "quantity": "base_level speedup_B",
+      "value": "1.40 \u00b1 0.07",
+      "source": "data/sts_n13_guarantee.json",
+      "key": "networks.D94.histgb.per_split[].base_level.speedup_B"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 budget curve (histgb)",
+      "quantity": "k = 20",
+      "value": "ML 64.82 \u00b1 0.71 vs static 62.12 \u00b1 0.71: SURR higher",
+      "source": "data/sts_n13_budget.json",
+      "key": "table[family=histgb, k=20]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 budget curve (histgb)",
+      "quantity": "k = 40",
+      "value": "ML 92.74 \u00b1 0.85 vs static 86.54 \u00b1 0.71: SURR higher",
+      "source": "data/sts_n13_budget.json",
+      "key": "table[family=histgb, k=40]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 budget curve (histgb)",
+      "quantity": "k = 57",
+      "value": "ML 95.24 \u00b1 0.47 vs static 93.70 \u00b1 0.57: SURR higher",
+      "source": "data/sts_n13_budget.json",
+      "key": "table[family=histgb, k=57]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 budget curve (histgb)",
+      "quantity": "k = 89",
+      "value": "ML 96.39 \u00b1 0.37 vs static 97.53 \u00b1 0.35: STATIC higher",
+      "source": "data/sts_n13_budget.json",
+      "key": "table[family=histgb, k=89]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 budget curve (histgb)",
+      "quantity": "k = 120",
+      "value": "ML 97.59 \u00b1 0.32 vs static 98.81 \u00b1 0.21: STATIC higher",
+      "source": "data/sts_n13_budget.json",
+      "key": "table[family=histgb, k=120]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 N-2 (RQ2)",
+      "quantity": "histgb t090: N-2 coverage / N-1 coverage",
+      "value": "0.8394 \u00b1 0.0126 / 0.9050 \u00b1 0.0139",
+      "source": "data/sts_n13_n2.json",
+      "key": "summary[family=histgb, point=t090]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 N-2 (RQ2)",
+      "quantity": "histgb t090: N-2 missed",
+      "value": "4.60 \u00b1 0.80% (0/5 \u2264 1%)",
+      "source": "data/sts_n13_n2.json",
+      "key": "summary[family=histgb, point=t090]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 N-2 (RQ2)",
+      "quantity": "histgb held_out: N-2 coverage / N-1 coverage",
+      "value": "0.9352 \u00b1 0.0208 / 0.9696 \u00b1 0.0144",
+      "source": "data/sts_n13_n2.json",
+      "key": "summary[family=histgb, point=held_out]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 N-2 (RQ2)",
+      "quantity": "histgb held_out: N-2 missed",
+      "value": "1.40 \u00b1 1.04% (3/5 \u2264 1%)",
+      "source": "data/sts_n13_n2.json",
+      "key": "summary[family=histgb, point=held_out]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Mondrian",
+      "quantity": "ridge gate vs static catch",
+      "value": "97.81 \u00b1 0.79 vs 99.06 \u00b1 0.28",
+      "source": "data/sts_n13_mondrian.json",
+      "key": "summary[family=ridge]"
+    },
+    {
+      "group": "D94 (case118, 0.94 floor) \u2014 Mondrian",
+      "quantity": "histgb gate vs static catch",
+      "value": "98.78 \u00b1 0.76 vs 98.00 \u00b1 0.68",
+      "source": "data/sts_n13_mondrian.json",
+      "key": "summary[family=histgb]"
+    },
+    {
+      "group": "Floor dose-response (rebuilt)",
+      "quantity": "floor 0.93 (D93)",
+      "value": "BM 56.32%, CBM 67.33%, VR 16.35%, rows 278,956",
+      "source": "data/sts_n13_floor.json",
+      "key": "per_floor[floor=0.93]"
+    },
+    {
+      "group": "Floor dose-response (rebuilt)",
+      "quantity": "floor 0.94 (D94)",
+      "value": "BM 54.75%, CBM 65.37%, VR 16.26%, rows 278,945",
+      "source": "data/sts_n13_floor.json",
+      "key": "per_floor[floor=0.94]"
+    },
+    {
+      "group": "Floor dose-response (rebuilt)",
+      "quantity": "floor 0.95 (D95a)",
+      "value": "BM 33.36%, CBM 39.16%, VR 14.81%, rows 278,921",
+      "source": "data/sts_n13_floor.json",
+      "key": "per_floor[floor=0.95]"
+    },
+    {
+      "group": "Floor dose-response (rebuilt)",
+      "quantity": "floor 0.96 (D96)",
+      "value": "BM 18.97%, CBM 21.95%, VR 13.59%, rows 278,959",
+      "source": "data/sts_n13_floor.json",
+      "key": "per_floor[floor=0.96]"
+    },
+    {
+      "group": "Floor dose-response (rebuilt)",
+      "quantity": "0.95 builds D95a/b/c, mean \u00b1 std (ddof=0)",
+      "value": "BM 32.29 \u00b1 0.77, CBM 37.90 \u00b1 0.89, VR 14.82 \u00b1 0.08",
+      "source": "data/sts_n13_floorrep.json",
+      "key": "across"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out target",
+      "value": "0.924 \u00b1 0.022",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 target"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out escalation",
+      "value": "8.6 \u00b1 2.7%",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 escalation"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out flag_share",
+      "value": "27.7 \u00b1 1.2%",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 flag_share"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out missed",
+      "value": "0.98 \u00b1 0.31%",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out speedup_A",
+      "value": "12.44 \u00b1 3.45",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 speedup_A"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out speedup_B",
+      "value": "2.76 \u00b1 0.24",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 speedup_B"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out q_hat",
+      "value": "2.43 \u00b1 0.63 mV",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 q_hat"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out gate_catch",
+      "value": "99.02 \u00b1 0.31%",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 gate_catch"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out static_catch_B",
+      "value": "84.59 \u00b1 2.63%",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 static_catch_B"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 held-out",
+      "quantity": "histgb held-out missed per split",
+      "value": "1.47 / 0.68 / 0.61 / 1.05 / 1.10 % (2/5 \u2264 1%)",
+      "source": "data/sts_n14_gate_ILL.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 dataset",
+      "quantity": "converged outage rows",
+      "value": "358,694",
+      "source": "data/sts_n13_ILL.parquet (trafo 63 removed)",
+      "key": "outaged_type != none & converged"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 dataset",
+      "quantity": "violation rate",
+      "value": "27.28%",
+      "source": "data/sts_n13_ILL.parquet (trafo 63 removed)",
+      "key": "mean(min_vm < 0.94)"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 dataset",
+      "quantity": "boundary mass [0.94, 0.945)",
+      "value": "18.83%",
+      "source": "data/sts_n13_ILL.parquet (trafo 63 removed)",
+      "key": "share of rows"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 dataset",
+      "quantity": "min_vm range",
+      "value": "0.7006 to 0.9931 pu",
+      "source": "data/sts_n13_ILL.parquet (trafo 63 removed)",
+      "key": "min, max of min_vm"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 dataset",
+      "quantity": "rows in [0.940, 0.941)",
+      "value": "3.65%",
+      "source": "data/sts_n13_ILL.parquet (trafo 63 removed)",
+      "key": "share of rows"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 dataset",
+      "quantity": "rows within 1e-3 pu of the limit",
+      "value": "6.59%",
+      "source": "data/sts_n13_ILL.parquet (trafo 63 removed)",
+      "key": "share with abs(min_vm - 0.94) <= 1e-3 (label set within switch-back tolerance)"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 dataset",
+      "quantity": "over-voltage share (max_vm > 1.05)",
+      "value": "8.31%",
+      "source": "data/sts_n13_ILL.parquet (trafo 63 removed)",
+      "key": "share of rows"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 dataset",
+      "quantity": "critical-bus top 5 (argmin_bus share of rows)",
+      "value": "index 147 (IEEE 148) 83.25%, index 61 (IEEE 62) 1.62%, index 138 (IEEE 139) 0.90%, index 118 (IEEE 119) 0.77%, index 39 (IEEE 40) 0.67%",
+      "source": "data/sts_n13_ILL.parquet (trafo 63 removed)",
+      "key": "feasibility/freeze_poster_numbers.py definition; 0-based index, IEEE name = index + 1 on case118"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 baselines",
+      "quantity": "gate_catch",
+      "value": "99.02 \u00b1 0.31%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.ILL.summary \u2192 gate_catch_mean/std"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 baselines",
+      "quantity": "static_fixed_catch",
+      "value": "84.59 \u00b1 2.63%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.ILL.summary \u2192 static_fixed_catch_mean/std"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 baselines",
+      "quantity": "condhist_catch",
+      "value": "98.21 \u00b1 1.08%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.ILL.summary \u2192 condhist_catch_mean/std"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 baselines",
+      "quantity": "global_static_catch",
+      "value": "84.23 \u00b1 2.64%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.ILL.summary \u2192 global_static_catch_mean/std"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 baselines",
+      "quantity": "GLOBAL-STATIC minus fixed static",
+      "value": "-0.36 pp",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.ILL.summary (difference of means)"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 baselines",
+      "quantity": "rule-B solve share s_B",
+      "value": "36.3 \u00b1 3.4%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.ILL.summary \u2192 s_B"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 guarantee (histgb)",
+      "quantity": "global_gate any_miss_share",
+      "value": "30.1 \u00b1 6.9%",
+      "source": "data/sts_n14_guarantee.json",
+      "key": "networks.ILL.histgb.per_split[].global_gate.any_miss_share"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 guarantee (histgb)",
+      "quantity": "global_gate speedup_B",
+      "value": "2.76 \u00b1 0.24",
+      "source": "data/sts_n14_guarantee.json",
+      "key": "networks.ILL.histgb.per_split[].global_gate.speedup_B"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 guarantee (histgb)",
+      "quantity": "base_level any_miss_share",
+      "value": "10.1 \u00b1 2.5%",
+      "source": "data/sts_n14_guarantee.json",
+      "key": "networks.ILL.histgb.per_split[].base_level.any_miss_share"
+    },
+    {
+      "group": "ILL (case_illinois200, trafo 63 excluded) \u2014 guarantee (histgb)",
+      "quantity": "base_level speedup_B",
+      "value": "2.12 \u00b1 0.15",
+      "source": "data/sts_n14_guarantee.json",
+      "key": "networks.ILL.histgb.per_split[].base_level.speedup_B"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out target",
+      "value": "0.972 \u00b1 0.017",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 target"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out escalation",
+      "value": "6.1 \u00b1 2.2%",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 escalation"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out flag_share",
+      "value": "15.1 \u00b1 0.4%",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 flag_share"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out missed",
+      "value": "0.74 \u00b1 0.35%",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out speedup_A",
+      "value": "18.49 \u00b1 6.76",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 speedup_A"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out speedup_B",
+      "value": "4.75 \u00b1 0.44",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 speedup_B"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out q_hat",
+      "value": "4.57 \u00b1 1.24 mV",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 q_hat"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out gate_catch",
+      "value": "99.26 \u00b1 0.35%",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 gate_catch"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out static_catch_B",
+      "value": "83.16 \u00b1 3.01%",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 static_catch_B"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 held-out",
+      "quantity": "histgb held-out missed per split",
+      "value": "0.90 / 0.39 / 0.26 / 1.16 / 0.97 % (4/5 \u2264 1%)",
+      "source": "data/sts_n13_gate_C30.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 dataset",
+      "quantity": "converged outage rows",
+      "value": "61,500",
+      "source": "data/sts_n13_C30.parquet",
+      "key": "outaged_type != none & converged"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 dataset",
+      "quantity": "violation rate",
+      "value": "15.38%",
+      "source": "data/sts_n13_C30.parquet",
+      "key": "mean(min_vm < 0.94)"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 dataset",
+      "quantity": "boundary mass [0.94, 0.945)",
+      "value": "7.10%",
+      "source": "data/sts_n13_C30.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 dataset",
+      "quantity": "min_vm range",
+      "value": "0.8618 to 0.9866 pu",
+      "source": "data/sts_n13_C30.parquet",
+      "key": "min, max of min_vm"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 dataset",
+      "quantity": "rows in [0.940, 0.941)",
+      "value": "1.15%",
+      "source": "data/sts_n13_C30.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 dataset",
+      "quantity": "rows within 1e-3 pu of the limit",
+      "value": "2.06%",
+      "source": "data/sts_n13_C30.parquet",
+      "key": "share with abs(min_vm - 0.94) <= 1e-3 (label set within switch-back tolerance)"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 dataset",
+      "quantity": "over-voltage share (max_vm > 1.05)",
+      "value": "0.00%",
+      "source": "data/sts_n13_C30.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 dataset",
+      "quantity": "critical-bus top 5 (argmin_bus share of rows)",
+      "value": "index 18 (IEEE 19) 28.39%, index 7 (IEEE 8) 25.95%, index 29 (IEEE 30) 20.76%, index 6 (IEEE 7) 5.68%, index 17 (IEEE 18) 3.59%",
+      "source": "data/sts_n13_C30.parquet",
+      "key": "feasibility/freeze_poster_numbers.py definition; 0-based index, IEEE name = index + 1 on case118"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 baselines",
+      "quantity": "gate_catch",
+      "value": "99.26 \u00b1 0.35%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.C30.summary \u2192 gate_catch_mean/std"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 baselines",
+      "quantity": "static_fixed_catch",
+      "value": "83.16 \u00b1 3.01%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.C30.summary \u2192 static_fixed_catch_mean/std"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 baselines",
+      "quantity": "condhist_catch",
+      "value": "89.81 \u00b1 2.89%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.C30.summary \u2192 condhist_catch_mean/std"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 baselines",
+      "quantity": "global_static_catch",
+      "value": "83.56 \u00b1 3.44%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.C30.summary \u2192 global_static_catch_mean/std"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 baselines",
+      "quantity": "GLOBAL-STATIC minus fixed static",
+      "value": "+0.39 pp",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.C30.summary (difference of means)"
+    },
+    {
+      "group": "C30 (case30_thermal) \u2014 baselines",
+      "quantity": "rule-B solve share s_B",
+      "value": "21.2 \u00b1 2.0%",
+      "source": "data/sts_n13_condhist.json",
+      "key": "networks.C30.summary \u2192 s_B"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out target",
+      "value": "0.824 \u00b1 0.016",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 target"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out escalation",
+      "value": "7.4 \u00b1 0.8%",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 escalation"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out flag_share",
+      "value": "56.1 \u00b1 1.3%",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 flag_share"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out missed",
+      "value": "1.15 \u00b1 0.27%",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out speedup_A",
+      "value": "13.47 \u00b1 1.50",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 speedup_A"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out speedup_B",
+      "value": "1.57 \u00b1 0.03",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 speedup_B"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out q_hat",
+      "value": "1.39 \u00b1 0.10 mV",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 q_hat"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out gate_catch",
+      "value": "98.85 \u00b1 0.27%",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 gate_catch"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out static_catch_B",
+      "value": "89.65 \u00b1 1.01%",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 static_catch_B"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 held-out",
+      "quantity": "histgb held-out missed per split",
+      "value": "1.65 / 0.85 / 1.12 / 1.10 / 1.02 % (1/5 \u2264 1%)",
+      "source": "data/sts_n14_gate_C24.json",
+      "key": "points[family=histgb, point=held_out], 5 splits \u2192 missed"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 dataset",
+      "quantity": "converged outage rows",
+      "value": "53,498",
+      "source": "data/sts_n13_C24.parquet",
+      "key": "outaged_type != none & converged"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 dataset",
+      "quantity": "violation rate",
+      "value": "54.24%",
+      "source": "data/sts_n13_C24.parquet",
+      "key": "mean(min_vm < 0.94)"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 dataset",
+      "quantity": "boundary mass [0.94, 0.945)",
+      "value": "24.09%",
+      "source": "data/sts_n13_C24.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 dataset",
+      "quantity": "min_vm range",
+      "value": "0.8188 to 0.9766 pu",
+      "source": "data/sts_n13_C24.parquet",
+      "key": "min, max of min_vm"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 dataset",
+      "quantity": "rows in [0.940, 0.941)",
+      "value": "5.37%",
+      "source": "data/sts_n13_C24.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 dataset",
+      "quantity": "rows within 1e-3 pu of the limit",
+      "value": "9.54%",
+      "source": "data/sts_n13_C24.parquet",
+      "key": "share with abs(min_vm - 0.94) <= 1e-3 (label set within switch-back tolerance)"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 dataset",
+      "quantity": "over-voltage share (max_vm > 1.05)",
+      "value": "68.42%",
+      "source": "data/sts_n13_C24.parquet",
+      "key": "share of rows"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 dataset",
+      "quantity": "critical-bus top 5 (argmin_bus share of rows)",
+      "value": "index 2 (IEEE 3) 87.93%, index 3 (IEEE 4) 6.14%, index 7 (IEEE 8) 4.86%, index 8 (IEEE 9) 0.86%, index 4 (IEEE 5) 0.21%",
+      "source": "data/sts_n13_C24.parquet",
+      "key": "feasibility/freeze_poster_numbers.py definition; 0-based index, IEEE name = index + 1 on case118"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 baselines",
+      "quantity": "gate_catch",
+      "value": "98.85 \u00b1 0.27%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.C24.summary \u2192 gate_catch_mean/std"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 baselines",
+      "quantity": "static_fixed_catch",
+      "value": "89.65 \u00b1 1.01%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.C24.summary \u2192 static_fixed_catch_mean/std"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 baselines",
+      "quantity": "condhist_catch",
+      "value": "97.18 \u00b1 0.41%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.C24.summary \u2192 condhist_catch_mean/std"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 baselines",
+      "quantity": "global_static_catch",
+      "value": "90.09 \u00b1 1.05%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.C24.summary \u2192 global_static_catch_mean/std"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 baselines",
+      "quantity": "GLOBAL-STATIC minus fixed static",
+      "value": "+0.44 pp",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.C24.summary (difference of means)"
+    },
+    {
+      "group": "C24 (case24_ieee_rts, N14 amendment) \u2014 baselines",
+      "quantity": "rule-B solve share s_B",
+      "value": "63.6 \u00b1 1.3%",
+      "source": "data/sts_n14_condhist.json",
+      "key": "networks.C24.summary \u2192 s_B"
+    },
+    {
+      "group": "Network size",
+      "quantity": "case118",
+      "value": "118 buses, 186 branches",
+      "source": "pandapower.networks.case118()",
+      "key": "len(bus), len(line) + len(trafo)"
+    },
+    {
+      "group": "Network size",
+      "quantity": "ILL",
+      "value": "200 buses, 245 branches",
+      "source": "pandapower.networks.case_illinois200()",
+      "key": "len(bus), len(line) + len(trafo)"
+    },
+    {
+      "group": "Network size",
+      "quantity": "C30",
+      "value": "30 buses, 41 branches",
+      "source": "pandapower.networks.case30()",
+      "key": "len(bus), len(line) + len(trafo)"
+    },
+    {
+      "group": "Network size",
+      "quantity": "C24",
+      "value": "24 buses, 38 branches",
+      "source": "pandapower.networks.case24_ieee_rts()",
+      "key": "len(bus), len(line) + len(trafo)"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "V1 SAFER-94 (D94)",
+      "value": "YES (4/5)",
+      "source": "data/sts_n13_verdicts.json",
+      "key": "verdicts.V1_SAFER_94"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "V2 SAFETY-CHANGED (D94 rebuilt vs old)",
+      "value": "NO: 1.14 \u00b1 0.96% vs 1.51 \u00b1 1.35%",
+      "source": "data/sts_n13_verdicts.json",
+      "key": "verdicts.V2_SAFETY_CHANGED"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "BEATS_STATIC D94",
+      "value": "NO: tie (within the larger std); gap -0.29 pp vs larger std 0.96",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.BEATS_STATIC.D94"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "GATE_BEATS_CONDHIST D94",
+      "value": "NO: tie (within the larger std); gap -0.78 pp vs larger std 0.96",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.GATE_BEATS_CONDHIST.per_network.D94"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "BEATS_STATIC ILL",
+      "value": "YES; gap +14.43 pp vs larger std 2.63",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.BEATS_STATIC.ILL"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "GATE_BEATS_CONDHIST ILL",
+      "value": "NO: tie (within the larger std); gap +0.81 pp vs larger std 1.08",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.GATE_BEATS_CONDHIST.per_network.ILL"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "BEATS_STATIC C30",
+      "value": "YES; gap +16.10 pp vs larger std 3.01",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.BEATS_STATIC.C30"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "GATE_BEATS_CONDHIST C30",
+      "value": "YES; gap +9.45 pp vs larger std 2.89",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.GATE_BEATS_CONDHIST.per_network.C30"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "BEATS_STATIC C24",
+      "value": "YES; gap +9.20 pp vs larger std 1.01",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.BEATS_STATIC.C24"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "GATE_BEATS_CONDHIST C24",
+      "value": "YES; gap +1.67 pp vs larger std 0.41",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.GATE_BEATS_CONDHIST.per_network.C24"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "SAFER-IL",
+      "value": "NO (2/5)",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.primary.SAFER_IL"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "ILL outcome wording (fixed in advance)",
+      "value": "on Illinois the gate does not beat COND-HIST once trafo 63 is excluded",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.ILL_outcome"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "COVERAGE-HOLDS-N2 (RQ2)",
+      "value": "NO: N-2 coverage 0.8394 \u00b1 0.0126 vs threshold 0.8861",
+      "source": "data/sts_n13_verdicts.json",
+      "key": "verdicts.COVERAGE_HOLDS_N2"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "MONDRIAN-BEATS-STATIC",
+      "value": "YES: gap 0.78 pp vs std 0.76",
+      "source": "data/sts_n13_verdicts.json",
+      "key": "verdicts.MONDRIAN_BEATS_STATIC"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "FLOOR_DOSE_RESPONSE (replication)",
+      "value": "YES: clause 1 True, clause 2 True; BM 56.32 / 54.75 / 33.36 / 18.97",
+      "source": "data/sts_n13_verdicts.json",
+      "key": "verdicts.FLOOR_DOSE_RESPONSE"
+    },
+    {
+      "group": "Verdicts (current)",
+      "quantity": "V3 MISMATCH-DRIVES-DRIFT-GAP (arm F, diagnostic)",
+      "value": "NO: >1e-3 drift bin missed 4.87 \u00b1 7.32% (pinned inputs) vs 1.58 \u00b1 0.53% (corrected); split 4 19.49 \u2192 2.13%",
+      "source": "data/sts_n13_armF.json",
+      "key": "V3"
+    },
+    {
+      "group": "Verdicts (current) \u2014 tier B (rebuilt D95a; all ran except the D95c gate)",
+      "quantity": "SAFER (N5 form, D95a)",
+      "value": "NO (2/5)",
+      "source": "data/sts_n13_verdicts_tierB.json",
+      "key": "verdicts.SAFER_N5"
+    },
+    {
+      "group": "Verdicts (current) \u2014 tier B (rebuilt D95a; all ran except the D95c gate)",
+      "quantity": "FASTER (N5 form)",
+      "value": "NO: clause 1 True (speedup B 0.95 1.97 \u00b1 0.28 vs 0.94 1.44 \u00b1 0.23); clause 2 False (gate 99.06 vs static 98.88, diff 0.18 < 0.39)",
+      "source": "data/sts_n13_verdicts_tierB.json",
+      "key": "verdicts.FASTER_N5"
+    },
+    {
+      "group": "Verdicts (current) \u2014 tier B (rebuilt D95a; all ran except the D95c gate)",
+      "quantity": "SHIFT-ADVANTAGE (D94 \u2192 D95a)",
+      "value": "NO: gate 98.64 \u00b1 0.66 vs static 98.64 \u00b1 0.61",
+      "source": "data/sts_n13_verdicts_tierB.json",
+      "key": "verdicts.SHIFT_ADVANTAGE"
+    },
+    {
+      "group": "Verdicts (current) \u2014 tier B (rebuilt D95a; all ran except the D95c gate)",
+      "quantity": "D95a gate, histgb held-out",
+      "value": "escalation 37.4 \u00b1 8.7%, missed 0.94 \u00b1 0.34%",
+      "source": "data/sts_n13_gate095bc.json",
+      "key": "builds.D95a.histgb_held_out"
+    },
+    {
+      "group": "Verdicts (current) \u2014 tier B (rebuilt D95a; all ran except the D95c gate)",
+      "quantity": "D95b gate, histgb held-out",
+      "value": "escalation 31.1 \u00b1 9.4%, missed 1.32 \u00b1 0.66%",
+      "source": "data/sts_n13_gate095bc.json",
+      "key": "builds.D95b.histgb_held_out"
+    },
+    {
+      "group": "Verdicts (current) \u2014 tier B (rebuilt D95a; all ran except the D95c gate)",
+      "quantity": "D95c gate",
+      "value": "not run on rebuilt data (crash); report from the old build, labeled 'old build, uncorrected solver'",
+      "source": "data/sts_n11_gate_095bc.json",
+      "key": "N14 rule \u00a7C"
+    },
+    {
+      "group": "Verdicts (current) \u2014 islanding sensitivity (beside primary, never replaces it)",
+      "quantity": "BEATS_STATIC D94",
+      "value": "NO; gap -0.27 pp vs larger std 1.03",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.sensitivity.BEATS_STATIC.D94"
+    },
+    {
+      "group": "Verdicts (current) \u2014 islanding sensitivity (beside primary, never replaces it)",
+      "quantity": "GATE_BEATS_CONDHIST D94",
+      "value": "NO; gap -0.77 pp vs larger std 1.03",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.sensitivity.GATE_BEATS_CONDHIST.D94"
+    },
+    {
+      "group": "Verdicts (current) \u2014 islanding sensitivity (beside primary, never replaces it)",
+      "quantity": "BEATS_STATIC ILL",
+      "value": "YES; gap +15.12 pp vs larger std 2.19",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.sensitivity.BEATS_STATIC.ILL"
+    },
+    {
+      "group": "Verdicts (current) \u2014 islanding sensitivity (beside primary, never replaces it)",
+      "quantity": "GATE_BEATS_CONDHIST ILL",
+      "value": "YES; gap +1.21 pp vs larger std 0.86",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.sensitivity.GATE_BEATS_CONDHIST.ILL"
+    },
+    {
+      "group": "Verdicts (current) \u2014 islanding sensitivity (beside primary, never replaces it)",
+      "quantity": "BEATS_STATIC C30",
+      "value": "YES; gap +16.28 pp vs larger std 1.81",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.sensitivity.BEATS_STATIC.C30"
+    },
+    {
+      "group": "Verdicts (current) \u2014 islanding sensitivity (beside primary, never replaces it)",
+      "quantity": "GATE_BEATS_CONDHIST C30",
+      "value": "YES; gap +10.52 pp vs larger std 2.67",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.sensitivity.GATE_BEATS_CONDHIST.C30"
+    },
+    {
+      "group": "Verdicts (current) \u2014 islanding sensitivity (beside primary, never replaces it)",
+      "quantity": "BEATS_STATIC C24",
+      "value": "YES; gap +8.91 pp vs larger std 1.50",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.sensitivity.BEATS_STATIC.C24"
+    },
+    {
+      "group": "Verdicts (current) \u2014 islanding sensitivity (beside primary, never replaces it)",
+      "quantity": "GATE_BEATS_CONDHIST C24",
+      "value": "YES; gap +1.64 pp vs larger std 0.58",
+      "source": "data/sts_n14_verdicts.json",
+      "key": "verdicts.sensitivity.GATE_BEATS_CONDHIST.C24"
+    }
+  ],
+  "n_rows": 264,
+  "wall_s": 0.5133190155029297
+}
