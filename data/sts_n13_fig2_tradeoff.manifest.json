@@ -1,0 +1,73 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_fig2_tradeoff.png",
+    "sts_n13_fig2_tradeoff.json"
+  ],
+  "generating_script": "scratch/n13_paper_figs.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_paper_figs.py"
+  ],
+  "script_git_blob_sha": "d59ad23c2cf1ac322513ef7ff5961cc679279463",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "a18b931ed1267f7566c06dc0adaa95be209bb953",
+  "inputs": [
+    {
+      "path": "data/sts_n13_gate_D94.json",
+      "sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e"
+    },
+    {
+      "path": "scripts/sts_paper_corrected.py",
+      "sha256": "d3df21a6d15b13a4aad9bd4514ac5ad3d0f76021e3cf8a80fd944339b8a7d837"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_fig2_tradeoff.png",
+      "sha256": "21c5787021911fed5bddf2634a42dff95f28ec93d9ee5d46c75d3fcf6d1b5b83",
+      "md5": "36d419b148766de5680a8735f0d65de5",
+      "bytes": 147527,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n13_fig2_tradeoff.json",
+      "sha256": "8fae7b748b27cd6ada4be8b2800ebbd799d32e7e6fd4c3736d75f9ef8bb26066",
+      "md5": "6ad60deaab7a523d44fdbf4e6861bf66",
+      "bytes": 13009,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-24T02:52:06Z",
+  "parameters": {
+    "figure": "Fig. 2, rebuilt case118 (N13)",
+    "plotting_function": "scripts/sts_paper_corrected.py fig2()",
+    "families": [
+      "ridge",
+      "histgb"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "grey_dotted_line": "1% missed",
+    "figsize_in": [
+      3.5,
+      2.7
+    ],
+    "dpi": 300
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

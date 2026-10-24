@@ -1,0 +1,68 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_fig4_boundary.png",
+    "sts_n13_fig4_boundary.json"
+  ],
+  "generating_script": "scratch/n13_paper_figs.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_paper_figs.py"
+  ],
+  "script_git_blob_sha": "d59ad23c2cf1ac322513ef7ff5961cc679279463",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "a18b931ed1267f7566c06dc0adaa95be209bb953",
+  "inputs": [
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_fig4_boundary.png",
+      "sha256": "c77c32f0378c3641db5d6210223f5c798975c950b70d9328e7029ce3dfecceb2",
+      "md5": "7e5ee3084404af794cc68716f291ad2b",
+      "bytes": 45497,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n13_fig4_boundary.json",
+      "sha256": "7d962987b0cb5c187c57bbe5f8cc3411f3631e02baa58f5fd698eda35b1b36cc",
+      "md5": "9a90f0d3e471a381190a91121e38adcc",
+      "bytes": 354,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-24T02:52:06Z",
+  "parameters": {
+    "figure": "Fig. 4, rebuilt case118 (N13)",
+    "rows": "converged outage rows (outaged_type != none)",
+    "hist_range": [
+      0.715,
+      0.965
+    ],
+    "bin_width_pu": 0.001,
+    "view": [
+      0.87,
+      0.965
+    ],
+    "shaded": "[0.94, 0.945)",
+    "style": "scripts/sts_paper_corrected.py fig4()",
+    "figsize_in": [
+      3.5,
+      2.6
+    ],
+    "dpi": 300
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}
