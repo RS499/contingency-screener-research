@@ -1,0 +1,49 @@
+{
+  "artifacts": [
+    "data/sts_current_numbers.json"
+  ],
+  "generating_script": "scratch/current_numbers.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/current_numbers.py"
+  ],
+  "script_sha256": "c3f2e1e17b0f4ad8fa339b8bc0e2f2b8d31cf9d7eb153aa61d2dc6ff0bb543c1",
+  "inputs": {
+    "data/sts_n11_gate_095bc.json": "8749ced13efe0e3ada5dcbf7cc321259f24f4b979b5191327b71fd889182056d",
+    "data/sts_n13_C24.parquet": "4e61f47a0f64926e4e0eb7cdde5fdcca025dcdbfc8ad58a0c41e981261483f70",
+    "data/sts_n13_C30.parquet": "9f18a31eebd990b1b7ccfb0ae3568cf02639e63e493a2efe025fae89a10ae044",
+    "data/sts_n13_D94.parquet": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5",
+    "data/sts_n13_ILL.parquet": "1e42d3dee36af2cde7cd49a0551b8df734172572f071f8c51f296dfd0e35cb44",
+    "data/sts_n13_armF.json": "8f1f617b130375f5ed01f3af1fe6bfe8df1c6363377eeb602e265d28e88d56dd",
+    "data/sts_n13_budget.json": "1cd36a3d3091f46f587f8c101c2385701108c7bb76b64bc972f38a063cd6b8db",
+    "data/sts_n13_compare.json": "9acd296ecdc5219b56ea673593efb62b6e191c1f0bd581775fbd22e042f8bf08",
+    "data/sts_n13_condhist.json": "8af7540ec8847a67157b444aae75b6cefd25aa7f27a6a7b075ec1b33d13b22d7",
+    "data/sts_n13_floor.json": "0b778352838556b52907bf325f27221777a83681b6d20d1f8d7badc98e745a05",
+    "data/sts_n13_floorrep.json": "efaac7524d9436d7e4993748c84de7ac10ab2a8846a6c1dc3ddd7a4ae50ba5b2",
+    "data/sts_n13_gate095bc.json": "02f67a858ae9274ac9383697dc3640cf1b6cdf304a7deabbde802b41b624d4a3",
+    "data/sts_n13_gate_C30.json": "ddee380ed8a0231d7e215141f7e484846c59d6291857baffdc652f7a1690aa93",
+    "data/sts_n13_gate_D94.json": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e",
+    "data/sts_n13_guarantee.json": "e3025c40e689a5bfe2a95534cf19e80bd943c3d85a2c9a0a1bf274f6a5cac68d",
+    "data/sts_n13_mondrian.json": "4a5834faf8df54493bc8b773de4fde8a3c44fa7ee427544e59415a552cf44b9b",
+    "data/sts_n13_n2.json": "1d458d7dd57840affdcc2c2da8d6d56d27842aff23c31231d84cd83f360ca30b",
+    "data/sts_n13_verdicts.json": "0092564a18f0246acda8a426e959ca808bef9be33c5a6ed0914034cbb63227d5",
+    "data/sts_n13_verdicts_tierB.json": "95695355a4f0df610278d5293c06963fa82a040fa76d450b1e1fa03af4b6aa66",
+    "data/sts_n14_condhist.json": "20e457f7e0dff4b6ae3fe2dee300ec45d99577325178dd7362499b7ce08ecf58",
+    "data/sts_n14_gate_C24.json": "e0dc60ddf6a56e8a8f97fd202a34e64da465e5dfe2d74dec67b72d9730d0a7e8",
+    "data/sts_n14_gate_ILL.json": "6edb07a9a8e313582069a55f9ba1f8a394e8710079f7426242e0495c2d345475",
+    "data/sts_n14_guarantee.json": "0a3568335e86e2ce13d087fff2edb1c62e33e48f22e6814b3f700374ffa95901",
+    "data/sts_n14_verdicts.json": "5b5e6fe62a97682596695327e86335cbeff5c356c66fcf3b836b933d7912df0d"
+  },
+  "model_hyperparameters": "none (no model fit; reads stored results)",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "numba": "0.66.0"
+  },
+  "python": "3.13.9",
+  "output_sha256": "74cf3ff9d8649879a5090f7a12f3518eb909566c6ca1679aedad0d60945a81dc",
+  "generated_utc": "2026-10-06T23:55:46Z"
+}

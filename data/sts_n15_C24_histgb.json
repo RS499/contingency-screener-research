@@ -1,0 +1,362 @@
+{
+  "status": "POST HOC, exploratory; reproduction checks passed for every seed",
+  "network": "C24",
+  "family": "histgb",
+  "gate_file": "data/sts_n14_gate_C24.json",
+  "data_file": "data/sts_n13_C24.parquet",
+  "checks": [
+    {
+      "seed": 0,
+      "tag": "rand11",
+      "target": 0.8,
+      "q_hat": 0.0012153726944271748,
+      "q_hat_ref": 0.0012153726944271748,
+      "missed": 0.01654475792406827,
+      "missed_ref": 0.01654475792406827,
+      "escalation": 0.06425211665098778,
+      "escalation_ref": 0.06425211665098778,
+      "n_test": 10630,
+      "n_test_ref": 10630,
+      "match": true
+    },
+    {
+      "seed": 1,
+      "tag": "rand00",
+      "target": 0.83,
+      "q_hat": 0.0013942211939997895,
+      "q_hat_ref": 0.0013942211939997895,
+      "missed": 0.008484445183829646,
+      "missed_ref": 0.008484445183829646,
+      "escalation": 0.06679121905651565,
+      "escalation_ref": 0.06679121905651565,
+      "n_test": 10705,
+      "n_test_ref": 10705,
+      "match": true
+    },
+    {
+      "seed": 2,
+      "tag": "committed",
+      "target": 0.81,
+      "q_hat": 0.0014114015972060967,
+      "q_hat_ref": 0.0014114015972060967,
+      "missed": 0.011195315191181537,
+      "missed_ref": 0.011195315191181537,
+      "escalation": 0.07947329099738513,
+      "escalation_ref": 0.07947329099738513,
+      "n_test": 10708,
+      "n_test_ref": 10708,
+      "match": true
+    },
+    {
+      "seed": 3,
+      "tag": "rand15",
+      "target": 0.84,
+      "q_hat": 0.001423319012634483,
+      "q_hat_ref": 0.001423319012634483,
+      "missed": 0.010956521739130434,
+      "missed_ref": 0.010956521739130434,
+      "escalation": 0.07529499906349503,
+      "escalation_ref": 0.07529499906349503,
+      "n_test": 10678,
+      "n_test_ref": 10678,
+      "match": true
+    },
+    {
+      "seed": 4,
+      "tag": "rand15",
+      "target": 0.84,
+      "q_hat": 0.0015202568618126744,
+      "q_hat_ref": 0.0015202568618126744,
+      "missed": 0.010207553589656346,
+      "missed_ref": 0.010207553589656346,
+      "escalation": 0.0864462040055892,
+      "escalation_ref": 0.0864462040055892,
+      "n_test": 10735,
+      "n_test_ref": 10735,
+      "match": true
+    }
+  ],
+  "miss_depth": {
+    "per_seed": [
+      {
+        "seed": 0,
+        "n_missed": 95,
+        "q_hat_mV": 1.2153726944271748,
+        "median_mV": 0.89514961252668,
+        "max_mV": 28.60084680849917,
+        "share_within_1mV": 0.5368421052631579,
+        "share_within_2mV": 0.6421052631578947,
+        "share_within_5mV": 0.8736842105263158,
+        "share_within_qhat": 0.5789473684210527
+      },
+      {
+        "seed": 1,
+        "n_missed": 51,
+        "q_hat_mV": 1.3942211939997895,
+        "median_mV": 1.5475946985956668,
+        "max_mV": 9.416079642338925,
+        "share_within_1mV": 0.4117647058823529,
+        "share_within_2mV": 0.5882352941176471,
+        "share_within_5mV": 0.9019607843137255,
+        "share_within_qhat": 0.49019607843137253
+      },
+      {
+        "seed": 2,
+        "n_missed": 65,
+        "q_hat_mV": 1.4114015972060967,
+        "median_mV": 1.6166267222254005,
+        "max_mV": 12.846537120856706,
+        "share_within_1mV": 0.36923076923076925,
+        "share_within_2mV": 0.5692307692307692,
+        "share_within_5mV": 0.7846153846153846,
+        "share_within_qhat": 0.47692307692307695
+      },
+      {
+        "seed": 3,
+        "n_missed": 63,
+        "q_hat_mV": 1.423319012634483,
+        "median_mV": 1.1790105881466229,
+        "max_mV": 9.255725803285152,
+        "share_within_1mV": 0.4603174603174603,
+        "share_within_2mV": 0.7142857142857143,
+        "share_within_5mV": 0.8888888888888888,
+        "share_within_qhat": 0.5555555555555556
+      },
+      {
+        "seed": 4,
+        "n_missed": 60,
+        "q_hat_mV": 1.5202568618126744,
+        "median_mV": 1.6707059705052263,
+        "max_mV": 18.687700304104048,
+        "share_within_1mV": 0.43333333333333335,
+        "share_within_2mV": 0.5666666666666667,
+        "share_within_5mV": 0.8333333333333334,
+        "share_within_qhat": 0.48333333333333334
+      }
+    ],
+    "pooled_n": 334,
+    "pooled_hist_mV": {
+      "edges": [
+        "0",
+        "0.5",
+        "1",
+        "2",
+        "3",
+        "5",
+        "10",
+        "20",
+        "50",
+        "inf"
+      ],
+      "counts": [
+        92,
+        59,
+        56,
+        37,
+        42,
+        42,
+        5,
+        1,
+        0
+      ]
+    },
+    "pooled_median_mV": 1.1966996715110922,
+    "pooled_max_mV": 28.60084680849917,
+    "pooled_share_within_1mV": 0.45209580838323354,
+    "pooled_share_within_2mV": 0.6197604790419161,
+    "pooled_share_within_5mV": 0.8562874251497006
+  },
+  "worst_split": {
+    "seed": 0,
+    "target": 0.8,
+    "q_hat_mV": 1.2153726944271748,
+    "missed": 0.01654475792406827,
+    "escalation": 0.06425211665098778,
+    "other_targets": [
+      0.83,
+      0.81,
+      0.84,
+      0.84
+    ],
+    "secondary_breakdown_note": "the target choice comes first; buses and outages are secondary",
+    "worst_buses": {
+      "n": 95,
+      "top": [
+        [
+          "2",
+          65,
+          0.6842
+        ],
+        [
+          "7",
+          18,
+          0.1895
+        ],
+        [
+          "3",
+          6,
+          0.0632
+        ],
+        [
+          "8",
+          3,
+          0.0316
+        ],
+        [
+          "4",
+          3,
+          0.0316
+        ]
+      ]
+    },
+    "worst_elements": {
+      "n": 95,
+      "top": [
+        [
+          "line:11",
+          9,
+          0.0947
+        ],
+        [
+          "line:18",
+          7,
+          0.0737
+        ],
+        [
+          "trafo:3",
+          6,
+          0.0632
+        ],
+        [
+          "line:13",
+          5,
+          0.0526
+        ],
+        [
+          "line:25",
+          4,
+          0.0421
+        ]
+      ]
+    },
+    "other_buses": {
+      "n": 239,
+      "top": [
+        [
+          "2",
+          159,
+          0.6653
+        ],
+        [
+          "7",
+          36,
+          0.1506
+        ],
+        [
+          "3",
+          30,
+          0.1255
+        ],
+        [
+          "8",
+          9,
+          0.0377
+        ],
+        [
+          "4",
+          5,
+          0.0209
+        ]
+      ]
+    },
+    "other_elements": {
+      "n": 239,
+      "top": [
+        [
+          "line:11",
+          19,
+          0.0795
+        ],
+        [
+          "line:24",
+          17,
+          0.0711
+        ],
+        [
+          "line:18",
+          16,
+          0.0669
+        ],
+        [
+          "line:6",
+          15,
+          0.0628
+        ],
+        [
+          "line:22",
+          15,
+          0.0628
+        ]
+      ]
+    },
+    "bus_note": "argmin_bus is the 0-based bus index; IEEE number = index + 1 on case118"
+  },
+  "escalation_quantities": [
+    {
+      "seed": 0,
+      "target": 0.8,
+      "q_hat_mV": 1.2153726944271748,
+      "measured_escalation": 0.06425211665098778,
+      "boundary_mass_fixed_5mV": 0.24120413922859832,
+      "labels_in_window_perfect_predictions": 0.06632173095014111,
+      "labels_plus_residuals_unconditional": 0.056156841590519854,
+      "labels_plus_residuals_binned": 0.0625877970750489,
+      "test_rows_using_fallback": 2176
+    },
+    {
+      "seed": 1,
+      "target": 0.83,
+      "q_hat_mV": 1.3942211939997895,
+      "measured_escalation": 0.06679121905651565,
+      "boundary_mass_fixed_5mV": 0.23998131714152265,
+      "labels_in_window_perfect_predictions": 0.08201774871555348,
+      "labels_plus_residuals_unconditional": 0.06863204090998824,
+      "labels_plus_residuals_binned": 0.06967106192089051,
+      "test_rows_using_fallback": 2144
+    },
+    {
+      "seed": 2,
+      "target": 0.81,
+      "q_hat_mV": 1.4114015972060967,
+      "measured_escalation": 0.07947329099738513,
+      "boundary_mass_fixed_5mV": 0.23524467687710124,
+      "labels_in_window_perfect_predictions": 0.07517743742995892,
+      "labels_plus_residuals_unconditional": 0.06515311215152138,
+      "labels_plus_residuals_binned": 0.07454179870672455,
+      "test_rows_using_fallback": 2494
+    },
+    {
+      "seed": 3,
+      "target": 0.84,
+      "q_hat_mV": 1.423319012634483,
+      "measured_escalation": 0.07529499906349503,
+      "boundary_mass_fixed_5mV": 0.2417119310732347,
+      "labels_in_window_perfect_predictions": 0.07473309608540925,
+      "labels_plus_residuals_unconditional": 0.06674930810859228,
+      "labels_plus_residuals_binned": 0.07009255215446182,
+      "test_rows_using_fallback": 2012
+    },
+    {
+      "seed": 4,
+      "target": 0.84,
+      "q_hat_mV": 1.5202568618126744,
+      "measured_escalation": 0.0864462040055892,
+      "boundary_mass_fixed_5mV": 0.2514205868653936,
+      "labels_in_window_perfect_predictions": 0.08439683278993945,
+      "labels_plus_residuals_unconditional": 0.07490764055813987,
+      "labels_plus_residuals_binned": 0.08323087874204102,
+      "test_rows_using_fallback": 2332
+    }
+  ],
+  "wall_s": 7.637540102005005
+}

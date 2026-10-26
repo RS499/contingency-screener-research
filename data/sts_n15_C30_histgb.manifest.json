@@ -1,0 +1,118 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n15_C30_histgb.json",
+    "sts_n15_preds_C30_histgb.parquet"
+  ],
+  "generating_script": "scratch/n15_posthoc_refit.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n15_posthoc_refit.py",
+    "C30",
+    "histgb"
+  ],
+  "script_git_blob_sha": "1058097f4daa4fcb4d00bbe1ed2597653119abf0",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "a18b931ed1267f7566c06dc0adaa95be209bb953",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C30.parquet",
+      "sha256": "9f18a31eebd990b1b7ccfb0ae3568cf02639e63e493a2efe025fae89a10ae044"
+    },
+    {
+      "path": "data/sts_n13_gate_C30.json",
+      "sha256": "ddee380ed8a0231d7e215141f7e484846c59d6291857baffdc652f7a1690aa93"
+    },
+    {
+      "path": "scripts/tune_surrogates.py",
+      "sha256": "9395044201a93337d20c3f208cb095a39d568be669b4d7f992f922b44cf0cc9e"
+    },
+    {
+      "path": "feasibility/gate_eval.py",
+      "sha256": "5f854d397f86962bf1f4b69f9fbb55d77656a17aa37334a83b1c93a04d3ae83c"
+    },
+    {
+      "path": "feasibility/make_splits.py",
+      "sha256": "00c0168639765bd7db17e5caac0c50a0dd93a62c5ccef758aa502337b3ec67b1"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n15_C30_histgb.json",
+      "sha256": "48a76fe3fbeecc63bd869e03597947c506b89a73c1df0ca9703492c7553930ad",
+      "md5": "af10dbfe3043b20df9ef3b7f36adfc31",
+      "bytes": 8856,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n15_preds_C30_histgb.parquet",
+      "sha256": "b45429e05d48dcc833d12cb8efd33429ed7089bab43c82980495686e26c5d1ea",
+      "md5": "f7e9f3d7e290520fb625bec4a0306857",
+      "bytes": 2434428,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-21T21:49:19Z",
+  "parameters": {
+    "network": "C30",
+    "family": "histgb",
+    "gate_file": "data/sts_n13_gate_C30.json",
+    "limit": 0.94,
+    "depth_bins_mV": [
+      "0",
+      "0.5",
+      "1",
+      "2",
+      "3",
+      "5",
+      "10",
+      "20",
+      "50",
+      "inf"
+    ],
+    "label_bins": [
+      0.92,
+      0.97,
+      0.001
+    ],
+    "min_bin_n": 200,
+    "status": "POST HOC, exploratory",
+    "model_hyperparameters": [
+      {
+        "seed": 0,
+        "tag": "rand15",
+        "target": 0.97
+      },
+      {
+        "seed": 1,
+        "tag": "rand11",
+        "target": 0.98
+      },
+      {
+        "seed": 2,
+        "tag": "rand15",
+        "target": 0.99
+      },
+      {
+        "seed": 3,
+        "tag": "rand00",
+        "target": 0.94
+      },
+      {
+        "seed": 4,
+        "tag": "rand15",
+        "target": 0.98
+      }
+    ]
+  },
+  "no_new_solves": "No AC solve. Model fits: M2 refits per seed (no search), reproduced against the gate file."
+}

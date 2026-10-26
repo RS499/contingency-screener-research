@@ -1,0 +1,118 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n15_C24_histgb.json",
+    "sts_n15_preds_C24_histgb.parquet"
+  ],
+  "generating_script": "scratch/n15_posthoc_refit.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n15_posthoc_refit.py",
+    "C24",
+    "histgb"
+  ],
+  "script_git_blob_sha": "1058097f4daa4fcb4d00bbe1ed2597653119abf0",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "a18b931ed1267f7566c06dc0adaa95be209bb953",
+  "inputs": [
+    {
+      "path": "data/sts_n13_C24.parquet",
+      "sha256": "4e61f47a0f64926e4e0eb7cdde5fdcca025dcdbfc8ad58a0c41e981261483f70"
+    },
+    {
+      "path": "data/sts_n14_gate_C24.json",
+      "sha256": "e0dc60ddf6a56e8a8f97fd202a34e64da465e5dfe2d74dec67b72d9730d0a7e8"
+    },
+    {
+      "path": "scripts/tune_surrogates.py",
+      "sha256": "9395044201a93337d20c3f208cb095a39d568be669b4d7f992f922b44cf0cc9e"
+    },
+    {
+      "path": "feasibility/gate_eval.py",
+      "sha256": "5f854d397f86962bf1f4b69f9fbb55d77656a17aa37334a83b1c93a04d3ae83c"
+    },
+    {
+      "path": "feasibility/make_splits.py",
+      "sha256": "00c0168639765bd7db17e5caac0c50a0dd93a62c5ccef758aa502337b3ec67b1"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n15_C24_histgb.json",
+      "sha256": "e5d899e4e4f6caa10889ded5025479cb75dc355fc027fd2c82b10875d3eb1478",
+      "md5": "a3dffe8f82d5656a78f61b0e0d6c0cd1",
+      "bytes": 8938,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n15_preds_C24_histgb.parquet",
+      "sha256": "0305007e678b62d0354ec683ca2a0d28846c31c223e57adf2f6a3e56732a8b52",
+      "md5": "92159a8d88225b596a68ee6b7b995f22",
+      "bytes": 2104134,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.9",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-21T21:49:27Z",
+  "parameters": {
+    "network": "C24",
+    "family": "histgb",
+    "gate_file": "data/sts_n14_gate_C24.json",
+    "limit": 0.94,
+    "depth_bins_mV": [
+      "0",
+      "0.5",
+      "1",
+      "2",
+      "3",
+      "5",
+      "10",
+      "20",
+      "50",
+      "inf"
+    ],
+    "label_bins": [
+      0.92,
+      0.97,
+      0.001
+    ],
+    "min_bin_n": 200,
+    "status": "POST HOC, exploratory",
+    "model_hyperparameters": [
+      {
+        "seed": 0,
+        "tag": "rand11",
+        "target": 0.8
+      },
+      {
+        "seed": 1,
+        "tag": "rand00",
+        "target": 0.83
+      },
+      {
+        "seed": 2,
+        "tag": "committed",
+        "target": 0.81
+      },
+      {
+        "seed": 3,
+        "tag": "rand15",
+        "target": 0.84
+      },
+      {
+        "seed": 4,
+        "tag": "rand15",
+        "target": 0.84
+      }
+    ]
+  },
+  "no_new_solves": "No AC solve. Model fits: M2 refits per seed (no search), reproduced against the gate file."
+}
