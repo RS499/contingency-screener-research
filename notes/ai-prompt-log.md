@@ -6696,3 +6696,81 @@ Claude wrote scratch/current_numbers.py, which reads every current number from t
 "is this paper fix plan updated to trhe current version"
 
 Claude checked the plan against git and the newest result files (read-only).
+
+## 2026-10-15 (a) — Which figures to use
+
+"wait which figures do i need to use for paper"
+
+Claude checked which figure files exist and what data each was made from (read-only).
+
+## 2026-10-15 (b) — Literature check: budget-matched no-ML baseline in three cited papers
+
+(pasted task: manoharan2026, alcantara2026, christianson2025; baselines, budget matching, history/ranking baselines, three Introduction characterizations; output notes/lit/baseline_comparison_check_2026-10-15.md; read-only, no paper text)
+
+Claude read the full texts in the repo and wrote the check file.
+
+## 2026-10-20 (a) — Why ridge and histgb?
+
+"wait why did i choose these two specific models?"
+
+Claude searched the repo's own records for the stated reason (read-only).
+
+## 2026-10-21 (a) — Review n15_posthoc_refit.py before running
+
+(pasted description of n15_posthoc_refit.py) "read this py file. dont do anything jsut yet. lmk your thoughts on it and if itll work or not"
+
+Claude read the script and checked its assumptions against the repo (read-only); nothing was run that fits or writes.
+
+## 2026-10-21 (a) — Review scripts/n15_posthoc_refit.py (read only)
+
+(pasted explanation of n15_posthoc_refit.py) "read this py file. dont do anything jsut yet. lmk your thoughts on it and if itll work or not"
+
+Claude read the script and checked it against tune_surrogates, gate_eval, n5_gate_eval, n10_gate_illinois, n13_gate and the gate JSONs. Nothing was run; no file was changed except this log.
+
+## 2026-10-21 (b) — Thoughts on the current paper
+
+"thoughts on the current paper? ignore syntax, as long as it goes over the necessary info and isn't wrong its fine"
+
+Claude read report/paper_current_STS.tex (read-only) and checked its claims and numbers against data/sts_current_numbers.json and the N13/N14 files.
+
+## 2026-10-21 (c) — Fix and run n15_posthoc_refit.py on D94
+
+(pasted reply: agree items 1-7; three named escalation quantities; use the existing manifest helpers; make fixes 1-5, run D94, report the match lines and miss depth)
+
+Claude moved the script to scratch/, applied fixes 1-5, and ran it on D94.
+
+## 2026-10-21 (d) — Confirm the [check] items in the section-by-section paper fix list
+
+(pasted list of remaining paper fixes with [check] items)
+
+Claude confirmed each [check] item read-only against the repo files and flagged numbers in the list that disagree with them. No paper text was written.
+
+## 2026-10-23 (a) — Fact-check: floor table, Illinois sensitivity, Figs 2 and 4, Results numbers, credit lines
+
+(pasted fact-check request, items 1-5; no edits to report/, no paper text)
+
+Claude checked each item read-only against the repo files.
+
+## 2026-10-23 (b) — Regenerate Fig. 2 and Fig. 4 from rebuilt data
+
+(pasted request: write scratch/n13_paper_figs.py; Fig. 2 via sts_paper_corrected.fig2() on data/sts_n13_gate_D94.json; Fig. 4 from data/sts_n13_D94.parquet; new files only, with manifests; run and report; no report/ edits)
+
+Claude wrote and ran scratch/n13_paper_figs.py.
+
+## 2026-10-25 — Read the current paper
+
+"read the current paper"
+
+Claude read report/paper_current_STS.tex read-only and reported its state against the earlier fact-check. No paper text was written.
+
+## 2026-10-25 (b) — Re-check the paper line by line
+
+"check it again. read every single line."
+
+Claude re-read report/paper_current_STS.tex in full, read-only, and checked claims against the repo files. No paper text was written.
+
+## 2026-10-25 (c) — Re-read the paper after author edits
+
+"reread it again. double check that ive updated it"
+
+Claude re-read report/paper_current_STS.tex read-only and checked which earlier findings the author's edits resolved. No paper text was written.
