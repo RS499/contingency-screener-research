@@ -6774,3 +6774,27 @@ Claude re-read report/paper_current_STS.tex in full, read-only, and checked clai
 "reread it again. double check that ive updated it"
 
 Claude re-read report/paper_current_STS.tex read-only and checked which earlier findings the author's edits resolved. No paper text was written.
+
+## 2026-10-25 (d) — Multi-angle review of the STS report (8 independent reviewers)
+
+(pasted request: launch 8 independent reviewers in parallel — STS judge, power-systems expert, statistics/conformal expert, numbers auditor, integrity/pre-registration auditor, rules-compliance checker, clarity reader, skeptic/red team — each reporting problems with evidence, a .tex search string and a severity; no rewritten sentences or replacement wording; no edits to report/; then verify every BLOCKER and MAJOR, drop what does not hold, and merge into one list ordered by severity, with each reviewer's verdict and the compiled page count)
+
+Claude ran the review with subagents, read-only on report/, and verified the BLOCKER/MAJOR findings against the repo files. No paper text was written.
+
+## 2026-10-25 (e) — Save the merged review as a Markdown file
+
+"put all of this in a md file"
+
+Claude wrote the merged review (findings, verification notes, reviewer verdicts, page count) to notes/sts-review-2026-10-25.md. No paper text was written; report/ was not touched.
+
+## 2026-10-25 (f) — Estimate Top 300 chances, setting the AI concerns aside
+
+"ignoring the ai concerns, what are my chance sfor t300"
+
+Claude gave a qualitative assessment based on the merged review. No paper text was written; no files other than this log were changed.
+
+## 2026-10-26 — List pre-registered verdicts not reported in the paper
+
+(pasted request: read-only; list every hashed verdict from scratch/n5..n14 decision-rule and result files not already reported in report/paper_current_STS.tex — name/experiment, plain-English line, pass rule as written, outcome with numbers, original vs rebuilt build, source — then total count and YES/NO split; flag anything unconfirmable)
+
+Claude compiled the list read-only from the decision-rule, result and verdict files. No paper text was written; report/ was not touched.
