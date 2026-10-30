@@ -1,0 +1,81 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_fig4_boundary_v2.png",
+    "sts_n13_fig4_boundary_v2.json"
+  ],
+  "generating_script": "scratch/n13_paper_figs.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_paper_figs.py",
+    "--v2"
+  ],
+  "script_git_blob_sha": "0d8ea4d7d99b36ba0422497c9c8e0c8bfc139ad8",
+  "script_tracked_in_git": true,
+  "repo_head_commit": "ea784b3ec96130232d9ddb4896e07d675ce40f6d",
+  "inputs": [
+    {
+      "path": "data/sts_n13_D94.parquet",
+      "sha256": "9cecd866157220c1cda1b1ae1a89c100015a03359497284edc94a4b8344feee5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_fig4_boundary_v2.png",
+      "sha256": "e149e4c1acefa240a59f886b765e6ccd8bfeb629340440909a59f7c2af70edb7",
+      "md5": "b7d2a2be59474d57f77f44239fdbf304",
+      "bytes": 45548,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n13_fig4_boundary_v2.json",
+      "sha256": "7d962987b0cb5c187c57bbe5f8cc3411f3631e02baa58f5fd698eda35b1b36cc",
+      "md5": "9a90f0d3e471a381190a91121e38adcc",
+      "bytes": 354,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-30T20:48:50Z",
+  "parameters": {
+    "figure": "Fig. 4, rebuilt case118 (N13)",
+    "rows": "converged outage rows (outaged_type != none)",
+    "hist_range": [
+      0.715,
+      0.965
+    ],
+    "bin_width_pu": 0.001,
+    "view": [
+      0.87,
+      0.965
+    ],
+    "shaded": "[0.94, 0.945)",
+    "style": "scripts/sts_paper_corrected.py fig4()",
+    "figsize_in": [
+      2.9250000000000003,
+      2.03
+    ],
+    "dpi": 300,
+    "layout": {
+      "figsize": [
+        2.9250000000000003,
+        2.03
+      ],
+      "fs_label": 9,
+      "fs_tick": 8,
+      "xlabel": "minimum bus voltage after a\ncontingency (per unit)",
+      "ylabel": "share of contingency\ncases (%)",
+      "bbox": null,
+      "pad": 0.3
+    }
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

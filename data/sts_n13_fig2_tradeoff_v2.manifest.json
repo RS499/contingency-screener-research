@@ -1,0 +1,88 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "sts_n13_fig2_tradeoff_v2.png",
+    "sts_n13_fig2_tradeoff_v2.json"
+  ],
+  "generating_script": "scratch/n13_paper_figs.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n13_paper_figs.py",
+    "--v2"
+  ],
+  "script_git_blob_sha": "0d8ea4d7d99b36ba0422497c9c8e0c8bfc139ad8",
+  "script_tracked_in_git": true,
+  "repo_head_commit": "ea784b3ec96130232d9ddb4896e07d675ce40f6d",
+  "inputs": [
+    {
+      "path": "data/sts_n13_gate_D94.json",
+      "sha256": "7c5678cc315d6c1bf43734b6a186b526aaa0bfdb19606640e3fd3a03ffa42c9e"
+    },
+    {
+      "path": "scripts/sts_paper_corrected.py",
+      "sha256": "b98be6b0750487a35411f1af7e816d41658a06033426c558769ee7f779d623f1"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/sts_n13_fig2_tradeoff_v2.png",
+      "sha256": "faec2a1eef490e13fc77d7bc63bde73585401e58ba1dfc05a4f6bf2b305cbf4a",
+      "md5": "a36e100a1df716b162034ee0e3e7d190",
+      "bytes": 115163,
+      "byte_reproducible": "not checked in this run"
+    },
+    {
+      "path": "data/sts_n13_fig2_tradeoff_v2.json",
+      "sha256": "8fae7b748b27cd6ada4be8b2800ebbd799d32e7e6fd4c3736d75f9ef8bb26066",
+      "md5": "6ad60deaab7a523d44fdbf4e6861bf66",
+      "bytes": 13009,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-30T20:48:50Z",
+  "parameters": {
+    "figure": "Fig. 2, rebuilt case118 (N13)",
+    "plotting_function": "scripts/sts_paper_corrected.py fig2()",
+    "families": [
+      "ridge",
+      "histgb"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "grey_dotted_line": "1% missed",
+    "figsize_in": [
+      2.9250000000000003,
+      2.42
+    ],
+    "dpi": 300,
+    "layout": {
+      "figsize": [
+        2.9250000000000003,
+        2.42
+      ],
+      "fs_label": 9,
+      "fs_tick": 8,
+      "fs_legend": 8,
+      "legend_above": true,
+      "right_label": "missed-violation\n(% of true violations)",
+      "bbox": null,
+      "pad": 0.3,
+      "tight_passes": 2
+    }
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run; every output is computed from the input files listed above."
+}

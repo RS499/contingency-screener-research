@@ -1,0 +1,11 @@
+{
+  "n_rows": 278945,
+  "boundary_mass_pct": 54.74627614762767,
+  "conditional_boundary_pct": 65.37356752383357,
+  "violation_rate_pct": 16.256251232321784,
+  "tallest_bin_left": 0.9400000000000002,
+  "tallest_bin_share_pct": 14.147233325565972,
+  "share_below_view_lo_pct": 0.42481492767391416,
+  "min": 0.7605024588330592,
+  "max": 0.9593808284919959
+}

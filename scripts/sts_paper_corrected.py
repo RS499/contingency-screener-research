@@ -50,6 +50,10 @@ COLORS = {"persistence": "#d1495b", "ridge": "#b8860b", "histgb": "#00798c"}
 C_STATIC = "#555555"
 C_ORACLE = "#999999"
 OPS_TARGETS = [0.90, 0.94, 0.95, 0.96, 0.97, 0.98]
+# Fig. 2 layout only, no data. These defaults draw sts_paper_fig2_tradeoff.png and sts_n13_fig2_tradeoff.png;
+# scratch/n13_paper_figs.py --v2 swaps in a print-width layout before calling fig2().
+FIG2_LAYOUT = dict(figsize=(3.5, 2.7), fs_label=9, fs_tick=7, fs_legend=6, legend_above=False,
+                   right_label="missed-violation (% of true violations)", bbox="tight", pad=1.08, tight_passes=1)
 
 
 def ms_(a):
@@ -93,7 +97,8 @@ def m2_configs():
 def fig2(g):
     sw = pd.DataFrame([p for p in g["points"] if p["point"] == "sweep"])
     sw["t"] = sw["target"].round(2)
-    fig, axL = plt.subplots(figsize=(3.5, 2.7))
+    lay = FIG2_LAYOUT
+    fig, axL = plt.subplots(figsize=lay["figsize"])
     axR = axL.twinx()
     vals = {}
     for m in MODELS:
@@ -112,24 +117,32 @@ def fig2(g):
                    for a, b, c, d, e in zip(t, esc, esc_sd, mis, mis_sd)]
     axR.axhline(1.0, color="grey", lw=0.9, ls=":")
     axL.set_xlim(0.70, 0.99)
-    axL.set_xlabel("target coverage", fontsize=9)
-    axL.set_ylabel("escalation (%)", fontsize=9)
-    axR.set_ylabel("missed-violation (% of true violations)", fontsize=9)
-    axL.tick_params(labelsize=7)
-    axR.tick_params(labelsize=7)
+    axL.set_xlabel("target coverage", fontsize=lay["fs_label"])
+    axL.set_ylabel("escalation (%)", fontsize=lay["fs_label"])
+    axR.set_ylabel(lay["right_label"], fontsize=lay["fs_label"])
+    axL.tick_params(labelsize=lay["fs_tick"])
+    axR.tick_params(labelsize=lay["fs_tick"])
     axL.grid(alpha=0.3)
     lL, nL = axL.get_legend_handles_labels()
     lR, nR = axR.get_legend_handles_labels()
-    axL.legend(lL + lR, nL + nR, fontsize=6, loc="upper left", ncol=2, framealpha=0.9)
-    fig.tight_layout()
+    if lay["legend_above"]:
+        # outside the axes, so the legend cannot cover a curve or a band
+        axL.legend(lL + lR, nL + nR, fontsize=lay["fs_legend"], loc="lower center", bbox_to_anchor=(0.5, 1.02),
+                   ncol=2, frameon=False)
+    else:
+        axL.legend(lL + lR, nL + nR, fontsize=lay["fs_legend"], loc="upper left", ncol=2, framealpha=0.9)
+    # a second pass re-measures the tick labels chosen after the first; on an exact-size canvas it keeps the
+    # right-hand axis label inside the figure
+    for i in range(lay["tight_passes"]):
+        fig.tight_layout(pad=lay["pad"])
     png = f"{OUT}/sts_paper_fig2_tradeoff.png"
-    fig.savefig(png, dpi=300, bbox_inches="tight")
+    fig.savefig(png, dpi=300, bbox_inches=lay["bbox"])
     plt.close(fig)
     js = png.replace(".png", ".json")
     json.dump(dict(source=N5_094 + " points[point=sweep]", std="population ddof=0 over 5 splits",
                    note="no operating-point markers: the old 0.94/0.97 markers were test-picked", models=vals),
               open(js, "w"), indent=2)
-    write_manifest(js, [png, js], [N5_094], dict(figure="Fig. 2 equivalent, corrected labels", figsize_in=[3.5, 2.7], dpi=300,
+    write_manifest(js, [png, js], [N5_094], dict(figure="Fig. 2 equivalent, corrected labels", figsize_in=list(lay["figsize"]), dpi=300,
                                                  grey_dotted_line="1% missed"))
     print("wrote", png)
 

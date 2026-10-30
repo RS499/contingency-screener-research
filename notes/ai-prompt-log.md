@@ -6798,3 +6798,27 @@ Claude gave a qualitative assessment based on the merged review. No paper text w
 (pasted request: read-only; list every hashed verdict from scratch/n5..n14 decision-rule and result files not already reported in report/paper_current_STS.tex — name/experiment, plain-English line, pass rule as written, outcome with numbers, original vs rebuilt build, source — then total count and YES/NO split; flag anything unconfirmable)
 
 Claude compiled the list read-only from the decision-rule, result and verdict files. No paper text was written; report/ was not touched.
+
+## 2026-10-28 — Final pre-submission review of the STS report (13 reviewers, 3 verifiers)
+
+(pasted request: read-only final review of report/paper_current_STS.tex before the Nov 5 deadline; no drafted report text — per issue a verbatim search string, what is wrong, why a judge cares, and the fact to convey in note form; Phase 1 line-by-line readers A1–A4 plus lens reviewers B1–B7 (STS rules, rigor, pre-registration, numbers audit, non-specialist, domain expert, contribution); Phase 2 an independent verifier given only search strings and claims, marking CONFIRMED/PLAUSIBLE/REJECTED; Phase 3 a ranked report in scratch/final_review_2026-10-27.md with MUST/SHOULD/OPTIONAL, known-open items, coverage proof and a compiled page count; mid-run the owner asked to download tectonic and to proceed without questions)
+
+Claude ran the review with 13 reviewer subagents and 3 verifier subagents, read-only on report/, installed Tectonic via Homebrew to compile the paper into the session scratchpad, and wrote the merged, verified findings to scratch/final_review_2026-10-27.md. No paper text was written; report/ was not touched.
+
+## 2026-10-29 — Read the final STS report before submission
+
+"read the new sts doc. im going to submit this one"
+
+Claude read report/paper_current_STS.tex (commit ea784b3) in full, read-only, diffed it against the version reviewed on 2026-10-28 (51b661d), checked the changed statements against the repo data files, and compiled it with Tectonic into the session scratchpad to check the page count. No paper text was written; report/ was not touched.
+
+## 2026-10-30 — Confirm two review items (M8 classical-screen labels, M4 N-0 filter test)
+
+(pasted request: two items in an earlier attachment were truncated; confirm M8 — which labels the 0.135 / 90.7% and 0.117 / 92.0% classical-screen pairs in data/sts_n11_classical.json come from — and M4 — that the N-0 acceptance-filter test was never re-run on rebuilt data)
+
+Claude checked both read-only against data/sts_n11_classical.json, data/sts_n13_classical.json, data/unconditioned_base.json, data/sts_dataset_facts_c.json, scratch/n13_decision_rule.md and scratch/n13_result.md. No paper text was written; report/ was not touched.
+
+## 2026-10-30 (b) — Regenerate the three report figures at print width
+
+(pasted request: regenerate Fig. 1 gate schematic, Fig. 2 trade-off and Fig. 3 boundary histogram so every text element prints at >= 8 pt; layout and font sizes only, no data change; figsize width = printed width (3.58 in, 2.93 in, 2.93 in); keep height near the current aspect; legend must not cover data; 300 dpi; new filenames only (v5 / _v2); measure the smallest printed text height; do not edit the .tex; record the script changes in notes/ai_usage_changelog.md; output a table of figure / file / size / smallest font and the list of script changes)
+
+Claude edited feasibility/gate_schematic.py, scripts/sts_paper_corrected.py and scratch/n13_paper_figs.py (layout options only; old outputs re-checked byte-identical), wrote data/gate_schematic_v5.png, data/sts_n13_fig2_tradeoff_v2.png and data/sts_n13_fig4_boundary_v2.png with manifests, measured them in a scratchpad harness, and compiled a scratch copy of the report to check pagination. No paper text was written; report/ was not touched.

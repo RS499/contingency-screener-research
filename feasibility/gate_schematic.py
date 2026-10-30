@@ -31,12 +31,16 @@ def read_qhat(path):
     raise ValueError("histgb q_hat at coverage 0.90 not found in " + path)
 
 
-def draw_case(ax, x, pred, band, color, role, note):
+def draw_case(ax, x, pred, band, color, role, note, mark_scale, label_below):
     low = pred - band
-    ax.plot([x, x], [low, pred], color=color, lw=4, solid_capstyle="butt", zorder=3)
-    ax.plot([x - 0.09, x + 0.09], [low, low], color=color, lw=2.5, zorder=3)
-    ax.plot([x], [pred], marker="o", color=color, markersize=8, markeredgecolor="white",
-            markeredgewidth=0.8, zorder=4)
+    ax.plot([x, x], [low, pred], color=color, lw=4 * mark_scale, solid_capstyle="butt", zorder=3)
+    ax.plot([x - 0.09, x + 0.09], [low, low], color=color, lw=2.5 * mark_scale, zorder=3)
+    ax.plot([x], [pred], marker="o", color=color, markersize=8 * mark_scale, markeredgecolor="white",
+            markeredgewidth=0.8 * mark_scale, zorder=4)
+    if label_below:
+        ax.text(x, low - 0.0006, role, ha="center", va="top", fontsize=FS_ANNOT + 1,
+                color=color, fontweight="bold")
+        return
     ax.text(x, pred + 0.0012, role, ha="center", va="bottom", fontsize=FS_ANNOT + 1,
             color=color, fontweight="bold")
     if note:
@@ -55,6 +59,12 @@ def main():
                     help="omit the explanatory sentences; the caption carries them (v4 uses this)")
     ap.add_argument("--no-title", action="store_true",
                     help="omit the axes title; the caption names the figure (v4 uses this)")
+    ap.add_argument("--width", type=float, default=8.6,
+                    help="figure width in inches (v5 uses 3.58, the printed width)")
+    ap.add_argument("--height", type=float, default=2.8, help="figure height in inches")
+    ap.add_argument("--narrow", action="store_true",
+                    help="print-width layout (v5 uses this): wraps the y label and the limit label, "
+                         "ends the x-axis at the limit line, and saves the exact canvas, not a tight crop")
     args = ap.parse_args()
     qhat = read_qhat(args.curve)
 
@@ -65,28 +75,49 @@ def main():
     out_path = (POSTER_OUT if args.poster and args.out == OUT else args.out)
     if args.poster:
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    figsize = (8.6, 2.8)
+    figsize = (args.width, args.height)
     bbox = "tight"
+    x_min = 0.3
+    strip_lo = 0.35
+    x_max = 6.4
+    y_label = "minimum bus voltage after a\ncontingency (per unit)"
+    limit_label = "under-voltage limit (0.94 pu)"
+    mark_scale = 1.0
+    flag_label_below = False
+    pad = 1.08
+    if args.narrow:
+        # the saved PNG is exactly figsize, so a font size in points is its printed size;
+        # markers shrink so their printed size stays close to the old figure printed at 42%,
+        # and the Flag label moves under its band so it does not cross the limit line
+        bbox = None
+        x_min = 0.05
+        strip_lo = 0.1
+        x_max = RULE_END + 0.1
+        y_label = "minimum bus\nvoltage after a\ncontingency\n(per unit)"
+        limit_label = "under-voltage\nlimit (0.94 pu)"
+        mark_scale = 0.55
+        flag_label_below = True
+        pad = 0.3
 
     fig, ax = plt.subplots(figsize=figsize)
     ax.set_ylim(0.930, 0.950)
-    ax.set_xlim(0.3, 6.4)
+    ax.set_xlim(x_min, x_max)
 
     # the strip and the limit line stop at RULE_END so that the right-hand
     # labels sit in clean space; a full-width axhline would strike through them
-    ax.fill_between([0.35, RULE_END], LIMIT, LIMIT + qhat, color=C_ESCALATE, alpha=0.14,
+    ax.fill_between([strip_lo, RULE_END], LIMIT, LIMIT + qhat, color=C_ESCALATE, alpha=0.14,
                     zorder=0)
-    ax.plot([0.35, RULE_END], [LIMIT, LIMIT], color="black", lw=1.5, zorder=2)
+    ax.plot([strip_lo, RULE_END], [LIMIT, LIMIT], color="black", lw=1.5, zorder=2)
 
     notes = ["certify safe,\nskip the solver", "flag violation,\nskip the solver",
              "band straddles the limit,\ncall the exact solver"]
     if args.no_prose:
         notes = ["", "", ""]
-    draw_case(ax, 1, LIMIT + qhat + 0.0045, qhat, C_CERTIFY, "Certify", notes[0])
-    draw_case(ax, 2, LIMIT - 0.0028, qhat, C_FLAG, "Flag", notes[1])
-    draw_case(ax, 3, LIMIT + qhat * 0.45, qhat, C_ESCALATE, "Escalate", notes[2])
+    draw_case(ax, 1, LIMIT + qhat + 0.0045, qhat, C_CERTIFY, "Certify", notes[0], mark_scale, False)
+    draw_case(ax, 2, LIMIT - 0.0028, qhat, C_FLAG, "Flag", notes[1], mark_scale, flag_label_below)
+    draw_case(ax, 3, LIMIT + qhat * 0.45, qhat, C_ESCALATE, "Escalate", notes[2], mark_scale, False)
 
-    ax.text(RULE_END + 0.15, LIMIT - 0.0004, "under-voltage limit (0.94 pu)", ha="left",
+    ax.text(RULE_END + 0.15, LIMIT - 0.0004, limit_label, ha="left",
             va="top", fontsize=FS_ANNOT)
     ax.text(RULE_END + 0.15, LIMIT + 0.0002, "escalation strip,\none band width", ha="left",
             va="bottom", fontsize=FS_ANNOT, color="#7a5c00")
@@ -97,7 +128,7 @@ def main():
                     fontsize=FS_ANNOT, va="top", ha="left",
                     arrowprops=dict(arrowstyle="->", color="0.4", lw=0.8))
 
-    ax.set_ylabel("minimum bus voltage after a\ncontingency (per unit)", fontsize=FS_LABEL)
+    ax.set_ylabel(y_label, fontsize=FS_LABEL)
     ax.set_yticks([0.93, 0.935, 0.94, 0.945, 0.95])
     ax.tick_params(axis="y", labelsize=FS_ANNOT)
     ax.set_xticks([])
@@ -107,7 +138,7 @@ def main():
     if not args.no_title:
         ax.set_title("The three-way gate", fontsize=FS_TITLE)
     ft.add_credit(fig)
-    fig.tight_layout()
+    fig.tight_layout(pad=pad)
     fig.savefig(out_path, dpi=300, bbox_inches=bbox)
     plt.close(fig)
     print(f"wrote {out_path}")
