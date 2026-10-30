@@ -6822,3 +6822,9 @@ Claude checked both read-only against data/sts_n11_classical.json, data/sts_n13_
 (pasted request: regenerate Fig. 1 gate schematic, Fig. 2 trade-off and Fig. 3 boundary histogram so every text element prints at >= 8 pt; layout and font sizes only, no data change; figsize width = printed width (3.58 in, 2.93 in, 2.93 in); keep height near the current aspect; legend must not cover data; 300 dpi; new filenames only (v5 / _v2); measure the smallest printed text height; do not edit the .tex; record the script changes in notes/ai_usage_changelog.md; output a table of figure / file / size / smallest font and the list of script changes)
 
 Claude edited feasibility/gate_schematic.py, scripts/sts_paper_corrected.py and scratch/n13_paper_figs.py (layout options only; old outputs re-checked byte-identical), wrote data/gate_schematic_v5.png, data/sts_n13_fig2_tradeoff_v2.png and data/sts_n13_fig4_boundary_v2.png with manifests, measured them in a scratchpad harness, and compiled a scratch copy of the report to check pagination. No paper text was written; report/ was not touched.
+
+## 2026-10-30 (c) — Fig. 1: wider canvas, fonts only 1–2 pt above v4
+
+"ok for the gate figure you could just make the figure wider to free up some extra space. i feel like you made the font too big. only incr font like 1-2 pt from the v4 version and ensure its wide"
+
+Claude replaced the `--narrow` option in feasibility/gate_schematic.py with `--report` (v4 layout and font sizes on a 6.4 in canvas, exact-size save, 3-line y label, Flag label under its band), wrote data/gate_schematic_v6.png with a manifest, re-checked v4 byte-identity, measured printed font sizes, and compiled a scratch copy of the report to check pagination. It briefly deleted the committed v5 files and restored them byte-identically from commit b437db8 with `git show`. No paper text was written; report/ was not touched.

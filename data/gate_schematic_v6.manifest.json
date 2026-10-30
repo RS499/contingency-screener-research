@@ -1,0 +1,81 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "gate_schematic_v6.png"
+  ],
+  "generating_script": "feasibility/gate_schematic.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "feasibility/gate_schematic.py",
+    "--font-bump",
+    "2",
+    "--curve",
+    "data/tradeoff_curve_v2.json",
+    "--no-prose",
+    "--no-title",
+    "--width",
+    "6.4",
+    "--height",
+    "2.15",
+    "--report",
+    "--out",
+    "data/gate_schematic_v6.png"
+  ],
+  "script_git_blob_sha": "73f3d5238933df72bbae6d37697a54e8c4e0d07e",
+  "script_tracked_in_git": true,
+  "repo_head_commit": "b437db80798e7475506e2c1a0ab113cf03cce564",
+  "inputs": [
+    {
+      "path": "data/tradeoff_curve_v2.json",
+      "sha256": "a40a079733ecdfcd70191b749571d73cb1a7c870595da635c848b2c68fad8dbd"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/gate_schematic_v6.png",
+      "sha256": "22f70a244d57bec980eafd1af3421945aac5207af9effeb8369bb4a8fa191719",
+      "md5": "47cd9af0f7745d6e8542ac0093d72c55",
+      "bytes": 86653,
+      "byte_reproducible": true,
+      "byte_reproducible_evidence": "md5 compared with an independent earlier run of the same script into /private/tmp/claude-501/-Users-tridibsaha-contingency-screener-research/bc53a242-d786-45da-a8a8-96754a502b52/scratchpad/figs/ref/gate_schematic_v6.png: 47cd9af0f7745d6e8542ac0093d72c55 vs 47cd9af0f7745d6e8542ac0093d72c55"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-30T21:31:21Z",
+  "parameters": {
+    "figure": "Fig. 1 gate schematic, report layout (v6)",
+    "figsize_in": [
+      6.4,
+      2.15
+    ],
+    "dpi": 300,
+    "printed_width_in": "0.55 x 6.5 in text width = 3.575",
+    "print_scale": "3.575 / 6.4 = 0.559 (v4: 0.422)",
+    "saved_canvas": "exact figsize (no tight crop)",
+    "font_sizes_pt_in_script": {
+      "ticks": 11,
+      "right_labels": 11,
+      "role_labels_bold": 12,
+      "y_label": 12
+    },
+    "font_sizes_pt_printed": {
+      "ticks": 6.14,
+      "right_labels": 6.14,
+      "role_labels_bold": 6.7,
+      "y_label": 6.7
+    },
+    "q_hat_pu": 0.002290702766310826,
+    "q_hat_source": "data/tradeoff_curve_v2.json (histgb, coverage_target 0.90), same as v4",
+    "supersedes_for_sts": "data/gate_schematic_v4.png",
+    "revision_note": "Layout only: same fonts, markers, spacing and q_hat as v4, drawn 6.4 in wide instead of 8.5 in so it prints about 1.5 pt larger; y label on three lines so a 2.15 in tall canvas fits; Flag label under its band, clear of the limit line; exact-size save with two tight_layout passes (pad 0.6). No prose, no title."
+  },
+  "no_new_solves": "No AC solve, dataset build, or model fit was run. gate_schematic_v6 is re-drawn from q_hat read out of data/tradeoff_curve_v2.json."
+}
