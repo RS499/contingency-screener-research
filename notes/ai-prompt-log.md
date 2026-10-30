@@ -6828,3 +6828,9 @@ Claude edited feasibility/gate_schematic.py, scripts/sts_paper_corrected.py and 
 "ok for the gate figure you could just make the figure wider to free up some extra space. i feel like you made the font too big. only incr font like 1-2 pt from the v4 version and ensure its wide"
 
 Claude replaced the `--narrow` option in feasibility/gate_schematic.py with `--report` (v4 layout and font sizes on a 6.4 in canvas, exact-size save, 3-line y label, Flag label under its band), wrote data/gate_schematic_v6.png with a manifest, re-checked v4 byte-identity, measured printed font sizes, and compiled a scratch copy of the report to check pagination. It briefly deleted the committed v5 files and restored them byte-identically from commit b437db8 with `git show`. No paper text was written; report/ was not touched.
+
+## 2026-10-30 (d) — Is the report submit-ready (excluding AI disclosure and Acknowledgments)?
+
+"other than the ai disclosures and the acknowledgements section is this paper submit ready for top 300? read it throughly as you did before"
+
+Claude re-read report/paper_current_STS.tex (commit cac4dde) in full, read-only, diffed it against ea784b3, checked the changed statements against the repo files (sts_n13_fig2_tradeoff.json, sts_n13_build_N2R.json, notes/preregistration.md, solve_time.json, overnight_status.md), and compiled it plus a scratch variant with the _v2 figures to check pagination. No paper text was written; report/ was not touched. No chance estimate was given.
