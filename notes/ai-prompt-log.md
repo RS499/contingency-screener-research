@@ -6852,3 +6852,13 @@ Claude checked the review's claims read-only against report/paper_current_STS.te
 (pasted request: N16, the gate on the N13 rebuilt D93/D94/D95a/D96 builds, histgb primary and ridge reported, the N5 full search with a held-out target plus a fixed 0.90 target. Phase 1: write scratch/n16_decision_rule.md with methods only, an empty "Predictions (owner)" table and an empty "Verdict (owner)" section holding 2-3 candidate forms, then stop. Phase 2 runs only after the owner says "run N16 <sha>". Follow-up message: "Before stopping, report how long N11 Part 5 and the N13 gate runs took (from notes/overnight_status.md or file timestamps), and estimate Phase 2's runtime.")
 
 Claude read scratch/n11_decision_rule.md, scratch/n13_decision_rule.md, scratch/n5_decision_rule.md, scratch/n13_gate.py, scratch/n5_gate_eval.py and scratch/n11_gate_095bc.py, and checked data/sts_n13_floor.json, the sts_n13_build_* and sts_n13_gate_* files and notes/overnight_status.md (read-only). It wrote scratch/n16_decision_rule.md: methods only; the Predictions table is blank; the Verdict section holds the owner's three example forms with blanks for direction and target; nothing is chosen. It reported the earlier gate wall times and a Phase 2 runtime estimate. Nothing was run, staged or committed.
+
+## 2026-10-30 (h) — N16 Phase 2 requested; stopped at verification
+
+"run N16 e0f9efbbaeccd13a64a5ba7b42063a8b2736f255"
+
+Claude ran the Phase 2 checks read-only. The commit is on origin/main (git branch -r --contains; git ls-remote), and the committed scratch/n16_decision_rule.md has sha256 7f4cc9e50c6e8a298778d60b5b241d530c3383133fa87b0367d3f26b374c4487. It stopped before any computation for three reasons:
+- the working copy differs from the commit (sha256 344de5da…), including the primary verdict;
+- the committed Verdict section names both (c) and (d) as deciding N16;
+- the rule's family-isolation clause cannot be met without editing n5_gate_eval.py (run_seed searches ridge before histgb; an empty ridge list fails in tune_surrogates.select_best), and by that clause the run stops before D93/D96.
+It also checked the known D94/D95a values quoted in the rule against data/sts_n13_gate_D94.json and data/sts_n13_gate_D95a.json. No model was fit and no file other than this log was written.

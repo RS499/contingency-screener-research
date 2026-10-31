@@ -5,6 +5,8 @@ Methods skeleton drafted by Claude Code; predictions and verdict written by Raja
 - **Status:** filled by owner on Oct 30. In force once committed and pushed.
   - The N16 run checks that the commit is on origin and records this file's sha256 before any N16
     computation.
+  - Revision: first commit e0f9efb had a contradictory Verdict section (two primaries), unfilled 0.95 cells
+    and a family-isolation clause that run_seed cannot meet; corrected before any N16 computation.
 - **Registered after N11 and N13.** N16 is a follow-up, not one of the paper's pre-registered results.
 
 ## 0. Known before the owner sections were filled in
@@ -13,7 +15,9 @@ Methods skeleton drafted by Claude Code; predictions and verdict written by Raja
   FLOOR_DOSE_RESPONSE).
 - **Gate results on D94 and D95a:** produced under this exact protocol, at target 0.90 and at the held-out
   target: `data/sts_n13_gate_D94.json`, `data/sts_n13_gate_D95a.json`.
-- **Also known to the owner when predicting:** the N5 FASTER result (speedup B higher at 0.95 than at 0.94).
+- **Also known to the owner when predicting:** the N5 FASTER result on the old builds
+  (`data/sts_n5_verdict.json`): the speedup clause held (speedup B higher at 0.95 than at 0.94), but FASTER
+  overall was NO because its catch-rate clause failed.
 - **Not known:** any gate result on D93 or D96. No gate has been run on either build, old or rebuilt.
 - **So** the 0.94 and 0.95 rows of the Predictions table restate known values. Only the 0.93 and 0.96 rows
   are predictions.
@@ -94,10 +98,12 @@ Methods skeleton drafted by Claude Code; predictions and verdict written by Raja
   - It imports `n5_gate_eval.run_seed` and `load_relabeled` unchanged; N_LINE = 173; no existing file is
     edited.
 - **Family isolation:**
-  - a ridge failure (for example "SVD did not converge") does not void histgb results;
-  - histgb is computed and reported for that split, and the ridge failure is logged as a deviation;
-  - if `run_seed` cannot produce histgb alone without editing `n5_gate_eval.py`, the run stops before any
-    D93/D96 computation and reports this.
+  - the wrapper calls `run_seed` unchanged;
+  - only if ridge raises in a split, that split is rerun histgb-only, using the same `tune_surrogates` and
+    baseline functions in the same order as `run_seed`; this is a separate path from `run_seed`;
+  - Step 1 also reruns D94 split 0 through the histgb-only path, which must reproduce D94 split 0 histgb
+    exactly, or the run stops;
+  - any histgb-only rerun is logged as a deviation.
 - **D94 and D95a are not re-searched.** Their results are taken unchanged from
   `data/sts_n13_gate_D94.json` and `data/sts_n13_gate_D95a.json`. Their per-split BM and VR come from the
   same test rows.
@@ -127,7 +133,7 @@ Family: histgb. Target 0.90. Speedup B, rule B.
 |---|---|---|---|---|
 | 0.93 | 2.4 | 2.1-2.7 | 24.9% | 21-29% |
 | 0.94 | known: 2.45 ± 0.20 | — | known: 24.23 ± 3.35% | — |
-| 0.95 | known: [from D95a file] | — | known: [from D95a file] | — |
+| 0.95 | known: 4.08 ± 0.48 | — | known: 10.26 ± 2.66% | — |
 | 0.96 | 4.5 | 3.3-5.5 | 8.4% | 5-14% |
 
 Held-out target: not predicted; reported descriptively.
@@ -140,11 +146,15 @@ Held-out target: not predicted; reported descriptively.
 
 **Main assumption:** the share of near-limit cases the 0.90 band escalates stays at the D94 fraction.
 
-**Sanity check against the known 0.95 build:** the rule predicts escalation ≈ 14.8% and speedup B ≈ 3.3;
+**Sanity check against the known 0.95 build:** the rule predicts escalation ≈ 14.8% and speedup B ≈ 3.3; the
+actual D95a values are escalation 10.26 ± 2.66%, flag share 14.51 ± 0.38% and speedup B 4.08 ± 0.48
+(data/sts_n13_gate_D95a.json, histgb, target 0.90). The flag rule fits (0.98 × VR), but escalation was lower
+than predicted: the escalated fraction of BM fell from 0.443 at D94 to 0.308 at D95a. The predictions above
+were kept unchanged after this check.
 
 ## Verdict (owner)
 
-**Primary verdict: - (c) Safety. mean missed(0.96) − mean missed(0.94) ≤ max(the two stds), at target 0.90.**
+**Primary verdict: (d) Escalation, fixed target.**
 
 - **(d)** escalation(0.94) − escalation(0.96) > max(the two stds), at target 0.90, histgb.
   - Holds → N16 supports "lower boundary mass reduces escalations" on the same grid at a fixed
@@ -155,14 +165,14 @@ Held-out target: not predicted; reported descriptively.
 **Secondary checks.** Each is computed with the same std rule and reported as holds / does not hold.
 None of them changes the primary verdict.
 
-- **(a) Speed, fixed target.** speedup B(0.96) − speedup B(0.94) > max(the two stds), at target 0.90.
+- **(a) Speed, fixed target.** speedup B(0.96) − speedup B(0.94) > max(the two stds), at target 0.90,
+  histgb.
   - Reported together with the flag-share change, so the speed gain from fewer flags (lower VR) is shown
     separately from the gain from fewer escalations.
-- **(c) Safety.** mean missed(0.96) − mean missed(0.94) ≤ max(the two stds), at target 0.90 
+- **(c) Safety.** mean missed(0.96) − mean missed(0.94) ≤ max(the two stds), at target 0.90, histgb.
 - **(e) Speed, held-out target.** speedup B(0.96) − speedup B(0.94) > max(the two stds), at the held-out
-  target.
+  target, histgb.
   - The held-out target is retuned per build, so this comparison is not at a fixed band.
-
 
 ## 5. Commitments
 
