@@ -6834,3 +6834,21 @@ Claude replaced the `--narrow` option in feasibility/gate_schematic.py with `--r
 "other than the ai disclosures and the acknowledgements section is this paper submit ready for top 300? read it throughly as you did before"
 
 Claude re-read report/paper_current_STS.tex (commit cac4dde) in full, read-only, diffed it against ea784b3, checked the changed statements against the repo files (sts_n13_fig2_tradeoff.json, sts_n13_build_N2R.json, notes/preregistration.md, solve_time.json, overnight_status.md), and compiled it plus a scratch variant with the _v2 figures to check pagination. No paper text was written; report/ was not touched. No chance estimate was given.
+
+## 2026-10-30 (e) — Review the paper after the latest edits
+
+"ok review the paper now"
+
+Claude diffed report/paper_current_STS.tex (commit 3aa1094) against cac4dde, checked the new Illinois per-split claim against data/sts_n14_condhist.json, and compiled it with Tectonic: 25 pages, Acknowledgments on printed page 21. Claude compiled scratch copies with single test edits to locate the cause; the test copies stayed in the session scratchpad. No paper text was written; report/ was not touched.
+
+## 2026-10-30 (f) — Assess a pasted outside review proposing a reframe of the report
+
+(pasted content only: another assistant's review proposing to reframe the report around a "solve share ≈ near-limit share + violation share" rule, new research questions, a new title and abstract, new floor-sweep runs, appendices, removal of figure credit lines and a new decision rule, plus a section-by-section edit guide with drafted replacement wording)
+
+Claude checked the review's claims read-only against report/paper_current_STS.tex, notes/sts-constraints.yaml (R21 graphics citation, rule 4e appendices), the data/ gate files, and the earlier verified numbers, and reported which suggestions conflict with STS rules or the pre-registration, which facts are wrong or outdated, and which small items are worth taking. No paper text was written; report/ was not touched; none of the review's drafted wording was reused.
+
+## 2026-10-30 (g) — N16 Phase 1: methods skeleton for a gate run across generator-setpoint floors
+
+(pasted request: N16, the gate on the N13 rebuilt D93/D94/D95a/D96 builds, histgb primary and ridge reported, the N5 full search with a held-out target plus a fixed 0.90 target. Phase 1: write scratch/n16_decision_rule.md with methods only, an empty "Predictions (owner)" table and an empty "Verdict (owner)" section holding 2-3 candidate forms, then stop. Phase 2 runs only after the owner says "run N16 <sha>". Follow-up message: "Before stopping, report how long N11 Part 5 and the N13 gate runs took (from notes/overnight_status.md or file timestamps), and estimate Phase 2's runtime.")
+
+Claude read scratch/n11_decision_rule.md, scratch/n13_decision_rule.md, scratch/n5_decision_rule.md, scratch/n13_gate.py, scratch/n5_gate_eval.py and scratch/n11_gate_095bc.py, and checked data/sts_n13_floor.json, the sts_n13_build_* and sts_n13_gate_* files and notes/overnight_status.md (read-only). It wrote scratch/n16_decision_rule.md: methods only; the Predictions table is blank; the Verdict section holds the owner's three example forms with blanks for direction and target; nothing is chosen. It reported the earlier gate wall times and a Phase 2 runtime estimate. Nothing was run, staged or committed.
