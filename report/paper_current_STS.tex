@@ -68,7 +68,7 @@
 % =====================================================================
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract} 
-To check for potential risks in single-element outages in a grid, operators check for what is called the N-1 criterion. To check for N-1 outages, or contingencies, operators run an AC power flow solve, a complex, non-linear calculator, that is slow and time consuming when run through multiple different combinations of different outages. My research proposes using two surrogate models — ridge regression and histogram gradient boosting (histgb) — which are much faster than the solver and a three-way gate mechanism: certify, classifying a contingency as safe; flag, classifying a contingency as unsafe; and escalate, where the gate is unsure and defers the contingency to the solver. As per the design of how the experiments are conducted, most of the decision rules were pre-registered, or committed with hashes before the runs. I also rebuilt the datasets of all four grids I tested (Illinois-200 — my primary network, case118, case30, and case24) after I found a solver bug, and the tests were replicated. I also tested the histgb gate against a conditional history baseline. The conditional history baseline used the same amount of solves histgb had used, and the gate tied conditional history baseline on case118 and Illinois-200 (won originally, but Illinois-200 tied after the post hoc trafo-63 exclusion) and won on case30 and case24 (under the post hoc tolerance addition). On case118 (using histgb), it has 1.14 $\pm$ 0.96\% violations (4 of 5 splits $\leq$ 1\%) missed from the gate on the rebuilt data with a 1.44$\times$ speedup B (accounting for the solver time using flagged and escalated cases). Speedup is limited due to 54.75\% of case118 contingencies sit in [0.94, 0.945) pu. Under a pre-registered test, raising the generator setpoint floor to 0.96 pu dropped that share to 18.97\%, as predicted (20\%, range 8--30). In a follow-up test on the rebuilt builds at 0.96, a 4.81 $\pm$ 0.72 times speedup B at target 0.90 was recorded, as predicted (4.5, range 3.3--5.5). Testing the gate on N-2 contingencies, or two-element outages, with no re-calibration after N-1, coverage at the 0.90 target fell from 0.905 to 0.839, below the pre-set threshold of 0.886, failing its coverage guarantee. Limitations include only four networks were tested, only used synthetic load sampling on grids, and only checked for under-voltage.
+To check for potential risks in single-element outages in a grid, operators check for the N-1 criterion. To check for N-1 outages, or contingencies, operators run an AC power flow solve, a complex, non-linear calculator, that is slow and time consuming when run through multiple different combinations of different outages. My research proposes using two surrogate models — ridge regression and histogram gradient boosting (histgb) — which are much faster than the solver and a three-way gate mechanism: certify, classifying a contingency as safe; flag, classifying a contingency as unsafe; and escalate, where the gate is unsure and defers the contingency to the solver. I attach a one-sided split-conformal lower band to the model's predictions, with the gate escalating when the band crosses 0.94 pu. As per the design of how the experiments are conducted, most of the decision rules were pre-registered, or committed with hashes before the runs. I also rebuilt the datasets of all four grids I tested (Illinois-200 — my primary network, case118, case30, and case24) after I adjusted how the solver handles one-way Q-limit handling. I also tested the histgb gate against a conditional history baseline. The conditional history baseline used the same amount of solves histgb had used, and the gate tied conditional history baseline on case118 and Illinois-200 (Illinois-200 won originally, but Illinois-200 tied after the post hoc trafo-63 exclusion) and won on case30 and case24 (under the post hoc tolerance addition). On case118 (using histgb) on the held-out target (0.970 $\pm$ 0.011), it has 1.14 $\pm$ 0.96\% violations (4 of 5 splits $\leq$ 1\%) missed from the gate on the rebuilt data with a 1.44$\times$ speedup B (accounting for the solver time using flagged and escalated cases). Speedup is limited due to 54.75\% of case118 contingencies sit in [0.94, 0.945) pu. Under a pre-registered test, raising the generator setpoint floor to 0.96 pu dropped that share to 18.97\%, as predicted (20\%, range 8--30). In a follow-up test on the rebuilt data at 0.96, a 4.81 $\pm$ 0.72 times speedup B at target 0.90 was recorded, as predicted (4.5, range 3.3--5.5), with a missed rate of 4.33 $\pm$ 0.63\%, with 0 of 5 splits at $\leq$1\%. Testing the gate on N-2 contingencies, or two-element outages, with no re-calibration after N-1, coverage at the 0.90 target fell from 0.905 to 0.839, below the pre-set threshold of 0.886, therefore failing. Limitations include only four networks were tested, only used synthetic load sampling on grids, and only checked for under-voltage.
 
 \vspace{0.15in}
 \noindent\textbf{Keywords:} contingency screening, conformal prediction,
@@ -142,7 +142,7 @@ The flagging test employs the point prediction, since the lower edge of the one-
 \text{speedup}_B &= \frac{n\, t_{\text{solve}}}{n\, t_{\text{surr}} + \left(n_{\text{esc}} + n_{\text{flag}}\right) t_{\text{solve}}}. \label{eq:speedupB}
 \end{align}
 
-Here $n$ is the total number of contingencies, $n_{\text{flag}}$ is the total number of flagged contingencies, $t_{\text{solve}}$ is the solver time per case (set at 9.14 ms on the M5 processor on the case118 network, which is the minimum over 400 timed solves), $t_{\text{surr}}$ is the surrogate time that excludes the time for feature building ($0.00173\pm0.00074$~ms for ridge and $0.00919\pm0.00527$~ms for histgb per case, timed as one batch prediction divided by the number of cases), and $n_{\text{esc}}$ is the escalation count. For the main results, the speedup B equation is used as in real world scenarios, an operator would double check the flagged scenarios before acting upon them.
+Here $n$ is the total number of contingencies, $n_{\text{flag}}$ is the total number of flagged contingencies, $t_{\text{solve}}$ is the solver time per case (set at 9.14 ms on the M5 processor on the case118 network, which is the minimum over 400 timed solves), $t_{\text{surr}}$ is the surrogate time that excludes the time for feature building and solves that produce the base-case voltages ($0.00173\pm0.00074$~ms for ridge and $0.00919\pm0.00527$~ms for histgb per case, timed as one batch prediction divided by the number of cases), and $n_{\text{esc}}$ is the escalation count. For the main results, the speedup B equation is used as in real world scenarios, an operator would double check the flagged scenarios before acting upon them.
 
 % ---------------------------------------------------------------------
 % FIGURE 1 (fig:gate) -- gate schematic. Cited in III-D.
@@ -153,7 +153,7 @@ Here $n$ is the total number of contingencies, $n_{\text{flag}}$ is the total nu
 \caption{The three-way gate mechanism is shown above. The band extends only downward, since the main risk I am screening for is the true voltage sitting below the prediction. A case is certified, and the solver is skipped when the whole band clears 0.94 pu; flagged and the solver is skipped when the point prediction falls below it; and escalated to the exact solver when the band straddles the limit.}
 
 \vspace*{1ex}
-{\scriptsize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+{\small Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 
 
 \label{fig:gate}
@@ -182,7 +182,7 @@ Before these experiments, I created the decision rule for the run and pushed it 
 \begin{enumerate}
 
 \item \textbf{Does the gate beat COND-HIST at the same solve budget?} The rule for the gate to beat COND-HIST is that the gate's catch rate across splits must be higher than the catch rate of the baseline by more than the larger of these two rates' standard deviations across the five splits (population standard deviation with delta degrees of freedom at 0 makes rebuilt Mondrian and rebuilt Illinois (before the trafo-63 exclusion) COND-HIST pass with this formula, which is what I used as I used this for all the past tests, and tie when delta degrees of freedom is set to 1), and if the gap is smaller than the larger standard deviation, the result is a tie. This rule and Illinois-200 being chosen as the primary network were established before running the experiments.
-\item\label{item:n2} \textbf{Does N-1 calibration of a 90\% coverage guarantee stay reliable on N-2 outages?} The rule of the coverage holding only if the average N-2 coverage across the 5 splits is at least 0.90 minus the greater of the two split-to-split standard deviations, accounting for normal split-to-split variation, was set in advance. This design included 50 random branch pairs per base case of the N-2 contingencies with no retraining or recalibration on N-2 data. 
+\item\label{item:n2} \textbf{Does N-1 calibration of a 90\% coverage target stay reliable on N-2 outages?} The rule of the coverage holding only if the average N-2 coverage across the 5 splits is at least 0.90 minus the greater of the two split-to-split standard deviations, accounting for normal split-to-split variation, was set in advance. This design included 50 random branch pairs per base case of the N-2 contingencies with no retraining or recalibration on N-2 data. 
 \item \textbf{Does moving the generator setpoint floor change the boundary mass as predicted?} I set the predictions of 55\% (range 50--62\%) at a floor of 0.93 and about 20\% (range 8--30\%) at 0.96 in advance. I tested this prediction on the original build and replicated this on the rebuilt data. For this to pass, the boundary mass must be more than 5 points below the 0.95 build on 0.96 and within 5 points of the 0.94 build at 0.93.
 \end{enumerate}
 
@@ -218,7 +218,7 @@ histgb      & 1.30$\pm$0.17 & 0.953$\pm$0.007 & 24.23$\pm$3.35 & 4.06$\pm$0.73 &
 \end{tabular}
 
 \vspace*{1ex}
-{\scriptsize Table created by Rajan Saha using Python and \LaTeX, 2026}
+{\small Table created by Rajan Saha using Python and \LaTeX, 2026}
 \end{table}
 
 
@@ -261,7 +261,7 @@ histgb & held-out (0.970$\pm$0.011) & 54.25$\pm$9.68 & 97.0$\pm$1.4 & 1.14$\pm$0
 \end{tabular}
 
 \vspace*{1ex}
-{\scriptsize Table created by Rajan Saha using Python and \LaTeX, 2026}
+{\small Table created by Rajan Saha using Python and \LaTeX, 2026}
 \end{table}
 
 
@@ -277,7 +277,7 @@ histgb & held-out (0.970$\pm$0.011) & 54.25$\pm$9.68 & 97.0$\pm$1.4 & 1.14$\pm$0
 \caption{Escalation (solid, left axis) and missed violations (dotted, right axis) are plotted against the safety target and averaged over five splits. The mean missed rate first falls just under 1\% at 0.95 coverage for ridge and 0.98 for the gradient-boosted model, with high escalation at both and the error bars for histgb reaching slightly above 1\%.}
 
 \vspace*{1ex}
-{\scriptsize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+{\small Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 
 \label{fig:tradeoff}
 \end{figure}
@@ -327,7 +327,7 @@ Gate vs fixed static & tie & win & win & win \\
 \end{tabular}
 
 \vspace*{1ex}
-{\scriptsize Table created by Rajan Saha using Python and \LaTeX, 2026}
+{\small Table created by Rajan Saha using Python and \LaTeX, 2026}
 \end{table}
 
 
@@ -352,7 +352,7 @@ $k$ (solves per base case) & histgb ranking & Fixed static ranking \\
 \end{tabular}
 
 \vspace*{1ex}
-{\scriptsize Table created by Rajan Saha using Python and \LaTeX, 2026}
+{\small Table created by Rajan Saha using Python and \LaTeX, 2026}
 \end{table}
 
 
@@ -371,14 +371,14 @@ Fig.~\ref{fig:boundary} displays the distribution of voltages after the continge
 
 
 \vspace*{1ex}
-{\scriptsize Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
+{\small Graph created by Rajan Saha using Matplotlib 3.11.1, 2026}
 \label{fig:boundary}
 \end{figure}
 
 
 A case is escalated when the prediction lies within one band width above the 0.94 pu limit, since the band straddles the threshold. The gradient-boosted model's held-out band is only 0.0051 pu wide, but so much of the distribution sits just above 0.94 that this narrow window still escalates 54.25\% of all contingencies. As the band becomes larger, escalation moves closer to every case predicted at or above the limit, which for a perfect model is 83.74\% of all cases.
 
-To test if the generator setpoint values were the main reason the boundary mass was so high, I moved the lowest allowed generator setpoint and checked if the boundary mass near 0.94 changed as I had predicted in advance. My original predictions in Section~\ref{subsec:prereg} were chosen from knowing that a setpoint floor below the 0.94 limit is expected to have little to no effect on the boundary mass at 0.94, and floor above the limit pushes generator setpoints higher, so there should be fewer post-outage minimum voltages within [0.94, 0.945). On the original data, the 58.07\% (predicted range 50--62) and 19.91\% (predicted range 8--30) figures both fall into my predicted ranges. I then checked the new data to see if the result was similar, and it was, as at 0.93 there were 56.32\% of cases within 5 points of the 54.75\% figure from 0.94, and at 0.96 18.97\% was more than 5 points below the 33.36\% figure from 0.95, and both of these values passed the test, as shown in Table~\ref{tab:floor}. In addition, in a follow-up test that had predictions registered before the run, I ran the gate using the histgb model at a fixed target of 0.90 on all four floor builds. The 0.93 and 0.96 datasets were newly run, which I have not done before, with the earlier 0.94 and 0.95 being reused from the earlier rebuilt-data runs (reproduced exactly). The primary result is supported, as the escalation rate dropped from 24.23\% at 0.94 to 8.24\% at 0.96, with a gap of 15.99 points when comparing against a larger std of 3.56. Speedup B went from 2.45$\times$ to 4.81$\times$, which is inside my predicted 3.3--5.5. At 0.93 it was 2.48$\times$, which is also inside my predicted range of 2.1--2.7. 15.99 of the 19.71-point drop in solve share came from fewer escalations, while the rest came from fewer flags. However, at target 0.90 the gate misses 3.8--4.4\% of violations on every floor, making this merely a test of a mechanism and not a practical setting for operators to use. At the held-out target, speedup B increased from 1.44 to 2.69, but splits with a $\leq$ 1\% missed rate fell from 4 of 5 splits to only 2 of 5.
+To test if the generator setpoint values were the main reason the boundary mass was so high, I moved the lowest allowed generator setpoint and checked if the boundary mass near 0.94 changed as I had predicted in advance. My original predictions in Section~\ref{subsec:prereg} were chosen from knowing that a setpoint floor below the 0.94 limit is expected to have little to no effect on the boundary mass at 0.94, and floor above the limit pushes generator setpoints higher, so there should be fewer post-outage minimum voltages within [0.94, 0.945). On the original data, the 58.07\% (predicted range 50--62) and 19.91\% (predicted range 8--30) figures both fall into my predicted ranges. I then checked the new data to see if the result was similar, and it was, as at 0.93 there were 56.32\% of cases within 5 points of the 54.75\% figure from 0.94, and at 0.96 18.97\% was more than 5 points below the 33.36\% figure from 0.95, and both of these values passed the test, as shown in Table~\ref{tab:floor}. In addition, in a follow-up test that had predictions registered before the run, I ran the gate using the histgb model at a fixed target of 0.90 on all four floor builds. The 0.93 and 0.96 datasets were newly run, which I have not done before, with the earlier 0.94 and 0.95 being reused from the earlier rebuilt-data runs. The escalation check result is supported, as the escalation rate dropped from 24.23\% at 0.94 to 8.24\% at 0.96, with a gap of 15.99 points when comparing against a larger std of 3.56. Speedup B went from 2.45$\times$ to 4.81$\times$, which is inside my predicted 3.3--5.5. At 0.93 it was 2.48$\times$, which is also inside my predicted range of 2.1--2.7. 15.99 of the 19.71-point drop in solve share (escalation share + flag share) came from fewer escalations, while the rest came from fewer flags. However, at target 0.90 the gate misses 3.8--4.4\% of violations on every floor, making this merely a test of a mechanism and not a practical setting for operators to use. At the held-out target, speedup B increased from 1.44 to 2.69, but splits with a $\leq$ 1\% missed rate fell from 4 of 5 splits to only 2 of 5.
 
 % ---------------------------------------------------------------------
 % TABLE V (tab:floor) -- original build: data/sts_n11_dose_response.json
@@ -393,7 +393,7 @@ To test if the generator setpoint values were the main reason the boundary mass 
 \centering
 \caption{Boundary mass (BM) on case118 at four generator setpoint floors is shown below. I set BM predictions for 0.93 and 0.96 in advance and tested on the original build (labels stored before the switch-back fix), and the rebuilt column is a replication of the original run after the switch-back fix. $^{\ddagger}$One of three 0.95 rebuilt builds (average 32.29$\pm$0.77\%). Tables~\ref{tab:models}--\ref{tab:budget} use the 0.94 build. The last two columns show the follow-up test registered after the main tests, in which I tested the escalation rate (Esc.) and speedup B on the histgb gate, measuring mean $\pm$ standard deviation across 5 splits.}
 \label{tab:floor}
-\footnotesize
+\small
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{ccccccc}
 \toprule
@@ -409,13 +409,13 @@ Floor (pu) & Predicted BM (\%) & Original & Rebuilt & Viol.\ rate, rebuilt (\%) 
 \end{tabular}
 
 \vspace*{1ex}
-{\scriptsize Table created by Rajan Saha using Python and \LaTeX, 2026}
+{\small Table created by Rajan Saha using Python and \LaTeX, 2026}
 \end{table}
 
 
 \subsection{Coverage under N-2 outages}
 
-I also tested whether the band that was calibrated on N-1 outages would still maintain its coverage guarantee on N-2 contingencies. Out of the 75{,}000 total N-2 rows, 86 of them were dropped (84 failed to converge, and 2 did not pass the criteria set for the corrected solver). At the 0.90 target, the empirical coverage dropped from 0.9050 (N-1) to 0.8394 (N-2). Since my passing threshold, set from the pre-set formula, was 0.8861, the band, therefore, does not maintain its coverage guarantee. In addition, the original build also failed, as it resulted in an empirical coverage of 0.8346 when the passing threshold was 0.8819. The missed rate for N-2 contingencies is 4.60$\pm$0.80\%, with no split being at or under 1\%, as shown in Table~\ref{tab:n2}.
+I also tested whether the band that was calibrated on N-1 outages would still maintain its coverage on N-2 contingencies. Out of the 75{,}000 total N-2 rows, 86 of them were dropped (84 failed to converge, and 2 did not pass the criteria set for the corrected solver). At the 0.90 target, the empirical coverage dropped from 0.9050 (N-1) to 0.8394 (N-2). Since my passing threshold, set from the pre-set formula, was 0.8861, the band, therefore, does not maintain its coverage. In addition, the original build also failed, as it resulted in an empirical coverage of 0.8346 when the passing threshold was 0.8819. The missed rate for N-2 contingencies is 4.60$\pm$0.80\%, with no split being at or under 1\%, as shown in Table~\ref{tab:n2}.
 
 % ---------------------------------------------------------------------
 % TABLE VI (tab:n2) -- data/sts_n13_n2.json -> summary[family=histgb];
@@ -437,7 +437,7 @@ held-out & 0.9696$\pm$0.0144 & 0.9352$\pm$0.0208 & 1.40$\pm$1.04 & 3/5 \\
 \end{tabular}
 
 \vspace*{1ex}
-{\scriptsize Table created by Rajan Saha using Python and \LaTeX, 2026}
+{\small Table created by Rajan Saha using Python and \LaTeX, 2026}
 \end{table}
 
 % =====================================================================
@@ -465,7 +465,7 @@ The additional features contribute no meaningful increase in performance compare
 \section{Conclusion and future work}
 \label{sec:conclusion}
 
-On case118, the gate misses 1.14\% of violations, has a 1.44 times speedup B, and solved 70.9\% of the cases. On case118 and Illinois-200, the gate ties COND-HIST's performance and beats it on case30 and case24. The pre-registered primary test on Illinois-200 became a tie after the post hoc exclusion of trafo 63, and case24's results come from a post hoc tolerance rule. The gate is unable to maintain its coverage guarantee on N-2 under-voltage contingencies, as the coverage dropped to 0.8394, which is well under the passing threshold of 0.8861. The floor experiment on the original data supported my predictions, and it was replicated on the fixed data. In a follow-up test, the lower boundary mass reduced escalations from 24.23\% to 8.24\%, which raised speedup B from 2.45 to 4.81$\times$ at a target of 0.90. In conclusion, speedup is limited by the near-limit mass on case118 and from the violation rate on case24. Histgb ranking only beats fixed static ranking at small solve budgets on case118 (Table~\ref{tab:budget}). On case30 COND-HIST only caught 89.81\% (Table~\ref{tab:networks}), and the reasoning behind this weaker performance is an open question. Future work includes testing more grids, using real load data and calibrating the gate on N-2 data.
+On case118, the gate misses 1.14\% of violations, has a 1.44 times speedup B, and solved 70.9\% of the cases. On case118 and Illinois-200, the gate ties COND-HIST's performance and beats it on case30 and case24. The pre-registered primary test on Illinois-200 became a tie after the post hoc exclusion of trafo 63, and case24's results come from a post hoc tolerance rule. The gate is unable to maintain its coverage on N-2 under-voltage contingencies, as the coverage dropped to 0.8394, which is well under the passing threshold of 0.8861. The floor experiment on the original data supported my predictions, and it was replicated on the fixed data. In a follow-up test, raising the floor to 0.96 pu reduced escalations from 24.23\% to 8.24\% at target 0.90. In conclusion, speedup is limited by the near-limit mass on case118 and from the violation rate on case24. Histgb ranking only beats fixed static ranking at small solve budgets on case118 (Table~\ref{tab:budget}). On case30 COND-HIST only caught 89.81\% (Table~\ref{tab:networks}), and the reasoning behind this weaker performance is an open question. Future work includes testing more grids, using real load data and calibrating the gate on N-2 data.
 
 
 \section*{Acknowledgments}
