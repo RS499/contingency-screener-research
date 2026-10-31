@@ -1,0 +1,185 @@
+{
+  "schema": "B",
+  "artifacts": [
+    "n16_raw_D93.json"
+  ],
+  "generating_script": "scratch/n16_floorgate.py",
+  "regeneration_argv": [
+    ".venv/bin/python",
+    "scratch/n16_floorgate.py",
+    "build",
+    "D93"
+  ],
+  "script_git_blob_sha": "2b4228f9f99d79900871ef63ac90376d56547e75",
+  "script_tracked_in_git": false,
+  "repo_head_commit": "a2102bbe656d74ab943b06ca826b4d6d0ad0b242",
+  "inputs": [
+    {
+      "path": "data/sts_n13_D93.parquet",
+      "sha256": "c2a1b9a258c62e777b2a12f8c389aa3b3b81a18550eb12a1bccf3aa3585478d4"
+    },
+    {
+      "path": "data/solve_time.json",
+      "sha256": "94d8e8059d2b35260da090e33e3ce058c0437ef7b578556a134bbdc258a0d4ec"
+    },
+    {
+      "path": "scripts/tune_surrogates.py",
+      "sha256": "9395044201a93337d20c3f208cb095a39d568be669b4d7f992f922b44cf0cc9e"
+    },
+    {
+      "path": "scratch/n16_decision_rule.md",
+      "sha256": "3df19cfd78c8334a4c164622ceca1b20c303eb38ea72d7a168cc3d67693b3e1a"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "scratch/n16_raw_D93.json",
+      "sha256": "8be507c2ea1c6baf92d37b3c49df731c65bfd67ec825ec96782866ab4a7d1e36",
+      "md5": "ab91d4ed823636bb1dc0805024fe2909",
+      "bytes": 266342,
+      "byte_reproducible": "not checked in this run"
+    }
+  ],
+  "interpreter_short": "3.13.11",
+  "packages": {
+    "pandapower": "3.5.4",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.1"
+  },
+  "generated_utc": "2026-10-31T02:20:31Z",
+  "parameters": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "invocation": "scratch/n16_floorgate.py build D93",
+    "model_hyperparameters": [
+      {
+        "seed": 0,
+        "family": "ridge",
+        "tag": "alpha31.62",
+        "config": {
+          "tag": "alpha31.62",
+          "alpha": 31.622776601683793
+        }
+      },
+      {
+        "seed": 0,
+        "family": "histgb",
+        "tag": "rand20",
+        "config": {
+          "tag": "rand20",
+          "learning_rate": 0.08,
+          "max_iter": 1000,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 50,
+          "l2_regularization": 0.1
+        }
+      },
+      {
+        "seed": 1,
+        "family": "ridge",
+        "tag": "alpha1e+04",
+        "config": {
+          "tag": "alpha1e+04",
+          "alpha": 10000.0
+        }
+      },
+      {
+        "seed": 1,
+        "family": "histgb",
+        "tag": "rand20",
+        "config": {
+          "tag": "rand20",
+          "learning_rate": 0.08,
+          "max_iter": 1000,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 50,
+          "l2_regularization": 0.1
+        }
+      },
+      {
+        "seed": 2,
+        "family": "ridge",
+        "tag": "alpha3.162",
+        "config": {
+          "tag": "alpha3.162",
+          "alpha": 3.1622776601683795
+        }
+      },
+      {
+        "seed": 2,
+        "family": "histgb",
+        "tag": "rand15",
+        "config": {
+          "tag": "rand15",
+          "learning_rate": 0.1,
+          "max_iter": 600,
+          "max_depth": null,
+          "max_leaf_nodes": 127,
+          "min_samples_leaf": 20,
+          "l2_regularization": 1.0
+        }
+      },
+      {
+        "seed": 3,
+        "family": "ridge",
+        "tag": "alpha3162",
+        "config": {
+          "tag": "alpha3162",
+          "alpha": 3162.2776601683795
+        }
+      },
+      {
+        "seed": 3,
+        "family": "histgb",
+        "tag": "rand20",
+        "config": {
+          "tag": "rand20",
+          "learning_rate": 0.08,
+          "max_iter": 1000,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 50,
+          "l2_regularization": 0.1
+        }
+      },
+      {
+        "seed": 4,
+        "family": "ridge",
+        "tag": "alpha0.01",
+        "config": {
+          "tag": "alpha0.01",
+          "alpha": 0.01
+        }
+      },
+      {
+        "seed": 4,
+        "family": "histgb",
+        "tag": "rand01",
+        "config": {
+          "tag": "rand01",
+          "learning_rate": 0.1,
+          "max_iter": 1000,
+          "max_depth": null,
+          "max_leaf_nodes": 255,
+          "min_samples_leaf": 50,
+          "l2_regularization": 10.0
+        }
+      }
+    ],
+    "candidate_grids": "scripts/tune_surrogates.py ridge_candidates (15) and histgb_candidates (26)",
+    "inner_seed_offset": 1000,
+    "inner_missed_ceiling": 0.01,
+    "omp_num_threads": "4"
+  },
+  "no_new_solves": "No AC solve. Model fits: full tune_surrogates search + M2 refits per split."
+}

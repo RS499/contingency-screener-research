@@ -6862,3 +6862,23 @@ Claude ran the Phase 2 checks read-only. The commit is on origin/main (git branc
 - the committed Verdict section names both (c) and (d) as deciding N16;
 - the rule's family-isolation clause cannot be met without editing n5_gate_eval.py (run_seed searches ridge before histgb; an empty ridge list fails in tune_surrogates.select_best), and by that clause the run stops before D93/D96.
 It also checked the known D94/D95a values quoted in the rule against data/sts_n13_gate_D94.json and data/sts_n13_gate_D95a.json. No model was fit and no file other than this log was written.
+
+## 2026-10-30 (i) — run N16 a2102bb
+
+"run N16 a2102bbe656d74ab943b06ca826b4d6d0ad0b242"
+
+Claude checked the rule commit:
+- it is on origin/main (git branch -r --contains; git ls-remote);
+- the working copy is identical to it;
+- sha256 3df19cfd78c8334a4c164622ceca1b20c303eb38ea72d7a168cc3d67693b3e1a, recorded in scratch/n16_decision_rule.sha256.
+
+It then:
+- wrote scratch/n16_floorgate.py;
+- ran Step 1 (D94 split 0 reproduction: pass);
+- ran D93 and D96, 5 splits each;
+- ran summarize, writing data/sts_n16_floorgate.json, data/sts_n16_verdicts.json (+ manifests) and scratch/n16_result.md;
+- recomputed the summary and verdicts independently;
+- changed only the q̂ display column;
+- appended to notes/overnight_status.md and notes/ai_usage_changelog.md.
+
+Primary verdict (d) holds; no deviations. No git writes: Claude printed the git commands for the owner and staged nothing.

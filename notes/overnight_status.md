@@ -965,3 +965,37 @@ Step 1 were not preserved; all steps ran within about an hour of 03:18Z.
   - C30 islanding violation rate 2.38%;
   - C24 gate path = n10_gate_illinois.run_seed, as in N13.
 - N14 complete. No git writes.
+
+## 2026-10-31T00:56:31Z — N16 started (rule scratch/n16_decision_rule.md, commit a2102bb)
+- Rule checks: commit a2102bbe656d74ab943b06ca826b4d6d0ad0b242 (2026-10-30T20:51:23-04:00) is origin/main;
+  working copy identical; sha256 3df19cfd78c8334a4c164622ceca1b20c303eb38ea72d7a168cc3d67693b3e1a.
+  - The first commit e0f9efb was not run (two primary verdicts, an unmeetable family-isolation clause, working
+    copy differed); the owner revised it before any N16 computation.
+- Script: scratch/n16_floorgate.py (new; imports n5_gate_eval.run_seed unchanged; histgb-only path only after a
+  ridge error). Step 1 launched: OMP_NUM_THREADS=4, log scratch/n16_step1.log.
+
+## 2026-10-31T01:15:27Z — N16 Step 1 PASS; Step 2 (D93, D96) launched
+- Dataset-level BM, VR and row counts equal data/sts_n13_floor.json exactly on D93, D94, D95a, D96.
+- D94 split 0 through run_seed vs data/sts_n13_gate_D94.json split 0: 148 values compared, 0 mismatches
+  (tags, held-out targets, test MAE, q̂/escalation/flag/missed/k_B/static catch at every target). Sweep also equal.
+- D94 split 0 through the histgb-only path: 74 values compared, 0 mismatches.
+- Wall: run_seed split 0 575 s, histgb-only 536 s (OMP_NUM_THREADS=4). Output scratch/n16_step1.json; rule hash
+  recorded in scratch/n16_decision_rule.sha256 (run start 2026-10-31T00:56:32Z, after the 00:51:23Z commit).
+- Step 2: D93 and D96 in parallel, OMP_NUM_THREADS=4 each; logs scratch/n16_build_D93.log / _D96.log.
+
+## 2026-10-31T02:27Z — N16 complete (rule scratch/n16_decision_rule.md, commit a2102bb, sha256 3df19cfd…)
+- Step 2: D93 5/5 splits via run_seed, wall 3,903 s; D96 5/5 splits via run_seed, wall 4,186 s
+  (in parallel, OMP_NUM_THREADS=4 each). No histgb-only rerun, no crash, no missing held-out point.
+- Outputs: data/sts_n16_floorgate.json, data/sts_n16_verdicts.json (+ manifests), scratch/n16_result.md,
+  scratch/n16_raw_D93.json / _D96.json (+ manifests). D94 and D95a points reused from data/sts_n13_gate_*.json.
+- Primary (d), histgb, target 0.90: holds. Escalation 0.94 24.23 ± 3.35% vs 0.96 8.24 ± 3.56%;
+  gap 15.99 pp > max std 3.56 pp.
+- Secondary (each holds): (a) speedup B 0.96 4.808 ± 0.720 vs 0.94 2.455 ± 0.201; (c) missed 0.96 − 0.94 =
+  0.27 pp ≤ max std 0.73 pp; (e) held-out speedup B 0.96 2.691 ± 0.767 vs 0.94 1.439 ± 0.228.
+- Owner predictions (0.93, 0.96; speedup B and escalation): each observed mean falls inside the owner's range.
+- Deviations: none.
+- Check: independent recompute (scratchpad script, not in repo) of 112 summary cells and the four verdicts
+  from the raw point files: 0 mismatches. Rule file sha256 unchanged after the run.
+- Display-only change after the first summarize: result-table q̂ column printed in × 10⁻³ pu (was pu at 3
+  decimals, "0.002 ± 0.000"). Both JSON files byte-identical before and after.
+- N16 complete. No git writes.

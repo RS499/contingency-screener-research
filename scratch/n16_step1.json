@@ -1,0 +1,105 @@
+{
+  "step": "N16 Step 1",
+  "rule": {
+    "path": "scratch/n16_decision_rule.md",
+    "sha256": "3df19cfd78c8334a4c164622ceca1b20c303eb38ea72d7a168cc3d67693b3e1a",
+    "commit": "a2102bbe656d74ab943b06ca826b4d6d0ad0b242",
+    "commit_time": "2026-10-30T20:51:23-04:00",
+    "on_origin_main": true
+  },
+  "run_start_utc": "2026-10-31T00:56:32Z",
+  "ms_solver": 9.14,
+  "omp_num_threads": "4",
+  "dataset_checks": [
+    {
+      "dataset": "D93",
+      "n_rows": 278956,
+      "BM": 56.322860952981834,
+      "VR": 16.345947031073003,
+      "ref_n_rows": 278956,
+      "ref_BM": 56.322860952981834,
+      "ref_VR": 16.345947031073003,
+      "equal": true
+    },
+    {
+      "dataset": "D94",
+      "n_rows": 278945,
+      "BM": 54.74627614762767,
+      "VR": 16.256251232321784,
+      "ref_n_rows": 278945,
+      "ref_BM": 54.74627614762767,
+      "ref_VR": 16.256251232321784,
+      "equal": true
+    },
+    {
+      "dataset": "D95a",
+      "n_rows": 278921,
+      "BM": 33.35603988226057,
+      "VR": 14.814947601650646,
+      "ref_n_rows": 278921,
+      "ref_BM": 33.35603988226057,
+      "ref_VR": 14.814947601650646,
+      "equal": true
+    },
+    {
+      "dataset": "D96",
+      "n_rows": 278959,
+      "BM": 18.967303438856607,
+      "VR": 13.585867457224895,
+      "ref_n_rows": 278959,
+      "ref_BM": 18.967303438856607,
+      "ref_VR": 13.585867457224895,
+      "equal": true
+    }
+  ],
+  "run_seed_split0": {
+    "n_compared": 148,
+    "mismatches": [],
+    "equal": true,
+    "info": [
+      {
+        "family": "ridge",
+        "r2_equal": true,
+        "ms_surrogate_ref": 0.0017821859305651912,
+        "ms_surrogate_now": 0.0008367985252993337
+      },
+      {
+        "family": "ridge",
+        "sweep_escalation_missed_equal_info_only": true
+      },
+      {
+        "family": "histgb",
+        "r2_equal": true,
+        "ms_surrogate_ref": 0.002200335175524444,
+        "ms_surrogate_now": 0.0014995847380704487
+      },
+      {
+        "family": "histgb",
+        "sweep_escalation_missed_equal_info_only": true
+      }
+    ]
+  },
+  "histgb_only_split0": {
+    "n_compared": 74,
+    "mismatches": [],
+    "equal": true,
+    "info": [
+      {
+        "family": "histgb",
+        "r2_equal": true,
+        "ms_surrogate_ref": 0.002200335175524444,
+        "ms_surrogate_now": 0.0013818883760821732
+      },
+      {
+        "family": "histgb",
+        "sweep_escalation_missed_equal_info_only": true
+      }
+    ]
+  },
+  "wall_s": {
+    "run_seed": 574.9059731960297,
+    "histgb_only": 536.4370157718658,
+    "total": 1114.0412979125977
+  },
+  "passed": true
+}

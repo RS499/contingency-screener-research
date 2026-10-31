@@ -1,0 +1,141 @@
+{
+  "run": "N16 verdicts",
+  "provenance": {
+    "rule": {
+      "path": "scratch/n16_decision_rule.md",
+      "sha256": "3df19cfd78c8334a4c164622ceca1b20c303eb38ea72d7a168cc3d67693b3e1a",
+      "commit": "a2102bbe656d74ab943b06ca826b4d6d0ad0b242",
+      "commit_time": "2026-10-30T20:51:23-04:00",
+      "on_origin_main": true
+    },
+    "rule_commit_time": "2026-10-30T20:51:23-04:00",
+    "run_start_utc": "2026-10-31T00:56:32Z",
+    "rule_committed_before_run_start": true,
+    "step1": "scratch/n16_step1.json"
+  },
+  "verdict_section": "scratch/n16_decision_rule.md 'Verdict (owner)'",
+  "verdicts": {
+    "d_primary": {
+      "form": "escalation(0.94) - escalation(0.96) > max(the two stds), target 0.90, histgb",
+      "numbers": {
+        "diff": 0.1598591752928591,
+        "max_std": 0.035611010319616235,
+        "mean_a": 0.24230047102784055,
+        "std_a": 0.03353242198623245,
+        "mean_b": 0.08244129573498146,
+        "std_b": 0.035611010319616235
+      },
+      "holds": true,
+      "result": "holds"
+    },
+    "a_secondary": {
+      "form": "speedup B(0.96) - speedup B(0.94) > max(the two stds), target 0.90, histgb",
+      "numbers": {
+        "diff": 2.35333046985311,
+        "max_std": 0.7199360954782849,
+        "mean_a": 4.808259702566941,
+        "std_a": 0.7199360954782849,
+        "mean_b": 2.4549292327138312,
+        "std_b": 0.2008554492507791
+      },
+      "holds": true,
+      "reported_with": {
+        "flag_share": {
+          "diff": -0.03725445891857607,
+          "max_std": 0.0067133108075264165,
+          "mean_a": 0.12967158602640766,
+          "std_a": 0.0067133108075264165,
+          "mean_b": 0.16692604494498373,
+          "std_b": 0.0030410323599684196
+        },
+        "escalation": {
+          "diff": -0.1598591752928591,
+          "max_std": 0.035611010319616235,
+          "mean_a": 0.08244129573498146,
+          "std_a": 0.035611010319616235,
+          "mean_b": 0.24230047102784055,
+          "std_b": 0.03353242198623245
+        }
+      }
+    },
+    "c_secondary": {
+      "form": "mean missed(0.96) - mean missed(0.94) <= max(the two stds), target 0.90, histgb",
+      "numbers": {
+        "diff": 0.002717890663903072,
+        "max_std": 0.007267359670301361,
+        "mean_a": 0.04327250610085555,
+        "std_a": 0.006298581687075978,
+        "mean_b": 0.040554615436952476,
+        "std_b": 0.007267359670301361
+      },
+      "holds": true
+    },
+    "e_secondary": {
+      "form": "speedup B(0.96) - speedup B(0.94) > max(the two stds), held-out target, histgb",
+      "numbers": {
+        "diff": 1.2516471493182657,
+        "max_std": 0.7666412091404518,
+        "mean_a": 2.6907100154752706,
+        "std_a": 0.7666412091404518,
+        "mean_b": 1.4390628661570048,
+        "std_b": 0.2282470027882188
+      },
+      "holds": true,
+      "held_out_points": {
+        "D96": 5,
+        "D94": 5
+      }
+    },
+    "predictions_vs_observed": {
+      "note": "descriptive; the rule defines no verdict on the predictions",
+      "per_floor": {
+        "D93": {
+          "speedup_B": {
+            "predicted": 2.4,
+            "range": [
+              2.1,
+              2.7
+            ],
+            "observed_mean": 2.481726244035845,
+            "observed_std": 0.14382208262337065,
+            "mean_in_range": true
+          },
+          "escalation_pct": {
+            "predicted": 24.9,
+            "range": [
+              21.0,
+              29.0
+            ],
+            "observed_mean": 24.23876151939491,
+            "observed_std": 2.0958813828105196,
+            "mean_in_range": true
+          }
+        },
+        "D96": {
+          "speedup_B": {
+            "predicted": 4.5,
+            "range": [
+              3.3,
+              5.5
+            ],
+            "observed_mean": 4.808259702566941,
+            "observed_std": 0.7199360954782849,
+            "mean_in_range": true
+          },
+          "escalation_pct": {
+            "predicted": 8.4,
+            "range": [
+              5.0,
+              14.0
+            ],
+            "observed_mean": 8.244129573498146,
+            "observed_std": 3.5611010319616234,
+            "mean_in_range": true
+          }
+        }
+      }
+    }
+  },
+  "deviations": [],
+  "with_deviation": false
+}
